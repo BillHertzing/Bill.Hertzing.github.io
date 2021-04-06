@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-06T12:55:00-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">Welcome to Bill’s Blog!</title><link href="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/" rel="alternate" type="text/html" title="Welcome to Bill’s Blog!" /><published>2021-04-06T10:22:50-06:00</published><updated>2021-04-06T10:22:50-06:00</updated><id>https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog</id><content type="html" xml:base="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/">&lt;p&gt;This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!&lt;/p&gt;
-
-&lt;p&gt;My first post, appropriately, is on &lt;a href=&quot;TBD&quot;&gt;How I setup my Blog Hosting site Part 01&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This blog site will be organized into three sections&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Technical posts of interests to programmers and IT folks&lt;/li&gt;
-  &lt;li&gt;Blogs about political issues that I care about (Hey, a person’s gotta vent occasionally!)&lt;/li&gt;
-  &lt;li&gt;The goings-on of me, my family, and friends.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Be aware that the comments on these posts are handled by &lt;a href=&quot;https://utteranc.es/&quot;&gt;utterances&lt;/a&gt;) and comments are stored in this repository’s Issues, which means they are in GitHub which is owned by Microsoft.&lt;/p&gt;
-
-&lt;p&gt;Please bear with me as I learn the intricacies of Jekyll, static sites, and GitHub Pages!&lt;/p&gt;</content><author><name></name></author><summary type="html">This is my new Blog site, hosted by GitHub Pages. I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/04/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-04T12:31:43-06:00</published><updated>2021-04-04T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/04/How-I-setup-this-GitHub-Pages-Blog-site-Part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/04/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-06T13:39:18-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
 
 &lt;p&gt;If you would like to see a list of the articles online that have helped me create this site, please see the  &lt;a href=&quot;#Attributions&quot;&gt;Attributions&lt;/a&gt; section below.&lt;/p&gt;
 
@@ -33,7 +19,7 @@ A. (VSC) GitHub extension module&lt;/li&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Install &lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;. Select a recent Ruby+DevKit version (I picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RubyInstaller 3.0.0-1 released&lt;/code&gt;) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps&lt;/li&gt;
-  &lt;li&gt;ToDo: Investigate using chocolaty to install both Ruby and MSYS2, whihc will make updating much easier&lt;/li&gt;
+  &lt;li&gt;ToDo: Investigate using chocolaty to install both Ruby and MSYS2, which will make updating much easier&lt;/li&gt;
   &lt;li&gt;Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)&lt;/li&gt;
   &lt;li&gt;At the Powershell prompt, Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll bundle&lt;/code&gt; This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems ToDo: embed screenshot&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll -v&lt;/code&gt; and confirm Jekyll returns its current version number ToDo: embed screenshot&lt;/li&gt;
@@ -73,9 +59,6 @@ A. (VSC) GitHub extension module&lt;/li&gt;
 &lt;span class=&quot;c1&quot;&gt;# Build settings&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pretty&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-timeago&lt;/span&gt;
-  
 &lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;minima&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -94,18 +77,19 @@ A. (VSC) GitHub extension module&lt;/li&gt;
 
 &lt;h3 id=&quot;fixing-issues&quot;&gt;Fixing issues&lt;/h3&gt;
 
-&lt;p&gt;Did you really think that everything would ‘just work’?  Hahaha! When I try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run ` gem install tzinfo-data&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;. Then when I tried &lt;/code&gt;jekyll serve &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;, I got an error message &quot;&quot;Could not find gem wdm&quot;. So I ran &lt;/code&gt;gem install wdm&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;. And then again for &lt;/code&gt;webrick&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;, whihc required &lt;/code&gt;bundle add webrick&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;. Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until &lt;/code&gt;jekyll serve` completes and starts serving up pages.&lt;/p&gt;
+&lt;p&gt;Did you really think that everything would ‘just work’?  Hahaha! When I try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install tzinfo-data&lt;/code&gt;. Then when I tried &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, I got an error message ““Could not find gem wdm”. So I ran &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install wdm&lt;/code&gt;. And then again for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webrick&lt;/code&gt;, which required &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle add webrick&lt;/code&gt;. Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; completes and starts serving up pages.
+I also ran into problems with the Bundler version, getting the error &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)&lt;/code&gt;. After updating the Bundler with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install bundler&lt;/code&gt; I needed to edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; and change the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundled with&lt;/code&gt; line at the bottom to match the version just installed/updated.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)&lt;/code&gt; - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install bundler&lt;/code&gt;  then edit the gemfile.lock and change teh bundled with line at the bottomt to match the version just installed.&lt;/p&gt;
+&lt;p&gt;I also changed the command I was using to build and serve to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Finally Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. with the minima theme it should look like this:
+&lt;p&gt;Finally, when you’ve wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the minima theme it should look like this:
 ToDo: Insert .jpg&lt;/p&gt;
 
-&lt;h2 id=&quot;replace-the-original-welcome-to-jekyllmarkdown-page&quot;&gt;Replace the original `welcome-to-jekyll.markdown page&lt;/h2&gt;
+&lt;h2 id=&quot;replace-the-original-welcome-to-jekyllmarkdown-page&quot;&gt;Replace the original &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;welcome-to-jekyll.markdown&lt;/code&gt; page&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;In the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; subdirectory, add a new file with the format &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*YYYY-MM-dd-welcome-to-*whatever*&lt;/code&gt;. use your current year-month-day numerals, and change &lt;em&gt;whatever&lt;/em&gt; to whatever you want to call your first welcome post.  I used &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2021-04-06-Welcome-To-Bills-Blog.md&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;look at the original file in the _posts directory, which was created by the initial &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll new PATH&lt;/code&gt; command earlier, and copy the Front Matter to your new post, update the front matter to change the title, and optionally remove the categories.&lt;/li&gt;
+  &lt;li&gt;look at the original file in the _posts directory, which was created by the initial &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll new PATH&lt;/code&gt; command earlier, and copy the Front Matter to your new post, update the Front Matter to change the title, update the date to match that of your filename and optionally remove the categories.&lt;/li&gt;
   &lt;li&gt;In the new post, enter your initial draft of whatever you want to see on your first post, and save the file.&lt;/li&gt;
   &lt;li&gt;Delete the original file in the _posts directory.&lt;/li&gt;
 &lt;/ol&gt;
@@ -138,7 +122,7 @@ ToDo: Insert .jpg&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Open a Powershell terminal and navigate to your repository. Or just reuse an already open Powershell terminal.&lt;/li&gt;
   &lt;li&gt;Details are available at &lt;a href=&quot;https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories&quot;&gt;Managing remote repositories&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add origin  &amp;lt;REMOTE_URL&amp;gt; &lt;/code&gt;  Of course, replace &lt;REMOTE_URL&gt; with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`&lt;/REMOTE_URL&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add origin  &amp;lt;REMOTE_URL&amp;gt;&lt;/code&gt;  Of course, replace &lt;REMOTE_URL&gt; with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`&lt;/REMOTE_URL&gt;&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt; to confirm that the origin is indeed set to the URL for the remote repository you just created on GitHub.&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -M main&lt;/code&gt; and then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push -u origin main&lt;/code&gt;  Pushes the changes in your local repository up to the remote repository&lt;/li&gt;
   &lt;li&gt;Verify the source code for your site is now in GitHub. ToDo: add jpg&lt;/li&gt;
@@ -154,16 +138,16 @@ ToDo: Insert .jpg&lt;/p&gt;
 &lt;h2 id=&quot;confirm-that-vsc-can-push-changes-to-github&quot;&gt;Confirm that VSC can push changes to GitHub&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Open the about.md file for editing, select everything after the front matter (line 7 and onward as of today), and delete it. then add the word ‘test’ on line 7.&lt;/li&gt;
+  &lt;li&gt;Open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file for editing, select everything after the front matter (line 7 and onward as of today), and delete it. then add the word ‘test’ on line 7.&lt;/li&gt;
   &lt;li&gt;Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file indicates M for Modified. ToDo: insert jpg&lt;/li&gt;
-  &lt;li&gt;Click the Source Control button.&lt;/li&gt;
-  &lt;li&gt;In the message box, enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;remove unneeded parts of about.md&lt;/code&gt;, then click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;check&lt;/code&gt; above the message box (alt text is ‘Commit’)&lt;/li&gt;
+  &lt;li&gt;Click the VSC Source Control button inside the left toolbar.&lt;/li&gt;
+  &lt;li&gt;In the message box, enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;remove unneeded parts of about.md&lt;/code&gt;, then click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;check&lt;/code&gt; above the message box (alt text is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Commit&lt;/code&gt;)&lt;/li&gt;
   &lt;li&gt;Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg&lt;/li&gt;
   &lt;li&gt;Click on that area of the status bar, and the change should be pushed to GitHub&lt;/li&gt;
   &lt;li&gt;On GitHub, open the about.md file, and confirm that the change has been pushed to the GitHub remote repository.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up…  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to “open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association “vscode://vscode.github-authentication/did-authenticate?windowid=1&amp;amp;code=a_very_long_alphnumeric_string”&lt;/p&gt;
+&lt;p&gt;ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up…  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to “open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association “vscode://vscode.github-authentication/did-authenticate?windowid=1&amp;amp;code=a_very_long_alphanumeric_string”&lt;/p&gt;
 
 &lt;h2 id=&quot;enable-github-pages-on-the-github-repository&quot;&gt;Enable GitHub pages on the GitHub repository&lt;/h2&gt;
 
@@ -193,34 +177,34 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
 
 &lt;p&gt;Put the following yml code into the file, and then save it.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name: deploy generated site to GitHub Pages on gh-branch 
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;deploy generated site to GitHub Pages on gh-branch&lt;/span&gt; 
 
-on:
-  # Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag
-  push:
-    tags: releases/\d+\.\d+\.\d+
-    branches: [ main ]
-  # This line allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+&lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;releases/\d+\.\d+\.\d+&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# This line allows you to run this workflow manually from the Actions tab&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;workflow_dispatch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
 
-jobs:
-  # This workflow contains a single job called &quot;deploy-site-to-github-pages&quot;
-  deploy-site-to-github-pages:
-     # The type of runner that the job will run on
-    runs-on: ubuntu-latest  # ToDo: investigate if a specific ubuntu is better
+&lt;span class=&quot;na&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# This workflow contains a single job called &quot;deploy-site-to-github-pages&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;deploy-site-to-github-pages&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;# The type of runner that the job will run on&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ubuntu-latest&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# ToDo: investigate if a specific ubuntu is better&lt;/span&gt;
 
-     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Checkout code
-      uses: actions/checkout@v2
+     &lt;span class=&quot;c1&quot;&gt;# Steps represent a sequence of tasks that will be executed as part of the job&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Checkout code&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/checkout@v2&lt;/span&gt;
       
-      # Deploys a source to a destination.
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: $
-        publish_dir: _site # the action will deploy the _site contents to the (default)gh-pages branch, root directory
+      &lt;span class=&quot;c1&quot;&gt;# Deploys a source to a destination.&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Deploy&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;peaceiris/actions-gh-pages@v3&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;github_token&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;publish_dir&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_site&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the action will deploy the _site contents to the (default)gh-pages branch, root directory&lt;/span&gt;
         
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -231,21 +215,21 @@ jobs:
 &lt;ol&gt;
   &lt;li&gt;On GitHub, in the repository, under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Settings&lt;/code&gt;, open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt; tab, and click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Create Environment&lt;/code&gt; ToDo: insert jpg&lt;/li&gt;
   &lt;li&gt;Name the Environment &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages&lt;/code&gt;, and click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Configure Environment&lt;/code&gt; ToDo: insert jpg&lt;/li&gt;
-  &lt;li&gt;Click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; on the following page to acknowledge the environment was created, and go back to the Settings-&amp;gt;Environemnt page ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; on the following page to acknowledge the environment was created, and go back to the Settings-&amp;gt;Environment page ToDo: insert jpg&lt;/li&gt;
   &lt;li&gt;Click on the name of the environment just created.&lt;/li&gt;
   &lt;li&gt;At the bottom of the page, click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add Secret&lt;/code&gt; button. ToDo: insert jpg&lt;/li&gt;
-  &lt;li&gt;Add a Secret with the name &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACTIONS_STEP_DEBUG&lt;/code&gt; and value &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;. You can remove this Secret after the action has been debugged. There is an additional Secret &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACTIONS_RUNNER_DEBUG&lt;/code&gt; whihc if set to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt; will provide more details in the logs. I like to set this, as well. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Add a Secret with the name &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACTIONS_STEP_DEBUG&lt;/code&gt; and value &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;. You can remove this Secret after the action has been debugged. There is an additional Secret &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACTIONS_RUNNER_DEBUG&lt;/code&gt; which if set to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt; will provide more details in the logs. I like to set this, as well. ToDo: insert jpg&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;The final Environment should look like this: ToDo: insert jpg&lt;/p&gt;
 
-&lt;h2 id=&quot;remove-_site-from-the-gitignore-file&quot;&gt;Remove _site from the .gitignore file&lt;/h2&gt;
+&lt;h2 id=&quot;remove-_site-from-the-gitignore-file&quot;&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Edit the .gitignore file in the root of the repository, and remove the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-site&lt;/code&gt; line. save&lt;/li&gt;
-  &lt;li&gt;Validate the site build and displays as expected locally on your Windows PC&lt;/li&gt;
-  &lt;li&gt;Note that the Source Control icon has a number, and the Changes editor now shows multiple new files under _sites to be committed&lt;/li&gt;
-  &lt;li&gt;Commit all the changes. I  used the message “Start tracking &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;”  &lt;em&gt;note&lt;/em&gt; I made the changes to the original post, as specified above at (ToDo: insert link to previous place ) at this point in the development, so the jpg file also hows me removing one file and adding another file in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Edit the .gitignore file in the root of the repository, and remove the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; line. Save.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; to validate the site builds and displays as expected locally on your Windows PC.&lt;/li&gt;
+  &lt;li&gt;Note that the Source Control icon has a number, and the Source Control Changes editor window now shows multiple new files under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sites&lt;/code&gt; to be committed&lt;/li&gt;
+  &lt;li&gt;Commit all the changes. I used the message “Start tracking &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;”  &lt;em&gt;NOTE&lt;/em&gt; I made the changes to the original post, as specified above at (ToDo: insert link to previous place ) at this point in the development, so the jpg file also shows me removing the original post file and adding my own first post file in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; ToDo: insert jpg&lt;/li&gt;
   &lt;li&gt;Sync with the remote repository.&lt;/li&gt;
   &lt;li&gt;Validate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; and its files are now present on the GitHub repository. ToDo: insert jpg&lt;/li&gt;
 &lt;/ol&gt;
@@ -253,23 +237,37 @@ jobs:
 &lt;h2 id=&quot;review-the-workflow-run&quot;&gt;Review the workflow run&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Navigate to the actions tab in your repository. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Navigate to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Actions&lt;/code&gt; tab in your repository. ToDo: insert jpg&lt;/li&gt;
   &lt;li&gt;Drill down into the latest workflow run. ToDo: insert jpg&lt;/li&gt;
   &lt;li&gt;Drill down into the job log. ToDo: insert jpg&lt;/li&gt;
   &lt;li&gt;Expand the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt; step. ToDo: insert jpg&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;troubleshooting-the-workflow-run&quot;&gt;troubleshooting the workflow run&lt;/h2&gt;
+&lt;h2 id=&quot;troubleshooting-the-workflow-run&quot;&gt;Troubleshooting the workflow run&lt;/h2&gt;
 
-&lt;p&gt;uh-oh, another issue that needs troubleshooting. Luckily that problems has been noted in the documentation for the GitHub Action, at &lt;a href=&quot;https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token&quot;&gt;First Deployment with GITHUB_TOKEN&lt;/a&gt;. Instructions there tell us to&lt;/p&gt;
+&lt;p&gt;uh-oh, another issue that needs troubleshooting. Luckily that problems has been noted in the documentation for the GitHub Action, at &lt;a href=&quot;https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token&quot;&gt;First Deployment with GITHUB_TOKEN&lt;/a&gt;. Instructions there tell us to:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Go to the repository’s Settings tab, scroll down to GitHub Pages section, change the source to gh-pages branch and save.&lt;/li&gt;
-  &lt;li&gt;While the example says to just deploy again, our workflow is supposed to only trigger on release tags, so trigger the workflow manually by going to Actions, and click on the workflow name in the left column. ToDo: insert jpg&lt;/li&gt;
-  &lt;li&gt;You should see a ‘Run workflow’ button. Click it, and the workflow will run. Go back to Actions tab, and there should be a new workflow run. Drill down into it, and expand the log, and open the Depolu section again, and we see…  ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;While the instructions says to just deploy again, our workflow is supposed to only trigger on release tags, so trigger the workflow manually by going to Actions, and click on the workflow name in the left column. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;You should see a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Run Workflow&lt;/code&gt; button. Click it, and the workflow will run. Go back to Actions tab, and there should be a new workflow run. Drill down into it, and expand the log, and open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt;` section again, and we see…  ToDo: insert jpg&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;darn, still not working. Looks like this is the problem &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cp: no such file or directory: /home/runner/work/Bill.Hertzing.github.io/Bill.Hertzing.github.io/_site/.*&lt;/code&gt;.
-I’ve updated the publish_dir from _site to ./, no joy, and tried&lt;/p&gt;
+I’ve updated the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;publish_dir&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./_site&lt;/code&gt;, and tried &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;..\site&lt;/code&gt; and all still &lt;em&gt;no joy&lt;/em&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;invoke-deploy-site-to-github-pages-manually&quot;&gt;Invoke &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages&lt;/code&gt; manually&lt;/h2&gt;</content><author><name></name></author><category term="Technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</summary></entry></feed>
+&lt;h2 id=&quot;invoke-deploy-site-to-github-pages-manually&quot;&gt;Invoke &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages&lt;/code&gt; manually&lt;/h2&gt;</content><author><name></name></author><category term="Technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</summary></entry><entry><title type="html">Welcome to Bill’s Blog!</title><link href="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/" rel="alternate" type="text/html" title="Welcome to Bill’s Blog!" /><published>2021-04-06T10:22:50-06:00</published><updated>2021-04-06T10:22:50-06:00</updated><id>https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog</id><content type="html" xml:base="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/">&lt;p&gt;This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!&lt;/p&gt;
+
+&lt;p&gt;My first post, appropriately, is on &lt;a href=&quot;TBD&quot;&gt;How I setup my Blog Hosting site Part 01&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This blog site will be organized into three sections&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Technical posts of interests to programmers and IT folks&lt;/li&gt;
+  &lt;li&gt;Blogs about political issues that I care about (Hey, a person’s gotta vent occasionally!)&lt;/li&gt;
+  &lt;li&gt;The goings-on of me, my family, and friends.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Be aware that the comments on these posts are handled by &lt;a href=&quot;https://utteranc.es/&quot;&gt;utterances&lt;/a&gt;) and comments are stored in this repository’s Issues, which means they are in GitHub which is owned by Microsoft.&lt;/p&gt;
+
+&lt;p&gt;Please bear with me as I learn the intricacies of Jekyll, static sites, and GitHub Pages!&lt;/p&gt;</content><author><name></name></author><summary type="html">This is my new Blog site, hosted by GitHub Pages. I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!</summary></entry></feed>
