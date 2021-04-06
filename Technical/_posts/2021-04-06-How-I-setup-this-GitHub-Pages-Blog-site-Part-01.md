@@ -181,12 +181,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       
-      # Deploys a source to a destination.
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: _site # the action will deploy the _site contents to the (default)gh-pages branch, root directory
+        branch: gh-pages # The branch the action should deploy to.
+        folder: ./_site # The folder the action should deploy.
         
 ```
 
