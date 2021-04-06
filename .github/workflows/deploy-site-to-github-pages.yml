@@ -3,7 +3,7 @@ name: deploy generated site to GitHub Pages on gh-branch
 on:
   # Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag
   push:
-    tags: [ releases/\d+\.\d+\.\d+ ]
+    # tags: [ releases/\d+\.\d+\.\d+ ]
     branches: [ main ]
   # This line allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,4 +25,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: . # the action will deploy the <repository root>/_site contents to the (default)gh-pages branch, root directory
+        publish_dir: ./_site # the action will deploy the <repository root>/_site contents to the (default) gh-pages branch, root directory
