@@ -212,7 +212,8 @@ ToDo: Insert .jpg</p>
 
 <p>This workflow and the actions it contains are the key to an easy blogging workflow. A great piece of OSS for GitHub Actions, combined with a workflow trigger that detects a release tag, make it all work.</p>
 
-<p>See the details of the Action here: <a href="https://github.com/peaceiris/actions-gh-pages">peaceiris/actions-gh-pages</a> by peaceiris and other contributors, and the details of the trigger here: <a href="https://www.codingwithcalvin.net/git-tag-based-released-process-using-github-actions/">Git Tag Based Released Process Using GitHub Actions</a> by Calvin A. Allen.</p>
+<p>See the details of the Action here: <a href="https://github.com/marketplace/actions/deploy-to-github-pages">Deploy to GitHub Pages</a> by James Ives and other contributors, also <a href="https://github.com/JamesIves/github-pages-deploy-action">github-pages-deploy-action</a>
+See the details of the trigger here: <a href="https://www.codingwithcalvin.net/git-tag-based-released-process-using-github-actions/">Git Tag Based Released Process Using GitHub Actions</a> by Calvin A. Allen.</p>
 
 <ol>
   <li>Create the directory and subdirectory <code class="language-plaintext highlighter-rouge">.github\workflows</code> in the repository.</li>
@@ -248,12 +249,11 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
     <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
       <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
       
-      <span class="c1"># Deploys a source to a destination.</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy</span>
-      <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy 🚀</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">JamesIves/github-pages-deploy-action@4.1.1</span>
       <span class="na">with</span><span class="pi">:</span>
-        <span class="na">github_token</span><span class="pi">:</span> <span class="s">$</span>
-        <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">_site</span> <span class="c1"># the action will deploy the _site contents to the (default)gh-pages branch, root directory</span>
+        <span class="na">branch</span><span class="pi">:</span> <span class="s">gh-pages</span> <span class="c1"># The branch the action should deploy to.</span>
+        <span class="na">folder</span><span class="pi">:</span> <span class="s">./_site</span> <span class="c1"># The folder the action should deploy.</span>
         
 </code></pre></div></div>
 
@@ -324,7 +324,7 @@ I’ve updated the <code class="language-plaintext highlighter-rouge">publish_di
           <li class="p-name">Bill&#39;s Blog</li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/BillHertzing"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">BillHertzing</span></a></li><li><a href="https://www.twitter.com/BillHertzing"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">BillHertzing</span></a></li></ul>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/BillHertzing"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">BillHertzing</span></a></li><li><a href="https://www.twitter.com/whertzing56"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">whertzing56</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
