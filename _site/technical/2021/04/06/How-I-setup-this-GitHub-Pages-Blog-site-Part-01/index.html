@@ -9,15 +9,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have." />
 <meta property="og:description" content="I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have." />
-<link rel="canonical" href="https://billhertzing.github.io/technical/2021/04/04/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" />
-<meta property="og:url" content="https://billhertzing.github.io/technical/2021/04/04/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" />
+<link rel="canonical" href="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" />
+<meta property="og:url" content="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" />
 <meta property="og:site_name" content="Bill’s Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-04-04T12:31:43-06:00" />
+<meta property="article:published_time" content="2021-04-06T12:31:43-06:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How I Setup This Github Pages Blog Site Part 01" />
 <script type="application/ld+json">
-{"url":"https://billhertzing.github.io/technical/2021/04/04/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/","@type":"BlogPosting","headline":"How I Setup This Github Pages Blog Site Part 01","dateModified":"2021-04-04T12:31:43-06:00","description":"I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.","datePublished":"2021-04-04T12:31:43-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/technical/2021/04/04/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/"},"@context":"https://schema.org"}</script>
+{"datePublished":"2021-04-06T12:31:43-06:00","url":"https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/","dateModified":"2021-04-06T12:31:43-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/"},"@type":"BlogPosting","description":"I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.","headline":"How I Setup This Github Pages Blog Site Part 01","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://billhertzing.github.io/feed.xml" title="Bill&apos;s Blog" /></head>
 <body><header class="site-header" role="banner">
@@ -42,7 +42,7 @@
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">How I Setup This Github Pages Blog Site Part 01</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2021-04-04T12:31:43-06:00" itemprop="datePublished">Apr 4, 2021
+      <time class="dt-published" datetime="2021-04-06T12:31:43-06:00" itemprop="datePublished">Apr 6, 2021
       </time></p>
   </header>
 
@@ -68,7 +68,7 @@ A. (VSC) GitHub extension module</li>
 
 <ol>
   <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps</li>
-  <li>ToDo: Investigate using chocolaty to install both Ruby and MSYS2, whihc will make updating much easier</li>
+  <li>ToDo: Investigate using chocolaty to install both Ruby and MSYS2, which will make updating much easier</li>
   <li>Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)</li>
   <li>At the Powershell prompt, Run <code class="language-plaintext highlighter-rouge">gem install jekyll bundle</code> This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems ToDo: embed screenshot</li>
   <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number ToDo: embed screenshot</li>
@@ -108,9 +108,6 @@ A. (VSC) GitHub extension module</li>
 <span class="c1"># Build settings</span>
 <span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
 <span class="na">permalink</span><span class="pi">:</span> <span class="s">pretty</span>
-<span class="na">plugins</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">jekyll-timeago</span>
-  
 <span class="na">theme</span><span class="pi">:</span> <span class="s">minima</span>
 </code></pre></div></div>
 
@@ -129,18 +126,19 @@ A. (VSC) GitHub extension module</li>
 
 <h3 id="fixing-issues">Fixing issues</h3>
 
-<p>Did you really think that everything would ‘just work’?  Hahaha! When I try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run ` gem install tzinfo-data<code class="language-plaintext highlighter-rouge">. Then when I tried </code>jekyll serve <code class="language-plaintext highlighter-rouge">, I got an error message ""Could not find gem wdm". So I ran </code>gem install wdm<code class="language-plaintext highlighter-rouge">. And then again for </code>webrick<code class="language-plaintext highlighter-rouge">, whihc required </code>bundle add webrick<code class="language-plaintext highlighter-rouge">. Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until </code>jekyll serve` completes and starts serving up pages.</p>
+<p>Did you really think that everything would ‘just work’?  Hahaha! When I try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run <code class="language-plaintext highlighter-rouge">gem install tzinfo-data</code>. Then when I tried <code class="language-plaintext highlighter-rouge">jekyll serve</code>, I got an error message ““Could not find gem wdm”. So I ran <code class="language-plaintext highlighter-rouge">gem install wdm</code>. And then again for <code class="language-plaintext highlighter-rouge">webrick</code>, which required <code class="language-plaintext highlighter-rouge">bundle add webrick</code>. Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until <code class="language-plaintext highlighter-rouge">jekyll serve</code> completes and starts serving up pages.
+I also ran into problems with the Bundler version, getting the error <code class="language-plaintext highlighter-rouge">cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)</code>. After updating the Bundler with <code class="language-plaintext highlighter-rouge">gem install bundler</code> I needed to edit the <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> and change the <code class="language-plaintext highlighter-rouge">bundled with</code> line at the bottom to match the version just installed/updated.</p>
 
-<p><code class="language-plaintext highlighter-rouge">cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)</code> - <code class="language-plaintext highlighter-rouge">gem install bundler</code>  then edit the gemfile.lock and change teh bundled with line at the bottomt to match the version just installed.</p>
+<p>I also changed the command I was using to build and serve to <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></p>
 
-<p>Finally Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. with the minima theme it should look like this:
+<p>Finally, when you’ve wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the minima theme it should look like this:
 ToDo: Insert .jpg</p>
 
-<h2 id="replace-the-original-welcome-to-jekyllmarkdown-page">Replace the original `welcome-to-jekyll.markdown page</h2>
+<h2 id="replace-the-original-welcome-to-jekyllmarkdown-page">Replace the original <code class="language-plaintext highlighter-rouge">welcome-to-jekyll.markdown</code> page</h2>
 
 <ol>
   <li>In the <code class="language-plaintext highlighter-rouge">_posts</code> subdirectory, add a new file with the format <code class="language-plaintext highlighter-rouge">*YYYY-MM-dd-welcome-to-*whatever*</code>. use your current year-month-day numerals, and change <em>whatever</em> to whatever you want to call your first welcome post.  I used <code class="language-plaintext highlighter-rouge">2021-04-06-Welcome-To-Bills-Blog.md</code></li>
-  <li>look at the original file in the _posts directory, which was created by the initial <code class="language-plaintext highlighter-rouge">jekyll new PATH</code> command earlier, and copy the Front Matter to your new post, update the front matter to change the title, and optionally remove the categories.</li>
+  <li>look at the original file in the _posts directory, which was created by the initial <code class="language-plaintext highlighter-rouge">jekyll new PATH</code> command earlier, and copy the Front Matter to your new post, update the Front Matter to change the title, update the date to match that of your filename and optionally remove the categories.</li>
   <li>In the new post, enter your initial draft of whatever you want to see on your first post, and save the file.</li>
   <li>Delete the original file in the _posts directory.</li>
 </ol>
@@ -173,7 +171,7 @@ ToDo: Insert .jpg</p>
 <ol>
   <li>Open a Powershell terminal and navigate to your repository. Or just reuse an already open Powershell terminal.</li>
   <li>Details are available at <a href="https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories">Managing remote repositories</a></li>
-  <li>Run <code class="language-plaintext highlighter-rouge">git remote add origin  &lt;REMOTE_URL&gt; </code>  Of course, replace <REMOTE_URL> with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`</REMOTE_URL></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git remote add origin  &lt;REMOTE_URL&gt;</code>  Of course, replace <REMOTE_URL> with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`</REMOTE_URL></li>
   <li>Run <code class="language-plaintext highlighter-rouge">git remote -v</code> to confirm that the origin is indeed set to the URL for the remote repository you just created on GitHub.</li>
   <li>Run <code class="language-plaintext highlighter-rouge">git branch -M main</code> and then <code class="language-plaintext highlighter-rouge">git push -u origin main</code>  Pushes the changes in your local repository up to the remote repository</li>
   <li>Verify the source code for your site is now in GitHub. ToDo: add jpg</li>
@@ -189,16 +187,16 @@ ToDo: Insert .jpg</p>
 <h2 id="confirm-that-vsc-can-push-changes-to-github">Confirm that VSC can push changes to GitHub</h2>
 
 <ol>
-  <li>Open the about.md file for editing, select everything after the front matter (line 7 and onward as of today), and delete it. then add the word ‘test’ on line 7.</li>
+  <li>Open the <code class="language-plaintext highlighter-rouge">about.md</code> file for editing, select everything after the front matter (line 7 and onward as of today), and delete it. then add the word ‘test’ on line 7.</li>
   <li>Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the <code class="language-plaintext highlighter-rouge">about.md</code> file indicates M for Modified. ToDo: insert jpg</li>
-  <li>Click the Source Control button.</li>
-  <li>In the message box, enter <code class="language-plaintext highlighter-rouge">remove unneeded parts of about.md</code>, then click the <code class="language-plaintext highlighter-rouge">check</code> above the message box (alt text is ‘Commit’)</li>
+  <li>Click the VSC Source Control button inside the left toolbar.</li>
+  <li>In the message box, enter <code class="language-plaintext highlighter-rouge">remove unneeded parts of about.md</code>, then click the <code class="language-plaintext highlighter-rouge">check</code> above the message box (alt text is <code class="language-plaintext highlighter-rouge">Commit</code>)</li>
   <li>Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg</li>
   <li>Click on that area of the status bar, and the change should be pushed to GitHub</li>
   <li>On GitHub, open the about.md file, and confirm that the change has been pushed to the GitHub remote repository.</li>
 </ol>
 
-<p>ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up…  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to “open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association “vscode://vscode.github-authentication/did-authenticate?windowid=1&amp;code=a_very_long_alphnumeric_string”</p>
+<p>ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up…  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to “open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association “vscode://vscode.github-authentication/did-authenticate?windowid=1&amp;code=a_very_long_alphanumeric_string”</p>
 
 <h2 id="enable-github-pages-on-the-github-repository">Enable GitHub pages on the GitHub repository</h2>
 
@@ -228,34 +226,34 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
 
 <p>Put the following yml code into the file, and then save it.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: deploy generated site to GitHub Pages on gh-branch 
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">deploy generated site to GitHub Pages on gh-branch</span> 
 
-on:
-  # Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag
-  push:
-    tags: releases/\d+\.\d+\.\d+
-    branches: [ main ]
-  # This line allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+<span class="na">on</span><span class="pi">:</span>
+  <span class="c1"># Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">tags</span><span class="pi">:</span> <span class="s">releases/\d+\.\d+\.\d+</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
+  <span class="c1"># This line allows you to run this workflow manually from the Actions tab</span>
+  <span class="na">workflow_dispatch</span><span class="pi">:</span>
 
-jobs:
-  # This workflow contains a single job called "deploy-site-to-github-pages"
-  deploy-site-to-github-pages:
-     # The type of runner that the job will run on
-    runs-on: ubuntu-latest  # ToDo: investigate if a specific ubuntu is better
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="c1"># This workflow contains a single job called "deploy-site-to-github-pages"</span>
+  <span class="na">deploy-site-to-github-pages</span><span class="pi">:</span>
+     <span class="c1"># The type of runner that the job will run on</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>  <span class="c1"># ToDo: investigate if a specific ubuntu is better</span>
 
-     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Checkout code
-      uses: actions/checkout@v2
+     <span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="c1"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
       
-      # Deploys a source to a destination.
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: $
-        publish_dir: _site # the action will deploy the _site contents to the (default)gh-pages branch, root directory
+      <span class="c1"># Deploys a source to a destination.</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">github_token</span><span class="pi">:</span> <span class="s">$</span>
+        <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">_site</span> <span class="c1"># the action will deploy the _site contents to the (default)gh-pages branch, root directory</span>
         
 </code></pre></div></div>
 
@@ -266,21 +264,21 @@ jobs:
 <ol>
   <li>On GitHub, in the repository, under <code class="language-plaintext highlighter-rouge">Settings</code>, open the <code class="language-plaintext highlighter-rouge">Environment</code> tab, and click <code class="language-plaintext highlighter-rouge">Create Environment</code> ToDo: insert jpg</li>
   <li>Name the Environment <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages</code>, and click <code class="language-plaintext highlighter-rouge">Configure Environment</code> ToDo: insert jpg</li>
-  <li>Click <code class="language-plaintext highlighter-rouge">x</code> on the following page to acknowledge the environment was created, and go back to the Settings-&gt;Environemnt page ToDo: insert jpg</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">x</code> on the following page to acknowledge the environment was created, and go back to the Settings-&gt;Environment page ToDo: insert jpg</li>
   <li>Click on the name of the environment just created.</li>
   <li>At the bottom of the page, click the <code class="language-plaintext highlighter-rouge">Add Secret</code> button. ToDo: insert jpg</li>
-  <li>Add a Secret with the name <code class="language-plaintext highlighter-rouge">ACTIONS_STEP_DEBUG</code> and value <code class="language-plaintext highlighter-rouge">true</code>. You can remove this Secret after the action has been debugged. There is an additional Secret <code class="language-plaintext highlighter-rouge">ACTIONS_RUNNER_DEBUG</code> whihc if set to <code class="language-plaintext highlighter-rouge">true</code> will provide more details in the logs. I like to set this, as well. ToDo: insert jpg</li>
+  <li>Add a Secret with the name <code class="language-plaintext highlighter-rouge">ACTIONS_STEP_DEBUG</code> and value <code class="language-plaintext highlighter-rouge">true</code>. You can remove this Secret after the action has been debugged. There is an additional Secret <code class="language-plaintext highlighter-rouge">ACTIONS_RUNNER_DEBUG</code> which if set to <code class="language-plaintext highlighter-rouge">true</code> will provide more details in the logs. I like to set this, as well. ToDo: insert jpg</li>
 </ol>
 
 <p>The final Environment should look like this: ToDo: insert jpg</p>
 
-<h2 id="remove-_site-from-the-gitignore-file">Remove _site from the .gitignore file</h2>
+<h2 id="remove-_site-from-the-gitignore-file">Remove <code class="language-plaintext highlighter-rouge">_site</code> from the <code class="language-plaintext highlighter-rouge">.gitignore</code> file</h2>
 
 <ol>
-  <li>Edit the .gitignore file in the root of the repository, and remove the <code class="language-plaintext highlighter-rouge">-site</code> line. save</li>
-  <li>Validate the site build and displays as expected locally on your Windows PC</li>
-  <li>Note that the Source Control icon has a number, and the Changes editor now shows multiple new files under _sites to be committed</li>
-  <li>Commit all the changes. I  used the message “Start tracking <code class="language-plaintext highlighter-rouge">_site</code>”  <em>note</em> I made the changes to the original post, as specified above at (ToDo: insert link to previous place ) at this point in the development, so the jpg file also hows me removing one file and adding another file in <code class="language-plaintext highlighter-rouge">_posts</code> ToDo: insert jpg</li>
+  <li>Edit the .gitignore file in the root of the repository, and remove the <code class="language-plaintext highlighter-rouge">_site</code> line. Save.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> to validate the site builds and displays as expected locally on your Windows PC.</li>
+  <li>Note that the Source Control icon has a number, and the Source Control Changes editor window now shows multiple new files under <code class="language-plaintext highlighter-rouge">_sites</code> to be committed</li>
+  <li>Commit all the changes. I used the message “Start tracking <code class="language-plaintext highlighter-rouge">_site</code>”  <em>NOTE</em> I made the changes to the original post, as specified above at (ToDo: insert link to previous place ) at this point in the development, so the jpg file also shows me removing the original post file and adding my own first post file in <code class="language-plaintext highlighter-rouge">_posts</code> ToDo: insert jpg</li>
   <li>Sync with the remote repository.</li>
   <li>Validate the <code class="language-plaintext highlighter-rouge">_site</code> and its files are now present on the GitHub repository. ToDo: insert jpg</li>
 </ol>
@@ -288,29 +286,28 @@ jobs:
 <h2 id="review-the-workflow-run">Review the workflow run</h2>
 
 <ol>
-  <li>Navigate to the actions tab in your repository. ToDo: insert jpg</li>
+  <li>Navigate to the <code class="language-plaintext highlighter-rouge">Actions</code> tab in your repository. ToDo: insert jpg</li>
   <li>Drill down into the latest workflow run. ToDo: insert jpg</li>
   <li>Drill down into the job log. ToDo: insert jpg</li>
   <li>Expand the <code class="language-plaintext highlighter-rouge">Deploy</code> step. ToDo: insert jpg</li>
 </ol>
 
-<h2 id="troubleshooting-the-workflow-run">troubleshooting the workflow run</h2>
+<h2 id="troubleshooting-the-workflow-run">Troubleshooting the workflow run</h2>
 
-<p>uh-oh, another issue that needs troubleshooting. Luckily that problems has been noted in the documentation for the GitHub Action, at <a href="https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token">First Deployment with GITHUB_TOKEN</a>. Instructions there tell us to</p>
+<p>uh-oh, another issue that needs troubleshooting. Luckily that problems has been noted in the documentation for the GitHub Action, at <a href="https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token">First Deployment with GITHUB_TOKEN</a>. Instructions there tell us to:</p>
 
 <ol>
   <li>Go to the repository’s Settings tab, scroll down to GitHub Pages section, change the source to gh-pages branch and save.</li>
-  <li>While the example says to just deploy again, our workflow is supposed to only trigger on release tags, so trigger the workflow manually by going to Actions, and click on the workflow name in the left column. ToDo: insert jpg</li>
-  <li>You should see a ‘Run workflow’ button. Click it, and the workflow will run. Go back to Actions tab, and there should be a new workflow run. Drill down into it, and expand the log, and open the Depolu section again, and we see…  ToDo: insert jpg</li>
+  <li>While the instructions says to just deploy again, our workflow is supposed to only trigger on release tags, so trigger the workflow manually by going to Actions, and click on the workflow name in the left column. ToDo: insert jpg</li>
+  <li>You should see a <code class="language-plaintext highlighter-rouge">Run Workflow</code> button. Click it, and the workflow will run. Go back to Actions tab, and there should be a new workflow run. Drill down into it, and expand the log, and open the <code class="language-plaintext highlighter-rouge">Deploy</code>` section again, and we see…  ToDo: insert jpg</li>
 </ol>
 
 <p>darn, still not working. Looks like this is the problem <code class="language-plaintext highlighter-rouge">cp: no such file or directory: /home/runner/work/Bill.Hertzing.github.io/Bill.Hertzing.github.io/_site/.*</code>.
-I’ve updated the publish_dir from _site to ./, no joy, and tried</p>
+I’ve updated the <code class="language-plaintext highlighter-rouge">publish_dir</code> from <code class="language-plaintext highlighter-rouge">_site</code> to <code class="language-plaintext highlighter-rouge">./_site</code>, and tried <code class="language-plaintext highlighter-rouge">..\site</code> and all still <em>no joy</em></p>
 
 <h2 id="invoke-deploy-site-to-github-pages-manually">Invoke <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages</code> manually</h2>
 
-
-  </div><a class="u-url" href="/technical/2021/04/04/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" hidden></a>
+  </div><a class="u-url" href="/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" hidden></a>
 </article>
 
       </div>
