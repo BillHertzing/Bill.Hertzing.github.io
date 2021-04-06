@@ -146,7 +146,8 @@ ToDo: Interesting, while working on this, I learned if VSC is not logged in to a
 
 This workflow and the actions it contains are the key to an easy blogging workflow. A great piece of OSS for GitHub Actions, combined with a workflow trigger that detects a release tag, make it all work.
 
-See the details of the Action here: [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) by peaceiris and other contributors, and the details of the trigger here: [Git Tag Based Released Process Using GitHub Actions](https://www.codingwithcalvin.net/git-tag-based-released-process-using-github-actions/) by Calvin A. Allen.
+See the details of the Action here: [Deploy to GitHub Pages](https://github.com/marketplace/actions/deploy-to-github-pages) by James Ives and other contributors, also [github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action)
+See the details of the trigger here: [Git Tag Based Released Process Using GitHub Actions](https://www.codingwithcalvin.net/git-tag-based-released-process-using-github-actions/) by Calvin A. Allen.
 
 1. Create the directory and subdirectory `.github\workflows` in the repository.
 1. Create the file `deploy-site-to-github-pages.yml` in the `.github\workflows` subdirectory
