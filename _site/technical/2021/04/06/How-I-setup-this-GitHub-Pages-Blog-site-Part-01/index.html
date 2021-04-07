@@ -58,8 +58,8 @@
   <li>a GitHub account. make a note of your username, and throughout this document, replace <em>GitHubUserName</em> with YOUR GitHub username</li>
   <li>Powershell installed and updated on Windows 10</li>
   <li>Git for Windows (or alternative Git client) installed on Windows 10</li>
-  <li>Visual Studio Code (VSC) (or similar editor) installed on Windows 10
-A. (VSC) GitHub extension module</li>
+  <li>Visual Studio Code (VSC) (or similar editor) installed on Windows 10</li>
+  <li>(VSC) GitHub extension module</li>
 </ol>
 
 <h2 id="install-ruby-and-jekyll-on-your-windows-pc">Install Ruby and Jekyll on your Windows PC</h2>
@@ -67,11 +67,12 @@ A. (VSC) GitHub extension module</li>
 <p>(if you are cleaning up a botched prior attempt (me!), run this command in a Powershell terminal window <code class="language-plaintext highlighter-rouge">gem uninstall -aIx</code>)</p>
 
 <ol>
-  <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps</li>
+  <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installatyion wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps</li>
   <li>ToDo: Investigate using chocolaty to install both Ruby and MSYS2, which will make updating much easier</li>
   <li>Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)</li>
   <li>At the Powershell prompt, Run <code class="language-plaintext highlighter-rouge">gem install jekyll bundle</code> This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems ToDo: embed screenshot</li>
-  <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number ToDo: embed screenshot</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0" style="vertical-align:bottom" /> 
+ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li>
 </ol>
 
 <h2 id="create-a-new-git-repository">Create a new git repository</h2>
@@ -79,7 +80,7 @@ A. (VSC) GitHub extension module</li>
 <ol>
   <li>Open a Powershell terminal, navigate to the location (directory) you want to be the parent of your repository. My parent directory is <code class="language-plaintext highlighter-rouge">C:\Dropbox\whertzing\GitHub\</code>.</li>
   <li>Create a subdirectory <code class="language-plaintext highlighter-rouge">*GitHubUserName*.github.io</code>, and <code class="language-plaintext highlighter-rouge">cd</code> into it.</li>
-  <li>Run <code class="language-plaintext highlighter-rouge">git init</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git init</code>. «img src=”https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1” alt=”git init results”  style=”vertical-align:bottom”&gt;</li>
 </ol>
 
 <h2 id="create-minimal-jekyll-compliant-site-source-code">Create minimal Jekyll-compliant site source code</h2>
@@ -254,7 +255,6 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
       <span class="na">with</span><span class="pi">:</span>
         <span class="na">branch</span><span class="pi">:</span> <span class="s">gh-pages</span> <span class="c1"># The branch the action should deploy to.</span>
         <span class="na">folder</span><span class="pi">:</span> <span class="s">./_site</span> <span class="c1"># The folder the action should deploy.</span>
-        
 </code></pre></div></div>
 
 <p>Commit the new file and commit the changes.</p>
@@ -294,18 +294,20 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
 
 <h2 id="troubleshooting-the-workflow-run">Troubleshooting the workflow run</h2>
 
-<p>uh-oh, another issue that needs troubleshooting. Luckily that problems has been noted in the documentation for the GitHub Action, at <a href="https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token">First Deployment with GITHUB_TOKEN</a>. Instructions there tell us to:</p>
-
-<ol>
-  <li>Go to the repository’s Settings tab, scroll down to GitHub Pages section, change the source to gh-pages branch and save.</li>
-  <li>While the instructions says to just deploy again, our workflow is supposed to only trigger on release tags, so trigger the workflow manually by going to Actions, and click on the workflow name in the left column. ToDo: insert jpg</li>
-  <li>You should see a <code class="language-plaintext highlighter-rouge">Run Workflow</code> button. Click it, and the workflow will run. Go back to Actions tab, and there should be a new workflow run. Drill down into it, and expand the log, and open the <code class="language-plaintext highlighter-rouge">Deploy</code>` section again, and we see…  ToDo: insert jpg</li>
-</ol>
-
-<p>darn, still not working. Looks like this is the problem <code class="language-plaintext highlighter-rouge">cp: no such file or directory: /home/runner/work/Bill.Hertzing.github.io/Bill.Hertzing.github.io/_site/.*</code>.
-I’ve updated the <code class="language-plaintext highlighter-rouge">publish_dir</code> from <code class="language-plaintext highlighter-rouge">_site</code> to <code class="language-plaintext highlighter-rouge">./_site</code>, and tried <code class="language-plaintext highlighter-rouge">..\site</code> and all still <em>no joy</em></p>
+<p>ToDo: see if there are any problem with teh deploy action, another GitHub action did have problems here</p>
 
 <h2 id="invoke-deploy-site-to-github-pages-manually">Invoke <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages</code> manually</h2>
+
+<p>ToDo:</p>
+
+<h2 id="add-the-mit-license-file">Add the MIT LICENSE file</h2>
+
+<p>This site uses the MIT licenses. Of course, feel free to chose a different license if such is more appropriate for your site. You can find the text of many popular licenses at the Open Source Initiative page <a href="https://opensource.org/licenses">Licenses &amp; Standards</a></p>
+
+<ol>
+  <li>Under the root of the repository, add a new file <code class="language-plaintext highlighter-rouge">LICENSE</code>, and copy the appropriate text from one of the OSI-approved licenses into the file, and close it.</li>
+</ol>
+
 
   </div><a class="u-url" href="/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" hidden></a>
 </article>

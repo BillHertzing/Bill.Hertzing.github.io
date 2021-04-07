@@ -17,23 +17,24 @@ If you would like to see a list of the articles online that have helped me creat
 1. Powershell installed and updated on Windows 10
 1. Git for Windows (or alternative Git client) installed on Windows 10
 1. Visual Studio Code (VSC) (or similar editor) installed on Windows 10
-A. (VSC) GitHub extension module
+1. (VSC) GitHub extension module
 
 ## Install Ruby and Jekyll on your Windows PC
 
 (if you are cleaning up a botched prior attempt (me!), run this command in a Powershell terminal window `gem uninstall -aIx`)
 
-1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps
+1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installatyion wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps
 1. ToDo: Investigate using chocolaty to install both Ruby and MSYS2, which will make updating much easier
 1. Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)
 1. At the Powershell prompt, Run `gem install jekyll bundle` This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems ToDo: embed screenshot
-1. Run `jekyll -v` and confirm Jekyll returns its current version number ToDo: embed screenshot
+1. Run `jekyll -v` and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0"  style="vertical-align:bottom"> 
+ToDo: Add responsive sizes attribute and create multiple sizes of the image.
 
 ## Create a new git repository
 
 1. Open a Powershell terminal, navigate to the location (directory) you want to be the parent of your repository. My parent directory is `C:\Dropbox\whertzing\GitHub\`.
 1. Create a subdirectory `*GitHubUserName*.github.io`, and `cd` into it.
-1. Run `git init`
+1. Run `git init`. <<img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="git init results"  style="vertical-align:bottom">
 
 ## Create minimal Jekyll-compliant site source code
 
@@ -187,7 +188,6 @@ jobs:
       with:
         branch: gh-pages # The branch the action should deploy to.
         folder: ./_site # The folder the action should deploy.
-        
 ```
 
 Commit the new file and commit the changes.
@@ -221,13 +221,16 @@ The final Environment should look like this: ToDo: insert jpg
 
 ## Troubleshooting the workflow run
 
-uh-oh, another issue that needs troubleshooting. Luckily that problems has been noted in the documentation for the GitHub Action, at [First Deployment with GITHUB_TOKEN](https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token). Instructions there tell us to:
-
-1. Go to the repository's Settings tab, scroll down to GitHub Pages section, change the source to gh-pages branch and save.
-1. While the instructions says to just deploy again, our workflow is supposed to only trigger on release tags, so trigger the workflow manually by going to Actions, and click on the workflow name in the left column. ToDo: insert jpg
-1. You should see a `Run Workflow` button. Click it, and the workflow will run. Go back to Actions tab, and there should be a new workflow run. Drill down into it, and expand the log, and open the `Deploy`` section again, and we see...  ToDo: insert jpg
-
-darn, still not working. Looks like this is the problem `cp: no such file or directory: /home/runner/work/Bill.Hertzing.github.io/Bill.Hertzing.github.io/_site/.*`.
-I've updated the `publish_dir` from `_site` to `./_site`, and tried `..\site` and all still *no joy*
+ToDo: see if there are any problem with teh deploy action, another GitHub action did have problems here
 
 ## Invoke `deploy-site-to-github-pages` manually
+
+ToDo:
+
+## Add the MIT LICENSE file
+
+This site uses the MIT licenses. Of course, feel free to chose a different license if such is more appropriate for your site. You can find the text of many popular licenses at the Open Source Initiative page [Licenses & Standards](https://opensource.org/licenses)
+
+1. Under the root of the repository, add a new file `LICENSE`, and copy the appropriate text from one of the OSI-approved licenses into the file, and close it.
+
+

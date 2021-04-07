@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-06T15:02:38-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-06T22:53:01-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
 
 &lt;p&gt;If you would like to see a list of the articles online that have helped me create this site, please see the  &lt;a href=&quot;#Attributions&quot;&gt;Attributions&lt;/a&gt; section below.&lt;/p&gt;
 
@@ -9,8 +9,8 @@
   &lt;li&gt;a GitHub account. make a note of your username, and throughout this document, replace &lt;em&gt;GitHubUserName&lt;/em&gt; with YOUR GitHub username&lt;/li&gt;
   &lt;li&gt;Powershell installed and updated on Windows 10&lt;/li&gt;
   &lt;li&gt;Git for Windows (or alternative Git client) installed on Windows 10&lt;/li&gt;
-  &lt;li&gt;Visual Studio Code (VSC) (or similar editor) installed on Windows 10
-A. (VSC) GitHub extension module&lt;/li&gt;
+  &lt;li&gt;Visual Studio Code (VSC) (or similar editor) installed on Windows 10&lt;/li&gt;
+  &lt;li&gt;(VSC) GitHub extension module&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;install-ruby-and-jekyll-on-your-windows-pc&quot;&gt;Install Ruby and Jekyll on your Windows PC&lt;/h2&gt;
@@ -18,11 +18,12 @@ A. (VSC) GitHub extension module&lt;/li&gt;
 &lt;p&gt;(if you are cleaning up a botched prior attempt (me!), run this command in a Powershell terminal window &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem uninstall -aIx&lt;/code&gt;)&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;. Select a recent Ruby+DevKit version (I picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RubyInstaller 3.0.0-1 released&lt;/code&gt;) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps&lt;/li&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;. Select a recent Ruby+DevKit version (I picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RubyInstaller 3.0.0-1 released&lt;/code&gt;) and use the default options in the installatyion wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps&lt;/li&gt;
   &lt;li&gt;ToDo: Investigate using chocolaty to install both Ruby and MSYS2, which will make updating much easier&lt;/li&gt;
   &lt;li&gt;Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)&lt;/li&gt;
   &lt;li&gt;At the Powershell prompt, Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll bundle&lt;/code&gt; This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems ToDo: embed screenshot&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll -v&lt;/code&gt; and confirm Jekyll returns its current version number ToDo: embed screenshot&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll -v&lt;/code&gt; and confirm Jekyll returns its current version number. &lt;img src=&quot;https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1&quot; alt=&quot;Jekyll version 4.2.0&quot; style=&quot;vertical-align:bottom&quot; /&gt; 
+ToDo: Add responsive sizes attribute and create multiple sizes of the image.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;create-a-new-git-repository&quot;&gt;Create a new git repository&lt;/h2&gt;
@@ -30,7 +31,7 @@ A. (VSC) GitHub extension module&lt;/li&gt;
 &lt;ol&gt;
   &lt;li&gt;Open a Powershell terminal, navigate to the location (directory) you want to be the parent of your repository. My parent directory is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C:\Dropbox\whertzing\GitHub\&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;Create a subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*GitHubUserName*.github.io&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into it.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt;. «img src=”https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1” alt=”git init results”  style=”vertical-align:bottom”&amp;gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;create-minimal-jekyll-compliant-site-source-code&quot;&gt;Create minimal Jekyll-compliant site source code&lt;/h2&gt;
@@ -205,7 +206,6 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
       &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gh-pages&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# The branch the action should deploy to.&lt;/span&gt;
         &lt;span class=&quot;na&quot;&gt;folder&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./_site&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# The folder the action should deploy.&lt;/span&gt;
-        
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Commit the new file and commit the changes.&lt;/p&gt;
@@ -245,18 +245,19 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
 
 &lt;h2 id=&quot;troubleshooting-the-workflow-run&quot;&gt;Troubleshooting the workflow run&lt;/h2&gt;
 
-&lt;p&gt;uh-oh, another issue that needs troubleshooting. Luckily that problems has been noted in the documentation for the GitHub Action, at &lt;a href=&quot;https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token&quot;&gt;First Deployment with GITHUB_TOKEN&lt;/a&gt;. Instructions there tell us to:&lt;/p&gt;
+&lt;p&gt;ToDo: see if there are any problem with teh deploy action, another GitHub action did have problems here&lt;/p&gt;
+
+&lt;h2 id=&quot;invoke-deploy-site-to-github-pages-manually&quot;&gt;Invoke &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages&lt;/code&gt; manually&lt;/h2&gt;
+
+&lt;p&gt;ToDo:&lt;/p&gt;
+
+&lt;h2 id=&quot;add-the-mit-license-file&quot;&gt;Add the MIT LICENSE file&lt;/h2&gt;
+
+&lt;p&gt;This site uses the MIT licenses. Of course, feel free to chose a different license if such is more appropriate for your site. You can find the text of many popular licenses at the Open Source Initiative page &lt;a href=&quot;https://opensource.org/licenses&quot;&gt;Licenses &amp;amp; Standards&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Go to the repository’s Settings tab, scroll down to GitHub Pages section, change the source to gh-pages branch and save.&lt;/li&gt;
-  &lt;li&gt;While the instructions says to just deploy again, our workflow is supposed to only trigger on release tags, so trigger the workflow manually by going to Actions, and click on the workflow name in the left column. ToDo: insert jpg&lt;/li&gt;
-  &lt;li&gt;You should see a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Run Workflow&lt;/code&gt; button. Click it, and the workflow will run. Go back to Actions tab, and there should be a new workflow run. Drill down into it, and expand the log, and open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt;` section again, and we see…  ToDo: insert jpg&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;darn, still not working. Looks like this is the problem &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cp: no such file or directory: /home/runner/work/Bill.Hertzing.github.io/Bill.Hertzing.github.io/_site/.*&lt;/code&gt;.
-I’ve updated the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;publish_dir&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./_site&lt;/code&gt;, and tried &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;..\site&lt;/code&gt; and all still &lt;em&gt;no joy&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;invoke-deploy-site-to-github-pages-manually&quot;&gt;Invoke &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages&lt;/code&gt; manually&lt;/h2&gt;</content><author><name></name></author><category term="Technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</summary></entry><entry><title type="html">Welcome to Bill’s Blog!</title><link href="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/" rel="alternate" type="text/html" title="Welcome to Bill’s Blog!" /><published>2021-04-06T10:22:50-06:00</published><updated>2021-04-06T10:22:50-06:00</updated><id>https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog</id><content type="html" xml:base="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/">&lt;p&gt;This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!&lt;/p&gt;
+  &lt;li&gt;Under the root of the repository, add a new file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LICENSE&lt;/code&gt;, and copy the appropriate text from one of the OSI-approved licenses into the file, and close it.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="Technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</summary></entry><entry><title type="html">Welcome to Bill’s Blog!</title><link href="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/" rel="alternate" type="text/html" title="Welcome to Bill’s Blog!" /><published>2021-04-06T10:22:50-06:00</published><updated>2021-04-06T10:22:50-06:00</updated><id>https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog</id><content type="html" xml:base="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/">&lt;p&gt;This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!&lt;/p&gt;
 
 &lt;p&gt;My first post, appropriately, is on &lt;a href=&quot;TBD&quot;&gt;How I setup my Blog Hosting site Part 01&lt;/a&gt;.&lt;/p&gt;
 
