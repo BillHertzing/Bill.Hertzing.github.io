@@ -42,18 +42,18 @@ ToDo: Add responsive sizes attribute and create multiple sizes of the image.
 1. Run `jekyll new PATH` (Use the FULL Path to the repository on your windows PC i.e. `C:\Dropbox\whertzing\GitHub\BillHertzing.github.io`) which will create the bare bones of the new Jekyll-compliant site source code. ToDo: add jpg
 1. (optional) I prefer to use `.md` instead of `.markdown` for the suffix of Markdown files, so I now run the two commands `mv about.markdown about.md` and `mv index.markdown index.md`
 
-At this point, I'll diverge from the many other posts about setting up Jekyll, because I want to use non-approved Jekyll Plugins as well as a non-approved Jekyll theme. To do that, I will keep the site source code under the  `main` branch of this repository, map my local `.\_site` to the `gh_pages` branch of this repository, build the site locally on my Windows PC, and push `.\_site` to the `gh_pages` branch on GitHub.
+ I may want to eventually develop a Jekyll Plugin plugin and I know I'll want to eventually publish my own Jekyll theme, so might as well start with with an approach that will support that. So at this point, I'll diverge from the many other posts about setting up Jekyll. Because I want to use the latest Ruby and MSYS2 components, non-approved Jekyll Plugins and a non-approved Jekyll theme, I will keep the site source code under the  `main` branch of this repository, map my local `.\_site` to the `gh_pages` branch of this repository, build the site locally on my Windows PC, and push `.\_site` to the `gh_pages` branch on GitHub.
 
 1. edit the `_config.yml` file, and remove a lot of the boiler plate. At this point, mine looks like this:
 
 ```yml
-# Jekyll configuration file for BillHertzing.github.io
+# Jekyll initial configuration file for BillHertzing.github.io V0.01.0
 
 title: Bill's Blog
 description: >- # this means to ignore newlines until the next key, which is "baseurl:"
   Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I've got it all!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://BillHertzing.github.io" # This is a User GitHub Pages site, not a Project site
+url: "https://BillHertzing.github.io" # This is a User GitHub Pages site, not a Project GitHub Pages  site
 twitter_username: BillHertzing
 github_username:  BillHertzing
 
@@ -69,7 +69,7 @@ Any Jekyll theme you want to use must first be downloaded to your Windows PC so 
 
 ## Verify the local site will build and serve locally on your Windows PC
 
-It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, `jekyll build` will read the site's source form the current directory, and write it to a subdirectory `_site`. and `jekyll serve` will start a local web server and serve `_site` to `http://localhost:4000`. `jekyll serve` will also build the site if any source file has been changed.
+It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, `jekyll build` will read the site's source from the current directory, and write it to a subdirectory `_site`. and `jekyll serve` will start a local web server and serve `_site` to `http://localhost:4000`. `jekyll serve` will also build the site if any source file has been changed.
 
 1. Open a Powershell terminal and navigate to your repository.
 1. Run `jekyll serve`
@@ -148,16 +148,17 @@ ToDo: Interesting, while working on this, I learned if VSC is not logged in to a
 
 This workflow and the actions it contains are the key to an easy blogging workflow. A great piece of OSS for GitHub Actions, combined with a workflow trigger that detects a release tag, make it all work.
 
-See the details of the Action here: [Deploy to GitHub Pages](https://github.com/marketplace/actions/deploy-to-github-pages) by James Ives and other contributors, also [github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action)
+See the details of the Action here: [Deploy to GitHub Pages](https://github.com/marketplace/actions/deploy-to-github-pages) by James Ives and other contributors, also [github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action).
 See the details of the trigger here: [Git Tag Based Released Process Using GitHub Actions](https://www.codingwithcalvin.net/git-tag-based-released-process-using-github-actions/) by Calvin A. Allen.
 
 1. Create the directory and subdirectory `.github\workflows` in the repository.
 1. Create the file `deploy-site-to-github-pages.yml` in the `.github\workflows` subdirectory
 
-ToDo: figure out how, at site generation time (`jekyll build`) to read the contents of the actual file and update the text below with the actual contents.
-ToDo: decide on a strategy for updating a historical post if the file changes. perhaps a revision tag for posts?
+ToDo: figure out how, at site generation time (`jekyll build`) to read the contents of the actual file and update the text below with the actual contents, and run those contesnts through a regexp replacement to escape the {{ "%{" }} and {{ "{{" }} so the publish process doesn't do any logic.
+ToDo: decide on a strategy for updating a historical post if the file changes. Perhaps a revision tag for posts?
 ToDo: Figure out how notify subscribers to the RSS feed if a existing post gets a new revision.
 ToDo: Figure out how to e-mail an administrator if a code change triggers the need to create a post revision
+ToDo: When a new site gets published, is that a good time to note any post revisions into the ChangeLog?
 
 Put the following yml code into the file, and then save it.
 
@@ -167,7 +168,7 @@ name: deploy generated site to GitHub Pages on gh-branch
 on:
   # Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag
   push:
-    tags: releases/\d+\.\d+\.\d+
+    # tags: [ releases/\d+\.\d+\.\d+ ] # yep, the first element of the tags array is a regular expression. Modify the RegExp if you use a different format for your release tags
     branches: [ main ]
   # This line allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -191,13 +192,13 @@ jobs:
         folder: ./_site # The folder the action should deploy.
 ```
 
-Commit the new file and commit the changes.
+Save the new file and commit the changes.
 
-## create an Environment for the deployment action
+## Create an Environment for the deployment action
 
-1. On GitHub, in the repository, under `Settings`, open the `Environment` tab, and click `Create Environment` ToDo: insert jpg
-1. Name the Environment `deploy-site-to-github-pages`, and click `Configure Environment` ToDo: insert jpg
-1. Click `x` on the following page to acknowledge the environment was created, and go back to the Settings->Environment page ToDo: insert jpg
+1. On GitHub, in the repository, under `Settings`, open the `Environment` tab, and click `Create Environment`. ToDo: insert jpg
+1. Name the Environment `deploy-site-to-github-pages`, and click `Configure Environment`. ToDo: insert jpg
+1. Click `x` on the following page to acknowledge the environment was created, and go back to the `Settings->Environment` page. ToDo: insert jpg
 1. Click on the name of the environment just created.
 1. At the bottom of the page, click the `Add Secret` button. ToDo: insert jpg
 1. Add a Secret with the name `ACTIONS_STEP_DEBUG` and value `true`. You can remove this Secret after the action has been debugged. There is an additional Secret `ACTIONS_RUNNER_DEBUG` which if set to `true` will provide more details in the logs. I like to set this, as well. ToDo: insert jpg
@@ -208,14 +209,14 @@ The final Environment should look like this: ToDo: insert jpg
 
 1. Edit the .gitignore file in the root of the repository, and remove the `_site` line. Save.
 1. Run `bundle exec jekyll serve` to validate the site builds and displays as expected locally on your Windows PC.
-1. Note that the Source Control icon has a number, and the Source Control Changes editor window now shows multiple new files under `_sites` to be committed
+1. Note in the VSC sidebar that the VSC Source Control menu-item icon has a number, and the Source Control Changes editor window now shows multiple new files under `_sites` to be committed.
 1. Commit all the changes. I used the message "Start tracking `_site`"  *NOTE* I made the changes to the original post, as specified above at (ToDo: insert link to previous place ) at this point in the development, so the jpg file also shows me removing the original post file and adding my own first post file in `_posts` ToDo: insert jpg
-1. Sync with the remote repository.
+1. Sync with the remote GitHub repository.
 1. Validate the `_site` and its files are now present on the GitHub repository. ToDo: insert jpg
 
 ## Review the workflow run
 
-1. Navigate to the `Actions` tab in your repository. ToDo: insert jpg
+1. Navigate to the `Actions` tab in your GitHub repository. ToDo: insert jpg
 1. Drill down into the latest workflow run. ToDo: insert jpg
 1. Drill down into the job log. ToDo: insert jpg
 1. Expand the `Deploy` step. ToDo: insert jpg
@@ -236,7 +237,7 @@ This site uses the MIT licenses. Of course, feel free to chose a different licen
 
 ## Modify the footer template
 
-It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here [GitHub Pages Jekyll Minima Customize Footer](https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.)
+It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here [GitHub Pages Jekyll Minima Customize Footer](https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.) by Cyber Log in IT.
 
 1. Add a directory `_includes` to the root of the repository.
 1. Copy the `footer.html` from the [Minima GitHub repository](https://github.com/jekyll/minima) into the `_includes` subdirectory.
@@ -253,30 +254,30 @@ The footer.html file from the minima theme looks like this:
     <div class="footer-col-wrapper">
       <div class="footer-col">
         <p class="feed-subscribe">
-          <a href="{{ 'feed.xml' | relative_url }}">
+          <a href="{{ "{{" }} 'feed.xml' | relative_url }}">
             <svg class="svg-icon orange">
-              <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+              <use xlink:href="{{ "{{" }} 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
             </svg><span>Subscribe</span>
           </a>
         </p>
-      {%- if site.author %}
+      {{ "{%" }}- if site.author %}
         <ul class="contact-list">
-          {% if site.author.name -%}
-            <li class="p-name">{{ site.author.name | escape }}</li>
-          {% endif -%}
-          {% if site.author.email -%}
-            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-          {%- endif %}
+          {{ "{%" }} if site.author.name -%}
+            <li class="p-name">{{ "{{" }} site.author.name | escape }}</li>
+          {{ "{%" }} endif -%}
+          {{ "{%" }} if site.author.email -%}
+            <li><a class="u-email" href="mailto:{{ "{{" }} site.author.email }}">{{ site.author.email }}</a></li>
+          {{ "{%" }}- endif %}
         </ul>
-      {%- endif %}
+      {{ "{%" }}- endif %}
       </div>
       <div class="footer-col">
-        <p>{{ site.description | escape }}</p>
+        <p>{{ "{{" }} site.description | escape }}</p>
       </div>
     </div>
 
     <div class="social-links">
-      {%- include social.html -%}
+      {{ "{%" }}- include social.html -%}
     </div>
 
   </div>
@@ -284,3 +285,8 @@ The footer.html file from the minima theme looks like this:
 </footer>
 ```
 
+I modified mine to look like this:
+
+```html
+
+```
