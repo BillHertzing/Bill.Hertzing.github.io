@@ -23,12 +23,12 @@ If you would like to see a list of the articles online that have helped me creat
 
 *Note* if you need to clean up a botched prior attempt (me!), and you would like to remove all gems you may have installed, run this command in a Powershell terminal window `gem uninstall -aIx`)
 
-ToDo: Investigate using [chocolatey](https://chocolatey.org/) to install both Ruby and MSYSY2, as this will greatly simply keeping the toolchain up-to-date.
+ToDo: Investigate using [chocolatey](https://chocolatey.org/) to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.
 
 1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps
 1. Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)
 1. At the Powershell prompt, Run `gem install jekyll bundle`. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot
-1. Run `jekyll -v` and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0"  style="vertical-align:bottom"> 
+1. Run `jekyll -v` and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0"  style="vertical-align:bottom">
 ToDo: Add responsive sizes attribute and create multiple sizes of the image.
 
 ## Create a new git repository
@@ -152,7 +152,7 @@ See the details of the trigger here: [Git Tag Based Released Process Using GitHu
 1. Create the directory and subdirectory `.github\workflows` in the repository.
 1. Create the file `deploy-site-to-github-pages.yml` in the `.github\workflows` subdirectory
 
-ToDo: figure out how, at site generation time (`jekyll build`) to read the contents of the actual file and update the text below with the actual contents, and run those contesnts through a regexp replacement to escape the {{ "%{" }} and {{ "{{" }} so the publish process doesn't do any logic.
+ToDo: figure out how, at site generation time (`jekyll build`) to read the contents of the actual file and update the text below with the actual contents, and run those contents through a regexp replacement to escape the {{ "%{" }} and {{ "{{" }} so the publish process doesn't do any logic.
 ToDo: decide on a strategy for updating a historical post if the file changes. Perhaps a revision tag for posts?
 ToDo: Figure out how notify subscribers to the RSS feed if a existing post gets a new revision.
 ToDo: Figure out how to e-mail an administrator if a code change triggers the need to create a post revision
