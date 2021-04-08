@@ -20,6 +20,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    # Both of these fine OSS actions will do the job. 
+    # I keep both in here, but one commented out, in case I find in the future that only one or the other has a feature I might need
+
     # - name: Deploy 🚀
     #   uses: JamesIves/github-pages-deploy-action@4.1.1
     #   with:

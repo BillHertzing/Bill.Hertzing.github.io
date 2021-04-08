@@ -91,7 +91,7 @@ ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li
   <li>(optional) I prefer to use <code class="language-plaintext highlighter-rouge">.md</code> instead of <code class="language-plaintext highlighter-rouge">.markdown</code> for the suffix of Markdown files, so I now run the two commands <code class="language-plaintext highlighter-rouge">mv about.markdown about.md</code> and <code class="language-plaintext highlighter-rouge">mv index.markdown index.md</code></li>
 </ol>
 
-<p>I may want to eventually develop a Jekyll Plugin plugin and I know I’ll want to eventually publish my own Jekyll theme, so might as well start with with an approach that will support that. So at this point, I’ll diverge from the many other posts about setting up Jekyll. Because I want to use the latest Ruby and MSYS2 components, non-approved Jekyll Plugins and a non-approved Jekyll theme, I will keep the site source code under the  <code class="language-plaintext highlighter-rouge">main</code> branch of this repository, map my local <code class="language-plaintext highlighter-rouge">.\_site</code> to the <code class="language-plaintext highlighter-rouge">gh_pages</code> branch of this repository, build the site locally on my Windows PC, and push <code class="language-plaintext highlighter-rouge">.\_site</code> to the <code class="language-plaintext highlighter-rouge">gh_pages</code> branch on GitHub.</p>
+<p>So at this point, I’ll diverge from the many other posts about setting up Jekyll for GitHub Pages. I may want to eventually develop a Jekyll Plugin and I know I’ll want to eventually publish my own Jekyll theme, so might as well start with an approach that will support that. Because I want to use the latest Ruby and MSYS2 components, non-approved Jekyll Plugins and a non-approved Jekyll theme, I will keep the site source code under the  <code class="language-plaintext highlighter-rouge">main</code> branch of my repository, build/debug the site locally on my Windows PC, commit <code class="language-plaintext highlighter-rouge">_site</code> along with the source when I do commits, and use the GitHub Action to deploy <code class="language-plaintext highlighter-rouge">.\_site</code> to the <code class="language-plaintext highlighter-rouge">gh_pages</code> branch on GitHub only when a release happens.</p>
 
 <ol>
   <li>edit the <code class="language-plaintext highlighter-rouge">_config.yml</code> file, and remove a lot of the boiler plate. At this point, mine looks like this:</li>
@@ -115,11 +115,11 @@ ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li
 
 <h2 id="download-the-minima-theme">Download the minima theme</h2>
 
-<p>Any Jekyll theme you want to use must first be downloaded to your Windows PC so run <code class="language-plaintext highlighter-rouge">gem install jekyll-theme-minima</code>.. Today (2021-04-06) it loaded jekyll-theme-minima-0.1.1.gem and 18 other gems (dependencies) as well.</p>
+<p>Any Jekyll theme you want to use must first be downloaded to your Windows PC so run <code class="language-plaintext highlighter-rouge">gem install jekyll-theme-minima</code>. Today (2021-04-06) it loaded jekyll-theme-minima-0.1.1.gem and 18 other gems (dependencies) as well.</p>
 
 <h2 id="verify-the-local-site-will-build-and-serve-locally-on-your-windows-pc">Verify the local site will build and serve locally on your Windows PC</h2>
 
-<p>It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, <code class="language-plaintext highlighter-rouge">jekyll build</code> will read the site’s source from the current directory, and write it to a subdirectory <code class="language-plaintext highlighter-rouge">_site</code>. and <code class="language-plaintext highlighter-rouge">jekyll serve</code> will start a local web server and serve <code class="language-plaintext highlighter-rouge">_site</code> to <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>. <code class="language-plaintext highlighter-rouge">jekyll serve</code> will also build the site if any source file has been changed.</p>
+<p>It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, <code class="language-plaintext highlighter-rouge">jekyll build</code> will read the site’s source from the current directory, then process it and publish it to a subdirectory <code class="language-plaintext highlighter-rouge">_site</code>. The command <code class="language-plaintext highlighter-rouge">jekyll serve</code> will start a local web server and serve <code class="language-plaintext highlighter-rouge">_site</code> to <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>. <code class="language-plaintext highlighter-rouge">jekyll serve</code> will also build the site if any source file has been changed.</p>
 
 <ol>
   <li>Open a Powershell terminal and navigate to your repository.</li>
@@ -128,10 +128,8 @@ ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li
 
 <h3 id="fixing-issues">Fixing issues</h3>
 
-<p>Did you really think that everything would ‘just work’?  Hahaha! When I try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run <code class="language-plaintext highlighter-rouge">gem install tzinfo-data</code>. Then when I tried <code class="language-plaintext highlighter-rouge">jekyll serve</code>, I got an error message ““Could not find gem wdm”. So I ran <code class="language-plaintext highlighter-rouge">gem install wdm</code>. And then again for <code class="language-plaintext highlighter-rouge">webrick</code>, which required <code class="language-plaintext highlighter-rouge">bundle add webrick</code>. Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until <code class="language-plaintext highlighter-rouge">jekyll serve</code> completes and starts serving up pages.
+<p>Did you really think that everything would ‘just work’?  Hahaha! When I first try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run <code class="language-plaintext highlighter-rouge">gem install tzinfo-data</code>. Then when I tried <code class="language-plaintext highlighter-rouge">jekyll serve</code>, I got an error message ““Could not find gem wdm”. So I ran <code class="language-plaintext highlighter-rouge">gem install wdm</code>. And then again for <code class="language-plaintext highlighter-rouge">webrick</code>, which required <code class="language-plaintext highlighter-rouge">bundle add webrick</code>. Then I learned to change the command to <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>.  Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> completes and starts serving up pages.
 I also ran into problems with the Bundler version, getting the error <code class="language-plaintext highlighter-rouge">cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)</code>. After updating the Bundler with <code class="language-plaintext highlighter-rouge">gem install bundler</code> I needed to edit the <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> and change the <code class="language-plaintext highlighter-rouge">bundled with</code> line at the bottom to match the version just installed/updated.</p>
-
-<p>I also changed the command I was using to build and serve to <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></p>
 
 <p>Finally, when you’ve wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the minima theme it should look like this:
 ToDo: Insert .jpg</p>
@@ -190,8 +188,8 @@ ToDo: Insert .jpg</p>
 
 <ol>
   <li>Open the <code class="language-plaintext highlighter-rouge">about.md</code> file for editing, select everything after the front matter (line 7 and onward as of today), and delete it. then add the word ‘test’ on line 7.</li>
-  <li>Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the <code class="language-plaintext highlighter-rouge">about.md</code> file indicates M for Modified. ToDo: insert jpg</li>
-  <li>Click the VSC Source Control button inside the left toolbar.</li>
+  <li>Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the <code class="language-plaintext highlighter-rouge">about.md</code> file indicates <code class="language-plaintext highlighter-rouge">M</code> for Modified. ToDo: insert jpg</li>
+  <li>Click the VSC Source Control button inside the left sidebar.</li>
   <li>In the message box, enter <code class="language-plaintext highlighter-rouge">remove unneeded parts of about.md</code>, then click the <code class="language-plaintext highlighter-rouge">check</code> above the message box (alt text is <code class="language-plaintext highlighter-rouge">Commit</code>)</li>
   <li>Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg</li>
   <li>Click on that area of the status bar, and the change should be pushed to GitHub</li>
@@ -251,12 +249,22 @@ ToDo: When a new site gets published, is that a good time to note any post revis
       <span class="c1"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
     <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
       <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+
+    <span class="c1"># Both of these fine OSS actions will do the deployment job. </span>
+    <span class="c1"># I keep both in here, but one commented out, in case I find in the future that only one or the other has a feature I might need</span>
+
+    <span class="c1"># - name: Deploy 🚀</span>
+    <span class="c1">#   uses: JamesIves/github-pages-deploy-action@4.1.1</span>
+    <span class="c1">#   with:</span>
+    <span class="c1">#     branch: gh-pages # The branch the action should deploy to.</span>
+    <span class="c1">#     folder: ./_site # The folder the action should deploy.</span>
       
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy 🚀</span>
-      <span class="na">uses</span><span class="pi">:</span> <span class="s">JamesIves/github-pages-deploy-action@4.1.1</span>
+    <span class="c1"># Deploys a source to a destination.</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
       <span class="na">with</span><span class="pi">:</span>
-        <span class="na">branch</span><span class="pi">:</span> <span class="s">gh-pages</span> <span class="c1"># The branch the action should deploy to.</span>
-        <span class="na">folder</span><span class="pi">:</span> <span class="s">./_site</span> <span class="c1"># The folder the action should deploy.</span>
+        <span class="na">github_token</span><span class="pi">:</span> <span class="s">$</span>
+        <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">./_site</span> <span class="c1"># the action will deploy the &lt;repository root&gt;/_site contents to the (default) gh-pages branch, root directory</span>
 </code></pre></div></div>
 
 <p>Save the new file and commit the changes.</p>
@@ -296,7 +304,7 @@ ToDo: When a new site gets published, is that a good time to note any post revis
 
 <h2 id="troubleshooting-the-workflow-run">Troubleshooting the workflow run</h2>
 
-<p>ToDo: see if there are any problem with the deploy action, another GitHub action did have problems here</p>
+<p>I had problems with the first of the two deployment actions I tried. I left an issue for the author, then searched a bit more and came up with the second deployment action, which worked for me. I kept moving forward. The next day I got a timely response from the author, and re-tried their deployment Action. It worked, so the problem must have been a user error on my part. So I decided to leave both actions in the file, in case either becomes abandoned or out-of-date. Kudos and thanks to the authors of both of these OSS GitHub Actions!</p>
 
 <h2 id="invoke-deploy-site-to-github-pages-manually">Invoke <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages</code> manually</h2>
 

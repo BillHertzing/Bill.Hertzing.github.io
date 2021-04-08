@@ -42,7 +42,7 @@ ToDo: Add responsive sizes attribute and create multiple sizes of the image.
 1. Run `jekyll new PATH` (Use the FULL Path to the repository on your windows PC i.e. `C:\Dropbox\whertzing\GitHub\BillHertzing.github.io`) which will create the bare bones of the new Jekyll-compliant site source code. ToDo: add jpg
 1. (optional) I prefer to use `.md` instead of `.markdown` for the suffix of Markdown files, so I now run the two commands `mv about.markdown about.md` and `mv index.markdown index.md`
 
- I may want to eventually develop a Jekyll Plugin plugin and I know I'll want to eventually publish my own Jekyll theme, so might as well start with with an approach that will support that. So at this point, I'll diverge from the many other posts about setting up Jekyll. Because I want to use the latest Ruby and MSYS2 components, non-approved Jekyll Plugins and a non-approved Jekyll theme, I will keep the site source code under the  `main` branch of this repository, map my local `.\_site` to the `gh_pages` branch of this repository, build the site locally on my Windows PC, and push `.\_site` to the `gh_pages` branch on GitHub.
+So at this point, I'll diverge from the many other posts about setting up Jekyll for GitHub Pages. I may want to eventually develop a Jekyll Plugin and I know I'll want to eventually publish my own Jekyll theme, so might as well start with an approach that will support that. Because I want to use the latest Ruby and MSYS2 components, non-approved Jekyll Plugins and a non-approved Jekyll theme, I will keep the site source code under the  `main` branch of my repository, build/debug the site locally on my Windows PC, commit `_site` along with the source when I do commits, and use the GitHub Action to deploy `.\_site` to the `gh_pages` branch on GitHub only when a release happens.
 
 1. edit the `_config.yml` file, and remove a lot of the boiler plate. At this point, mine looks like this:
 
@@ -65,21 +65,19 @@ theme: minima
 
 ## Download the minima theme
 
-Any Jekyll theme you want to use must first be downloaded to your Windows PC so run `gem install jekyll-theme-minima`.. Today (2021-04-06) it loaded jekyll-theme-minima-0.1.1.gem and 18 other gems (dependencies) as well.
+Any Jekyll theme you want to use must first be downloaded to your Windows PC so run `gem install jekyll-theme-minima`. Today (2021-04-06) it loaded jekyll-theme-minima-0.1.1.gem and 18 other gems (dependencies) as well.
 
 ## Verify the local site will build and serve locally on your Windows PC
 
-It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, `jekyll build` will read the site's source from the current directory, and write it to a subdirectory `_site`. and `jekyll serve` will start a local web server and serve `_site` to `http://localhost:4000`. `jekyll serve` will also build the site if any source file has been changed.
+It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, `jekyll build` will read the site's source from the current directory, then process it and publish it to a subdirectory `_site`. The command `jekyll serve` will start a local web server and serve `_site` to `http://localhost:4000`. `jekyll serve` will also build the site if any source file has been changed.
 
 1. Open a Powershell terminal and navigate to your repository.
 1. Run `jekyll serve`
 
 ### Fixing issues
 
-Did you really think that everything would 'just work'?  Hahaha! When I try this today, I get an error message "Could not find gem tzinfo-data". Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run `gem install tzinfo-data`. Then when I tried `jekyll serve`, I got an error message ""Could not find gem wdm". So I ran `gem install wdm`. And then again for `webrick`, which required `bundle add webrick`. Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until `jekyll serve` completes and starts serving up pages.
+Did you really think that everything would 'just work'?  Hahaha! When I first try this today, I get an error message "Could not find gem tzinfo-data". Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run `gem install tzinfo-data`. Then when I tried `jekyll serve`, I got an error message ""Could not find gem wdm". So I ran `gem install wdm`. And then again for `webrick`, which required `bundle add webrick`. Then I learned to change the command to `bundle exec jekyll serve`.  Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until `bundle exec jekyll serve` completes and starts serving up pages.
 I also ran into problems with the Bundler version, getting the error `cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)`. After updating the Bundler with `gem install bundler` I needed to edit the `Gemfile.lock` and change the `bundled with` line at the bottom to match the version just installed/updated.
-
-I also changed the command I was using to build and serve to `bundle exec jekyll serve`
 
 Finally, when you've wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the minima theme it should look like this:
 ToDo: Insert .jpg
@@ -127,8 +125,8 @@ Detailed instructions here [Create a new repository on GitHub](https://docs.gith
 ## Confirm that VSC can push changes to GitHub
 
 1. Open the `about.md` file for editing, select everything after the front matter (line 7 and onward as of today), and delete it. then add the word 'test' on line 7.
-1. Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the `about.md` file indicates M for Modified. ToDo: insert jpg
-1. Click the VSC Source Control button inside the left toolbar.
+1. Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the `about.md` file indicates `M` for Modified. ToDo: insert jpg
+1. Click the VSC Source Control button inside the left sidebar.
 1. In the message box, enter `remove unneeded parts of about.md`, then click the `check` above the message box (alt text is `Commit`)
 1. Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg
 1. Click on that area of the status bar, and the change should be pushed to GitHub
@@ -184,12 +182,22 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout code
       uses: actions/checkout@v2
+
+    # Both of these fine OSS actions will do the deployment job. 
+    # I keep both in here, but one commented out, in case I find in the future that only one or the other has a feature I might need
+
+    # - name: Deploy 🚀
+    #   uses: JamesIves/github-pages-deploy-action@4.1.1
+    #   with:
+    #     branch: gh-pages # The branch the action should deploy to.
+    #     folder: ./_site # The folder the action should deploy.
       
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.1
+    # Deploys a source to a destination.
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: ./_site # The folder the action should deploy.
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site # the action will deploy the <repository root>/_site contents to the (default) gh-pages branch, root directory
 ```
 
 Save the new file and commit the changes.
@@ -223,7 +231,7 @@ The final Environment should look like this: ToDo: insert jpg
 
 ## Troubleshooting the workflow run
 
-ToDo: see if there are any problem with the deploy action, another GitHub action did have problems here
+I had problems with the first of the two deployment actions I tried. I left an issue for the author, then searched a bit more and came up with the second deployment action, which worked for me. I kept moving forward. The next day I got a timely response from the author, and re-tried their deployment Action. It worked, so the problem must have been a user error on my part. So I decided to leave both actions in the file, in case either becomes abandoned or out-of-date. Kudos and thanks to the authors of both of these OSS GitHub Actions!
 
 ## Invoke `deploy-site-to-github-pages` manually
 
