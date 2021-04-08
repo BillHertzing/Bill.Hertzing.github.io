@@ -14,6 +14,6 @@ This blog site will be organized into three sections
 1. Blogs about political issues that I care about (Hey, a person's gotta vent occasionally!)
 1. The goings-on of me, my family, and friends.
 
-Be aware that, as planned for Version 0.02.0 of this site, the comments on these posts will be handled by [Disqus](https://utteranc.es/)) and comments are stored in this repository's Issues, which means they are in GitHub which is owned by Microsoft.
+Be aware that, as planned for Version 0.02.0 of this site, the comments on these posts will be handled by [Disqus](https://disqus.com/)) and comments are stored in their servers.
 
 Please bear with me as I learn the intricacies of Jekyll, static sites, and GitHub Pages!
