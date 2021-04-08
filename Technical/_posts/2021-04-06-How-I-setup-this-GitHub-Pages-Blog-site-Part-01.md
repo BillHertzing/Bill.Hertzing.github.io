@@ -35,7 +35,7 @@ ToDo: Add responsive sizes attribute and create multiple sizes of the image.
 
 1. Open a Powershell terminal, navigate to the location (directory) you want to be the parent of your repository. My parent directory is `C:\Dropbox\whertzing\GitHub\`.
 1. Create a subdirectory `*GitHubUserName*.github.io`, and `cd` into it.
-1. Run `git init`. <<img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="git init results"  style="vertical-align:bottom">
+1. Run `git init`. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="git init results"  style="vertical-align:bottom">.
 
 ## Create minimal Jekyll-compliant site source code
 
