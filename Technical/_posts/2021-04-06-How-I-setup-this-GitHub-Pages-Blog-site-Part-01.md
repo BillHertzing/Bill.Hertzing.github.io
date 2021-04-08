@@ -8,7 +8,7 @@ layout: post
 
 I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I'd like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I'm giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I've taken to implement the features I'd like to have.
 
-If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below.
+If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)
 
 ## Prerequisites
 
@@ -21,12 +21,13 @@ If you would like to see a list of the articles online that have helped me creat
 
 ## Install Ruby and Jekyll on your Windows PC
 
-(if you are cleaning up a botched prior attempt (me!), run this command in a Powershell terminal window `gem uninstall -aIx`)
+*Note* if you need to clean up a botched prior attempt (me!), and you would like to remove all gems you may have installed, run this command in a Powershell terminal window `gem uninstall -aIx`)
 
-1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installatyion wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps
-1. ToDo: Investigate using chocolaty to install both Ruby and MSYS2, which will make updating much easier
+ToDo: Investigate using [chocolatey](https://chocolatey.org/) to install both Ruby and MSYSY2, as this will greatly simply keeping the toolchain up-to-date.
+
+1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps
 1. Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)
-1. At the Powershell prompt, Run `gem install jekyll bundle` This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems ToDo: embed screenshot
+1. At the Powershell prompt, Run `gem install jekyll bundle`. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot
 1. Run `jekyll -v` and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0"  style="vertical-align:bottom"> 
 ToDo: Add responsive sizes attribute and create multiple sizes of the image.
 
@@ -221,7 +222,7 @@ The final Environment should look like this: ToDo: insert jpg
 
 ## Troubleshooting the workflow run
 
-ToDo: see if there are any problem with teh deploy action, another GitHub action did have problems here
+ToDo: see if there are any problem with the deploy action, another GitHub action did have problems here
 
 ## Invoke `deploy-site-to-github-pages` manually
 
@@ -233,4 +234,53 @@ This site uses the MIT licenses. Of course, feel free to chose a different licen
 
 1. Under the root of the repository, add a new file `LICENSE`, and copy the appropriate text from one of the OSI-approved licenses into the file, and close it.
 
+## Modify the footer template
+
+It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here [GitHub Pages Jekyll Minima Customize Footer](https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.)
+
+1. Add a directory `_includes` to the root of the repository.
+1. Copy the `footer.html` from the [Minima GitHub repository](https://github.com/jekyll/minima) into the `_includes` subdirectory.
+1. Customize `footer.html` to your own needs.
+
+The footer.html file from the minima theme looks like this:
+
+```html
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="{{ 'feed.xml' | relative_url }}">
+            <svg class="svg-icon orange">
+              <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      {%- if site.author %}
+        <ul class="contact-list">
+          {% if site.author.name -%}
+            <li class="p-name">{{ site.author.name | escape }}</li>
+          {% endif -%}
+          {% if site.author.email -%}
+            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+          {%- endif %}
+        </ul>
+      {%- endif %}
+      </div>
+      <div class="footer-col">
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      {%- include social.html -%}
+    </div>
+
+  </div>
+
+</footer>
+```
 

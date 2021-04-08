@@ -49,7 +49,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</p>
 
-<p>If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below.</p>
+<p>If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -64,13 +64,14 @@
 
 <h2 id="install-ruby-and-jekyll-on-your-windows-pc">Install Ruby and Jekyll on your Windows PC</h2>
 
-<p>(if you are cleaning up a botched prior attempt (me!), run this command in a Powershell terminal window <code class="language-plaintext highlighter-rouge">gem uninstall -aIx</code>)</p>
+<p><em>Note</em> if you need to clean up a botched prior attempt (me!), and you would like to remove all gems you may have installed, run this command in a Powershell terminal window <code class="language-plaintext highlighter-rouge">gem uninstall -aIx</code>)</p>
+
+<p>ToDo: Investigate using <a href="https://chocolatey.org/">chocolatey</a> to install both Ruby and MSYSY2, as this will greatly simply keeping the toolchain up-to-date.</p>
 
 <ol>
-  <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installatyion wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps</li>
-  <li>ToDo: Investigate using chocolaty to install both Ruby and MSYS2, which will make updating much easier</li>
+  <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps</li>
   <li>Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)</li>
-  <li>At the Powershell prompt, Run <code class="language-plaintext highlighter-rouge">gem install jekyll bundle</code> This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems ToDo: embed screenshot</li>
+  <li>At the Powershell prompt, Run <code class="language-plaintext highlighter-rouge">gem install jekyll bundle</code>. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot</li>
   <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0" style="vertical-align:bottom" /> 
 ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li>
 </ol>
@@ -294,7 +295,7 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
 
 <h2 id="troubleshooting-the-workflow-run">Troubleshooting the workflow run</h2>
 
-<p>ToDo: see if there are any problem with teh deploy action, another GitHub action did have problems here</p>
+<p>ToDo: see if there are any problem with the deploy action, another GitHub action did have problems here</p>
 
 <h2 id="invoke-deploy-site-to-github-pages-manually">Invoke <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages</code> manually</h2>
 
@@ -308,6 +309,46 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
   <li>Under the root of the repository, add a new file <code class="language-plaintext highlighter-rouge">LICENSE</code>, and copy the appropriate text from one of the OSI-approved licenses into the file, and close it.</li>
 </ol>
 
+<h2 id="modify-the-footer-template">Modify the footer template</h2>
+
+<p>It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here <a href="https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.">GitHub Pages Jekyll Minima Customize Footer</a></p>
+
+<ol>
+  <li>Add a directory <code class="language-plaintext highlighter-rouge">_includes</code> to the root of the repository.</li>
+  <li>Copy the <code class="language-plaintext highlighter-rouge">footer.html</code> from the <a href="https://github.com/jekyll/minima">Minima GitHub repository</a> into the <code class="language-plaintext highlighter-rouge">_includes</code> subdirectory.</li>
+  <li>Customize <code class="language-plaintext highlighter-rouge">footer.html</code> to your own needs.</li>
+</ol>
+
+<p>The footer.html file from the minima theme looks like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"site-footer h-card"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;data</span> <span class="na">class=</span><span class="s">"u-url"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;&lt;/data&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col-wrapper"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"feed-subscribe"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/feed.xml"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"svg-icon orange"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/assets/minima-social-icons.svg#rss"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;&lt;span&gt;</span>Subscribe<span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I<span class="ni">&amp;#39;</span>ve got it all!<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"social-links"</span><span class="nt">&gt;&lt;ul</span> <span class="na">class=</span><span class="s">"social-media-list"</span><span class="nt">&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/BillHertzing"</span><span class="nt">&gt;&lt;svg</span> <span class="na">class=</span><span class="s">"svg-icon"</span><span class="nt">&gt;&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/assets/minima-social-icons.svg#github"</span><span class="nt">&gt;&lt;/use&gt;&lt;/svg&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"username"</span><span class="nt">&gt;</span>BillHertzing<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://www.twitter.com/whertzing56"</span><span class="nt">&gt;&lt;svg</span> <span class="na">class=</span><span class="s">"svg-icon"</span><span class="nt">&gt;&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/assets/minima-social-icons.svg#twitter"</span><span class="nt">&gt;&lt;/use&gt;&lt;/svg&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"username"</span><span class="nt">&gt;</span>whertzing56<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/footer&gt;</span>
+</code></pre></div></div>
+
 
   </div><a class="u-url" href="/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" hidden></a>
 </article>
@@ -318,25 +359,26 @@ ToDo: Figure out how to e-mail an administrator if a code change triggers the ne
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">Bill&#39;s Blog</h2>
-
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">Bill&#39;s Blog</li></ul>
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
       </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/BillHertzing"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">BillHertzing</span></a></li><li><a href="https://www.twitter.com/whertzing56"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">whertzing56</span></a></li></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
+      <div class="footer-col">
         <p>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&#39;ve got it all!</p>
       </div>
     </div>
 
+    <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/BillHertzing"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">BillHertzing</span></a></li><li><a href="https://www.twitter.com/whertzing56"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">whertzing56</span></a></li></ul>
+</div>
+
   </div>
 
-</footer>
-</body>
+</footer></body>
 
 </html>
