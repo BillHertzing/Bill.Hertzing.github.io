@@ -66,13 +66,13 @@
 
 <p><em>Note</em> if you need to clean up a botched prior attempt (me!), and you would like to remove all gems you may have installed, run this command in a Powershell terminal window <code class="language-plaintext highlighter-rouge">gem uninstall -aIx</code>)</p>
 
-<p>ToDo: Investigate using <a href="https://chocolatey.org/">chocolatey</a> to install both Ruby and MSYSY2, as this will greatly simply keeping the toolchain up-to-date.</p>
+<p>ToDo: Investigate using <a href="https://chocolatey.org/">chocolatey</a> to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.</p>
 
 <ol>
   <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps</li>
   <li>Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)</li>
   <li>At the Powershell prompt, Run <code class="language-plaintext highlighter-rouge">gem install jekyll bundle</code>. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot</li>
-  <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0" style="vertical-align:bottom" /> 
+  <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0" style="vertical-align:bottom" />
 ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li>
 </ol>
 
@@ -81,7 +81,7 @@ ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li
 <ol>
   <li>Open a Powershell terminal, navigate to the location (directory) you want to be the parent of your repository. My parent directory is <code class="language-plaintext highlighter-rouge">C:\Dropbox\whertzing\GitHub\</code>.</li>
   <li>Create a subdirectory <code class="language-plaintext highlighter-rouge">*GitHubUserName*.github.io</code>, and <code class="language-plaintext highlighter-rouge">cd</code> into it.</li>
-  <li>Run <code class="language-plaintext highlighter-rouge">git init</code>. «img src=”https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1” alt=”git init results”  style=”vertical-align:bottom”&gt;</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git init</code>. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="git init results" style="vertical-align:bottom" />.</li>
 </ol>
 
 <h2 id="create-minimal-jekyll-compliant-site-source-code">Create minimal Jekyll-compliant site source code</h2>
@@ -198,6 +198,19 @@ ToDo: Insert .jpg</p>
 
 <p>ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up…  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to “open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association “vscode://vscode.github-authentication/did-authenticate?windowid=1&amp;code=a_very_long_alphanumeric_string”</p>
 
+<h2 id="add-a-categorized-post">Add a categorized post</h2>
+
+<p>This site is focused on blogging, and it uses Jekyll Categories to organize them. The post you are reading now is the first post in the Category <code class="language-plaintext highlighter-rouge">technical</code>. Lets make sure our initial version of the site properly supports Categorized posts.  Categorized posts should be put into various subdirectories following the convention <code class="language-plaintext highlighter-rouge">*categoryname*/_posts</code></p>
+
+<p>It is important to use all lower-case in the subdirectory name. I know I will be putting links in one post that refer to another posts. To create a link to another post, I’ll need to have a URL that resolves correctly. Jekyll accomplishes this with <code class="language-plaintext highlighter-rouge">post_url</code>. <code class="language-plaintext highlighter-rouge">post_url</code> takes a path to the post’s source <code class="language-plaintext highlighter-rouge">.md</code> file, and returns the “slug”. If a post’s source lives in e.g. <code class="language-plaintext highlighter-rouge">/technical/2021-04-06-How-I-setup-this-GitHub-Pages-Blog-site-Part-01.md</code>, then <code class="language-plaintext highlighter-rouge">post_url</code> returns <code class="language-plaintext highlighter-rouge">/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/</code>. <em>Note</em> there is a trailing slash in this path! <code class="language-plaintext highlighter-rouge">post_url</code> returns the elements of the path in all lowercase letters. To make the source of <code class="language-plaintext highlighter-rouge">post_url</code> match the destination “slug” when using Categories, the Category source subdirectory should be all lowercase.</p>
+
+<ol>
+  <li>At the root of the repository, create a new subdirectory <code class="language-plaintext highlighter-rouge">technical</code> (or whatever you want your first Category to be).</li>
+  <li>Create the subdirectory <code class="language-plaintext highlighter-rouge">_posts</code> under the new subdirectory you just created.</li>
+  <li>Create an initial post file here. Give it a name following the <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-*titlestring*.md</code> convention.</li>
+  <li>Open the file for editing,</li>
+</ol>
+
 <h2 id="enable-github-pages-on-the-github-repository">Enable GitHub pages on the GitHub repository</h2>
 
 <ol>
@@ -220,7 +233,7 @@ See the details of the trigger here: <a href="https://www.codingwithcalvin.net/g
   <li>Create the file <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages.yml</code> in the <code class="language-plaintext highlighter-rouge">.github\workflows</code> subdirectory</li>
 </ol>
 
-<p>ToDo: figure out how, at site generation time (<code class="language-plaintext highlighter-rouge">jekyll build</code>) to read the contents of the actual file and update the text below with the actual contents, and run those contesnts through a regexp replacement to escape the %{ and {{ so the publish process doesn’t do any logic.
+<p>ToDo: figure out how, at site generation time (<code class="language-plaintext highlighter-rouge">jekyll build</code>) to read the contents of the actual file and update the text below with the actual contents, and run those contents through a regexp replacement to escape the %{ and {{ so the publish process doesn’t do any logic.
 ToDo: decide on a strategy for updating a historical post if the file changes. Perhaps a revision tag for posts?
 ToDo: Figure out how notify subscribers to the RSS feed if a existing post gets a new revision.
 ToDo: Figure out how to e-mail an administrator if a code change triggers the need to create a post revision
