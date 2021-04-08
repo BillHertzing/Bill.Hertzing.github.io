@@ -2,7 +2,6 @@
 Title: How I setup this GitHub Pages Blog
 date:   2021-04-06 12:31:43 -0600
 tags: Jekyll "GitHubPages"
-category: Technical
 layout: post
 ---
 
@@ -133,6 +132,17 @@ Detailed instructions here [Create a new repository on GitHub](https://docs.gith
 1. On GitHub, open the about.md file, and confirm that the change has been pushed to the GitHub remote repository.
 
 ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up...  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to "open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association "vscode://vscode.github-authentication/did-authenticate?windowid=1&code=a_very_long_alphanumeric_string"
+
+## Add a categorized post
+
+This site is focused on blogging, and it uses Jekyll Categories to organize them. The post you are reading now is the first post in the Category `technical`. Lets make sure our initial version of the site properly supports Categorized posts.  Categorized posts should be put into various subdirectories following the convention `*categoryname*/_posts`
+
+It is important to use all lower-case in the subdirectory name. I know I will be putting links in one post that refer to another posts. To create a link to another post, I'll need to have a URL that resolves correctly. Jekyll accomplishes this with `post_url`. `post_url` takes a path to the post's source `.md` file, and returns the "slug". If a post's source lives in e.g. `/technical/2021-04-06-How-I-setup-this-GitHub-Pages-Blog-site-Part-01.md`, then `post_url` returns `/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/`. *Note* there is a trailing slash in this path! `post_url` returns the elements of the path in all lowercase letters. To make the source of `post_url` match the destination "slug" when using Categories, the Category source subdirectory should be all lowercase.
+
+1. At the root of the repository, create a new subdirectory `technical` (or whatever you want your first Category to be).
+1. Create the subdirectory `_posts` under the new subdirectory you just created.
+1. Create an initial post file here. Give it a name following the `YYYY-MM-DD-*titlestring*.md` convention.
+1. Open the file for editing, 
 
 ## Enable GitHub pages on the GitHub repository
 

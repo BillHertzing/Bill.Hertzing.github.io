@@ -4,6 +4,7 @@
         "MSYS",
         "libexec",
         "peaceiris",
+        "titlestring",
         "toolchain",
         "webrick",
         "whertzing",
