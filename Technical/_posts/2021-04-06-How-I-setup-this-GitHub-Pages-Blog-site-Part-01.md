@@ -196,7 +196,7 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: {{ "${" }}{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site # the action will deploy the <repository root>/_site contents to the (default) gh-pages branch, root directory
 ```
 
@@ -241,7 +241,7 @@ ToDo:
 
 This site uses the MIT licenses. Of course, feel free to chose a different license if such is more appropriate for your site. You can find the text of many popular licenses at the Open Source Initiative page [Licenses & Standards](https://opensource.org/licenses)
 
-1. Under the root of the repository, add a new file `LICENSE`, and copy the appropriate text from one of the OSI-approved licenses into the file, and close it.
+1. Under the root of the repository, add a new file `LICENSE`, and copy the appropriate text from one of the OSI-approved licenses into the file, save and close it.
 
 ## Modify the footer template
 
@@ -255,7 +255,7 @@ The footer.html file from the minima theme looks like this:
 
 ```html
 <footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+  <data class="u-url" href="{{ "{{" }} "/" | relative_url }}"></data>
 
   <div class="wrapper">
 
@@ -293,8 +293,39 @@ The footer.html file from the minima theme looks like this:
 </footer>
 ```
 
-I modified mine to look like this:
+I modified mine to remove the author email block and add the copyright and License link. For now, I'll use my own name for the copyright, maybe in the future the work will be taken on by a foundation (I wish!).
 
 ```html
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "{{" }} "/" | relative_url }}"></data>
 
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="{{ "{{" }} 'feed.xml' | relative_url }}">
+            <svg class="svg-icon orange">
+              <use xlink:href="{{ "{{" }} 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>{{ "{{" }} site.description | escape }}</p>
+      </div>
+      <div class="footer-col">
+        <p>&copy; William Hertzing 2020 - 2021 The contents of this website are under the terms of the MIT <a href={{ "/LICENSE" | relative_url }}>License.</p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      {{ "{%" }}- include social.html -%}
+    </div>
+
+  </div>
+
+</footer>
 ```
+
+OK, so visually its not a very appealing footer. But then, neither is the Minima theme overall. In fact, I plan to replace the minima theme with another around version 0.03.0 of this site. It's in the Milestones (ToDo: Insert emoji for laughing uproariously).
