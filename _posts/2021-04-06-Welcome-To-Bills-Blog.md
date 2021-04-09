@@ -6,7 +6,7 @@ date:   2021-04-06 10:22:50 -0600
 
 This is my new Blog site, hosted by GitHub Pages.  I've never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!
 
-My first post, appropriately, is on [How I setup this GitHubPages Blog site Part 01]({{ site.url }}) ({% post_url /technical/_posts/2021-04-06-How-I-setup-this-GitHub-Pages-Blog-site-Part-01 %}).
+My first post, appropriately, is on [How I setup this GitHubPages Blog site Part 01]({% post_url /technical/_posts/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01 %}).
 
 This blog site will be organized into three sections:
 

@@ -7,17 +7,17 @@
 <meta name="generator" content="Jekyll v4.2.0" />
 <meta property="og:title" content="How I Setup This Github Pages Blog Site Part 01" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have." />
-<meta property="og:description" content="I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have." />
-<link rel="canonical" href="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" />
-<meta property="og:url" content="https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" />
+<meta name="description" content="First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version." />
+<meta property="og:description" content="First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version." />
+<link rel="canonical" href="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" />
+<meta property="og:url" content="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" />
 <meta property="og:site_name" content="Bill’s Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-04-06T12:31:43-06:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How I Setup This Github Pages Blog Site Part 01" />
 <script type="application/ld+json">
-{"datePublished":"2021-04-06T12:31:43-06:00","url":"https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/","dateModified":"2021-04-06T12:31:43-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/"},"@type":"BlogPosting","description":"I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.","headline":"How I Setup This Github Pages Blog Site Part 01","@context":"https://schema.org"}</script>
+{"datePublished":"2021-04-06T12:31:43-06:00","url":"https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/","dateModified":"2021-04-06T12:31:43-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/"},"@type":"BlogPosting","description":"First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.","headline":"How I Setup This Github Pages Blog Site Part 01","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://billhertzing.github.io/feed.xml" title="Bill&apos;s Blog" /></head>
 <body><header class="site-header" role="banner">
@@ -51,6 +51,10 @@
 
 <p>If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)</p>
 
+<p>You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post and takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.</p>
+
+<p>There is one image in this edition, to show it works and provide the example href details.</p>
+
 <h2 id="prerequisites">Prerequisites</h2>
 
 <ol>
@@ -72,9 +76,11 @@
   <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps</li>
   <li>Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)</li>
   <li>At the Powershell prompt, Run <code class="language-plaintext highlighter-rouge">gem install jekyll bundle</code>. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot</li>
-  <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0" style="vertical-align:bottom" />
-ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0" style="vertical-align:bottom" /></li>
 </ol>
+
+<p><em>This is the one example of an image hosted on Dropbox in this initial edition of this post.</em>
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.</p>
 
 <h2 id="create-a-new-git-repository">Create a new git repository</h2>
 
@@ -123,25 +129,28 @@ ToDo: Add responsive sizes attribute and create multiple sizes of the image.</li
 
 <ol>
   <li>Open a Powershell terminal and navigate to your repository.</li>
-  <li>Run <code class="language-plaintext highlighter-rouge">jekyll serve</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">jekyll serve</code>. ToDo: insert jpg</li>
 </ol>
 
 <h3 id="fixing-issues">Fixing issues</h3>
 
-<p>Did you really think that everything would ‘just work’?  Hahaha! When I first try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run <code class="language-plaintext highlighter-rouge">gem install tzinfo-data</code>. Then when I tried <code class="language-plaintext highlighter-rouge">jekyll serve</code>, I got an error message ““Could not find gem wdm”. So I ran <code class="language-plaintext highlighter-rouge">gem install wdm</code>. And then again for <code class="language-plaintext highlighter-rouge">webrick</code>, which required <code class="language-plaintext highlighter-rouge">bundle add webrick</code>. Then I learned to change the command to <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>.  Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> completes and starts serving up pages.
-I also ran into problems with the Bundler version, getting the error <code class="language-plaintext highlighter-rouge">cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)</code>. After updating the Bundler with <code class="language-plaintext highlighter-rouge">gem install bundler</code> I needed to edit the <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> and change the <code class="language-plaintext highlighter-rouge">bundled with</code> line at the bottom to match the version just installed/updated.</p>
+<p>Did you really think that everything would ‘just work’?  Hahaha! When I first try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run <code class="language-plaintext highlighter-rouge">gem install tzinfo-data</code>. Then when I tried <code class="language-plaintext highlighter-rouge">jekyll serve</code>, I got an error message ““Could not find gem wdm”. So I ran <code class="language-plaintext highlighter-rouge">gem install wdm</code>. And then again for <code class="language-plaintext highlighter-rouge">webrick</code>, which required <code class="language-plaintext highlighter-rouge">bundle add webrick</code>. Then I learned to change the command to <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>.  Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> completes and starts serving up pages.  I also ran into problems with the Bundler version, getting the error <code class="language-plaintext highlighter-rouge">cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)</code>. After updating the Bundler with <code class="language-plaintext highlighter-rouge">gem install bundler</code> I needed to edit the <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> and change the <code class="language-plaintext highlighter-rouge">bundled with</code> line at the bottom to match the version just installed/updated.</p>
 
-<p>Finally, when you’ve wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the minima theme it should look like this:
+<p>Finally, when you’ve wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the <code class="language-plaintext highlighter-rouge">minima</code> theme it should look like this:
 ToDo: Insert .jpg</p>
 
 <h2 id="replace-the-original-welcome-to-jekyllmarkdown-page">Replace the original <code class="language-plaintext highlighter-rouge">welcome-to-jekyll.markdown</code> page</h2>
 
 <ol>
   <li>In the <code class="language-plaintext highlighter-rouge">_posts</code> subdirectory, add a new file with the format <code class="language-plaintext highlighter-rouge">*YYYY-MM-dd-welcome-to-*whatever*</code>. use your current year-month-day numerals, and change <em>whatever</em> to whatever you want to call your first welcome post.  I used <code class="language-plaintext highlighter-rouge">2021-04-06-Welcome-To-Bills-Blog.md</code></li>
-  <li>look at the original file in the _posts directory, which was created by the initial <code class="language-plaintext highlighter-rouge">jekyll new PATH</code> command earlier, and copy the Front Matter to your new post, update the Front Matter to change the title, update the date to match that of your filename and optionally remove the categories.</li>
+  <li>look at the original file in the _posts directory, which was created by the initial <code class="language-plaintext highlighter-rouge">jekyll new PATH</code> command earlier, and copy the Front Matter to your new post, update the Front Matter to change the title, update the date to match that of your filename, add a <code class="language-plaintext highlighter-rouge">description:</code> tag and optionally remove the categories.</li>
   <li>In the new post, enter your initial draft of whatever you want to see on your first post, and save the file.</li>
   <li>Delete the original file in the _posts directory.</li>
 </ol>
+
+<h3 id="why-description-in-the-front-matter-is-important">Why <code class="language-plaintext highlighter-rouge">description:</code> in the Front Matter is important</h3>
+
+<p>Putting a <code class="language-plaintext highlighter-rouge">description:</code> in the Front Matter of your pages and posts is important. The <code class="language-plaintext highlighter-rouge">minima</code> theme (and most others) will generate a <code class="language-plaintext highlighter-rouge">&lt;meta</code> tag in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> element of your published page or post. The contents of the tag will be the first paragraph of your page or post, unless you use a <code class="language-plaintext highlighter-rouge">description:</code> key in the Front Matter. I prefer to separate my pages’ and posts’ SEO description from its first paragraph, so I always use a <code class="language-plaintext highlighter-rouge">description:</code> key in the Front Matter.</p>
 
 <h2 id="push-the-source-code-to-github">Push the source code to GitHub</h2>
 
@@ -184,32 +193,63 @@ ToDo: Insert .jpg</p>
   <li>Select <code class="language-plaintext highlighter-rouge">Open folder</code> and navigate to the new repository you just created. To Do: insert jpg</li>
 </ol>
 
+<h2 id="modify-the-aboutmd-page">Modify the About.md page</h2>
+
+<p>Open the <code class="language-plaintext highlighter-rouge">about.md</code> file for editing, select everything and delete it. Then add the following text, modifying it as appropriate for yourself.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: page
+title: About
+permalink: /about/
+description: Information about me personally and about this blog site
+---
+
+## About Me
+
+I started messing with electronics in High School in the early 70's, and went on to a BScEE degree and a long career in the computer field. I'm currently retired, and working on OSS projects.
+
+## About this blog
+
+I started this blog to document the OSS repositories I'm building.
+
+</code></pre></div></div>
+
 <h2 id="confirm-that-vsc-can-push-changes-to-github">Confirm that VSC can push changes to GitHub</h2>
 
 <ol>
-  <li>Open the <code class="language-plaintext highlighter-rouge">about.md</code> file for editing, select everything after the front matter (line 7 and onward as of today), and delete it. then add the word ‘test’ on line 7.</li>
   <li>Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the <code class="language-plaintext highlighter-rouge">about.md</code> file indicates <code class="language-plaintext highlighter-rouge">M</code> for Modified. ToDo: insert jpg</li>
   <li>Click the VSC Source Control button inside the left sidebar.</li>
-  <li>In the message box, enter <code class="language-plaintext highlighter-rouge">remove unneeded parts of about.md</code>, then click the <code class="language-plaintext highlighter-rouge">check</code> above the message box (alt text is <code class="language-plaintext highlighter-rouge">Commit</code>)</li>
+  <li>In the message box, enter <code class="language-plaintext highlighter-rouge">update about.md</code>, then click the <code class="language-plaintext highlighter-rouge">check</code> above the message box (alt text is <code class="language-plaintext highlighter-rouge">Commit</code>)</li>
   <li>Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg</li>
   <li>Click on that area of the status bar, and the change should be pushed to GitHub</li>
-  <li>On GitHub, open the about.md file, and confirm that the change has been pushed to the GitHub remote repository.</li>
+  <li>On GitHub, open the <code class="language-plaintext highlighter-rouge">about.md</code> file, and confirm that the change you just made has been pushed to the GitHub remote repository.</li>
 </ol>
 
 <p>ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up…  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to “open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association “vscode://vscode.github-authentication/did-authenticate?windowid=1&amp;code=a_very_long_alphanumeric_string”</p>
 
 <h2 id="add-a-categorized-post">Add a categorized post</h2>
 
-<p>This site is focused on blogging, and it uses Jekyll Categories to organize them. The post you are reading now is the first post in the Category <code class="language-plaintext highlighter-rouge">technical</code>. Lets make sure our initial version of the site properly supports Categorized posts.  Categorized posts should be put into various subdirectories following the convention <code class="language-plaintext highlighter-rouge">*categoryname*/_posts</code></p>
+<p>This site is focused on blogging, and it uses Jekyll Categories to organize them. The post you are reading now is the first post in the Category <code class="language-plaintext highlighter-rouge">technical</code>. Lets make sure our initial version of the site properly supports Categorized posts.  One way to categorize posts is to use subdirectories at the repository’s root. Posts should be  put into various subdirectories following the convention <code class="language-plaintext highlighter-rouge">*categoryname*/_posts</code>. I’m going to start with this approach, rather than using a category tag in the post’s Front Matter, which is an alternative method of categorization.</p>
 
-<p>It is important to use all lower-case in the subdirectory name. I know I will be putting links in one post that refer to another posts. To create a link to another post, I’ll need to have a URL that resolves correctly. Jekyll accomplishes this with <code class="language-plaintext highlighter-rouge">post_url</code>. <code class="language-plaintext highlighter-rouge">post_url</code> takes a path to the post’s source <code class="language-plaintext highlighter-rouge">.md</code> file, and returns the “slug”. If a post’s source lives in e.g. <code class="language-plaintext highlighter-rouge">/technical/2021-04-06-How-I-setup-this-GitHub-Pages-Blog-site-Part-01.md</code>, then <code class="language-plaintext highlighter-rouge">post_url</code> returns <code class="language-plaintext highlighter-rouge">/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/</code>. <em>Note</em> there is a trailing slash in this path! <code class="language-plaintext highlighter-rouge">post_url</code> returns the elements of the path in all lowercase letters. To make the source of <code class="language-plaintext highlighter-rouge">post_url</code> match the destination “slug” when using Categories, the Category source subdirectory should be all lowercase.</p>
+<p>I know I will be putting links in one post that refer to another posts. To do so will require a link that correctly resolves to the published path of a post.  Jekyll accomplishes this with <code class="language-plaintext highlighter-rouge">post_url</code>. <code class="language-plaintext highlighter-rouge">post_url</code> takes a path to the post’s source <code class="language-plaintext highlighter-rouge">.md</code> file, and returns the “slug”. If a post’s source lives in e.g. <code class="language-plaintext highlighter-rouge">/technical/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01.md</code>, then <code class="language-plaintext highlighter-rouge">post_url</code> returns the published path <code class="language-plaintext highlighter-rouge">/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/</code>. <em>Note</em> there is a trailing slash in this path! <code class="language-plaintext highlighter-rouge">post_url</code> returns the elements of the path in all lowercase letters. To make the source of <code class="language-plaintext highlighter-rouge">post_url</code> match the destination “slug” when using Categories, <strong>it is important to use all lower-case in the subdirectory name and the post filename</strong>.</p>
+
+<p>ToDo: I’m still trying to eliminate a warning that happens when Jekyll builds the site. It says <code class="language-plaintext highlighter-rouge">Deprecation: A call to '{% post_url /technical/_posts/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01 %}' did not match a post using the new matching method of checking name (path-date-slug) equality. Please make sure that you change this tag to match the post's name exactly.</code> While I thought the warning was due to casing, it seems that is not the case. I may not need to make everything lowercase. Stay tuned, I will make a future revision to this subject.</p>
 
 <ol>
   <li>At the root of the repository, create a new subdirectory <code class="language-plaintext highlighter-rouge">technical</code> (or whatever you want your first Category to be).</li>
   <li>Create the subdirectory <code class="language-plaintext highlighter-rouge">_posts</code> under the new subdirectory you just created.</li>
   <li>Create an initial post file here. Give it a name following the <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-*titlestring*.md</code> convention.</li>
-  <li>Open the file for editing,</li>
+  <li>Open the file for editing, put in the Front Matter, put in some initial text, save. My front matter at this point looks like this:</li>
 </ol>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">Title</span><span class="pi">:</span> <span class="s">How I setup this GitHub Pages Blog Part </span><span class="m">01</span>
+<span class="na">date</span><span class="pi">:</span>   <span class="s">2021-04-06 12:31:43 -0600</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="s">Jekyll "GitHubPages"</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.</span>
+<span class="nn">---</span>
+</code></pre></div></div>
 
 <h2 id="enable-github-pages-on-the-github-repository">Enable GitHub pages on the GitHub repository</h2>
 
@@ -321,7 +361,9 @@ ToDo: When a new site gets published, is that a good time to note any post revis
 
 <h2 id="invoke-deploy-site-to-github-pages-manually">Invoke <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages</code> manually</h2>
 
-<p>ToDo:</p>
+<ol>
+  <li>In the repository on GitHub, drill down on <code class="language-plaintext highlighter-rouge">Actions</code>, look down the left column of the page, find the workflow <code class="language-plaintext highlighter-rouge">deploy generated site to GitHub Pages on gh-branch</code>, and click on it. In the center, there will be a sequence of entries for each workflow run, but above that should be a section with the text <code class="language-plaintext highlighter-rouge">This workflow has a workflow_dispatch event trigger.</code>, and a button <code class="language-plaintext highlighter-rouge">Run workflow</code>. Press that and the workflow will run, and leave a new log at the top of the workflow log entries. ToDo: insert jpg</li>
+</ol>
 
 <h2 id="add-the-mit-license-file">Add the MIT LICENSE file</h2>
 
@@ -333,7 +375,7 @@ ToDo: When a new site gets published, is that a good time to note any post revis
 
 <h2 id="modify-the-footer-template">Modify the footer template</h2>
 
-<p>It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here <a href="https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.">GitHub Pages Jekyll Minima Customize Footer</a> by Cyber Log in IT.</p>
+<p>It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here <a href="https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.">GitHub Pages Jekyll Minima Customize Footer</a> by “Cyber Log in IT”.</p>
 
 <ol>
   <li>Add a directory <code class="language-plaintext highlighter-rouge">_includes</code> to the root of the repository.</li>
@@ -418,7 +460,28 @@ ToDo: When a new site gets published, is that a good time to note any post revis
 
 <p>OK, so visually its not a very appealing footer. But then, neither is the Minima theme overall. In fact, I plan to replace the minima theme with another around version 0.03.0 of this site. It’s in the Milestones (ToDo: Insert emoji for laughing uproariously).</p>
 
-  </div><a class="u-url" href="/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/" hidden></a>
+<h2 id="making-the-first-release-of-the-site">Making the first release of the site</h2>
+
+<p>I’m happy now with the initial look and feel to my blogging site. I’ll make a final commit of my outstanding work, then I’ll make another commit and add a Release tag. For now, the release tags will follow the format <code class="language-plaintext highlighter-rouge">releases/\d+\.\d+\.\d+</code>. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging.">Git Basics - Tagging</a></p>
+
+<p>Once you have committed all the changes you want for Release 0.0.1, run this command in the Powershell terminal window (modify the command as appropriate for your site):
+<code class="language-plaintext highlighter-rouge">git tag -a releases/0.01.000 -m " Initial release of Bill's Blog"</code></p>
+
+<p>Verify the tag is there with the command <code class="language-plaintext highlighter-rouge">git tag</code> which will list all existing tags.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>This concludes the first edition of this post. In all my career, I’ve never encountered a significant document that didn’t require revisions, and I expect this will, as well. During the course of developing this site, I plan to incorporate a revision tracking system, so (eventually), you should be able to see all the revisions I’ve done to the post, and a change log. However, my idea is that I’ll only publish post revisions when I do a site release. I may increment the third part of the site version when I publish a revision to a post. I think that is in keeping with the spirit of Semantic Versioning, since ‘fixing’ a published post would be somewhat equivalent to fixing a bug in a released software package.</p>
+
+<p>There are some Milestones defined in this repository’s Issues tab, which detail what I hope to accomplish in the next four revisions. Feel free to look them over if you want to know what’s coming in the next three parts to this series.</p>
+
+<p>Comments for posts should be enabled soon, until then, please use the Issues on this repository to communicate with me, if you find errors or have questions.</p>
+
+<p>Thanks for staying to the end :-).</p>
+
+<p>Bill Hertzing, April 8, 2021</p>
+
+  </div><a class="u-url" href="/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" hidden></a>
 </article>
 
       </div>

@@ -3,11 +3,16 @@ Title: How I setup this GitHub Pages Blog
 date:   2021-04-06 12:31:43 -0600
 tags: Jekyll "GitHubPages"
 layout: post
+description: First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
 ---
 
 I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I'd like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I'm giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I've taken to implement the features I'd like to have.
 
 If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)
+
+You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post and takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.
+
+There is one image in this edition, to show it works and provide the example href details.
 
 ## Prerequisites
 
@@ -28,7 +33,9 @@ ToDo: Investigate using [chocolatey](https://chocolatey.org/) to install both Ru
 1. Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)
 1. At the Powershell prompt, Run `gem install jekyll bundle`. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot
 1. Run `jekyll -v` and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0"  style="vertical-align:bottom">
-ToDo: Add responsive sizes attribute and create multiple sizes of the image.
+
+*This is the one example of an image hosted on Dropbox in this initial edition of this post.*
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.
 
 ## Create a new git repository
 
@@ -71,22 +78,25 @@ Any Jekyll theme you want to use must first be downloaded to your Windows PC so 
 It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, `jekyll build` will read the site's source from the current directory, then process it and publish it to a subdirectory `_site`. The command `jekyll serve` will start a local web server and serve `_site` to `http://localhost:4000`. `jekyll serve` will also build the site if any source file has been changed.
 
 1. Open a Powershell terminal and navigate to your repository.
-1. Run `jekyll serve`
+1. Run `jekyll serve`. ToDo: insert jpg
 
 ### Fixing issues
 
-Did you really think that everything would 'just work'?  Hahaha! When I first try this today, I get an error message "Could not find gem tzinfo-data". Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run `gem install tzinfo-data`. Then when I tried `jekyll serve`, I got an error message ""Could not find gem wdm". So I ran `gem install wdm`. And then again for `webrick`, which required `bundle add webrick`. Then I learned to change the command to `bundle exec jekyll serve`.  Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until `bundle exec jekyll serve` completes and starts serving up pages.
-I also ran into problems with the Bundler version, getting the error `cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)`. After updating the Bundler with `gem install bundler` I needed to edit the `Gemfile.lock` and change the `bundled with` line at the bottom to match the version just installed/updated.
+Did you really think that everything would 'just work'?  Hahaha! When I first try this today, I get an error message "Could not find gem tzinfo-data". Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run `gem install tzinfo-data`. Then when I tried `jekyll serve`, I got an error message ""Could not find gem wdm". So I ran `gem install wdm`. And then again for `webrick`, which required `bundle add webrick`. Then I learned to change the command to `bundle exec jekyll serve`.  Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until `bundle exec jekyll serve` completes and starts serving up pages.  I also ran into problems with the Bundler version, getting the error `cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)`. After updating the Bundler with `gem install bundler` I needed to edit the `Gemfile.lock` and change the `bundled with` line at the bottom to match the version just installed/updated.
 
-Finally, when you've wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the minima theme it should look like this:
+Finally, when you've wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the `minima` theme it should look like this:
 ToDo: Insert .jpg
 
 ## Replace the original `welcome-to-jekyll.markdown` page
 
 1. In the `_posts` subdirectory, add a new file with the format `*YYYY-MM-dd-welcome-to-*whatever*`. use your current year-month-day numerals, and change *whatever* to whatever you want to call your first welcome post.  I used `2021-04-06-Welcome-To-Bills-Blog.md`
-1. look at the original file in the _posts directory, which was created by the initial `jekyll new PATH` command earlier, and copy the Front Matter to your new post, update the Front Matter to change the title, update the date to match that of your filename and optionally remove the categories.
+1. look at the original file in the _posts directory, which was created by the initial `jekyll new PATH` command earlier, and copy the Front Matter to your new post, update the Front Matter to change the title, update the date to match that of your filename, add a `description:` tag and optionally remove the categories.
 1. In the new post, enter your initial draft of whatever you want to see on your first post, and save the file.
 1. Delete the original file in the _posts directory.
+
+### Why `description:` in the Front Matter is important
+
+Putting a `description:` in the Front Matter of your pages and posts is important. The `minima` theme (and most others) will generate a `<meta` tag in the `<head>` element of your published page or post. The contents of the tag will be the first paragraph of your page or post, unless you use a `description:` key in the Front Matter. I prefer to separate my pages' and posts' SEO description from its first paragraph, so I always use a `description:` key in the Front Matter.
 
 ## Push the source code to GitHub
 
@@ -121,28 +131,61 @@ Detailed instructions here [Create a new repository on GitHub](https://docs.gith
 1. Open the Visual Studio Code application.
 1. Select `Open folder` and navigate to the new repository you just created. To Do: insert jpg
 
+## Modify the About.md page
+
+Open the `about.md` file for editing, select everything and delete it. Then add the following text, modifying it as appropriate for yourself.
+
+```html
+---
+layout: page
+title: About
+permalink: /about/
+description: Information about me personally and about this blog site
+---
+
+## About Me
+
+I started messing with electronics in High School in the early 70's, and went on to a BScEE degree and a long career in the computer field. I'm currently retired, and working on OSS projects.
+
+## About this blog
+
+I started this blog to document the OSS repositories I'm building.
+
+```
+
 ## Confirm that VSC can push changes to GitHub
 
-1. Open the `about.md` file for editing, select everything after the front matter (line 7 and onward as of today), and delete it. then add the word 'test' on line 7.
 1. Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the `about.md` file indicates `M` for Modified. ToDo: insert jpg
 1. Click the VSC Source Control button inside the left sidebar.
-1. In the message box, enter `remove unneeded parts of about.md`, then click the `check` above the message box (alt text is `Commit`)
+1. In the message box, enter `update about.md`, then click the `check` above the message box (alt text is `Commit`)
 1. Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg
 1. Click on that area of the status bar, and the change should be pushed to GitHub
-1. On GitHub, open the about.md file, and confirm that the change has been pushed to the GitHub remote repository.
+1. On GitHub, open the `about.md` file, and confirm that the change you just made has been pushed to the GitHub remote repository.
 
 ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up...  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to "open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association "vscode://vscode.github-authentication/did-authenticate?windowid=1&code=a_very_long_alphanumeric_string"
 
 ## Add a categorized post
 
-This site is focused on blogging, and it uses Jekyll Categories to organize them. The post you are reading now is the first post in the Category `technical`. Lets make sure our initial version of the site properly supports Categorized posts.  Categorized posts should be put into various subdirectories following the convention `*categoryname*/_posts`
+This site is focused on blogging, and it uses Jekyll Categories to organize them. The post you are reading now is the first post in the Category `technical`. Lets make sure our initial version of the site properly supports Categorized posts.  One way to categorize posts is to use subdirectories at the repository's root. Posts should be  put into various subdirectories following the convention `*categoryname*/_posts`. I'm going to start with this approach, rather than using a category tag in the post's Front Matter, which is an alternative method of categorization.
 
-It is important to use all lower-case in the subdirectory name. I know I will be putting links in one post that refer to another posts. To create a link to another post, I'll need to have a URL that resolves correctly. Jekyll accomplishes this with `post_url`. `post_url` takes a path to the post's source `.md` file, and returns the "slug". If a post's source lives in e.g. `/technical/2021-04-06-How-I-setup-this-GitHub-Pages-Blog-site-Part-01.md`, then `post_url` returns `/technical/2021/04/06/How-I-setup-this-GitHub-Pages-Blog-site-Part-01/`. *Note* there is a trailing slash in this path! `post_url` returns the elements of the path in all lowercase letters. To make the source of `post_url` match the destination "slug" when using Categories, the Category source subdirectory should be all lowercase.
+I know I will be putting links in one post that refer to another posts. To do so will require a link that correctly resolves to the published path of a post.  Jekyll accomplishes this with `post_url`. `post_url` takes a path to the post's source `.md` file, and returns the "slug". If a post's source lives in e.g. `/technical/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01.md`, then `post_url` returns the published path `/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/`. *Note* there is a trailing slash in this path! `post_url` returns the elements of the path in all lowercase letters. To make the source of `post_url` match the destination "slug" when using Categories, **it is important to use all lower-case in the subdirectory name and the post filename**.
+
+ToDo: I'm still trying to eliminate a warning that happens when Jekyll builds the site. It says `Deprecation: A call to '{{ "{%" }} post_url /technical/_posts/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01 %}' did not match a post using the new matching method of checking name (path-date-slug) equality. Please make sure that you change this tag to match the post's name exactly.` While I thought the warning was due to casing, it seems that is not the case. I may not need to make everything lowercase. Stay tuned, I will make a future revision to this subject.
 
 1. At the root of the repository, create a new subdirectory `technical` (or whatever you want your first Category to be).
 1. Create the subdirectory `_posts` under the new subdirectory you just created.
 1. Create an initial post file here. Give it a name following the `YYYY-MM-DD-*titlestring*.md` convention.
-1. Open the file for editing, 
+1. Open the file for editing, put in the Front Matter, put in some initial text, save. My front matter at this point looks like this:
+
+```markdown
+---
+Title: How I setup this GitHub Pages Blog Part 01
+date:   2021-04-06 12:31:43 -0600
+tags: Jekyll "GitHubPages"
+layout: post
+description: First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
+---
+```
 
 ## Enable GitHub pages on the GitHub repository
 
@@ -245,7 +288,7 @@ I had problems with the first of the two deployment actions I tried. I left an i
 
 ## Invoke `deploy-site-to-github-pages` manually
 
-ToDo:
+1. In the repository on GitHub, drill down on `Actions`, look down the left column of the page, find the workflow `deploy generated site to GitHub Pages on gh-branch`, and click on it. In the center, there will be a sequence of entries for each workflow run, but above that should be a section with the text `This workflow has a workflow_dispatch event trigger.`, and a button `Run workflow`. Press that and the workflow will run, and leave a new log at the top of the workflow log entries. ToDo: insert jpg
 
 ## Add the MIT LICENSE file
 
@@ -255,7 +298,7 @@ This site uses the MIT licenses. Of course, feel free to chose a different licen
 
 ## Modify the footer template
 
-It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here [GitHub Pages Jekyll Minima Customize Footer](https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.) by Cyber Log in IT.
+It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here [GitHub Pages Jekyll Minima Customize Footer](https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.) by "Cyber Log in IT".
 
 1. Add a directory `_includes` to the root of the repository.
 1. Copy the `footer.html` from the [Minima GitHub repository](https://github.com/jekyll/minima) into the `_includes` subdirectory.
@@ -339,3 +382,24 @@ I modified mine to remove the author email block and add the copyright and Licen
 ```
 
 OK, so visually its not a very appealing footer. But then, neither is the Minima theme overall. In fact, I plan to replace the minima theme with another around version 0.03.0 of this site. It's in the Milestones (ToDo: Insert emoji for laughing uproariously).
+
+## Making the first release of the site
+
+I'm happy now with the initial look and feel to my blogging site. I'll make a final commit of my outstanding work, then I'll make another commit and add a Release tag. For now, the release tags will follow the format `releases/\d+\.\d+\.\d+`. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in [Git Basics - Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging.)
+
+Once you have committed all the changes you want for Release 0.0.1, run this command in the Powershell terminal window (modify the command as appropriate for your site):
+`git tag -a releases/0.01.000 -m " Initial release of Bill's Blog"`
+
+Verify the tag is there with the command `git tag` which will list all existing tags.
+
+## Wrapping up
+
+This concludes the first edition of this post. In all my career, I've never encountered a significant document that didn't require revisions, and I expect this will, as well. During the course of developing this site, I plan to incorporate a revision tracking system, so (eventually), you should be able to see all the revisions I've done to the post, and a change log. However, my idea is that I'll only publish post revisions when I do a site release. I may increment the third part of the site version when I publish a revision to a post. I think that is in keeping with the spirit of Semantic Versioning, since 'fixing' a published post would be somewhat equivalent to fixing a bug in a released software package.
+
+There are some Milestones defined in this repository's Issues tab, which detail what I hope to accomplish in the next four revisions. Feel free to look them over if you want to know what's coming in the next three parts to this series.
+
+Comments for posts should be enabled soon, until then, please use the Issues on this repository to communicate with me, if you find errors or have questions.
+
+Thanks for staying to the end :-).
+
+Bill Hertzing, April 8, 2021
