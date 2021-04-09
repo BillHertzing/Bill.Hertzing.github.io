@@ -464,10 +464,13 @@ ToDo: When a new site gets published, is that a good time to note any post revis
 
 <p>I’m happy now with the initial look and feel to my blogging site. I’ll make a final commit of my outstanding work, then I’ll make another commit and add a Release tag. For now, the release tags will follow the format <code class="language-plaintext highlighter-rouge">releases/\d+\.\d+\.\d+</code>. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging.">Git Basics - Tagging</a></p>
 
-<p>Once you have committed all the changes you want for Release 0.0.1, run this command in the Powershell terminal window (modify the command as appropriate for your site):
-<code class="language-plaintext highlighter-rouge">git tag -a releases/0.01.000 -m " Initial release of Bill's Blog"</code></p>
+<p>Once you have committed all the changes you want for Release 0.01.0,</p>
 
-<p>Verify the tag is there with the command <code class="language-plaintext highlighter-rouge">git tag</code> which will list all existing tags.</p>
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">git tag -a releases/0.01.000 -m "Initial release of Bill's Blog"</code> (modify the command as appropriate for your site)</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git tag</code> which will list all existing tags and verify the tag is there.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git push --tags</code> to push the release tag to GitHub</li>
+</ol>
 
 <h2 id="wrapping-up">Wrapping up</h2>
 
