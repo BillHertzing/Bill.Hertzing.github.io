@@ -51,19 +51,19 @@
 
 <p>If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)</p>
 
-<p>You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post and takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.</p>
+<p>You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.</p>
 
-<p>There is one image in this edition, to show it works and provide the example href details.</p>
+<p>There are two images in this edition, to show it works and provide the example href details.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
 <ol>
   <li>A Windows 10 PC (Laptop or desktop)</li>
-  <li>a GitHub account. make a note of your username, and throughout this document, replace <em>GitHubUserName</em> with YOUR GitHub username</li>
+  <li>a GitHub account. make a note of your username, and throughout this document, replace <em>GitHubUserName</em> and also BillHertzing with YOUR GitHub username</li>
   <li>Powershell installed and updated on Windows 10</li>
   <li>Git for Windows (or alternative Git client) installed on Windows 10</li>
   <li>Visual Studio Code (VSC) (or similar editor) installed on Windows 10</li>
-  <li>(VSC) GitHub extension module</li>
+  <li>VSC GitHub integration, at <a href="https://code.visualstudio.com/docs/editor/github">Working with GitHub in VS Code</a></li>
 </ol>
 
 <h2 id="install-ruby-and-jekyll-on-your-windows-pc">Install Ruby and Jekyll on your Windows PC</h2>
@@ -73,13 +73,13 @@
 <p>ToDo: Investigate using <a href="https://chocolatey.org/">chocolatey</a> to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.</p>
 
 <ol>
-  <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps</li>
+  <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpgs</li>
   <li>Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)</li>
   <li>At the Powershell prompt, Run <code class="language-plaintext highlighter-rouge">gem install jekyll bundle</code>. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot</li>
   <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0" style="vertical-align:bottom" /></li>
 </ol>
 
-<p><em>This is the one example of an image hosted on Dropbox in this initial edition of this post.</em>
+<p><em>This is one example of an image hosted on Dropbox in this initial edition of this post.</em>
 ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.</p>
 
 <h2 id="create-a-new-git-repository">Create a new git repository</h2>
@@ -89,6 +89,9 @@ ToDo: Add responsive sizes attribute to the image tag and create multiple sizes 
   <li>Create a subdirectory <code class="language-plaintext highlighter-rouge">*GitHubUserName*.github.io</code>, and <code class="language-plaintext highlighter-rouge">cd</code> into it.</li>
   <li>Run <code class="language-plaintext highlighter-rouge">git init</code>. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="git init results" style="vertical-align:bottom" />.</li>
 </ol>
+
+<p><em>This is one example of an image hosted on Dropbox in this initial edition of this post.</em>
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.</p>
 
 <h2 id="create-minimal-jekyll-compliant-site-source-code">Create minimal Jekyll-compliant site source code</h2>
 
@@ -179,10 +182,10 @@ ToDo: Insert .jpg</p>
 
 <ol>
   <li>Open a Powershell terminal and navigate to your repository. Or just reuse an already open Powershell terminal.</li>
-  <li>Details are available at <a href="https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories">Managing remote repositories</a></li>
+  <li>Details are available at <a href="https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories">Managing remote repositories</a>.</li>
   <li>Run <code class="language-plaintext highlighter-rouge">git remote add origin  &lt;REMOTE_URL&gt;</code>  Of course, replace <REMOTE_URL> with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`</REMOTE_URL></li>
   <li>Run <code class="language-plaintext highlighter-rouge">git remote -v</code> to confirm that the origin is indeed set to the URL for the remote repository you just created on GitHub.</li>
-  <li>Run <code class="language-plaintext highlighter-rouge">git branch -M main</code> and then <code class="language-plaintext highlighter-rouge">git push -u origin main</code>  Pushes the changes in your local repository up to the remote repository</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git branch -M main</code> and then <code class="language-plaintext highlighter-rouge">git push -u origin main</code>  This will push the changes in your local repository up to the remote repository.</li>
   <li>Verify the source code for your site is now in GitHub. ToDo: add jpg</li>
 </ol>
 
@@ -211,7 +214,6 @@ I started messing with electronics in High School in the early 70's, and went on
 ## About this blog
 
 I started this blog to document the OSS repositories I'm building.
-
 </code></pre></div></div>
 
 <h2 id="confirm-that-vsc-can-push-changes-to-github">Confirm that VSC can push changes to GitHub</h2>
@@ -224,8 +226,6 @@ I started this blog to document the OSS repositories I'm building.
   <li>Click on that area of the status bar, and the change should be pushed to GitHub</li>
   <li>On GitHub, open the <code class="language-plaintext highlighter-rouge">about.md</code> file, and confirm that the change you just made has been pushed to the GitHub remote repository.</li>
 </ol>
-
-<p>ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up…  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to “open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association “vscode://vscode.github-authentication/did-authenticate?windowid=1&amp;code=a_very_long_alphanumeric_string”</p>
 
 <h2 id="add-a-categorized-post">Add a categorized post</h2>
 

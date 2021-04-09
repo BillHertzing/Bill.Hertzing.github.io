@@ -10,18 +10,18 @@ I have been trying for a few years to setup a web site I can use for blogging. B
 
 If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)
 
-You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post and takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.
+You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.
 
-There is one image in this edition, to show it works and provide the example href details.
+There are two images in this edition, to show it works and provide the example href details.
 
 ## Prerequisites
 
 1. A Windows 10 PC (Laptop or desktop)
-1. a GitHub account. make a note of your username, and throughout this document, replace *GitHubUserName* with YOUR GitHub username
+1. a GitHub account. make a note of your username, and throughout this document, replace *GitHubUserName* and also BillHertzing with YOUR GitHub username
 1. Powershell installed and updated on Windows 10
 1. Git for Windows (or alternative Git client) installed on Windows 10
 1. Visual Studio Code (VSC) (or similar editor) installed on Windows 10
-1. (VSC) GitHub extension module
+1. VSC GitHub integration, at [Working with GitHub in VS Code](https://code.visualstudio.com/docs/editor/github)
 
 ## Install Ruby and Jekyll on your Windows PC
 
@@ -29,12 +29,12 @@ There is one image in this edition, to show it works and provide the example hre
 
 ToDo: Investigate using [chocolatey](https://chocolatey.org/) to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.
 
-1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps
+1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpgs
 1. Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)
 1. At the Powershell prompt, Run `gem install jekyll bundle`. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot
 1. Run `jekyll -v` and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0"  style="vertical-align:bottom">
 
-*This is the one example of an image hosted on Dropbox in this initial edition of this post.*
+*This is one example of an image hosted on Dropbox in this initial edition of this post.*
 ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.
 
 ## Create a new git repository
@@ -42,6 +42,9 @@ ToDo: Add responsive sizes attribute to the image tag and create multiple sizes 
 1. Open a Powershell terminal, navigate to the location (directory) you want to be the parent of your repository. My parent directory is `C:\Dropbox\whertzing\GitHub\`.
 1. Create a subdirectory `*GitHubUserName*.github.io`, and `cd` into it.
 1. Run `git init`. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="git init results"  style="vertical-align:bottom">.
+
+*This is one example of an image hosted on Dropbox in this initial edition of this post.*
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.
 
 ## Create minimal Jekyll-compliant site source code
 
@@ -120,10 +123,10 @@ Detailed instructions here [Create a new repository on GitHub](https://docs.gith
 ### Push the local repository to the remote repository
 
 1. Open a Powershell terminal and navigate to your repository. Or just reuse an already open Powershell terminal.
-1. Details are available at [Managing remote repositories](https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories)
+1. Details are available at [Managing remote repositories](https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories).
 1. Run `git remote add origin  <REMOTE_URL>`  Of course, replace <REMOTE_URL> with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`
 1. Run `git remote -v` to confirm that the origin is indeed set to the URL for the remote repository you just created on GitHub.
-1. Run `git branch -M main` and then `git push -u origin main`  Pushes the changes in your local repository up to the remote repository
+1. Run `git branch -M main` and then `git push -u origin main`  This will push the changes in your local repository up to the remote repository.
 1. Verify the source code for your site is now in GitHub. ToDo: add jpg
 
 ## Setup Visual Studio Code (VSC)
@@ -150,7 +153,6 @@ I started messing with electronics in High School in the early 70's, and went on
 ## About this blog
 
 I started this blog to document the OSS repositories I'm building.
-
 ```
 
 ## Confirm that VSC can push changes to GitHub
@@ -161,8 +163,6 @@ I started this blog to document the OSS repositories I'm building.
 1. Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg
 1. Click on that area of the status bar, and the change should be pushed to GitHub
 1. On GitHub, open the `about.md` file, and confirm that the change you just made has been pushed to the GitHub remote repository.
-
-ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up...  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to "open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association "vscode://vscode.github-authentication/did-authenticate?windowid=1&code=a_very_long_alphanumeric_string"
 
 ## Add a categorized post
 

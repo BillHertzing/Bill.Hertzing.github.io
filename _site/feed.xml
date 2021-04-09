@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-08T22:54:11-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-08T23:05:51-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
 
 &lt;p&gt;If you would like to see a list of the articles online that have helped me create this site, please see the  &lt;a href=&quot;#Attributions&quot;&gt;Attributions&lt;/a&gt; section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)&lt;/p&gt;
 
-&lt;p&gt;You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post and takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.&lt;/p&gt;
+&lt;p&gt;You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.&lt;/p&gt;
 
-&lt;p&gt;There is one image in this edition, to show it works and provide the example href details.&lt;/p&gt;
+&lt;p&gt;There are two images in this edition, to show it works and provide the example href details.&lt;/p&gt;
 
 &lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;A Windows 10 PC (Laptop or desktop)&lt;/li&gt;
-  &lt;li&gt;a GitHub account. make a note of your username, and throughout this document, replace &lt;em&gt;GitHubUserName&lt;/em&gt; with YOUR GitHub username&lt;/li&gt;
+  &lt;li&gt;a GitHub account. make a note of your username, and throughout this document, replace &lt;em&gt;GitHubUserName&lt;/em&gt; and also BillHertzing with YOUR GitHub username&lt;/li&gt;
   &lt;li&gt;Powershell installed and updated on Windows 10&lt;/li&gt;
   &lt;li&gt;Git for Windows (or alternative Git client) installed on Windows 10&lt;/li&gt;
   &lt;li&gt;Visual Studio Code (VSC) (or similar editor) installed on Windows 10&lt;/li&gt;
-  &lt;li&gt;(VSC) GitHub extension module&lt;/li&gt;
+  &lt;li&gt;VSC GitHub integration, at &lt;a href=&quot;https://code.visualstudio.com/docs/editor/github&quot;&gt;Working with GitHub in VS Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;install-ruby-and-jekyll-on-your-windows-pc&quot;&gt;Install Ruby and Jekyll on your Windows PC&lt;/h2&gt;
@@ -24,13 +24,13 @@
 &lt;p&gt;ToDo: Investigate using &lt;a href=&quot;https://chocolatey.org/&quot;&gt;chocolatey&lt;/a&gt; to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;. Select a recent Ruby+DevKit version (I picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RubyInstaller 3.0.0-1 released&lt;/code&gt;) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: embed .png file of screenshots for these two steps&lt;/li&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;. Select a recent Ruby+DevKit version (I picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RubyInstaller 3.0.0-1 released&lt;/code&gt;) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpgs&lt;/li&gt;
   &lt;li&gt;Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)&lt;/li&gt;
   &lt;li&gt;At the Powershell prompt, Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll bundle&lt;/code&gt;. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll -v&lt;/code&gt; and confirm Jekyll returns its current version number. &lt;img src=&quot;https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1&quot; alt=&quot;Jekyll version 4.2.0&quot; style=&quot;vertical-align:bottom&quot; /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;em&gt;This is the one example of an image hosted on Dropbox in this initial edition of this post.&lt;/em&gt;
+&lt;p&gt;&lt;em&gt;This is one example of an image hosted on Dropbox in this initial edition of this post.&lt;/em&gt;
 ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.&lt;/p&gt;
 
 &lt;h2 id=&quot;create-a-new-git-repository&quot;&gt;Create a new git repository&lt;/h2&gt;
@@ -40,6 +40,9 @@ ToDo: Add responsive sizes attribute to the image tag and create multiple sizes 
   &lt;li&gt;Create a subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*GitHubUserName*.github.io&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into it.&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt;. &lt;img src=&quot;https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1&quot; alt=&quot;git init results&quot; style=&quot;vertical-align:bottom&quot; /&gt;.&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;This is one example of an image hosted on Dropbox in this initial edition of this post.&lt;/em&gt;
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.&lt;/p&gt;
 
 &lt;h2 id=&quot;create-minimal-jekyll-compliant-site-source-code&quot;&gt;Create minimal Jekyll-compliant site source code&lt;/h2&gt;
 
@@ -130,10 +133,10 @@ ToDo: Insert .jpg&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Open a Powershell terminal and navigate to your repository. Or just reuse an already open Powershell terminal.&lt;/li&gt;
-  &lt;li&gt;Details are available at &lt;a href=&quot;https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories&quot;&gt;Managing remote repositories&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Details are available at &lt;a href=&quot;https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories&quot;&gt;Managing remote repositories&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add origin  &amp;lt;REMOTE_URL&amp;gt;&lt;/code&gt;  Of course, replace &lt;REMOTE_URL&gt; with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`&lt;/REMOTE_URL&gt;&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt; to confirm that the origin is indeed set to the URL for the remote repository you just created on GitHub.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -M main&lt;/code&gt; and then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push -u origin main&lt;/code&gt;  Pushes the changes in your local repository up to the remote repository&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -M main&lt;/code&gt; and then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push -u origin main&lt;/code&gt;  This will push the changes in your local repository up to the remote repository.&lt;/li&gt;
   &lt;li&gt;Verify the source code for your site is now in GitHub. ToDo: add jpg&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -162,7 +165,6 @@ I started messing with electronics in High School in the early 70&apos;s, and we
 ## About this blog
 
 I started this blog to document the OSS repositories I&apos;m building.
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;confirm-that-vsc-can-push-changes-to-github&quot;&gt;Confirm that VSC can push changes to GitHub&lt;/h2&gt;
@@ -175,8 +177,6 @@ I started this blog to document the OSS repositories I&apos;m building.
   &lt;li&gt;Click on that area of the status bar, and the change should be pushed to GitHub&lt;/li&gt;
   &lt;li&gt;On GitHub, open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file, and confirm that the change you just made has been pushed to the GitHub remote repository.&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;ToDo: Interesting, while working on this, I learned if VSC is not logged in to anywhere, and you chose to login to GitHub, there is an authentication interaction that stores some information into VSC somewhere. I should investigate and write it up…  It opened GitHub in Chrome (my default browser), and I entered my password to GitHub. There was a form asking if I wanted to authorize, said yes, then a redirect on github, and a dialog box saying that there was a uri that wanted to open VSC. I allowed that dialog to “open the VSC app. Since it was already open, it just switched me back to the VSC instance. Nothing added to the repository where I was working, so either somewhere in VSC or somewhere in Windows, there is now an association “vscode://vscode.github-authentication/did-authenticate?windowid=1&amp;amp;code=a_very_long_alphanumeric_string”&lt;/p&gt;
 
 &lt;h2 id=&quot;add-a-categorized-post&quot;&gt;Add a categorized post&lt;/h2&gt;
 
