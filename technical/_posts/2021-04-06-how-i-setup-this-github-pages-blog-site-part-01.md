@@ -387,10 +387,12 @@ OK, so visually its not a very appealing footer. But then, neither is the Minima
 
 I'm happy now with the initial look and feel to my blogging site. I'll make a final commit of my outstanding work, then I'll make another commit and add a Release tag. For now, the release tags will follow the format `releases/\d+\.\d+\.\d+`. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in [Git Basics - Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging.)
 
-Once you have committed all the changes you want for Release 0.0.1, run this command in the Powershell terminal window (modify the command as appropriate for your site):
-`git tag -a releases/0.01.000 -m " Initial release of Bill's Blog"`
+Once you have committed all the changes you want for Release 0.01.0,
 
-Verify the tag is there with the command `git tag` which will list all existing tags.
+1. Run `git tag -a releases/0.01.000 -m "Initial release of Bill's Blog"` (modify the command as appropriate for your site)
+1. Run `git tag` which will list all existing tags and verify the tag is there.
+1. Run `git push --tags` to push the release tag to GitHub
+
 
 ## Wrapping up
 
