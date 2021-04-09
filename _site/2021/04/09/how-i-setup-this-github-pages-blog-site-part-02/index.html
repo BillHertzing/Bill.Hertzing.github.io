@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How I Setup This Github Pages Blog Site Part 02 | Bill’s Blog</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="How I Setup This Github Pages Blog Site Part 02" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version." />
+<meta property="og:description" content="Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version." />
+<link rel="canonical" href="https://billhertzing.github.io/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/" />
+<meta property="og:url" content="https://billhertzing.github.io/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/" />
+<meta property="og:site_name" content="Bill’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-09T11:55:48-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How I Setup This Github Pages Blog Site Part 02" />
+<script type="application/ld+json">
+{"datePublished":"2021-04-09T11:55:48-06:00","url":"https://billhertzing.github.io/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/","dateModified":"2021-04-09T11:55:48-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/"},"@type":"BlogPosting","description":"Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.","headline":"How I Setup This Github Pages Blog Site Part 02","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://billhertzing.github.io/feed.xml" title="Bill&apos;s Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Bill&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How I Setup This Github Pages Blog Site Part 02</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-04-09T11:55:48-06:00" itemprop="datePublished">Apr 9, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series <a href="TBD">How I setup this GitHub Pages Blog</a>, you should probably give it a quick review, to become familiar with how it all started.</p>
+
+<p>The next steps will be to implement the features specified in <a href="https://github.com/BillHertzing/BillHertzing.github.io/milestone/2">Milestone 0.02.0</a>.  I like to plan my development efforts using GitHub Milestones. They are quick and easy to create and maintain, especially for tiny sites like mine that have no collaborators. Of course I don’t <strong><em>have</em></strong> to create Milestones, but I’ve found that there is always “feature creep” in releases if I don’t take the time to write down what is going into the next release, and what’s on tap for some future release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don’t get too big!</p>
+
+<p>Lets move on!</p>
+
+<h2 id="create-_drafts-folder">Create <code class="language-plaintext highlighter-rouge">_drafts</code> folder</h2>
+
+<p>Being able to work on a draft of a post, and not have that draft appear on the production site, is important during development. Jekyll has built in support for drafts, using a <code class="language-plaintext highlighter-rouge">_drafts</code> folder. Simply create the folder <code class="language-plaintext highlighter-rouge">_drafts</code> under the root of your repository.</p>
+
+<h2 id="create-a-draft-post">Create a draft post</h2>
+
+<ol>
+  <li>Create the file <code class="language-plaintext highlighter-rouge">how-i-setup-this-github-pages-blog-site-part-02.md</code> under the new <code class="language-plaintext highlighter-rouge">_drafts</code> subdirectory. Do not add the <em>YYYY-MM-DD</em> prefix to this file.</li>
+  <li>
+    <p>Add the following Front Matter text to the file. Modify it as appropriate for your site. <em>Note</em> There is no <code class="language-plaintext highlighter-rouge">date:</code> key in a draft post. Jekyll will insert that key when you promote the post out of <code class="language-plaintext highlighter-rouge">_drafts</code> and publish it for the first time.</p>
+
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p"> ---</span>
+ Title: How I setup this GitHub Pages Blog, Part 2
+ tags: Jekyll "GitHubPages"
+ layout: post
+ description: Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
+<span class="p"> ---
+</span>
+ Add text you want to see in your second post
+</code></pre></div>    </div>
+  </li>
+  <li>Save and commit.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code>. Jekyll will build the drafts with the current date so they will be easy to find at the top of your (chronologically sorted) post listings.</li>
+  <li>Validate your new post exists locally.</li>
+</ol>
+
+<h2 id="community-health-files">Community Health files</h2>
+
+<p>GitHub encourages authors to ensure their repositories are setup for building communities for healthy and effective collaboration. Details are at <a href="https://docs.github.com/en/communities">Building communities</a>. The first guideline is <a href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions">Setting up your project for healthy contributions</a>. Among other things, it recommends <a href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project">Adding a code of conduct to your project</a> and <a href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors">Setting guidelines for repository contributors</a>. But what if you have more than one repository? Do you have to duplicate these files in every one? No, you can setup defaults for these files, and have every repository inherit from your default. Details are in <a href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file">Creating a default community health file</a>.</p>
+
+<h3 id="create-github-repo">Create <code class="language-plaintext highlighter-rouge">.github</code> repo</h3>
+
+<p>I’m not going to repeat here the instructions you can find on the GitHub doc above. But at this point in the development of this site, I created the new <code class="language-plaintext highlighter-rouge">.github</code> public repository under my username, and added the <code class="language-plaintext highlighter-rouge">CODE_OF_CONDUCT.md</code> and <code class="language-plaintext highlighter-rouge">CONTRIBUTING.md</code> files to the <code class="language-plaintext highlighter-rouge">.github</code> repo. ToDo: insert jpg</p>
+
+<p><em>Note</em> I changed my GitHub theme to Dark, so the screen shots of GitHub are going to look different from Part 1 of this series!</p>
+
+<p>Now go look at your site’s repository in GitHub, drill down into <code class="language-plaintext highlighter-rouge">Insights</code>, and then the <code class="language-plaintext highlighter-rouge">Community</code> tab, and you can see that both of these files are now present in this repository’s Community Profile! ToDo: insert jpg</p>
+
+<h3 id="how-to-link-to-these-default-files">How to link to these default files</h3>
+
+<p>Lets add links to both of these files, both here, and in the <code class="language-plaintext highlighter-rouge">_includes/footer.html</code> template. From the <code class="language-plaintext highlighter-rouge">Insights-&gt;Community</code> page, click the <code class="language-plaintext highlighter-rouge">Code of conduct</code> link, the in the browser’s address bar, copy the URL showing. Mine looks like this: <code class="language-plaintext highlighter-rouge">https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md</code>. Create a markdown link to this as follows:</p>
+
+<notextile>[Code of Conduct](https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md)</notextile>
+<p>produces <a href="https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></p>
+
+<p>Repeat for <code class="language-plaintext highlighter-rouge">CONTRIBUTING.md</code>.</p>
+
+<notextile>[CONTRIBUTING](https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md)</notextile>
+<p>produces
+<a href="https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md">CONTRIBUTING</a></p>
+
+  </div><a class="u-url" href="/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&#39;ve got it all!</p>
+      </div>
+      <div class="footer-col">
+        <p>&copy; William Hertzing 2020 - 2021 The contents of this website are under the terms of the MIT <a href=/LICENSE.html>License.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/BillHertzing"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">BillHertzing</span></a></li><li><a href="https://www.twitter.com/whertzing56"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">whertzing56</span></a></li></ul>
+</div>
+
+  </div>
+
+</footer></body>
+
+</html>
