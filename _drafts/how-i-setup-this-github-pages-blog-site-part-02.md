@@ -9,6 +9,8 @@ Welcome to the second part of this series detailing how I setup this blog site h
 
 The next steps will be to implement the features specified in [Milestone 0.02.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/2).  I like to plan my development efforts using GitHub Milestones. They are quick and easy to create and maintain, especially for tiny sites like mine that have no collaborators. Of course I don't ***have*** to create Milestones, but I've found that there is always "feature creep" in releases if I don't take the time to write down what is going into the next release, and what's on tap for some future release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don't get too big!
 
+This release is mostly adding files that are common to a good reposity, and then adding the ability to add comments to a post.
+
 Lets move on!
 
 ## Create `_drafts` folder
@@ -57,3 +59,18 @@ Repeat for `CONTRIBUTING.md`.
 
 <notextile>[CONTRIBUTING](https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md)</notextile> produces
 [CONTRIBUTING](https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md)
+
+## Add `ReadMe.md`
+
+The `ReadMe.md` file at the root of a repo will get displayed to visitors on the repo's landing page. Here are some posts with great ideas
+
+- [A Beginners Guide to writing a Kickass README](https://meakaakka.medium.com/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3#:~:text=A%20great%20README%20file%20helps,basic%20introduction%20to%20the%20software.)
+- [A template to make good README.md · GitHub](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+- [A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
+- [awesome-github-badges](chetanraj/awesome-github-badges) - add some badges to the readme
+- [badges](https://github.com/aleen42/badges) - To make badges more standard and acceptable.
+
+1. Create the file `ReadMe.md` in the root of the repo.
+1. Edit the file, and add whatever content you think appropriate
+1. Commit and push to the GitHub repo.
+1. Validate your ReadMe file now displays on the GitHub repo's landing page.

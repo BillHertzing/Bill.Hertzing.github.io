@@ -9,15 +9,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version." />
 <meta property="og:description" content="Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version." />
-<link rel="canonical" href="https://billhertzing.github.io/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/" />
-<meta property="og:url" content="https://billhertzing.github.io/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/" />
+<link rel="canonical" href="https://billhertzing.github.io/2021/04/10/how-i-setup-this-github-pages-blog-site-part-02/" />
+<meta property="og:url" content="https://billhertzing.github.io/2021/04/10/how-i-setup-this-github-pages-blog-site-part-02/" />
 <meta property="og:site_name" content="Bill’s Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-04-09T11:55:48-06:00" />
+<meta property="article:published_time" content="2021-04-10T07:44:35-06:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How I Setup This Github Pages Blog Site Part 02" />
 <script type="application/ld+json">
-{"datePublished":"2021-04-09T11:55:48-06:00","url":"https://billhertzing.github.io/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/","dateModified":"2021-04-09T11:55:48-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/"},"@type":"BlogPosting","description":"Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.","headline":"How I Setup This Github Pages Blog Site Part 02","@context":"https://schema.org"}</script>
+{"datePublished":"2021-04-10T07:44:35-06:00","url":"https://billhertzing.github.io/2021/04/10/how-i-setup-this-github-pages-blog-site-part-02/","dateModified":"2021-04-10T07:44:35-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/2021/04/10/how-i-setup-this-github-pages-blog-site-part-02/"},"@type":"BlogPosting","description":"Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.","headline":"How I Setup This Github Pages Blog Site Part 02","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://billhertzing.github.io/feed.xml" title="Bill&apos;s Blog" /></head>
 <body><header class="site-header" role="banner">
@@ -42,7 +42,7 @@
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">How I Setup This Github Pages Blog Site Part 02</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2021-04-09T11:55:48-06:00" itemprop="datePublished">Apr 9, 2021
+      <time class="dt-published" datetime="2021-04-10T07:44:35-06:00" itemprop="datePublished">Apr 10, 2021
       </time></p>
   </header>
 
@@ -50,6 +50,8 @@
     <p>Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series <a href="TBD">How I setup this GitHub Pages Blog</a>, you should probably give it a quick review, to become familiar with how it all started.</p>
 
 <p>The next steps will be to implement the features specified in <a href="https://github.com/BillHertzing/BillHertzing.github.io/milestone/2">Milestone 0.02.0</a>.  I like to plan my development efforts using GitHub Milestones. They are quick and easy to create and maintain, especially for tiny sites like mine that have no collaborators. Of course I don’t <strong><em>have</em></strong> to create Milestones, but I’ve found that there is always “feature creep” in releases if I don’t take the time to write down what is going into the next release, and what’s on tap for some future release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don’t get too big!</p>
+
+<p>This release is mostly adding files that are common to a good reposity, and then adding the ability to add comments to a post.</p>
 
 <p>Lets move on!</p>
 
@@ -104,7 +106,26 @@
 <p>produces
 <a href="https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md">CONTRIBUTING</a></p>
 
-  </div><a class="u-url" href="/2021/04/09/how-i-setup-this-github-pages-blog-site-part-02/" hidden></a>
+<h2 id="add-readmemd">Add <code class="language-plaintext highlighter-rouge">ReadMe.md</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">ReadMe.md</code> file at the root of a repo will get displayed to visitors on the repo’s landing page. Here are some posts with great ideas</p>
+
+<ul>
+  <li><a href="https://meakaakka.medium.com/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3#:~:text=A%20great%20README%20file%20helps,basic%20introduction%20to%20the%20software.">A Beginners Guide to writing a Kickass README</a></li>
+  <li><a href="https://gist.github.com/PurpleBooth/109311bb0361f32d87a2">A template to make good README.md · GitHub</a></li>
+  <li><a href="https://github.com/matiassingers/awesome-readme">A curated list of awesome READMEs</a></li>
+  <li><a href="chetanraj/awesome-github-badges">awesome-github-badges</a> - add some badges to the readme</li>
+  <li><a href="https://github.com/aleen42/badges">badges</a> - To make badges more standard and acceptable.</li>
+</ul>
+
+<ol>
+  <li>Create the file <code class="language-plaintext highlighter-rouge">ReadMe.md</code> in the root of the repo.</li>
+  <li>Edit the file, and add whatever content you think appropriate</li>
+  <li>Commit and push to the GitHub repo.</li>
+  <li>Validate your ReadMe file now displays on the GitHub repo’s landing page.</li>
+</ol>
+
+  </div><a class="u-url" href="/2021/04/10/how-i-setup-this-github-pages-blog-site-part-02/" hidden></a>
 </article>
 
       </div>
