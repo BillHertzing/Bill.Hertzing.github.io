@@ -69,8 +69,41 @@ The `ReadMe.md` file at the root of a repo will get displayed to visitors on the
 - [A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
 - [awesome-github-badges](chetanraj/awesome-github-badges) - add some badges to the readme
 - [badges](https://github.com/aleen42/badges) - To make badges more standard and acceptable.
+- [Markdown License badges](lukas-h/license-badges.md)
+ 
+
+*Note* If you want to use a badge that refers to any of the repo's Community Health files (like `CONTRIBUTING` or `CODE OF CONDUCT` AND if you want to use ***default*** Community Health files, then specify the repo *GitHubUserName*/.github in the badge's repo field.
 
 1. Create the file `ReadMe.md` in the root of the repo.
 1. Edit the file, and add whatever content you think appropriate
 1. Commit and push to the GitHub repo.
 1. Validate your ReadMe file now displays on the GitHub repo's landing page.
+
+## Add `ChangeLog.md`
+
+Having a ChangeLog for your blog site will help user's understand changes you  have applied
+
+[keep a changelog](https://keepachangelog.com/en/1.0.0/)
+
+If you want to automate the ChangeLog to a degree, it is important that the commits in the repo have meaningful commit messages that are machine readable. Here are some examples of commit messages and tools that can read them.
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) also has a large bibliography of tooling around Conventional Commits
+[Universal Changelog Generator action](https://github.com/marketplace/actions/universal-changelog-generator).
+
+***Of you want to automate the generation of the ChangeLog, you need to write your commits in a standard format***
+
+I hve a feature identified in the Far Future Milestone for automation in this area, so I'll start using commits in the style specified by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). According to that document, commits I've already made will just be ignored by the automated tooling, and the ChangeLog can be manually edited as I have done for the initial ChangeLog I create below.
+
+1. Create the file `ChangeLog.md` in the root of the repo.
+1. Edit the file, and add content appropriate for the site's "Birthday", and Release V1.01.1
+1. Commit and push to the GitHub repo.
+1. Validate your Changelog file now displays on the GitHub repo's landing page.
+
+## Add commit message template
+
+To make it easier to create commit messages that follow a standard template, add a git commit message template to the repository and configure git to use that file. The standardized commit message template I chose for my initial version of the template can be found at [Keeping Git Commit Messages Consistent with a Custom Template](https://dev.to/timmybytes/keeping-git-commit-messages-consistent-with-a-custom-template-1jkm).
+
+1. Create the subdirectory `GitTemplates` in the root of the repo.
+1. Create the file `git.commit.template.txt` in the subdirectory `GitTemplates`.
+1. Add text similar to the following to the template `.txt` file, and save it.
+1. Run `git config --global commit.template GitTemplates/git.commit.template.txt` too add the template to your global git config.
+1. Run `git config --global core.editor "code --wait"` Ensure that VSC is the editor for the commit message.
