@@ -9,7 +9,7 @@ Welcome to the second part of this series detailing how I setup this blog site h
 
 The next steps will be to implement the features specified in [Milestone 0.02.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/2).  I like to plan my development efforts using GitHub Milestones. They are quick and easy to create and maintain, especially for tiny sites like mine that have no collaborators. Of course I don't ***have*** to create Milestones, but I've found that there is always "feature creep" in releases if I don't take the time to write down what is going into the next release, and what's on tap for some future release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don't get too big!
 
-This release is mostly adding files that are common to a good reposity, and then adding the ability to add comments to a post.
+This release is mostly adding files that are common to a good repository, and then adding the ability to add comments to a post.
 
 Lets move on!
 
@@ -70,7 +70,6 @@ The `ReadMe.md` file at the root of a repo will get displayed to visitors on the
 - [awesome-github-badges](chetanraj/awesome-github-badges) - add some badges to the readme
 - [badges](https://github.com/aleen42/badges) - To make badges more standard and acceptable.
 - [Markdown License badges](lukas-h/license-badges.md)
- 
 
 *Note* If you want to use a badge that refers to any of the repo's Community Health files (like `CONTRIBUTING` or `CODE OF CONDUCT` AND if you want to use ***default*** Community Health files, then specify the repo *GitHubUserName*/.github in the badge's repo field.
 
@@ -89,32 +88,66 @@ If you want to automate the ChangeLog to a degree, it is important that the comm
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) also has a large bibliography of tooling around Conventional Commits
 [Universal Changelog Generator action](https://github.com/marketplace/actions/universal-changelog-generator).
 
-***Of you want to automate the generation of the ChangeLog, you need to write your commits in a standard format***
+***If you want to automate the generation of the ChangeLog, you need to write your commits in a standard format***
 
 I hve a feature identified in the Far Future Milestone for automation in this area, so I'll start using commits in the style specified by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). According to that document, commits I've already made will just be ignored by the automated tooling, and the ChangeLog can be manually edited as I have done for the initial ChangeLog I create below.
 
 1. Create the file `ChangeLog.md` in the root of the repo.
 1. Edit the file, and add content appropriate for the site's "Birthday", and Release V1.01.1
 1. Commit and push to the GitHub repo.
-1. Validate your Changelog file now displays on the GitHub repo's landing page.
+1. Validate your ChangeLog file now displays on the GitHub repo's landing page.
 
-## Add commit message template
+## Add Commit Message Template
 
 To make it easier to create commit messages that follow a standard template, add a git commit message template to the repository and configure git to use that file. The standardized commit message template I chose for my initial version of the template can be found at [Keeping Git Commit Messages Consistent with a Custom Template](https://dev.to/timmybytes/keeping-git-commit-messages-consistent-with-a-custom-template-1jkm).
 
-1. Create the subdirectory `GitTemplates` in the root of the repo.
-1. Create the file `git.commit.template.txt` in the subdirectory `GitTemplates`.
+1. Create the file `git.commit.template.txt` in the subdirectory `.github`.
 1. Add text similar to the following to the template `.txt` file, and save it.
 
   ```Text
     ToDo: Add final text just before release
   ```
 
-1. Run `git config --global commit.template GitTemplates/git.commit.template.txt` to add the template to your global git config.
+1. Run `git config --global commit.template .github/git.commit.template.txt` to add the template to your global git config.
 1. Run `git config --global core.editor "code --wait"` to add VSC as git's editor of choice. See also [MarredCheese's answer to StackOverflow question ](https://stackoverflow.com/questions/30149132/multiline-git-commit-message-in-vscode/54139152#54139152).
 1. Run `git commit -a`
 1. Validate that VSC is the editor for the commit message which comes up pre-populated with the template's text.
-1. Click on the SCM icon in the sidebar. What was the single line commit message text box at the top has expanded to contain the non-comment template lines, and blank lines wherever there was a comment. Hmmm... Wonder how we can have only non-comment lines from the template in the SCM editor's commit text box, yet have the fulltemplate text at just a keystroke away if needed forr reference  ToDo: Figure that out.
+1. Click on the SCM icon in the sidebar. Validate that what was the single line commit message text box at the top has expanded to contain the non-comment template lines, and blank lines wherever there was a comment. Hmmm... Wonder how we can have only non-comment lines from the template in the SCM editor's commit text box, yet have the full template text at just a keystroke away if needed for reference  ToDo: Figure that out.
 
-When doing design work on a feature, it save some time if you edit the template to add a reference to the feature specification or the release milestone that calls out the feature under development. Likewise if you are working on a post, and doing the edit/build/view dance, editing the template may save you some time and keystrokes.
+When doing design work on a feature, it saves some time if you edit the template to add a reference to the feature specification or the release milestone that calls out the feature under development. Likewise if you are working on a post, and doing the edit/build/view dance, editing the template may save you some time and keystrokes.
+
+## Add Bug Report and Feature Request Issue Templates
+
+Bug Report and Feature Request Issue Templates will make it easier for contributors to create issues for bug reports and feature requests. Standardizing on formats for these items early in the site's development will make it easier for automation in the future. These files can also be part of the `Community Health Files`, and default versions of these can be placed in the user's or organization's `.github` repository and shared amongst all of a GitHub user's or organization's repositories.
+
+Details on how to use the issue templates from the Community Health repo are at:
+
+- [Configuring issue templates for your repository](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository).
+- [Configuring the template chooser]- [https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser]
+- [https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file)
+- [About issue and pull request templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates).
+
+1. Use the tool of your choice to navigate to the root of your `.github` repository that was created above in [#Create`.github`repo].
+1. Create a new subdirectory `.github` in the root of `.github` (yes, it ***is*** confusing).
+1. Create a new subdirectory `ISSUE_TEMPLATE` in the subdirectory `.github` in root of the `.github1 repository.
+1. Create a new file `Bug_Report_Template.md` in the new subdirectory `ISSUE_TEMPLATE`.
+1. Add text similar to the following to the template `.md` file, and save it.
+
+  ```md
+    ToDo: Add final text just before release
+  ```
+
+1. Create a new file `Feature_Request_Template.md` in the new subdirectory `ISSUE_TEMPLATE`.
+1. Add text similar to the following to the template `.md` file, and save it.
+
+  ```md
+    ToDo: Add final text just before release
+  ```
+
+1. Commit the change made to .github repository and sync the changes with the remote.
+1. Validate the new templates are available in the static site repository. ToDo: insert jpg
+
+## Add a Pull Request Template
+
+Pull request Templates are not part of the Community Health Files, and must be created individually for each repository. A Pull Request template will make it easier for contributors to create standardized Pull Requests, which in turn will make future automation easier.
 
