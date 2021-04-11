@@ -107,11 +107,13 @@ To make it easier to create commit messages that follow a standard template, add
 1. Add text similar to the following to the template `.txt` file, and save it.
 
   ```Text
-    
+    ToDo: Add final text just before release
   ```
 
 1. Run `git config --global commit.template GitTemplates/git.commit.template.txt` to add the template to your global git config.
 1. Run `git config --global core.editor "code --wait"` to add VSC as git's editor of choice. See also [MarredCheese's answer to StackOverflow question ](https://stackoverflow.com/questions/30149132/multiline-git-commit-message-in-vscode/54139152#54139152).
 1. Run `git commit -a`
 1. Validate that VSC is the editor for the commit message which comes up pre-populated with the template's text.
+
+When doing design work on a feature, it save some time if you edit the template to add a reference to the feature specification or the release milestone that calls out the feature under development. Likewise if you are working on a post, and doing the edit/build/view dance, editing the template may save you some time and keystrokes.
 

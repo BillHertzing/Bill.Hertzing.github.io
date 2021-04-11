@@ -1,9 +1,10 @@
-# ----------------------------------------------------------
-# Header - type(scope): Brief description
-# ----------------------------------------------------------
+# ----------------------------------------------------------60
+# Header - type(scope): Brief description [ FEAT FIxBUG BREAKINGCHANGE DOC STYLE REFAC PERF TEST DATA BUILD CHORE COPY SPEC WIP  ]
+# ----------------------------------------------------------60
+#   Commit Key is Case insensitive, 2-letter minimum
 #    * feat             A new feature - SemVar PATCH
-#    * fix              A bug fix - SemVar MINOR
-#    * BREAKING CHANGE  Breaking API change - SemVar MAJOR
+#    * fixbug           A bug fix - SemVar MINOR
+#    * BREAKINGCHANGE   Breaking API change - SemVar MAJOR
 #    * docs             Change to documentation only
 #    * style            Change to style (whitespace, etc.)
 #    * refactor         Change not related to a bug or feat
@@ -12,18 +13,15 @@
 #    * build            Change to build system
 #    * ci               Change to CI pipeline/workflow
 #    * chore            General tooling/config/min refactor
-#    * Design           General design work on a feature, if design is done on `main`
+#    * Design/WIP       General ongoing design work on a feature, if design is done on `main`
 # ----------------------------------------------------------
 
-# ----------------------------------------------------------
+# ------------------------------------------------------------------------------80
 # Body - More description, if necessary
-# ----------------------------------------------------------
-#    * Motivation behind changes, more detail into how
-#      functionality might be affected, etc.
-# ----------------------------------------------------------
+# ------------------------------------------------------------------------------80
 
-# ----------------------------------------------------------
+# ------------------------------------------------------------------------------80
 # Footer - Associated issues, PRs, etc.
-# ----------------------------------------------------------
+# See Milestone Release 0.02.00
 #    * Ex: Resolves Issue #207, see PR #15, etc.
-# -------------------
+# ------------------------------------------------------------------------------80
