@@ -12,8 +12,8 @@
 #    * build            Change to build system
 #    * ci               Change to CI pipeline/workflow
 #    * chore            General tooling/config/min refactor
+#    * Design           General design work on a feature, if design is done on `main`
 # ----------------------------------------------------------
-
 
 # ----------------------------------------------------------
 # Body - More description, if necessary
@@ -21,7 +21,6 @@
 #    * Motivation behind changes, more detail into how
 #      functionality might be affected, etc.
 # ----------------------------------------------------------
-
 
 # ----------------------------------------------------------
 # Footer - Associated issues, PRs, etc.

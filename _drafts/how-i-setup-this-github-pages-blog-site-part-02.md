@@ -105,5 +105,13 @@ To make it easier to create commit messages that follow a standard template, add
 1. Create the subdirectory `GitTemplates` in the root of the repo.
 1. Create the file `git.commit.template.txt` in the subdirectory `GitTemplates`.
 1. Add text similar to the following to the template `.txt` file, and save it.
-1. Run `git config --global commit.template GitTemplates/git.commit.template.txt` too add the template to your global git config.
-1. Run `git config --global core.editor "code --wait"` Ensure that VSC is the editor for the commit message.
+
+  ```Text
+    
+  ```
+
+1. Run `git config --global commit.template GitTemplates/git.commit.template.txt` to add the template to your global git config.
+1. Run `git config --global core.editor "code --wait"` to add VSC as git's editor of choice. See also [MarredCheese's answer to StackOverflow question ](https://stackoverflow.com/questions/30149132/multiline-git-commit-message-in-vscode/54139152#54139152).
+1. Run `git commit -a`
+1. Validate that VSC is the editor for the commit message which comes up pre-populated with the template's text.
+
