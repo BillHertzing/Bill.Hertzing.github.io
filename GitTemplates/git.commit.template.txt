@@ -1,4 +1,5 @@
 # ----------------------------------------------------------60
+WIP 
 # Header - type(scope): Brief description [ FEAT FIxBUG BREAKINGCHANGE DOC STYLE REFAC PERF TEST DATA BUILD CHORE COPY SPEC WIP  ]
 # ----------------------------------------------------------60
 #   Commit Key is Case insensitive, 2-letter minimum
@@ -22,6 +23,6 @@
 
 # ------------------------------------------------------------------------------80
 # Footer - Associated issues, PRs, etc.
-# See Milestone Release 0.02.00
+See Milestone Release 0.02.00
 #    * Ex: Resolves Issue #207, see PR #15, etc.
 # ------------------------------------------------------------------------------80
