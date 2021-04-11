@@ -114,6 +114,7 @@ To make it easier to create commit messages that follow a standard template, add
 1. Run `git config --global core.editor "code --wait"` to add VSC as git's editor of choice. See also [MarredCheese's answer to StackOverflow question ](https://stackoverflow.com/questions/30149132/multiline-git-commit-message-in-vscode/54139152#54139152).
 1. Run `git commit -a`
 1. Validate that VSC is the editor for the commit message which comes up pre-populated with the template's text.
+1. Click on the SCM icon in the sidebar. What was the single line commit message text box at the top has expanded to contain the non-comment template lines, and blank lines wherever there was a comment. Hmmm... Wonder how we can have only non-comment lines from the template in the SCM editor's commit text box, yet have the fulltemplate text at just a keystroke away if needed forr reference  ToDo: Figure that out.
 
 When doing design work on a feature, it save some time if you edit the template to add a reference to the feature specification or the release milestone that calls out the feature under development. Likewise if you are working on a post, and doing the edit/build/view dance, editing the template may save you some time and keystrokes.
 
