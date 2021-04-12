@@ -147,7 +147,13 @@ Details on how to use the issue templates from the Community Health repo are at:
 1. Commit the change made to .github repository and sync the changes with the remote.
 1. Validate the new templates are available in the static site repository. ToDo: insert jpg
 
-## Add the `jekyll-timeago PlaugIn
+## Add the `jekyll-timeago` PlugIn
 
-(published {{ page.date | timeago }})
+_configure 
+
+gem install
+
+add to Gemfile
+
+page publication date was {{ page.date }}, which was {{ page.date | timeago }}
 
