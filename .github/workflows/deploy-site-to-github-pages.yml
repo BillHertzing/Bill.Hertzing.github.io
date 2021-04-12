@@ -1,10 +1,10 @@
 name: deploy generated site to GitHub Pages on gh-branch 
 
 on:
-  # Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag
+  # Triggers the workflow on push requests if the commit includes a tag that matches the Semantic Version release tag
   push:
-    tags: [ releases/\d+.\d+.\d+ ] # yep, the first element of the tags array is a regular expression. Modify the RegExp if you use a different format for your release tags
-    branches: [ main ]
+    tags: releases/\d+\.\d+\.\d+ # yep, the conditional is a regular expression. Modify the RegExp if the release tags in your site use a different format
+    # branches: [ main ]
   # This line allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -16,7 +16,7 @@ jobs:
 
      # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks-out the main repository under $GITHUB_WORKSPACE, so the job can access it
     - name: Checkout code
       uses: actions/checkout@v2
 
