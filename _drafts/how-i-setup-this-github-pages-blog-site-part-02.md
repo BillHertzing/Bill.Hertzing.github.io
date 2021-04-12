@@ -147,7 +147,7 @@ Details on how to use the issue templates from the Community Health repo are at:
 1. Commit the change made to .github repository and sync the changes with the remote.
 1. Validate the new templates are available in the static site repository. ToDo: insert jpg
 
-## Add a Pull Request Template
+## Add the `jekyll-timeago PlaugIn
 
-Pull request Templates are not part of the Community Health Files, and must be created individually for each repository. A Pull Request template will make it easier for contributors to create standardized Pull Requests, which in turn will make future automation easier.
+(published {{ page.date | timeago }})
 

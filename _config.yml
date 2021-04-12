@@ -15,3 +15,5 @@ theme: minima
 # https://html5up.net/minimaxing possibly?
 # https://mmistakes.github.io/minimal-mistakes/ possibly?
 
+plugins:
+   - jekyll-timeago
