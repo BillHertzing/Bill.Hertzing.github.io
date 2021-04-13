@@ -109,7 +109,7 @@ To make it easier to create commit messages that follow a standard template, add
   ```
 
 1. Run `git config --global commit.template .github/git.commit.template.txt` to add the template to your global git config.
-1. Run `git config --global core.editor "code --wait"` to add VSC as git's editor of choice. See also [MarredCheese's answer to StackOverflow question ](https://stackoverflow.com/questions/30149132/multiline-git-commit-message-in-vscode/54139152#54139152).
+1. Run `git config --global core.editor "code --wait"` to add VSC as git's editor of choice. See also [MarredCheese's answer to StackOverflow question](https://stackoverflow.com/questions/30149132/multiline-git-commit-message-in-vscode/54139152#54139152).
 1. Run `git commit -a`
 1. Validate that VSC is the editor for the commit message which comes up pre-populated with the template's text.
 1. Click on the SCM icon in the sidebar. Validate that what was the single line commit message text box at the top has expanded to contain the non-comment template lines, and blank lines wherever there was a comment. Hmmm... Wonder how we can have only non-comment lines from the template in the SCM editor's commit text box, yet have the full template text at just a keystroke away if needed for reference  ToDo: Figure that out.
@@ -151,11 +151,11 @@ Details on how to use the issue templates from the Community Health repo are at:
 
 One of the main reasons that I am not using GitHub Pages built-in Jekyll site generator is so that I can use the entire ecosystem of Jekyll plugins. Github limits you to a white-list of approved plugins. `jekyll-timeago` is a nice simple non-approved plugin that adds simple functionality to calculate how long ago a date is. To ensure we can use non-approved plugins, lets start with this one.
 
-### Install the plugin locally
+### Install the `jekyll-timeago` plugin locally
 
 - Run `gem install jekyll-timeago` in the Powershell window (at the base of the repo).  Make a note of the version installed, that will be used in the next step, to the right of the ~> in the `gem ...` line.
 
-### Add the plugin to the `Gemfile`
+### Add the `jekyll-timeago` plugin to the `Gemfile`
 
 1. Edit the `Gemfile` in the base of the repo.
 1. Add `gem "jekyll-timeago", "~> 0.14.0"` to the `Gemfile` in the block `group :jekyll_plugins do`. The block should look like this at this point in the development of the site.
@@ -166,9 +166,10 @@ One of the main reasons that I am not using GitHub Pages built-in Jekyll site ge
     gem "jekyll-timeago", "~> 0.14.0"
     end
     ```
+
 1. Save the file.
 
-### Add the plugin to the `_config.yml` file
+### Add the `jekyll-timeago` plugin to the `_config.yml` file
 
 1. Edit the `_config.yml` in the base of the repo.
 1. add `-jekyll-timeago` to the plugins key. The block should look like this at this point in the development of the site.
@@ -191,11 +192,11 @@ page publication date was {{ page.date }}, which was {{ page.date | timeago }}
 
 The plugin [jekyll-version-plugin](https://github.com/rob-murray/jekyll-version-plugin) will get the latest releases tag from the local git repository.
 
-### Install the plugin locally
+### Install the `jekyll-version-plugin` plugin locally
 
 - Run `gem install jekyll-version-plugin` in the Powershell window (at the base of the repo). Make a note of the version installed, that will be used in the next step, to the right of the ~> in the `gem ...` line.
 
-### Add the plugin to the `Gemfile`
+### Add the `jekyll-version-plugin` plugin to the `Gemfile`
 
 1. Edit the `Gemfile` in the base of the repo.
 1. Add `gem "jekyll-version-plugin", "~> 2.0.0"` to the `Gemfile` in the block `group :jekyll_plugins do`. The block should look like this at this point in the development of the site.
@@ -210,7 +211,7 @@ The plugin [jekyll-version-plugin](https://github.com/rob-murray/jekyll-version-
 
 1. Save the file.
 
-### Add the plugin to the `_config.yml` file
+### Add the `jekyll-version-plugin` plugin to the `_config.yml` file
 
 1. Edit the `_config.yml` in the base of the repo.
 1. add `-jekyll-version-plugin` to the plugins key. The block should look like this at this point in the development of the site.
@@ -224,12 +225,23 @@ The plugin [jekyll-version-plugin](https://github.com/rob-murray/jekyll-version-
 
 - The next line looks like this in this post's .md
 
-latest release tag: {{ "{%" }} project_version short %}
+project_version returns: {{ "{%" }} project_version %}
   
 - Which renders as:
 
-latest release tag: {% project_version %}
+project_version returns: {% project_version %}
 
 ### Parse the full tag into a string suitable for display
 
-latest release tag: {% project_version | remove "releases/" | split: "-" | first | prepend "V"" %}
+- The next two lines looks like this in this post's .md
+
+{% raw %}
+{% capture long_tag_name %}{% project_version %}{% endcapture %}
+
+latest release tag: {{ long_tag_name \| remove: 'releases/' \| split: '-' \| first \| prepend: 'V' }}
+{% endraw %}
+
+- Which renders as:
+
+{% capture long_tag_name %}{% project_version  %}{% endcapture %}
+latest release tag: {{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}
