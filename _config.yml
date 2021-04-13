@@ -16,4 +16,5 @@ theme: minima
 # https://mmistakes.github.io/minimal-mistakes/ possibly?
 
 plugins:
-   - jekyll-timeago
+  - jekyll-feed
+  - jekyll-timeago

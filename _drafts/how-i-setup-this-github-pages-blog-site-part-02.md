@@ -147,13 +147,45 @@ Details on how to use the issue templates from the Community Health repo are at:
 1. Commit the change made to .github repository and sync the changes with the remote.
 1. Validate the new templates are available in the static site repository. ToDo: insert jpg
 
-## Add the `jekyll-timeago` PlugIn
+## Add the `jekyll-timeago` plugin
 
-_configure 
+One of the main reasons that I am not using GitHub Pages built-in Jekyll site generator is so that I can use the entire ecosystem of Jekyll plugins. Github limits you to a white-list of approved plugins. `jekyll-timeago` is a nice simple non-approved plugin that adds simple functionality to calculate how long ago a date is. To ensure we can use non-approved plugins, lets start with this one.
 
-gem install
+### Install the plugin locally
 
-add to Gemfile
+- Run `gem install jekyll-timeago` in the Powershell window (at the base of the repo). 
+
+### Add the plugin to the `Gemfile`
+
+1. Edit the `Gemfile` in the base of the repo.
+1. Add `gem "jekyll-timeago", "~> 0.14.0"` to the `Gemfile` in the block `group :jekyll_plugins do`. The block should look like this at this point in the development of the site.
+
+    ```yml
+    group :jekyll_plugins do
+    gem "jekyll-feed", "~> 0.12"
+    gem "jekyll-timeago", "~> 0.14.0"
+    end
+    ```
+1. Save the file.
+
+### Add the plugin to the `_config.yml` file
+
+1. Edit the `_config.yml` in the base of the repo.
+1. add `-jekyll-timeago` to the plugins key. The block should look like this at this point in the development of the site.
+
+    ```yml
+    plugins:
+    - jekyll-feed
+    - jekyll-timeago
+    ```
+
+- The next line looks like this in the post's .md
+
+page publication date was {{ "{{" }} page.date }}, which was {{ "{{" }} page.date | timeago }}
+  
+- Which renders as:
 
 page publication date was {{ page.date }}, which was {{ page.date | timeago }}
+
+## Put the most recent releases tag Semantic Version in the `footer` template
 
