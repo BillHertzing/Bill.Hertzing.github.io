@@ -153,7 +153,7 @@ One of the main reasons that I am not using GitHub Pages built-in Jekyll site ge
 
 ### Install the plugin locally
 
-- Run `gem install jekyll-timeago` in the Powershell window (at the base of the repo). 
+- Run `gem install jekyll-timeago` in the Powershell window (at the base of the repo).  Make a note of the version installed, that will be used in the next step, to the right of the ~> in the `gem ...` line.
 
 ### Add the plugin to the `Gemfile`
 
@@ -189,3 +189,47 @@ page publication date was {{ page.date }}, which was {{ page.date | timeago }}
 
 ## Put the most recent releases tag Semantic Version in the `footer` template
 
+The plugin [jekyll-version-plugin](https://github.com/rob-murray/jekyll-version-plugin) will get the latest releases tag from the local git repository.
+
+### Install the plugin locally
+
+- Run `gem install jekyll-version-plugin` in the Powershell window (at the base of the repo). Make a note of the version installed, that will be used in the next step, to the right of the ~> in the `gem ...` line.
+
+### Add the plugin to the `Gemfile`
+
+1. Edit the `Gemfile` in the base of the repo.
+1. Add `gem "jekyll-version-plugin", "~> 2.0.0"` to the `Gemfile` in the block `group :jekyll_plugins do`. The block should look like this at this point in the development of the site.
+
+    ```yml
+    group :jekyll_plugins do
+      gem "jekyll-feed", "~> 0.12"
+      gem "jekyll-timeago", "~> 0.14.0"
+      gem "jekyll_version_plugin", "~> 2.0.0"
+    end
+    ```
+
+1. Save the file.
+
+### Add the plugin to the `_config.yml` file
+
+1. Edit the `_config.yml` in the base of the repo.
+1. add `-jekyll-version-plugin` to the plugins key. The block should look like this at this point in the development of the site.
+
+    ```yml
+    plugins:
+    - jekyll-feed
+    - jekyll-timeago
+    - jekyll_version_plugin
+    ```
+
+- The next line looks like this in this post's .md
+
+latest release tag: {{ "{%" }} project_version short %}
+  
+- Which renders as:
+
+latest release tag: {% project_version %}
+
+### Parse the full tag into a string suitable for display
+
+latest release tag: {% project_version | remove "releases/" | split: "-" | first | prepend "V"" %}
