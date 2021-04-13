@@ -1,4 +1,310 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-13T10:13:39-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-13T13:17:06-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 02</title><link href="https://billhertzing.github.io/2021/04/13/how-i-setup-this-github-pages-blog-site-part-02/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 02" /><published>2021-04-13T13:15:16-06:00</published><updated>2021-04-13T13:15:16-06:00</updated><id>https://billhertzing.github.io/2021/04/13/how-i-setup-this-github-pages-blog-site-part-02</id><content type="html" xml:base="https://billhertzing.github.io/2021/04/13/how-i-setup-this-github-pages-blog-site-part-02/">&lt;p&gt;Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series &lt;a href=&quot;TBD&quot;&gt;How I setup this GitHub Pages Blog&lt;/a&gt;, you should probably give it a quick review, to become familiar with how it all started.&lt;/p&gt;
+
+&lt;p&gt;The next steps will be to implement the features specified in &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/2&quot;&gt;Milestone 0.02.0&lt;/a&gt;.  I like to plan my development efforts using GitHub Milestones. They are quick and easy to create and maintain, especially for tiny sites like mine that have no collaborators. Of course I don’t &lt;strong&gt;&lt;em&gt;have&lt;/em&gt;&lt;/strong&gt; to create Milestones, but I’ve found that there is always “feature creep” in releases if I don’t take the time to write down what is going into the next release, and what’s on tap for some future release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don’t get too big!&lt;/p&gt;
+
+&lt;p&gt;This release is mostly adding files that are common to a good repository, and then adding the ability to add comments to a post.&lt;/p&gt;
+
+&lt;p&gt;Lets move on!&lt;/p&gt;
+
+&lt;h2 id=&quot;create-_drafts-folder&quot;&gt;Create &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; folder&lt;/h2&gt;
+
+&lt;p&gt;Being able to work on a draft of a post, and not have that draft appear on the production site, is important during development. Jekyll has built in support for drafts, using a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; folder. Simply create the folder &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; under the root of your repository.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-a-draft-post&quot;&gt;Create a draft post&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;how-i-setup-this-github-pages-blog-site-part-02.md&lt;/code&gt; under the new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; subdirectory. Do not add the &lt;em&gt;YYYY-MM-DD&lt;/em&gt; prefix to this file.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the following Front Matter text to the file. Modify it as appropriate for your site. &lt;em&gt;Note&lt;/em&gt; There is no &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date:&lt;/code&gt; key in a draft post. Jekyll will insert that key when you promote the post out of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; and publish it for the first time.&lt;/p&gt;
+
+    &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt; ---&lt;/span&gt;
+ Title: How I setup this GitHub Pages Blog, Part 2
+ tags: Jekyll &quot;GitHubPages&quot;
+ layout: post
+ description: Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
+&lt;span class=&quot;p&quot;&gt; ---
+&lt;/span&gt;
+ Add text you want to see in your second post
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Save and commit.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt;. Jekyll will build the drafts with the current date so they will be easy to find at the top of your (chronologically sorted) post listings.&lt;/li&gt;
+  &lt;li&gt;Validate your new post exists locally.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;community-health-files&quot;&gt;Community Health files&lt;/h2&gt;
+
+&lt;p&gt;GitHub encourages authors to ensure their repositories are setup for building communities for healthy and effective collaboration. Details are at &lt;a href=&quot;https://docs.github.com/en/communities&quot;&gt;Building communities&lt;/a&gt;. The first guideline is &lt;a href=&quot;https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions&quot;&gt;Setting up your project for healthy contributions&lt;/a&gt;. Among other things, it recommends &lt;a href=&quot;https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project&quot;&gt;Adding a code of conduct to your project&lt;/a&gt; and &lt;a href=&quot;https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors&quot;&gt;Setting guidelines for repository contributors&lt;/a&gt;. But what if you have more than one repository? Do you have to duplicate these files in every one? No, you can setup defaults for these files, and have every repository inherit from your default. Details are in &lt;a href=&quot;https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file&quot;&gt;Creating a default community health file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-github-repo&quot;&gt;Create &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt; repo&lt;/h3&gt;
+
+&lt;p&gt;I’m not going to repeat here the instructions you can find on the GitHub doc above. But at this point in the development of this site, I created the new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt; public repository under my username, and added the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CODE_OF_CONDUCT.md&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CONTRIBUTING.md&lt;/code&gt; files to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt; repo. ToDo: insert jpg&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note&lt;/em&gt; I changed my GitHub theme to Dark, so the screen shots of GitHub are going to look different from Part 1 of this series!&lt;/p&gt;
+
+&lt;p&gt;Now go look at your site’s repository in GitHub, drill down into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Insights&lt;/code&gt;, and then the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Community&lt;/code&gt; tab, and you can see that both of these files are now present in this repository’s Community Profile! ToDo: insert jpg&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-link-to-these-default-files&quot;&gt;How to link to these default files&lt;/h3&gt;
+
+&lt;p&gt;Lets add links to both of these files, both here, and in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/footer.html&lt;/code&gt; template. From the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Insights-&amp;gt;Community&lt;/code&gt; page, click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Code of conduct&lt;/code&gt; link, the in the browser’s address bar, copy the URL showing. Mine looks like this: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md&lt;/code&gt;. Create a markdown link to this as follows:&lt;/p&gt;
+
+&lt;notextile&gt;[Code of Conduct](https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md)&lt;/notextile&gt;
+&lt;p&gt;produces &lt;a href=&quot;https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md&quot;&gt;Code of Conduct&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Repeat for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CONTRIBUTING.md&lt;/code&gt;.&lt;/p&gt;
+
+&lt;notextile&gt;[CONTRIBUTING](https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md)&lt;/notextile&gt;
+&lt;p&gt;produces
+&lt;a href=&quot;https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md&quot;&gt;CONTRIBUTING&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;add-readmemd&quot;&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReadMe.md&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReadMe.md&lt;/code&gt; file at the root of a repo will get displayed to visitors on the repo’s landing page. Here are some posts with great ideas&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://meakaakka.medium.com/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3#:~:text=A%20great%20README%20file%20helps,basic%20introduction%20to%20the%20software.&quot;&gt;A Beginners Guide to writing a Kickass README&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/PurpleBooth/109311bb0361f32d87a2&quot;&gt;A template to make good README.md · GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/matiassingers/awesome-readme&quot;&gt;A curated list of awesome READMEs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;chetanraj/awesome-github-badges&quot;&gt;awesome-github-badges&lt;/a&gt; - add some badges to the readme&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aleen42/badges&quot;&gt;badges&lt;/a&gt; - To make badges more standard and acceptable.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;lukas-h/license-badges.md&quot;&gt;Markdown License badges&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Note&lt;/em&gt; If you want to use a badge that refers to any of the repo’s Community Health files (like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CONTRIBUTING&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CODE OF CONDUCT&lt;/code&gt; AND if you want to use &lt;strong&gt;&lt;em&gt;default&lt;/em&gt;&lt;/strong&gt; Community Health files, then specify the repo &lt;em&gt;GitHubUserName&lt;/em&gt;/.github in the badge’s repo field.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReadMe.md&lt;/code&gt; in the root of the repo.&lt;/li&gt;
+  &lt;li&gt;Edit the file, and add whatever content you think appropriate&lt;/li&gt;
+  &lt;li&gt;Commit and push to the GitHub repo.&lt;/li&gt;
+  &lt;li&gt;Validate your ReadMe file now displays on the GitHub repo’s landing page.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;add-changelogmd&quot;&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Having a ChangeLog for your blog site will help user’s understand changes you  have applied&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://keepachangelog.com/en/1.0.0/&quot;&gt;keep a changelog&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want to automate the ChangeLog to a degree, it is important that the commits in the repo have meaningful commit messages that are machine readable. Here are some examples of commit messages and tools that can read them.
+&lt;a href=&quot;https://www.conventionalcommits.org/en/v1.0.0/&quot;&gt;Conventional Commits&lt;/a&gt; also has a large bibliography of tooling around Conventional Commits
+&lt;a href=&quot;https://github.com/marketplace/actions/universal-changelog-generator&quot;&gt;Universal Changelog Generator action&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;If you want to automate the generation of the ChangeLog, you need to write your commits in a standard format&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I hve a feature identified in the Far Future Milestone for automation in this area, so I’ll start using commits in the style specified by &lt;a href=&quot;https://www.conventionalcommits.org/en/v1.0.0/&quot;&gt;Conventional Commits&lt;/a&gt;. According to that document, commits I’ve already made will just be ignored by the automated tooling, and the ChangeLog can be manually edited as I have done for the initial ChangeLog I create below.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt; in the root of the repo.&lt;/li&gt;
+  &lt;li&gt;Edit the file, and add content appropriate for the site’s “Birthday”, and Release V1.01.1&lt;/li&gt;
+  &lt;li&gt;Commit and push to the GitHub repo.&lt;/li&gt;
+  &lt;li&gt;Validate your ChangeLog file now displays on the GitHub repo’s landing page.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;add-commit-message-template&quot;&gt;Add Commit Message Template&lt;/h2&gt;
+
+&lt;p&gt;To make it easier to create commit messages that follow a standard template, add a git commit message template to the repository and configure git to use that file. The standardized commit message template I chose for my initial version of the template can be found at &lt;a href=&quot;https://dev.to/timmybytes/keeping-git-commit-messages-consistent-with-a-custom-template-1jkm&quot;&gt;Keeping Git Commit Messages Consistent with a Custom Template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git.commit.template.txt&lt;/code&gt; in the subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add text similar to the following to the template &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.txt&lt;/code&gt; file, and save it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Text&quot;&gt;    ToDo: Add final text just before release
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global commit.template .github/git.commit.template.txt&lt;/code&gt; to add the template to your global git config.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global core.editor &quot;code --wait&quot;&lt;/code&gt; to add VSC as git’s editor of choice. See also &lt;a href=&quot;https://stackoverflow.com/questions/30149132/multiline-git-commit-message-in-vscode/54139152#54139152&quot;&gt;MarredCheese’s answer to StackOverflow question&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -a&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Validate that VSC is the editor for the commit message which comes up pre-populated with the template’s text.&lt;/li&gt;
+  &lt;li&gt;Click on the SCM icon in the sidebar. Validate that what was the single line commit message text box at the top has expanded to contain the non-comment template lines, and blank lines wherever there was a comment. Hmmm… Wonder how we can have only non-comment lines from the template in the SCM editor’s commit text box, yet have the full template text at just a keystroke away if needed for reference  ToDo: Figure that out.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;When doing design work on a feature, it saves some time if you edit the template to add a reference to the feature specification or the release milestone that calls out the feature under development. Likewise if you are working on a post, and doing the edit/build/view dance, editing the template may save you some time and keystrokes.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-bug-report-and-feature-request-issue-templates&quot;&gt;Add Bug Report and Feature Request Issue Templates&lt;/h2&gt;
+
+&lt;p&gt;Bug Report and Feature Request Issue Templates will make it easier for contributors to create issues for bug reports and feature requests. Standardizing on formats for these items early in the site’s development will make it easier for automation in the future. These files can also be part of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Community Health Files&lt;/code&gt;, and default versions of these can be placed in the user’s or organization’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt; repository and shared amongst all of a GitHub user’s or organization’s repositories.&lt;/p&gt;
+
+&lt;p&gt;Details on how to use the issue templates from the Community Health repo are at:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository&quot;&gt;Configuring issue templates for your repository&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;[Configuring the template chooser]- [https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file&quot;&gt;https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates&quot;&gt;About issue and pull request templates&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use the tool of your choice to navigate to the root of your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt; repository that was created above in [#Create&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt;repo].&lt;/li&gt;
+  &lt;li&gt;Create a new subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt; in the root of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt; (yes, it &lt;strong&gt;&lt;em&gt;is&lt;/em&gt;&lt;/strong&gt; confusing).&lt;/li&gt;
+  &lt;li&gt;Create a new subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ISSUE_TEMPLATE&lt;/code&gt; in the subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github&lt;/code&gt; in root of the `.github1 repository.&lt;/li&gt;
+  &lt;li&gt;Create a new file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bug_Report_Template.md&lt;/code&gt; in the new subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ISSUE_TEMPLATE&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add text similar to the following to the template &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; file, and save it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ToDo: Add final text just before release
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a new file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Feature_Request_Template.md&lt;/code&gt; in the new subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ISSUE_TEMPLATE&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add text similar to the following to the template &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; file, and save it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    ToDo: Add final text just before release
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Commit the change made to .github repository and sync the changes with the remote.&lt;/li&gt;
+  &lt;li&gt;Validate the new templates are available in the static site repository. ToDo: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;add-the-jekyll-timeago-plugin&quot;&gt;Add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-timeago&lt;/code&gt; plugin&lt;/h2&gt;
+
+&lt;p&gt;One of the main reasons that I am not using GitHub Pages built-in Jekyll site generator is so that I can use the entire ecosystem of Jekyll plugins. Github limits you to a white-list of approved plugins. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-timeago&lt;/code&gt; is a nice simple non-approved plugin that adds simple functionality to calculate how long ago a date is. To ensure we can use non-approved plugins, lets start with this one.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-the-jekyll-timeago-plugin-locally&quot;&gt;Install the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-timeago&lt;/code&gt; plugin locally&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-timeago&lt;/code&gt; in the Powershell window (at the base of the repo).  Make a note of the version installed, that will be used in the next step, to the right of the ~&amp;gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem ...&lt;/code&gt; line.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;add-the-jekyll-timeago-plugin-to-the-gemfile&quot;&gt;Add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-timeago&lt;/code&gt; plugin to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; in the base of the repo.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll-timeago&quot;, &quot;~&amp;gt; 0.14.0&quot;&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; in the block &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;group :jekyll_plugins do&lt;/code&gt;. The block should look like this at this point in the development of the site.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;s&quot;&gt;group :jekyll_plugins do&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-feed&quot;, &quot;~&amp;gt; 0.12&quot;&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-timeago&quot;, &quot;~&amp;gt; 0.14.0&quot;&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Save the file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;add-the-jekyll-timeago-plugin-to-the-_configyml-file&quot;&gt;Add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-timeago&lt;/code&gt; plugin to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; in the base of the repo.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-jekyll-timeago&lt;/code&gt; to the plugins key. The block should look like this at this point in the development of the site.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-feed&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-timeago&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The next line looks like this in the post’s .md&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;page publication date was {{ page.date }}, which was {{ page.date&lt;/td&gt;
+      &lt;td&gt;timeago }}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Which renders as:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;page publication date was 2021-04-13 13:15:16 -0600, which was today&lt;/p&gt;
+
+&lt;h2 id=&quot;put-the-most-recent-releases-tag-semantic-version-in-the-footer-template&quot;&gt;Put the most recent releases tag Semantic Version in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer&lt;/code&gt; template&lt;/h2&gt;
+
+&lt;p&gt;The plugin &lt;a href=&quot;https://github.com/rob-murray/jekyll-version-plugin&quot;&gt;jekyll-version-plugin&lt;/a&gt; will get the latest releases tag from the local git repository.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-the-jekyll-version-plugin-plugin-locally&quot;&gt;Install the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-version-plugin&lt;/code&gt; plugin locally&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-version-plugin&lt;/code&gt; in the Powershell window (at the base of the repo). Make a note of the version installed, that will be used in the next step, to the right of the ~&amp;gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem ...&lt;/code&gt; line.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;add-the-jekyll-version-plugin-plugin-to-the-gemfile&quot;&gt;Add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-version-plugin&lt;/code&gt; plugin to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; in the base of the repo.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll-version-plugin&quot;, &quot;~&amp;gt; 2.0.0&quot;&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; in the block &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;group :jekyll_plugins do&lt;/code&gt;. The block should look like this at this point in the development of the site.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;s&quot;&gt;group :jekyll_plugins do&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-feed&quot;, &quot;~&amp;gt; 0.12&quot;&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-timeago&quot;, &quot;~&amp;gt; 0.14.0&quot;&lt;/span&gt;
+   &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll_version_plugin&quot;, &quot;~&amp;gt; 2.0.0&quot;&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Save the file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;add-the-jekyll-version-plugin-plugin-to-the-_configyml-file&quot;&gt;Add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-version-plugin&lt;/code&gt; plugin to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; in the base of the repo.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-jekyll-version-plugin&lt;/code&gt; to the plugins key. The block should look like this at this point in the development of the site.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-feed&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-timeago&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll_version_plugin&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The next line looks like this in this post’s .md&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;project_version returns: {% project_version %}&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Which renders as:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;project_version returns: releases/0.01.001-5-gae7fcc9&lt;/p&gt;
+
+&lt;h3 id=&quot;parse-the-full-tag-into-a-string-suitable-for-display&quot;&gt;Parse the full tag into a string suitable for display&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The next two lines looks like this in this post’s .md&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;{% capture long_tag_name %}{% project_version %}{% endcapture %}&lt;/p&gt;
+
+&lt;p&gt;latest release tag: {{ long_tag_name | remove: ‘releases/’ | split: ‘-‘ | first | prepend: ‘V’ }}&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Which renders as:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;latest release tag: V0.01.001&lt;/p&gt;
+
+&lt;h3 id=&quot;place-the-results-in-the-footerhtml-file&quot;&gt;Place the results in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer.html&lt;/code&gt; file&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer.html&lt;/code&gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; subdirectory.&lt;/li&gt;
+  &lt;li&gt;Add the following somewhere within the div &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div class=&quot;footer-col-wrapper&quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-MarkDown&quot;&gt;   &amp;lt;div class=&quot;footer-col&quot;&amp;gt;
+     &amp;lt;p&amp;gt;Site Release {% capture long_tag_name %}{% project_version %}{% endcapture %}{{ long_tag_name | remove: &apos;releases/&apos; | split: &apos;-&apos; | first | prepend: &quot;V&quot; }}&amp;lt;/p&amp;gt;
+   &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Save the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer.html&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Validate the Site release version information apears at teh bottom ofeach page and each post, including the landing page.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series How I setup this GitHub Pages Blog, you should probably give it a quick review, to become familiar with how it all started.</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
 
 &lt;p&gt;If you would like to see a list of the articles online that have helped me create this site, please see the  &lt;a href=&quot;#Attributions&quot;&gt;Attributions&lt;/a&gt; section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)&lt;/p&gt;
 

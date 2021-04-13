@@ -245,3 +245,18 @@ latest release tag: {{ long_tag_name \| remove: 'releases/' \| split: '-' \| fir
 
 {% capture long_tag_name %}{% project_version  %}{% endcapture %}
 latest release tag: {{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}
+
+### Place the results in the `footer.html` file
+
+1. Edit `footer.html` in the `_includes` subdirectory.
+1. Add the following somewhere within the div `<div class="footer-col-wrapper">`
+
+```MarkDown
+   {% raw %}<div class="footer-col">
+     <p>Site Release {% capture long_tag_name %}{% project_version %}{% endcapture %}{{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}</p>
+   </div>{% endraw %}
+```
+
+1. Save the `footer.html` file
+1. Run `bundle exec jekyll serve --drafts`
+1. Validate the Site release version information apears at teh bottom ofeach page and each post, including the landing page.

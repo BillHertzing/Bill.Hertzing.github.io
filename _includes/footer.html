@@ -17,7 +17,10 @@
         <p>{{ site.description | escape }}</p>
       </div>
       <div class="footer-col">
-        <p>&copy; William Hertzing 2020 - 2021 The contents of this website are under the terms of the MIT <a href={{ "/LICENSE.html" | relative_url }}>License.</p>
+        <p>&copy; William Hertzing 2020 - 2021 The contents of this website are under the terms of the <a href={{ "/LICENSE.html" | relative_url }}>MIT License.</a></p>
+      </div>
+      <div class="footer-col">
+        <p>Site Release {% capture long_tag_name %}{% project_version  %}{% endcapture %}{{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}</p>
       </div>
     </div>
 
