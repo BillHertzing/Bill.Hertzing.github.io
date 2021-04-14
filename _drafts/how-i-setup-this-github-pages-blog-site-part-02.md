@@ -347,6 +347,10 @@ Powershell's measurement includes all the overhead time to invoke Ruby and to cl
 
 HaHaHaHa - adding the cache increased the build time infinitesimally! But as any performance tester will tell you, it is important to run timing tests like these hundreds of times, throw out outliers, and take the average of the results. I'm not going to do that yet in the development of this site, but I'll add a task to do this into the later Milestones of the project.
 
+# Add draft post `Case for a non-anonymous Internet, Part 01` to `technical` category
+
+1. 
+
 ## Making the second release of the site
 
 I'm happy now with the enhancements I've made to the blogging site. It's time to wrap up this release. I'm going to start a checklist for "release" chores, and eventually will automate as much as I feel is worth putting in the time to do.
@@ -357,6 +361,9 @@ I'm happy now with the enhancements I've made to the blogging site. It's time to
 1. Review any `warnings` that appear in VSC's `problems`. pane. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to `main` and push to the remote.
 1. Update the ChangeLog.md. I simply cleanup the Milestone text and add it to ChangeLog. I'll get around to automating this from the Git commit messages in a future release. Commit the ChangeLog.md and push it.
 1. Publish the draft Part 02 post into _technical
+1. Publish the draft `Case for a non-anonymous Internet, Part 01` post into `technical` subdirectory.
+1. Publish the draft `Welcome to the Personal section of my site` post into `personal` subdirectory.
+
 I'll make a final commit of my outstanding work, then I'll make another commit and add a Release tag. For now, the release tags will follow the format `releases/\d+\.\d+\.\d+`. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in [Git Basics - Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging.)
 
 Once you have committed all the changes you want for Release 0.01.0,

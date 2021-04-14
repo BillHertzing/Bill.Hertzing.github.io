@@ -1,6 +1,6 @@
 # ChangeLog
 
-## 2021-04-07 Release V0.01.0
+## 2021-04-15 Release V0.02.000
 
 - add subdirectories for _drafts, political/_posts, personal/_posts
 - Add a ChangeLog.md , create content for V0.1.0, V0.2.0
@@ -12,11 +12,11 @@
 - add jekyll-timeago plugin
 - add jekyll-include-cache plugin
 - update footer with last Release tag version number and release (commit) date
-- add published post "How I setup this GitHub Pages Blog site, Part 02"
-- add published post "Case for a non-anonymous Internet, Part 01" under political/posts
-- add published post "Welcome to the Personal section of my site" under personal/posts
+- add published post "How I setup this GitHub Pages Blog site, Part 02" under technical subdirectory
+- add published post "Case for a non-anonymous Internet, Part 01" under political subdirectory
+- add published post "Welcome to the Personal section of my site" under personal subdirectory
 
-## 2021-04-07 Release V0.01.0
+## 2021-04-07 Release V0.01.000
 
 Initial creation of site
 
