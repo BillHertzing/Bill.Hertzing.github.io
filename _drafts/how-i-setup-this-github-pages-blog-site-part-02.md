@@ -263,7 +263,31 @@ latest release tag: {{ long_tag_name | remove: 'releases/' | split: '-' | first 
 
 ## Add `jekyll-include-cache` plugin
 
-Build times for the static site locally can be significantly improved with the addition of a cache so that the files for the _includes subdirectory don't have to be built over and over again for each page.
+Build times for the static site locally can be significantly improved over the out-of-the-box experience. Details of one such approach can be found at [How I reduced my Jekyll build time by 61%](https://forestry.io/blog/how-i-reduced-my-jekyll-build-time-by-61/). This early in the creation of this site, I don't expect to see a whopping improvement, but getting the speedup steps done now should keep me from writing incompatible code in future releases.
+
+### Benchmark the current build time
+
+1. Run `bundle exec jekyll build --profile` to use Jekyll's built in profiler. Here are the results:
+
+  ````Text
+  | PHASE      |   TIME |
+  +------------+--------+
+  | RESET      | 0.0001 |
+  | READ       | 0.0900 |
+  | GENERATE   | 0.0043 |
+  | RENDER     | 1.1278 |
+  | CLEANUP    | 0.0105 |
+  | WRITE      | 0.0184 |
+  +------------+--------+
+  | TOTAL TIME | 1.2511 |
+  ```
+
+1. Run `measure-command { bundle exec jekyll build  | out-host }` to use Powershell's Measure-Command applet. THis only works when building on Windows. Here are the results:
+
+  ```text
+    TotalSeconds      : 4.1939049
+  ```
+Powershell's measurement includes all the overhead time to invoke Ruby and to clean up after the generation. This number is much closer to the "clock-time" I experience when generating the site.
 
 ### Install the `jekyll-include-cache` plugin locally
 
@@ -279,7 +303,7 @@ Build times for the static site locally can be significantly improved with the a
       gem "jekyll-feed", "~> 0.12"
       gem "jekyll-timeago", "~> 0.14.0"
       gem "jekyll_version_plugin", "~> 2.0.0"
-      gem "jekyll-include-cache", "~> 2.0.0"
+      gem "jekyll-include-cache", "~> 0.2.1"
     end
     ```
 
@@ -298,6 +322,61 @@ Build times for the static site locally can be significantly improved with the a
     - jekyll-include-cache
     ```
 
+### Benchmark the improved build time
+
+1. Run `bundle exec jekyll build --profile` to use Jekyll's built in profiler. Here are the results:
+
+  ````Text
+  | PHASE      |   TIME |
+  +------------+--------+
+  | RESET      | 0.0001 |
+  | READ       | 0.0943 |
+  | GENERATE   | 0.0044 |
+  | RENDER     | 1.1449 |
+  | CLEANUP    | 0.0109 |
+  | WRITE      | 0.0181 |
+  +------------+--------+
+  | TOTAL TIME | 1.2727 |
+  ```
+
+1. Run `measure-command { bundle exec jekyll build  | out-host }` to use Powershell's Measure-Command applet. This only works when building on Windows. Here are the results:
+
+  ```text
+    TotalSeconds      : 4.2954848
+  ```
+
+HaHaHaHa - adding the cache increased the build time infinitesimally! But as any performance tester will tell you, it is important to run timing tests like these hundreds of times, throw out outliers, and take the average of the results. I'm not going to do that yet in the development of this site, but I'll add a task to do this into the later Milestones of the project.
+
+## Making the second release of the site
+
+I'm happy now with the enhancements I've made to the blogging site. It's time to wrap up this release. I'm going to start a checklist for "release" chores, and eventually will automate as much as I feel is worth putting in the time to do.
+
+### Site Minor Release checklist
+
+1. Ensure the `main` branch builds cleanly.
+1. Review any `warnings` that appear in VSC's `problems`. pane. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to `main` and push to the remote.
+1. Update the ChangeLog.md. I simply cleanup the Milestone text and add it to ChangeLog. I'll get around to automating this from the Git commit messages in a future release. Commit the ChangeLog.md and push it.
+1. Publish the draft Part 02 post into _technical
+I'll make a final commit of my outstanding work, then I'll make another commit and add a Release tag. For now, the release tags will follow the format `releases/\d+\.\d+\.\d+`. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in [Git Basics - Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging.)
+
+Once you have committed all the changes you want for Release 0.01.0,
+
+1. Run `git tag -a releases/0.01.000 -m "Initial release of Bill's Blog"` (modify the command as appropriate for your site)
+1. Run `git tag` which will list all existing tags and verify the tag is there.
+1. Run `git push --tags` to push the release tag to GitHub
+
+
+## Wrapping up
+
+This concludes the first edition of this post. In all my career, I've never encountered a significant document that didn't require revisions, and I expect this will, as well. During the course of developing this site, I plan to incorporate a revision tracking system, so (eventually), you should be able to see all the revisions I've done to the post, and a change log. However, my idea is that I'll only publish post revisions when I do a site release. I may increment the third part of the site version when I publish a revision to a post. I think that is in keeping with the spirit of Semantic Versioning, since 'fixing' a published post would be somewhat equivalent to fixing a bug in a released software package.
+
+There are some Milestones defined in this repository's Issues tab, which detail what I hope to accomplish in the next four revisions. Feel free to look them over if you want to know what's coming in the next three parts to this series.
+
+Comments for posts should be enabled soon, until then, please use the Issues on this repository to communicate with me, if you find errors or have questions.
+
+Thanks for staying to the end :-).
+
+Bill Hertzing, April 8, 2021
 
 ## Add Disqus comments to posts
 

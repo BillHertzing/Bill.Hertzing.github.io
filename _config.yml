@@ -19,3 +19,4 @@ plugins:
   - jekyll-feed
   - jekyll-timeago
   - jekyll_version_plugin
+  - jekyll-include-cache
