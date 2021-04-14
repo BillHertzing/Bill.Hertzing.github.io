@@ -2,6 +2,22 @@
 
 ## 2021-04-07 Release V0.01.0
 
+- add subdirectories for _drafts, political/_posts, personal/_posts
+- Add a ChangeLog.md , create content for V0.1.0, V0.2.0
+- Add Commit Template
+- Add ReadMe.md
+- Add Code of Conduct to Community Health Files repository
+- Add Community Guidelines  to Community Health Files repository
+- Add Issue Template (for Bug and for Feature Request) to Community Health Files repository
+- add jekyll-timeago plugin
+- add jekyll-include-cache plugin
+- update footer with last Release tag version number and release (commit) date
+- add published post "How I setup this GitHub Pages Blog site, Part 02"
+- add published post "Case for a non-anonymous Internet, Part 01" under political/posts
+- add published post "Welcome to the Personal section of my site" under personal/posts
+
+## 2021-04-07 Release V0.01.0
+
 Initial creation of site
 
 - Jekyll tooling including Ruby and MSYS2 on Windows 10
