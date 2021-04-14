@@ -153,7 +153,7 @@ One of the main reasons that I am not using GitHub Pages built-in Jekyll site ge
 
 ### Install the `jekyll-timeago` plugin locally
 
-- Run `gem install jekyll-timeago` in the Powershell window (at the base of the repo).  Make a note of the version installed, that will be used in the next step, to the right of the ~> in the `gem ...` line.
+- Run `gem install jekyll-timeago` in the Powershell window (at the base of the repo).  Make a note of the version installed, that will be used in the next step, to the right of the `~>` in the `gem ...` line.
 
 ### Add the `jekyll-timeago` plugin to the `Gemfile`
 
@@ -194,7 +194,7 @@ The plugin [jekyll-version-plugin](https://github.com/rob-murray/jekyll-version-
 
 ### Install the `jekyll-version-plugin` plugin locally
 
-- Run `gem install jekyll-version-plugin` in the Powershell window (at the base of the repo). Make a note of the version installed, that will be used in the next step, to the right of the ~> in the `gem ...` line.
+- Run `gem install jekyll-version-plugin` in the Powershell window (at the base of the repo). Make a note of the version installed, that will be used in the next step, to the right of the `~>` in the `gem ...` line.
 
 ### Add the `jekyll-version-plugin` plugin to the `Gemfile`
 
@@ -259,4 +259,69 @@ latest release tag: {{ long_tag_name | remove: 'releases/' | split: '-' | first 
 
 1. Save the `footer.html` file
 1. Run `bundle exec jekyll serve --drafts`
-1. Validate the Site release version information apears at teh bottom ofeach page and each post, including the landing page.
+1. Validate the Site release version information appears at teh bottom of each page and each post, including the landing page.
+
+## Add `jekyll-include-cache` plugin
+
+Build times for the static site locally can be significantly improved with the addition of a cache so that the files for the _includes subdirectory don't have to be built over and over again for each page.
+
+### Install the `jekyll-include-cache` plugin locally
+
+- Run `gem install jekyll-include-cache` in the Powershell window (at the base of the repo). Make a note of the version installed, that will be used in the next step, to the right of the `~>` in the `gem ...` line.
+
+### Add the `jekyll-include-cache` plugin to the `Gemfile`
+
+1. Edit the `Gemfile` in the base of the repo.
+1. Add `gem "jekyll-include-cache", "~> 2.0.0"` to the `Gemfile` in the block `group :jekyll_plugins do`. The block should look like this at this point in the development of the site.
+
+    ```yml
+    group :jekyll_plugins do
+      gem "jekyll-feed", "~> 0.12"
+      gem "jekyll-timeago", "~> 0.14.0"
+      gem "jekyll_version_plugin", "~> 2.0.0"
+      gem "jekyll-include-cache", "~> 2.0.0"
+    end
+    ```
+
+1. Save the file.
+
+### Add the `jekyll-include-cache` plugin to the `_config.yml` file
+
+1. Edit the `_config.yml` in the base of the repo.
+1. add `-jekyll-include-cache` to the plugins key. The block should look like this at this point in the development of the site.
+
+    ```yml
+    plugins:
+    - jekyll-feed
+    - jekyll-timeago
+    - jekyll_version_plugin
+    - jekyll-include-cache
+    ```
+
+
+## Add Disqus comments to posts
+
+There is a lot of opinions on the Internet related to "what is the best way to add a comments section to posts". I decided to use the Disqus approach, primarily because I did not want to have to spend time moderating comments to remove spam. Most people who weighed in on this topic agreed that Disqus had a very good track record in eliminating spam. As of this date, 2021-04-13, Disqus will provide the basic service (no ads) for free if I self-identify as a personal or OSS site. I have registered today, and will send a note to their support tomorrow. More on this later.
+
+### Register for an account at Disqus
+
+Go through the Disqus registration procedure for a site.
+
+### Enable support for Disqus in the Minimal Mistakes theme
+
+Add `comments: true`  as a default for posts in the `_config.yml` file to enable comments for all posts. Add a `comments:` key to `_config.yml`, and add `disqus` as the value for the `provider` subkey. Also under the `disqus` subkey, add the `shortname:` subkey,  and set its value to  the `shortname`, you entered when registering for your Disqus account.
+
+```yml
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      comments: true
+
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "BillHertzing"
+```
