@@ -3,6 +3,7 @@ Title: How I setup this GitHub Pages Blog, Part 2
 tags: Jekyll "GitHubPages"
 layout: post
 description: Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
+category: technical
 ---
 
 Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series [How I setup this GitHub Pages Blog](TBD), you should probably give it a quick review, to become familiar with how it all started.
@@ -229,7 +230,7 @@ project_version returns: {{ "{%" }} project_version %}
   
 - Which renders as:
 
-project_version returns: {% project_version %}
+project_version returns: {% project_version tag short %}
 
 ### Parse the full tag into a string suitable for display
 
@@ -347,9 +348,54 @@ Powershell's measurement includes all the overhead time to invoke Ruby and to cl
 
 HaHaHaHa - adding the cache increased the build time infinitesimally! But as any performance tester will tell you, it is important to run timing tests like these hundreds of times, throw out outliers, and take the average of the results. I'm not going to do that yet in the development of this site, but I'll add a task to do this into the later Milestones of the project.
 
-# Add draft post `Case for a non-anonymous Internet, Part 01` to `technical` category
+## Add draft post `Case for a non-anonymous Internet, Part 01` to `political` category
 
-1. 
+If you are not planning to implement post categories, you can ignore the following two sections. If you want catagories, follow along with these instructions, and modify them to fit your specific needs.
+
+1. Create a subdirectory below the repo root named `political`.
+1. Add a new file in the `_drafts` subdirectory (under the repo root) called `Case for a non-anonymous Internet, Part 01.md`
+1. Add the following to the draft post:
+
+    ```markdown
+    ---
+    Title: Case for a non-anonymous Internet, Part 01
+    tags: "Non-Anonymous Internet"
+    layout: post
+    description: Justification to not allow anonymous comments on my site and posts.
+    category: political
+    ---
+    
+    ## TL DR
+    
+    ```
+1. Save and commit the file
+1. Run `bundle exec jekyll serve --drafts` 
+1. Validate that the post appears on the home (landing) page, and the contents of the post appear as expected.
+
+## Add draft post `Welcome to the Personal section of my site` to `personal` category
+
+If you are not planning to implement post categories, you can ignore the following two sections. If you want catagories, follow along with these instructions, and modify them to fit your specific needs.
+
+1. Create a subdirectory below the repo root named `personal`.
+1. Add a new file in the `_drafts` subdirectory (under the repo root) called `Welcome to the Personal section of my site.md`
+1. Add the following to the draft post:
+
+    ```markdown
+    ---
+    Title: Welcome to the Personal section of my site
+    tags: Introduction Personal
+    layout: post
+    description: Explanation of how to register for and use the personal section of thissite.
+    category: personal
+    ---
+    
+    ## TL DR
+    
+    ```
+
+1. Save and commit the file
+1. Run `bundle exec jekyll serve --drafts` 
+1. Validate that the post appears on the home (landing) page, and the contents of the post appear as expected.
 
 ## Making the second release of the site
 
