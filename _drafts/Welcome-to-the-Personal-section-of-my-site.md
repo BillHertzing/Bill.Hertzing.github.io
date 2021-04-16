@@ -30,7 +30,7 @@ Figure (above): Bill and JoAnn on our Honeymoon in 1990
 
 ### Example video
 
-Here is an example of a video.
+Here is an example of a video. ToDo: embed a player so a user doesn't have to "open in new window"
 
 ![JoAnn skiing in costume on Closing Day at Park City Ski Resort  2021 04 11](https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1)
 

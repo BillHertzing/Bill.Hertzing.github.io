@@ -385,7 +385,7 @@ If you are not planning to implement post categories, you can ignore the followi
     Title: Welcome to the Personal section of my site
     tags: Introduction Personal
     layout: post
-    description: Explanation of how to register for and use the personal section of thissite.
+    description: Explanation of how to register for and use the personal section of this site.
     category: personal
     ---
     
