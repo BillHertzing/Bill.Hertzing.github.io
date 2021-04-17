@@ -2,7 +2,7 @@
 Title: Welcome to the Personal section of my site
 tags: Introduction Personal
 layout: post
-description: Explanation of how to register for and use the personal section of thissite.
+description: Explanation of how to register for and use the personal section of this site.
 category: personal
 ---
 
@@ -35,4 +35,3 @@ Here is an example of a video. ToDo: embed a player so a user doesn't have to "o
 ![JoAnn skiing in costume on Closing Day at Park City Ski Resort  2021 04 11](https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1)
 
 Figure (above): JoAnn in costume on closing day 2021 at Park City, UT
-

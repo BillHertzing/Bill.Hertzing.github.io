@@ -91,12 +91,12 @@ If you want to automate the ChangeLog to a degree, it is important that the comm
 
 ***If you want to automate the generation of the ChangeLog, you need to write your commits in a standard format***
 
-I hve a feature identified in the Far Future Milestone for automation in this area, so I'll start using commits in the style specified by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). According to that document, commits I've already made will just be ignored by the automated tooling, and the ChangeLog can be manually edited as I have done for the initial ChangeLog I create below.
+I have a feature identified in the Far Future Milestone for automation in this area, so I'll start using commits in the style specified by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). According to that document, commits I've already made will just be ignored by the automated tooling, and the ChangeLog can be manually edited as I have done for the initial ChangeLog I create below.
 
 1. Create the file `ChangeLog.md` in the root of the repo.
 1. Edit the file, and add content appropriate for the site's "Birthday", and Release V1.01.1
 1. Commit and push to the GitHub repo.
-1. Validate your ChangeLog file now displays on the GitHub repo's landing page.
+1. Validate the `ChangeLog.md` file is listed on the GitHub repo's `<>Code` landing page.
 
 ## Add Commit Message Template
 
@@ -105,9 +105,9 @@ To make it easier to create commit messages that follow a standard template, add
 1. Create the file `git.commit.template.txt` in the subdirectory `.github`.
 1. Add text similar to the following to the template `.txt` file, and save it.
 
-  ```Text
-    ToDo: Add final text just before release
-  ```
+    ```Text
+      ToDo: Add final text just before release
+    ```
 
 1. Run `git config --global commit.template .github/git.commit.template.txt` to add the template to your global git config.
 1. Run `git config --global core.editor "code --wait"` to add VSC as git's editor of choice. See also [MarredCheese's answer to StackOverflow question](https://stackoverflow.com/questions/30149132/multiline-git-commit-message-in-vscode/54139152#54139152).
@@ -134,16 +134,16 @@ Details on how to use the issue templates from the Community Health repo are at:
 1. Create a new file `Bug_Report_Template.md` in the new subdirectory `ISSUE_TEMPLATE`.
 1. Add text similar to the following to the template `.md` file, and save it.
 
-  ```md
+    ```text
     ToDo: Add final text just before release
-  ```
+    ```
 
 1. Create a new file `Feature_Request_Template.md` in the new subdirectory `ISSUE_TEMPLATE`.
 1. Add text similar to the following to the template `.md` file, and save it.
 
-  ```md
+    ```text
     ToDo: Add final text just before release
-  ```
+    ```
 
 1. Commit the change made to .github repository and sync the changes with the remote.
 1. Validate the new templates are available in the static site repository. ToDo: insert jpg
@@ -154,7 +154,7 @@ One of the main reasons that I am not using GitHub Pages built-in Jekyll site ge
 
 ### Install the `jekyll-timeago` plugin locally
 
-- Run `gem install jekyll-timeago` in the Powershell window (at the base of the repo).  Make a note of the version installed, that will be used in the next step, to the right of the `~>` in the `gem ...` line.
+Run `gem install jekyll-timeago` in the Powershell window (at the base of the repo).  **Make a note of the version installed**, it will be used in the next step, to the right of the `~>` in the `gem ...` line.
 
 ### Add the `jekyll-timeago` plugin to the `Gemfile`
 
@@ -183,7 +183,7 @@ One of the main reasons that I am not using GitHub Pages built-in Jekyll site ge
 
 - The next line looks like this in the post's .md
 
-page publication date was {{ "{{" }} page.date }}, which was {{ "{{" }} page.date | timeago }}
+page publication date was {{ "{{" }} page.date }}, which was {{ "{{" }} page.date \| timeago }}
   
 - Which renders as:
 
@@ -195,7 +195,7 @@ The plugin [jekyll-version-plugin](https://github.com/rob-murray/jekyll-version-
 
 ### Install the `jekyll-version-plugin` plugin locally
 
-- Run `gem install jekyll-version-plugin` in the Powershell window (at the base of the repo). Make a note of the version installed, that will be used in the next step, to the right of the `~>` in the `gem ...` line.
+- Run `gem install jekyll-version-plugin` in the Powershell window (at the base of the repo). **Make a note of the version installed**, it will be used in the next step, to the right of the `~>` in the `gem ...` line.
 
 ### Add the `jekyll-version-plugin` plugin to the `Gemfile`
 
@@ -234,18 +234,16 @@ project_version returns: {% project_version tag short %}
 
 ### Parse the full tag into a string suitable for display
 
-- The next two lines looks like this in this post's .md
+- The next line looks like this in this post's .md
 
 {% raw %}
-{% capture long_tag_name %}{% project_version %}{% endcapture %}
 
-latest release tag: {{ long_tag_name \| remove: 'releases/' \| split: '-' \| first \| prepend: 'V' }}
+latest release tag: {% capture long_tag_name %}{% project_version %}{% endcapture %}{{ long_tag_name \| remove: 'releases/' \| split: '-' \| first \| prepend: 'V' }}
 {% endraw %}
 
 - Which renders as:
 
-{% capture long_tag_name %}{% project_version  %}{% endcapture %}
-latest release tag: {{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}
+latest release tag: {% capture long_tag_name %}{% project_version  %}{% endcapture %}{{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}
 
 ### Place the results in the `footer.html` file
 
@@ -260,7 +258,8 @@ latest release tag: {{ long_tag_name | remove: 'releases/' | split: '-' | first 
 
 1. Save the `footer.html` file
 1. Run `bundle exec jekyll serve --drafts`
-1. Validate the Site release version information appears at the bottom of each page and each post, including the landing page.
+1. Validate the site's release version information appears at the bottom of each page and each post, including the landing page.
+1. Commit the changes with an appropriate commit message.
 
 ## Add `jekyll-include-cache` plugin
 
@@ -292,7 +291,7 @@ Powershell's measurement includes all the overhead time to invoke Ruby and to cl
 
 ### Install the `jekyll-include-cache` plugin locally
 
-- Run `gem install jekyll-include-cache` in the Powershell window (at the base of the repo). Make a note of the version installed, that will be used in the next step, to the right of the `~>` in the `gem ...` line.
+- Run `gem install jekyll-include-cache` in the Powershell window (at the base of the repo). **Make a note of the version installed**, it will be used in the next step, to the right of the `~>` in the `gem ...` line.
 
 ### Add the `jekyll-include-cache` plugin to the `Gemfile`
 
@@ -348,33 +347,38 @@ Powershell's measurement includes all the overhead time to invoke Ruby and to cl
 
 HaHaHaHa - adding the cache increased the build time infinitesimally! But as any performance tester will tell you, it is important to run timing tests like these hundreds of times, throw out outliers, and take the average of the results. I'm not going to do that yet in the development of this site, but I'll add a task to do this into the later Milestones of the project.
 
-## Add draft post `Case for a non-anonymous Internet, Part 01` to `political` category
+- Commit the changes with an appropriate commit message.
+
+## Add draft post `Why I Wanted A Blog` to `political` category
 
 If you are not planning to implement post categories, you can ignore the following two sections. If you want catagories, follow along with these instructions, and modify them to fit your specific needs.
 
 1. Create a subdirectory below the repo root named `political`.
-1. Add a new file in the `_drafts` subdirectory (under the repo root) called `Case for a non-anonymous Internet, Part 01.md`
+1. Add a new file in the `_drafts` subdirectory (under the repo root) called `Why I Wanted A Blog.md`
 1. Add the following to the draft post:
 
     ```markdown
     ---
-    Title: Case for a non-anonymous Internet, Part 01
-    tags: "Non-Anonymous Internet"
+    Title: Why I wanted a Blog
+    tags: 
     layout: post
-    description: Justification to not allow anonymous comments on my site and posts.
+    description: The motives that led me to start this site
     category: political
     ---
     
     ## TL DR
     
+    - As a place to share knowledge, tips and how-tos, mostly regarding development, operations and monitoring of computer systems.    
     ```
-1. Save and commit the file
+
+1. Save the file.
 1. Run `bundle exec jekyll serve --drafts` 
 1. Validate that the post appears on the home (landing) page, and the contents of the post appear as expected.
+1. Commit the changes with an appropriate commit message.
 
 ## Add draft post `Welcome to the Personal section of my site` to `personal` category
 
-If you are not planning to implement post categories, you can ignore the following two sections. If you want catagories, follow along with these instructions, and modify them to fit your specific needs.
+This part creates the second category, if you want them.
 
 1. Create a subdirectory below the repo root named `personal`.
 1. Add a new file in the `_drafts` subdirectory (under the repo root) called `Welcome to the Personal section of my site.md`
@@ -403,11 +407,11 @@ I'm happy now with the enhancements I've made to the blogging site. It's time to
 
 ### Site Minor Release checklist
 
-1. Ensure the `main` branch builds cleanly.
+1. Ensure the `main` branch builds cleanly, without the `--drafts` option.
 1. Review any `warnings` that appear in VSC's `problems`. pane. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to `main` and push to the remote.
 1. Update the ChangeLog.md. I simply cleanup the Milestone text and add it to ChangeLog. I'll get around to automating this from the Git commit messages in a future release. Commit the ChangeLog.md and push it.
-1. Publish the draft Part 02 post into _technical
-1. Publish the draft `Case for a non-anonymous Internet, Part 01` post into `technical` subdirectory.
+1. Publish the draft ` How I setup this GitHub Pages Blog, Part 2` post into _technical
+1. Publish the draft `Why I Wanted A Blog` post into `technical` subdirectory.
 1. Publish the draft `Welcome to the Personal section of my site` post into `personal` subdirectory.
 
 I'll make a final commit of my outstanding work, then I'll make another commit and add a Release tag. For now, the release tags will follow the format `releases/\d+\.\d+\.\d+`. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in [Git Basics - Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging.)
