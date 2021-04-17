@@ -260,7 +260,7 @@ latest release tag: {{ long_tag_name | remove: 'releases/' | split: '-' | first 
 
 1. Save the `footer.html` file
 1. Run `bundle exec jekyll serve --drafts`
-1. Validate the Site release version information appears at teh bottom of each page and each post, including the landing page.
+1. Validate the Site release version information appears at the bottom of each page and each post, including the landing page.
 
 ## Add `jekyll-include-cache` plugin
 

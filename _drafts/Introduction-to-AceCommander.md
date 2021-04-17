@@ -17,13 +17,13 @@ The current location is under <drive>:/DropBox/MySQLData
 every developer, qa, and test environment, as well as every production system, needs its own AceCommander database
 the my.ini file specifies this as <drive>:/dropbox/MySQL/data
 
-The MySQL database name, user, and user password is in the configuration file, as part of teh MySQL connection string.
+The MySQL database name, user, and user password is in the configuration file, as part of the MySQL connection string.
 
-Make sure that on the development or QA or production server, that teh database exists, and that the specified user has the correct permissions and password set
+Make sure that on the development or QA or production server, that the database exists, and that the specified user has the correct permissions and password set
 
 LiquiBase is the Open Software tool that is used to keep version-controlled information on the MySL database schema and lookup tables' data.
 
-Service stack returns '403 - forbidden' when Blazor GUI makes it's first call to ServiceStack and asks for all of its DLL files. Have to document teh addition of .dll to SS allowed file extensions
+Service stack returns '403 - forbidden' when Blazor GUI makes it's first call to ServiceStack and asks for all of its DLL files. Have to document the addition of .dll to SS allowed file extensions
 Service stack returns '403 - forbidden' when Blazor GUI makes it's first call to ServiceStack and asks for all of its PDB files. Have to document the addition of .pdb to SS allowed file extensions. PDB files are for debugging
 
 Also document the V S2019 requirement and the .DotNetCore V3 preview requirement.
