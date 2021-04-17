@@ -295,7 +295,20 @@ I had problems with the first of the two deployment actions I tried. I left an i
 
 This site uses the MIT licenses. Of course, feel free to chose a different license if such is more appropriate for your site. You can find the text of many popular licenses at the Open Source Initiative page [Licenses & Standards](https://opensource.org/licenses)
 
-1. Under the root of the repository, add a new file `LICENSE`, and copy the appropriate text from one of the OSI-approved licenses into the file, save and close it.
+1. Under the root of the repository, add a new file `LICENSE.md`.
+1. Add front matter, for example
+
+    ```markdown
+    ---
+    layout: page
+    title: LICENSE
+    permalink: /LICENSE/
+    description: Text of the MIT License for this site
+    exclude: true
+    ---
+    ```
+
+1. Copy the appropriate text from one of the OSI-approved licenses into the file and save it.
 
 ## Modify the footer template
 
