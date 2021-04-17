@@ -1,5 +1,6 @@
 ---
 Title: How I setup this GitHub Pages Blog, Part 2
+date: 2021-04-17 12:00:50 -0600
 tags: Jekyll "GitHubPages"
 layout: post
 description: Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
