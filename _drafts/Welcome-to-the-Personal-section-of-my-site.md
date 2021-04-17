@@ -8,7 +8,7 @@ category: personal
 
 ## TL DR
 
-If you would like to have access to my posts and pictures about family and friends, direct message me via text message e-mail, or a phone call. I'll add you to the list of people who have access.
+If you would like to have access to my posts and pictures about family and friends, direct message me via text message, e-mail or a phone call. I'll add you to the list of people who have access.
 
 In the future, I hope to have a simple login form that will make it very easy to authenticate using any of your social media apps, or using a userid / password.
 
@@ -30,8 +30,11 @@ Figure (above): Bill and JoAnn on our Honeymoon in 1990
 
 ### Example video
 
-Here is an example of a video. ToDo: embed a player so a user doesn't have to "open in new window"
+Here is an example of a video.
 
-![JoAnn skiing in costume on Closing Day at Park City Ski Resort  2021 04 11](https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1)
+<video width="1024" height="768" controls="controls">
+   <source src="https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1" type="video/mp4" />
+   Your browser does not support embedded videos, however, you can see the video in a new tab [[JoAnn skiing in costume on Closing Day at Park City Ski Resort  2021 04 11](https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1)
+</video>
 
 Figure (above): JoAnn in costume on closing day 2021 at Park City, UT
