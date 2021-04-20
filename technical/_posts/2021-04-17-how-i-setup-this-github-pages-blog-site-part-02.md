@@ -62,6 +62,17 @@ Repeat for `CONTRIBUTING.md`.
 <notextile>[CONTRIBUTING](https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md)</notextile> produces
 [CONTRIBUTING](https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md)
 
+Edit `_includes/footer.html`, add the following code just below the copyright:
+  
+```html
+<div class="footer-col">
+  <p> <a href=https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md>Code of Conduct</a></p>
+</div>
+<div class="footer-col">
+  <p> <a href=https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md>CONTRIBUTING</a></p>
+</div>
+  ```
+
 ## Add `ReadMe.md`
 
 The `ReadMe.md` file at the root of a repo will get displayed to visitors on the repo's landing page. Here are some posts with great ideas
@@ -107,7 +118,35 @@ To make it easier to create commit messages that follow a standard template, add
 1. Add text similar to the following to the template `.txt` file, and save it.
 
     ```Text
-      ToDo: Add final text just before release
+    # ----------------------------------------------------------60
+    WIP 
+    # Header - type(scope): Brief description [ FEAT BUGFIX BREAKINGCHANGE DOC STYLE REFAC PERF TEST DATA BUILD CI CHORE SPEC WIP ]
+    # ----------------------------------------------------------60
+    #   Commit Key is Case insensitive, 2-letter minimum
+    #    * FEAT             A new feature - SemVar PATCH
+    #    * BUGFIX           A bug fix - SemVar MINOR
+    #    * BREAKINGCHANGE   Breaking API change - SemVar MAJOR
+    #    * DOC              Change to documentation only
+    #    * STYLE            Change to style (whitespace, etc.)
+    #    * REFAC            Change not related to a bug or feat
+    #    * PERF             Change that affects performance
+    #    * TEST             Change that adds/modifies tests
+    #    * BUILD            Change to build system
+    #    * CI               Change to CI pipeline/workflow
+    #    * SPEC             Changes to a project Specification
+    #    * CHORE            General tooling/config/min refactor
+    #    * WIP              General ongoing design work on a FEAT or BUGFIX
+    # ----------------------------------------------------------
+    
+    # ------------------------------------------------------------------------------80
+    # Body - More description, if necessary
+    # ------------------------------------------------------------------------------80
+    
+    # ------------------------------------------------------------------------------80
+    # Footer - Associated issues, PRs, etc.
+    See Milestone Release 0.02.00
+    #    * Ex: Resolves Issue #207, see PR #15, etc.
+    # ------------------------------------------------------------------------------80
     ```
 
 1. Run `git config --global commit.template .github/git.commit.template.txt` to add the template to your global git config.
@@ -136,14 +175,47 @@ Details on how to use the issue templates from the Community Health repo are at:
 1. Add text similar to the following to the template `.md` file, and save it.
 
     ```text
-    ToDo: Add final text just before release
+    ---
+    name: Bug Reporting issue
+    about: Use this template for reporting a bug.
+    title: "[DATE]: [Bug Name]"
+    labels: Bug issue, needs triage
+    assignees: *DefaultAssigneeGithubUserName*
+    ---
+    
+    **Do you want to request a *feature* or report a *bug*?**
+    <!-- Please ask questions on StackOverflow or the *YourProjectName* Gitter (https://gitter.im/*TBD**). Questions will be closed. -->
+    
+    **What is the current behavior?**
+    
+    **If the current behavior is a bug, please provide the steps to reproduce.**
+    <!-- A great way to do this is to provide your configuration via a GitHub gist. -->
+    
+    **What is the expected behavior?**
+    
+    **If this is a feature request, what is motivation or use case for changing the behavior?**
+    
+    **Please mention other relevant information such as your hardware, OS and version, Browser and version, and if the problem is repeatable on other hardware/OS/Browser **
     ```
 
 1. Create a new file `Feature_Request_Template.md` in the new subdirectory `ISSUE_TEMPLATE`.
 1. Add text similar to the following to the template `.md` file, and save it.
 
     ```text
-    ToDo: Add final text just before release
+    ---
+    name: Feature Request issue
+    about: Use this template for requesting a new feature.
+    title: "[DATE]: [Feature Name]"
+    labels: Feature Request, needs triage
+    assignees: *DefaultAssigneeGithubUserName*
+    ---
+    
+    **New Behaviour**
+    <!-- Please ask questions on StackOverflow or the *YourProjectName** Gitter (https://gitter.im/*TBD*). Questions will be closed. -->
+    
+    **Suggested New feature Name**
+    
+    **what is motivation or use case for changing the behavior?**
     ```
 
 1. Commit the change made to .github repository and sync the changes with the remote.
@@ -182,7 +254,7 @@ Run `gem install jekyll-timeago` in the Powershell window (at the base of the re
     - jekyll-timeago
     ```
 
-- The next line looks like this in the post's .md
+- The next line looks like this in the post's `.md` file.
 
 page publication date was {{ "{{" }} page.date }}, which was {{ "{{" }} page.date \| timeago }}
   
@@ -225,7 +297,7 @@ The plugin [jekyll-version-plugin](https://github.com/rob-murray/jekyll-version-
     - jekyll_version_plugin
     ```
 
-- The next line looks like this in this post's .md
+- The next line looks like this in this post's `.md` file.
 
 project_version returns: {{ "{%" }} project_version %}
   
@@ -235,7 +307,7 @@ project_version returns: {% project_version tag short %}
 
 ### Parse the full tag into a string suitable for display
 
-- The next line looks like this in this post's .md
+- The next line looks like this in this post's `.md` file.
 
 {% raw %}
 
@@ -248,8 +320,8 @@ latest release tag: {% capture long_tag_name %}{% project_version  %}{% endcaptu
 
 ### Place the results in the `footer.html` file
 
-1. Edit `footer.html` in the `_includes` subdirectory.
-1. Add the following somewhere within the div `<div class="footer-col-wrapper">`
+1. Edit `_includes/footer.html`.
+1. Add the following just after the `CONTRIBUTING`
 
 ```MarkDown
    {% raw %}<div class="footer-col">
@@ -369,7 +441,7 @@ If you are not planning to implement post categories, you can ignore the followi
     
     ## TL DR
     
-    - As a place to share knowledge, tips and how-tos, mostly regarding development, operations and monitoring of computer systems.    
+    - Replace this line with all the text you want to put into this document.  
     ```
 
 1. Save the file.
@@ -396,69 +468,41 @@ This part creates the second category, if you want them.
     
     ## TL DR
     
+    Replace this line with all the text you want to put into this document.
     ```
 
 1. Save and commit the file
 1. Run `bundle exec jekyll serve --drafts` 
 1. Validate that the post appears on the home (landing) page, and the contents of the post appear as expected.
 
-## Making the second release of the site
+## Making the third release of the site
 
-I'm happy now with the enhancements I've made to the blogging site. It's time to wrap up this release. I'm going to start a checklist for "release" chores, and eventually will automate as much as I feel is worth putting in the time to do.
+I'm happy now with the enhancements I've made to the blogging site. It's time to wrap up this release. I'm going to update the checklist for "release" chores, and eventually will automate as much as I feel is worth putting in the time to do.
 
 ### Site Minor Release checklist
 
 1. Ensure the `main` branch builds cleanly, without the `--drafts` option.
 1. Review any `warnings` that appear in VSC's `problems`. pane. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to `main` and push to the remote.
 1. Update the ChangeLog.md. I simply cleanup the Milestone text and add it to ChangeLog. I'll get around to automating this from the Git commit messages in a future release. Commit the ChangeLog.md and push it.
-1. Publish the draft ` How I setup this GitHub Pages Blog, Part 2` post into _technical
-1. Publish the draft `Why I Wanted A Blog` post into `technical` subdirectory.
-1. Publish the draft `Welcome to the Personal section of my site` post into `personal` subdirectory.
+1. Publish the draft ` How I setup this GitHub Pages Blog, Part 3` post into _technical
+1. Build the `main` branch again.
+1. Commit and sync with remote
 
-I'll make a final commit of my outstanding work, then I'll make another commit and add a Release tag. For now, the release tags will follow the format `releases/\d+\.\d+\.\d+`. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in [Git Basics - Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging.)
+Once you have committed all the changes you want for Release 0.02.0,
 
-Once you have committed all the changes you want for Release 0.01.0,
-
-1. Run `git tag -a releases/0.01.000 -m "Initial release of Bill's Blog"` (modify the command as appropriate for your site)
+1. Run `git tag -a releases/0.02.000 -m "Bill's Blog, second wave of features"` (modify the command as appropriate for your site)
 1. Run `git tag` which will list all existing tags and verify the tag is there.
 1. Run `git push --tags` to push the release tag to GitHub
-
+1. Validate that the Deploy github Action ran.
+1. Validate that teh new features appear on the public site
 
 ## Wrapping up
 
-This concludes the first edition of this post. In all my career, I've never encountered a significant document that didn't require revisions, and I expect this will, as well. During the course of developing this site, I plan to incorporate a revision tracking system, so (eventually), you should be able to see all the revisions I've done to the post, and a change log. However, my idea is that I'll only publish post revisions when I do a site release. I may increment the third part of the site version when I publish a revision to a post. I think that is in keeping with the spirit of Semantic Versioning, since 'fixing' a published post would be somewhat equivalent to fixing a bug in a released software package.
-
-There are some Milestones defined in this repository's Issues tab, which detail what I hope to accomplish in the next four revisions. Feel free to look them over if you want to know what's coming in the next three parts to this series.
+This concludes the second post in this series. I've already had to make changes to this post after publishing the first edition when Release 0.02.000 went live. I've still not built a post revision tracking system into the blog site, but eventually I'll be able to come back and revise any post, and the post will show an `edition` and `publication date` for the original edition and all revisions, along with change bars or a "what's changed" document for each post.
 
 Comments for posts should be enabled soon, until then, please use the Issues on this repository to communicate with me, if you find errors or have questions.
 
-Thanks for staying to the end :-).
+Thanks for staying to the end. 😊
 
-Bill Hertzing, April 8, 2021
+Bill Hertzing, April 17, 2021
 
-## Add Disqus comments to posts
-
-There is a lot of opinions on the Internet related to "what is the best way to add a comments section to posts". I decided to use the Disqus approach, primarily because I did not want to have to spend time moderating comments to remove spam. Most people who weighed in on this topic agreed that Disqus had a very good track record in eliminating spam. As of this date, 2021-04-13, Disqus will provide the basic service (no ads) for free if I self-identify as a personal or OSS site. I have registered today, and will send a note to their support tomorrow. More on this later.
-
-### Register for an account at Disqus
-
-Go through the Disqus registration procedure for a site.
-
-### Enable support for Disqus in the Minimal Mistakes theme
-
-Add `comments: true`  as a default for posts in the `_config.yml` file to enable comments for all posts. Add a `comments:` key to `_config.yml`, and add `disqus` as the value for the `provider` subkey. Also under the `disqus` subkey, add the `shortname:` subkey,  and set its value to  the `shortname`, you entered when registering for your Disqus account.
-
-```yml
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      comments: true
-
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: "BillHertzing"
-```

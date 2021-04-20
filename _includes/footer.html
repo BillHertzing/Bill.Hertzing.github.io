@@ -20,7 +20,12 @@
         <p>&copy; William Hertzing 2020 - 2021 The contents of this website are under the terms of the <a href={{ "/LICENSE/" | relative_url }}>MIT License.</a></p>
       </div>
       <div class="footer-col">
-        <p>test project_version : {% project_version  %}</p>
+        <p> <a href=https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md>Code of Conduct</a></p>
+      </div>
+      <div class="footer-col">
+        <p> <a href=https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md>CONTRIBUTING</a></p>
+      </div>
+      <div class="footer-col">
         <p>Site Release {% capture long_tag_name %}{% project_version  %}{% endcapture %}{{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}</p>
       </div>
     </div>
