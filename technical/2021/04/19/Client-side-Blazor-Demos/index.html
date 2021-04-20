@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Client Side Blazor Demos | Bill’s Blog</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Client Side Blazor Demos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview of the BlazorDemos repository" />
+<meta property="og:description" content="Overview of the BlazorDemos repository" />
+<link rel="canonical" href="https://billhertzing.github.io/technical/2021/04/19/Client-side-Blazor-Demos/" />
+<meta property="og:url" content="https://billhertzing.github.io/technical/2021/04/19/Client-side-Blazor-Demos/" />
+<meta property="og:site_name" content="Bill’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-19T17:17:53-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Client Side Blazor Demos" />
+<script type="application/ld+json">
+{"url":"https://billhertzing.github.io/technical/2021/04/19/Client-side-Blazor-Demos/","headline":"Client Side Blazor Demos","dateModified":"2021-04-19T17:17:53-06:00","datePublished":"2021-04-19T17:17:53-06:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/technical/2021/04/19/Client-side-Blazor-Demos/"},"description":"Overview of the BlazorDemos repository","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://billhertzing.github.io/feed.xml" title="Bill&apos;s Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Bill&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/LICENSE/">LICENSE</a><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Client Side Blazor Demos</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-04-19T17:17:53-06:00" itemprop="datePublished">Apr 19, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.</p>
+
+<p>Happy to report that one of my demos and my main app have both been upgraded to V3.0 Preview 5. There are (at least one) thing still broken in P5 that were broke in P4;</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Issue in Preview 4 &amp; 5  requires the "route" to be a complete URL
+var uriBuilder = new UriBuilder("http://localhost:21200/BaseServicesInitialization");
+InitializationResponse = await HttpClient.PostJsonAsync&lt;InitializationResponse&gt;(uriBuilder.Uri.ToString(),initializationRequest);
+</code></pre></div></div>
+<p>But that will make me take the time to figure out how to configure both the host and the port at runtime instead of being lazy and hardcoding them as I’ve done so far…
+Lots more testing to go do, now…</p>
+
+<p>here’s a gist with my program.cs file, and how I eventually got it to work in P5
+ https://gist.github.com/BillHertzing/d0a27b2dcdf29ffce1b3f9d1e5413497
+ Thats the first public gist I’ve shared, please let me know if you have issues seeing it.</p>
+
+<dl>
+  <dt>LaunchSettings.json : only applicable to a ASP.NET Core console host (or service) running a web server</dt>
+  <dd>should not be under any GUI projects</dd>
+  <dd>should be under all Server projects</dd>
+  <dd>should define profiles for the Development, Testing,Staging, Production environments. Testing is a custom environments</dd>
+</dl>
+
+<p>The “applicationUrl”: “http://localhost:21250/” found in LaunchSettings.json must match the current “ListenOn” that the web server is running, or else it will not launch a browser. In a launchsettings.json Profile, it associates a project’s executable environment with an endpoint the application hosted in the web server will respond on. Together they provide a channel that the developer can use. Visual Studio uses it to determine if it will launch a browser.</p>
+
+<p>Top level ReadMe</p>
+
+<h2 id="demo01">Demo01</h2>
+
+<p>Starting with the basics. Introducing the development environment / the development tools. The most basic of the Demos: a GUI and a WebServer; Introducing the Blazor GUI running in/on WASM in the browsers. Introducing the <code class="language-plaintext highlighter-rouge">index.razor</code> page. Introducing logging in the GUI via Microsoft.Extensions.Logging and the Blazor.Logging.Extensions. Introducing the WebServer; in Demo01, a Framework 4.7 ConsoleApp running a default WebHost over HTTP.Sys. Introducing the ServiceStack Middleware host, using ServiceStack logging and NLog. Introducing Sentinel, a UDP log capture and viewing rool. Explanation of how the WebServer servers the static files that make up the Blazor GUI. Introduction to the basic debugging tools for the GUI and for the WebServer.</p>
+
+<h2 id="demo02">Demo02</h2>
+<h3 id="the-gui-focuses-on-blazor-basics">The GUI focuses on Blazor basics,</h3>
+<ul>
+  <li>The GUI adds a CodeBehind page <code class="language-plaintext highlighter-rouge">index.razor.cs</code> for the <code class="language-plaintext highlighter-rouge">index.razor</code> page.</li>
+  <li>The GUI adds <code class="language-plaintext highlighter-rouge">AnIntegerProperty</code> to the CodeBehind page and adds its visual display to the <code class="language-plaintext highlighter-rouge">index.razor</code> page.</li>
+  <li>The GUI adds to <code class="language-plaintext highlighter-rouge">index.razor</code> and <code class="language-plaintext highlighter-rouge">index.razor.cs</code> the visual representation and the c# code to support a button called <code class="language-plaintext highlighter-rouge">IncrementAnIntegerPropertyButton</code>.</li>
+  <li>The GUI adds an implementation of a simple <code class="language-plaintext highlighter-rouge">OnClick</code> handler which increments the value of the <code class="language-plaintext highlighter-rouge">AnIntegerProperty</code>.</li>
+  <li>Discussions on the transient nature of data in the browser.</li>
+  <li>Styling focuses on the site.css file
+    <ul>
+      <li>The site.css file adds a background color for the body of the <code class="language-plaintext highlighter-rouge">index</code> page.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-the-integratediisinprocess-webhost">The Server focuses on the IntegratedIISInProcess WebHost</h3>
+<ul>
+  <li>References to .Net Core V2.1 are added to the .csproj</li>
+  <li>The Server adds ….</li>
+  <li>Discussions on how the WebServer serves the static files that make up the Blazor GUI.</li>
+  <li>launchsettings.json is introduced, and contains settings for running /debugging the  IntegratedIISInProcess WebHost.</li>
+  <li>The ServiceStack middleware is hosted in the IntegratedIISInProcess WebHost.</li>
+</ul>
+
+<h3 id="the-build--debug-tooling">The build / debug tooling</h3>
+<ul>
+  <li>Discussion on how the Server is started, both with and without debugging, from Visual Studio and from the CLI.</li>
+</ul>
+
+<h3 id="details-for-the-demo02-readme">details for the Demo02 readme</h3>
+<p>The Server moves the SSApp middleware into an IntegratedIISInProcess WebHost running under .Net Core V2.1.
+A static method for the creation of an IWebHostBuilder configured to create an IntegratedIISInProcess WebHost is introduced.
+Within the static method, the extension method WebHost.CreateDefaultBuilder() is used to return an IWebHost pre-configured with the defaults necessary to run as an IntegratedIISInProcess WebHost.
+launchSettings.json refers to IISExpress
+The GUI ‘s one page gets a local variable and a button to increment it. Discussions of persistence of data in a browser-hosted GUI. The site.css file is modified to produce a background effect. The Server appears, a .Net Core 2.1 WebHost running all the defaults (IntegratedIISInProcess). This replaces the ConsoleApp of Demo01.  launchsettings.json is introduced, and contains settings for running the  IntegratedIISInProcess WebHost. The Blazor GUI project introduces a button, and the button’s OnClick handler</p>
+
+<h2 id="demo03---gui-gets-browser-local-storage-server-moves-to-net-core-v22-and-kestrel-webhost">Demo03 - GUI gets browser-local storage, Server moves to .Net Core V2.2 and Kestrel WebHost</h2>
+<h3 id="the-gui-focuses-on-browser-local-storage">The GUI focuses on browser-local storage</h3>
+<ul>
+  <li>The GUI adds the third-party Blazor library <a href="">Blazored.LocalStorage</a>.</li>
+  <li>The GUI uses the synchronous interface to <code class="language-plaintext highlighter-rouge">Blazored.Localstorage</code> persist the value of the page-local <code class="language-plaintext highlighter-rouge">AnIntegerProperty</code> via that property’s getter and setter.</li>
+  <li>Styling focuses on the <code class="language-plaintext highlighter-rouge">site.sccs</code> file
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.css</code> file is migrated to the <code class="language-plaintext highlighter-rouge">site.sccs</code> file.</li>
+      <li>The background color of  the Body tag is modified.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-the-kestrel-webhost">The Server focuses on the Kestrel WebHost</h3>
+<ul>
+  <li>References to .Net Core V2.2 are added to the .csproj</li>
+  <li>The Server adds a static method for the creation of an <code class="language-plaintext highlighter-rouge">IWebHostBuilder</code>.</li>
+  <li>launchsettings.json adds a section to support launching the Kestrel-based Server.</li>
+  <li>The ServiceStack middleware is hosted in the Kestrel WebHost.</li>
+</ul>
+
+<h3 id="the-build--debug-tooling-focuses-on-adding-support-for-sccs-files">The build / debug tooling focuses on adding support for .sccs files</h3>
+<ul>
+  <li>The Visual Studio build tooling adds the VSIX extension <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler">Web Compiler</a>. Visual Studio is configured to compile any <code class="language-plaintext highlighter-rouge">.sccs</code> file into a <code class="language-plaintext highlighter-rouge">.css</code> file and a <code class="language-plaintext highlighter-rouge">.min.css</code> file, both of which are copied to the GUI’s ContentRoot folder during build / publish..</li>
+</ul>
+
+<h3 id="details-for-the-demo03-readme">details for the Demo03 readme</h3>
+<p>A site.sccs file, and tools to compile the site.sccs file to the site.css file, are introduced.
+The server project targets Net Core V2.2. A KestrelAlone WebHost is introduced.
+The site-wide site.sccs file is added to the wwwroot/css directory. The contents of the current site.css is copied into the new site.scss file for the GUI.
+The GUI references the third-party Blazor library Blazored.LocalStorage.
+The synchronous interface to Blazored.Localstorage is used to persist the page-local <code class="language-plaintext highlighter-rouge">AnIntegerProperty</code> via that property’s getter and setter.
+The server moves the SSApp middleware into a KestreAlone WebHost running under .Net Core V2.2.
+A static method for the creation of an IWebHostBuilder configured to create a KestreAlone WebHost is introduced.
+Within the static method,  a new WebHost is configured with no defaults by new()ing an instance of the WebHostBuilder class then applying the extension method .AddKestrel() and others.
+ launchsettings.json are expanded to include settings for KestrelOnly
+The GUI’s local variable takes on persistence in browser-local storage using <a href="">Blazored.LocalStorage</a> by <a href="">Chris Sainty</a>.  Mads Kristensen  Web Compiler is installed to Visual Studio, the wwwroot/site.css is migrated to site.scss, and the build tools extended to process .scss files. The Server targets .Net Core 2.2. The WebHost in this Demo is Kestrel (alone).  launchsettings.json are expanded to include settings for KestrelOnly</p>
+
+<h2 id="demo04---gui-adds-visual-attributes-and-async-event-handlers--server-get-environment-variables-and-a-selectable-webhost">Demo04 - GUI adds visual attributes and async event handlers,  Server get Environment Variables and a selectable WebHost</h2>
+<h3 id="the-gui-focuses-on">The GUI focuses on</h3>
+<ul>
+  <li>The GUI gets some big changes. <code class="language-plaintext highlighter-rouge">AnIntegerProperty</code> is placed within a text span <code class="language-plaintext highlighter-rouge">AnIntegerPropertyTextSpan</code> for styling with the <code class="language-plaintext highlighter-rouge">AnIntegerPropertyTextSpanStyle</code> page-local property. The <code class="language-plaintext highlighter-rouge">IncrementAnIntegerPropertyButton</code> adds three page-local properties for <code class="language-plaintext highlighter-rouge">class</code>, <code class="language-plaintext highlighter-rouge">style</code>, and <code class="language-plaintext highlighter-rouge">text</code>. The button’s <code class="language-plaintext highlighter-rouge">OnClick</code> event handler binding becomes async and indirect. The GUI now has two possible <code class="language-plaintext highlighter-rouge">OnClick</code> event handler methods, one for <code class="language-plaintext highlighter-rouge">Active</code> an one for <code class="language-plaintext highlighter-rouge">LogThenIgnore</code>, with ‘Active’ being the initial handler for the button.</li>
+  <li>Clicking the button, when Active, adds visual modifications to the button and to the <code class="language-plaintext highlighter-rouge">AnIntegerPropertyTextSpanStyle</code>, changes the event handler to <code class="language-plaintext highlighter-rouge">LogThenIgnore</code>, increments the value of <code class="language-plaintext highlighter-rouge">AnIntegerProperty</code> via a simulated async operation with a 4 second delay before returning, and then again changes the visual attributes and the event handler of the button back to ‘Active’.</li>
+  <li>Discussions on how async event handlers interact with async Tasks and TaskContinuations.</li>
+  <li>Styling focuses on variables in the <code class="language-plaintext highlighter-rouge">site.sccs</code> file.
+    <ul>
+      <li>The .sccs file adds ….</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-environment-variables-remains-on-net-core-v22">The Server focuses on Environment Variables, remains on .Net Core V2.2</h3>
+<ul>
+  <li>The Server adds the ability to allow the developer to select either of the two web server hosts, KestrelAlone or IISIntegratedInProcess, to be used when starting the project’s executable.</li>
+  <li>Discussions on Environment variables</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> adds Environment Variables, and uses <code class="language-plaintext highlighter-rouge">BlazorDemos_WebHostBuilder</code> to select which WebHost to build.</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling-">The build / debug tooling …</h3>
+<ul>
+  <li>Examples of selecting the WebHost for debugging sessions started from either Visual Studio or the CLI are discussed.</li>
+</ul>
+
+<h3 id="details-for-the-demo04-readme">details for the Demo04 readme</h3>
+<p>Discussions on async event handlers in the context of the UI thread. Making all of the StateChangeEventHandlers into async Action<task> signatures makes it possible to store them en-group in the State object. They can be lambdas, or they can refer to methods belonging to the CodeBehind classes / file. They can be retrieved from the IEnumerable&lt;Func<Task>&gt; collection with a LINQ query.  Launchsettings.json are introduced to allow the developer to select either of the two static WebHostBuilders when starting a debugging session.
+New in this Demonstration are</Task></task></p>
+<ol>
+  <li>a second entry in the launchSettings.json Profiles list</li>
+  <li>environment variables introduced into the individual entries of the launchSettings.json Profiles list</li>
+  <li>How to read environment variables before the web host is created so that the program can decide what kind of a web host to create</li>
+</ol>
+
+<h2 id="demo05---gui-gets-a-timer-and-state-server-gets-net-core-v30-environment-and-environment-aware-features">Demo05 - GUI gets a Timer, and State, Server gets .Net Core V3.0, Environment and environment-aware features.</h2>
+<h3 id="the-gui-focuses-on-1">The GUI focuses on</h3>
+<ul>
+  <li>Discussions on various GUI State approaches</li>
+  <li>The GUI adds a State class to reduce the repetitive boilerplate needed for c# property representation of visual and action attributes of the HTML page / elements.</li>
+  <li>The GUI adds a new DI-injected State object and its methods is used to store the Action<Task> methods for the statechange handlers, along with a LINQ-based query to retrieve the correct `MethodToUse`.</Task></li>
+  <li>The GUI adds a timer, an animated gif file to represent the timer, and two event handlers for the timer, <code class="language-plaintext highlighter-rouge">Expired</code> and <code class="language-plaintext highlighter-rouge">LogThenIgnore</code>.</li>
+  <li>The GUI Timer Expired statetransition handler does nothing to any properties bound to <code class="language-plaintext highlighter-rouge">AnIntegerProperty</code> and <code class="language-plaintext highlighter-rouge">AnIntegerPropertyTextSpanStyle</code>. The  Expired state program does change the style of the timer gif for a timed delay of 0.5 seconds using <code class="language-plaintext highlighter-rouge">Task.Delay(500)</code> then changes it back and resets and restarts the timer.</li>
+  <li>The GUI starts using string constants for the class, style, and text properties for the <code class="language-plaintext highlighter-rouge">AnIntegerPropertyTextSpanStyle</code> and for the <code class="language-plaintext highlighter-rouge">IncrementAnIntegerPropertyButton</code> button’s visual attributes (for both Active and queuing visual effects).</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-net-core-v30-the-generichost-and-environment">The Server focuses on .Net Core V3.0., the GenericHost, and environment</h3>
+<ul>
+  <li>Discussion on the .Net Core V3.0 GenericHost and hosting a WebHost within the GenericcHost</li>
+  <li>References to .Net Core V3.0 are added to the .csproj</li>
+  <li>Discussion on the concept of Environment (Production, Staging, Debug, etc) and the use of the <code class="language-plaintext highlighter-rouge">ASPNETCORE_ENVIRONMENT</code> environment variable. Discussion on localization of this environment variable, and how to select which WebHost to build/run/use based on the value of this environment variable.</li>
+  <li>The Server adds error pages based on environment, along with ‘Development-environment-only’ features.</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> grows to support four runtime choices consisting of two Environment choices and two WebHost choices.</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling-adds">The build / debug tooling adds</h3>
+
+<h3 id="details-for-the-demo05-readme">details for the Demo05 readme</h3>
+<ul>
+  <li>Note that having both a button OnClick Active event handler and the TimerExpired Active event handler both “active”, means that the program is multiplexing those two statechange inputs. The program  can be in the midst of responding to one, when the other occurs, which can lead to synchronicity issues. In Demo05, the program is written so that there is no interaction between the two active statechange handlers, hence no need (yet) to synchronize access to state variables from the two statechange handlers. Also note that having an animated gif in the visual display can provide a clue if the main browser UI thread is blocked.</li>
+</ul>
+
+<h2 id="demo06---gui-timer-enhancements-enumerations-supportedwebhosts-and-either-kestral-and-integratediisinprocess-in-the-server">Demo06 - GUI Timer enhancements, Enumerations, SupportedWebHosts, and either Kestral and IntegratedIISInProcess in the Server</h2>
+<h3 id="the-gui-focuses-on-2">The GUI focuses on</h3>
+<ul>
+  <li>The GUI adds a button to start/stop the timer, a CSS animation to represent the timer enabled boolean, and event handlers for the button</li>
+  <li>State</li>
+  <li>Styling focuses on CSS Animations and .sccs include files
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds styles for the TimerControl button,</li>
+      <li>The GUI project adds a new .<code class="language-plaintext highlighter-rouge">.sccs</code> file fragment suitable for including into the <code class="language-plaintext highlighter-rouge">site.sccs</code> file.</li>
+      <li>The new `.sccs. file fragment contains a CSS Animation</li>
+      <li>animations is triggered visible-running / invisible-disabled by the expiration of the Timer trigger.</li>
+      <li>Further styling via String.Constants to make the elements visually explanatory as the demo is run through its visual states.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-a-single-static-builder-for-the-generichost-which-incorporates-different-webhostbuilder-configurations-based-on-a-parameter-to-the-method-the-multiple-static-builders-are-removed">The Server focuses on a single static builder for the GenericHost, which incorporates different webHostBuilder configurations based on a parameter to the method. The multiple static builders are removed.</h3>
+<ul>
+  <li>References to …. are added to the .csproj</li>
+  <li>The Server adds an enumeration for <code class="language-plaintext highlighter-rouge">SupportedWebHostBuilders</code> and validates/parses the <code class="language-plaintext highlighter-rouge">BlazorDemos_WebHostBuilder</code> environment variable against this enumeration.</li>
+  <li>The Server merges the two static <code class="language-plaintext highlighter-rouge">IWebHostBuilders</code> into a single parameterized static builder method <code class="language-plaintext highlighter-rouge">CreateSpecificHostBuilder(SupportedWebHostBuilders webHostBuilderToBuild)</code>.</li>
+  <li>A new compilation unit is introduced <code class="language-plaintext highlighter-rouge">Enumerations.cs</code>. The class <code class="language-plaintext highlighter-rouge">Program</code> in <code class="language-plaintext highlighter-rouge">Program.cs</code> is made into a <code class="language-plaintext highlighter-rouge">partial</code> class, and the new Enumerations.cs also contains a declaration of <code class="language-plaintext highlighter-rouge">partial Program</code></li>
+  <li>Discussions on how to ….</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling-1">The build / debug tooling</h3>
+
+<h1 id="cut-line-for-version-150">Cut Line for version 1.5.0</h1>
+<h3 id="demos-below-this-line-are-still-under-active-development-in-the-various-features-branches-and-the-develop-branch-and-in-the-last-few-cases-the-demo-is-still-completely-tbd">Demos below this line are still under active development in the various features Branches and the develop branch, and in the last few cases the demo is still completely TBD.</h3>
+
+<h2 id="demo07---configuration-part1">Demo07 - Configuration (Part1)</h2>
+<h3 id="the-gui-focuses-on-configuration-tbd-when-csb-supports-extensionsconfiguration">The GUI focuses on Configuration (TBD when CSB supports Extensions.Configuration)</h3>
+<ul>
+  <li>The GUI adds a new compilation unit <code class="language-plaintext highlighter-rouge">DefaultConfiguration.cs</code>, which contains the minimal configKeys needed to run the GUI in production</li>
+  <li>A discussion on concurrency if two or more event handlers try to access the same state variable(s)</li>
+  <li>State element properties for data and visual attributes get their setters hooked to NotifyPropertyChange-like and NotifyPropertyChanging-like events</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-creating-a-configurationroot-and-the-microsoftextensionsconfiguration-class">The Server focuses on creating a <code class="language-plaintext highlighter-rouge">configurationRoot</code> and the <code class="language-plaintext highlighter-rouge">Microsoft.Extensions.Configuration</code> class</h3>
+<ul>
+  <li>Discussions on the concept of Configuration (ConfigurationBuilder, Configuration Providers, and a ConfigurationRoot) is introduce</li>
+  <li>References to <code class="language-plaintext highlighter-rouge">Microsoft.Extensions.Configuration</code> are added to the .csproj</li>
+  <li>The Server adds a new compilation unit <code class="language-plaintext highlighter-rouge">DefaultConfiguration.cs</code>, which contains the minimal configKeys needed to run the program in production For Demo07 and future, that minimum includes at least the list of URL(s) to ListenTo.</li>
+  <li>The Server adds an initial hostConfigurationRoot created from InMemory, File, and EnvironmentVariable providers.</li>
+  <li>WebHostToBuild and Environment strings from the ConfigurationRoot are validated. If not present, defaults are provided and added to the ConfigurationRoot.</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">launchsettings.json</code> adds environment variable for the list of URLs that the Server is expected to ListenOn.</p>
+  </li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling--1">The build / debug tooling …</h3>
+
+<h3 id="details-for-the-demo07-readme">details for the Demo07 readme</h3>
+<p>The static <code class="language-plaintext highlighter-rouge">IHostBuilder</code> method <code class="language-plaintext highlighter-rouge">CreateGenericHostBuilder()</code> grows an additional parameter of type <code class="language-plaintext highlighter-rouge">ConfigurationRoot</code>, and the <code class="language-plaintext highlighter-rouge">hostConfigurationRoot</code> is passed to the method
+The Environment value retrieved from the hostConfigurationRoot is used to conditionally apply the Development-only configuration options.
+The Development-only configuration options are moved into the static <code class="language-plaintext highlighter-rouge">CreateGenericHostBuilder()</code> method.</p>
+
+<h2 id="demo08---async-tasks-and-waitany-in-the-gui-configuration-part2-in-the-server">Demo08 - Async Tasks and WaitAny in the GUI, Configuration (Part2) in the Server</h2>
+<h3 id="the-gui-focuses-on-visual-representation-of-a-simple-async-tasks">The GUI focuses on visual representation of a simple async task’s</h3>
+<ul>
+  <li>lifecycle: initialization, quiescent, dispatch, awaiting, synchronization, task continuation, completion .</li>
+  <li>The GUI adds an async method that returns a Task, a button that dispatches it, and  visual badge for the task’s status and results.</li>
+  <li>Notation and relationships of state triggers, as exemplified by buttons, timers, and tasks, are abstracted as a Linq query.</li>
+  <li>The browser-local storage properties involved with State get a concurrency flag.</li>
+  <li>Additional expansion of Configuration if warrented after Blazor supports it.</li>
+</ul>
+
+<h3 id="the-server-project-focuses-on-adding-detailed-environment-specific-configuration-settings">The Server project focuses on adding <em>Detailed environment-specific configuration settings</em></h3>
+<ul>
+  <li>the <code class="language-plaintext highlighter-rouge">Microsoft.Extensions.Configuration</code> to including the concept of <code class="language-plaintext highlighter-rouge">Environment</code> (Production, Development, Testing, etc.) driving the contents of the ConfigurationRoot</li>
+  <li>The static <code class="language-plaintext highlighter-rouge">IHostBuilder</code> method <code class="language-plaintext highlighter-rouge">CreateSpecificGenericHostBuilder()</code> adds AppConfiguration based on a chain of Configuration providers.</li>
+  <li>The AppConfiguration includes
+    <ol>
+      <li>CommandLine Arguments</li>
+      <li>Environment variables, filtered by a prefix</li>
+      <li>How to branch the flow of execution based on <code class="language-plaintext highlighter-rouge">Environment</code>, and how to name the settings files.</li>
+      <li>Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost</li>
+      <li>compiled-in defaults for the <code class="language-plaintext highlighter-rouge">Environment</code></li>
+    </ol>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> …</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling--2">The build / debug tooling …</h3>
+
+<h2 id="demo09---logging-in-the-server-and-synchronicity-in-the-gui">Demo09 - Logging in the Server and synchronicity in the GUI</h2>
+<h3 id="the-gui-focuses-on-logging-tbd-when-csb-supports-extensionslogging-beyond-just-the-console-logger">The GUI focuses on logging (TBD when CSB supports Extensions.Logging beyond just the Console Logger)</h3>
+<ul>
+  <li>Discussions on how to accomplish Logging from a browser, that is browser-independent and platform-independent.</li>
+  <li>(TBD) The GUI adds Serilog as a logging provider for the CSB GUI application, which writes to the DebugConsole sink, whihc, when run under IISINtegrated, will write-back to the Visual Studio Debug output console</li>
+  <li>The statechange methods for the Timer and for the asynch task are modified so they also increment the IntegerProperty.</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The .sccs file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-microsoftextensionslogging-using-serilog-as-the-logging-extension">The Server focuses on Microsoft.Extensions.Logging using Serilog as the logging extension</h3>
+<ul>
+  <li>References to Serilog are added, and references to NLog and ServiceStack logging are removed.</li>
+  <li>Log statements that used string expansion are replaced with SeriLog structured logging</li>
+  <li>Discussions on how to add / reference SeriLog as a MEL logger, how to configure logging in a ConfigurationRoot, and how to view logging in a stream database (SEQ).</li>
+  <li>launchsettings.json ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling-adds-seq-for-log-collection-and-viewing-along-with-a-discussion-on-how-to-use-it-with-these-demos">The build / debug tooling adds SEQ for log collection and viewing ,along with a discussion on how to use it with these Demos.</h3>
+<p>An external tool <code class="language-plaintext highlighter-rouge">Seq</code> is added to provide centralized log collection and viewing. Log messages are ingested as HTTP messages to <code class="language-plaintext highlighter-rouge">localhost</code> on the default port 5341
+<strong>__</strong><strong>__</strong>__</p>
+<h2 id="server">Server</h2>
+<p>This demo focuses on Logging
+The <code class="language-plaintext highlighter-rouge">ServiceStack.Logging</code> dependency and using is removed from all compilation units (source .cs files)
+The <code class="language-plaintext highlighter-rouge">Microsoft.Extensions.Logging</code> NuGet Package dependency is added to the project
+Serilog dependencies (NuGet Packages) are added to the project: (<code class="language-plaintext highlighter-rouge">Serilog, Serilog.AspNetCore, Serilog.Enrichers.Thread,S erilog.Exceptions, Serilog.Settings.Configuration, Serilog.Sinks.Console, Serilog.Sinks.Debug, Serilog.Sinks.File, Serilog.Sinks.Seq, SerilogAnalyzer</code>)
+The <code class="language-plaintext highlighter-rouge">genericHostSettings.json</code> and <code class="language-plaintext highlighter-rouge">genericHostSettings.development.json</code> files grow an extensive logging sections for <code class="language-plaintext highlighter-rouge">Microsoft.Extensions.Logging</code> and for Serilog
+<code class="language-plaintext highlighter-rouge">genericHostSettings.json</code> (production) configures Serilog with the <code class="language-plaintext highlighter-rouge">Seq</code> writer. The Serilog <code class="language-plaintext highlighter-rouge">LogContext</code> is enriched with the current threadID, and an additional property, <code class="language-plaintext highlighter-rouge">Application</code> having the value ‘Demo09”
+<code class="language-plaintext highlighter-rouge">genericHostSettings.json</code> (Development) configures Serilog with the <code class="language-plaintext highlighter-rouge">Seq</code> writer, the <code class="language-plaintext highlighter-rouge">Console</code> writer, and the <code class="language-plaintext highlighter-rouge">DebugOutput</code> writer. 
+The Serilog static Log object is initialized with the Serilog configuration read from the ConfigurationRoot
+The static method CreateGenericHost adds <code class="language-plaintext highlighter-rouge">Serilog.AspNetCore</code> logging to the genericHost’s <code class="language-plaintext highlighter-rouge">ConfigureWebHostDefaults</code> builder extension and to the <code class="language-plaintext highlighter-rouge">.ConfigureLogging</code> builder extension via <code class="language-plaintext highlighter-rouge">.UseSerilog()</code>
+The NLog.config and NLog.xsd files are removed. 
+The Serilog Analyzer, installed via NuGet, will provide IntelliSense for the Serilog Log methods.
+logging statements throughout the code are replaced with SeriLog structured  logging statements 
+The Log statements that used String expansion are replaced with SeriLog structured logging messages. The Analyzer provides a suggested replacement, so this step is just a “replace all occurrences” in the project
+<strong>__</strong>__</p>
+
+<h2 id="demo10---server-tracing-and-profiling-via-event-tracing-for-windows-etw-gui-simple-task">Demo10 - Server: Tracing and Profiling via Event Tracing for Windows (ETW), GUI: simple Task</h2>
+<p>This is the specific documentation for Demo10, <em>Adding Event Tracing for Windows (ETW)</em>.</p>
+<h3 id="the-gui-focuses-on-3">The GUI focuses on</h3>
+<ul>
+  <li>The GUI adds</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds
+        <h3 id="the-server-focuses-ontracing-and-profiling-via-event-tracing-for-windows-etw">The Server focuses onTracing and Profiling via Event Tracing for Windows (ETW)</h3>
+      </li>
+    </ul>
+  </li>
+  <li>The server adds the ability to log method boundaries in the ETW tracing window (not getters or setters yet)
+    <ul>
+      <li>A managed ETW provider, named <code class="language-plaintext highlighter-rouge">DemoETWProvider</code>, derived from <code class="language-plaintext highlighter-rouge">EventSource</code> is added.</li>
+      <li>The <code class="language-plaintext highlighter-rouge">DemoETWProvider</code> class has one static Property, <code class="language-plaintext highlighter-rouge">Log</code>, which holds an instance of the <code class="language-plaintext highlighter-rouge">DemoETWProvider</code> class.</li>
+      <li>The <code class="language-plaintext highlighter-rouge">DemoETWProvider</code> has one method, <code class="language-plaintext highlighter-rouge">Information</code>, which writes to the ETW subsystem via <code class="language-plaintext highlighter-rouge">System.Diagnostics.Tracing</code>.</li>
+      <li>The Serilog logging messages for method entry and exit throughout the Server classes are replaced with calls to the <code class="language-plaintext highlighter-rouge">DemoETWProvider.Log.Information</code></li>
+    </ul>
+  </li>
+  <li>A number of external tools useful for collecting, viewing, and analyzing ETW events are discussed in the documentation, along with links to further information
+    <ol>
+      <li>Visual Studio Diagnostics Event window</li>
+      <li>PerfView, and how to use it to collect ETW events from the demo, and view the ETW logs</li>
+      <li>ToDo: –WPA, Windows Performance Analyzer–</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="demo11---ilweaving-using-fody">Demo11 - ILWeaving using Fody</h2>
+<h3 id="the-gui-focuses-on-4">The GUI focuses on</h3>
+<ul>
+  <li>The GUI adds</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-adding-fody-for-ilweaving-and-the-methodaspectboundry-weaver-addin-for-fody">The Server focuses on adding Fody for ILWeaving, and the MethodAspectBoundry weaver AddIn for Fody</h3>
+<ul>
+  <li>Discussions on what ILWeaving is, and using Fody to accomplish it</li>
+  <li>Discussions on</li>
+  <li>References to MethodAspectBoundry.Fody are added to the .csproj</li>
+  <li>A new Attribute <code class="language-plaintext highlighter-rouge">ETWLogAttribute</code> is defined, added to almost every class, and all method entry and exit logging statements are removed.</li>
+  <li>The Server uses the MethodAspectBoundry Weaver to add ETW logging for every method in a class</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling-adds-ilweaving-package">The build / debug tooling adds ILWeaving package</h3>
+
+<h2 id="introduction">Introduction</h2>
+<p>The Blazor GUI project …
+Todo: The server project focuses on the details of ILWeaving using Fody to provide ETW logging of method entry and exit, including getters and setters. MethodBoundryAspect Fody Plugin also logs exceptions to ETW automagically.
+ToDo: look some of that, and move to the next demo.The server project focuses on the details of installing the server project as a Windows service, and partially automating that process.
+The Common DTOs ..</p>
+
+<h2 id="demo12---publishing-both-the--gui-and-the-server-into-a-windows-service">Demo12 - Publishing both the  GUI and the Server into a Windows Service</h2>
+<h3 id="the-gui-focuses-on-getting-the-new-publishedservicepubxml-file-setup-properly">The GUI focuses on getting the new <code class="language-plaintext highlighter-rouge">PublishedService.pubxml</code> file setup properly.</h3>
+<ul>
+  <li>The GUI adds the ability to publish to a specific folder within the <em>_PublishedAgent\PublishedService</em> subdirectory tree using the <code class="language-plaintext highlighter-rouge">PublishedService.pubxml</code> publishing option</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-creating-the-basic-windows-service-additions-then-hosting-the-servicestack-middleware-in-a-kestrel-only-webhost-inside-a-generichost-under-net-core-v30-and-running-it-as-a-service">The Server focuses on creating the basic windows service additions, then hosting the ServiceStack middleware in a Kestrel-only webHost inside a GenericHost under Net Core V3.0 and running it as a Service</h3>
+<ul>
+  <li>References to …. are added to the .csproj</li>
+  <li>Discussion on the differences between a ConsoleApp and a Service</li>
+  <li>Discussion on concepts from the Runtime, to determine if the program is running under Windows or Linux</li>
+  <li>The Server adds a key runtime variable  <code class="language-plaintext highlighter-rouge">IsConsoleApp</code> to determine if the program is running under Windows or Linux</li>
+  <li>The Server adds switchMappings ConfigurationRoot to detect -C or -Console as a command-line switch</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling-focuses-on-the-windows-scexe-utility">The build / debug tooling focuses on the Windows sc.exe utility</h3>
+<ul>
+  <li>Discussion on using <code class="language-plaintext highlighter-rouge">sc.exe</code> for manually installing and uninstalling the genericHost as a Windows Service are documented</li>
+  <li>Discussion on how to setup VisualStudio and the CLI to ‘Publish’ the Server to a specified location, which can be referenced by <code class="language-plaintext highlighter-rouge">sc.exe</code></li>
+</ul>
+
+<h3 id="publishing-steps">Publishing Steps</h3>
+<ul>
+  <li>Demo12 adds a new section to the ReadMe for documenting what changes get made in the publishing process.</li>
+  <li>The initial section describes the manual steps for creating / publishings, installing, and running the server as a service, how to uninstall it, and the run edit compile cycle for developing the service..</li>
+</ul>
+
+<h2 id="demo-13---tbd-automating-publishing">Demo 13 - (TBD) Automating Publishing</h2>
+<h3 id="the-gui-focuses-on-5">The GUI focuses on</h3>
+<ul>
+  <li>The GUI adds</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-build--debug-tooling-focuses-on">The build / debug tooling focuses on</h3>
+<p>a discussion of the InstallUti;l</p>
+
+<p>You will need to install a <code class="language-plaintext highlighter-rouge">.Net Core Global Tool</code> called <code class="language-plaintext highlighter-rouge">installUtil</code>. From a VS 2019 command prompt, run <code class="language-plaintext highlighter-rouge">dotnet tool install -g --framework netcoreapp3.0 --version 1.2.0 InstallUtil</code>. Of course check that this is still the latest version and adjust the instructions accordingly, if a later version exists.</p>
+
+<h3 id="publishing-steps-1">Publishing Steps</h3>
+<ul>
+  <li>focuses on automating the publishing process, and provides a PowerShell script <code class="language-plaintext highlighter-rouge">PublishingAutomation.ps1</code></li>
+</ul>
+
+<h2 id="demo14---tbd-publishing-both-the-gui-and-the-server-to-windows-subsystem-for-linux-as-a-daemon">Demo14 - (TBD) Publishing both the GUI and the Server to Windows Subsystem for Linux as a Daemon</h2>
+<h3 id="the-gui-focuses-on-6">The GUI focuses on</h3>
+<ul>
+  <li>The GUI adds</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on">The Server focuses on</h3>
+<ul>
+  <li>References to …. are added to the .csproj</li>
+  <li>The Server adds ….</li>
+  <li>Discussions on how to ….</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling--3">The build / debug tooling …</h3>
+
+<h2 id="publishing-steps-2">Publishing Steps</h2>
+
+<h2 id="demo15---tbd-publishing-both-the-gui-and-the-server-to-linux-kernals">Demo15 - (TBD) Publishing both the GUI and the Server to Linux kernals</h2>
+<h3 id="the-gui-focuses-on-7">The GUI focuses on</h3>
+<ul>
+  <li>The GUI adds</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-1">The Server focuses on</h3>
+<ul>
+  <li>References to …. are added to the .csproj</li>
+  <li>The Server adds ….</li>
+  <li>Discussions on how to ….</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling--4">The build / debug tooling …</h3>
+
+<h2 id="publishing-steps-3">Publishing Steps</h2>
+
+<h2 id="demo16---gui-and-server-open-communications">Demo16 - GUI and Server open communications</h2>
+<h3 id="the-gui-focuses-on-8">The GUI focuses on</h3>
+<ul>
+  <li>The GUI adds</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-2">The Server focuses on</h3>
+<ul>
+  <li>References to …. are added to the .csproj</li>
+  <li>The Server adds ….</li>
+  <li>Discussions on how to ….</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling--5">The build / debug tooling …</h3>
+
+<h2 id="publishing-steps-4">Publishing Steps</h2>
+
+<h2 id="demo17---gui-and-server-plugins">Demo17 - GUI and Server PlugIns</h2>
+<h3 id="the-gui-focuses-on-an-implementation-of-additional-pages-defined-in-configuration-and-loaded-at-runtime">The GUI focuses on an implementation of additional pages defined in Configuration and loaded at runtime</h3>
+<ul>
+  <li>The GUI adds</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-an-implementation-of-additional-services-via-the-ss-plugin-structures">The Server focuses on an implementation of additional services via the SS Plugin structures</h3>
+<ul>
+  <li>References to …. are added to the .csproj</li>
+  <li>The Server adds ….</li>
+  <li>Discussions on how to ….</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling--6">The build / debug tooling …</h3>
+
+<h2 id="publishing-steps-5">Publishing Steps</h2>
+
+<p>—- Cut Line —-
+Rough notes below, to be integrated</p>
+
+<p>ToDo: InstallUtil? Registering messages with Windows Application EventLog?
+Details in <a href="Server/ReadMe.html">Demo12 Server</a></p>
+
+<p>Demo13 - The GUI focuses on …. The GUI adds …. Discussions on …. The .sccs file adds …. The build tooling adds… The Server focuses on …. References to …. are added…. Discussions on …. launchsettings.json …. The ServiceStack middleware adds …. The CommonDTOs adds …</p>
+
+<p>The AppConfiguration includes</p>
+<ol>
+  <li>CommandLine Arguments</li>
+  <li>Environment variables, filtered by a prefix</li>
+  <li>How to branch the flow of execution based on <code class="language-plaintext highlighter-rouge">Environment</code>, and how to name the settings files.</li>
+  <li>Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost</li>
+  <li>compiled-in defaults for the <code class="language-plaintext highlighter-rouge">Environment</code>
+The AppConfiguration includes
+AppConfiguration 
+CommandLine Arguments
+Environment variables, filtered by a prefix
+Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost
+compiled-in defaults for the Environment
+event handlers
+How to branch the flow of execution based on Environment, and how to name the settings files.
+logging statements
+ETW provider, named <code class="language-plaintext highlighter-rouge">DemoETWProvider</code>, derived form <code class="language-plaintext highlighter-rouge">EventSource</code>
+System.Diagnostics.Tracing
+The Serilog logging messages for method entry and exit throughout the Server classes are replaced with calls to the <code class="language-plaintext highlighter-rouge">DemoETWProvider.Log.Information</code></li>
+  <li>Visual Studio Diagnostics Event window</li>
+  <li>PerfView, and how to use it to collect ETW events from the demo, and view the ETW logs
+ETWLogAttribute
+[ETWLogAttribute]
+logging messages for method entry and exit throughout the Server classes are
+Blazored.LocalStorage</li>
+</ol>
+
+<p>The Blazor GUI site.scss file uses variables to define the &lt;body&gt; tags background style / color.</p>
+
+<p>Blazor.Logging.Extensions</p>
+
+<p>Logging  in the GUI via Microsoft.Extensions.Logging, and Blazor.Logging.Extensions</p>
+
+<p>Blazored.LocalStorage</p>
+
+<p>Blazored.LocalStorage</p>
+
+<p>The Server adds Environment variables, and uses one to select which WebHost to build/run/use.  launchsettings.json grows Environment variables.
+Environment Variables and LaunchSettings.json grow to add Environment
+.Net Core 2.2
+The .sccs file adds styles for AnIntegerProperty, and IncrementAnIntegerPropertyButton (for both Active and queuing visual effects)
+The GUI adds a timer that will increment AnIntegerProperty, a button to start/stop the timer, styles for the TimerControl button, and state triggers for the button and for the timer itself
+The .sccs file adds styles for AnIntegerProperty, and IncrementAnIntegerPropertyButton (for both Active and queuing visual effects).
+The GUI adds a timer that will increment AnIntegerProperty, a button to start/stop the timer, styles for the TimerControl button, and state triggers and state transitions for the button and for the timer itself.
+The Server adds Environment variables, and uses one to select which WebHost to build/run/use.  launchsettings.json grows Environment variables. The Server targets  .Net Core 3.0 and will remain so for the rest of the demos (Currently Preview6)
+The GUI adds a timer that will increment AnIntegerProperty, a button to start/stop the timer, styles for the TimerControl button, and state triggers and state transitions for the button and for the timer itself.<br />
+Demo06  -  The GUI adds a second integer property <code class="language-plaintext highlighter-rouge">AnotherIntegerProperty</code>, a  button to increment it, and a fourth button that will increment both <code class="language-plaintext highlighter-rouge">IntegerProperties</code>.   Further styling to make the elements visually explanatory as the demo is run through its visual states. Our browser-local storage properties involved with State get their setters hooked. A discussion on concurrency if two or more substates try to access the same state variable
+ The Server adds the concept of Environment (Production, Staging, Debug, etc). Discussion on localization of these values, and uses one to select which WebHost to build/run/use.  Environment Variables and launchSettings.json grow to add Environment.
+Demo06  -  The GUI adds a second integer property <code class="language-plaintext highlighter-rouge">AnotherIntegerProperty</code>, a  button to increment it, and a fourth button that will increment both <code class="language-plaintext highlighter-rouge">IntegerProperties</code>.   Further styling to make the elements visually explanatory as the demo is run through its visual states. Our browser-local storage properties involved with State get their setters hooked. A discussion on concurrency if two or more substates try to access the same state variable.   The Server adds the concept of Environment (Production, Staging, Debug, etc). Discussion on localization of these values, and uses one to select which WebHost to build/run/use.  Environment Variables and launchSettings.json grow to add Environment. 
+focuses on a single static builder for the GenericHost, which incorporates different webHostBuilder configurations based on a parameter to the method. The multiple static builders are removed.
+A new enumeration <code class="language-plaintext highlighter-rouge">SupportedWebHostBuilders</code>is introduced,
+Demo07  -  The GUI adds an async method that returns a Task, a button that dispatches it, and  visual badge for the task’s status and results. Notation and relationships of state triggers, as exemplified by buttons, timers, and tasks, are abstracted as a Linq query.     Our browser-local storage properties involved with State get a concurrency flag. A discussion on concurrency if two or more substates try to access the same state variable.   The Server focuses on a single static builder for the 3.0 GenericHost, which incorporates different WebHostBuilder configurations based on a parameter to the method. The multiple static builders are removed. A new enumeration SupportedWebHostBuildersis introduced, and corresponding environment variable and launchsettings.json entries
+Demo07  -  The GUI adds an 
+Demo07  -  The GUI adds
+The AppConfiguration includes</p>
+<ol>
+  <li>CommandLine Arguments</li>
+  <li>Environment variables, filtered by a prefix</li>
+  <li>How to branch the flow of execution based on <code class="language-plaintext highlighter-rouge">Environment</code>, and how to name the settings files.</li>
+  <li>Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost</li>
+  <li>compiled-in defaults for the <code class="language-plaintext highlighter-rouge">Environment</code>
+The AppConfiguration includes
+AppConfiguration 
+CommandLine Arguments
+Environment variables, filtered by a prefix
+How to branch the flow of execution based on Environment, and how to name the settings files.
+Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost
+compiled-in defaults for the Environment
+event handlers
+How to branch the flow of execution based on Environment, and how to name the settings files.
+This demo focuses on Logging
+Server adds Microsoft.Extensions.Configuration
+genericHostSettings.json
+<code class="language-plaintext highlighter-rouge">genericHostSettings.json</code> and <code class="language-plaintext highlighter-rouge">genericHostSettings.development.json</code> files grow an extensive logging section
+logging statements
+ETW provider, named <code class="language-plaintext highlighter-rouge">DemoETWProvider</code>, derived form <code class="language-plaintext highlighter-rouge">EventSource</code>
+System.Diagnostics.Tracing
+The Serilog logging messages for method entry and exit throughout the Server classes are replaced with calls to the <code class="language-plaintext highlighter-rouge">DemoETWProvider.Log.Information</code></li>
+  <li>Visual Studio Diagnostics Event window</li>
+  <li>PerfView, and how to use it to collect ETW events from the demo, and view the ETW logs
+ETWLogAttribute
+[ETWLogAttribute]
+logging messages for method entry and exit throughout the Server classes are
+Blazored.LocalStorage</li>
+</ol>
+
+<p>TEMPLATE:</p>
+
+<h2 id="demoxx---xxx">DemoXX - XXX</h2>
+<h3 id="the-gui-focuses-on-9">The GUI focuses on</h3>
+<ul>
+  <li>The GUI adds</li>
+  <li>Discussions on how to</li>
+  <li>Styling focuses on
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">site.sccs</code> file adds</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-server-focuses-on-3">The Server focuses on</h3>
+<ul>
+  <li>References to …. are added to the .csproj</li>
+  <li>The Server adds ….</li>
+  <li>Discussions on how to ….</li>
+  <li><code class="language-plaintext highlighter-rouge">launchsettings.json</code> ….</li>
+  <li>The ServiceStack middleware adds ….</li>
+</ul>
+
+<h3 id="the-build--debug-tooling--7">The build / debug tooling …</h3>
+
+<hr />
+
+
+  </div><a class="u-url" href="/technical/2021/04/19/Client-side-Blazor-Demos/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&#39;ve got it all!</p>
+      </div>
+      <div class="footer-col">
+        <p>&copy; William Hertzing 2020 - 2021 The contents of this website are under the terms of the <a href=/LICENSE/>MIT License.</a></p>
+      </div>
+      <div class="footer-col">
+        <p> <a href=https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md>Code of Conduct</a></p>
+      </div>
+      <div class="footer-col">
+        <p> <a href=https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md>CONTRIBUTING</a></p>
+      </div>
+      <div class="footer-col">
+        <p>Site Release V0.02.000</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/BillHertzing"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">BillHertzing</span></a></li><li><a href="https://www.twitter.com/whertzing56"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">whertzing56</span></a></li></ul>
+</div>
+
+  </div>
+
+</footer></body>
+
+</html>
