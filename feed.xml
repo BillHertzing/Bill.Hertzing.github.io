@@ -1,947 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-19T18:23:35-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">Repository Interrelationships</title><link href="https://billhertzing.github.io/technical/2021/04/19/Repository-Interrelationships/" rel="alternate" type="text/html" title="Repository Interrelationships" /><published>2021-04-19T17:17:53-06:00</published><updated>2021-04-19T17:17:53-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/19/Repository-Interrelationships</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/19/Repository-Interrelationships/">&lt;p&gt;– add dot diagram here? use a png to start.&lt;/p&gt;
-
-&lt;p&gt;I am writing a program that will help you make / string together programs that automate some of your ToDos in real life. The program I’m writing runs anywhere .Net Core 3.0 runs, uses a Blazor interface, supports a bare minimum “I’m here” in minimal mode, but can be expanded by the enabling of features and loading of PlugIns. PlugIns are designed to share their public data, methods and events with each other.&lt;/p&gt;
-
-&lt;p&gt;I’m also publishing a series of Demo programs that explain in detail the concepts and constructs used in the AceCommander program. This is ensure I understand, and can explain, what ‘the code I got from goggling the Internet’ is doing when I use it. The Demos are also another way I want to give back and help others understand how the C# language and the .Net  libraries can be used.&lt;/p&gt;
-
-&lt;p&gt;The software in these repositoies are an ongoing effort to collect in a centralized location data structures, algorithms an concepts that I’ve developed or used over the coursse of 45 years of working with computers.&lt;/p&gt;
-
-&lt;p&gt;One repository is called Ace. Ace is my take on the implementation of a digital assistant. Doing a search on GitHub for “Jarvis” (The English accented AI personal assistant to Tony Stark in the Ironman movies) results in hundreds of repositories bearing vriations on that name, and a quick browse through some of them reveals that the desire to code up our won JArvis appeals to many programmers.&lt;/p&gt;
-
-&lt;p&gt;Ace is designed to be availalble on any kind of device. The primary/initial implemenations are on Windows and Linux. The software is designed to be a Windows Service or a Linux Demon. The base implemention provides a simple shell of basic services, and a framework for adding plugins. Most of Ace’s features and capabilities are provided by individual plugins.&lt;/p&gt;
-
-&lt;p&gt;Ace is built on Dot Net components. The framework is primarly DotNet standard (curretnly an V2.1) for the majority of code, since this code will run on both Linux and Windows. The full Windows framework modules (currently DotNet471) is used for the Windows-Service specific portions; DotNetCore is used for the Linux runtime daemon.&lt;/p&gt;
-
-&lt;p&gt;The Windows-Service framework is ServiceStack (currently V5.1). On Windows, this is wrapped by the TopShelf library, which provides features that make it easy to install, uninstall, start, stop, and manage a Windows service.&lt;/p&gt;
-
-&lt;p&gt;Ace non-GUI plugins are microservice providers. Ace GUI plugins provide the human intefaces to thesse microservices.
-ServiceStack is the current microservice provider, and static web server.&lt;/p&gt;
-
-&lt;p&gt;Blazor is currently the primary GUI architecture, as it integrate well with both static web servers and with data structure based on .Net components.&lt;/p&gt;
-
-&lt;p&gt;Distribution of Ace is done via NuGet packaages and the Chocolatey pacakge management software.&lt;/p&gt;
-
-&lt;p&gt;Wherever possible, algorithms and data structures used in Ace are re-factored into utility libraries, to promote code reuse as much as possible.  These utility libraries are managed within the ATAP.Utilities repository. There are currently over 30 packages in this reposity. Some are little more than placeholders with only one or two simple fuctions; other utiltiy libraries contain larger numbers of structures and functions.&lt;/p&gt;
-
-&lt;p&gt;Utility libraries are designed so that data structures are packaged in one unit, objects in another, and static functions in a third unit. This allows the data structures to be shared between the GUI code and the microservice code, using serialization mechanisms found in the data structures pacakge.&lt;/p&gt;
-
-&lt;p&gt;The process needed to translate the code found in these repositories into versioned distribution pacakges, and integrting these ditribution packages into the exisitign world-wide software distribution system, is not trivial. Three of the ATAP.Utility packages are devoted to the Build Tooling code needed to make this happen. In the course of developing thsse BuildTooling pacakages, a number of issues surfaced, and their olutions implemented. You will find in the documentation library a document devoted to explaining how the BuilTooling parts interact with the building (MSBuild.exe invoked via Visual Studio, and invoked via dotnet.exe), testing/verification (UnitTest, IntegrationTest, End-To-End (E2E) test, Appveyor) and distribution (NuGet and Chocolaty) tool suites.&lt;/p&gt;
-
-&lt;h1 id=&quot;atapwebsitesatapconsulting&quot;&gt;ATAP.WebSites.ATAPConsulting&lt;/h1&gt;
-&lt;p&gt;Documentation for the corporate website&lt;/p&gt;
-
-&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
-
-&lt;h2 id=&quot;architecture&quot;&gt;Architecture&lt;/h2&gt;
-
-&lt;h2 id=&quot;frameworks&quot;&gt;Frameworks&lt;/h2&gt;
-
-&lt;h2 id=&quot;third-party-libraries&quot;&gt;Third-Party Libraries&lt;/h2&gt;
-
-&lt;h2 id=&quot;static-assets&quot;&gt;Static Assets&lt;/h2&gt;
-
-&lt;h3 id=&quot;company-icons&quot;&gt;Company Icons&lt;/h3&gt;
-
-&lt;h3 id=&quot;images&quot;&gt;Images&lt;/h3&gt;
-
-&lt;h3 id=&quot;fonts&quot;&gt;Fonts&lt;/h3&gt;
-
-&lt;h2 id=&quot;management-of-sensitive-information-used-for-deployment&quot;&gt;Management of Sensitive information used for deployment&lt;/h2&gt;
-
-&lt;h2 id=&quot;development&quot;&gt;Development&lt;/h2&gt;
-
-&lt;h3 id=&quot;development-environments&quot;&gt;Development Environments&lt;/h3&gt;
-&lt;p&gt;Development may be done using any appropriate tool, and any appropriate web server host may be used during development.
-Initial documentation will be for development using the Visual Studio 2017 IIDE, along with the integrated IIS Express web server host.&lt;/p&gt;
-
-&lt;h3 id=&quot;deployment-to-development-web-server-hosts&quot;&gt;Deployment to Development Web Server Hosts&lt;/h3&gt;
-&lt;p&gt;###&lt;/p&gt;
-
-&lt;h2 id=&quot;testing&quot;&gt;Testing&lt;/h2&gt;
-
-&lt;h3 id=&quot;testing-tools&quot;&gt;Testing tools&lt;/h3&gt;
-
-&lt;h3 id=&quot;deployment-to-testing-web-server-hosts&quot;&gt;Deployment to Testing Web Server Hosts&lt;/h3&gt;
-
-&lt;h3 id=&quot;unit-testing&quot;&gt;Unit Testing&lt;/h3&gt;
-
-&lt;h3 id=&quot;integration-testing&quot;&gt;Integration Testing&lt;/h3&gt;
-
-&lt;h2 id=&quot;production&quot;&gt;Production&lt;/h2&gt;
-
-&lt;h3 id=&quot;deployment-to-production-web-server-hosts&quot;&gt;Deployment to Production Web Server Hosts&lt;/h3&gt;
-
-&lt;h1 id=&quot;detailed-instructions-for-building-the-atapconsulting-corporate-web-site&quot;&gt;Detailed Instructions for building the ATAPConsulting corporate Web site.&lt;/h1&gt;
-
-&lt;h2 id=&quot;development-1&quot;&gt;Development&lt;/h2&gt;
-&lt;p&gt;Instructions for building and testing the web site in development lifecycle stage&lt;/p&gt;
-
-&lt;h3 id=&quot;visual-studio-professional-ide&quot;&gt;Visual Studio Professional IDE&lt;/h3&gt;
-
-&lt;h3 id=&quot;visual-studio-code-community-edition&quot;&gt;Visual Studio Code Community Edition&lt;/h3&gt;
-
-&lt;h3 id=&quot;unit-tests&quot;&gt;Unit Tests&lt;/h3&gt;
-&lt;p&gt;Add NuGet Package reference to xUnit
-Add NuGet Package refrence to MOQ&lt;/p&gt;
-
-&lt;h2 id=&quot;qatesting&quot;&gt;QA/Testing&lt;/h2&gt;
-&lt;p&gt;Instructions for building and testing the web site in QA/Testing lifecycle stage&lt;/p&gt;
-&lt;h3 id=&quot;integration-tests&quot;&gt;Integration Tests&lt;/h3&gt;
-&lt;p&gt;Add NuGet Package reference to latest Microsoft.AspNetCore.App
-Download and install latest .NET Core SDK (2.1 or better) to build and run integration tests
-https://www.microsoft.com/net/download&lt;/p&gt;
-
-&lt;h3 id=&quot;automated-continous-integration-ci-tools-used&quot;&gt;Automated Continous Integration (CI) tools used&lt;/h3&gt;
-
-&lt;h2 id=&quot;production-1&quot;&gt;Production&lt;/h2&gt;
-&lt;p&gt;Instructions for building and testing the web site in its final, production, lifecycle stage&lt;/p&gt;
-
-&lt;h2 id=&quot;deployment&quot;&gt;Deployment&lt;/h2&gt;
-&lt;p&gt;Instructions for deploying the production web site to the hosting provider&lt;/p&gt;
-
-&lt;h2 id=&quot;attributions&quot;&gt;Attributions&lt;/h2&gt;
-&lt;p&gt;https://www.dotnetcurry.com/aspnet/1402/aspnet-core-2-new-features
-https://www.dotnetcurry.com/aspnet-core/1414/unit-testing-aspnet-core
-https://www.dotnetcurry.com/aspnet-core/1420/integration-testing-aspnet-core
-https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.1&amp;amp;tabs=aspnetcore2x
-https://www.dotnetcurry.com/aspnet-core/1433/end-to-end-testing-aspnet-core
-http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-selenium-webdriver&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="AceCommander" /><category term="ATAP.Utilities" /><category term="Blazor," /><category term="StronglyTypedIds," /><category term="BillHertzing.github.io" /><summary type="html">– add dot diagram here? use a png to start.</summary></entry><entry><title type="html">Powershell To Convert Nest Report To Excel Pivot Table</title><link href="https://billhertzing.github.io/technical/2021/04/19/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="alternate" type="text/html" title="Powershell To Convert Nest Report To Excel Pivot Table" /><published>2021-04-19T17:17:53-06:00</published><updated>2021-04-19T17:17:53-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/19/Powershell-to-convert-Nest-report-to-Excel-Pivot-table</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/19/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/">&lt;p&gt;Notes for PowerShell SLC meetup
- 1) List of cool PowerShell projects folks wold like to work on
- 1) signup for one, or more, projects
- 1) Pair or team programming work for 1 month and share with meetup group following month
- 1) Use GitHub, OSS, MIT license for the 
- 1) Some kind of coding collaboration tool? and/or gitter room? or slack channel? that everyone can participate in
- 1) Project list
-    1) PowerShell in DevOps
-	  1) tokenize .razor files
-	  1) run a PowerShell scriptblock against all files matching a filename pattern
-    1) PowerShell and creating SVG graphs
-	  1) Read a source (file (local, remote, or UNC); database;)
-	  1) Provide a scriptblock to transform the raw data into a structured hierarchy
-	  1) Provide a scriptblock to transform the structured hierarchy into a digraph (a sctructure that describes a graph)
-	  1) Provide a set of output providers (write to file (local, remote, UNC); database
-	  1) PowerShell option to send the digraph to PlantUML. which can create SVG drawing of the graph 
-	1) PowerShell templates
-	  1) using Plaster to scaffold a new PowerShell project
-	  1) automatically setting up the Pester test runner in a new PowerShell project
-	  1) automatically setting up Jenkins to create a CI/CD pipeline for a new PowerShell project&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="Powershell" /><category term="Nest" /><category term="RegEx" /><category term="PIvotTable" /><category term="Excel" /><summary type="html">Notes for PowerShell SLC meetup 1) List of cool PowerShell projects folks wold like to work on 1) signup for one, or more, projects 1) Pair or team programming work for 1 month and share with meetup group following month 1) Use GitHub, OSS, MIT license for the 1) Some kind of coding collaboration tool? and/or gitter room? or slack channel? that everyone can participate in 1) Project list 1) PowerShell in DevOps 1) tokenize .razor files 1) run a PowerShell scriptblock against all files matching a filename pattern 1) PowerShell and creating SVG graphs 1) Read a source (file (local, remote, or UNC); database;) 1) Provide a scriptblock to transform the raw data into a structured hierarchy 1) Provide a scriptblock to transform the structured hierarchy into a digraph (a sctructure that describes a graph) 1) Provide a set of output providers (write to file (local, remote, UNC); database 1) PowerShell option to send the digraph to PlantUML. which can create SVG drawing of the graph 1) PowerShell templates 1) using Plaster to scaffold a new PowerShell project 1) automatically setting up the Pester test runner in a new PowerShell project 1) automatically setting up Jenkins to create a CI/CD pipeline for a new PowerShell project</summary></entry><entry><title type="html">Powershell Snippets</title><link href="https://billhertzing.github.io/technical/2021/04/19/Powershell-snippets/" rel="alternate" type="text/html" title="Powershell Snippets" /><published>2021-04-19T17:17:53-06:00</published><updated>2021-04-19T17:17:53-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/19/Powershell-snippets</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/19/Powershell-snippets/">&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Get-ChildItem -File -r&lt;/td&gt;
-      &lt;td&gt;where {$_.fullname -match “cshtml”}&lt;/td&gt;
-      &lt;td&gt;foreach { git mv ($&lt;em&gt;.fullname) ($&lt;/em&gt;.fullname –replace “cshtml”,”razor”) }&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Get-ChildItem -Dir -r&lt;/td&gt;
-      &lt;td&gt;where {$_.fullname -match “obj&lt;/td&gt;
-      &lt;td&gt;bin”}&lt;/td&gt;
-      &lt;td&gt;foreach {$_.fullname}&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name></name></author><category term="technical" /><category term="Powershell" /><summary type="html">Get-ChildItem -File -r where {$_.fullname -match “cshtml”} foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }</summary></entry><entry><title type="html">Introduction To Acecommander</title><link href="https://billhertzing.github.io/technical/2021/04/19/Introduction-to-AceCommander/" rel="alternate" type="text/html" title="Introduction To Acecommander" /><published>2021-04-19T17:17:53-06:00</published><updated>2021-04-19T17:17:53-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/19/Introduction-to-AceCommander</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/19/Introduction-to-AceCommander/">&lt;p&gt;The MySQL a is \called AceCommander, it holds userauth user tables&lt;/p&gt;
-
-&lt;p&gt;Install MySql here:&lt;/p&gt;
-
-&lt;p&gt;the database files need to be under dropbox, so a my.ini file has to be created, and MySQL has to be told to look for it under a dropbox location.
-The current location is under &lt;drive&gt;:/DropBox/MySQLData&lt;/drive&gt;&lt;/p&gt;
-
-&lt;p&gt;every developer, qa, and test environment, as well as every production system, needs its own AceCommander database
-the my.ini file specifies this as &lt;drive&gt;:/dropbox/MySQL/data&lt;/drive&gt;&lt;/p&gt;
-
-&lt;p&gt;The MySQL database name, user, and user password is in the configuration file, as part of the MySQL connection string.&lt;/p&gt;
-
-&lt;p&gt;Make sure that on the development or QA or production server, that the database exists, and that the specified user has the correct permissions and password set&lt;/p&gt;
-
-&lt;p&gt;LiquiBase is the Open Software tool that is used to keep version-controlled information on the MySL database schema and lookup tables’ data.&lt;/p&gt;
-
-&lt;p&gt;Service stack returns ‘403 - forbidden’ when Blazor GUI makes it’s first call to ServiceStack and asks for all of its DLL files. Have to document the addition of .dll to SS allowed file extensions
-Service stack returns ‘403 - forbidden’ when Blazor GUI makes it’s first call to ServiceStack and asks for all of its PDB files. Have to document the addition of .pdb to SS allowed file extensions. PDB files are for debugging&lt;/p&gt;
-
-&lt;p&gt;Also document the V S2019 requirement and the .DotNetCore V3 preview requirement.
-Maybe a section on how to upgrade from V0.5.0 to V0.9.0
-Document the issue with Blazor.Extensions.logging still being on V.0.7.0, and the conflict it caused, and how Blazor.extensions.Logging had to be ripped out.&lt;/p&gt;
-
-&lt;p&gt;Sentinel startup stuff&lt;/p&gt;
-
-&lt;p&gt;Document how to add SQLServer to a system, minimal, to use with Ace&lt;/p&gt;
-
-&lt;p&gt;For VS 2019:
-To automatically close the console when debugging stops, enable Tools-&amp;gt;Options-&amp;gt;Debugging-&amp;gt;Automatically close the console when debugging stops.&lt;/p&gt;
-
-&lt;p&gt;So, now enumerations are a code smell? https://github.com/ardalis/SmartEnum and others&lt;/p&gt;
-
-&lt;p&gt;Installing Telerik UI components for Blazor: Following instructions, it starts with needing to install nuget.exe; that will make the nuget package push work, as well.
-Add to the prerequisites part of the doc the need to download and install nuget.exe, and then to put it on the environment path.&lt;/p&gt;
-
-&lt;p&gt;today, that is 32-bit V4.9.4, instal to programfiles(86)/nuget&lt;/p&gt;
-
-&lt;p&gt;The follow Telerik instructions on how to add the telerik private feed to visual studio&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="Ace" /><category term="AceCommander" /><summary type="html">The MySQL a is \called AceCommander, it holds userauth user tables</summary></entry><entry><title type="html">Client Side Blazor Demos</title><link href="https://billhertzing.github.io/technical/2021/04/19/Client-side-Blazor-Demos/" rel="alternate" type="text/html" title="Client Side Blazor Demos" /><published>2021-04-19T17:17:53-06:00</published><updated>2021-04-19T17:17:53-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/19/Client-side-Blazor-Demos</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/19/Client-side-Blazor-Demos/">&lt;p&gt;Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.&lt;/p&gt;
-
-&lt;p&gt;Happy to report that one of my demos and my main app have both been upgraded to V3.0 Preview 5. There are (at least one) thing still broken in P5 that were broke in P4;&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Issue in Preview 4 &amp;amp; 5  requires the &quot;route&quot; to be a complete URL
-var uriBuilder = new UriBuilder(&quot;http://localhost:21200/BaseServicesInitialization&quot;);
-InitializationResponse = await HttpClient.PostJsonAsync&amp;lt;InitializationResponse&amp;gt;(uriBuilder.Uri.ToString(),initializationRequest);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;But that will make me take the time to figure out how to configure both the host and the port at runtime instead of being lazy and hardcoding them as I’ve done so far…
-Lots more testing to go do, now…&lt;/p&gt;
-
-&lt;p&gt;here’s a gist with my program.cs file, and how I eventually got it to work in P5
- https://gist.github.com/BillHertzing/d0a27b2dcdf29ffce1b3f9d1e5413497
- Thats the first public gist I’ve shared, please let me know if you have issues seeing it.&lt;/p&gt;
-
-&lt;dl&gt;
-  &lt;dt&gt;LaunchSettings.json : only applicable to a ASP.NET Core console host (or service) running a web server&lt;/dt&gt;
-  &lt;dd&gt;should not be under any GUI projects&lt;/dd&gt;
-  &lt;dd&gt;should be under all Server projects&lt;/dd&gt;
-  &lt;dd&gt;should define profiles for the Development, Testing,Staging, Production environments. Testing is a custom environments&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;The “applicationUrl”: “http://localhost:21250/” found in LaunchSettings.json must match the current “ListenOn” that the web server is running, or else it will not launch a browser. In a launchsettings.json Profile, it associates a project’s executable environment with an endpoint the application hosted in the web server will respond on. Together they provide a channel that the developer can use. Visual Studio uses it to determine if it will launch a browser.&lt;/p&gt;
-
-&lt;p&gt;Top level ReadMe&lt;/p&gt;
-
-&lt;h2 id=&quot;demo01&quot;&gt;Demo01&lt;/h2&gt;
-
-&lt;p&gt;Starting with the basics. Introducing the development environment / the development tools. The most basic of the Demos: a GUI and a WebServer; Introducing the Blazor GUI running in/on WASM in the browsers. Introducing the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.razor&lt;/code&gt; page. Introducing logging in the GUI via Microsoft.Extensions.Logging and the Blazor.Logging.Extensions. Introducing the WebServer; in Demo01, a Framework 4.7 ConsoleApp running a default WebHost over HTTP.Sys. Introducing the ServiceStack Middleware host, using ServiceStack logging and NLog. Introducing Sentinel, a UDP log capture and viewing rool. Explanation of how the WebServer servers the static files that make up the Blazor GUI. Introduction to the basic debugging tools for the GUI and for the WebServer.&lt;/p&gt;
-
-&lt;h2 id=&quot;demo02&quot;&gt;Demo02&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-blazor-basics&quot;&gt;The GUI focuses on Blazor basics,&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds a CodeBehind page &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.razor.cs&lt;/code&gt; for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.razor&lt;/code&gt; page.&lt;/li&gt;
-  &lt;li&gt;The GUI adds &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerProperty&lt;/code&gt; to the CodeBehind page and adds its visual display to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.razor&lt;/code&gt; page.&lt;/li&gt;
-  &lt;li&gt;The GUI adds to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.razor&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.razor.cs&lt;/code&gt; the visual representation and the c# code to support a button called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IncrementAnIntegerPropertyButton&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;The GUI adds an implementation of a simple &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OnClick&lt;/code&gt; handler which increments the value of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerProperty&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Discussions on the transient nature of data in the browser.&lt;/li&gt;
-  &lt;li&gt;Styling focuses on the site.css file
-    &lt;ul&gt;
-      &lt;li&gt;The site.css file adds a background color for the body of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; page.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-the-integratediisinprocess-webhost&quot;&gt;The Server focuses on the IntegratedIISInProcess WebHost&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to .Net Core V2.1 are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds ….&lt;/li&gt;
-  &lt;li&gt;Discussions on how the WebServer serves the static files that make up the Blazor GUI.&lt;/li&gt;
-  &lt;li&gt;launchsettings.json is introduced, and contains settings for running /debugging the  IntegratedIISInProcess WebHost.&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware is hosted in the IntegratedIISInProcess WebHost.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling&quot;&gt;The build / debug tooling&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Discussion on how the Server is started, both with and without debugging, from Visual Studio and from the CLI.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;details-for-the-demo02-readme&quot;&gt;details for the Demo02 readme&lt;/h3&gt;
-&lt;p&gt;The Server moves the SSApp middleware into an IntegratedIISInProcess WebHost running under .Net Core V2.1.
-A static method for the creation of an IWebHostBuilder configured to create an IntegratedIISInProcess WebHost is introduced.
-Within the static method, the extension method WebHost.CreateDefaultBuilder() is used to return an IWebHost pre-configured with the defaults necessary to run as an IntegratedIISInProcess WebHost.
-launchSettings.json refers to IISExpress
-The GUI ‘s one page gets a local variable and a button to increment it. Discussions of persistence of data in a browser-hosted GUI. The site.css file is modified to produce a background effect. The Server appears, a .Net Core 2.1 WebHost running all the defaults (IntegratedIISInProcess). This replaces the ConsoleApp of Demo01.  launchsettings.json is introduced, and contains settings for running the  IntegratedIISInProcess WebHost. The Blazor GUI project introduces a button, and the button’s OnClick handler&lt;/p&gt;
-
-&lt;h2 id=&quot;demo03---gui-gets-browser-local-storage-server-moves-to-net-core-v22-and-kestrel-webhost&quot;&gt;Demo03 - GUI gets browser-local storage, Server moves to .Net Core V2.2 and Kestrel WebHost&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-browser-local-storage&quot;&gt;The GUI focuses on browser-local storage&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds the third-party Blazor library &lt;a href=&quot;&quot;&gt;Blazored.LocalStorage&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;The GUI uses the synchronous interface to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blazored.Localstorage&lt;/code&gt; persist the value of the page-local &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerProperty&lt;/code&gt; via that property’s getter and setter.&lt;/li&gt;
-  &lt;li&gt;Styling focuses on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.css&lt;/code&gt; file is migrated to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file.&lt;/li&gt;
-      &lt;li&gt;The background color of  the Body tag is modified.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-the-kestrel-webhost&quot;&gt;The Server focuses on the Kestrel WebHost&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to .Net Core V2.2 are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds a static method for the creation of an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IWebHostBuilder&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;launchsettings.json adds a section to support launching the Kestrel-based Server.&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware is hosted in the Kestrel WebHost.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling-focuses-on-adding-support-for-sccs-files&quot;&gt;The build / debug tooling focuses on adding support for .sccs files&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The Visual Studio build tooling adds the VSIX extension &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler&quot;&gt;Web Compiler&lt;/a&gt;. Visual Studio is configured to compile any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.sccs&lt;/code&gt; file into a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.css&lt;/code&gt; file and a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.min.css&lt;/code&gt; file, both of which are copied to the GUI’s ContentRoot folder during build / publish..&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;details-for-the-demo03-readme&quot;&gt;details for the Demo03 readme&lt;/h3&gt;
-&lt;p&gt;A site.sccs file, and tools to compile the site.sccs file to the site.css file, are introduced.
-The server project targets Net Core V2.2. A KestrelAlone WebHost is introduced.
-The site-wide site.sccs file is added to the wwwroot/css directory. The contents of the current site.css is copied into the new site.scss file for the GUI.
-The GUI references the third-party Blazor library Blazored.LocalStorage.
-The synchronous interface to Blazored.Localstorage is used to persist the page-local &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerProperty&lt;/code&gt; via that property’s getter and setter.
-The server moves the SSApp middleware into a KestreAlone WebHost running under .Net Core V2.2.
-A static method for the creation of an IWebHostBuilder configured to create a KestreAlone WebHost is introduced.
-Within the static method,  a new WebHost is configured with no defaults by new()ing an instance of the WebHostBuilder class then applying the extension method .AddKestrel() and others.
- launchsettings.json are expanded to include settings for KestrelOnly
-The GUI’s local variable takes on persistence in browser-local storage using &lt;a href=&quot;&quot;&gt;Blazored.LocalStorage&lt;/a&gt; by &lt;a href=&quot;&quot;&gt;Chris Sainty&lt;/a&gt;.  Mads Kristensen  Web Compiler is installed to Visual Studio, the wwwroot/site.css is migrated to site.scss, and the build tools extended to process .scss files. The Server targets .Net Core 2.2. The WebHost in this Demo is Kestrel (alone).  launchsettings.json are expanded to include settings for KestrelOnly&lt;/p&gt;
-
-&lt;h2 id=&quot;demo04---gui-adds-visual-attributes-and-async-event-handlers--server-get-environment-variables-and-a-selectable-webhost&quot;&gt;Demo04 - GUI adds visual attributes and async event handlers,  Server get Environment Variables and a selectable WebHost&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI gets some big changes. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerProperty&lt;/code&gt; is placed within a text span &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerPropertyTextSpan&lt;/code&gt; for styling with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerPropertyTextSpanStyle&lt;/code&gt; page-local property. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IncrementAnIntegerPropertyButton&lt;/code&gt; adds three page-local properties for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;style&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;text&lt;/code&gt;. The button’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OnClick&lt;/code&gt; event handler binding becomes async and indirect. The GUI now has two possible &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OnClick&lt;/code&gt; event handler methods, one for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Active&lt;/code&gt; an one for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LogThenIgnore&lt;/code&gt;, with ‘Active’ being the initial handler for the button.&lt;/li&gt;
-  &lt;li&gt;Clicking the button, when Active, adds visual modifications to the button and to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerPropertyTextSpanStyle&lt;/code&gt;, changes the event handler to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LogThenIgnore&lt;/code&gt;, increments the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerProperty&lt;/code&gt; via a simulated async operation with a 4 second delay before returning, and then again changes the visual attributes and the event handler of the button back to ‘Active’.&lt;/li&gt;
-  &lt;li&gt;Discussions on how async event handlers interact with async Tasks and TaskContinuations.&lt;/li&gt;
-  &lt;li&gt;Styling focuses on variables in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file.
-    &lt;ul&gt;
-      &lt;li&gt;The .sccs file adds ….&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-environment-variables-remains-on-net-core-v22&quot;&gt;The Server focuses on Environment Variables, remains on .Net Core V2.2&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The Server adds the ability to allow the developer to select either of the two web server hosts, KestrelAlone or IISIntegratedInProcess, to be used when starting the project’s executable.&lt;/li&gt;
-  &lt;li&gt;Discussions on Environment variables&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; adds Environment Variables, and uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BlazorDemos_WebHostBuilder&lt;/code&gt; to select which WebHost to build.&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling-&quot;&gt;The build / debug tooling …&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Examples of selecting the WebHost for debugging sessions started from either Visual Studio or the CLI are discussed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;details-for-the-demo04-readme&quot;&gt;details for the Demo04 readme&lt;/h3&gt;
-&lt;p&gt;Discussions on async event handlers in the context of the UI thread. Making all of the StateChangeEventHandlers into async Action&lt;task&gt; signatures makes it possible to store them en-group in the State object. They can be lambdas, or they can refer to methods belonging to the CodeBehind classes / file. They can be retrieved from the IEnumerable&amp;lt;Func&lt;Task&gt;&amp;gt; collection with a LINQ query.  Launchsettings.json are introduced to allow the developer to select either of the two static WebHostBuilders when starting a debugging session.
-New in this Demonstration are&lt;/Task&gt;&lt;/task&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;a second entry in the launchSettings.json Profiles list&lt;/li&gt;
-  &lt;li&gt;environment variables introduced into the individual entries of the launchSettings.json Profiles list&lt;/li&gt;
-  &lt;li&gt;How to read environment variables before the web host is created so that the program can decide what kind of a web host to create&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;demo05---gui-gets-a-timer-and-state-server-gets-net-core-v30-environment-and-environment-aware-features&quot;&gt;Demo05 - GUI gets a Timer, and State, Server gets .Net Core V3.0, Environment and environment-aware features.&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-1&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Discussions on various GUI State approaches&lt;/li&gt;
-  &lt;li&gt;The GUI adds a State class to reduce the repetitive boilerplate needed for c# property representation of visual and action attributes of the HTML page / elements.&lt;/li&gt;
-  &lt;li&gt;The GUI adds a new DI-injected State object and its methods is used to store the Action&lt;Task&gt; methods for the statechange handlers, along with a LINQ-based query to retrieve the correct `MethodToUse`.&lt;/Task&gt;&lt;/li&gt;
-  &lt;li&gt;The GUI adds a timer, an animated gif file to represent the timer, and two event handlers for the timer, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Expired&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LogThenIgnore&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;The GUI Timer Expired statetransition handler does nothing to any properties bound to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerProperty&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerPropertyTextSpanStyle&lt;/code&gt;. The  Expired state program does change the style of the timer gif for a timed delay of 0.5 seconds using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Task.Delay(500)&lt;/code&gt; then changes it back and resets and restarts the timer.&lt;/li&gt;
-  &lt;li&gt;The GUI starts using string constants for the class, style, and text properties for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnIntegerPropertyTextSpanStyle&lt;/code&gt; and for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IncrementAnIntegerPropertyButton&lt;/code&gt; button’s visual attributes (for both Active and queuing visual effects).&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-net-core-v30-the-generichost-and-environment&quot;&gt;The Server focuses on .Net Core V3.0., the GenericHost, and environment&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Discussion on the .Net Core V3.0 GenericHost and hosting a WebHost within the GenericcHost&lt;/li&gt;
-  &lt;li&gt;References to .Net Core V3.0 are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;Discussion on the concept of Environment (Production, Staging, Debug, etc) and the use of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ASPNETCORE_ENVIRONMENT&lt;/code&gt; environment variable. Discussion on localization of this environment variable, and how to select which WebHost to build/run/use based on the value of this environment variable.&lt;/li&gt;
-  &lt;li&gt;The Server adds error pages based on environment, along with ‘Development-environment-only’ features.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; grows to support four runtime choices consisting of two Environment choices and two WebHost choices.&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling-adds&quot;&gt;The build / debug tooling adds&lt;/h3&gt;
-
-&lt;h3 id=&quot;details-for-the-demo05-readme&quot;&gt;details for the Demo05 readme&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Note that having both a button OnClick Active event handler and the TimerExpired Active event handler both “active”, means that the program is multiplexing those two statechange inputs. The program  can be in the midst of responding to one, when the other occurs, which can lead to synchronicity issues. In Demo05, the program is written so that there is no interaction between the two active statechange handlers, hence no need (yet) to synchronize access to state variables from the two statechange handlers. Also note that having an animated gif in the visual display can provide a clue if the main browser UI thread is blocked.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;demo06---gui-timer-enhancements-enumerations-supportedwebhosts-and-either-kestral-and-integratediisinprocess-in-the-server&quot;&gt;Demo06 - GUI Timer enhancements, Enumerations, SupportedWebHosts, and either Kestral and IntegratedIISInProcess in the Server&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-2&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds a button to start/stop the timer, a CSS animation to represent the timer enabled boolean, and event handlers for the button&lt;/li&gt;
-  &lt;li&gt;State&lt;/li&gt;
-  &lt;li&gt;Styling focuses on CSS Animations and .sccs include files
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds styles for the TimerControl button,&lt;/li&gt;
-      &lt;li&gt;The GUI project adds a new .&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.sccs&lt;/code&gt; file fragment suitable for including into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file.&lt;/li&gt;
-      &lt;li&gt;The new `.sccs. file fragment contains a CSS Animation&lt;/li&gt;
-      &lt;li&gt;animations is triggered visible-running / invisible-disabled by the expiration of the Timer trigger.&lt;/li&gt;
-      &lt;li&gt;Further styling via String.Constants to make the elements visually explanatory as the demo is run through its visual states.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-a-single-static-builder-for-the-generichost-which-incorporates-different-webhostbuilder-configurations-based-on-a-parameter-to-the-method-the-multiple-static-builders-are-removed&quot;&gt;The Server focuses on a single static builder for the GenericHost, which incorporates different webHostBuilder configurations based on a parameter to the method. The multiple static builders are removed.&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to …. are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds an enumeration for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SupportedWebHostBuilders&lt;/code&gt; and validates/parses the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BlazorDemos_WebHostBuilder&lt;/code&gt; environment variable against this enumeration.&lt;/li&gt;
-  &lt;li&gt;The Server merges the two static &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IWebHostBuilders&lt;/code&gt; into a single parameterized static builder method &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateSpecificHostBuilder(SupportedWebHostBuilders webHostBuilderToBuild)&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;A new compilation unit is introduced &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enumerations.cs&lt;/code&gt;. The class &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Program&lt;/code&gt; in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Program.cs&lt;/code&gt; is made into a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;partial&lt;/code&gt; class, and the new Enumerations.cs also contains a declaration of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;partial Program&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Discussions on how to ….&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling-1&quot;&gt;The build / debug tooling&lt;/h3&gt;
-
-&lt;h1 id=&quot;cut-line-for-version-150&quot;&gt;Cut Line for version 1.5.0&lt;/h1&gt;
-&lt;h3 id=&quot;demos-below-this-line-are-still-under-active-development-in-the-various-features-branches-and-the-develop-branch-and-in-the-last-few-cases-the-demo-is-still-completely-tbd&quot;&gt;Demos below this line are still under active development in the various features Branches and the develop branch, and in the last few cases the demo is still completely TBD.&lt;/h3&gt;
-
-&lt;h2 id=&quot;demo07---configuration-part1&quot;&gt;Demo07 - Configuration (Part1)&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-configuration-tbd-when-csb-supports-extensionsconfiguration&quot;&gt;The GUI focuses on Configuration (TBD when CSB supports Extensions.Configuration)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds a new compilation unit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DefaultConfiguration.cs&lt;/code&gt;, which contains the minimal configKeys needed to run the GUI in production&lt;/li&gt;
-  &lt;li&gt;A discussion on concurrency if two or more event handlers try to access the same state variable(s)&lt;/li&gt;
-  &lt;li&gt;State element properties for data and visual attributes get their setters hooked to NotifyPropertyChange-like and NotifyPropertyChanging-like events&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-creating-a-configurationroot-and-the-microsoftextensionsconfiguration-class&quot;&gt;The Server focuses on creating a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;configurationRoot&lt;/code&gt; and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Microsoft.Extensions.Configuration&lt;/code&gt; class&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Discussions on the concept of Configuration (ConfigurationBuilder, Configuration Providers, and a ConfigurationRoot) is introduce&lt;/li&gt;
-  &lt;li&gt;References to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Microsoft.Extensions.Configuration&lt;/code&gt; are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds a new compilation unit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DefaultConfiguration.cs&lt;/code&gt;, which contains the minimal configKeys needed to run the program in production For Demo07 and future, that minimum includes at least the list of URL(s) to ListenTo.&lt;/li&gt;
-  &lt;li&gt;The Server adds an initial hostConfigurationRoot created from InMemory, File, and EnvironmentVariable providers.&lt;/li&gt;
-  &lt;li&gt;WebHostToBuild and Environment strings from the ConfigurationRoot are validated. If not present, defaults are provided and added to the ConfigurationRoot.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; adds environment variable for the list of URLs that the Server is expected to ListenOn.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling--1&quot;&gt;The build / debug tooling …&lt;/h3&gt;
-
-&lt;h3 id=&quot;details-for-the-demo07-readme&quot;&gt;details for the Demo07 readme&lt;/h3&gt;
-&lt;p&gt;The static &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IHostBuilder&lt;/code&gt; method &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateGenericHostBuilder()&lt;/code&gt; grows an additional parameter of type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ConfigurationRoot&lt;/code&gt;, and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hostConfigurationRoot&lt;/code&gt; is passed to the method
-The Environment value retrieved from the hostConfigurationRoot is used to conditionally apply the Development-only configuration options.
-The Development-only configuration options are moved into the static &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateGenericHostBuilder()&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;h2 id=&quot;demo08---async-tasks-and-waitany-in-the-gui-configuration-part2-in-the-server&quot;&gt;Demo08 - Async Tasks and WaitAny in the GUI, Configuration (Part2) in the Server&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-visual-representation-of-a-simple-async-tasks&quot;&gt;The GUI focuses on visual representation of a simple async task’s&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;lifecycle: initialization, quiescent, dispatch, awaiting, synchronization, task continuation, completion .&lt;/li&gt;
-  &lt;li&gt;The GUI adds an async method that returns a Task, a button that dispatches it, and  visual badge for the task’s status and results.&lt;/li&gt;
-  &lt;li&gt;Notation and relationships of state triggers, as exemplified by buttons, timers, and tasks, are abstracted as a Linq query.&lt;/li&gt;
-  &lt;li&gt;The browser-local storage properties involved with State get a concurrency flag.&lt;/li&gt;
-  &lt;li&gt;Additional expansion of Configuration if warrented after Blazor supports it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-project-focuses-on-adding-detailed-environment-specific-configuration-settings&quot;&gt;The Server project focuses on adding &lt;em&gt;Detailed environment-specific configuration settings&lt;/em&gt;&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Microsoft.Extensions.Configuration&lt;/code&gt; to including the concept of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt; (Production, Development, Testing, etc.) driving the contents of the ConfigurationRoot&lt;/li&gt;
-  &lt;li&gt;The static &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IHostBuilder&lt;/code&gt; method &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateSpecificGenericHostBuilder()&lt;/code&gt; adds AppConfiguration based on a chain of Configuration providers.&lt;/li&gt;
-  &lt;li&gt;The AppConfiguration includes
-    &lt;ol&gt;
-      &lt;li&gt;CommandLine Arguments&lt;/li&gt;
-      &lt;li&gt;Environment variables, filtered by a prefix&lt;/li&gt;
-      &lt;li&gt;How to branch the flow of execution based on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt;, and how to name the settings files.&lt;/li&gt;
-      &lt;li&gt;Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost&lt;/li&gt;
-      &lt;li&gt;compiled-in defaults for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; …&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling--2&quot;&gt;The build / debug tooling …&lt;/h3&gt;
-
-&lt;h2 id=&quot;demo09---logging-in-the-server-and-synchronicity-in-the-gui&quot;&gt;Demo09 - Logging in the Server and synchronicity in the GUI&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-logging-tbd-when-csb-supports-extensionslogging-beyond-just-the-console-logger&quot;&gt;The GUI focuses on logging (TBD when CSB supports Extensions.Logging beyond just the Console Logger)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Discussions on how to accomplish Logging from a browser, that is browser-independent and platform-independent.&lt;/li&gt;
-  &lt;li&gt;(TBD) The GUI adds Serilog as a logging provider for the CSB GUI application, which writes to the DebugConsole sink, whihc, when run under IISINtegrated, will write-back to the Visual Studio Debug output console&lt;/li&gt;
-  &lt;li&gt;The statechange methods for the Timer and for the asynch task are modified so they also increment the IntegerProperty.&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The .sccs file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-microsoftextensionslogging-using-serilog-as-the-logging-extension&quot;&gt;The Server focuses on Microsoft.Extensions.Logging using Serilog as the logging extension&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to Serilog are added, and references to NLog and ServiceStack logging are removed.&lt;/li&gt;
-  &lt;li&gt;Log statements that used string expansion are replaced with SeriLog structured logging&lt;/li&gt;
-  &lt;li&gt;Discussions on how to add / reference SeriLog as a MEL logger, how to configure logging in a ConfigurationRoot, and how to view logging in a stream database (SEQ).&lt;/li&gt;
-  &lt;li&gt;launchsettings.json ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling-adds-seq-for-log-collection-and-viewing-along-with-a-discussion-on-how-to-use-it-with-these-demos&quot;&gt;The build / debug tooling adds SEQ for log collection and viewing ,along with a discussion on how to use it with these Demos.&lt;/h3&gt;
-&lt;p&gt;An external tool &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Seq&lt;/code&gt; is added to provide centralized log collection and viewing. Log messages are ingested as HTTP messages to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost&lt;/code&gt; on the default port 5341
-&lt;strong&gt;__&lt;/strong&gt;&lt;strong&gt;__&lt;/strong&gt;__&lt;/p&gt;
-&lt;h2 id=&quot;server&quot;&gt;Server&lt;/h2&gt;
-&lt;p&gt;This demo focuses on Logging
-The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ServiceStack.Logging&lt;/code&gt; dependency and using is removed from all compilation units (source .cs files)
-The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Microsoft.Extensions.Logging&lt;/code&gt; NuGet Package dependency is added to the project
-Serilog dependencies (NuGet Packages) are added to the project: (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Serilog, Serilog.AspNetCore, Serilog.Enrichers.Thread,S erilog.Exceptions, Serilog.Settings.Configuration, Serilog.Sinks.Console, Serilog.Sinks.Debug, Serilog.Sinks.File, Serilog.Sinks.Seq, SerilogAnalyzer&lt;/code&gt;)
-The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;genericHostSettings.json&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;genericHostSettings.development.json&lt;/code&gt; files grow an extensive logging sections for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Microsoft.Extensions.Logging&lt;/code&gt; and for Serilog
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;genericHostSettings.json&lt;/code&gt; (production) configures Serilog with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Seq&lt;/code&gt; writer. The Serilog &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LogContext&lt;/code&gt; is enriched with the current threadID, and an additional property, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Application&lt;/code&gt; having the value ‘Demo09”
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;genericHostSettings.json&lt;/code&gt; (Development) configures Serilog with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Seq&lt;/code&gt; writer, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Console&lt;/code&gt; writer, and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DebugOutput&lt;/code&gt; writer. 
-The Serilog static Log object is initialized with the Serilog configuration read from the ConfigurationRoot
-The static method CreateGenericHost adds &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Serilog.AspNetCore&lt;/code&gt; logging to the genericHost’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ConfigureWebHostDefaults&lt;/code&gt; builder extension and to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.ConfigureLogging&lt;/code&gt; builder extension via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.UseSerilog()&lt;/code&gt;
-The NLog.config and NLog.xsd files are removed. 
-The Serilog Analyzer, installed via NuGet, will provide IntelliSense for the Serilog Log methods.
-logging statements throughout the code are replaced with SeriLog structured  logging statements 
-The Log statements that used String expansion are replaced with SeriLog structured logging messages. The Analyzer provides a suggested replacement, so this step is just a “replace all occurrences” in the project
-&lt;strong&gt;__&lt;/strong&gt;__&lt;/p&gt;
-
-&lt;h2 id=&quot;demo10---server-tracing-and-profiling-via-event-tracing-for-windows-etw-gui-simple-task&quot;&gt;Demo10 - Server: Tracing and Profiling via Event Tracing for Windows (ETW), GUI: simple Task&lt;/h2&gt;
-&lt;p&gt;This is the specific documentation for Demo10, &lt;em&gt;Adding Event Tracing for Windows (ETW)&lt;/em&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-3&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds
-        &lt;h3 id=&quot;the-server-focuses-ontracing-and-profiling-via-event-tracing-for-windows-etw&quot;&gt;The Server focuses onTracing and Profiling via Event Tracing for Windows (ETW)&lt;/h3&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;The server adds the ability to log method boundaries in the ETW tracing window (not getters or setters yet)
-    &lt;ul&gt;
-      &lt;li&gt;A managed ETW provider, named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider&lt;/code&gt;, derived from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EventSource&lt;/code&gt; is added.&lt;/li&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider&lt;/code&gt; class has one static Property, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Log&lt;/code&gt;, which holds an instance of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider&lt;/code&gt; class.&lt;/li&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider&lt;/code&gt; has one method, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Information&lt;/code&gt;, which writes to the ETW subsystem via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;System.Diagnostics.Tracing&lt;/code&gt;.&lt;/li&gt;
-      &lt;li&gt;The Serilog logging messages for method entry and exit throughout the Server classes are replaced with calls to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider.Log.Information&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;A number of external tools useful for collecting, viewing, and analyzing ETW events are discussed in the documentation, along with links to further information
-    &lt;ol&gt;
-      &lt;li&gt;Visual Studio Diagnostics Event window&lt;/li&gt;
-      &lt;li&gt;PerfView, and how to use it to collect ETW events from the demo, and view the ETW logs&lt;/li&gt;
-      &lt;li&gt;ToDo: –WPA, Windows Performance Analyzer–&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;demo11---ilweaving-using-fody&quot;&gt;Demo11 - ILWeaving using Fody&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-4&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-adding-fody-for-ilweaving-and-the-methodaspectboundry-weaver-addin-for-fody&quot;&gt;The Server focuses on adding Fody for ILWeaving, and the MethodAspectBoundry weaver AddIn for Fody&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Discussions on what ILWeaving is, and using Fody to accomplish it&lt;/li&gt;
-  &lt;li&gt;Discussions on&lt;/li&gt;
-  &lt;li&gt;References to MethodAspectBoundry.Fody are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;A new Attribute &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ETWLogAttribute&lt;/code&gt; is defined, added to almost every class, and all method entry and exit logging statements are removed.&lt;/li&gt;
-  &lt;li&gt;The Server uses the MethodAspectBoundry Weaver to add ETW logging for every method in a class&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling-adds-ilweaving-package&quot;&gt;The build / debug tooling adds ILWeaving package&lt;/h3&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The Blazor GUI project …
-Todo: The server project focuses on the details of ILWeaving using Fody to provide ETW logging of method entry and exit, including getters and setters. MethodBoundryAspect Fody Plugin also logs exceptions to ETW automagically.
-ToDo: look some of that, and move to the next demo.The server project focuses on the details of installing the server project as a Windows service, and partially automating that process.
-The Common DTOs ..&lt;/p&gt;
-
-&lt;h2 id=&quot;demo12---publishing-both-the--gui-and-the-server-into-a-windows-service&quot;&gt;Demo12 - Publishing both the  GUI and the Server into a Windows Service&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-getting-the-new-publishedservicepubxml-file-setup-properly&quot;&gt;The GUI focuses on getting the new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PublishedService.pubxml&lt;/code&gt; file setup properly.&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds the ability to publish to a specific folder within the &lt;em&gt;_PublishedAgent\PublishedService&lt;/em&gt; subdirectory tree using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PublishedService.pubxml&lt;/code&gt; publishing option&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-creating-the-basic-windows-service-additions-then-hosting-the-servicestack-middleware-in-a-kestrel-only-webhost-inside-a-generichost-under-net-core-v30-and-running-it-as-a-service&quot;&gt;The Server focuses on creating the basic windows service additions, then hosting the ServiceStack middleware in a Kestrel-only webHost inside a GenericHost under Net Core V3.0 and running it as a Service&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to …. are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;Discussion on the differences between a ConsoleApp and a Service&lt;/li&gt;
-  &lt;li&gt;Discussion on concepts from the Runtime, to determine if the program is running under Windows or Linux&lt;/li&gt;
-  &lt;li&gt;The Server adds a key runtime variable  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IsConsoleApp&lt;/code&gt; to determine if the program is running under Windows or Linux&lt;/li&gt;
-  &lt;li&gt;The Server adds switchMappings ConfigurationRoot to detect -C or -Console as a command-line switch&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling-focuses-on-the-windows-scexe-utility&quot;&gt;The build / debug tooling focuses on the Windows sc.exe utility&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Discussion on using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sc.exe&lt;/code&gt; for manually installing and uninstalling the genericHost as a Windows Service are documented&lt;/li&gt;
-  &lt;li&gt;Discussion on how to setup VisualStudio and the CLI to ‘Publish’ the Server to a specified location, which can be referenced by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sc.exe&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;publishing-steps&quot;&gt;Publishing Steps&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Demo12 adds a new section to the ReadMe for documenting what changes get made in the publishing process.&lt;/li&gt;
-  &lt;li&gt;The initial section describes the manual steps for creating / publishings, installing, and running the server as a service, how to uninstall it, and the run edit compile cycle for developing the service..&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;demo-13---tbd-automating-publishing&quot;&gt;Demo 13 - (TBD) Automating Publishing&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-5&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling-focuses-on&quot;&gt;The build / debug tooling focuses on&lt;/h3&gt;
-&lt;p&gt;a discussion of the InstallUti;l&lt;/p&gt;
-
-&lt;p&gt;You will need to install a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.Net Core Global Tool&lt;/code&gt; called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;installUtil&lt;/code&gt;. From a VS 2019 command prompt, run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet tool install -g --framework netcoreapp3.0 --version 1.2.0 InstallUtil&lt;/code&gt;. Of course check that this is still the latest version and adjust the instructions accordingly, if a later version exists.&lt;/p&gt;
-
-&lt;h3 id=&quot;publishing-steps-1&quot;&gt;Publishing Steps&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;focuses on automating the publishing process, and provides a PowerShell script &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PublishingAutomation.ps1&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;demo14---tbd-publishing-both-the-gui-and-the-server-to-windows-subsystem-for-linux-as-a-daemon&quot;&gt;Demo14 - (TBD) Publishing both the GUI and the Server to Windows Subsystem for Linux as a Daemon&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-6&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on&quot;&gt;The Server focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to …. are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds ….&lt;/li&gt;
-  &lt;li&gt;Discussions on how to ….&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling--3&quot;&gt;The build / debug tooling …&lt;/h3&gt;
-
-&lt;h2 id=&quot;publishing-steps-2&quot;&gt;Publishing Steps&lt;/h2&gt;
-
-&lt;h2 id=&quot;demo15---tbd-publishing-both-the-gui-and-the-server-to-linux-kernals&quot;&gt;Demo15 - (TBD) Publishing both the GUI and the Server to Linux kernals&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-7&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-1&quot;&gt;The Server focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to …. are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds ….&lt;/li&gt;
-  &lt;li&gt;Discussions on how to ….&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling--4&quot;&gt;The build / debug tooling …&lt;/h3&gt;
-
-&lt;h2 id=&quot;publishing-steps-3&quot;&gt;Publishing Steps&lt;/h2&gt;
-
-&lt;h2 id=&quot;demo16---gui-and-server-open-communications&quot;&gt;Demo16 - GUI and Server open communications&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-8&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-2&quot;&gt;The Server focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to …. are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds ….&lt;/li&gt;
-  &lt;li&gt;Discussions on how to ….&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling--5&quot;&gt;The build / debug tooling …&lt;/h3&gt;
-
-&lt;h2 id=&quot;publishing-steps-4&quot;&gt;Publishing Steps&lt;/h2&gt;
-
-&lt;h2 id=&quot;demo17---gui-and-server-plugins&quot;&gt;Demo17 - GUI and Server PlugIns&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-an-implementation-of-additional-pages-defined-in-configuration-and-loaded-at-runtime&quot;&gt;The GUI focuses on an implementation of additional pages defined in Configuration and loaded at runtime&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-an-implementation-of-additional-services-via-the-ss-plugin-structures&quot;&gt;The Server focuses on an implementation of additional services via the SS Plugin structures&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to …. are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds ….&lt;/li&gt;
-  &lt;li&gt;Discussions on how to ….&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling--6&quot;&gt;The build / debug tooling …&lt;/h3&gt;
-
-&lt;h2 id=&quot;publishing-steps-5&quot;&gt;Publishing Steps&lt;/h2&gt;
-
-&lt;p&gt;—- Cut Line —-
-Rough notes below, to be integrated&lt;/p&gt;
-
-&lt;p&gt;ToDo: InstallUtil? Registering messages with Windows Application EventLog?
-Details in &lt;a href=&quot;Server/ReadMe.html&quot;&gt;Demo12 Server&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Demo13 - The GUI focuses on …. The GUI adds …. Discussions on …. The .sccs file adds …. The build tooling adds… The Server focuses on …. References to …. are added…. Discussions on …. launchsettings.json …. The ServiceStack middleware adds …. The CommonDTOs adds …&lt;/p&gt;
-
-&lt;p&gt;The AppConfiguration includes&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;CommandLine Arguments&lt;/li&gt;
-  &lt;li&gt;Environment variables, filtered by a prefix&lt;/li&gt;
-  &lt;li&gt;How to branch the flow of execution based on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt;, and how to name the settings files.&lt;/li&gt;
-  &lt;li&gt;Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost&lt;/li&gt;
-  &lt;li&gt;compiled-in defaults for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt;
-The AppConfiguration includes
-AppConfiguration 
-CommandLine Arguments
-Environment variables, filtered by a prefix
-Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost
-compiled-in defaults for the Environment
-event handlers
-How to branch the flow of execution based on Environment, and how to name the settings files.
-logging statements
-ETW provider, named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider&lt;/code&gt;, derived form &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EventSource&lt;/code&gt;
-System.Diagnostics.Tracing
-The Serilog logging messages for method entry and exit throughout the Server classes are replaced with calls to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider.Log.Information&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Visual Studio Diagnostics Event window&lt;/li&gt;
-  &lt;li&gt;PerfView, and how to use it to collect ETW events from the demo, and view the ETW logs
-ETWLogAttribute
-[ETWLogAttribute]
-logging messages for method entry and exit throughout the Server classes are
-Blazored.LocalStorage&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The Blazor GUI site.scss file uses variables to define the &amp;lt;body&amp;gt; tags background style / color.&lt;/p&gt;
-
-&lt;p&gt;Blazor.Logging.Extensions&lt;/p&gt;
-
-&lt;p&gt;Logging  in the GUI via Microsoft.Extensions.Logging, and Blazor.Logging.Extensions&lt;/p&gt;
-
-&lt;p&gt;Blazored.LocalStorage&lt;/p&gt;
-
-&lt;p&gt;Blazored.LocalStorage&lt;/p&gt;
-
-&lt;p&gt;The Server adds Environment variables, and uses one to select which WebHost to build/run/use.  launchsettings.json grows Environment variables.
-Environment Variables and LaunchSettings.json grow to add Environment
-.Net Core 2.2
-The .sccs file adds styles for AnIntegerProperty, and IncrementAnIntegerPropertyButton (for both Active and queuing visual effects)
-The GUI adds a timer that will increment AnIntegerProperty, a button to start/stop the timer, styles for the TimerControl button, and state triggers for the button and for the timer itself
-The .sccs file adds styles for AnIntegerProperty, and IncrementAnIntegerPropertyButton (for both Active and queuing visual effects).
-The GUI adds a timer that will increment AnIntegerProperty, a button to start/stop the timer, styles for the TimerControl button, and state triggers and state transitions for the button and for the timer itself.
-The Server adds Environment variables, and uses one to select which WebHost to build/run/use.  launchsettings.json grows Environment variables. The Server targets  .Net Core 3.0 and will remain so for the rest of the demos (Currently Preview6)
-The GUI adds a timer that will increment AnIntegerProperty, a button to start/stop the timer, styles for the TimerControl button, and state triggers and state transitions for the button and for the timer itself.&lt;br /&gt;
-Demo06  -  The GUI adds a second integer property &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnotherIntegerProperty&lt;/code&gt;, a  button to increment it, and a fourth button that will increment both &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IntegerProperties&lt;/code&gt;.   Further styling to make the elements visually explanatory as the demo is run through its visual states. Our browser-local storage properties involved with State get their setters hooked. A discussion on concurrency if two or more substates try to access the same state variable
- The Server adds the concept of Environment (Production, Staging, Debug, etc). Discussion on localization of these values, and uses one to select which WebHost to build/run/use.  Environment Variables and launchSettings.json grow to add Environment.
-Demo06  -  The GUI adds a second integer property &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AnotherIntegerProperty&lt;/code&gt;, a  button to increment it, and a fourth button that will increment both &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IntegerProperties&lt;/code&gt;.   Further styling to make the elements visually explanatory as the demo is run through its visual states. Our browser-local storage properties involved with State get their setters hooked. A discussion on concurrency if two or more substates try to access the same state variable.   The Server adds the concept of Environment (Production, Staging, Debug, etc). Discussion on localization of these values, and uses one to select which WebHost to build/run/use.  Environment Variables and launchSettings.json grow to add Environment. 
-focuses on a single static builder for the GenericHost, which incorporates different webHostBuilder configurations based on a parameter to the method. The multiple static builders are removed.
-A new enumeration &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SupportedWebHostBuilders&lt;/code&gt;is introduced,
-Demo07  -  The GUI adds an async method that returns a Task, a button that dispatches it, and  visual badge for the task’s status and results. Notation and relationships of state triggers, as exemplified by buttons, timers, and tasks, are abstracted as a Linq query.     Our browser-local storage properties involved with State get a concurrency flag. A discussion on concurrency if two or more substates try to access the same state variable.   The Server focuses on a single static builder for the 3.0 GenericHost, which incorporates different WebHostBuilder configurations based on a parameter to the method. The multiple static builders are removed. A new enumeration SupportedWebHostBuildersis introduced, and corresponding environment variable and launchsettings.json entries
-Demo07  -  The GUI adds an 
-Demo07  -  The GUI adds
-The AppConfiguration includes&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;CommandLine Arguments&lt;/li&gt;
-  &lt;li&gt;Environment variables, filtered by a prefix&lt;/li&gt;
-  &lt;li&gt;How to branch the flow of execution based on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt;, and how to name the settings files.&lt;/li&gt;
-  &lt;li&gt;Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost&lt;/li&gt;
-  &lt;li&gt;compiled-in defaults for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt;
-The AppConfiguration includes
-AppConfiguration 
-CommandLine Arguments
-Environment variables, filtered by a prefix
-How to branch the flow of execution based on Environment, and how to name the settings files.
-Settings file(s) in JSON format, Production, and additional settings based on Environment, for both the GenericHost and the WebHost
-compiled-in defaults for the Environment
-event handlers
-How to branch the flow of execution based on Environment, and how to name the settings files.
-This demo focuses on Logging
-Server adds Microsoft.Extensions.Configuration
-genericHostSettings.json
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;genericHostSettings.json&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;genericHostSettings.development.json&lt;/code&gt; files grow an extensive logging section
-logging statements
-ETW provider, named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider&lt;/code&gt;, derived form &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EventSource&lt;/code&gt;
-System.Diagnostics.Tracing
-The Serilog logging messages for method entry and exit throughout the Server classes are replaced with calls to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DemoETWProvider.Log.Information&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Visual Studio Diagnostics Event window&lt;/li&gt;
-  &lt;li&gt;PerfView, and how to use it to collect ETW events from the demo, and view the ETW logs
-ETWLogAttribute
-[ETWLogAttribute]
-logging messages for method entry and exit throughout the Server classes are
-Blazored.LocalStorage&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;TEMPLATE:&lt;/p&gt;
-
-&lt;h2 id=&quot;demoxx---xxx&quot;&gt;DemoXX - XXX&lt;/h2&gt;
-&lt;h3 id=&quot;the-gui-focuses-on-9&quot;&gt;The GUI focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The GUI adds&lt;/li&gt;
-  &lt;li&gt;Discussions on how to&lt;/li&gt;
-  &lt;li&gt;Styling focuses on
-    &lt;ul&gt;
-      &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.sccs&lt;/code&gt; file adds&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-server-focuses-on-3&quot;&gt;The Server focuses on&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;References to …. are added to the .csproj&lt;/li&gt;
-  &lt;li&gt;The Server adds ….&lt;/li&gt;
-  &lt;li&gt;Discussions on how to ….&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;launchsettings.json&lt;/code&gt; ….&lt;/li&gt;
-  &lt;li&gt;The ServiceStack middleware adds ….&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-build--debug-tooling--7&quot;&gt;The build / debug tooling …&lt;/h3&gt;
-
-&lt;hr /&gt;</content><author><name></name></author><category term="technical" /><category term="Blazor" /><summary type="html">Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.</summary></entry><entry><title type="html">Case For A Non Anonymous Internet Part 01</title><link href="https://billhertzing.github.io/political/2021/04/19/Case-for-a-non-anonymous-Internet-Part-01/" rel="alternate" type="text/html" title="Case For A Non Anonymous Internet Part 01" /><published>2021-04-19T17:17:53-06:00</published><updated>2021-04-19T17:17:53-06:00</updated><id>https://billhertzing.github.io/political/2021/04/19/Case-for-a-non-anonymous-Internet-Part-01</id><content type="html" xml:base="https://billhertzing.github.io/political/2021/04/19/Case-for-a-non-anonymous-Internet-Part-01/">&lt;h2 id=&quot;tl-dr&quot;&gt;TL DR&lt;/h2&gt;
-
-&lt;p&gt;Making people use their true identity when posting comments to my blog posts might make them more civil. It also allows for the creation of a history of behavior.&lt;/p&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;studies-showing-the-incident-and-degree-of-hateful-speech-declines-when-true-identity-is-required&quot;&gt;Studies showing the incident and degree of hateful speech declines when true identity is required&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;studies-showing-the-incident-and-degree-of-hateful-speech-increases-when-anonymity-is-allowed&quot;&gt;Studies showing the incident and degree of hateful speech increases when anonymity is allowed&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;attributions&quot;&gt;Attributions&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;</content><author><name></name></author><category term="political" /><category term="Non-Anonymous" /><category term="Internet" /><summary type="html">TL DR</summary></entry><entry><title type="html">Attributions For Internet Resources</title><link href="https://billhertzing.github.io/technical/2021/04/19/Attributions-For-Internet-Resources/" rel="alternate" type="text/html" title="Attributions For Internet Resources" /><published>2021-04-19T17:17:53-06:00</published><updated>2021-04-19T17:17:53-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/19/Attributions-For-Internet-Resources</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/19/Attributions-For-Internet-Resources/">&lt;h1&gt; People, Books, Articles, Blogs, websites that have sparked ideas or code used in this app
-
-&lt;h2&gt; Attribution for ideas to currently incorporated into the project
-
-|  Group  | Sub-group | ToolName |                  URL                 | NuGet                                    | Date Added | ByWhom |
-|:-------:|:---------:|:--------:|:------------------------------------:|------------------------------------------|:----------:|--------|
-| Testing | BDD       | SpecFlow | https://github.com/techtalk/SpecFlow | https://www.nuget.org/packages/SpecFlow/ | 06/17/2018 | WGH    |
-|         |           |          |                                      |                                          |            |        |
-|         |           |          |                                      |                                          |            |        |
-
-&lt;h2&gt; Ideas to be incorporated into the project
-
-|  Group  | Sub-group | ToolName |                  URL                 | NuGet                                    | Date Added | ByWhom |
-|:-------:|:---------:|:--------:|:------------------------------------:|------------------------------------------|:----------:|--------|
-| Testing | BDD       | SpecFlow | https://github.com/techtalk/SpecFlow | https://www.nuget.org/packages/SpecFlow/ | 06/17/2018 | WGH    |
-|         |           |          |                                      |                                          |            |        |
-|         |           |          |                                      |                                          |            |        |
-
-&lt;h2&gt; Attribution for ideas which were once incorporated into the project but have been replaced or superseded
-
-&lt;/h2&gt;&lt;/h2&gt;&lt;/h2&gt;&lt;/h1&gt;</content><author><name></name></author><category term="technical" /><category term="Attribution" /><summary type="html">People, Books, Articles, Blogs, websites that have sparked ideas or code used in this app</summary></entry><entry><title type="html">Adventures In Voice Diction And Commands For A Developer</title><link href="https://billhertzing.github.io/technical/2021/04/19/Adventures-in-Voice-Diction-and-Commands-for-a-Developer/" rel="alternate" type="text/html" title="Adventures In Voice Diction And Commands For A Developer" /><published>2021-04-19T17:17:53-06:00</published><updated>2021-04-19T17:17:53-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/19/Adventures-in-Voice-Diction-and-Commands-for-a-Developer</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/19/Adventures-in-Voice-Diction-and-Commands-for-a-Developer/">&lt;p&gt;Voice dictation is the subject of my second blog post&lt;/p&gt;
-
-&lt;p&gt;Specifically, can I switch between dictation mode and programming mode&lt;/p&gt;
-
-&lt;p&gt;As I am dictating this into a new voice dictation software package, I have learned just how hard it is to create content on the fly, in complete sentences.&lt;/p&gt;
-
-&lt;p&gt;I did an Internet search on the subject of voice commands to/for Visual Studio code. Aside from the usual dross from the big companies, the articles that seemed remotely interesting, all seen to involve one or more third-party packages.&lt;/p&gt;
-
-&lt;p&gt;All of the articles suggested that the initial steps are to set up microphone, workspace, and to install a voice recognition app.&lt;/p&gt;
-
-&lt;p&gt;I am familiar with voice recognition on Google, and I have tried Microsoft’s Windows built in product.&lt;/p&gt;
-
-&lt;p&gt;A few years ago I bought a copy of the commercial version of DragonDictate. I never installed it . But I decided to give it a try today.  The DragonDictate has been bought by Nuance. Looking at their website, there are two newer versions of the software. Not sure I want to spend money on this yet, although one of the Internet article did reference using DragonDictate. Unfortunately the article indicated that the professional version does a much better job. Unfortunately, because it costs significantly more money, and as a retiree, I haven’t got any to spare. :-)&lt;/p&gt;
-
-&lt;p&gt;Pretty much right out of the box I am dictating all of this into a DragonDictate text control which easily pastes into the notepad++ text editor I’m using.&lt;/p&gt;
-
-&lt;p&gt;It has taken me about 10 minutes to dictate all of this, learning as I go. The biggest issue is it doesn’t seem to recognize the first couple of words when I start a sentence, so I have to go back to The beginning and enter those words. As happened here, note the capital T prior. I started dictating at “I have to ggo back…”.&lt;/p&gt;
-
-&lt;p&gt;The next step is to see if it will be possible to give commands to the text editor.&lt;/p&gt;
-
-&lt;p&gt;Instead, went down a rabbit hole. Found a forum where people discuss using DragonDictate to control third-party apps. In the forum, I found a few nuggets from people who were, in 2016, using DragonDictate and Visual Studio. What I did see in code examples was that a variation of Basic is being used customized DragonDictate.&lt;/p&gt;
-
-&lt;p&gt;My programming language preferences are C# and PowerShell. Realizing that I would have to write significant Visual Basic code, I have decided that DragonDictate is probably not the voice dictation recognition software that I’m looking to pursue.&lt;/p&gt;
-
-&lt;p&gt;So it’s back to the drawing board! I’ll try to write sooner next time.&lt;/p&gt;
-
-&lt;p&gt;Combining Voice dictation and code editing is the subject of my third blog post&lt;/p&gt;
-
-&lt;p&gt;(Ed. First paragraph is typed) I was going to try and dictate as I coded, but upon opening my environment, I realized it was time for a housecleaning. I spent a few hours prior to dictating closing out my MAPs subscription cleaning out old SDK versions, removing two of my three Visual studio installs, and creating the first two workspaces for Visual Studio Code in the ATAP.Utilities repository.&lt;/p&gt;
-
-&lt;p&gt;So the remainder of this post will be the raw dictation transcription, as I try to get the Powershell code I wrote last week into the original Console program that read a lot of disks, and records info about every file. The next step is to store the data in a graph DB. Yesterday I got the SQL Server 2017(?) service running locally, with the graph extensions, and I also created a node and edge table . I have powershell script that can insert the directory nodes from upstream into the nodes table of the DB&lt;/p&gt;
-
-&lt;p&gt;Now to try dictating stream of conscionous to Visual Studio Code&lt;/p&gt;
-
-&lt;p&gt;First thing I’m going to try to do is to correct the build tools path.
-The solution file contains a section called .build with has entries for tools whose pans include .build from the solution directory.&lt;/p&gt;
-
-&lt;p&gt;Hello while I am still trying to figure out why the path to the finished build tools is short by one directory, by manage to move four of the build tools directories under the source parent directory, and was able to properly reroot them in the solution directory under the build folder under src&lt;/p&gt;
-
-&lt;p&gt;The second thing I’m going to try to do is to figure out the loft configurations so that it specifies the correct directory.&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="Dictation" /><category term="Voice" /><summary type="html">Voice dictation is the subject of my second blog post</summary></entry><entry><title type="html">Welcome To The Personal Section Of My Site</title><link href="https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site/" rel="alternate" type="text/html" title="Welcome To The Personal Section Of My Site" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site</id><content type="html" xml:base="https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site/">&lt;h2 id=&quot;tl-dr&quot;&gt;TL DR&lt;/h2&gt;
-
-&lt;p&gt;If you would like to have access to my posts and pictures about family and friends, direct message me via text message, e-mail or a phone call. I’ll add you to the list of people who have access.&lt;/p&gt;
-
-&lt;p&gt;In the future, I hope to have a simple login form that will make it very easy to authenticate using any of your social media apps, or using a userid / password.&lt;/p&gt;
-
-&lt;h2 id=&quot;welcome&quot;&gt;Welcome&lt;/h2&gt;
-
-&lt;p&gt;I’ve long hoped to have a website that I can use to share information with my friends and family, without having to create content for each individual social media site. This is it!&lt;/p&gt;
-
-&lt;h2 id=&quot;pictures-and-videos&quot;&gt;Pictures and Videos&lt;/h2&gt;
-
-&lt;p&gt;I have our cameras and GoPro setup to automatically upload new media to my Dropbox storage. Since I’m already paying Dropbox for 2 TB of storage, I thought I’d simply utilize that space as the place to host media aas seen in my posts. DropBox lets me create a sharing link and it is easy to put that link into my posts. This way, the media is delivered to your browser from Dropbox (and eventually Cloudflare).&lt;/p&gt;
-
-&lt;h3 id=&quot;example-picture&quot;&gt;Example picture&lt;/h3&gt;
-
-&lt;p&gt;Here is an example of a picture.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/q38ofot7sik5h3p/firework%20art.jpg?raw=1&quot; alt=&quot;Firworks!&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Figure (above): Fireworks!&lt;/p&gt;
-
-&lt;h3 id=&quot;example-video&quot;&gt;Example video&lt;/h3&gt;
-
-&lt;p&gt;Here is an example of a video.&lt;/p&gt;
-
-&lt;video width=&quot;1024&quot; height=&quot;768&quot; controls=&quot;controls&quot;&gt;
-   &lt;source src=&quot;https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1&quot; type=&quot;video/mp4&quot; /&gt;
-   Your browser does not support embedded videos, however, you can see the video in a new tab [[JoAnn skiing in costume on Closing Day at Park City Ski Resort  2021 04 11](https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1)
-&lt;/video&gt;
-
-&lt;p&gt;Figure (above): JoAnn in costume on closing day 2021 at Park City, UT&lt;/p&gt;
-
-&lt;p&gt;This is just the first edition of this post. I expect to enhance and improve this post in the coming weeks. Thanks for stopping by!&lt;/p&gt;</content><author><name></name></author><category term="personal" /><category term="Introduction" /><category term="Personal" /><summary type="html">TL DR</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 02</title><link href="https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 02" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02/">&lt;p&gt;Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series &lt;a href=&quot;TBD&quot;&gt;How I setup this GitHub Pages Blog&lt;/a&gt;, you should probably give it a quick review, to become familiar with how it all started.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-20T00:32:39-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 02</title><link href="https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 02" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02/">&lt;p&gt;Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series &lt;a href=&quot;TBD&quot;&gt;How I setup this GitHub Pages Blog&lt;/a&gt;, you should probably give it a quick review, to become familiar with how it all started.&lt;/p&gt;
 
 &lt;p&gt;The next steps will be to implement the features specified in &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/2&quot;&gt;Milestone 0.02.0&lt;/a&gt;.  I like to plan my development efforts using GitHub Milestones. They are quick and easy to create and maintain, especially for tiny sites like mine that have no collaborators. Of course I don’t &lt;strong&gt;&lt;em&gt;have&lt;/em&gt;&lt;/strong&gt; to create Milestones, but I’ve found that there is always “feature creep” in releases if I don’t take the time to write down what is going into the next release, and what’s on tap for some future release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don’t get too big!&lt;/p&gt;
 
@@ -1218,7 +275,7 @@ The solution file contains a section called .build with has entries for tools wh
   &lt;li&gt;Which renders as:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;page publication date was 2021-04-17 12:00:50 -0600, which was 2 days ago&lt;/p&gt;
+&lt;p&gt;page publication date was 2021-04-17 12:00:50 -0600, which was 3 days ago&lt;/p&gt;
 
 &lt;h2 id=&quot;put-the-most-recent-releases-tag-semantic-version-in-the-footer-template&quot;&gt;Put the most recent releases tag Semantic Version in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer&lt;/code&gt; template&lt;/h2&gt;
 
@@ -1272,7 +329,7 @@ The solution file contains a section called .build with has entries for tools wh
   &lt;li&gt;Which renders as:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;project_version returns: releases/0.02.000-1-gd8ac96e&lt;/p&gt;
+&lt;p&gt;project_version returns: releases/0.02.001-1-g1df2a79&lt;/p&gt;
 
 &lt;h3 id=&quot;parse-the-full-tag-into-a-string-suitable-for-display&quot;&gt;Parse the full tag into a string suitable for display&lt;/h3&gt;
 
@@ -1286,7 +343,7 @@ The solution file contains a section called .build with has entries for tools wh
   &lt;li&gt;Which renders as:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;latest release tag: V0.02.000&lt;/p&gt;
+&lt;p&gt;latest release tag: V0.02.001&lt;/p&gt;
 
 &lt;h3 id=&quot;place-the-results-in-the-footerhtml-file&quot;&gt;Place the results in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer.html&lt;/code&gt; file&lt;/h3&gt;
 
@@ -1498,4 +555,543 @@ The solution file contains a section called .build with has entries for tools wh
 
 &lt;p&gt;Thanks for staying to the end. 😊&lt;/p&gt;
 
-&lt;p&gt;Bill Hertzing, April 17, 2021&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series How I setup this GitHub Pages Blog, you should probably give it a quick review, to become familiar with how it all started.</summary></entry></feed>
+&lt;p&gt;Bill Hertzing, April 17, 2021&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series How I setup this GitHub Pages Blog, you should probably give it a quick review, to become familiar with how it all started.</summary></entry><entry><title type="html">Why I Wanted A Blog</title><link href="https://billhertzing.github.io/political/2021/04/17/Why-I-wanted-a-Blog/" rel="alternate" type="text/html" title="Why I Wanted A Blog" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/political/2021/04/17/Why-I-wanted-a-Blog</id><content type="html" xml:base="https://billhertzing.github.io/political/2021/04/17/Why-I-wanted-a-Blog/">&lt;h2 id=&quot;tl-dr&quot;&gt;TL DR&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;As a place to share knowledge, tips and how-tos, mostly regarding development, operations and monitoring of computer systems.&lt;/li&gt;
+  &lt;li&gt;As a place to publish the reasoning that underlie my personal stance on sometimes controversial political issues.&lt;/li&gt;
+  &lt;li&gt;As a place to share pictures and stories about myself and my family to other family members and our friends.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;I have always envied the developers who do a good job communicating with the world. They enjoy a connectivity to others that seems it must enrich their lives. I’ve always wanted my own blog site where I can write about whatever interests me, technically, politically, and personally. I have had three previous forays into blogging. Once using Blogger at Google, once trying to host my own site at 1And1 (now IONOS), and once with a site at wordpress.com. In each of these prior attempts, I’ve foundered on the technical implementation. Either the platform didn’t have the features I wanted, or the learning curve was too steep, or the cost was prohibitive. Now I’m about to try launching my fourth attempt, using the static site generator Jekyll, with the pages served by GitHub. Here’s hoping that this time I’ll be long-term successful!&lt;/p&gt;
+
+&lt;h2 id=&quot;about-the-atap-name-used-in-the-app-and-library-branding&quot;&gt;About the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ATAP&lt;/code&gt; name used in the app and library branding&lt;/h2&gt;
+
+&lt;p&gt;The last 12 years of my career I owned and operated a &lt;em&gt;microISV&lt;/em&gt;, a company with a very small number of employees that focused on providing consulting services. The name of the company was ATAP Technology, Inc. All the code I wrote on my own during that time, (the portion of code which was not directly funded by my customers), used the namespace and branding of ATAP Technology. When I retired, I closed the company. That body of code I have continued to use and extend in my Open Source Software projects. As the author of the code, and the prior owner and CEO of ATAP Technology, I have placed it into the public domain under the MIT license. I’d love to hear from any lawyers on how best to ensure the code I’ve written and published stays in the public domain.&lt;/p&gt;
+
+&lt;h2 id=&quot;technical-postings&quot;&gt;Technical postings&lt;/h2&gt;
+
+&lt;p&gt;I’m here to show that a single individual, retired from a career in computer engineering, can put together a satisfying experience for contributing to the state of the art in software engineering. This means doing it as much as possible in free, open source software (OSS). But not completely free, as I’ve chosen to spend a bit of my retirement money on upgraded components. I spend maybe $500 USD a year in software licensing fees, which is not cheap but covers paid licenses for various tools. There are plenty other tools I would like to have / use, but I no longer have the luxury of a corporate employer to purchase them! Free tools usually are limited in what they can do, compared to the paid ones. Not saying free ones can’t get the job done, but you often have to string together multiple free tools, and that takes more time. The technical posts here will offer insights into how to use various free tools and how to combine them to make development and writing about development easier.&lt;/p&gt;
+
+&lt;p&gt;The technical posts fall into two broad categories. The first category are posts that discuss the OSS application and libraries that I am creating. The second category deals with tips and how-to posts regarding specific tools, libraries, and techniques I use in my day-to-day development activities.&lt;/p&gt;
+
+&lt;p&gt;I’m publishing my work now because it has reached a stage I need to invite comment and criticism, and to do that I have to announce it exists, and have a place where people can stop by and have a look. The other obvious (to me!) reason is that there is probably only about a decade of my life left to try and give back to the OSS community a meaningful contribution, and if I don’t start now, then, as Pink Floyd said “… no one told you when to run, you missed the starting gun…”. The whole application, library, and blog site pastiche is certainly still in it’s early stages, but I invite you to come along for the ride.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-oss-app-and-libraries-that-i-write&quot;&gt;The OSS app and libraries that I write&lt;/h3&gt;
+
+&lt;p&gt;I have often espoused to my friends my dreams of building a wide-ranging multi-function application. That application resides in the repository named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ace&lt;/code&gt;. As much as possible, the code base for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ace&lt;/code&gt; is factored into multiple Nuget packages bundled under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ATAP.Utilities&lt;/code&gt; repository. There are additional repositories that expand on, test, and document specific packages found under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ATAP.Utilities&lt;/code&gt; repository. I use these as communication and teaching tools to provide deeper insights into the details of the packages, and to interact with other developers to extend and enhance the packages functionality.&lt;/p&gt;
+
+&lt;p&gt;The relationships between the repositories I’ve created is explained in the post &lt;em&gt;&lt;a href=&quot;https://ToDo:&quot;&gt;Repository Inter-Relationships&lt;/a&gt;. Still in Draft&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;political-postings&quot;&gt;Political postings&lt;/h2&gt;
+
+&lt;p&gt;All too often, friends and acquaintances repost stuff on social media with no critical thinking. It is easy to hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;share&lt;/code&gt; when something that resonates as ‘true’ or funny appears, without spending hardly any time to think about it and decide if it true or not, or if it causes anger to a faction of people. When a social issue that is a hot button with my friends appears, my preference is to dig into news and opinions, think about it, and sometimes take the time to write down my conclusions and reasoning. In the past, I’ve posted long comments on friends’ Facebook pages, &lt;em&gt;(haha, you know who you are)&lt;/em&gt;. I’d rather post those screeds here for general access, instead of on a single social media platform.  I’m hoping to figure out a way to reach my friends and acquaintances through their preferred platform, and notify them when I write a &lt;em&gt;political&lt;/em&gt; post here, in order to ask them for their opinions and feedback.&lt;/p&gt;
+
+&lt;h2 id=&quot;pictures-and-stories&quot;&gt;Pictures and Stories&lt;/h2&gt;
+
+&lt;p&gt;Such fun it is, to work on a mashup of text, images, and video of your latest family event for hours, so you can share it with world. Then you post it to your preferred platform, only to learn that many of your friends didn’t see it. Why? Because “oh, I don’t spend much time online on blah anymore, I’m mostly online on bleh.”. Frustrating, isn’t it? So I’ll try doing that same mashup of text and images memorializing our next fun outing or family get-together on this blog site, using the Jekyll toolchain to stich it all together, and a cloud service like Dropbox to host the media, and a CDN like Cloudflare to make access quicker. Some posts and media I’ll make available to the world, and others will be only accessible if granted access. Then all I need is a notification to friends and family to “take a look”. For that, I can educate them on RSS Feeds, IFTTT, how to subscribe to the Bill’s Blog RSS feed, and how to stitch it all together so they get an e-mail if I make a new or updated post. Voilà, no more being tied to a single platform. I’ll be posting those instructions here too, at &lt;em&gt;&lt;a href=&quot;https://ToDo&quot;&gt;How to get an e-mail from Bill’s Blog when a new post is made&lt;/a&gt; Still in Draft&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Humans have an innate desire to communicate. I built this blog to communicate. I hope that what I have to say is considered interesting by a large number of folks, and that I’m able to establish a rapport and correspondence with many. I also hope that I can model behavior that encourages others to follow my blog’s philosophy and actions.&lt;/p&gt;
+
+&lt;h2 id=&quot;attributions&quot;&gt;Attributions&lt;/h2&gt;
+
+&lt;p&gt;This content is all mine, no attributions for this post :-)&lt;/p&gt;</content><author><name></name></author><category term="political" /><summary type="html">TL DR</summary></entry><entry><title type="html">Welcome To The Personal Section Of My Site</title><link href="https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site/" rel="alternate" type="text/html" title="Welcome To The Personal Section Of My Site" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site</id><content type="html" xml:base="https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site/">&lt;h2 id=&quot;tl-dr&quot;&gt;TL DR&lt;/h2&gt;
+
+&lt;p&gt;If you would like to have access to my posts and pictures about family and friends, direct message me via text message, e-mail or a phone call. I’ll add you to the list of people who have access.&lt;/p&gt;
+
+&lt;p&gt;In the future, I hope to have a simple login form that will make it very easy to authenticate using any of your social media apps, or using a userid / password.&lt;/p&gt;
+
+&lt;h2 id=&quot;welcome&quot;&gt;Welcome&lt;/h2&gt;
+
+&lt;p&gt;I’ve long hoped to have a website that I can use to share information with my friends and family, without having to create content for each individual social media site. This is it!&lt;/p&gt;
+
+&lt;h2 id=&quot;pictures-and-videos&quot;&gt;Pictures and Videos&lt;/h2&gt;
+
+&lt;p&gt;I have our cameras and GoPro setup to automatically upload new media to my Dropbox storage. Since I’m already paying Dropbox for 2 TB of storage, I thought I’d simply utilize that space as the place to host media aas seen in my posts. DropBox lets me create a sharing link and it is easy to put that link into my posts. This way, the media is delivered to your browser from Dropbox (and eventually Cloudflare).&lt;/p&gt;
+
+&lt;h3 id=&quot;example-picture&quot;&gt;Example picture&lt;/h3&gt;
+
+&lt;p&gt;Here is an example of a picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/q38ofot7sik5h3p/firework%20art.jpg?raw=1&quot; alt=&quot;Firworks!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure (above): Fireworks!&lt;/p&gt;
+
+&lt;h3 id=&quot;example-video&quot;&gt;Example video&lt;/h3&gt;
+
+&lt;p&gt;Here is an example of a video.&lt;/p&gt;
+
+&lt;video width=&quot;1024&quot; height=&quot;768&quot; controls=&quot;controls&quot;&gt;
+   &lt;source src=&quot;https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1&quot; type=&quot;video/mp4&quot; /&gt;
+   Your browser does not support embedded videos, however, you can see the video in a new tab [[JoAnn skiing in costume on Closing Day at Park City Ski Resort  2021 04 11](https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1)
+&lt;/video&gt;
+
+&lt;p&gt;Figure (above): JoAnn in costume on closing day 2021 at Park City, UT&lt;/p&gt;
+
+&lt;p&gt;This is just the first edition of this post. I expect to enhance and improve this post in the coming weeks. Thanks for stopping by!&lt;/p&gt;</content><author><name></name></author><category term="personal" /><category term="Introduction" /><category term="Personal" /><summary type="html">TL DR</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
+
+&lt;p&gt;If you would like to see a list of the articles online that have helped me create this site, please see the  &lt;a href=&quot;#Attributions&quot;&gt;Attributions&lt;/a&gt; section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)&lt;/p&gt;
+
+&lt;p&gt;You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.&lt;/p&gt;
+
+&lt;p&gt;There are two images in this edition, to show it works and provide the example href details.&lt;/p&gt;
+
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A Windows 10 PC (Laptop or desktop)&lt;/li&gt;
+  &lt;li&gt;a GitHub account. make a note of your username, and throughout this document, replace &lt;em&gt;GitHubUserName&lt;/em&gt; and also BillHertzing with YOUR GitHub username&lt;/li&gt;
+  &lt;li&gt;Powershell installed and updated on Windows 10&lt;/li&gt;
+  &lt;li&gt;Git for Windows (or alternative Git client) installed on Windows 10&lt;/li&gt;
+  &lt;li&gt;Visual Studio Code (VSC) (or similar editor) installed on Windows 10&lt;/li&gt;
+  &lt;li&gt;VSC GitHub integration, at &lt;a href=&quot;https://code.visualstudio.com/docs/editor/github&quot;&gt;Working with GitHub in VS Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;install-ruby-and-jekyll-on-your-windows-pc&quot;&gt;Install Ruby and Jekyll on your Windows PC&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Note&lt;/em&gt; if you need to clean up a botched prior attempt (me!), and you would like to remove all gems you may have installed, run this command in a Powershell terminal window &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem uninstall -aIx&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;ToDo: Investigate using &lt;a href=&quot;https://chocolatey.org/&quot;&gt;chocolatey&lt;/a&gt; to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;. Select a recent Ruby+DevKit version (I picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RubyInstaller 3.0.0-1 released&lt;/code&gt;) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpgs&lt;/li&gt;
+  &lt;li&gt;Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)&lt;/li&gt;
+  &lt;li&gt;At the Powershell prompt, Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll bundle&lt;/code&gt;. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll -v&lt;/code&gt; and confirm Jekyll returns its current version number. &lt;img src=&quot;https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1&quot; alt=&quot;Jekyll version 4.2.0&quot; style=&quot;vertical-align:bottom&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;This is one example of an image hosted on Dropbox in this initial edition of this post.&lt;/em&gt;
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-a-new-git-repository&quot;&gt;Create a new git repository&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open a Powershell terminal, navigate to the location (directory) you want to be the parent of your repository. My parent directory is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C:\Dropbox\whertzing\GitHub\&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Create a subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*GitHubUserName*.github.io&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into it.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt;. &lt;img src=&quot;https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1&quot; alt=&quot;git init results&quot; style=&quot;vertical-align:bottom&quot; /&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;This is one example of an image hosted on Dropbox in this initial edition of this post.&lt;/em&gt;
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-minimal-jekyll-compliant-site-source-code&quot;&gt;Create minimal Jekyll-compliant site source code&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll new PATH&lt;/code&gt; (Use the FULL Path to the repository on your windows PC i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C:\Dropbox\whertzing\GitHub\BillHertzing.github.io&lt;/code&gt;) which will create the bare bones of the new Jekyll-compliant site source code. ToDo: add jpg&lt;/li&gt;
+  &lt;li&gt;(optional) I prefer to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.markdown&lt;/code&gt; for the suffix of Markdown files, so I now run the two commands &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mv about.markdown about.md&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mv index.markdown index.md&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So at this point, I’ll diverge from the many other posts about setting up Jekyll for GitHub Pages. I may want to eventually develop a Jekyll Plugin and I know I’ll want to eventually publish my own Jekyll theme, so might as well start with an approach that will support that. Because I want to use the latest Ruby and MSYS2 components, non-approved Jekyll Plugins and a non-approved Jekyll theme, I will keep the site source code under the  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch of my repository, build/debug the site locally on my Windows PC, commit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; along with the source when I do commits, and use the GitHub Action to deploy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.\_site&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh_pages&lt;/code&gt; branch on GitHub only when a release happens.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file, and remove a lot of the boiler plate. At this point, mine looks like this:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Jekyll initial configuration file for BillHertzing.github.io V0.01.0&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Bill&apos;s Blog&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;&amp;gt;-&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# this means to ignore newlines until the next key, which is &quot;baseurl:&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the subpath of your site, e.g. /blog&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://BillHertzing.github.io&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# This is a User GitHub Pages site, not a Project GitHub Pages  site&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;twitter_username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;BillHertzing&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;github_username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;BillHertzing&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Build settings&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pretty&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;minima&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;download-the-minima-theme&quot;&gt;Download the minima theme&lt;/h2&gt;
+
+&lt;p&gt;Any Jekyll theme you want to use must first be downloaded to your Windows PC so run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-theme-minima&lt;/code&gt;. Today (2021-04-06) it loaded jekyll-theme-minima-0.1.1.gem and 18 other gems (dependencies) as well.&lt;/p&gt;
+
+&lt;h2 id=&quot;verify-the-local-site-will-build-and-serve-locally-on-your-windows-pc&quot;&gt;Verify the local site will build and serve locally on your Windows PC&lt;/h2&gt;
+
+&lt;p&gt;It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; will read the site’s source from the current directory, then process it and publish it to a subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;. The command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; will start a local web server and serve &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; will also build the site if any source file has been changed.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open a Powershell terminal and navigate to your repository.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;. ToDo: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;fixing-issues&quot;&gt;Fixing issues&lt;/h3&gt;
+
+&lt;p&gt;Did you really think that everything would ‘just work’?  Hahaha! When I first try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install tzinfo-data&lt;/code&gt;. Then when I tried &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, I got an error message ““Could not find gem wdm”. So I ran &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install wdm&lt;/code&gt;. And then again for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webrick&lt;/code&gt;, which required &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle add webrick&lt;/code&gt;. Then I learned to change the command to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;.  Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; completes and starts serving up pages.  I also ran into problems with the Bundler version, getting the error &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)&lt;/code&gt;. After updating the Bundler with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install bundler&lt;/code&gt; I needed to edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; and change the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundled with&lt;/code&gt; line at the bottom to match the version just installed/updated.&lt;/p&gt;
+
+&lt;p&gt;Finally, when you’ve wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minima&lt;/code&gt; theme it should look like this:
+ToDo: Insert .jpg&lt;/p&gt;
+
+&lt;h2 id=&quot;replace-the-original-welcome-to-jekyllmarkdown-page&quot;&gt;Replace the original &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;welcome-to-jekyll.markdown&lt;/code&gt; page&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; subdirectory, add a new file with the format &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*YYYY-MM-dd-welcome-to-*whatever*&lt;/code&gt;. use your current year-month-day numerals, and change &lt;em&gt;whatever&lt;/em&gt; to whatever you want to call your first welcome post.  I used &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2021-04-06-Welcome-To-Bills-Blog.md&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;look at the original file in the _posts directory, which was created by the initial &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll new PATH&lt;/code&gt; command earlier, and copy the Front Matter to your new post, update the Front Matter to change the title, update the date to match that of your filename, add a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;description:&lt;/code&gt; tag and optionally remove the categories.&lt;/li&gt;
+  &lt;li&gt;In the new post, enter your initial draft of whatever you want to see on your first post, and save the file.&lt;/li&gt;
+  &lt;li&gt;Delete the original file in the _posts directory.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;why-description-in-the-front-matter-is-important&quot;&gt;Why &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;description:&lt;/code&gt; in the Front Matter is important&lt;/h3&gt;
+
+&lt;p&gt;Putting a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;description:&lt;/code&gt; in the Front Matter of your pages and posts is important. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minima&lt;/code&gt; theme (and most others) will generate a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;meta&lt;/code&gt; tag in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; element of your published page or post. The contents of the tag will be the first paragraph of your page or post, unless you use a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;description:&lt;/code&gt; key in the Front Matter. I prefer to separate my pages’ and posts’ SEO description from its first paragraph, so I always use a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;description:&lt;/code&gt; key in the Front Matter.&lt;/p&gt;
+
+&lt;h2 id=&quot;push-the-source-code-to-github&quot;&gt;Push the source code to GitHub&lt;/h2&gt;
+
+&lt;p&gt;Now that we have things working locally, lets get our site stored up on GitHub. GitHub offers detailed instruction on how to do this here &lt;a href=&quot;https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line&quot;&gt;Adding an existing project to GitHub using the command line&lt;/a&gt;. What follows here are the summarized steps I took.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open a Powershell terminal and navigate to your repository.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt;  This will add all the local files to your local repository and stage them for a commit&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit -m &quot;First commit&quot;&lt;/code&gt;  This Commits the tracked changes and prepares them to be pushed to a remote repository.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;create-a-new-repository-on-github&quot;&gt;Create a new repository on GitHub&lt;/h3&gt;
+
+&lt;p&gt;Detailed instructions here &lt;a href=&quot;https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository&quot;&gt;Create a new repository on GitHub&lt;/a&gt; To avoid errors, do not initialize the new repository with README, license, or gitignore files. You can add these files after your project has been pushed to GitHub.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Login to your GitHub account  ToDo: Add .jpg&lt;/li&gt;
+  &lt;li&gt;Click the New Repository button.&lt;/li&gt;
+  &lt;li&gt;Enter a name and description, select Public, and don’t check anything under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;initialize this repository with:&lt;/code&gt; section. ToDo: Add .jpg&lt;/li&gt;
+  &lt;li&gt;Click the big &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Create repository&lt;/code&gt; button at the bottom.&lt;/li&gt;
+  &lt;li&gt;ToDo: insert jpg of the result, and highlight the link to copy&lt;/li&gt;
+  &lt;li&gt;Copy the HTTPS link showing at the top of the page.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;push-the-local-repository-to-the-remote-repository&quot;&gt;Push the local repository to the remote repository&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open a Powershell terminal and navigate to your repository. Or just reuse an already open Powershell terminal.&lt;/li&gt;
+  &lt;li&gt;Details are available at &lt;a href=&quot;https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories&quot;&gt;Managing remote repositories&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote add origin  &amp;lt;REMOTE_URL&amp;gt;&lt;/code&gt;  Of course, replace &lt;REMOTE_URL&gt; with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`&lt;/REMOTE_URL&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git remote -v&lt;/code&gt; to confirm that the origin is indeed set to the URL for the remote repository you just created on GitHub.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch -M main&lt;/code&gt; and then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push -u origin main&lt;/code&gt;  This will push the changes in your local repository up to the remote repository.&lt;/li&gt;
+  &lt;li&gt;Verify the source code for your site is now in GitHub. ToDo: add jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;setup-visual-studio-code-vsc&quot;&gt;Setup Visual Studio Code (VSC)&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the Visual Studio Code application.&lt;/li&gt;
+  &lt;li&gt;Select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Open folder&lt;/code&gt; and navigate to the new repository you just created. To Do: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;modify-the-aboutmd-page&quot;&gt;Modify the About.md page&lt;/h2&gt;
+
+&lt;p&gt;Open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file for editing, select everything and delete it. Then add the following text, modifying it as appropriate for yourself.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: page
+title: About
+permalink: /about/
+description: Information about me personally and about this blog site
+---
+
+## About Me
+
+I started messing with electronics in High School in the early 70&apos;s, and went on to a BScEE degree and a long career in the computer field. I&apos;m currently retired, and working on OSS projects.
+
+## About this blog
+
+I started this blog to document the OSS repositories I&apos;m building.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;confirm-that-vsc-can-push-changes-to-github&quot;&gt;Confirm that VSC can push changes to GitHub&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file indicates &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M&lt;/code&gt; for Modified. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Click the VSC Source Control button inside the left sidebar.&lt;/li&gt;
+  &lt;li&gt;In the message box, enter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update about.md&lt;/code&gt;, then click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;check&lt;/code&gt; above the message box (alt text is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Commit&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Click on that area of the status bar, and the change should be pushed to GitHub&lt;/li&gt;
+  &lt;li&gt;On GitHub, open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;about.md&lt;/code&gt; file, and confirm that the change you just made has been pushed to the GitHub remote repository.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;add-a-categorized-post&quot;&gt;Add a categorized post&lt;/h2&gt;
+
+&lt;p&gt;This site is focused on blogging, and it uses Jekyll Categories to organize them. The post you are reading now is the first post in the Category &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;technical&lt;/code&gt;. Lets make sure our initial version of the site properly supports Categorized posts.  One way to categorize posts is to use subdirectories at the repository’s root. Posts should be  put into various subdirectories following the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*categoryname*/_posts&lt;/code&gt;. I’m going to start with this approach, rather than using a category tag in the post’s Front Matter, which is an alternative method of categorization.&lt;/p&gt;
+
+&lt;p&gt;I know I will be putting links in one post that refer to another posts. To do so will require a link that correctly resolves to the published path of a post.  Jekyll accomplishes this with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post_url&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post_url&lt;/code&gt; takes a path to the post’s source &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; file, and returns the “slug”. If a post’s source lives in e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/technical/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01.md&lt;/code&gt;, then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post_url&lt;/code&gt; returns the published path &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/&lt;/code&gt;. &lt;em&gt;Note&lt;/em&gt; there is a trailing slash in this path! &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post_url&lt;/code&gt; returns the elements of the path in all lowercase letters. To make the source of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post_url&lt;/code&gt; match the destination “slug” when using Categories, &lt;strong&gt;it is important to use all lower-case in the subdirectory name and the post filename&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;ToDo: I’m still trying to eliminate a warning that happens when Jekyll builds the site. It says &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deprecation: A call to &apos;{% post_url /technical/_posts/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01 %}&apos; did not match a post using the new matching method of checking name (path-date-slug) equality. Please make sure that you change this tag to match the post&apos;s name exactly.&lt;/code&gt; While I thought the warning was due to casing, it seems that is not the case. I may not need to make everything lowercase. Stay tuned, I will make a future revision to this subject.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;At the root of the repository, create a new subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;technical&lt;/code&gt; (or whatever you want your first Category to be).&lt;/li&gt;
+  &lt;li&gt;Create the subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; under the new subdirectory you just created.&lt;/li&gt;
+  &lt;li&gt;Create an initial post file here. Give it a name following the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-*titlestring*.md&lt;/code&gt; convention.&lt;/li&gt;
+  &lt;li&gt;Open the file for editing, put in the Front Matter, put in some initial text, save. My front matter at this point looks like this:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;How I setup this GitHub Pages Blog Part &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;01&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;s&quot;&gt;2021-04-06 12:31:43 -0600&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Jekyll &quot;GitHubPages&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;enable-github-pages-on-the-github-repository&quot;&gt;Enable GitHub pages on the GitHub repository&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Navigate to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Code&lt;/code&gt; view of the repository&lt;/li&gt;
+  &lt;li&gt;Create the branch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Open Setting on the GitHub repository. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Scroll down to the GitHub Pages section.&lt;/li&gt;
+  &lt;li&gt;Type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; for the branch name. ToDo: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;add-a-workflow-file-deploy-site-to-github-pagesyml&quot;&gt;Add a workflow file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages.yml&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;This workflow and the actions it contains are the key to an easy blogging workflow. A great piece of OSS for GitHub Actions, combined with a workflow trigger that detects a release tag, make it all work.&lt;/p&gt;
+
+&lt;p&gt;See the details of the Action here: &lt;a href=&quot;https://github.com/marketplace/actions/deploy-to-github-pages&quot;&gt;Deploy to GitHub Pages&lt;/a&gt; by James Ives and other contributors, also &lt;a href=&quot;https://github.com/JamesIves/github-pages-deploy-action&quot;&gt;github-pages-deploy-action&lt;/a&gt;.
+See the details of the trigger here: &lt;a href=&quot;https://www.codingwithcalvin.net/git-tag-based-released-process-using-github-actions/&quot;&gt;Git Tag Based Released Process Using GitHub Actions&lt;/a&gt; by Calvin A. Allen.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create the directory and subdirectory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github\workflows&lt;/code&gt; in the repository.&lt;/li&gt;
+  &lt;li&gt;Create the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages.yml&lt;/code&gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github\workflows&lt;/code&gt; subdirectory&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ToDo: figure out how, at site generation time (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;) to read the contents of the actual file and update the text below with the actual contents, and run those contents through a regexp replacement to escape the %{ and {{ so the publish process doesn’t do any logic.
+ToDo: decide on a strategy for updating a historical post if the file changes. Perhaps a revision tag for posts?
+ToDo: Figure out how notify subscribers to the RSS feed if a existing post gets a new revision.
+ToDo: Figure out how to e-mail an administrator if a code change triggers the need to create a post revision
+ToDo: When a new site gets published, is that a good time to note any post revisions into the ChangeLog?&lt;/p&gt;
+
+&lt;p&gt;Put the following yml code into the file, and then save it.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;deploy generated site to GitHub Pages on gh-branch&lt;/span&gt; 
+
+&lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# tags: [ releases/\d+\.\d+\.\d+ ] # yep, the first element of the tags array is a regular expression. Modify the RegExp if you use a different format for your release tags&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# This line allows you to run this workflow manually from the Actions tab&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;workflow_dispatch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# This workflow contains a single job called &quot;deploy-site-to-github-pages&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;deploy-site-to-github-pages&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;# The type of runner that the job will run on&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ubuntu-latest&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# ToDo: investigate if a specific ubuntu is better&lt;/span&gt;
+
+     &lt;span class=&quot;c1&quot;&gt;# Steps represent a sequence of tasks that will be executed as part of the job&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Checkout code&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/checkout@v2&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Both of these fine OSS actions will do the deployment job. &lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# I keep both in here, but one commented out, in case I find in the future that only one or the other has a feature I might need&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# - name: Deploy 🚀&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#   uses: JamesIves/github-pages-deploy-action@4.1.1&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#   with:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#     branch: gh-pages # The branch the action should deploy to.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#     folder: ./_site # The folder the action should deploy.&lt;/span&gt;
+      
+    &lt;span class=&quot;c1&quot;&gt;# Deploys a source to a destination.&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Deploy&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;peaceiris/actions-gh-pages@v3&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;github_token&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${{ secrets.GITHUB_TOKEN }}&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;publish_dir&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./_site&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the action will deploy the &amp;lt;repository root&amp;gt;/_site contents to the (default) gh-pages branch, root directory&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Save the new file and commit the changes.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-an-environment-for-the-deployment-action&quot;&gt;Create an Environment for the deployment action&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;On GitHub, in the repository, under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Settings&lt;/code&gt;, open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Environment&lt;/code&gt; tab, and click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Create Environment&lt;/code&gt;. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Name the Environment &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages&lt;/code&gt;, and click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Configure Environment&lt;/code&gt;. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; on the following page to acknowledge the environment was created, and go back to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Settings-&amp;gt;Environment&lt;/code&gt; page. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Click on the name of the environment just created.&lt;/li&gt;
+  &lt;li&gt;At the bottom of the page, click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Add Secret&lt;/code&gt; button. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Add a Secret with the name &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACTIONS_STEP_DEBUG&lt;/code&gt; and value &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;. You can remove this Secret after the action has been debugged. There is an additional Secret &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACTIONS_RUNNER_DEBUG&lt;/code&gt; which if set to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt; will provide more details in the logs. I like to set this, as well. ToDo: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The final Environment should look like this: ToDo: insert jpg&lt;/p&gt;
+
+&lt;h2 id=&quot;remove-_site-from-the-gitignore-file&quot;&gt;Remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit the .gitignore file in the root of the repository, and remove the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; line. Save.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; to validate the site builds and displays as expected locally on your Windows PC.&lt;/li&gt;
+  &lt;li&gt;Note in the VSC sidebar that the VSC Source Control menu-item icon has a number, and the Source Control Changes editor window now shows multiple new files under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_sites&lt;/code&gt; to be committed.&lt;/li&gt;
+  &lt;li&gt;Commit all the changes. I used the message “Start tracking &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt;”  &lt;em&gt;NOTE&lt;/em&gt; I made the changes to the original post, as specified above at (ToDo: insert link to previous place ) at this point in the development, so the jpg file also shows me removing the original post file and adding my own first post file in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Sync with the remote GitHub repository.&lt;/li&gt;
+  &lt;li&gt;Validate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; and its files are now present on the GitHub repository. ToDo: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;review-the-workflow-run&quot;&gt;Review the workflow run&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Navigate to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Actions&lt;/code&gt; tab in your GitHub repository. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Drill down into the latest workflow run. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Drill down into the job log. ToDo: insert jpg&lt;/li&gt;
+  &lt;li&gt;Expand the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt; step. ToDo: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;troubleshooting-the-workflow-run&quot;&gt;Troubleshooting the workflow run&lt;/h2&gt;
+
+&lt;p&gt;I had problems with the first of the two deployment actions I tried. I left an issue for the author, then searched a bit more and came up with the second deployment action, which worked for me. I kept moving forward. The next day I got a timely response from the author, and re-tried their deployment Action. It worked, so the problem must have been a user error on my part. So I decided to leave both actions in the file, in case either becomes abandoned or out-of-date. Kudos and thanks to the authors of both of these OSS GitHub Actions!&lt;/p&gt;
+
+&lt;h2 id=&quot;invoke-deploy-site-to-github-pages-manually&quot;&gt;Invoke &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy-site-to-github-pages&lt;/code&gt; manually&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In the repository on GitHub, drill down on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Actions&lt;/code&gt;, look down the left column of the page, find the workflow &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy generated site to GitHub Pages on gh-branch&lt;/code&gt;, and click on it. In the center, there will be a sequence of entries for each workflow run, but above that should be a section with the text &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;This workflow has a workflow_dispatch event trigger.&lt;/code&gt;, and a button &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Run workflow&lt;/code&gt;. Press that and the workflow will run, and leave a new log at the top of the workflow log entries. ToDo: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;add-the-mit-license-file&quot;&gt;Add the MIT LICENSE file&lt;/h2&gt;
+
+&lt;p&gt;This site uses the MIT licenses. Of course, feel free to chose a different license if such is more appropriate for your site. You can find the text of many popular licenses at the Open Source Initiative page &lt;a href=&quot;https://opensource.org/licenses&quot;&gt;Licenses &amp;amp; Standards&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Under the root of the repository, add a new file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LICENSE.md&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add front matter, for example&lt;/p&gt;
+
+    &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt; ---&lt;/span&gt;
+ layout: page
+ title: LICENSE
+ permalink: /LICENSE/
+ description: Text of the MIT License for this site
+ exclude: true
+&lt;span class=&quot;p&quot;&gt; ---
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Copy the appropriate text from one of the OSI-approved licenses into the file and save it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;modify-the-footer-template&quot;&gt;Modify the footer template&lt;/h2&gt;
+
+&lt;p&gt;It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here &lt;a href=&quot;https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.&quot;&gt;GitHub Pages Jekyll Minima Customize Footer&lt;/a&gt; by “Cyber Log in IT”.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add a directory &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; to the root of the repository.&lt;/li&gt;
+  &lt;li&gt;Copy the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer.html&lt;/code&gt; from the &lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;Minima GitHub repository&lt;/a&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; subdirectory.&lt;/li&gt;
+  &lt;li&gt;Customize &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer.html&lt;/code&gt; to your own needs.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The footer.html file from the minima theme looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;footer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;site-footer h-card&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;u-url&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;relative_url&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer-col-wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer-col&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;feed-subscribe&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ &apos;feed.xml&apos; | relative_url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;svg-icon orange&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;use&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xlink:href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ &apos;assets/minima-social-icons.svg#rss&apos; | relative_url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/use&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;Subscribe&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+      {%- if site.author %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;contact-list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          {% if site.author.name -%}
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;p-name&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ site.author.name | escape }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+          {% endif -%}
+          {% if site.author.email -%}
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;u-email&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mailto:{{ site.author.email }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+          {%- endif %}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+      {%- endif %}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer-col&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;{{ site.description | escape }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social-links&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {%- include social.html -%}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/footer&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I modified mine to remove the author email block and add the copyright and License link. For now, I’ll use my own name for the copyright, maybe in the future the work will be taken on by a foundation (I wish!).&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;footer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;site-footer h-card&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;u-url&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ &quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;relative_url&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer-col-wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer-col&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;feed-subscribe&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ &apos;feed.xml&apos; | relative_url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;svg-icon orange&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;use&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xlink:href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ &apos;assets/minima-social-icons.svg#rss&apos; | relative_url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/use&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;Subscribe&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer-col&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;{{ site.description | escape }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer-col&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;&lt;span class=&quot;ni&quot;&gt;&amp;amp;copy;&lt;/span&gt; William Hertzing 2020 - 2021 The contents of this website are under the terms of the MIT &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/LICENSE&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;License.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social-links&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {%- include social.html -%}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/footer&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;OK, so visually its not a very appealing footer. But then, neither is the Minima theme overall. In fact, I plan to replace the minima theme with another around version 0.03.0 of this site. It’s in the Milestones (ToDo: Insert emoji for laughing uproariously).&lt;/p&gt;
+
+&lt;h2 id=&quot;making-the-first-release-of-the-site&quot;&gt;Making the first release of the site&lt;/h2&gt;
+
+&lt;p&gt;I’m happy now with the initial look and feel to my blogging site. I’ll make a final commit of my outstanding work, then I’ll make another commit and add a Release tag. For now, the release tags will follow the format &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;releases/\d+\.\d+\.\d+&lt;/code&gt;. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in &lt;a href=&quot;https://git-scm.com/book/en/v2/Git-Basics-Tagging.&quot;&gt;Git Basics - Tagging&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have committed all the changes you want for Release 0.01.0,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -a releases/0.01.000 -m &quot;Initial release of Bill&apos;s Blog&quot;&lt;/code&gt; (modify the command as appropriate for your site)&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag&lt;/code&gt; which will list all existing tags and verify the tag is there.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push --tags&lt;/code&gt; to push the release tag to GitHub&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping up&lt;/h2&gt;
+
+&lt;p&gt;This concludes the first edition of this post. In all my career, I’ve never encountered a significant document that didn’t require revisions, and I expect this will, as well. During the course of developing this site, I plan to incorporate a revision tracking system, so (eventually), you should be able to see all the revisions I’ve done to the post, and a change log. However, my idea is that I’ll only publish post revisions when I do a site release. I may increment the third part of the site version when I publish a revision to a post. I think that is in keeping with the spirit of Semantic Versioning, since ‘fixing’ a published post would be somewhat equivalent to fixing a bug in a released software package.&lt;/p&gt;
+
+&lt;p&gt;There are some Milestones defined in this repository’s Issues tab, which detail what I hope to accomplish in the next four revisions. Feel free to look them over if you want to know what’s coming in the next three parts to this series.&lt;/p&gt;
+
+&lt;p&gt;Comments for posts should be enabled soon, until then, please use the Issues on this repository to communicate with me, if you find errors or have questions.&lt;/p&gt;
+
+&lt;p&gt;Thanks for staying to the end :-).&lt;/p&gt;
+
+&lt;p&gt;Bill Hertzing, April 8, 2021&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</summary></entry><entry><title type="html">Welcome to Bill’s Blog!</title><link href="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/" rel="alternate" type="text/html" title="Welcome to Bill’s Blog!" /><published>2021-04-06T10:22:50-06:00</published><updated>2021-04-06T10:22:50-06:00</updated><id>https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog</id><content type="html" xml:base="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/">&lt;p&gt;This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!&lt;/p&gt;
+
+&lt;p&gt;My first post, appropriately, is on &lt;a href=&quot;/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHubPages Blog site Part 01&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This blog site will be organized into three sections:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Technical posts of interests to programmers and IT folks&lt;/li&gt;
+  &lt;li&gt;Blogs about political issues that I care about (Hey, a person’s gotta vent occasionally!)&lt;/li&gt;
+  &lt;li&gt;The goings-on of me, my family, and friends.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Be aware that, as planned for Version 0.02.0 of this site, the comments on these posts will be handled by &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus&lt;/a&gt; and comments are stored in their servers.&lt;/p&gt;
+
+&lt;p&gt;Please bear with me as I learn the intricacies of Jekyll, static sites, and GitHub Pages!&lt;/p&gt;</content><author><name></name></author><summary type="html">This is my new Blog site, hosted by GitHub Pages. I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!</summary></entry></feed>
