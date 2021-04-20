@@ -1,20 +1,21 @@
 # ----------------------------------------------------------60
 WIP 
-# Header - type(scope): Brief description [ FEAT FIxBUG BREAKINGCHANGE DOC STYLE REFAC PERF TEST DATA BUILD CHORE COPY SPEC WIP  ]
+# Header - type(scope): Brief description [ FEAT BUGFIX BREAKINGCHANGE DOC STYLE REFAC PERF TEST DATA BUILD CI CHORE SPEC WIP ]
 # ----------------------------------------------------------60
 #   Commit Key is Case insensitive, 2-letter minimum
-#    * feat             A new feature - SemVar PATCH
-#    * fixbug           A bug fix - SemVar MINOR
+#    * FEAT             A new feature - SemVar PATCH
+#    * BUGFIX           A bug fix - SemVar MINOR
 #    * BREAKINGCHANGE   Breaking API change - SemVar MAJOR
-#    * docs             Change to documentation only
-#    * style            Change to style (whitespace, etc.)
-#    * refactor         Change not related to a bug or feat
-#    * perf             Change that affects performance
-#    * test             Change that adds/modifies tests
-#    * build            Change to build system
-#    * ci               Change to CI pipeline/workflow
-#    * chore            General tooling/config/min refactor
-#    * Design/WIP       General ongoing design work on a feature, if design is done on `main`
+#    * DOC              Change to documentation only
+#    * STYLE            Change to style (whitespace, etc.)
+#    * REFAC            Change not related to a bug or feat
+#    * PERF             Change that affects performance
+#    * TEST             Change that adds/modifies tests
+#    * BUILD            Change to build system
+#    * CI               Change to CI pipeline/workflow
+#    * SPEC             Changes to a project Specification
+#    * CHORE            General tooling/config/min refactor
+#    * WIP              General ongoing design work on a FEAT or BUGFIX
 # ----------------------------------------------------------
 
 # ------------------------------------------------------------------------------80

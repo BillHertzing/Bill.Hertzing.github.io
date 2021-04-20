@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Welcome to Bill’s Blog! | Bill’s Blog</title>
+<title>Powershell Snippets | Bill’s Blog</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Welcome to Bill’s Blog!" />
+<meta property="og:title" content="Powershell Snippets" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This is my new Blog site, hosted by GitHub Pages. I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!" />
-<meta property="og:description" content="This is my new Blog site, hosted by GitHub Pages. I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!" />
-<link rel="canonical" href="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/" />
-<meta property="og:url" content="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/" />
+<meta name="description" content="Useful snippets of Powershell" />
+<meta property="og:description" content="Useful snippets of Powershell" />
+<link rel="canonical" href="https://billhertzing.github.io/technical/2021/04/19/Powershell-snippets/" />
+<meta property="og:url" content="https://billhertzing.github.io/technical/2021/04/19/Powershell-snippets/" />
 <meta property="og:site_name" content="Bill’s Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-04-06T10:22:50-06:00" />
+<meta property="article:published_time" content="2021-04-19T17:17:53-06:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Welcome to Bill’s Blog!" />
+<meta property="twitter:title" content="Powershell Snippets" />
 <script type="application/ld+json">
-{"url":"https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/","headline":"Welcome to Bill’s Blog!","dateModified":"2021-04-06T10:22:50-06:00","datePublished":"2021-04-06T10:22:50-06:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/"},"description":"This is my new Blog site, hosted by GitHub Pages. I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!","@context":"https://schema.org"}</script>
+{"url":"https://billhertzing.github.io/technical/2021/04/19/Powershell-snippets/","headline":"Powershell Snippets","dateModified":"2021-04-19T17:17:53-06:00","datePublished":"2021-04-19T17:17:53-06:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://billhertzing.github.io/technical/2021/04/19/Powershell-snippets/"},"description":"Useful snippets of Powershell","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://billhertzing.github.io/feed.xml" title="Bill&apos;s Blog" /></head>
 <body><header class="site-header" role="banner">
@@ -40,30 +40,36 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Welcome to Bill&#39;s Blog!</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Powershell Snippets</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2021-04-06T10:22:50-06:00" itemprop="datePublished">Apr 6, 2021
+      <time class="dt-published" datetime="2021-04-19T17:17:53-06:00" itemprop="datePublished">Apr 19, 2021
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!</p>
+    <table>
+  <tbody>
+    <tr>
+      <td>Get-ChildItem -File -r</td>
+      <td>where {$_.fullname -match “cshtml”}</td>
+      <td>foreach { git mv ($<em>.fullname) ($</em>.fullname –replace “cshtml”,”razor”) }</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>My first post, appropriately, is on <a href="/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/">How I setup this GitHubPages Blog site Part 01</a>.</p>
+<table>
+  <tbody>
+    <tr>
+      <td>Get-ChildItem -Dir -r</td>
+      <td>where {$_.fullname -match “obj</td>
+      <td>bin”}</td>
+      <td>foreach {$_.fullname}</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>This blog site will be organized into three sections:</p>
 
-<ol>
-  <li>Technical posts of interests to programmers and IT folks</li>
-  <li>Blogs about political issues that I care about (Hey, a person’s gotta vent occasionally!)</li>
-  <li>The goings-on of me, my family, and friends.</li>
-</ol>
-
-<p>Be aware that, as planned for Version 0.02.0 of this site, the comments on these posts will be handled by <a href="https://disqus.com">Disqus</a> and comments are stored in their servers.</p>
-
-<p>Please bear with me as I learn the intricacies of Jekyll, static sites, and GitHub Pages!</p>
-
-  </div><a class="u-url" href="/2021/04/06/Welcome-To-Bills-Blog/" hidden></a>
+  </div><a class="u-url" href="/technical/2021/04/19/Powershell-snippets/" hidden></a>
 </article>
 
       </div>
