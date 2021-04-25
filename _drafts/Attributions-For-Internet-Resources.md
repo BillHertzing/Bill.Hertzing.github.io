@@ -1,7 +1,6 @@
 ---
 Title: Attribution
 tags: Attribution
-layout: post
 description: People, Books, Articles, Blogs, websites that have sparked ideas or contributed code used in these repositories
 category: technical
 ---

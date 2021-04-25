@@ -1,7 +1,6 @@
 ---
 Title: Powershell snippets
 tags: Powershell
-layout: post
 description: Useful snippets of Powershell 
 category: technical
 ---

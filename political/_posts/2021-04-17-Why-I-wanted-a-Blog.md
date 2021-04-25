@@ -1,19 +1,14 @@
 ---
 Title: Why I wanted a Blog
 date: 2021-04-17 12:00:50 -0600
-tags: 
-layout: post
+tags: political
 description: The motives that led me to start this site
 category: political
 ---
-
-## TL DR
-
 - As a place to share knowledge, tips and how-tos, mostly regarding development, operations and monitoring of computer systems.
 - As a place to publish the reasoning that underlie my personal stance on sometimes controversial political issues.
 - As a place to share pictures and stories about myself and my family to other family members and our friends.
-
-## Introduction
+<!--EndExcerpt-->
 
 I have always envied the developers who do a good job communicating with the world. They enjoy a connectivity to others that seems it must enrich their lives. I've always wanted my own blog site where I can write about whatever interests me, technically, politically, and personally. I have had three previous forays into blogging. Once using Blogger at Google, once trying to host my own site at 1And1 (now IONOS), and once with a site at wordpress.com. In each of these prior attempts, I've foundered on the technical implementation. Either the platform didn't have the features I wanted, or the learning curve was too steep, or the cost was prohibitive. Now I'm about to try launching my fourth attempt, using the static site generator Jekyll, with the pages served by GitHub. Here's hoping that this time I'll be long-term successful!
 

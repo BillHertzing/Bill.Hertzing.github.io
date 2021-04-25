@@ -2,20 +2,14 @@
 Title: Welcome to the Personal section of my site
 date: 2021-04-17 12:00:50 -0600
 tags: Introduction Personal
-layout: post
 description: Explanation of how to register for and use the personal section of this site.
 category: personal
 ---
 
-## TL DR
+I've long hoped to have a website that I can use to share information with my friends and family, without having to create content for each individual social media site. This is it!
 
 If you would like to have access to my posts and pictures about family and friends, direct message me via text message, e-mail or a phone call. I'll add you to the list of people who have access.
-
 In the future, I hope to have a simple login form that will make it very easy to authenticate using any of your social media apps, or using a userid / password.
-
-## Welcome
-
-I've long hoped to have a website that I can use to share information with my friends and family, without having to create content for each individual social media site. This is it!
 
 ## Pictures and Videos
 
@@ -25,7 +19,7 @@ I have our cameras and GoPro setup to automatically upload new media to my Dropb
 
 Here is an example of a picture.
 
-![Firworks!](https://www.dropbox.com/s/q38ofot7sik5h3p/firework%20art.jpg?raw=1)
+![Fireworks!](https://www.dropbox.com/s/q38ofot7sik5h3p/firework%20art.jpg?raw=1)
 
 Figure (above): Fireworks!
 

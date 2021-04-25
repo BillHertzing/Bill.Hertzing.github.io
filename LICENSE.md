@@ -1,5 +1,4 @@
 ---
-layout: page
 title: LICENSE
 permalink: /LICENSE/
 description: Text of the MIT License for this site

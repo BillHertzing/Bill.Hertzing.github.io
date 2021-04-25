@@ -1,7 +1,6 @@
 ---
 Title: Client-side Blazor demos
 tags: Blazor
-layout: post
 description: Overview of the BlazorDemos repository
 category: technical
 ---

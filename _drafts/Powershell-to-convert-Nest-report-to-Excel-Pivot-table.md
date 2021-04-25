@@ -1,7 +1,6 @@
 ---
 Title: Powershell to convert Nest report to Excel Pivot table
 tags: Powershell Nest RegEx PIvotTable Excel
-layout: post
 description: Powershell script to access data from Nest thermostat and produce an Excel worksheet with Pivot table and graph
 category: technical
 ---

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: About
 permalink: /about/
 description: Information about me personally and about this blog site
