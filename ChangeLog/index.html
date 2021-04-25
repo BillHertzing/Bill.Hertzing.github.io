@@ -1,0 +1,104 @@
+<h2 id="2021-04-25-release-v003000">2021-04-25 Release V0.03.000</h2>
+
+<p>Published the post <code class="language-plaintext highlighter-rouge">personal/2021-04-25-Eulogy for molly</code> post
+Published the post <code class="language-plaintext highlighter-rouge">technical/2021-04-25-how-i-setup-this-github-pages-blog-site-part-03.md</code>
+Installed the following Gems locally:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- `minimal-mistake-jekyll` theme GEM 
+- `jekyll-paginate`
+- `jekyll-sitemap`
+- `jekyll-gist`
+</code></pre></div></div>
+
+<p>Replaced <code class="language-plaintext highlighter-rouge">_config.yml</code> with <code class="language-plaintext highlighter-rouge">_config.yml</code> from the minimal-mistakes (MM) theme</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Uncommented minimal-mistakes as a local theme
+- Added Author Bio and location
+- Turned on GitHub social link to profile, working
+- Turned on twitter social link to profile, working
+- Turned on GraphQL SEO attributes
+- Enabled comments on posts
+  - Use Disqus as the comment provider
+- Enabled default front matter for all posts
+  - Enabled Table of Contents and made it sticky to top of post
+  - Enabled comments
+- Enabled `timezone: America\Denver`
+</code></pre></div></div>
+
+<p>Created local _includes/footer.html from MM theme’s version to override the default footer
+    - Modified copyright
+    - Added link to default Community Health File <code class="language-plaintext highlighter-rouge">License</code>
+    - Added link to default Community Health File <code class="language-plaintext highlighter-rouge">Contributing</code>
+    - Added link to default Community Health File <code class="language-plaintext highlighter-rouge">Code of Conduct</code>
+    - Added the site’s Release Version</p>
+
+<p>Created local <code class="language-plaintext highlighter-rouge">_includes/gallery</code> from MM theme’s version to override the gallery component
+    - Added <code class="language-plaintext highlighter-rouge">&lt;span&gt;{{ img.title }}&lt;/span&gt;</code> below the <code class="language-plaintext highlighter-rouge">&lt;/img&gt;</code> tag to provide a caption. <em>Note: will be upgraded to be responsive in a later revision</em></p>
+
+<p>Created local <code class="language-plaintext highlighter-rouge">_includes/head/custom.html</code> from MM theme’s version to include custom favicon HTML information
+    - Added the HTML necessary to deliver the correct favicon file to multiple types of browsers</p>
+
+<p>Generated a set of favicon files suitable for multiple types of browsers, placed them into root of repo</p>
+
+<p>Removed <code class="language-plaintext highlighter-rouge">layout: post</code> from Front Matter on all published posts
+Removed <code class="language-plaintext highlighter-rouge">layout: page</code> from Front Matter on all pages
+Added <code class="language-plaintext highlighter-rouge">layout: home</code> to Front Matter of <code class="language-plaintext highlighter-rouge">index.md</code> in root of repo (this is the site’s landing page)</p>
+
+<p>Added words to spellcheck dictionary
+Fixed typos and edited for clarity the previous posts and pages
+Incorporated bugfixes for Issues #4, #5, #6, #7, #8, #9, #10, #11, #12</p>
+
+<p>Updated the <code class="language-plaintext highlighter-rouge">git.commit.template</code> from 0.02.000 to 0.03.00
+Added a new branch SprintForRelease0.03.000 branched from the releases/0.02.000 tag</p>
+
+<h2 id="2021-04-15-release-v002000">2021-04-15 Release V0.02.000</h2>
+
+<ul>
+  <li>add subdirectories for _drafts, political/_posts, personal/_posts</li>
+  <li>Add a ChangeLog.md , create content for V0.1.0, V0.2.0</li>
+  <li>Add Commit Template</li>
+  <li>Add ReadMe.md</li>
+  <li>Add Code of Conduct to Community Health Files repository</li>
+  <li>Add Community Guidelines  to Community Health Files repository</li>
+  <li>Add Issue Template (for Bug and for Feature Request) to Community Health Files repository</li>
+  <li>add jekyll-timeago plugin</li>
+  <li>add jekyll-include-cache plugin</li>
+  <li>update footer with last Release tag version number and release (commit) date</li>
+  <li>add published post “How I setup this GitHub Pages Blog site, Part 02” under technical subdirectory</li>
+  <li>add published post “Case for a non-anonymous Internet, Part 01” under political subdirectory</li>
+  <li>add published post “Welcome to the Personal section of my site” under personal subdirectory</li>
+</ul>
+
+<h2 id="2021-04-07-release-v001000">2021-04-07 Release V0.01.000</h2>
+
+<p>Initial creation of site</p>
+
+<ul>
+  <li>Jekyll tooling including Ruby and MSYS2 on Windows 10</li>
+  <li>Created Milestones for Releases V0.01.0 - V0.04.0</li>
+  <li>Created the following files:
+    <ul>
+      <li>.gitignore</li>
+      <li>index.md</li>
+      <li>about.md</li>
+      <li>LICENSE.html</li>
+      <li>_config.yml
+        <ul>
+          <li>theme:minima</li>
+        </ul>
+      </li>
+      <li>.github/workflows/deploy-site-to-github.yml</li>
+      <li>_includes/footer.html</li>
+      <li>_posts/2021-04-06-Welcome-To-Bills-Blog.md</li>
+      <li>technical/_posts/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2021-04-06-birthday">2021-04-06 Birthday</h2>
+
+<p>Initial creation of repository</p>
+
+<ul>
+  <li>Created the repository https://github.com/BillHertzing/BillHertzing.github.io</li>
+</ul>

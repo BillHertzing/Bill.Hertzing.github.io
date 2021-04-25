@@ -1,4 +1,698 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-20T00:32:39-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I&apos;ve got it all!</subtitle><entry><title type="html">How I Setup This Github Pages Blog Site Part 02</title><link href="https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 02" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/17/how-i-setup-this-github-pages-blog-site-part-02/">&lt;p&gt;Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series &lt;a href=&quot;TBD&quot;&gt;How I setup this GitHub Pages Blog&lt;/a&gt;, you should probably give it a quick review, to become familiar with how it all started.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-25T12:03:31-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We&apos;ve got it all!</subtitle><author><name>William (Bill) Hertzing</name></author><entry><title type="html">How I Setup This Github Pages Blog Site Part 03</title><link href="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-03/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 03" /><published>2021-04-24T00:00:00-06:00</published><updated>2021-04-24T00:00:00-06:00</updated><id>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-03</id><content type="html" xml:base="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-03/">&lt;p&gt;Welcome to the third part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first two post in the series &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHub Pages Blog Site Part 01&lt;/a&gt; and &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-02/&quot;&gt;How I setup this GitHub Pages Blog Site Part 02&lt;/a&gt; you should probably give them a quick review, to become familiar with how the site has been built up to this point.&lt;/p&gt;
+
+&lt;p&gt;The next steps will be to implement the features specified in &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/3&quot;&gt;Milestone 0.03.0&lt;/a&gt;.  I’ve created Milestones for Release V0.03 and V0.04 already. I also have a lot of ideas for additional features in a Milestone &lt;em&gt;Release Far Future&lt;/em&gt;.  I like to plan one or two milestones in advance of the current sprint. That gives me time to study the Internet for examples and guidelines for the specific new features coming in the next two releases. I also arrange the Milestone &lt;em&gt;Release Far Future&lt;/em&gt; features in the rough order of prioritization I want, then when creating a new specific milestone, I move an appropriate number of features from Milestone &lt;em&gt;Release Far Future&lt;/em&gt; into the new next Release milestone. I’ll say this again, I’ve found that there is always “feature creep” in releases if I don’t take the time to write down what is going into the next release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don’t get too big!&lt;/p&gt;
+
+&lt;p&gt;This release is all about moving to a better theme, adding navigation elements, and incorporating Disqus comments.&lt;/p&gt;
+
+&lt;p&gt;Lets move on!&lt;/p&gt;
+
+&lt;h2 id=&quot;create-a-new-branch-for-developing-the-next-release&quot;&gt;Create a new branch for developing the next Release&lt;/h2&gt;
+
+&lt;p&gt;First step after doing a Release is to create a new branch for working on the features for the next Release.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt; to switch to the just released Release. Hopefully, it is clean and there have been no changes since the last release tag was added.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b SprintForRelease0.03.000&lt;/code&gt; to create a branch for the work on the next release. Modify the branch name shown to reflect the number of the next release. For this post and the development of the next Release of this site, I’ll keep coming back to the branch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForRelease0.03.000&lt;/code&gt; with the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout SprintForRelease0.03.000&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;work-on-bugs-in-parallel-with-new-features&quot;&gt;Work on bugs in parallel with new features&lt;/h2&gt;
+
+&lt;p&gt;Every release brings new bugs. I always want to be working on exciting new features, not trying to figure out my past mistakes 😞. Gotta do it though, so it’s best to get into a rhythm for working on both areas.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use Github issues to record bugs found in the current release.&lt;/li&gt;
+  &lt;li&gt;Create a branch to work on each bug issue.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt; to switch back to the just released Release.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b BugFixIssue#9&lt;/code&gt; to create a branch for the work on fixing the bug. Modify the branch name shown to reflect the Issue number.&lt;/li&gt;
+  &lt;li&gt;If you have another issue that you want to work in parallel, fork another branch from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. Not too many though, because each time a bugfix branch is merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, the other bugfix branches will need to be rebased. Having just a couple bugfix branches existing and being worked on makes the process of merging and rebasing easier.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Once you have a few parallel branches setup, you can decide which branch you want to work on today. 😊&lt;/p&gt;
+
+&lt;p&gt;Later in this post I’ll show how I merge the bug fix branches back into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, and then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git rebase -i&lt;/code&gt; development sprint and bugfix branches onto the updated &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;update-the-gitcommittemplate&quot;&gt;Update the git.commit.template&lt;/h2&gt;
+
+&lt;p&gt;There is only one template for commits, and since I’m working primarily on Release V0.03.000, it’s time to change the default template to reflect that.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GitTemplates/git.commit.template.txt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Find the line &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;See Milestone Release V0.02.00&lt;/code&gt; and change it to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;See Milestone Release V0.03.00&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Save the file. The new changed template should appear the next time the VSC SCM tool window is opened.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;create-a-draft--part-03-post&quot;&gt;Create a draft &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... Part 03&lt;/code&gt; post&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;how-i-setup-this-github-pages-blog-site-part-03.md&lt;/code&gt; under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;technical/_drafts&lt;/code&gt; subdirectory (or under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; subdirectory at the base of the repo if you are not using categories). Do not add the &lt;em&gt;YYYY-MM-DD&lt;/em&gt; prefix to this file.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the following Front Matter text to the file. Modify it as appropriate for your site. &lt;em&gt;Note&lt;/em&gt; There is no &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date:&lt;/code&gt; key in a draft post.&lt;/p&gt;
+
+    &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt; ---&lt;/span&gt;
+ Title: How I setup this GitHub Pages Blog, Part 3
+ tags: Jekyll GitHubPages
+ description: third set of steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
+&lt;span class=&quot;p&quot;&gt; ---
+&lt;/span&gt;
+ Add text you want to see in your third post
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Save the file.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt; Jekyll will build the drafts with the current date so they will be easy to find at the top of your (chronologically sorted) post listings.&lt;/li&gt;
+  &lt;li&gt;Validate the new post exists locally under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;technical&lt;/code&gt; subdirectory, and a link to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... Part 03&lt;/code&gt; post appears at the top of the landing page.&lt;/li&gt;
+  &lt;li&gt;Commit the file, sync with Github, and verify the GiHub repository now has the new branch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForRelease0.03.000&lt;/code&gt; and the new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... Part 03&lt;/code&gt; file under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;technical/_drafts&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; During this period in the development of the site, Real Life interfered in the form of the passing of our dear dog Molly. Since one purpose of the site is to post updates regarding real-life happenings to friends and family, the features destined for release V0.03 were re-prioritized to support posting a Eulogy for Molly. This primarily involved doing the minimum needed to convert to the Minimal Mistakes theme, customizing the footer, customizing the Author information, customizing the favicon, and customizing the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gallery&lt;/code&gt; component to support captions for the images in the gallery, using that modified component to create the picture gallery found in the eulogy post, creating a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favicon&lt;/code&gt; and adding a Table Of Contents (TOC) to posts. The remainder of the features originally planed for V0.03 have slipped to V0.04.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;change-theme-to-minimal-mistakes-mm&quot;&gt;Change theme to Minimal Mistakes (MM)&lt;/h2&gt;
+
+&lt;p&gt;Now we’ll switch to a better theme. I decided to use &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt;. Installation details are in the &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/&quot;&gt;Quick-Start Guide&lt;/a&gt;. What follows are the steps I took and the choices I made during installation.&lt;/p&gt;
+
+&lt;h3 id=&quot;add-the-minimal-mistakes-jekyll-gem-based-theme-to-the-gemfile&quot;&gt;Add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistakes-jekyll&lt;/code&gt; Gem-based theme to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; in the base of the repo.&lt;/li&gt;
+  &lt;li&gt;Replace &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;minima&quot;, &quot;~&amp;gt; 2.5&quot;&lt;/code&gt; with this:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;s&quot;&gt;gem &quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Save the file.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle&lt;/code&gt; to fetch and update bundled gems.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;finding-the-files-that-make-up-the-theme&quot;&gt;Finding the files that make up the theme&lt;/h3&gt;
+
+&lt;p&gt;There are a number of theme files that will need to be overridden. When creating an override for a file, start with the theme’s file. To locate theme files, run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle info minimal-mistakes-jekyll&lt;/code&gt;. That will return the path of the Gem theme’s installation directory. From that root path, all of the theme’s files can be found.  Alternatively, the latest versions of all theme files can be found on the MM Github site, at &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt;. However, be careful that the version installed locally matches the version on the GitHub site.&lt;/p&gt;
+
+&lt;h3 id=&quot;merge-mm-default-values-of-_configyml&quot;&gt;Merge MM default values of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;The MM theme has a default file for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;. I compared the theme’s default &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file currently in use on my site, then merged the two, updating the resulting file with additional information specific to my site. There were a lot of setting in the new file with which I was unfamiliar. This post and subsequent posts will go into greater detail on the contents of this file and how it was modified.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Combine the latest version with the current version
+    &lt;ol&gt;
+      &lt;li&gt;uncomment the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# theme&lt;/code&gt; line&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;title:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subtitle:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;description:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;repository:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Author:&lt;/code&gt; subkey values&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bio:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;location:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;links:&lt;/code&gt; subkey values&lt;/li&gt;
+      &lt;li&gt;uncomment and update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url:&lt;/code&gt; key values for any social media sites you want to appear under your Author information.
+        &lt;blockquote&gt;
+          &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; I do NOT recommend enabling email links unless you are willing to deal with a lot of spam in your inbox!&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer:links:&lt;/code&gt; subkey values&lt;/li&gt;
+      &lt;li&gt;uncomment and update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url:&lt;/code&gt; key values for any social media sites you want to have links to appear in the footer.&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;timezone:&lt;/code&gt; key value&lt;/li&gt;
+      &lt;li&gt;update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugins:&lt;/code&gt; key. There are three additional plugins defined in the theme that are not present in the current version. Add all three
+        &lt;ul&gt;
+          &lt;li&gt;jekyll-paginate&lt;/li&gt;
+          &lt;li&gt;jekyll-sitemap&lt;/li&gt;
+          &lt;li&gt;jekyll-gist&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Save the file.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;install-additional-gems&quot;&gt;Install additional GEMs&lt;/h3&gt;
+
+&lt;p&gt;The MM theme references three additional plugins. Install them using the commands&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-paginate&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-sitemap&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-gist&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The results of running update will be a list of gems and their versions. Note the version numbers of the gems that match the plugins specified in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;. The versions shown here are those that existed on April 23, 2021.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;group :jekyll_plugins do&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-paginate&quot;, &quot;~&amp;gt; 1.1.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-sitemap&quot;, &quot;~&amp;gt; 1.4.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-gist&quot;, &quot;~&amp;gt; 1.5.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-feed&quot;, &quot;~&amp;gt; 0.15.1&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-include-cache&quot;, &quot;~&amp;gt; 0.2.1&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-timeago&quot;, &quot;~&amp;gt; 0.14.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll_version_plugin&quot;, &quot;~&amp;gt; 2.0.0&quot;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Save the Gemfile&lt;/p&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Oops, the site build did not finish and there are errors reported. Gotta work through the troubleshooting.&lt;/p&gt;
+
+&lt;h3 id=&quot;change-post-layout-to-posts-layout&quot;&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt; layout to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;posts&lt;/code&gt; layout&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minima&lt;/code&gt; theme had a layout named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt;, but MM uses a layout called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;posts&lt;/code&gt;. In all the posts for Release V0.01 and V0.02, each post had a Front Matter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout:&lt;/code&gt; key. Fix this by removing the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout:&lt;/code&gt; key from the Front Matter in all posts. The Default Front Matter in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file will take care of defining the layout for all posts&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use VSC global search feature to find the string &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: post&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Go into each file and remove that line if it is within the files’ Front Matter.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;change-page-layout&quot;&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page&lt;/code&gt; layout&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minima&lt;/code&gt; theme had a layout named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page&lt;/code&gt;, but MM does not. Fix this by modifying the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout:&lt;/code&gt; key in the Front Matter in all pages, and use a layout specific to the page’s intent.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Repeat the steps used to fix the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt; layout. Global search for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: page&lt;/code&gt;, replace it as follows:&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.md&lt;/code&gt; file (at the root of the repo), use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout: home&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;in all other page files, remove the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;layout:&lt;/code&gt; key line completely.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Looks like this cleaned up all the warnings about missing the layout &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt; and missing the layout &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page&lt;/code&gt;. Validate that the site builds and serves.&lt;/p&gt;
+
+&lt;h2 id=&quot;fix-the-footer&quot;&gt;Fix the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Eventually, I want the footer to look similar to the footer at GitHub Marketplace Action &lt;a href=&quot;https://github.com/marketplace/actions/deploy-to-github-pages&quot;&gt;Deploy to GitHub Pages&lt;/a&gt;. However, for this release, I’ll start with just the copyright, the License, Code of Conduct, and Contributing links, attributions for Jekyll and MM, and the current Release’s Semantic Version number.  This is done by overriding the default &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;includes/footer.html&lt;/code&gt; file .&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Copy the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/footer.html&lt;/code&gt; from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistakes-jekyll&lt;/code&gt; theme’s installation directory to the local repo’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; subdirectory.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edit the copyright line, replace the entire line with the following (and modify to fit your site):&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code class=&quot;language-Liquid&quot;&gt; &amp;lt;div class=&quot;page__footer-copyright&quot;&amp;gt;&amp;amp;copy; William Hertzing 2020 - 2021. Licensed under the terms of the &amp;lt;a href=/LICENSE/&amp;gt;MIT License.&amp;lt;/a&amp;gt;
+ &amp;lt;a href=https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md&amp;gt;Code of Conduct&amp;lt;/a&amp;gt;
+ &amp;lt;a href=https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md&amp;gt;CONTRIBUTING&amp;lt;/a&amp;gt; 
+ Powered by &amp;lt;a href=&quot;https://jekyllrb.com&quot; rel=&quot;nofollow&quot;&amp;gt;Jekyll&amp;lt;/a&amp;gt; &amp;amp;amp; &amp;lt;a href=&quot;https://mademistakes.com/work/minimal-mistakes-jekyll-theme/&quot; rel=&quot;nofollow&quot;&amp;gt;Minimal Mistakes&amp;lt;/a&amp;gt;.
+ Site Release {% capture long_tag_name %}{% project_version  %}{% endcapture %}{{ long_tag_name | remove: &apos;releases/&apos; | split: &apos;-&apos; | first | prepend: &quot;V&quot; }}&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The site should build and display, and a decent looking footer should display on all pages and posts. We will address adding to the contents of the footer in later posts.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-a-faviconico&quot;&gt;Add a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;favicon.ico&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;I have a .jpg file with an image I’d like to use as the site’s Favicon. The HTML needed to generate Favicon references for all kinds of browsers are usually found in each page’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;... &amp;lt;/head&amp;gt;&lt;/code&gt; section. The MM theme has a place to insert custom HTML for the head tag, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/head/custom.html&lt;/code&gt;. The MM theme’s original custom head HTML file is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/head/custom.html&lt;/code&gt;, and in it there is a line the specifically mentions a place to insert html related to the Favicon. It also refers to &lt;a href=&quot;https://realfavicongenerator.net/&quot;&gt;Favicon Generator. For real.&lt;/a&gt;, which lets you take a .jpg file and turn it into a series of .ico files for various browsers. If you don’t have a picture you want to use yet, you can just try the Favicon Generator with a default image. The site returns a package of files to be installed into the root of the repo, and a block of HTML to be added to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;... &amp;lt;/head&amp;gt;&lt;/code&gt; section of a page.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a new subdirectory and file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/head/custom.html&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Copy the contents of the MM original file into the local file above, although it is all comments.&lt;/li&gt;
+  &lt;li&gt;Add the snippets generated by the &lt;a href=&quot;https://realfavicongenerator.net/&quot;&gt;Favicon Generator. For real.&lt;/a&gt; to the file.&lt;/li&gt;
+  &lt;li&gt;Unpack the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.zip&lt;/code&gt; package that was generated by Favicon Generator into the root of the repo.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Validate the tab in the browser now includes the favicon.&lt;/p&gt;
+
+&lt;h2 id=&quot;modify-the-mm-gallery-component-to-add-a-title-under-each-picture&quot;&gt;Modify the MM &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gallery&lt;/code&gt; component to add a title under each picture&lt;/h2&gt;
+
+&lt;p&gt;I needed to put all of Molly’s pictures for her eulogy into a gallery, but I wanted captions under each picture. To do this, I used MM’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gallery&lt;/code&gt; component with a simple modification.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/gallery&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Get the content of the theme’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes/gallery&lt;/code&gt; file from the locally installed gem’s location.&lt;/li&gt;
+  &lt;li&gt;Edit the local file and paste the content from the theme’s version of the file&lt;/li&gt;
+  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&lt;/code&gt; just below the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;img ...&amp;gt;&lt;/code&gt; tag.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To test this, a post and some pictures will be needed. In my site, the post was “Eulogy for Molly”, and I added Front Matter specifying the gallery and the pictures.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-basic-toc-to-posts&quot;&gt;Add basic &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TOC&lt;/code&gt; to posts&lt;/h2&gt;
+
+&lt;p&gt;MM theme comes with support for a basic Table of Contents (TOC) displayed to the right of each post. The TOC can be made sticky to the top of the page. This can be enabled in the Default Front Matter.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Find the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;defaults:&lt;/code&gt; key&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;values:&lt;/code&gt; subkey belonging to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;posts&lt;/code&gt; scope, add the two lines&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;na&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;toc_sticky&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt; and validate that the posts now have a TOC displayed on their right. The TOC should remain visible as the post is scrolled down. As the cursor moves to various sections of the post, the appropriate section of the TOC should highlight. Clicking on a section in the TOC should scroll the post to that section.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-disqus-comments-to-posts&quot;&gt;Add Disqus comments to posts&lt;/h2&gt;
+
+&lt;p&gt;There is a lot of opinions on the Internet related to “what is the best way to add a comments section to posts”. I decided to use the Disqus approach, primarily because I did not want to have to spend time moderating comments to remove spam. Most people who weighed in on this topic agreed that Disqus had a very good track record in eliminating spam. As of this date, 2021-04-13, Disqus will provide the basic service (no ads) for free if I self-identify as a personal or OSS site. I registered on 2021-04-13, and received an email acknowledgement the next day. I will send a note to their support tomorrow. More on this later.&lt;/p&gt;
+
+&lt;h3 id=&quot;register-for-an-account-at-disqus&quot;&gt;Register for an account at Disqus&lt;/h3&gt;
+
+&lt;p&gt;Go through the &lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt; registration procedure for a site. Make a note of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;shortname&lt;/code&gt; you enter, it will be a key part of enabling comments below.&lt;/p&gt;
+
+&lt;h3 id=&quot;enable-support-for-disqus-in-the-mm-theme&quot;&gt;Enable support for Disqus in the MM theme&lt;/h3&gt;
+
+&lt;p&gt;The MM theme has built-in support for Disqus comments.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/li&gt;
+  &lt;li&gt;Find the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;comments:&lt;/code&gt; key.&lt;/li&gt;
+  &lt;li&gt;Modify the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;provider:&lt;/code&gt; subkey to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;provider: &quot;disqus&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Modify the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;shortname:&lt;/code&gt; subkey to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;shortname: &amp;lt;Your Disqus Shortname&amp;gt;&lt;/code&gt;&amp;gt;, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;shortname&lt;/code&gt; you entered when registering for your Disqus account.&lt;/li&gt;
+  &lt;li&gt;Save the file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Comments are only visible if the environment specifies an environment variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JEKYLL_ENV&lt;/code&gt; with a value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;production&lt;/code&gt;. To enable comments, the command that is run to build and serve the site now becomes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; This will instruct PowerShell to create the Environment variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JEKYLL_ENV&lt;/code&gt; with a value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;production&lt;/code&gt; whose scope is just for the building and serving of the site.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve --drafts&lt;/code&gt; also works, and will produce draft posts with comment sections. Avoid entering any comments while the post is still in draft, as the final name of the post will probably differ (in &lt;em&gt;YYY-MM-DD&lt;/em&gt; part) from the published full name of the post.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; and validate that the Disqus comments section now appears on the bottom of every post.&lt;/p&gt;
+
+&lt;h2 id=&quot;making-the-third-release-of-the-site&quot;&gt;Making the third release of the site&lt;/h2&gt;
+
+&lt;p&gt;I’m happy now with the enhancements I’ve made to the blogging site. It’s time to wrap up this release.&lt;/p&gt;
+
+&lt;h3 id=&quot;site-minor-release-checklist&quot;&gt;Site Minor Release checklist&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ensure the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch builds cleanly, without the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--drafts&lt;/code&gt; option.&lt;/li&gt;
+  &lt;li&gt;Review any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;warnings&lt;/code&gt; that appear in VSC’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;problems&lt;/code&gt;. pane. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; and push to the remote.&lt;/li&gt;
+  &lt;li&gt;Update the ChangeLog.md. I simply cleanup the Milestone text and add it to ChangeLog. Commit the ChangeLog.md and push it.&lt;/li&gt;
+  &lt;li&gt;Publish the draft &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;How I setup this GitHub Pages Blog, Part 3&lt;/code&gt; post into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_technical&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Publish the draft &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Eulogy for Molly the Dog&lt;/code&gt; post into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;personal&lt;/code&gt; subdirectory.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; to ensure that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; has been built with no drafts and with Disqus enabled&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull rebase -i main&lt;/code&gt; to pull any changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForReleaseXXX&lt;/code&gt; branch. ToDo: add example git commands&lt;/li&gt;
+  &lt;li&gt;Run through the &lt;em&gt;pre-release checklist - ToDo&lt;/em&gt; of things to test in the Release Candidate.&lt;/li&gt;
+  &lt;li&gt;If any item is deficient, fix the problem, update code and commit again until the &lt;em&gt;pre-release checklist&lt;/em&gt; passes. Always ensure that  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; is run after the final Release Candidate code change is made, so that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; is up-to-date.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull rebase -i main&lt;/code&gt; to pull any last-minute changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForReleaseXXX&lt;/code&gt; branch.&lt;/li&gt;
+  &lt;li&gt;If there were any changes in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; that were pulled into the feature branch, run the &lt;em&gt;pre-release checklist&lt;/em&gt; again. Always ensure that  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; is run after the final Release Candidate code change is made, so that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; is up-to-date.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;final-soft-reset-and-commit-on-the-sprintforreleasexxx-branch&quot;&gt;Final soft reset and commit on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForReleaseXXX&lt;/code&gt; branch&lt;/h3&gt;
+
+&lt;p&gt;The purpose of the soft reset and commit is to clean up the commit messages and all the changes and make them ready for the ChangeLog. If the individual commit messages have been well written, the chore of making a good Feature Release commit message shouldn’t be too hard.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log --pretty=&quot;format:%b&quot; HEAD...$(git merge-base main $(git rev-parse --abbrev-ref HEAD)) &amp;gt; $env:TEMP/git_message_for_squash.md&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code $env:TEMP/git_message_for_squash.md&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Edit the file and create the final commit message for the Feature Release.&lt;/li&gt;
+  &lt;li&gt;Copy the final commit message into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; and validate the ChangeLog looks as expected. Stop the local Jekyll server.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --soft $(git merge-base main $(git rev-parse --abbrev-ref HEAD))&lt;/code&gt; to reset just the head of the feature branch to the head of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt; to add the current state of the Feature branch to the next commit.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt;. Title should be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FEAT Milestone V0.03.000&lt;/code&gt; Paste the final commit message as the body. Close the editor.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;merge-the-sprintforreleasexxx-branch-with-the-main-branch&quot;&gt;Merge the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForReleaseXXX&lt;/code&gt; branch with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch&lt;/h3&gt;
+
+&lt;p&gt;Many organizations require a pull request to perform a merge. Thats a great idea as soon as your site has any collaborators, but its overkill for a solo developer.  I’ll add instructions and templates for a Pull Request process in a later post. For now just merge the two branches.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ensure the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForReleaseXXX&lt;/code&gt; branch is based at the head of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. ToDo: add examples git commands&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt; to change to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge SprintForReleaseXXX&lt;/code&gt;  to perform the merge. If the pre-release checklist was followed, there should be no merge conflicts.&lt;/li&gt;
+  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore Release Work for V0.03.000&lt;/code&gt; as the commit title&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;add-a-release-tag&quot;&gt;Add a Release tag&lt;/h3&gt;
+
+&lt;p&gt;Now that the merge has been made, add a Release tag to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -a releases/0.03.000 -m &quot;Third release of Bill&apos;s Blog&quot;&lt;/code&gt; (modify the command as appropriate for your site)&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag&lt;/code&gt; which will list all existing tags and verify the tag is there.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;final-build-of-production-site&quot;&gt;Final build of production site&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Validate the final production build, including the Release Version in the footer, is correct. Stop the local Jekyll server.&lt;/li&gt;
+  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; (these should only be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; changes). Note the commit ID.&lt;/li&gt;
+  &lt;li&gt;Run ToDo: insert git commands to move the tag forward one commit.&lt;/li&gt;
+  &lt;li&gt;View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push --atomic origin main refs/tags/releases/0.03.000&lt;/code&gt; to push both the final commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; &lt;strong&gt;AND&lt;/strong&gt; the associated release tag to GitHub.&lt;/li&gt;
+  &lt;li&gt;Validate that the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt; Github Action was invoked and ran successfully.  ToDo: reference the instructions back in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... part 01&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Validate the production site is up, with the new features, new published posts, and correct Release Version number&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping up&lt;/h2&gt;
+
+&lt;p&gt;This concludes the third post in this series. I’m sure that there will be revisions to this post for typos, grammar, and general improvements. Future site revisions will support multiple editions of a post, with revision date and ChangeLog for the post. You will (eventually) be able to subscribe to the site’s feed and get notifications when a revision is made.&lt;/p&gt;
+
+&lt;p&gt;This is the first release that supports Comments for posts. I’ll provide feedback in the next &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... Part 04&lt;/code&gt; post as to how well that works (spam, comment author’s ID, etc).&lt;/p&gt;
+
+&lt;p&gt;Thanks for staying to the end! 😊&lt;/p&gt;
+
+&lt;p&gt;Bill Hertzing, April 24, 2021&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Jekyll" /><category term="GitHubPages" /><summary type="html">Welcome to the third part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first two post in the series How I setup this GitHub Pages Blog Site Part 01 and How I setup this GitHub Pages Blog Site Part 02 you should probably give them a quick review, to become familiar with how the site has been built up to this point.</summary></entry><entry><title type="html">Eulogy for molly the dog</title><link href="https://billhertzing.github.io/personal/Eulogy-for-Molly-the-Dog/" rel="alternate" type="text/html" title="Eulogy for molly the dog" /><published>2021-04-24T00:00:00-06:00</published><updated>2021-04-24T00:00:00-06:00</updated><id>https://billhertzing.github.io/personal/Eulogy%20for%20Molly%20the%20Dog</id><content type="html" xml:base="https://billhertzing.github.io/personal/Eulogy-for-Molly-the-Dog/">&lt;p&gt;I didn’t think that the very first post I’d make under this personal section would be in memory of Molly. She went from healthy to deathly in just three weeks, between the birthday of this site and before the release of V0.03. So here I am writing the first &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;personal&lt;/code&gt; post, a tribute to a very good dog.&lt;/p&gt;
+
+&lt;p&gt;We got Molly as a rescue in August of 2009. JoAnn and Alex picked her out; I was sandbagged the day after returning from a gig. After I reluctantly agreed to getting a dog, they had her home by the next day. The vet estimated her at 9 months old when we got her. Her papers had her name as Dolly, but JoAnn wanted a pet with &lt;em&gt;moxie&lt;/em&gt;, so Dolly became Roxy; but she was such a sweet and self-effacing thing, that by the next week, we all agreed that she didn’t have enough &lt;em&gt;moxie&lt;/em&gt; to be a &lt;em&gt;Roxy&lt;/em&gt;, so Molly she became and stayed for the next 13 years.&lt;/p&gt;
+
+&lt;p&gt;Molly had a good dog life. She got to grow up with her boy becoming a man, swimming and tubing, hiking, camping, even snow sports. As a grand dame, she spent a year in urban Charlotte, and became comfortable with life in the big city, where she talked to everyone in the elevators and at the park.  She spent her retirement years in Park City and Deer Valley, Utah, hiking many afternoons in the mountains with her family. She was even a good sport about being costumed for Halloween! She lived to be an estimated almost fourteen, and departed  from us in April of 2021. I hope this gallery reminds us all of the good times we had together, and the memories she is taking along with her on the next stage of our journey.&lt;/p&gt;
+
+&lt;h2 id=&quot;gallery&quot;&gt;Gallery&lt;/h2&gt;
+
+&lt;figure class=&quot;third &quot;&gt;
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/8hiul3kqonwsukk/2009%2002%201st%20snow.JPG?raw=1&quot; title=&quot;2009 02 1st snow&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/8hiul3kqonwsukk/2009%2002%201st%20snow.JPG?raw=1&quot; alt=&quot;2009 02 1st snow&quot; /&gt;
+        &lt;span&gt;2009 02 1st snow&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/xe16w5shtt8hftr/2009%2002%20Molly%20in%20her%20Panthers%20jacket.JPG?raw=1&quot; title=&quot;2009 02 Molly in her Panthers jacket&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/xe16w5shtt8hftr/2009%2002%20Molly%20in%20her%20Panthers%20jacket.JPG?raw=1&quot; alt=&quot;2009 02 Molly in her Panthers jacket&quot; /&gt;
+        &lt;span&gt;2009 02 Molly in her Panthers jacket&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/7lmrgn3602lxzz6/2009%2004%20Molly%20waiting%20patiently%20for%20a%20walk.JPG?raw=1&quot; title=&quot;2009 04 Molly waiting patiently for a walk&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/7lmrgn3602lxzz6/2009%2004%20Molly%20waiting%20patiently%20for%20a%20walk.JPG?raw=1&quot; alt=&quot;2009 04 Molly waiting patiently for a walk&quot; /&gt;
+        &lt;span&gt;2009 04 Molly waiting patiently for a walk&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/l9gz5m7tluytv85/2009%2004%20New%20lifejacket.JPG?raw=1&quot; title=&quot;2009 04 New lifejacket&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/l9gz5m7tluytv85/2009%2004%20New%20lifejacket.JPG?raw=1&quot; alt=&quot;2009 04 New lifejacket&quot; /&gt;
+        &lt;span&gt;2009 04 New lifejacket&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/h0yh2bbx39ob09h/2010%2007%20Chillin%20on%20the%20boat.JPG?raw=1&quot; title=&quot;2010 07 Chillin on the boat&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/h0yh2bbx39ob09h/2010%2007%20Chillin%20on%20the%20boat.JPG?raw=1&quot; alt=&quot;2010 07 Chillin on the boat&quot; /&gt;
+        &lt;span&gt;2010 07 Chillin on the boat&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/dp6c8ag83a9ffgj/2010%2007%20Laying%20around%20with%20Bill.jpg?raw=1&quot; title=&quot;2010 07 Laying around with Bill&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/dp6c8ag83a9ffgj/2010%2007%20Laying%20around%20with%20Bill.jpg?raw=1&quot; alt=&quot;2010 07 Laying around with Bill&quot; /&gt;
+        &lt;span&gt;2010 07 Laying around with Bill&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/ll8tgk9jgutgo8a/2010%2007%20Molly%20with%20fish%20on%20dock.jpg?raw=1&quot; title=&quot;2010 07 Molly with fish on dock&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/ll8tgk9jgutgo8a/2010%2007%20Molly%20with%20fish%20on%20dock.jpg?raw=1&quot; alt=&quot;2010 07 Molly with fish on dock&quot; /&gt;
+        &lt;span&gt;2010 07 Molly with fish on dock&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/8swcv9jiizclqen/2010%2007%20Molly%27s%20best%20colors.JPG?raw=1&quot; title=&quot;2010 07 Molly&apos;s best colors&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/8swcv9jiizclqen/2010%2007%20Molly%27s%20best%20colors.JPG?raw=1&quot; alt=&quot;2010 07 Molly&apos;s best colors&quot; /&gt;
+        &lt;span&gt;2010 07 Molly&apos;s best colors&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/u9ppbff6zml4j44/2010%2007%20Tubing.jpg?raw=1&quot; title=&quot;2010 07 Tubing&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/u9ppbff6zml4j44/2010%2007%20Tubing.jpg?raw=1&quot; alt=&quot;2010 07 Tubing&quot; /&gt;
+        &lt;span&gt;2010 07 Tubing&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/2sli0z8ce243ff1/2010%2008%20Ouch%21%20Don%27t%20bite%20bees%21.JPG?raw=1&quot; title=&quot;2010 08 Ouch! Don&apos;t bite bees!&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/2sli0z8ce243ff1/2010%2008%20Ouch%21%20Don%27t%20bite%20bees%21.JPG?raw=1&quot; alt=&quot;2010 08 Ouch! Don&apos;t bite bees!&quot; /&gt;
+        &lt;span&gt;2010 08 Ouch! Don&apos;t bite bees!&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/oe92hoj8ka3grm0/2010%2012%20Molly%20with%20sweater%20in%20snow%20licking%20snowflake.JPG?raw=1&quot; title=&quot;2010 12 Molly with sweater in snow licking snowflake&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/oe92hoj8ka3grm0/2010%2012%20Molly%20with%20sweater%20in%20snow%20licking%20snowflake.JPG?raw=1&quot; alt=&quot;2010 12 Molly with sweater in snow licking snowflake&quot; /&gt;
+        &lt;span&gt;2010 12 Molly with sweater in snow licking snowflake&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/007xw2geyzcrpuj/2011%2007%20Thrilled%20with%20her%20New%20Bikini.JPG?raw=1&quot; title=&quot;2011 07 Thrilled with her New Bikini&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/007xw2geyzcrpuj/2011%2007%20Thrilled%20with%20her%20New%20Bikini.JPG?raw=1&quot; alt=&quot;2011 07 Thrilled with her New Bikini&quot; /&gt;
+        &lt;span&gt;2011 07 Thrilled with her New Bikini&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/4oabcb9irmgneek/2011%2008%2001%20Alex%20and%20Molly.JPG?raw=1&quot; title=&quot;2011 08 01 Alex and Molly&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/4oabcb9irmgneek/2011%2008%2001%20Alex%20and%20Molly.JPG?raw=1&quot; alt=&quot;2011 08 01 Alex and Molly&quot; /&gt;
+        &lt;span&gt;2011 08 01 Alex and Molly&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/k5wn7gn97obv3eq/2011%2008%2004%201%20Molly%20hiking%20in%20Panthertown.JPG?raw=1&quot; title=&quot;2011 08 04 1 Molly hiking in Panthertown&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/k5wn7gn97obv3eq/2011%2008%2004%201%20Molly%20hiking%20in%20Panthertown.JPG?raw=1&quot; alt=&quot;2011 08 04 1 Molly hiking in Panthertown&quot; /&gt;
+        &lt;span&gt;2011 08 04 1 Molly hiking in Panthertown&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/uqrt7fgtjfqmd2g/2011%2008%2004%202%20Molly%20camping%20in%20Panthertown.JPG?raw=1&quot; title=&quot;2011 08 04 2 Molly camping in Panthertown&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/uqrt7fgtjfqmd2g/2011%2008%2004%202%20Molly%20camping%20in%20Panthertown.JPG?raw=1&quot; alt=&quot;2011 08 04 2 Molly camping in Panthertown&quot; /&gt;
+        &lt;span&gt;2011 08 04 2 Molly camping in Panthertown&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/vj8ksl2f0yhgoy1/2011%2008%2021%201%20JoAnn%20and%20Molly%20Mt.%20Rogers.JPG?raw=1&quot; title=&quot;2011 08 21 1 JoAnn and Molly Mt. Rogers&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/vj8ksl2f0yhgoy1/2011%2008%2021%201%20JoAnn%20and%20Molly%20Mt.%20Rogers.JPG?raw=1&quot; alt=&quot;2011 08 21 1 JoAnn and Molly Mt. Rogers&quot; /&gt;
+        &lt;span&gt;2011 08 21 1 JoAnn and Molly Mt. Rogers&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/00jyx0msy41f58j/2011%2008%2021%202%20Molly%20and%20Bill%20at%20Mt.%20Rogers.JPG?raw=1&quot; title=&quot;2011 08 21 2 Molly and Bill at Mt. Rogers&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/00jyx0msy41f58j/2011%2008%2021%202%20Molly%20and%20Bill%20at%20Mt.%20Rogers.JPG?raw=1&quot; alt=&quot;2011 08 21 2 Molly and Bill at Mt. Rogers&quot; /&gt;
+        &lt;span&gt;2011 08 21 2 Molly and Bill at Mt. Rogers&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/depaawvvnyroxtw/2011%2008%2021%203%20Molly%27s%20tongue.JPG?raw=1&quot; title=&quot;2011 08 21 3 Molly&apos;s tongue&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/depaawvvnyroxtw/2011%2008%2021%203%20Molly%27s%20tongue.JPG?raw=1&quot; alt=&quot;2011 08 21 3 Molly&apos;s tongue&quot; /&gt;
+        &lt;span&gt;2011 08 21 3 Molly&apos;s tongue&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/fdjxpjkhff0z4xv/2011%2012%20Molly%20at%20Christmas%20with%20Alex.JPG?raw=1&quot; title=&quot;2011 12 Molly at Christmas with Alex&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/fdjxpjkhff0z4xv/2011%2012%20Molly%20at%20Christmas%20with%20Alex.JPG?raw=1&quot; alt=&quot;2011 12 Molly at Christmas with Alex&quot; /&gt;
+        &lt;span&gt;2011 12 Molly at Christmas with Alex&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/ghbzrgr73m06fdy/2012%2005%20Molly%20and%20Shawn.JPG?raw=1&quot; title=&quot;2012 05 Molly and Shawn&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/ghbzrgr73m06fdy/2012%2005%20Molly%20and%20Shawn.JPG?raw=1&quot; alt=&quot;2012 05 Molly and Shawn&quot; /&gt;
+        &lt;span&gt;2012 05 Molly and Shawn&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/7f3s0ovl86jjnnq/2013%2009%201%20Asher%20looking%20for%20nap%20spot.JPG?raw=1&quot; title=&quot;2013 09 1 Asher looking for nap spot&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/7f3s0ovl86jjnnq/2013%2009%201%20Asher%20looking%20for%20nap%20spot.JPG?raw=1&quot; alt=&quot;2013 09 1 Asher looking for nap spot&quot; /&gt;
+        &lt;span&gt;2013 09 1 Asher looking for nap spot&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/cv7nae89a9h6hae/2013%2009%202%20Asher%20%20using%20Molly%20as%20pillow.JPG?raw=1&quot; title=&quot;2013 09 2 Asher  using Molly as pillow&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/cv7nae89a9h6hae/2013%2009%202%20Asher%20%20using%20Molly%20as%20pillow.JPG?raw=1&quot; alt=&quot;2013 09 2 Asher  using Molly as pillow&quot; /&gt;
+        &lt;span&gt;2013 09 2 Asher  using Molly as pillow&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/0jk1s0czbty0am7/2013%2009%203%20Molly%20giving%20up.JPG?raw=1&quot; title=&quot;2013 09 3 Molly giving up&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/0jk1s0czbty0am7/2013%2009%203%20Molly%20giving%20up.JPG?raw=1&quot; alt=&quot;2013 09 3 Molly giving up&quot; /&gt;
+        &lt;span&gt;2013 09 3 Molly giving up&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/m3jj2dtvz63luzr/2013%2009%204%20Success.jpg?raw=1&quot; title=&quot;2013 09 4 Success&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/m3jj2dtvz63luzr/2013%2009%204%20Success.jpg?raw=1&quot; alt=&quot;2013 09 4 Success&quot; /&gt;
+        &lt;span&gt;2013 09 4 Success&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/qtu7xp8ig0us7qv/2014%2012%20%20Molly%20imitating%20Snoopy%20as%20vulture.JPG?raw=1&quot; title=&quot;2014 12  Molly imitating Snoopy as vulture&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/qtu7xp8ig0us7qv/2014%2012%20%20Molly%20imitating%20Snoopy%20as%20vulture.JPG?raw=1&quot; alt=&quot;2014 12  Molly imitating Snoopy as vulture&quot; /&gt;
+        &lt;span&gt;2014 12  Molly imitating Snoopy as vulture&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/goovp9pf6mc6qii/2015%2010%20Hiking%20Linville%20Gorge.jpg?raw=1&quot; title=&quot;2015 10 Hiking Linville Gorge&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/goovp9pf6mc6qii/2015%2010%20Hiking%20Linville%20Gorge.jpg?raw=1&quot; alt=&quot;2015 10 Hiking Linville Gorge&quot; /&gt;
+        &lt;span&gt;2015 10 Hiking Linville Gorge&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/p2cnaxxjdk8el3s/2017%2001%20Snow%20in%20Carolina.jpg?raw=1&quot; title=&quot;2017 01 Snow in Carolina&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/p2cnaxxjdk8el3s/2017%2001%20Snow%20in%20Carolina.jpg?raw=1&quot; alt=&quot;2017 01 Snow in Carolina&quot; /&gt;
+        &lt;span&gt;2017 01 Snow in Carolina&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/7wa1vzi79bas2jw/2017%2006%20Taking%20Zach%27s%20cage.jpg?raw=1&quot; title=&quot;2017 06 Taking Zach&apos;s cage&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/7wa1vzi79bas2jw/2017%2006%20Taking%20Zach%27s%20cage.jpg?raw=1&quot; alt=&quot;2017 06 Taking Zach&apos;s cage&quot; /&gt;
+        &lt;span&gt;2017 06 Taking Zach&apos;s cage&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/wx9zlqfa8tvuftw/2017%2006%20Zach%20is%20such%20a%20gentleman.jpg?raw=1&quot; title=&quot;2017 06 Zach is such a gentleman&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/wx9zlqfa8tvuftw/2017%2006%20Zach%20is%20such%20a%20gentleman.jpg?raw=1&quot; alt=&quot;2017 06 Zach is such a gentleman&quot; /&gt;
+        &lt;span&gt;2017 06 Zach is such a gentleman&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/rg9uah191cuh9tu/2017%2007%20Going%20grey.jpg?raw=1&quot; title=&quot;2017 07 Going grey&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/rg9uah191cuh9tu/2017%2007%20Going%20grey.jpg?raw=1&quot; alt=&quot;2017 07 Going grey&quot; /&gt;
+        &lt;span&gt;2017 07 Going grey&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/rnpxcjhmmyh5x27/2017%2012%20with%20a%20concerned%20Jack.jpg?raw=1&quot; title=&quot;2017 12 with a concerned Jack&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/rnpxcjhmmyh5x27/2017%2012%20with%20a%20concerned%20Jack.jpg?raw=1&quot; alt=&quot;2017 12 with a concerned Jack&quot; /&gt;
+        &lt;span&gt;2017 12 with a concerned Jack&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/jtt2uy8sqao0f34/2018%2004%20Freedom%20Park%20Charlotte%20with%20Bill.jpg?raw=1&quot; title=&quot;2018 04 Freedom Park Charlotte with Bill&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/jtt2uy8sqao0f34/2018%2004%20Freedom%20Park%20Charlotte%20with%20Bill.jpg?raw=1&quot; alt=&quot;2018 04 Freedom Park Charlotte with Bill&quot; /&gt;
+        &lt;span&gt;2018 04 Freedom Park Charlotte with Bill&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/6w8b1asb2ihpas5/2018%2008%20With%20Knight%27s%20mascot%20in%20Charlotte%20park.jpg?raw=1&quot; title=&quot;2018 08 With Knight&apos;s mascot in Charlotte park&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/6w8b1asb2ihpas5/2018%2008%20With%20Knight%27s%20mascot%20in%20Charlotte%20park.jpg?raw=1&quot; alt=&quot;2018 08 With Knight&apos;s mascot in Charlotte park&quot; /&gt;
+        &lt;span&gt;2018 08 With Knight&apos;s mascot in Charlotte park&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/hn4tlxmlqf23wit/2018%2012%20Christmas%20sweater.jpg?raw=1&quot; title=&quot;2018 12 Christmas sweater&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/hn4tlxmlqf23wit/2018%2012%20Christmas%20sweater.jpg?raw=1&quot; alt=&quot;2018 12 Christmas sweater&quot; /&gt;
+        &lt;span&gt;2018 12 Christmas sweater&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/oyl20fsfp8q9l5k/2018%20At%20Romare%20Bearden%20Park%20Charlotte.JPEG?raw=1&quot; title=&quot;2018 At Romare Bearden Park Charlotte&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/oyl20fsfp8q9l5k/2018%20At%20Romare%20Bearden%20Park%20Charlotte.JPEG?raw=1&quot; alt=&quot;2018 At Romare Bearden Park Charlotte&quot; /&gt;
+        &lt;span&gt;2018 At Romare Bearden Park Charlotte&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/f8vaddjfglq6vd6/2018%20Molly%20at%20Museum%20Towers.JPEG?raw=1&quot; title=&quot;2018 Molly at Museum Towers&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/f8vaddjfglq6vd6/2018%20Molly%20at%20Museum%20Towers.JPEG?raw=1&quot; alt=&quot;2018 Molly at Museum Towers&quot; /&gt;
+        &lt;span&gt;2018 Molly at Museum Towers&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/8it7tu2eefg2gdp/2019%2004%20Cash%20can%27t%20take%20no.jpg?raw=1&quot; title=&quot;2019 04 Cash can&apos;t take no&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/8it7tu2eefg2gdp/2019%2004%20Cash%20can%27t%20take%20no.jpg?raw=1&quot; alt=&quot;2019 04 Cash can&apos;t take no&quot; /&gt;
+        &lt;span&gt;2019 04 Cash can&apos;t take no&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/974dx8llf4uigxo/2019%2004%20Cash%20is%20too%20pushy.jpg?raw=1&quot; title=&quot;2019 04 Cash is too pushy&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/974dx8llf4uigxo/2019%2004%20Cash%20is%20too%20pushy.jpg?raw=1&quot; alt=&quot;2019 04 Cash is too pushy&quot; /&gt;
+        &lt;span&gt;2019 04 Cash is too pushy&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/f7sku31p0faenny/2019%2005%20First%20hike%20in%20retirement.JPEG?raw=1&quot; title=&quot;2019 05 First hike in retirement&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/f7sku31p0faenny/2019%2005%20First%20hike%20in%20retirement.JPEG?raw=1&quot; alt=&quot;2019 05 First hike in retirement&quot; /&gt;
+        &lt;span&gt;2019 05 First hike in retirement&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/v9yae0fqthix50l/2019%2006%20Molly%20with%20Harper.JPEG?raw=1&quot; title=&quot;2019 06 Molly with Harper&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/v9yae0fqthix50l/2019%2006%20Molly%20with%20Harper.JPEG?raw=1&quot; alt=&quot;2019 06 Molly with Harper&quot; /&gt;
+        &lt;span&gt;2019 06 Molly with Harper&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/h3afv0h5qw4c6xm/2019%2006%20Too%20Tired%20to%20Finish.JPEG?raw=1&quot; title=&quot;2019 06 Too Tired to Finish&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/h3afv0h5qw4c6xm/2019%2006%20Too%20Tired%20to%20Finish.JPEG?raw=1&quot; alt=&quot;2019 06 Too Tired to Finish&quot; /&gt;
+        &lt;span&gt;2019 06 Too Tired to Finish&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/bzcw94mb6exv8om/2019%2010%201%20Molly%27s%20Costume%20Before%20Parade.JPEG?raw=1&quot; title=&quot;2019 10 1 Molly&apos;s Costume Before Parade&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/bzcw94mb6exv8om/2019%2010%201%20Molly%27s%20Costume%20Before%20Parade.JPEG?raw=1&quot; alt=&quot;2019 10 1 Molly&apos;s Costume Before Parade&quot; /&gt;
+        &lt;span&gt;2019 10 1 Molly&apos;s Costume Before Parade&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/hnijxos9j3s8fe2/2019%2010%202%20Molly%27s%20Exhausted%20after%20parade.JPEG?raw=1&quot; title=&quot;2019 10 2 Molly&apos;s Exhausted after parade&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/hnijxos9j3s8fe2/2019%2010%202%20Molly%27s%20Exhausted%20after%20parade.JPEG?raw=1&quot; alt=&quot;2019 10 2 Molly&apos;s Exhausted after parade&quot; /&gt;
+        &lt;span&gt;2019 10 2 Molly&apos;s Exhausted after parade&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/lbsg7lipspqr85d/2019%2012%20Hiking%20on%20Mirror%20Lake%20Hwy%20in%20the%20snow.jpg?raw=1&quot; title=&quot;2019 12 Hiking on Mirror Lake Hwy in the snow&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/lbsg7lipspqr85d/2019%2012%20Hiking%20on%20Mirror%20Lake%20Hwy%20in%20the%20snow.jpg?raw=1&quot; alt=&quot;2019 12 Hiking on Mirror Lake Hwy in the snow&quot; /&gt;
+        &lt;span&gt;2019 12 Hiking on Mirror Lake Hwy in the snow&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/qhk42k1g1pbfcw5/2020%2012%20Christmas.JPEG?raw=1&quot; title=&quot;2020 12 Christmas&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/qhk42k1g1pbfcw5/2020%2012%20Christmas.JPEG?raw=1&quot; alt=&quot;2020 12 Christmas&quot; /&gt;
+        &lt;span&gt;2020 12 Christmas&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+  
+    &lt;figcaption&gt;Molly
+&lt;/figcaption&gt;
+  
+&lt;/figure&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="personal" /><category term="Molly" /><category term="Personal" /><summary type="html">I didn’t think that the very first post I’d make under this personal section would be in memory of Molly. She went from healthy to deathly in just three weeks, between the birthday of this site and before the release of V0.03. So here I am writing the first personal post, a tribute to a very good dog.</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 02</title><link href="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-02/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 02" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-02</id><content type="html" xml:base="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-02/">&lt;p&gt;Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHub Pages Blog Part 01&lt;/a&gt;, you should probably give it a quick review, to become familiar with how it all started.&lt;/p&gt;
 
 &lt;p&gt;The next steps will be to implement the features specified in &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/2&quot;&gt;Milestone 0.02.0&lt;/a&gt;.  I like to plan my development efforts using GitHub Milestones. They are quick and easy to create and maintain, especially for tiny sites like mine that have no collaborators. Of course I don’t &lt;strong&gt;&lt;em&gt;have&lt;/em&gt;&lt;/strong&gt; to create Milestones, but I’ve found that there is always “feature creep” in releases if I don’t take the time to write down what is going into the next release, and what’s on tap for some future release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don’t get too big!&lt;/p&gt;
 
@@ -215,7 +909,7 @@
  assignees: *DefaultAssigneeGithubUserName*
  ---
     
- **New Behaviour**
+ **New Behavior**
  &amp;lt;!-- Please ask questions on StackOverflow or the *YourProjectName** Gitter (https://gitter.im/*TBD*). Questions will be closed. --&amp;gt;
     
  **Suggested New feature Name**
@@ -275,7 +969,7 @@
   &lt;li&gt;Which renders as:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;page publication date was 2021-04-17 12:00:50 -0600, which was 3 days ago&lt;/p&gt;
+&lt;p&gt;page publication date was 2021-04-17 12:00:50 -0600, which was 1 week and 1 day ago&lt;/p&gt;
 
 &lt;h2 id=&quot;put-the-most-recent-releases-tag-semantic-version-in-the-footer-template&quot;&gt;Put the most recent releases tag Semantic Version in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer&lt;/code&gt; template&lt;/h2&gt;
 
@@ -329,7 +1023,7 @@
   &lt;li&gt;Which renders as:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;project_version returns: releases/0.02.001-1-g1df2a79&lt;/p&gt;
+&lt;p&gt;project_version returns: releases/0.03.000&lt;/p&gt;
 
 &lt;h3 id=&quot;parse-the-full-tag-into-a-string-suitable-for-display&quot;&gt;Parse the full tag into a string suitable for display&lt;/h3&gt;
 
@@ -343,7 +1037,7 @@
   &lt;li&gt;Which renders as:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;latest release tag: V0.02.001&lt;/p&gt;
+&lt;p&gt;latest release tag: V0.03.000&lt;/p&gt;
 
 &lt;h3 id=&quot;place-the-results-in-the-footerhtml-file&quot;&gt;Place the results in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;footer.html&lt;/code&gt; file&lt;/h3&gt;
 
@@ -544,7 +1238,7 @@
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag&lt;/code&gt; which will list all existing tags and verify the tag is there.&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push --tags&lt;/code&gt; to push the release tag to GitHub&lt;/li&gt;
   &lt;li&gt;Validate that the Deploy github Action ran.&lt;/li&gt;
-  &lt;li&gt;Validate that teh new features appear on the public site&lt;/li&gt;
+  &lt;li&gt;Validate that the new features appear on the public site&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping up&lt;/h2&gt;
@@ -555,15 +1249,40 @@
 
 &lt;p&gt;Thanks for staying to the end. 😊&lt;/p&gt;
 
-&lt;p&gt;Bill Hertzing, April 17, 2021&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series How I setup this GitHub Pages Blog, you should probably give it a quick review, to become familiar with how it all started.</summary></entry><entry><title type="html">Why I Wanted A Blog</title><link href="https://billhertzing.github.io/political/2021/04/17/Why-I-wanted-a-Blog/" rel="alternate" type="text/html" title="Why I Wanted A Blog" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/political/2021/04/17/Why-I-wanted-a-Blog</id><content type="html" xml:base="https://billhertzing.github.io/political/2021/04/17/Why-I-wanted-a-Blog/">&lt;h2 id=&quot;tl-dr&quot;&gt;TL DR&lt;/h2&gt;
+&lt;p&gt;Bill Hertzing, April 17, 2021&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Jekyll" /><category term="GitHubPages" /><summary type="html">Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series How I setup this GitHub Pages Blog Part 01, you should probably give it a quick review, to become familiar with how it all started.</summary></entry><entry><title type="html">Welcome To The Personal Section Of My Site</title><link href="https://billhertzing.github.io/personal/Welcome-to-the-Personal-section-of-my-site/" rel="alternate" type="text/html" title="Welcome To The Personal Section Of My Site" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/personal/Welcome-to-the-Personal-section-of-my-site</id><content type="html" xml:base="https://billhertzing.github.io/personal/Welcome-to-the-Personal-section-of-my-site/">&lt;p&gt;I’ve long hoped to have a website that I can use to share information with my friends and family, without having to create content for each individual social media site. This is it!&lt;/p&gt;
 
-&lt;ul&gt;
+&lt;p&gt;If you would like to have access to my posts and pictures about family and friends, direct message me via text message, e-mail or a phone call. I’ll add you to the list of people who have access.
+In the future, I hope to have a simple login form that will make it very easy to authenticate using any of your social media apps, or using a userid / password.&lt;/p&gt;
+
+&lt;h2 id=&quot;pictures-and-videos&quot;&gt;Pictures and Videos&lt;/h2&gt;
+
+&lt;p&gt;I have our cameras and GoPro setup to automatically upload new media to my Dropbox storage. Since I’m already paying Dropbox for 2 TB of storage, I thought I’d simply utilize that space as the place to host media aas seen in my posts. DropBox lets me create a sharing link and it is easy to put that link into my posts. This way, the media is delivered to your browser from Dropbox (and eventually Cloudflare).&lt;/p&gt;
+
+&lt;h3 id=&quot;example-picture&quot;&gt;Example picture&lt;/h3&gt;
+
+&lt;p&gt;Here is an example of a picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/q38ofot7sik5h3p/firework%20art.jpg?raw=1&quot; alt=&quot;Fireworks!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure (above): Fireworks!&lt;/p&gt;
+
+&lt;h3 id=&quot;example-video&quot;&gt;Example video&lt;/h3&gt;
+
+&lt;p&gt;Here is an example of a video.&lt;/p&gt;
+
+&lt;video width=&quot;1024&quot; height=&quot;768&quot; controls=&quot;controls&quot;&gt;
+   &lt;source src=&quot;https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1&quot; type=&quot;video/mp4&quot; /&gt;
+   Your browser does not support embedded videos, however, you can see the video in a new tab [[JoAnn skiing in costume on Closing Day at Park City Ski Resort  2021 04 11](https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1)
+&lt;/video&gt;
+
+&lt;p&gt;Figure (above): JoAnn in costume on closing day 2021 at Park City, UT&lt;/p&gt;
+
+&lt;p&gt;This is just the first edition of this post. I expect to enhance and improve this post in the coming weeks. Thanks for stopping by!&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="personal" /><category term="Introduction" /><category term="Personal" /><summary type="html">I’ve long hoped to have a website that I can use to share information with my friends and family, without having to create content for each individual social media site. This is it!</summary></entry><entry><title type="html">Why I Wanted A Blog</title><link href="https://billhertzing.github.io/political/Why-I-wanted-a-Blog/" rel="alternate" type="text/html" title="Why I Wanted A Blog" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/political/Why-I-wanted-a-Blog</id><content type="html" xml:base="https://billhertzing.github.io/political/Why-I-wanted-a-Blog/">&lt;ul&gt;
   &lt;li&gt;As a place to share knowledge, tips and how-tos, mostly regarding development, operations and monitoring of computer systems.&lt;/li&gt;
   &lt;li&gt;As a place to publish the reasoning that underlie my personal stance on sometimes controversial political issues.&lt;/li&gt;
-  &lt;li&gt;As a place to share pictures and stories about myself and my family to other family members and our friends.&lt;/li&gt;
+  &lt;li&gt;As a place to share pictures and stories about myself and my family to other family members and our friends.
+&lt;!--EndExcerpt--&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;I have always envied the developers who do a good job communicating with the world. They enjoy a connectivity to others that seems it must enrich their lives. I’ve always wanted my own blog site where I can write about whatever interests me, technically, politically, and personally. I have had three previous forays into blogging. Once using Blogger at Google, once trying to host my own site at 1And1 (now IONOS), and once with a site at wordpress.com. In each of these prior attempts, I’ve foundered on the technical implementation. Either the platform didn’t have the features I wanted, or the learning curve was too steep, or the cost was prohibitive. Now I’m about to try launching my fourth attempt, using the static site generator Jekyll, with the pages served by GitHub. Here’s hoping that this time I’ll be long-term successful!&lt;/p&gt;
 
@@ -599,40 +1318,7 @@
 
 &lt;h2 id=&quot;attributions&quot;&gt;Attributions&lt;/h2&gt;
 
-&lt;p&gt;This content is all mine, no attributions for this post :-)&lt;/p&gt;</content><author><name></name></author><category term="political" /><summary type="html">TL DR</summary></entry><entry><title type="html">Welcome To The Personal Section Of My Site</title><link href="https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site/" rel="alternate" type="text/html" title="Welcome To The Personal Section Of My Site" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site</id><content type="html" xml:base="https://billhertzing.github.io/personal/2021/04/17/Welcome-to-the-Personal-section-of-my-site/">&lt;h2 id=&quot;tl-dr&quot;&gt;TL DR&lt;/h2&gt;
-
-&lt;p&gt;If you would like to have access to my posts and pictures about family and friends, direct message me via text message, e-mail or a phone call. I’ll add you to the list of people who have access.&lt;/p&gt;
-
-&lt;p&gt;In the future, I hope to have a simple login form that will make it very easy to authenticate using any of your social media apps, or using a userid / password.&lt;/p&gt;
-
-&lt;h2 id=&quot;welcome&quot;&gt;Welcome&lt;/h2&gt;
-
-&lt;p&gt;I’ve long hoped to have a website that I can use to share information with my friends and family, without having to create content for each individual social media site. This is it!&lt;/p&gt;
-
-&lt;h2 id=&quot;pictures-and-videos&quot;&gt;Pictures and Videos&lt;/h2&gt;
-
-&lt;p&gt;I have our cameras and GoPro setup to automatically upload new media to my Dropbox storage. Since I’m already paying Dropbox for 2 TB of storage, I thought I’d simply utilize that space as the place to host media aas seen in my posts. DropBox lets me create a sharing link and it is easy to put that link into my posts. This way, the media is delivered to your browser from Dropbox (and eventually Cloudflare).&lt;/p&gt;
-
-&lt;h3 id=&quot;example-picture&quot;&gt;Example picture&lt;/h3&gt;
-
-&lt;p&gt;Here is an example of a picture.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/q38ofot7sik5h3p/firework%20art.jpg?raw=1&quot; alt=&quot;Firworks!&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Figure (above): Fireworks!&lt;/p&gt;
-
-&lt;h3 id=&quot;example-video&quot;&gt;Example video&lt;/h3&gt;
-
-&lt;p&gt;Here is an example of a video.&lt;/p&gt;
-
-&lt;video width=&quot;1024&quot; height=&quot;768&quot; controls=&quot;controls&quot;&gt;
-   &lt;source src=&quot;https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1&quot; type=&quot;video/mp4&quot; /&gt;
-   Your browser does not support embedded videos, however, you can see the video in a new tab [[JoAnn skiing in costume on Closing Day at Park City Ski Resort  2021 04 11](https://www.dropbox.com/s/3vjhbk1ewf8u327/2021%2004%2011%20Park%20City%20Closing%20Day%20Capers.mp4?raw=1)
-&lt;/video&gt;
-
-&lt;p&gt;Figure (above): JoAnn in costume on closing day 2021 at Park City, UT&lt;/p&gt;
-
-&lt;p&gt;This is just the first edition of this post. I expect to enhance and improve this post in the coming weeks. Thanks for stopping by!&lt;/p&gt;</content><author><name></name></author><category term="personal" /><category term="Introduction" /><category term="Personal" /><summary type="html">TL DR</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
+&lt;p&gt;This content is all mine, no attributions for this post :-)&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="political" /><category term="political" /><summary type="html">As a place to share knowledge, tips and how-tos, mostly regarding development, operations and monitoring of computer systems. As a place to publish the reasoning that underlie my personal stance on sometimes controversial political issues. As a place to share pictures and stories about myself and my family to other family members and our friends.</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 01</title><link href="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-01/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 01" /><published>2021-04-06T12:31:43-06:00</published><updated>2021-04-06T12:31:43-06:00</updated><id>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-01</id><content type="html" xml:base="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-01/">&lt;p&gt;I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.&lt;/p&gt;
 
 &lt;p&gt;If you would like to see a list of the articles online that have helped me create this site, please see the  &lt;a href=&quot;#Attributions&quot;&gt;Attributions&lt;/a&gt; section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)&lt;/p&gt;
 
@@ -658,7 +1344,7 @@
 &lt;p&gt;ToDo: Investigate using &lt;a href=&quot;https://chocolatey.org/&quot;&gt;chocolatey&lt;/a&gt; to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;. Select a recent Ruby+DevKit version (I picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RubyInstaller 3.0.0-1 released&lt;/code&gt;) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpgs&lt;/li&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;. Select a recent Ruby+DevKit version (I picked &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RubyInstaller 3.0.0-1 released&lt;/code&gt;) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpg&lt;/li&gt;
   &lt;li&gt;Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)&lt;/li&gt;
   &lt;li&gt;At the Powershell prompt, Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll bundle&lt;/code&gt;. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot&lt;/li&gt;
   &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll -v&lt;/code&gt; and confirm Jekyll returns its current version number. &lt;img src=&quot;https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1&quot; alt=&quot;Jekyll version 4.2.0&quot; style=&quot;vertical-align:bottom&quot; /&gt;&lt;/li&gt;
@@ -1080,9 +1766,9 @@ ToDo: When a new site gets published, is that a good time to note any post revis
 
 &lt;p&gt;Thanks for staying to the end :-).&lt;/p&gt;
 
-&lt;p&gt;Bill Hertzing, April 8, 2021&lt;/p&gt;</content><author><name></name></author><category term="technical" /><category term="Jekyll" /><category term="&quot;GitHubPages&quot;" /><summary type="html">I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</summary></entry><entry><title type="html">Welcome to Bill’s Blog!</title><link href="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/" rel="alternate" type="text/html" title="Welcome to Bill’s Blog!" /><published>2021-04-06T10:22:50-06:00</published><updated>2021-04-06T10:22:50-06:00</updated><id>https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog</id><content type="html" xml:base="https://billhertzing.github.io/2021/04/06/Welcome-To-Bills-Blog/">&lt;p&gt;This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!&lt;/p&gt;
+&lt;p&gt;Bill Hertzing, April 8, 2021&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Jekyll" /><category term="GitHubPages" /><summary type="html">I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</summary></entry><entry><title type="html">Welcome to Bill’s Blog!</title><link href="https://billhertzing.github.io/Welcome-To-Bills-Blog/" rel="alternate" type="text/html" title="Welcome to Bill’s Blog!" /><published>2021-04-06T10:22:50-06:00</published><updated>2021-04-06T10:22:50-06:00</updated><id>https://billhertzing.github.io/Welcome-To-Bills-Blog</id><content type="html" xml:base="https://billhertzing.github.io/Welcome-To-Bills-Blog/">&lt;p&gt;This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!&lt;/p&gt;
 
-&lt;p&gt;My first post, appropriately, is on &lt;a href=&quot;/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHubPages Blog site Part 01&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My first post, appropriately, is on &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHubPages Blog site Part 01&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This blog site will be organized into three sections:&lt;/p&gt;
 
@@ -1094,4 +1780,4 @@ ToDo: When a new site gets published, is that a good time to note any post revis
 
 &lt;p&gt;Be aware that, as planned for Version 0.02.0 of this site, the comments on these posts will be handled by &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus&lt;/a&gt; and comments are stored in their servers.&lt;/p&gt;
 
-&lt;p&gt;Please bear with me as I learn the intricacies of Jekyll, static sites, and GitHub Pages!&lt;/p&gt;</content><author><name></name></author><summary type="html">This is my new Blog site, hosted by GitHub Pages. I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!</summary></entry></feed>
+&lt;p&gt;Please bear with me as I learn the intricacies of Jekyll, static sites, and GitHub Pages!&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><summary type="html">This is my new Blog site, hosted by GitHub Pages. I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!</summary></entry></feed>
