@@ -1,13 +1,12 @@
 ---
 Title: How I setup this GitHub Pages Blog, Part 2
 date: 2021-04-17 12:00:50 -0600
-tags: Jekyll "GitHubPages"
-layout: post
+tags: Jekyll GitHubPages
 description: Second steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
 category: technical
 ---
 
-Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series [How I setup this GitHub Pages Blog](TBD), you should probably give it a quick review, to become familiar with how it all started.
+Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series [How I setup this GitHub Pages Blog Part 01]({% link technical/_posts/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01.md %}), you should probably give it a quick review, to become familiar with how it all started.
 
 The next steps will be to implement the features specified in [Milestone 0.02.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/2).  I like to plan my development efforts using GitHub Milestones. They are quick and easy to create and maintain, especially for tiny sites like mine that have no collaborators. Of course I don't ***have*** to create Milestones, but I've found that there is always "feature creep" in releases if I don't take the time to write down what is going into the next release, and what's on tap for some future release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don't get too big!
 
@@ -210,7 +209,7 @@ Details on how to use the issue templates from the Community Health repo are at:
     assignees: *DefaultAssigneeGithubUserName*
     ---
     
-    **New Behaviour**
+    **New Behavior**
     <!-- Please ask questions on StackOverflow or the *YourProjectName** Gitter (https://gitter.im/*TBD*). Questions will be closed. -->
     
     **Suggested New feature Name**
@@ -494,7 +493,7 @@ Once you have committed all the changes you want for Release 0.02.0,
 1. Run `git tag` which will list all existing tags and verify the tag is there.
 1. Run `git push --tags` to push the release tag to GitHub
 1. Validate that the Deploy github Action ran.
-1. Validate that teh new features appear on the public site
+1. Validate that the new features appear on the public site
 
 ## Wrapping up
 
@@ -505,4 +504,3 @@ Comments for posts should be enabled soon, until then, please use the Issues on 
 Thanks for staying to the end. 😊
 
 Bill Hertzing, April 17, 2021
-

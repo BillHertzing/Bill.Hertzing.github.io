@@ -1,7 +1,6 @@
 ---
 Title: Repository Interrelationships
 tags: AceCommander ATAP.Utilities Blazor, StronglyTypedIds, BillHertzing.github.io
-layout: post
 description: A broad overview of the repositories in my GitHub account, and how they relate toone another
 category: technical
 ---

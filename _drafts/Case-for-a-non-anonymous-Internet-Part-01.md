@@ -1,7 +1,6 @@
 ---
 Title: Case for a non-anonymous Internet, Part 01
 tags: "Non-Anonymous Internet"
-layout: post
 description: Justification to not allow anonymous comments on my site and posts.
 category: political
 ---

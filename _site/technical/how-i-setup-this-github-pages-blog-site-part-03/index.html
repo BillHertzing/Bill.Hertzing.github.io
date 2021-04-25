@@ -1,0 +1,1043 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>How I Setup This Github Pages Blog Site Part 03 - Bill’s Blog</title>
+<meta name="description" content="Third steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+
+
+  <meta name="author" content="William (Bill) Hertzing">
+  
+  <meta property="article:author" content="William (Bill) Hertzing">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Bill's Blog">
+<meta property="og:title" content="How I Setup This Github Pages Blog Site Part 03">
+<meta property="og:url" content="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-03/">
+
+
+  <meta property="og:description" content="Third steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+
+
+
+
+
+  <meta name="twitter:site" content="@whertzing56">
+  <meta name="twitter:title" content="How I Setup This Github Pages Blog Site Part 03">
+  <meta name="twitter:description" content="Third steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+  <meta name="twitter:url" content="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-03/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-04-24T13:12:36-06:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-03/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Bill hertzing",
+      "url": "https://billhertzing.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Bill's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=rMB0AyldWY">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=rMB0AyldWY">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=rMB0AyldWY">
+<link rel="manifest" href="/site.webmanifest?v=rMB0AyldWY">
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMB0AyldWY" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico?v=rMB0AyldWY">
+<meta name="apple-mobile-web-app-title" content="BillHertzing">
+<meta name="application-name" content="BillHertzing">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Bill's Blog
+          <span class="site-subtitle">Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">William (Bill) Hertzing</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Computer enthusiast and professional since ‘74. Lots of languages and OSs over the years. TCP/IP, HTTP, traffic analysis, Provable minimal algorithms, C#, and .Net are my current interests</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere in Utah</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://BillHertzing.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">This Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/whertzing56" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://www.facebook.com/bill.hertzing.3" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/BillHertzing" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/whertzing56" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How I Setup This Github Pages Blog Site Part 03">
+    <meta itemprop="description" content="Welcome to the third part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first two post in the series How I setup this GitHub Pages Blog Site Part 01 and How I setup this GitHub Pages Blog Site Part 02 you should probably give them a quick review, to become familiar with how the site has been built up to this point.">
+    <meta itemprop="datePublished" content="2021-04-24T13:12:36-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">How I Setup This Github Pages Blog Site Part 03
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#create-a-new-branch-for-developing-the-next-release">Create a new branch for developing the next Release</a></li><li><a href="#work-on-bugs-in-parallel-with-new-features">Work on bugs in parallel with new features</a></li><li><a href="#update-the-gitcommittemplate">Update the git.commit.template</a></li><li><a href="#create-a-draft--part-03-post">Create a draft ... Part 03 post</a></li><li><a href="#change-theme-to-minimal-mistakes-mm">Change theme to Minimal Mistakes (MM)</a><ul><li><a href="#add-the-minimal-mistakes-jekyll-gem-based-theme-to-the-gemfile">Add the minimal-mistakes-jekyll Gem-based theme to the Gemfile</a></li><li><a href="#finding-the-files-that-make-up-the-theme">Finding the files that make up the theme</a></li><li><a href="#merge-mm-default-values-of-_configyml">Merge MM default values of _config.yml</a></li><li><a href="#install-additional-gems">Install additional GEMs</a></li><li><a href="#change-post-layout-to-posts-layout">Change post layout to posts layout</a></li><li><a href="#change-page-layout">Change page layout</a></li></ul></li><li><a href="#fix-the-footer">Fix the footer</a></li><li><a href="#add-a-faviconico">Add a favicon.ico</a></li><li><a href="#modify-the-mm-gallery-component-to-add-a-title-under-each-picture">Modify the MM gallery component to add a title under each picture</a></li><li><a href="#add-basic-toc-to-posts">Add basic TOC to posts</a></li><li><a href="#add-disqus-comments-to-posts">Add Disqus comments to posts</a><ul><li><a href="#register-for-an-account-at-disqus">Register for an account at Disqus</a></li><li><a href="#enable-support-for-disqus-in-the-mm-theme">Enable support for Disqus in the MM theme</a></li></ul></li><li><a href="#making-the-third-release-of-the-site">Making the third release of the site</a><ul><li><a href="#site-minor-release-checklist">Site Minor Release checklist</a></li><li><a href="#final-soft-reset-and-commit-on-the-sprintforreleasexxx-branch">Final soft reset and commit on the SprintForReleaseXXX branch</a></li><li><a href="#merge-the-sprintforreleasexxx-branch-with-the-main-branch">Merge the SprintForReleaseXXX branch with the main branch</a></li><li><a href="#add-a-release-tag">Add a Release tag</a></li><li><a href="#final-build-of-production-site">Final build of production site</a></li></ul></li><li><a href="#wrapping-up">Wrapping up</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Welcome to the third part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first two post in the series <a href="/technical/how-i-setup-this-github-pages-blog-site-part-01/">How I setup this GitHub Pages Blog Site Part 01</a> and <a href="/technical/how-i-setup-this-github-pages-blog-site-part-02/">How I setup this GitHub Pages Blog Site Part 02</a> you should probably give them a quick review, to become familiar with how the site has been built up to this point.</p>
+
+<p>The next steps will be to implement the features specified in <a href="https://github.com/BillHertzing/BillHertzing.github.io/milestone/3">Milestone 0.03.0</a>.  I’ve created Milestones for Release V0.03 and V0.04 already. I also have a lot of ideas for additional features in a Milestone <em>Release Far Future</em>.  I like to plan one or two milestones in advance of the current sprint. That gives me time to study the Internet for examples and guidelines for the specific new features coming in the next two releases. I also arrange the Milestone <em>Release Far Future</em> features in the rough order of prioritization I want, then when creating a new specific milestone, I move an appropriate number of features from Milestone <em>Release Far Future</em> into the new next Release milestone. I’ll say this again, I’ve found that there is always “feature creep” in releases if I don’t take the time to write down what is going into the next release. This helps me keep to the release cadence I want, and ensures these posts corresponding to each release don’t get too big!</p>
+
+<p>This release is all about moving to a better theme, adding navigation elements, and incorporating Disqus comments.</p>
+
+<p>Lets move on!</p>
+
+<h2 id="create-a-new-branch-for-developing-the-next-release">Create a new branch for developing the next Release</h2>
+
+<p>First step after doing a Release is to create a new branch for working on the features for the next Release.</p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">git checkout main</code> to switch to the just released Release. Hopefully, it is clean and there have been no changes since the last release tag was added.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git checkout -b SprintForRelease0.03.000</code> to create a branch for the work on the next release. Modify the branch name shown to reflect the number of the next release. For this post and the development of the next Release of this site, I’ll keep coming back to the branch <code class="language-plaintext highlighter-rouge">SprintForRelease0.03.000</code> with the command <code class="language-plaintext highlighter-rouge">git checkout SprintForRelease0.03.000</code>.</li>
+</ol>
+
+<h2 id="work-on-bugs-in-parallel-with-new-features">Work on bugs in parallel with new features</h2>
+
+<p>Every release brings new bugs. I always want to be working on exciting new features, not trying to figure out my past mistakes 😞. Gotta do it though, so it’s best to get into a rhythm for working on both areas.</p>
+
+<ol>
+  <li>Use Github issues to record bugs found in the current release.</li>
+  <li>Create a branch to work on each bug issue.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git checkout main</code> to switch back to the just released Release.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git checkout -b BugFixIssue#9</code> to create a branch for the work on fixing the bug. Modify the branch name shown to reflect the Issue number.</li>
+  <li>If you have another issue that you want to work in parallel, fork another branch from <code class="language-plaintext highlighter-rouge">main</code>. Not too many though, because each time a bugfix branch is merged into <code class="language-plaintext highlighter-rouge">main</code>, the other bugfix branches will need to be rebased. Having just a couple bugfix branches existing and being worked on makes the process of merging and rebasing easier.</li>
+</ol>
+
+<p>Once you have a few parallel branches setup, you can decide which branch you want to work on today. 😊</p>
+
+<p>Later in this post I’ll show how I merge the bug fix branches back into <code class="language-plaintext highlighter-rouge">main</code>, and then <code class="language-plaintext highlighter-rouge">git rebase -i</code> development sprint and bugfix branches onto the updated <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<h2 id="update-the-gitcommittemplate">Update the git.commit.template</h2>
+
+<p>There is only one template for commits, and since I’m working primarily on Release V0.03.000, it’s time to change the default template to reflect that.</p>
+
+<ol>
+  <li>Open the file <code class="language-plaintext highlighter-rouge">GitTemplates/git.commit.template.txt</code></li>
+  <li>Find the line <code class="language-plaintext highlighter-rouge">See Milestone Release V0.02.00</code> and change it to <code class="language-plaintext highlighter-rouge">See Milestone Release V0.03.00</code></li>
+  <li>Save the file. The new changed template should appear the next time the VSC SCM tool window is opened.</li>
+</ol>
+
+<h2 id="create-a-draft--part-03-post">Create a draft <code class="language-plaintext highlighter-rouge">... Part 03</code> post</h2>
+
+<ol>
+  <li>Create the file <code class="language-plaintext highlighter-rouge">how-i-setup-this-github-pages-blog-site-part-03.md</code> under the <code class="language-plaintext highlighter-rouge">technical/_drafts</code> subdirectory (or under the <code class="language-plaintext highlighter-rouge">_drafts</code> subdirectory at the base of the repo if you are not using categories). Do not add the <em>YYYY-MM-DD</em> prefix to this file.</li>
+  <li>
+    <p>Add the following Front Matter text to the file. Modify it as appropriate for your site. <em>Note</em> There is no <code class="language-plaintext highlighter-rouge">date:</code> key in a draft post.</p>
+
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p"> ---</span>
+ Title: How I setup this GitHub Pages Blog, Part 3
+ tags: Jekyll GitHubPages
+ description: third set of steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
+<span class="p"> ---
+</span>
+ Add text you want to see in your third post
+</code></pre></div>    </div>
+  </li>
+  <li>Save the file.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code> Jekyll will build the drafts with the current date so they will be easy to find at the top of your (chronologically sorted) post listings.</li>
+  <li>Validate the new post exists locally under the <code class="language-plaintext highlighter-rouge">technical</code> subdirectory, and a link to the <code class="language-plaintext highlighter-rouge">... Part 03</code> post appears at the top of the landing page.</li>
+  <li>Commit the file, sync with Github, and verify the GiHub repository now has the new branch <code class="language-plaintext highlighter-rouge">SprintForRelease0.03.000</code> and the new <code class="language-plaintext highlighter-rouge">... Part 03</code> file under <code class="language-plaintext highlighter-rouge">technical/_drafts</code>.</li>
+</ol>
+
+<blockquote>
+  <p><strong>NOTE</strong> During this period in the development of the site, Real Life interfered in the form of the passing of our dear dog Molly. Since one purpose of the site is to post updates regarding real-life happenings to friends and family, the features destined for release V0.03 were re-prioritized to support posting a Eulogy for Molly. This primarily involved doing the minimum needed to convert to the Minimal Mistakes theme, customizing the footer, customizing the Author information, customizing the favicon, and customizing the <code class="language-plaintext highlighter-rouge">gallery</code> component to support captions for the images in the gallery, using that modified component to create the picture gallery found in the eulogy post, creating a <code class="language-plaintext highlighter-rouge">favicon</code> and adding a Table Of Contents (TOC) to posts. The remainder of the features originally planed for V0.03 have slipped to V0.04.</p>
+</blockquote>
+
+<h2 id="change-theme-to-minimal-mistakes-mm">Change theme to Minimal Mistakes (MM)</h2>
+
+<p>Now we’ll switch to a better theme. I decided to use <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a>. Installation details are in the <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>. What follows are the steps I took and the choices I made during installation.</p>
+
+<h3 id="add-the-minimal-mistakes-jekyll-gem-based-theme-to-the-gemfile">Add the <code class="language-plaintext highlighter-rouge">minimal-mistakes-jekyll</code> Gem-based theme to the <code class="language-plaintext highlighter-rouge">Gemfile</code></h3>
+
+<ol>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">Gemfile</code> in the base of the repo.</li>
+  <li>Replace <code class="language-plaintext highlighter-rouge">gem "minima", "~&gt; 2.5"</code> with this:</li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s">gem "minimal-mistakes-jekyll"</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Save the file.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle</code> to fetch and update bundled gems.</li>
+</ol>
+
+<h3 id="finding-the-files-that-make-up-the-theme">Finding the files that make up the theme</h3>
+
+<p>There are a number of theme files that will need to be overridden. When creating an override for a file, start with the theme’s file. To locate theme files, run <code class="language-plaintext highlighter-rouge">bundle info minimal-mistakes-jekyll</code>. That will return the path of the Gem theme’s installation directory. From that root path, all of the theme’s files can be found.  Alternatively, the latest versions of all theme files can be found on the MM Github site, at <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a>. However, be careful that the version installed locally matches the version on the GitHub site.</p>
+
+<h3 id="merge-mm-default-values-of-_configyml">Merge MM default values of <code class="language-plaintext highlighter-rouge">_config.yml</code></h3>
+
+<p>The MM theme has a default file for <code class="language-plaintext highlighter-rouge">_config.yml</code>. I compared the theme’s default <code class="language-plaintext highlighter-rouge">_config.yml</code> file with the <code class="language-plaintext highlighter-rouge">_config.yml</code> file currently in use on my site, then merged the two, updating the resulting file with additional information specific to my site. There were a lot of setting in the new file with which I was unfamiliar. This post and subsequent posts will go into greater detail on the contents of this file and how it was modified.</p>
+
+<ol>
+  <li>Combine the latest version with the current version
+    <ol>
+      <li>uncomment the <code class="language-plaintext highlighter-rouge"># theme</code> line</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">title:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">subtitle:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">name:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">description:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">url:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">repository:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">Author:</code> subkey values</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">name:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">bio:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">location:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">name:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">links:</code> subkey values</li>
+      <li>uncomment and update the <code class="language-plaintext highlighter-rouge">url:</code> key values for any social media sites you want to appear under your Author information.
+        <blockquote>
+          <p><strong>NOTE</strong> I do NOT recommend enabling email links unless you are willing to deal with a lot of spam in your inbox!</p>
+        </blockquote>
+      </li>
+      <li>update the <code class="language-plaintext highlighter-rouge">footer:links:</code> subkey values</li>
+      <li>uncomment and update the <code class="language-plaintext highlighter-rouge">url:</code> key values for any social media sites you want to have links to appear in the footer.</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">timezone:</code> key value</li>
+      <li>update the <code class="language-plaintext highlighter-rouge">plugins:</code> key. There are three additional plugins defined in the theme that are not present in the current version. Add all three
+        <ul>
+          <li>jekyll-paginate</li>
+          <li>jekyll-sitemap</li>
+          <li>jekyll-gist</li>
+        </ul>
+      </li>
+      <li>Save the file.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="install-additional-gems">Install additional GEMs</h3>
+
+<p>The MM theme references three additional plugins. Install them using the commands</p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">gem install jekyll-paginate</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">gem install jekyll-sitemap</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">gem install jekyll-gist</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle update</code></li>
+</ol>
+
+<p>The results of running update will be a list of gems and their versions. Note the version numbers of the gems that match the plugins specified in the <code class="language-plaintext highlighter-rouge">_config.yml</code></p>
+
+<p>Update the <code class="language-plaintext highlighter-rouge">Gemfile</code>. The versions shown here are those that existed on April 23, 2021.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">group :jekyll_plugins do</span>
+  <span class="s">gem "jekyll-paginate", "~&gt; 1.1.0"</span>
+  <span class="s">gem "jekyll-sitemap", "~&gt; 1.4.0"</span>
+  <span class="s">gem "jekyll-gist", "~&gt; 1.5.0"</span>
+  <span class="s">gem "jekyll-feed", "~&gt; 0.15.1"</span>
+  <span class="s">gem "jekyll-include-cache", "~&gt; 0.2.1"</span>
+  <span class="s">gem "jekyll-timeago", "~&gt; 0.14.0"</span>
+  <span class="s">gem "jekyll_version_plugin", "~&gt; 2.0.0"</span>
+<span class="s">end</span>
+</code></pre></div></div>
+
+<p>Save the Gemfile</p>
+
+<p>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code>.</p>
+
+<p>Oops, the site build did not finish and there are errors reported. Gotta work through the troubleshooting.</p>
+
+<h3 id="change-post-layout-to-posts-layout">Change <code class="language-plaintext highlighter-rouge">post</code> layout to <code class="language-plaintext highlighter-rouge">posts</code> layout</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">minima</code> theme had a layout named <code class="language-plaintext highlighter-rouge">post</code>, but MM uses a layout called <code class="language-plaintext highlighter-rouge">posts</code>. In all the posts for Release V0.01 and V0.02, each post had a Front Matter <code class="language-plaintext highlighter-rouge">layout:</code> key. Fix this by removing the <code class="language-plaintext highlighter-rouge">layout:</code> key from the Front Matter in all posts. The Default Front Matter in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file will take care of defining the layout for all posts</p>
+
+<ol>
+  <li>Use VSC global search feature to find the string <code class="language-plaintext highlighter-rouge">layout: post</code>.</li>
+  <li>Go into each file and remove that line if it is within the files’ Front Matter.</li>
+</ol>
+
+<h3 id="change-page-layout">Change <code class="language-plaintext highlighter-rouge">page</code> layout</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">minima</code> theme had a layout named <code class="language-plaintext highlighter-rouge">page</code>, but MM does not. Fix this by modifying the <code class="language-plaintext highlighter-rouge">layout:</code> key in the Front Matter in all pages, and use a layout specific to the page’s intent.</p>
+
+<ol>
+  <li>
+    <p>Repeat the steps used to fix the <code class="language-plaintext highlighter-rouge">post</code> layout. Global search for <code class="language-plaintext highlighter-rouge">layout: page</code>, replace it as follows:</p>
+
+    <ol>
+      <li>in the <code class="language-plaintext highlighter-rouge">index.md</code> file (at the root of the repo), use <code class="language-plaintext highlighter-rouge">layout: home</code></li>
+      <li>in all other page files, remove the <code class="language-plaintext highlighter-rouge">layout:</code> key line completely.</li>
+    </ol>
+  </li>
+  <li>
+    <p>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code></p>
+  </li>
+</ol>
+
+<p>Looks like this cleaned up all the warnings about missing the layout <code class="language-plaintext highlighter-rouge">post</code> and missing the layout <code class="language-plaintext highlighter-rouge">page</code>. Validate that the site builds and serves.</p>
+
+<h2 id="fix-the-footer">Fix the <code class="language-plaintext highlighter-rouge">footer</code></h2>
+
+<p>Eventually, I want the footer to look similar to the footer at GitHub Marketplace Action <a href="https://github.com/marketplace/actions/deploy-to-github-pages">Deploy to GitHub Pages</a>. However, for this release, I’ll start with just the copyright, the License, Code of Conduct, and Contributing links, attributions for Jekyll and MM, and the current Release’s Semantic Version number.  This is done by overriding the default <code class="language-plaintext highlighter-rouge">includes/footer.html</code> file .</p>
+
+<ol>
+  <li>Copy the file <code class="language-plaintext highlighter-rouge">_includes/footer.html</code> from the <code class="language-plaintext highlighter-rouge">minimal-mistakes-jekyll</code> theme’s installation directory to the local repo’s <code class="language-plaintext highlighter-rouge">_includes</code> subdirectory.</li>
+  <li>
+    <p>Edit the copyright line, replace the entire line with the following (and modify to fit your site):</p>
+
+    <pre><code class="language-Liquid"> &lt;div class="page__footer-copyright"&gt;&amp;copy; William Hertzing 2020 - 2021. Licensed under the terms of the &lt;a href=/LICENSE/&gt;MIT License.&lt;/a&gt;
+ &lt;a href=https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md&gt;Code of Conduct&lt;/a&gt;
+ &lt;a href=https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md&gt;CONTRIBUTING&lt;/a&gt; 
+ Powered by &lt;a href="https://jekyllrb.com" rel="nofollow"&gt;Jekyll&lt;/a&gt; &amp;amp; &lt;a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow"&gt;Minimal Mistakes&lt;/a&gt;.
+ Site Release {% capture long_tag_name %}{% project_version  %}{% endcapture %}{{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}&lt;/div&gt;
+</code></pre>
+  </li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code></li>
+</ol>
+
+<p>The site should build and display, and a decent looking footer should display on all pages and posts. We will address adding to the contents of the footer in later posts.</p>
+
+<h2 id="add-a-faviconico">Add a <code class="language-plaintext highlighter-rouge">favicon.ico</code></h2>
+
+<p>I have a .jpg file with an image I’d like to use as the site’s Favicon. The HTML needed to generate Favicon references for all kinds of browsers are usually found in each page’s <code class="language-plaintext highlighter-rouge">&lt;head&gt;... &lt;/head&gt;</code> section. The MM theme has a place to insert custom HTML for the head tag, <code class="language-plaintext highlighter-rouge">_includes/head/custom.html</code>. The MM theme’s original custom head HTML file is <code class="language-plaintext highlighter-rouge">_includes/head/custom.html</code>, and in it there is a line the specifically mentions a place to insert html related to the Favicon. It also refers to <a href="https://realfavicongenerator.net/">Favicon Generator. For real.</a>, which lets you take a .jpg file and turn it into a series of .ico files for various browsers. If you don’t have a picture you want to use yet, you can just try the Favicon Generator with a default image. The site returns a package of files to be installed into the root of the repo, and a block of HTML to be added to the <code class="language-plaintext highlighter-rouge">&lt;head&gt;... &lt;/head&gt;</code> section of a page.</p>
+
+<ol>
+  <li>Create a new subdirectory and file <code class="language-plaintext highlighter-rouge">_includes/head/custom.html</code>.</li>
+  <li>Copy the contents of the MM original file into the local file above, although it is all comments.</li>
+  <li>Add the snippets generated by the <a href="https://realfavicongenerator.net/">Favicon Generator. For real.</a> to the file.</li>
+  <li>Unpack the <code class="language-plaintext highlighter-rouge">.zip</code> package that was generated by Favicon Generator into the root of the repo.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code></li>
+</ol>
+
+<p>Validate the tab in the browser now includes the favicon.</p>
+
+<h2 id="modify-the-mm-gallery-component-to-add-a-title-under-each-picture">Modify the MM <code class="language-plaintext highlighter-rouge">gallery</code> component to add a title under each picture</h2>
+
+<p>I needed to put all of Molly’s pictures for her eulogy into a gallery, but I wanted captions under each picture. To do this, I used MM’s <code class="language-plaintext highlighter-rouge">gallery</code> component with a simple modification.</p>
+
+<ol>
+  <li>Create a file <code class="language-plaintext highlighter-rouge">_includes/gallery</code></li>
+  <li>Get the content of the theme’s <code class="language-plaintext highlighter-rouge">_includes/gallery</code> file from the locally installed gem’s location.</li>
+  <li>Edit the local file and paste the content from the theme’s version of the file</li>
+  <li>Add <code class="language-plaintext highlighter-rouge">&lt;span&gt;&lt;/span&gt;</code> just below the <code class="language-plaintext highlighter-rouge">&lt;img ...&gt;</code> tag.</li>
+</ol>
+
+<p>To test this, a post and some pictures will be needed. In my site, the post was “Eulogy for Molly”, and I added Front Matter specifying the gallery and the pictures.</p>
+
+<h2 id="add-basic-toc-to-posts">Add basic <code class="language-plaintext highlighter-rouge">TOC</code> to posts</h2>
+
+<p>MM theme comes with support for a basic Table of Contents (TOC) displayed to the right of each post. The TOC can be made sticky to the top of the page. This can be enabled in the Default Front Matter.</p>
+
+<ol>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+  <li>Find the <code class="language-plaintext highlighter-rouge">defaults:</code> key</li>
+  <li>
+    <p>Under the <code class="language-plaintext highlighter-rouge">values:</code> subkey belonging to the <code class="language-plaintext highlighter-rouge">posts</code> scope, add the two lines</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">toc</span><span class="pi">:</span> <span class="no">true</span>
+ <span class="na">toc_sticky</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code> and validate that the posts now have a TOC displayed on their right. The TOC should remain visible as the post is scrolled down. As the cursor moves to various sections of the post, the appropriate section of the TOC should highlight. Clicking on a section in the TOC should scroll the post to that section.</p>
+
+<h2 id="add-disqus-comments-to-posts">Add Disqus comments to posts</h2>
+
+<p>There is a lot of opinions on the Internet related to “what is the best way to add a comments section to posts”. I decided to use the Disqus approach, primarily because I did not want to have to spend time moderating comments to remove spam. Most people who weighed in on this topic agreed that Disqus had a very good track record in eliminating spam. As of this date, 2021-04-13, Disqus will provide the basic service (no ads) for free if I self-identify as a personal or OSS site. I registered on 2021-04-13, and received an email acknowledgement the next day. I will send a note to their support tomorrow. More on this later.</p>
+
+<h3 id="register-for-an-account-at-disqus">Register for an account at Disqus</h3>
+
+<p>Go through the <a href="https://disqus.com/">Disqus</a> registration procedure for a site. Make a note of the <code class="language-plaintext highlighter-rouge">shortname</code> you enter, it will be a key part of enabling comments below.</p>
+
+<h3 id="enable-support-for-disqus-in-the-mm-theme">Enable support for Disqus in the MM theme</h3>
+
+<p>The MM theme has built-in support for Disqus comments.</p>
+
+<ol>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</li>
+  <li>Find the <code class="language-plaintext highlighter-rouge">comments:</code> key.</li>
+  <li>Modify the <code class="language-plaintext highlighter-rouge">provider:</code> subkey to <code class="language-plaintext highlighter-rouge">provider: "disqus"</code></li>
+  <li>Modify the <code class="language-plaintext highlighter-rouge">shortname:</code> subkey to <code class="language-plaintext highlighter-rouge">shortname: &lt;Your Disqus Shortname&gt;</code>&gt;, the <code class="language-plaintext highlighter-rouge">shortname</code> you entered when registering for your Disqus account.</li>
+  <li>Save the file.</li>
+</ol>
+
+<blockquote>
+  <p>Comments are only visible if the environment specifies an environment variable <code class="language-plaintext highlighter-rouge">JEKYLL_ENV</code> with a value of <code class="language-plaintext highlighter-rouge">production</code>. To enable comments, the command that is run to build and serve the site now becomes <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve</code> This will instruct PowerShell to create the Environment variable <code class="language-plaintext highlighter-rouge">JEKYLL_ENV</code> with a value of <code class="language-plaintext highlighter-rouge">production</code> whose scope is just for the building and serving of the site.</p>
+</blockquote>
+
+<blockquote>
+  <p>The command <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve --drafts</code> also works, and will produce draft posts with comment sections. Avoid entering any comments while the post is still in draft, as the final name of the post will probably differ (in <em>YYY-MM-DD</em> part) from the published full name of the post.</p>
+</blockquote>
+
+<p>Run <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve</code> and validate that the Disqus comments section now appears on the bottom of every post.</p>
+
+<h2 id="making-the-third-release-of-the-site">Making the third release of the site</h2>
+
+<p>I’m happy now with the enhancements I’ve made to the blogging site. It’s time to wrap up this release.</p>
+
+<h3 id="site-minor-release-checklist">Site Minor Release checklist</h3>
+
+<ol>
+  <li>Ensure the <code class="language-plaintext highlighter-rouge">main</code> branch builds cleanly, without the <code class="language-plaintext highlighter-rouge">--drafts</code> option.</li>
+  <li>Review any <code class="language-plaintext highlighter-rouge">warnings</code> that appear in VSC’s <code class="language-plaintext highlighter-rouge">problems</code>. pane. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to <code class="language-plaintext highlighter-rouge">main</code> and push to the remote.</li>
+  <li>Update the ChangeLog.md. I simply cleanup the Milestone text and add it to ChangeLog. Commit the ChangeLog.md and push it.</li>
+  <li>Publish the draft <code class="language-plaintext highlighter-rouge">How I setup this GitHub Pages Blog, Part 3</code> post into <code class="language-plaintext highlighter-rouge">_technical</code></li>
+  <li>Publish the draft <code class="language-plaintext highlighter-rouge">Eulogy for Molly the Dog</code> post into <code class="language-plaintext highlighter-rouge">personal</code> subdirectory.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve</code> to ensure that <code class="language-plaintext highlighter-rouge">_site</code> has been built with no drafts and with Disqus enabled</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git pull rebase -i main</code> to pull any changes to <code class="language-plaintext highlighter-rouge">main</code> into the <code class="language-plaintext highlighter-rouge">SprintForReleaseXXX</code> branch. ToDo: add example git commands</li>
+  <li>Run through the <em>pre-release checklist - ToDo</em> of things to test in the Release Candidate.</li>
+  <li>If any item is deficient, fix the problem, update code and commit again until the <em>pre-release checklist</em> passes. Always ensure that  <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve</code> is run after the final Release Candidate code change is made, so that <code class="language-plaintext highlighter-rouge">_site</code> is up-to-date.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git pull rebase -i main</code> to pull any last-minute changes to <code class="language-plaintext highlighter-rouge">main</code> into the <code class="language-plaintext highlighter-rouge">SprintForReleaseXXX</code> branch.</li>
+  <li>If there were any changes in <code class="language-plaintext highlighter-rouge">main</code> that were pulled into the feature branch, run the <em>pre-release checklist</em> again. Always ensure that  <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve</code> is run after the final Release Candidate code change is made, so that <code class="language-plaintext highlighter-rouge">_site</code> is up-to-date.</li>
+</ol>
+
+<h3 id="final-soft-reset-and-commit-on-the-sprintforreleasexxx-branch">Final soft reset and commit on the <code class="language-plaintext highlighter-rouge">SprintForReleaseXXX</code> branch</h3>
+
+<p>The purpose of the soft reset and commit is to clean up the commit messages and all the changes and make them ready for the ChangeLog. If the individual commit messages have been well written, the chore of making a good Feature Release commit message shouldn’t be too hard.</p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">git log --pretty="format:%b" HEAD...$(git merge-base main $(git rev-parse --abbrev-ref HEAD)) &gt; $env:TEMP/git_message_for_squash.md</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">code $env:TEMP/git_message_for_squash.md</code></li>
+  <li>Edit the file and create the final commit message for the Feature Release.</li>
+  <li>Copy the final commit message into the <code class="language-plaintext highlighter-rouge">ChangeLog.md</code> file</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve</code> and validate the ChangeLog looks as expected. Stop the local Jekyll server.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git reset --soft $(git merge-base main $(git rev-parse --abbrev-ref HEAD))</code> to reset just the head of the feature branch to the head of <code class="language-plaintext highlighter-rouge">main</code>.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git add .</code> to add the current state of the Feature branch to the next commit.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git commit</code>. Title should be <code class="language-plaintext highlighter-rouge">FEAT Milestone V0.03.000</code> Paste the final commit message as the body. Close the editor.</li>
+</ol>
+
+<h3 id="merge-the-sprintforreleasexxx-branch-with-the-main-branch">Merge the <code class="language-plaintext highlighter-rouge">SprintForReleaseXXX</code> branch with the <code class="language-plaintext highlighter-rouge">main</code> branch</h3>
+
+<p>Many organizations require a pull request to perform a merge. Thats a great idea as soon as your site has any collaborators, but its overkill for a solo developer.  I’ll add instructions and templates for a Pull Request process in a later post. For now just merge the two branches.</p>
+
+<ol>
+  <li>Ensure the <code class="language-plaintext highlighter-rouge">SprintForReleaseXXX</code> branch is based at the head of <code class="language-plaintext highlighter-rouge">main</code>. ToDo: add examples git commands</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git checkout main</code> to change to the <code class="language-plaintext highlighter-rouge">main</code> branch.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git merge SprintForReleaseXXX</code>  to perform the merge. If the pre-release checklist was followed, there should be no merge conflicts.</li>
+  <li>Commit all changes on <code class="language-plaintext highlighter-rouge">main</code>. Use <code class="language-plaintext highlighter-rouge">Chore Release Work for V0.03.000</code> as the commit title</li>
+</ol>
+
+<h3 id="add-a-release-tag">Add a Release tag</h3>
+
+<p>Now that the merge has been made, add a Release tag to <code class="language-plaintext highlighter-rouge">main</code></p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">git tag -a releases/0.03.000 -m "Third release of Bill's Blog"</code> (modify the command as appropriate for your site)</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git tag</code> which will list all existing tags and verify the tag is there.</li>
+</ol>
+
+<h3 id="final-build-of-production-site">Final build of production site</h3>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve</code></li>
+  <li>Validate the final production build, including the Release Version in the footer, is correct. Stop the local Jekyll server.</li>
+  <li>Commit all changes on <code class="language-plaintext highlighter-rouge">main</code> (these should only be <code class="language-plaintext highlighter-rouge">_site</code> changes). Note the commit ID.</li>
+  <li>Run ToDo: insert git commands to move the tag forward one commit.</li>
+  <li>View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on <code class="language-plaintext highlighter-rouge">main</code>).</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git push --atomic origin main refs/tags/releases/0.03.000</code> to push both the final commit on <code class="language-plaintext highlighter-rouge">main</code> <strong>AND</strong> the associated release tag to GitHub.</li>
+  <li>Validate that the <code class="language-plaintext highlighter-rouge">Deploy</code> Github Action was invoked and ran successfully.  ToDo: reference the instructions back in <code class="language-plaintext highlighter-rouge">... part 01</code></li>
+  <li>Validate the production site is up, with the new features, new published posts, and correct Release Version number</li>
+</ol>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>This concludes the third post in this series. I’m sure that there will be revisions to this post for typos, grammar, and general improvements. Future site revisions will support multiple editions of a post, with revision date and ChangeLog for the post. You will (eventually) be able to subscribe to the site’s feed and get notifications when a revision is made.</p>
+
+<p>This is the first release that supports Comments for posts. I’ll provide feedback in the next <code class="language-plaintext highlighter-rouge">... Part 04</code> post as to how well that works (spam, commenter’s ID, etc).</p>
+
+<p>Thanks for staying to the end! 😊</p>
+
+<p>Bill Hertzing, April 24, 2021</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#githubpages" class="page__taxonomy-item" rel="tag">GitHubPages</a><span class="sep">, </span>
+    
+      <a href="/tags/#jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#technical" class="page__taxonomy-item" rel="tag">technical</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-24T13:12:36-06:00">April 24, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=whertzing56&text=How+I+Setup+This+Github+Pages+Blog+Site+Part+03%20https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2Fhow-i-setup-this-github-pages-blog-site-part-03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2Fhow-i-setup-this-github-pages-blog-site-part-03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2Fhow-i-setup-this-github-pages-blog-site-part-03%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/personal/Eulogy-for-Molly-the-Dog/" class="pagination--pager" title="Eulogy for molly the dog
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/personal/Eulogy-for-Molly-the-Dog/" rel="permalink">Eulogy for molly the dog
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Introduction
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/Repository-Interrelationships/" rel="permalink">Repository Interrelationships
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">– add dot diagram here? use a png to start.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="permalink">Powershell To Convert Nest Report To Excel Pivot Table
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Notes for PowerShell SLC meetup
+ 1) List of cool PowerShell projects folks wold like to work on
+ 1) signup for one, or more, projects
+ 1) Pair or team progra...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/Powershell-snippets/" rel="permalink">Powershell Snippets
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  
+    
+      Get-ChildItem -File -r
+      where {$_.fullname -match “cshtml”}
+      foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }
+...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/BillHertzing" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; William Hertzing 2020 - 2021. Licensed under the terms of the <a href=/LICENSE/>MIT License.</a>
+<a href=https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md>Code of Conduct</a>
+<a href=https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md>CONTRIBUTING</a> 
+Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+Site Release V0.02.000</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-03/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/technical/how-i-setup-this-github-pages-blog-site-part-03"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://BillHertzing.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

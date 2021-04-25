@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Welcome to Bill's Blog!"
 date:   2021-04-06 10:22:50 -0600
 ---

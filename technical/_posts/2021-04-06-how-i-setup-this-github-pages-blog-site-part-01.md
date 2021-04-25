@@ -1,9 +1,8 @@
 ---
 Title: How I setup this GitHub Pages Blog
 date:   2021-04-06 12:31:43 -0600
-tags: Jekyll "GitHubPages"
+tags: Jekyll GitHubPages
 category: technical
-layout: post
 description: First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.
 ---
 
@@ -30,7 +29,7 @@ There are two images in this edition, to show it works and provide the example h
 
 ToDo: Investigate using [chocolatey](https://chocolatey.org/) to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.
 
-1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpgs
+1. Install [RubyInstaller for Windows](https://rubyinstaller.org/). Select a recent Ruby+DevKit version (I picked `RubyInstaller 3.0.0-1 released`) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpg
 1. Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)
 1. At the Powershell prompt, Run `gem install jekyll bundle`. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot
 1. Run `jekyll -v` and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0"  style="vertical-align:bottom">
@@ -406,7 +405,6 @@ Once you have committed all the changes you want for Release 0.01.0,
 1. Run `git tag -a releases/0.01.000 -m "Initial release of Bill's Blog"` (modify the command as appropriate for your site)
 1. Run `git tag` which will list all existing tags and verify the tag is there.
 1. Run `git push --tags` to push the release tag to GitHub
-
 
 ## Wrapping up
 
