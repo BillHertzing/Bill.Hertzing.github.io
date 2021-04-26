@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Welcome to Bill’s Blog! - Bill’s Blog</title>
-<meta name="description" content="This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!">
+<!-- begin _includes/seo.html --><title>Introduction To Acecommander - Bill’s Blog</title>
+<meta name="description" content="The motivation for and introduction to the AceCommander app">
 
 
   <meta name="author" content="William (Bill) Hertzing">
@@ -22,20 +22,20 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Bill's Blog">
-<meta property="og:title" content="Welcome to Bill’s Blog!">
-<meta property="og:url" content="https://billhertzing.github.io/Welcome-To-Bills-Blog/">
+<meta property="og:title" content="Introduction To Acecommander">
+<meta property="og:url" content="https://billhertzing.github.io/technical/Introduction-to-AceCommander/">
 
 
-  <meta property="og:description" content="This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!">
+  <meta property="og:description" content="The motivation for and introduction to the AceCommander app">
 
 
 
 
 
   <meta name="twitter:site" content="@whertzing56">
-  <meta name="twitter:title" content="Welcome to Bill’s Blog!">
-  <meta name="twitter:description" content="This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!">
-  <meta name="twitter:url" content="https://billhertzing.github.io/Welcome-To-Bills-Blog/">
+  <meta name="twitter:title" content="Introduction To Acecommander">
+  <meta name="twitter:description" content="The motivation for and introduction to the AceCommander app">
+  <meta name="twitter:url" content="https://billhertzing.github.io/technical/Introduction-to-AceCommander/">
 
   
     <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-04-06T10:22:50-06:00">
+  <meta property="article:published_time" content="2021-04-25T12:02:23-06:00">
 
 
 
@@ -57,7 +57,7 @@
   
 
 
-<link rel="canonical" href="https://billhertzing.github.io/Welcome-To-Bills-Blog/">
+<link rel="canonical" href="https://billhertzing.github.io/technical/Introduction-to-AceCommander/">
 
 
 
@@ -289,15 +289,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Welcome to Bill’s Blog!">
-    <meta itemprop="description" content="This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!">
-    <meta itemprop="datePublished" content="2021-04-06T10:22:50-06:00">
+    <meta itemprop="headline" content="Introduction To Acecommander">
+    <meta itemprop="description" content="The MySQL a is \called AceCommander, it holds userauth user tables">
+    <meta itemprop="datePublished" content="2021-04-25T12:02:23-06:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Welcome to Bill’s Blog!
+          <h1 id="page-title" class="page__title" itemprop="headline">Introduction To Acecommander
 </h1>
           
 
@@ -313,7 +313,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
@@ -333,21 +333,44 @@
             </nav>
           </aside>
         
-        <p>This is my new Blog site, hosted by GitHub Pages.  I’ve never been satisfied with all the effort needed to setup a Blog on other hosting sites; GitHub Pages combined with the Jekyll static site generator seems like it will meet my needs with very simple administration overhead. We will see!</p>
+        <p>The MySQL a is \called AceCommander, it holds userauth user tables</p>
 
-<p>My first post, appropriately, is on <a href="/technical/how-i-setup-this-github-pages-blog-site-part-01/">How I setup this GitHubPages Blog site Part 01</a>.</p>
+<p>Install MySql here:</p>
 
-<p>This blog site will be organized into three sections:</p>
+<p>the database files need to be under dropbox, so a my.ini file has to be created, and MySQL has to be told to look for it under a dropbox location.
+The current location is under <drive>:/DropBox/MySQLData</drive></p>
 
-<ol>
-  <li>Technical posts of interests to programmers and IT folks</li>
-  <li>Blogs about political issues that I care about (Hey, a person’s gotta vent occasionally!)</li>
-  <li>The goings-on of me, my family, and friends.</li>
-</ol>
+<p>every developer, qa, and test environment, as well as every production system, needs its own AceCommander database
+the my.ini file specifies this as <drive>:/dropbox/MySQL/data</drive></p>
 
-<p>Be aware that, as planned for Version 0.02.0 of this site, the comments on these posts will be handled by <a href="https://disqus.com">Disqus</a> and comments are stored in their servers.</p>
+<p>The MySQL database name, user, and user password is in the configuration file, as part of the MySQL connection string.</p>
 
-<p>Please bear with me as I learn the intricacies of Jekyll, static sites, and GitHub Pages!</p>
+<p>Make sure that on the development or QA or production server, that the database exists, and that the specified user has the correct permissions and password set</p>
+
+<p>LiquiBase is the Open Software tool that is used to keep version-controlled information on the MySL database schema and lookup tables’ data.</p>
+
+<p>Service stack returns ‘403 - forbidden’ when Blazor GUI makes it’s first call to ServiceStack and asks for all of its DLL files. Have to document the addition of .dll to SS allowed file extensions
+Service stack returns ‘403 - forbidden’ when Blazor GUI makes it’s first call to ServiceStack and asks for all of its PDB files. Have to document the addition of .pdb to SS allowed file extensions. PDB files are for debugging</p>
+
+<p>Also document the V S2019 requirement and the .DotNetCore V3 preview requirement.
+Maybe a section on how to upgrade from V0.5.0 to V0.9.0
+Document the issue with Blazor.Extensions.logging still being on V.0.7.0, and the conflict it caused, and how Blazor.extensions.Logging had to be ripped out.</p>
+
+<p>Sentinel startup stuff</p>
+
+<p>Document how to add SQLServer to a system, minimal, to use with Ace</p>
+
+<p>For VS 2019:
+To automatically close the console when debugging stops, enable Tools-&gt;Options-&gt;Debugging-&gt;Automatically close the console when debugging stops.</p>
+
+<p>So, now enumerations are a code smell? https://github.com/ardalis/SmartEnum and others</p>
+
+<p>Installing Telerik UI components for Blazor: Following instructions, it starts with needing to install nuget.exe; that will make the nuget package push work, as well.
+Add to the prerequisites part of the doc the need to download and install nuget.exe, and then to put it on the environment path.</p>
+
+<p>today, that is 32-bit V4.9.4, instal to programfiles(86)/nuget</p>
+
+<p>The follow Telerik instructions on how to add the telerik private feed to visual studio</p>
 
         
       </section>
@@ -355,10 +378,42 @@
       <footer class="page__meta">
         
         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ace" class="page__taxonomy-item" rel="tag">Ace</a><span class="sep">, </span>
+    
+      <a href="/tags/#acecommander" class="page__taxonomy-item" rel="tag">AceCommander</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#technical" class="page__taxonomy-item" rel="tag">technical</a>
+    
+    </span>
+  </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-06T10:22:50-06:00">April 6, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-25T12:02:23-06:00">April 25, 2021</time></p>
 
 
       </footer>
@@ -366,21 +421,22 @@
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?via=whertzing56&text=Welcome+to+Bill%27s+Blog%21%20https%3A%2F%2Fbillhertzing.github.io%2FWelcome-To-Bills-Blog%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=whertzing56&text=Introduction+To+Acecommander%20https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2FIntroduction-to-AceCommander%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbillhertzing.github.io%2FWelcome-To-Bills-Blog%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2FIntroduction-to-AceCommander%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbillhertzing.github.io%2FWelcome-To-Bills-Blog%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2FIntroduction-to-AceCommander%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/technical/Client-side-Blazor-Demos/" class="pagination--pager" title="Client Side Blazor Demos
+">Previous</a>
     
     
-      <a href="/technical/how-i-setup-this-github-pages-blog-site-part-01/" class="pagination--pager" title="How I Setup This Github Pages Blog Site Part 01
+      <a href="/technical/Powershell-snippets/" class="pagination--pager" title="Powershell Snippets
 ">Next</a>
     
   </nav>
@@ -414,11 +470,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-<<<<<<< HEAD
-        <a href="/political/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course/" rel="permalink">Word Template for letter to CPA HOA regarding sale of golf course
-=======
         <a href="/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="permalink">How I Setup This Github Pages Blog Site Part 04
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
 </a>
       
     </h2>
@@ -436,23 +488,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-<<<<<<< HEAD
-          1 minute read
-=======
           3 minute read
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
         
       </span>
     
   </p>
 
 
-<<<<<<< HEAD
-    <p class="archive__item-excerpt" itemprop="description">A reformatting of Jerry D’s response into a Microsoft Word letter .
-</p>
-=======
     <p class="archive__item-excerpt" itemprop="description">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series...</p>
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
   </article>
 </div>
 
@@ -466,11 +509,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-<<<<<<< HEAD
-        <a href="/technical/how-i-setup-this-github-pages-blog-site-part-03/" rel="permalink">How I Setup This Github Pages Blog Site Part 03
-=======
         <a href="/technical/Repository-Interrelationships/" rel="permalink">Repository Interrelationships
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
 </a>
       
     </h2>
@@ -488,23 +527,15 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-<<<<<<< HEAD
-          19 minute read
-=======
           4 minute read
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
         
       </span>
     
   </p>
 
 
-<<<<<<< HEAD
-    <p class="archive__item-excerpt" itemprop="description">Welcome to the third part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first two post in the seri...</p>
-=======
     <p class="archive__item-excerpt" itemprop="description">– add dot diagram here? use a png to start.
 </p>
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
   </article>
 </div>
 
@@ -518,11 +549,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-<<<<<<< HEAD
-        <a href="/personal/Eulogy-for-Molly-the-Dog/" rel="permalink">Eulogy for molly the dog
-=======
         <a href="/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="permalink">Powershell To Convert Nest Report To Excel Pivot Table
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
 </a>
       
     </h2>
@@ -547,14 +574,10 @@
   </p>
 
 
-<<<<<<< HEAD
-    <p class="archive__item-excerpt" itemprop="description">I didn’t think that the very first post I’d make under this personal section would be in memory of Molly. She went from healthy to deathly in just three week...</p>
-=======
     <p class="archive__item-excerpt" itemprop="description">Notes for PowerShell SLC meetup
  1) List of cool PowerShell projects folks wold like to work on
  1) signup for one, or more, projects
  1) Pair or team progra...</p>
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
   </article>
 </div>
 
@@ -568,11 +591,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-<<<<<<< HEAD
-        <a href="/technical/how-i-setup-this-github-pages-blog-site-part-02/" rel="permalink">How I Setup This Github Pages Blog Site Part 02
-=======
         <a href="/technical/Powershell-snippets/" rel="permalink">Powershell Snippets
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
 </a>
       
     </h2>
@@ -590,20 +609,13 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-<<<<<<< HEAD
-          19 minute read
-=======
           less than 1 minute read
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
         
       </span>
     
   </p>
 
 
-<<<<<<< HEAD
-    <p class="archive__item-excerpt" itemprop="description">Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series ...</p>
-=======
     <p class="archive__item-excerpt" itemprop="description">
   
     
@@ -611,7 +623,6 @@
       where {$_.fullname -match “cshtml”}
       foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }
 ...</p>
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
   </article>
 </div>
 
@@ -663,7 +674,7 @@
 <a href=https://github.com/BillHertzing/.github/blob/main/CODE_OF_CONDUCT.md>Code of Conduct</a>
 <a href=https://github.com/BillHertzing/.github/blob/main/CONTRIBUTING.md>CONTRIBUTING</a> 
 Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
-Site Release V0.03.001</div>
+Site Release V0.03.000</div>
 
       </footer>
     </div>
@@ -680,8 +691,8 @@ Site Release V0.03.001</div>
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://billhertzing.github.io/Welcome-To-Bills-Blog/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/Welcome-To-Bills-Blog"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://billhertzing.github.io/technical/Introduction-to-AceCommander/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/technical/Introduction-to-AceCommander"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
