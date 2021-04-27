@@ -1,6 +1,6 @@
 ---
 Title: Adventures in Voice Diction and Commands for a Developer
-tags: Dictation Voice
+tags: [Voice Dictation, Voice Commands]
 description: Using Voice Dictation in the development process.
 category: technical
 ---

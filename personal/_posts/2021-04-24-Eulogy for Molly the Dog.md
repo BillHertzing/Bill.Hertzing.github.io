@@ -1,7 +1,7 @@
 ---
 
 Title: Eulogy for Molly the Dog
-tags: Molly Personal
+tags: [Personal, Molly]
 description: Pictures and reminiscences of our beloved departed pooch.
 category: personal
 gallery:

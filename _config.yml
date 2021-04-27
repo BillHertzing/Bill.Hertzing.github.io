@@ -240,29 +240,59 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+# category_archive:
+#   type: liquid
+#   path: /categories/
+# tag_archive:
+#   type: liquid
+#   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
 # HTML Compression
 # - https://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
     envs: development
+
+# Custom Sidebar Navigation
+docs:
+  - title:  Repositories Overview
+    children:
+      - title: "Overview Guide"
+        url: /docs/overview-guide/
+      - title: "Structure"
+        url: /docs/structure/
+      - title: "Testing"
+        url: /docs/Testing/
+      - title: "ReleaseProcess"
+        url: /docs/ReleaseProcess/
+      - title: "Upgrading"
+        url: /docs/upgrading/
+      - title: "EndOfLife"
+        url: /docs/EndOfLife/
+  - title:  SCM Conventions
+    children:
+      - title: "SCM for Code, Doc, and DB"
+        url: /docs/SCM-Conventions/overview/
+      - title: "Code SCM"
+        url: /docs/Code-VersionControlProcess/
+      - title: "Docs SCM"
+        url: /docs/Documentation-VersionControlProcess/
+      - title: "DB SCM"
+        url: /docs/DataBase-VersionControlProcess/
+      - title: "Peer Repository SCM"
+        url: /docs/Peer-repository-AutoDoc-VersionControlProcess/
 
 
 # Defaults

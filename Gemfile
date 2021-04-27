@@ -25,6 +25,7 @@ group :jekyll_plugins do
   gem "jekyll-timeago", "~> 0.14.0"
   gem "jekyll_version_plugin", "~> 2.0.0"
   #  gem "jekyll-minifier", "~> 0.1.10"
+  gem "jekyll-archives", "~> 2.2.1"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

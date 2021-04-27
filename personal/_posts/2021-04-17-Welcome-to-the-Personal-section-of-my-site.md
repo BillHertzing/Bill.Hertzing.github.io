@@ -1,7 +1,7 @@
 ---
 Title: Welcome to the Personal section of my site
 date: 2021-04-17 12:00:50 -0600
-tags: Introduction Personal
+tags: [Personal]
 description: Explanation of how to register for and use the personal section of this site.
 category: personal
 ---

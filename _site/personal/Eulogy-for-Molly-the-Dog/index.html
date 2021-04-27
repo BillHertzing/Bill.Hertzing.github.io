@@ -149,7 +149,21 @@
           Bill's Blog
           <span class="site-subtitle">Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!</span>
         </a>
-        <ul class="visible-links"></ul>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/page-archive/">Pages</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/">Collections</a>
+            </li><li class="masthead__menu-item">
+              <a href="/ChangeLog/">ChangeLog</a>
+            </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -670,38 +684,6 @@
       <footer class="page__meta">
         
         
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#molly" class="page__taxonomy-item" rel="tag">Molly</a><span class="sep">, </span>
-    
-      <a href="/tags/#personal" class="page__taxonomy-item" rel="tag">Personal</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#personal" class="page__taxonomy-item" rel="tag">personal</a>
-    
-    </span>
-  </p>
 
 
         
@@ -763,10 +745,14 @@
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
 <<<<<<< HEAD
+<<<<<<< HEAD
         <a href="/political/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course/" rel="permalink">Word Template for letter to CPA HOA regarding sale of golf course
 =======
         <a href="/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="permalink">How I Setup This Github Pages Blog Site Part 04
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+        <a href="/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="permalink">Powershell To Convert Nest Report To Excel Pivot Table
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
 </a>
       
     </h2>
@@ -785,10 +771,14 @@
         <i class="far fa-clock" aria-hidden="true"></i>
         
 <<<<<<< HEAD
+<<<<<<< HEAD
           1 minute read
 =======
           3 minute read
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+          1 minute read
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
         
       </span>
     
@@ -796,11 +786,16 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <p class="archive__item-excerpt" itemprop="description">A reformatting of Jerry D’s response into a Microsoft Word letter .
 </p>
 =======
     <p class="archive__item-excerpt" itemprop="description">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series...</p>
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+    <p class="archive__item-excerpt" itemprop="description">A Powershell script to read a Nest history report and dump it into an Excel pivot table.
+</p>
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
   </article>
 </div>
 
@@ -848,9 +843,13 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <p class="archive__item-excerpt" itemprop="description">Welcome to the third part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first two post in the seri...</p>
 =======
     <p class="archive__item-excerpt" itemprop="description">– add dot diagram here? use a png to start.
+=======
+    <p class="archive__item-excerpt" itemprop="description">An explanation of how my technical repositories relate to one another.
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
 </p>
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
   </article>
@@ -867,10 +866,14 @@
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
 <<<<<<< HEAD
+<<<<<<< HEAD
         <a href="/technical/how-i-setup-this-github-pages-blog-site-part-02/" rel="permalink">How I Setup This Github Pages Blog Site Part 02
 =======
         <a href="/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="permalink">Powershell To Convert Nest Report To Excel Pivot Table
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+        <a href="/technical/Powershell-snippets/" rel="permalink">Powershell Snippets
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
 </a>
       
     </h2>
@@ -889,16 +892,21 @@
         <i class="far fa-clock" aria-hidden="true"></i>
         
 <<<<<<< HEAD
+<<<<<<< HEAD
           18 minute read
 =======
           1 minute read
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+          less than 1 minute read
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
         
       </span>
     
   </p>
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <p class="archive__item-excerpt" itemprop="description">Welcome to the second part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first post in the series ...</p>
 =======
@@ -907,6 +915,15 @@
  1) signup for one, or more, projects
  1) Pair or team progra...</p>
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+    <p class="archive__item-excerpt" itemprop="description">
+  
+    
+      Get-ChildItem -File -r
+      where {$_.fullname -match “cshtml”}
+      foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }
+...</p>
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
   </article>
 </div>
 
@@ -921,10 +938,14 @@
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
 <<<<<<< HEAD
+<<<<<<< HEAD
         <a href="/political/Why-I-wanted-a-Blog/" rel="permalink">Why I Wanted A Blog
 =======
         <a href="/technical/Powershell-snippets/" rel="permalink">Powershell Snippets
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+        <a href="/technical/Client-side-Blazor-Demos/" rel="permalink">Client Side Blazor Demos
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
 </a>
       
     </h2>
@@ -943,16 +964,21 @@
         <i class="far fa-clock" aria-hidden="true"></i>
         
 <<<<<<< HEAD
+<<<<<<< HEAD
           6 minute read
 =======
           less than 1 minute read
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+          27 minute read
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
         
       </span>
     
   </p>
 
 
+<<<<<<< HEAD
     <p class="archive__item-excerpt" itemprop="description">
 <<<<<<< HEAD
   As a place to share knowledge, tips and how-tos, mostly regarding development, operations and monitoring of computer systems.
@@ -965,6 +991,9 @@
       foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }
 ...</p>
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+    <p class="archive__item-excerpt" itemprop="description">Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spen...</p>
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
   </article>
 </div>
 

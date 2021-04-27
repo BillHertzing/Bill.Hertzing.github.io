@@ -1,16 +1,17 @@
 ---
 Title: Repository Interrelationships
-tags: AceCommander ATAP.Utilities Blazor, StronglyTypedIds, BillHertzing.github.io
+tags: [AceCommander, ATAP.Utilities, Blazor, StronglyTypedIds, BillHertzing Blog]
 description: A broad overview of the repositories in my GitHub account, and how they relate toone another
-category: technical
+category: technical 
 ---
+
+An explanation of how my technical repositories relate to one another.
 
 -- add dot diagram here? use a png to start.
 
 I am writing a program that will help you make / string together programs that automate some of your ToDos in real life. The program I'm writing runs anywhere .Net Core 3.0 runs, uses a Blazor interface, supports a bare minimum "I'm here" in minimal mode, but can be expanded by the enabling of features and loading of PlugIns. PlugIns are designed to share their public data, methods and events with each other.
 
 I'm also publishing a series of Demo programs that explain in detail the concepts and constructs used in the AceCommander program. This is ensure I understand, and can explain, what 'the code I got from goggling the Internet' is doing when I use it. The Demos are also another way I want to give back and help others understand how the C# language and the .Net  libraries can be used.
-
 
 The software in these repositoies are an ongoing effort to collect in a centralized location data structures, algorithms an concepts that I've developed or used over the coursse of 45 years of working with computers.
 
@@ -31,7 +32,7 @@ Distribution of Ace is done via NuGet packaages and the Chocolatey pacakge manag
 
 Wherever possible, algorithms and data structures used in Ace are re-factored into utility libraries, to promote code reuse as much as possible.  These utility libraries are managed within the ATAP.Utilities repository. There are currently over 30 packages in this reposity. Some are little more than placeholders with only one or two simple fuctions; other utiltiy libraries contain larger numbers of structures and functions.
 
-Utility libraries are designed so that data structures are packaged in one unit, objects in another, and static functions in a third unit. This allows the data structures to be shared between the GUI code and the microservice code, using serialization mechanisms found in the data structures pacakge.
+Utility libraries are designed so that data structures are packaged in one unit, objects in another, and static functions in a third unit. This allows the data structures to be shared between the GUI code and the microservice code, using serialization mechanisms found in the data structures package.
 
 The process needed to translate the code found in these repositories into versioned distribution pacakges, and integrting these ditribution packages into the exisitign world-wide software distribution system, is not trivial. Three of the ATAP.Utility packages are devoted to the Build Tooling code needed to make this happen. In the course of developing thsse BuildTooling pacakages, a number of issues surfaced, and their olutions implemented. You will find in the documentation library a document devoted to explaining how the BuilTooling parts interact with the building (MSBuild.exe invoked via Visual Studio, and invoked via dotnet.exe), testing/verification (UnitTest, IntegrationTest, End-To-End (E2E) test, Appveyor) and distribution (NuGet and Chocolaty) tool suites.
 

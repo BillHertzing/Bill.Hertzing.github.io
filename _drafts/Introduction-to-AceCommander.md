@@ -1,6 +1,6 @@
 ---
 Title: Introduction to AceCommander
-tags: Ace AceCommander
+tags: [AceCommander]
 description: The motivation for and introduction to the AceCommander app
 category: technical
 ---

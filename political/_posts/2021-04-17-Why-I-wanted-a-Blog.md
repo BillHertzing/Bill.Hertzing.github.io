@@ -1,7 +1,7 @@
 ---
 Title: Why I wanted a Blog
 date: 2021-04-17 12:00:50 -0600
-tags: political
+tags: [Political]
 description: The motives that led me to start this site
 category: political
 ---

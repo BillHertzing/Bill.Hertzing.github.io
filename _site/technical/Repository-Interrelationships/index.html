@@ -46,7 +46,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-04-25T12:02:23-06:00">
+  <meta property="article:published_time" content="2021-04-27T09:42:47-06:00">
 
 
 
@@ -149,7 +149,21 @@
           Bill's Blog
           <span class="site-subtitle">Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!</span>
         </a>
-        <ul class="visible-links"></ul>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/page-archive/">Pages</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/">Collections</a>
+            </li><li class="masthead__menu-item">
+              <a href="/ChangeLog/">ChangeLog</a>
+            </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -290,8 +304,8 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Repository Interrelationships">
-    <meta itemprop="description" content="– add dot diagram here? use a png to start.">
-    <meta itemprop="datePublished" content="2021-04-25T12:02:23-06:00">
+    <meta itemprop="description" content="An explanation of how my technical repositories relate to one another.">
+    <meta itemprop="datePublished" content="2021-04-27T09:42:47-06:00">
     
 
     <div class="page__inner-wrap">
@@ -333,7 +347,9 @@
             </nav>
           </aside>
         
-        <p>– add dot diagram here? use a png to start.</p>
+        <p>An explanation of how my technical repositories relate to one another.</p>
+
+<p>– add dot diagram here? use a png to start.</p>
 
 <p>I am writing a program that will help you make / string together programs that automate some of your ToDos in real life. The program I’m writing runs anywhere .Net Core 3.0 runs, uses a Blazor interface, supports a bare minimum “I’m here” in minimal mode, but can be expanded by the enabling of features and loading of PlugIns. PlugIns are designed to share their public data, methods and events with each other.</p>
 
@@ -358,7 +374,7 @@ ServiceStack is the current microservice provider, and static web server.</p>
 
 <p>Wherever possible, algorithms and data structures used in Ace are re-factored into utility libraries, to promote code reuse as much as possible.  These utility libraries are managed within the ATAP.Utilities repository. There are currently over 30 packages in this reposity. Some are little more than placeholders with only one or two simple fuctions; other utiltiy libraries contain larger numbers of structures and functions.</p>
 
-<p>Utility libraries are designed so that data structures are packaged in one unit, objects in another, and static functions in a third unit. This allows the data structures to be shared between the GUI code and the microservice code, using serialization mechanisms found in the data structures pacakge.</p>
+<p>Utility libraries are designed so that data structures are packaged in one unit, objects in another, and static functions in a third unit. This allows the data structures to be shared between the GUI code and the microservice code, using serialization mechanisms found in the data structures package.</p>
 
 <p>The process needed to translate the code found in these repositories into versioned distribution pacakges, and integrting these ditribution packages into the exisitign world-wide software distribution system, is not trivial. Three of the ATAP.Utility packages are devoted to the Build Tooling code needed to make this happen. In the course of developing thsse BuildTooling pacakages, a number of issues surfaced, and their olutions implemented. You will find in the documentation library a document devoted to explaining how the BuilTooling parts interact with the building (MSBuild.exe invoked via Visual Studio, and invoked via dotnet.exe), testing/verification (UnitTest, IntegrationTest, End-To-End (E2E) test, Appveyor) and distribution (NuGet and Chocolaty) tool suites.</p>
 
@@ -449,48 +465,10 @@ http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-s
       <footer class="page__meta">
         
         
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#acecommander" class="page__taxonomy-item" rel="tag">AceCommander</a><span class="sep">, </span>
-    
-      <a href="/tags/#atap-utilities" class="page__taxonomy-item" rel="tag">ATAP.Utilities</a><span class="sep">, </span>
-    
-      <a href="/tags/#billhertzing-github-io" class="page__taxonomy-item" rel="tag">BillHertzing.github.io</a><span class="sep">, </span>
-    
-      <a href="/tags/#blazor" class="page__taxonomy-item" rel="tag">Blazor,</a><span class="sep">, </span>
-    
-      <a href="/tags/#stronglytypedids" class="page__taxonomy-item" rel="tag">StronglyTypedIds,</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#technical" class="page__taxonomy-item" rel="tag">technical</a>
-    
-    </span>
-  </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-25T12:02:23-06:00">April 25, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-27T09:42:47-06:00">April 27, 2021</time></p>
 
 
       </footer>
@@ -509,11 +487,11 @@ http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-s
       
   <nav class="pagination">
     
-      <a href="/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" class="pagination--pager" title="Powershell To Convert Nest Report To Excel Pivot Table
+      <a href="/technical/Powershell-snippets/" class="pagination--pager" title="Powershell Snippets
 ">Previous</a>
     
     
-      <a href="/technical/how-i-setup-this-github-pages-blog-site-part-04/" class="pagination--pager" title="How I Setup This Github Pages Blog Site Part 04
+      <a href="/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" class="pagination--pager" title="Powershell To Convert Nest Report To Excel Pivot Table
 ">Next</a>
     
   </nav>
@@ -537,45 +515,6 @@ http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-s
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="permalink">How I Setup This Github Pages Blog Site Part 04
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series...</p>
-  </article>
-</div>
-
         
           
 
@@ -611,10 +550,8 @@ http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-s
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Notes for PowerShell SLC meetup
- 1) List of cool PowerShell projects folks wold like to work on
- 1) signup for one, or more, projects
- 1) Pair or team progra...</p>
+    <p class="archive__item-excerpt" itemprop="description">A Powershell script to read a Nest history report and dump it into an Excel pivot table.
+</p>
   </article>
 </div>
 
@@ -673,7 +610,7 @@ http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-s
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/technical/Introduction-to-AceCommander/" rel="permalink">Introduction To Acecommander
+        <a href="/technical/Client-side-Blazor-Demos/" rel="permalink">Client Side Blazor Demos
 </a>
       
     </h2>
@@ -691,14 +628,53 @@ http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-s
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          26 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">The MySQL a is \called AceCommander, it holds userauth user tables
+    <p class="archive__item-excerpt" itemprop="description">Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spen...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/" rel="permalink">Adventures In Voice Dictation And Commands For A Developer
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Voice dictation is the subject of my second blog post.
 </p>
   </article>
 </div>

@@ -1,6 +1,6 @@
 ---
 Title: Client-side Blazor demos
-tags: Blazor
+tags: [Blazor, Demos]
 description: Overview of the BlazorDemos repository
 category: technical
 ---
@@ -337,8 +337,8 @@ a discussion of the InstallUti;l
 You will need to install a `.Net Core Global Tool` called `installUtil`. From a VS 2019 command prompt, run `dotnet tool install -g --framework netcoreapp3.0 --version 1.2.0 InstallUtil`. Of course check that this is still the latest version and adjust the instructions accordingly, if a later version exists.
 
 ### Publishing Steps
-* focuses on automating the publishing process, and provides a PowerShell script `PublishingAutomation.ps1`
 
+* focuses on automating the publishing process, and provides a PowerShell script `PublishingAutomation.ps1`
 
 ## Demo14 - (TBD) Publishing both the GUI and the Server to Windows Subsystem for Linux as a Daemon
 ### The GUI focuses on 

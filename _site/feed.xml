@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-05-02T10:36:32-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We&apos;ve got it all!</subtitle><author><name>William (Bill) Hertzing</name></author><entry><title type="html">Word Template for letter to CPA HOA regarding sale of golf course</title><link href="https://billhertzing.github.io/political/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course/" rel="alternate" type="text/html" title="Word Template for letter to CPA HOA regarding sale of golf course" /><published>2021-05-01T23:17:00-06:00</published><updated>2021-05-01T23:17:00-06:00</updated><id>https://billhertzing.github.io/political/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course</id><content type="html" xml:base="https://billhertzing.github.io/political/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course/">&lt;p&gt;A reformatting of Jerry D’s response into a Microsoft Word letter .&lt;/p&gt;
 
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
@@ -18,101 +19,32 @@ The other is a longer letter with the voting information and setting out many re
 =======
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-25T22:42:13-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We&apos;ve got it all!</subtitle><author><name>William (Bill) Hertzing</name></author><entry><title type="html">How I Setup This Github Pages Blog Site Part 04</title><link href="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 04" /><published>2021-04-25T22:38:36-06:00</published><updated>2021-04-25T22:38:36-06:00</updated><id>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04</id><content type="html" xml:base="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/">&lt;p&gt;Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHub Pages Blog Site Part 01&lt;/a&gt;, &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-02/&quot;&gt;How I setup this GitHub Pages Blog Site Part 02&lt;/a&gt;, and &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-03/&quot;&gt;How I setup this GitHub Pages Blog Site Part 03&lt;/a&gt; you should probably give them a quick review, to become familiar with how the site has been built up to this point.&lt;/p&gt;
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-04-27T09:44:55-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We&apos;ve got it all!</subtitle><author><name>William (Bill) Hertzing</name></author><entry><title type="html">Powershell To Convert Nest Report To Excel Pivot Table</title><link href="https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="alternate" type="text/html" title="Powershell To Convert Nest Report To Excel Pivot Table" /><published>2021-04-27T09:44:54-06:00</published><updated>2021-04-27T09:44:54-06:00</updated><id>https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table</id><content type="html" xml:base="https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/">&lt;p&gt;A Powershell script to read a Nest history report and dump it into an Excel pivot table.&lt;/p&gt;
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
 
-&lt;p&gt;The next steps will be to implement the features specified in &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/4&quot;&gt;Milestone 0.04.0&lt;/a&gt;. I’ve already created Milestones for Release V0.05, &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/5&quot;&gt;Milestone 0.05.0&lt;/a&gt; as well and updated the Milestone &lt;em&gt;Release Far Future&lt;/em&gt; to reflect whats planned for later. Release V0.05 calls for creation of a  Github project for tracking future features,So at that point hopefully, there will be a single point for tracking and reporting on planned and requested features.&lt;/p&gt;
+&lt;p&gt;Notes for PowerShell SLC meetup
+ 1) List of cool PowerShell projects folks wold like to work on
+ 1) signup for one, or more, projects
+ 1) Pair or team programming work for 1 month and share with meetup group following month
+ 1) Use GitHub, OSS, MIT license for the 
+ 1) Some kind of coding collaboration tool? and/or gitter room? or slack channel? that everyone can participate in
+ 1) Project list
+    1) PowerShell in DevOps
+	  1) tokenize .razor files
+	  1) run a PowerShell scriptblock against all files matching a filename pattern
+    1) PowerShell and creating SVG graphs
+	  1) Read a source (file (local, remote, or UNC); database;)
+	  1) Provide a scriptblock to transform the raw data into a structured hierarchy
+	  1) Provide a scriptblock to transform the structured hierarchy into a digraph (a sctructure that describes a graph)
+	  1) Provide a set of output providers (write to file (local, remote, UNC); database
+	  1) PowerShell option to send the digraph to PlantUML. which can create SVG drawing of the graph 
+	1) PowerShell templates
+	  1) using Plaster to scaffold a new PowerShell project
+	  1) automatically setting up the Pester test runner in a new PowerShell project
+	  1) automatically setting up Jenkins to create a CI/CD pipeline for a new PowerShell project&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Powershell" /><category term="Nest" /><category term="RegEx" /><category term="Excel" /><category term="PivotTable" /><summary type="html">A Powershell script to read a Nest history report and dump it into an Excel pivot table.</summary></entry><entry><title type="html">Repository Interrelationships</title><link href="https://billhertzing.github.io/technical/Repository-Interrelationships/" rel="alternate" type="text/html" title="Repository Interrelationships" /><published>2021-04-27T09:42:47-06:00</published><updated>2021-04-27T09:42:47-06:00</updated><id>https://billhertzing.github.io/technical/Repository-Interrelationships</id><content type="html" xml:base="https://billhertzing.github.io/technical/Repository-Interrelationships/">&lt;p&gt;An explanation of how my technical repositories relate to one another.&lt;/p&gt;
 
-&lt;h2 id=&quot;add-a-new-branch-sprintforrelease004000&quot;&gt;add a new branch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForRelease0.04.000&lt;/code&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch create SprintForRelease0.04.000&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;add-jekyll-compose&quot;&gt;Add jekyll-compose&lt;/h2&gt;
-
-&lt;p&gt;jekyll-compose adds commands that help streamline the creation and publishing of posts. Installation instructions and details can be found in &lt;a href=&quot;https://github.com/jekyll/jekyll-compose&quot;&gt;jekyll-compose&lt;/a&gt;. What follows are th steps I took and choices I made for this site.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Edit the Gemfile in the root of the repo.&lt;/li&gt;
-  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &apos;jekyll-compose&apos;, group: [:jekyll_plugins]&lt;/code&gt; just above the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugins:&lt;/code&gt; key.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Refer to detailed instructions in &lt;a href=&quot;https://github.com/jekyll/jekyll-compose&quot;&gt;jekyll-compose&lt;/a&gt; for using the new commands. This post was drafted and published using the commands added by this tool, and it made the process much much easier. I created the draft of this post using the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll draft &quot;how-i-setup-this-github-pages-blog-site-part-04&quot;&lt;/code&gt;, which placed a file containing just Front Matter in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;h2 id=&quot;update-the-commit-template&quot;&gt;Update the commit template&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GitTemplates/git.commit.template.txt&lt;/code&gt; and change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;03&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;04&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;save the file&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;first-commit-on-the-sprint-branch&quot;&gt;First commit on the sprint branch&lt;/h2&gt;
-
-&lt;p&gt;Commit the changes and use VSC to synchronize changes with the remote, then inspect the Github repository to ensure the branch and first commit exist on the repo. I like using Git Lens along with Git Graph. ToDo: insert jpg You can see the site development history clearly.&lt;/p&gt;
-
-&lt;p&gt;To show what a feature development branch looks like with more than one commit, I’ll make a small one now.&lt;/p&gt;
-
-&lt;p&gt;Afterwards, this is what it looks like ToDo: insert jpg.&lt;/p&gt;
-
-&lt;p&gt;And a third: ToDo: insert jpg&lt;/p&gt;
-
-&lt;h2 id=&quot;add-jekyll-minifier&quot;&gt;Add jekyll-minifier&lt;/h2&gt;
-
-&lt;p&gt;Minification is the process of rewriting the stream of data sent from the server to the browser to make the stream as small as possible.Minification of your site is something that all good digital properties should do. It’s just manners. But this has consequences if a developer is trying to read the data stream and debug problems.&lt;/p&gt;
-
-&lt;p&gt;As with any optimization, it is important to measure the baseline, and then the improvement. ToDo: A short tutorial on Fiddler 4. ToDo: Find online site that can quantify the number of bytes. Or see if Fiddler 4 has that capability.&lt;/p&gt;
-
-&lt;p&gt;This minifier allows fine control over minification of HTML, JavaScript, CSS, and Json, as well as many more minification options.&lt;/p&gt;
-
-&lt;p&gt;Detailed instructions are here at &lt;a href=&quot;https://github.com/digitalsparky/jekyll-minifier&quot;&gt;jekyll-minifier&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-minifier&lt;/code&gt; Make a note of the version installed, mine was 0.1.10&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; at the root of the repo, and add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll-minifier&quot;, &quot;~&amp;gt; 0.1.10&quot;&lt;/code&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;group :jekyll_plugins do&lt;/code&gt; section.&lt;/li&gt;
-  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and add&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-minifier&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Further down the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; add lines that control the minifier’s settings. Add the entire list now, and later we will work through each setting and decide if this site will need it.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;jekyll-minifier&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;preserve_php&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_spaces_inside_tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_multi_spaces&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_intertag_spaces&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_quotes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;compress_css&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;compress_javascript&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;compress_json&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;               &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;simple_doctype&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_script_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_style_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_link_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_form_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_input_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_javascript_protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_http_protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;remove_https_protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;preserve_line_breaks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;simple_boolean_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;compress_js_templates&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;preserve_patterns&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# Default: (empty)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;uglifier_args&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;# Default: (empty)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;&lt;em&gt;es6 support is experimental.&lt;/em&gt;&lt;/strong&gt;  If your site is using es6 scripts, see the &lt;a href=&quot;https://github.com/digitalsparky/jekyll-minifier&quot;&gt;jekyll-minifier&lt;/a&gt; documentation for possible issues.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt; and ensure the site looks like it should. The re-run the tests that measure the size of the data stream.&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Jekyll" /><category term="GitHubPages" /><summary type="html">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part 02, and How I setup this GitHub Pages Blog Site Part 03 you should probably give them a quick review, to become familiar with how the site has been built up to this point.</summary></entry><entry><title type="html">Repository Interrelationships</title><link href="https://billhertzing.github.io/technical/Repository-Interrelationships/" rel="alternate" type="text/html" title="Repository Interrelationships" /><published>2021-04-25T12:02:23-06:00</published><updated>2021-04-25T12:02:23-06:00</updated><id>https://billhertzing.github.io/technical/Repository-Interrelationships</id><content type="html" xml:base="https://billhertzing.github.io/technical/Repository-Interrelationships/">&lt;p&gt;– add dot diagram here? use a png to start.&lt;/p&gt;
+&lt;p&gt;– add dot diagram here? use a png to start.&lt;/p&gt;
 
 &lt;p&gt;I am writing a program that will help you make / string together programs that automate some of your ToDos in real life. The program I’m writing runs anywhere .Net Core 3.0 runs, uses a Blazor interface, supports a bare minimum “I’m here” in minimal mode, but can be expanded by the enabling of features and loading of PlugIns. PlugIns are designed to share their public data, methods and events with each other.&lt;/p&gt;
 
@@ -137,7 +69,7 @@ ServiceStack is the current microservice provider, and static web server.&lt;/p&
 
 &lt;p&gt;Wherever possible, algorithms and data structures used in Ace are re-factored into utility libraries, to promote code reuse as much as possible.  These utility libraries are managed within the ATAP.Utilities repository. There are currently over 30 packages in this reposity. Some are little more than placeholders with only one or two simple fuctions; other utiltiy libraries contain larger numbers of structures and functions.&lt;/p&gt;
 
-&lt;p&gt;Utility libraries are designed so that data structures are packaged in one unit, objects in another, and static functions in a third unit. This allows the data structures to be shared between the GUI code and the microservice code, using serialization mechanisms found in the data structures pacakge.&lt;/p&gt;
+&lt;p&gt;Utility libraries are designed so that data structures are packaged in one unit, objects in another, and static functions in a third unit. This allows the data structures to be shared between the GUI code and the microservice code, using serialization mechanisms found in the data structures package.&lt;/p&gt;
 
 &lt;p&gt;The process needed to translate the code found in these repositories into versioned distribution pacakges, and integrting these ditribution packages into the exisitign world-wide software distribution system, is not trivial. Three of the ATAP.Utility packages are devoted to the Build Tooling code needed to make this happen. In the course of developing thsse BuildTooling pacakages, a number of issues surfaced, and their olutions implemented. You will find in the documentation library a document devoted to explaining how the BuilTooling parts interact with the building (MSBuild.exe invoked via Visual Studio, and invoked via dotnet.exe), testing/verification (UnitTest, IntegrationTest, End-To-End (E2E) test, Appveyor) and distribution (NuGet and Chocolaty) tool suites.&lt;/p&gt;
 
@@ -219,26 +151,7 @@ https://www.dotnetcurry.com/aspnet-core/1414/unit-testing-aspnet-core
 https://www.dotnetcurry.com/aspnet-core/1420/integration-testing-aspnet-core
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.1&amp;amp;tabs=aspnetcore2x
 https://www.dotnetcurry.com/aspnet-core/1433/end-to-end-testing-aspnet-core
-http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-selenium-webdriver&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="AceCommander" /><category term="ATAP.Utilities" /><category term="Blazor," /><category term="StronglyTypedIds," /><category term="BillHertzing.github.io" /><summary type="html">– add dot diagram here? use a png to start.</summary></entry><entry><title type="html">Powershell To Convert Nest Report To Excel Pivot Table</title><link href="https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="alternate" type="text/html" title="Powershell To Convert Nest Report To Excel Pivot Table" /><published>2021-04-25T12:02:23-06:00</published><updated>2021-04-25T12:02:23-06:00</updated><id>https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table</id><content type="html" xml:base="https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/">&lt;p&gt;Notes for PowerShell SLC meetup
- 1) List of cool PowerShell projects folks wold like to work on
- 1) signup for one, or more, projects
- 1) Pair or team programming work for 1 month and share with meetup group following month
- 1) Use GitHub, OSS, MIT license for the 
- 1) Some kind of coding collaboration tool? and/or gitter room? or slack channel? that everyone can participate in
- 1) Project list
-    1) PowerShell in DevOps
-	  1) tokenize .razor files
-	  1) run a PowerShell scriptblock against all files matching a filename pattern
-    1) PowerShell and creating SVG graphs
-	  1) Read a source (file (local, remote, or UNC); database;)
-	  1) Provide a scriptblock to transform the raw data into a structured hierarchy
-	  1) Provide a scriptblock to transform the structured hierarchy into a digraph (a sctructure that describes a graph)
-	  1) Provide a set of output providers (write to file (local, remote, UNC); database
-	  1) PowerShell option to send the digraph to PlantUML. which can create SVG drawing of the graph 
-	1) PowerShell templates
-	  1) using Plaster to scaffold a new PowerShell project
-	  1) automatically setting up the Pester test runner in a new PowerShell project
-	  1) automatically setting up Jenkins to create a CI/CD pipeline for a new PowerShell project&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Powershell" /><category term="Nest" /><category term="RegEx" /><category term="PIvotTable" /><category term="Excel" /><summary type="html">Notes for PowerShell SLC meetup 1) List of cool PowerShell projects folks wold like to work on 1) signup for one, or more, projects 1) Pair or team programming work for 1 month and share with meetup group following month 1) Use GitHub, OSS, MIT license for the 1) Some kind of coding collaboration tool? and/or gitter room? or slack channel? that everyone can participate in 1) Project list 1) PowerShell in DevOps 1) tokenize .razor files 1) run a PowerShell scriptblock against all files matching a filename pattern 1) PowerShell and creating SVG graphs 1) Read a source (file (local, remote, or UNC); database;) 1) Provide a scriptblock to transform the raw data into a structured hierarchy 1) Provide a scriptblock to transform the structured hierarchy into a digraph (a sctructure that describes a graph) 1) Provide a set of output providers (write to file (local, remote, UNC); database 1) PowerShell option to send the digraph to PlantUML. which can create SVG drawing of the graph 1) PowerShell templates 1) using Plaster to scaffold a new PowerShell project 1) automatically setting up the Pester test runner in a new PowerShell project 1) automatically setting up Jenkins to create a CI/CD pipeline for a new PowerShell project</summary></entry><entry><title type="html">Powershell Snippets</title><link href="https://billhertzing.github.io/technical/Powershell-snippets/" rel="alternate" type="text/html" title="Powershell Snippets" /><published>2021-04-25T12:02:23-06:00</published><updated>2021-04-25T12:02:23-06:00</updated><id>https://billhertzing.github.io/technical/Powershell-snippets</id><content type="html" xml:base="https://billhertzing.github.io/technical/Powershell-snippets/">&lt;table&gt;
+http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-selenium-webdriver&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="AceCommander" /><category term="ATAP.Utilities" /><category term="Blazor" /><category term="StronglyTypedIds" /><category term="BillHertzing Blog" /><summary type="html">An explanation of how my technical repositories relate to one another.</summary></entry><entry><title type="html">Powershell Snippets</title><link href="https://billhertzing.github.io/technical/Powershell-snippets/" rel="alternate" type="text/html" title="Powershell Snippets" /><published>2021-04-27T09:42:23-06:00</published><updated>2021-04-27T09:42:23-06:00</updated><id>https://billhertzing.github.io/technical/Powershell-snippets</id><content type="html" xml:base="https://billhertzing.github.io/technical/Powershell-snippets/">&lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;Get-ChildItem -File -r&lt;/td&gt;
@@ -257,44 +170,7 @@ http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-s
       &lt;td&gt;foreach {$_.fullname}&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Powershell" /><summary type="html">Get-ChildItem -File -r where {$_.fullname -match “cshtml”} foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }</summary></entry><entry><title type="html">Introduction To Acecommander</title><link href="https://billhertzing.github.io/technical/Introduction-to-AceCommander/" rel="alternate" type="text/html" title="Introduction To Acecommander" /><published>2021-04-25T12:02:23-06:00</published><updated>2021-04-25T12:02:23-06:00</updated><id>https://billhertzing.github.io/technical/Introduction-to-AceCommander</id><content type="html" xml:base="https://billhertzing.github.io/technical/Introduction-to-AceCommander/">&lt;p&gt;The MySQL a is \called AceCommander, it holds userauth user tables&lt;/p&gt;
-
-&lt;p&gt;Install MySql here:&lt;/p&gt;
-
-&lt;p&gt;the database files need to be under dropbox, so a my.ini file has to be created, and MySQL has to be told to look for it under a dropbox location.
-The current location is under &lt;drive&gt;:/DropBox/MySQLData&lt;/drive&gt;&lt;/p&gt;
-
-&lt;p&gt;every developer, qa, and test environment, as well as every production system, needs its own AceCommander database
-the my.ini file specifies this as &lt;drive&gt;:/dropbox/MySQL/data&lt;/drive&gt;&lt;/p&gt;
-
-&lt;p&gt;The MySQL database name, user, and user password is in the configuration file, as part of the MySQL connection string.&lt;/p&gt;
-
-&lt;p&gt;Make sure that on the development or QA or production server, that the database exists, and that the specified user has the correct permissions and password set&lt;/p&gt;
-
-&lt;p&gt;LiquiBase is the Open Software tool that is used to keep version-controlled information on the MySL database schema and lookup tables’ data.&lt;/p&gt;
-
-&lt;p&gt;Service stack returns ‘403 - forbidden’ when Blazor GUI makes it’s first call to ServiceStack and asks for all of its DLL files. Have to document the addition of .dll to SS allowed file extensions
-Service stack returns ‘403 - forbidden’ when Blazor GUI makes it’s first call to ServiceStack and asks for all of its PDB files. Have to document the addition of .pdb to SS allowed file extensions. PDB files are for debugging&lt;/p&gt;
-
-&lt;p&gt;Also document the V S2019 requirement and the .DotNetCore V3 preview requirement.
-Maybe a section on how to upgrade from V0.5.0 to V0.9.0
-Document the issue with Blazor.Extensions.logging still being on V.0.7.0, and the conflict it caused, and how Blazor.extensions.Logging had to be ripped out.&lt;/p&gt;
-
-&lt;p&gt;Sentinel startup stuff&lt;/p&gt;
-
-&lt;p&gt;Document how to add SQLServer to a system, minimal, to use with Ace&lt;/p&gt;
-
-&lt;p&gt;For VS 2019:
-To automatically close the console when debugging stops, enable Tools-&amp;gt;Options-&amp;gt;Debugging-&amp;gt;Automatically close the console when debugging stops.&lt;/p&gt;
-
-&lt;p&gt;So, now enumerations are a code smell? https://github.com/ardalis/SmartEnum and others&lt;/p&gt;
-
-&lt;p&gt;Installing Telerik UI components for Blazor: Following instructions, it starts with needing to install nuget.exe; that will make the nuget package push work, as well.
-Add to the prerequisites part of the doc the need to download and install nuget.exe, and then to put it on the environment path.&lt;/p&gt;
-
-&lt;p&gt;today, that is 32-bit V4.9.4, instal to programfiles(86)/nuget&lt;/p&gt;
-
-&lt;p&gt;The follow Telerik instructions on how to add the telerik private feed to visual studio&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Ace" /><category term="AceCommander" /><summary type="html">The MySQL a is \called AceCommander, it holds userauth user tables</summary></entry><entry><title type="html">Client Side Blazor Demos</title><link href="https://billhertzing.github.io/technical/Client-side-Blazor-Demos/" rel="alternate" type="text/html" title="Client Side Blazor Demos" /><published>2021-04-25T12:02:23-06:00</published><updated>2021-04-25T12:02:23-06:00</updated><id>https://billhertzing.github.io/technical/Client-side-Blazor-Demos</id><content type="html" xml:base="https://billhertzing.github.io/technical/Client-side-Blazor-Demos/">&lt;p&gt;Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.&lt;/p&gt;
+&lt;/table&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Powershell" /><summary type="html">Get-ChildItem -File -r where {$_.fullname -match “cshtml”} foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }</summary></entry><entry><title type="html">Client Side Blazor Demos</title><link href="https://billhertzing.github.io/technical/Client-side-Blazor-Demos/" rel="alternate" type="text/html" title="Client Side Blazor Demos" /><published>2021-04-27T09:42:00-06:00</published><updated>2021-04-27T09:42:00-06:00</updated><id>https://billhertzing.github.io/technical/Client-side-Blazor-Demos</id><content type="html" xml:base="https://billhertzing.github.io/technical/Client-side-Blazor-Demos/">&lt;p&gt;Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.&lt;/p&gt;
 
 &lt;p&gt;Happy to report that one of my demos and my main app have both been upgraded to V3.0 Preview 5. There are (at least one) thing still broken in P5 that were broke in P4;&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Issue in Preview 4 &amp;amp; 5  requires the &quot;route&quot; to be a complete URL
@@ -714,6 +590,7 @@ The Common DTOs ..&lt;/p&gt;
 &lt;p&gt;You will need to install a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.Net Core Global Tool&lt;/code&gt; called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;installUtil&lt;/code&gt;. From a VS 2019 command prompt, run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet tool install -g --framework netcoreapp3.0 --version 1.2.0 InstallUtil&lt;/code&gt;. Of course check that this is still the latest version and adjust the instructions accordingly, if a later version exists.&lt;/p&gt;
 
 &lt;h3 id=&quot;publishing-steps-1&quot;&gt;Publishing Steps&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;focuses on automating the publishing process, and provides a PowerShell script &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PublishingAutomation.ps1&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -937,53 +814,7 @@ Blazored.LocalStorage&lt;/li&gt;
 
 &lt;h3 id=&quot;the-build--debug-tooling--7&quot;&gt;The build / debug tooling …&lt;/h3&gt;
 
-&lt;hr /&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Blazor" /><summary type="html">Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.</summary></entry><entry><title type="html">Case For A Non Anonymous Internet Part 01</title><link href="https://billhertzing.github.io/political/Case-for-a-non-anonymous-Internet-Part-01/" rel="alternate" type="text/html" title="Case For A Non Anonymous Internet Part 01" /><published>2021-04-25T12:02:23-06:00</published><updated>2021-04-25T12:02:23-06:00</updated><id>https://billhertzing.github.io/political/Case-for-a-non-anonymous-Internet-Part-01</id><content type="html" xml:base="https://billhertzing.github.io/political/Case-for-a-non-anonymous-Internet-Part-01/">&lt;h2 id=&quot;tl-dr&quot;&gt;TL DR&lt;/h2&gt;
-
-&lt;p&gt;Making people use their true identity when posting comments to my blog posts might make them more civil. It also allows for the creation of a history of behavior.&lt;/p&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;studies-showing-the-incident-and-degree-of-hateful-speech-declines-when-true-identity-is-required&quot;&gt;Studies showing the incident and degree of hateful speech declines when true identity is required&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;studies-showing-the-incident-and-degree-of-hateful-speech-increases-when-anonymity-is-allowed&quot;&gt;Studies showing the incident and degree of hateful speech increases when anonymity is allowed&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;
-
-&lt;h2 id=&quot;attributions&quot;&gt;Attributions&lt;/h2&gt;
-
-&lt;p&gt;ToDo: add content&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="political" /><category term="Non-Anonymous" /><category term="Internet" /><summary type="html">TL DR</summary></entry><entry><title type="html">Attributions For Internet Resources</title><link href="https://billhertzing.github.io/technical/Attributions-For-Internet-Resources/" rel="alternate" type="text/html" title="Attributions For Internet Resources" /><published>2021-04-25T12:02:23-06:00</published><updated>2021-04-25T12:02:23-06:00</updated><id>https://billhertzing.github.io/technical/Attributions-For-Internet-Resources</id><content type="html" xml:base="https://billhertzing.github.io/technical/Attributions-For-Internet-Resources/">&lt;h1&gt; People, Books, Articles, Blogs, websites that have sparked ideas or code used in this app
-
-&lt;h2&gt; Attribution for ideas to currently incorporated into the project
-
-|  Group  | Sub-group | ToolName |                  URL                 | NuGet                                    | Date Added | ByWhom |
-|:-------:|:---------:|:--------:|:------------------------------------:|------------------------------------------|:----------:|--------|
-| Testing | BDD       | SpecFlow | https://github.com/techtalk/SpecFlow | https://www.nuget.org/packages/SpecFlow/ | 06/17/2018 | WGH    |
-|         |           |          |                                      |                                          |            |        |
-|         |           |          |                                      |                                          |            |        |
-
-&lt;h2&gt; Ideas to be incorporated into the project
-
-|  Group  | Sub-group | ToolName |                  URL                 | NuGet                                    | Date Added | ByWhom |
-|:-------:|:---------:|:--------:|:------------------------------------:|------------------------------------------|:----------:|--------|
-| Testing | BDD       | SpecFlow | https://github.com/techtalk/SpecFlow | https://www.nuget.org/packages/SpecFlow/ | 06/17/2018 | WGH    |
-|         |           |          |                                      |                                          |            |        |
-|         |           |          |                                      |                                          |            |        |
-
-&lt;h2&gt; Attribution for ideas which were once incorporated into the project but have been replaced or superseded
-
-&lt;/h2&gt;&lt;/h2&gt;&lt;/h2&gt;&lt;/h1&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Attribution" /><summary type="html">People, Books, Articles, Blogs, websites that have sparked ideas or code used in this app</summary></entry><entry><title type="html">Adventures In Voice Dictation And Commands For A Developer</title><link href="https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/" rel="alternate" type="text/html" title="Adventures In Voice Dictation And Commands For A Developer" /><published>2021-04-25T12:02:23-06:00</published><updated>2021-04-25T12:02:23-06:00</updated><id>https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer</id><content type="html" xml:base="https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/">&lt;p&gt;Voice dictation is the subject of my second blog post&lt;/p&gt;
+&lt;hr /&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Blazor" /><category term="Demos" /><summary type="html">Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.</summary></entry><entry><title type="html">Adventures In Voice Dictation And Commands For A Developer</title><link href="https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/" rel="alternate" type="text/html" title="Adventures In Voice Dictation And Commands For A Developer" /><published>2021-04-27T09:41:28-06:00</published><updated>2021-04-27T09:41:28-06:00</updated><id>https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer</id><content type="html" xml:base="https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/">&lt;p&gt;Voice dictation is the subject of my second blog post.&lt;/p&gt;
 
 &lt;p&gt;Specifically, can I switch between dictation mode and programming mode&lt;/p&gt;
 
@@ -1015,14 +846,327 @@ Blazored.LocalStorage&lt;/li&gt;
 
 &lt;p&gt;So the remainder of this post will be the raw dictation transcription, as I try to get the Powershell code I wrote last week into the original Console program that read a lot of disks, and records info about every file. The next step is to store the data in a graph DB. Yesterday I got the SQL Server 2017(?) service running locally, with the graph extensions, and I also created a node and edge table . I have powershell script that can insert the directory nodes from upstream into the nodes table of the DB&lt;/p&gt;
 
-&lt;p&gt;Now to try dictating stream of conscionous to Visual Studio Code&lt;/p&gt;
+&lt;p&gt;Now to try dictating stream of conscious to Visual Studio Code&lt;/p&gt;
 
 &lt;p&gt;First thing I’m going to try to do is to correct the build tools path.
 The solution file contains a section called .build with has entries for tools whose pans include .build from the solution directory.&lt;/p&gt;
 
 &lt;p&gt;Hello while I am still trying to figure out why the path to the finished build tools is short by one directory, by manage to move four of the build tools directories under the source parent directory, and was able to properly reroot them in the solution directory under the build folder under src&lt;/p&gt;
 
-&lt;p&gt;The second thing I’m going to try to do is to figure out the loft configurations so that it specifies the correct directory.&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Dictation" /><category term="Voice" /><summary type="html">Voice dictation is the subject of my second blog post</summary></entry><entry><title type="html">Eulogy for molly the dog</title><link href="https://billhertzing.github.io/personal/Eulogy-for-Molly-the-Dog/" rel="alternate" type="text/html" title="Eulogy for molly the dog" /><published>2021-04-24T00:00:00-06:00</published><updated>2021-04-24T00:00:00-06:00</updated><id>https://billhertzing.github.io/personal/Eulogy%20for%20Molly%20the%20Dog</id><content type="html" xml:base="https://billhertzing.github.io/personal/Eulogy-for-Molly-the-Dog/">&lt;p&gt;I didn’t think that the very first post I’d make under this personal section would be in memory of Molly. She went from healthy to deathly in just three weeks, between the birthday of this site and before the release of V0.03. So here I am writing the first &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;personal&lt;/code&gt; post, a tribute to a very good dog.&lt;/p&gt;
+&lt;p&gt;The second thing I’m going to try to do is to figure out the loft configurations so that it specifies the correct directory.&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Voice Dictation" /><category term="Voice Commands" /><summary type="html">Voice dictation is the subject of my second blog post.</summary></entry><entry><title type="html">Introduction To Acecommander</title><link href="https://billhertzing.github.io/technical/Introduction-to-AceCommander/" rel="alternate" type="text/html" title="Introduction To Acecommander" /><published>2021-04-27T09:36:35-06:00</published><updated>2021-04-27T09:36:35-06:00</updated><id>https://billhertzing.github.io/technical/Introduction-to-AceCommander</id><content type="html" xml:base="https://billhertzing.github.io/technical/Introduction-to-AceCommander/">&lt;p&gt;The MySQL a is \called AceCommander, it holds userauth user tables&lt;/p&gt;
+
+&lt;p&gt;Install MySql here:&lt;/p&gt;
+
+&lt;p&gt;the database files need to be under dropbox, so a my.ini file has to be created, and MySQL has to be told to look for it under a dropbox location.
+The current location is under &lt;drive&gt;:/DropBox/MySQLData&lt;/drive&gt;&lt;/p&gt;
+
+&lt;p&gt;every developer, qa, and test environment, as well as every production system, needs its own AceCommander database
+the my.ini file specifies this as &lt;drive&gt;:/dropbox/MySQL/data&lt;/drive&gt;&lt;/p&gt;
+
+&lt;p&gt;The MySQL database name, user, and user password is in the configuration file, as part of the MySQL connection string.&lt;/p&gt;
+
+&lt;p&gt;Make sure that on the development or QA or production server, that the database exists, and that the specified user has the correct permissions and password set&lt;/p&gt;
+
+&lt;p&gt;LiquiBase is the Open Software tool that is used to keep version-controlled information on the MySL database schema and lookup tables’ data.&lt;/p&gt;
+
+&lt;p&gt;Service stack returns ‘403 - forbidden’ when Blazor GUI makes it’s first call to ServiceStack and asks for all of its DLL files. Have to document the addition of .dll to SS allowed file extensions
+Service stack returns ‘403 - forbidden’ when Blazor GUI makes it’s first call to ServiceStack and asks for all of its PDB files. Have to document the addition of .pdb to SS allowed file extensions. PDB files are for debugging&lt;/p&gt;
+
+&lt;p&gt;Also document the V S2019 requirement and the .DotNetCore V3 preview requirement.
+Maybe a section on how to upgrade from V0.5.0 to V0.9.0
+Document the issue with Blazor.Extensions.logging still being on V.0.7.0, and the conflict it caused, and how Blazor.extensions.Logging had to be ripped out.&lt;/p&gt;
+
+&lt;p&gt;Sentinel startup stuff&lt;/p&gt;
+
+&lt;p&gt;Document how to add SQLServer to a system, minimal, to use with Ace&lt;/p&gt;
+
+&lt;p&gt;For VS 2019:
+To automatically close the console when debugging stops, enable Tools-&amp;gt;Options-&amp;gt;Debugging-&amp;gt;Automatically close the console when debugging stops.&lt;/p&gt;
+
+&lt;p&gt;So, now enumerations are a code smell? https://github.com/ardalis/SmartEnum and others&lt;/p&gt;
+
+&lt;p&gt;Installing Telerik UI components for Blazor: Following instructions, it starts with needing to install nuget.exe; that will make the nuget package push work, as well.
+Add to the prerequisites part of the doc the need to download and install nuget.exe, and then to put it on the environment path.&lt;/p&gt;
+
+&lt;p&gt;today, that is 32-bit V4.9.4, instal to programfiles(86)/nuget&lt;/p&gt;
+
+&lt;p&gt;The follow Telerik instructions on how to add the telerik private feed to visual studio&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="AceCommander" /><summary type="html">The MySQL a is \called AceCommander, it holds userauth user tables</summary></entry><entry><title type="html">Case For A Non Anonymous Internet Part 01</title><link href="https://billhertzing.github.io/political/Case-for-a-non-anonymous-Internet-Part-01/" rel="alternate" type="text/html" title="Case For A Non Anonymous Internet Part 01" /><published>2021-04-27T09:35:29-06:00</published><updated>2021-04-27T09:35:29-06:00</updated><id>https://billhertzing.github.io/political/Case-for-a-non-anonymous-Internet-Part-01</id><content type="html" xml:base="https://billhertzing.github.io/political/Case-for-a-non-anonymous-Internet-Part-01/">&lt;h2 id=&quot;tl-dr&quot;&gt;TL DR&lt;/h2&gt;
+
+&lt;p&gt;Making people use their true identity when posting comments to my blog posts might make them more civil. It also allows for the creation of a history of behavior.&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;ToDo: add content&lt;/p&gt;
+
+&lt;h2 id=&quot;studies-showing-the-incident-and-degree-of-hateful-speech-declines-when-true-identity-is-required&quot;&gt;Studies showing the incident and degree of hateful speech declines when true identity is required&lt;/h2&gt;
+
+&lt;p&gt;ToDo: add content&lt;/p&gt;
+
+&lt;h2 id=&quot;studies-showing-the-incident-and-degree-of-hateful-speech-increases-when-anonymity-is-allowed&quot;&gt;Studies showing the incident and degree of hateful speech increases when anonymity is allowed&lt;/h2&gt;
+
+&lt;p&gt;ToDo: add content&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;ToDo: add content&lt;/p&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;ToDo: add content&lt;/p&gt;
+
+&lt;h2 id=&quot;attributions&quot;&gt;Attributions&lt;/h2&gt;
+
+&lt;p&gt;ToDo: add content&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="political" /><category term="Non-Anonymous Internet" /><category term="Privacy" /><category term="Security" /><summary type="html">TL DR</summary></entry><entry><title type="html">Attributions For Internet Resources</title><link href="https://billhertzing.github.io/technical/Attributions-For-Internet-Resources/" rel="alternate" type="text/html" title="Attributions For Internet Resources" /><published>2021-04-27T09:35:06-06:00</published><updated>2021-04-27T09:35:06-06:00</updated><id>https://billhertzing.github.io/technical/Attributions-For-Internet-Resources</id><content type="html" xml:base="https://billhertzing.github.io/technical/Attributions-For-Internet-Resources/">&lt;h1&gt; People, Books, Articles, Blogs, websites that have sparked ideas or code used in this app
+
+&lt;h2&gt; Attribution for ideas to currently incorporated into the project
+
+|  Group  | Sub-group | ToolName |                  URL                 | NuGet                                    | Date Added | ByWhom |
+|:-------:|:---------:|:--------:|:------------------------------------:|------------------------------------------|:----------:|--------|
+| Testing | BDD       | SpecFlow | https://github.com/techtalk/SpecFlow | https://www.nuget.org/packages/SpecFlow/ | 06/17/2018 | WGH    |
+|         |           |          |                                      |                                          |            |        |
+|         |           |          |                                      |                                          |            |        |
+
+&lt;h2&gt; Ideas to be incorporated into the project
+
+|  Group  | Sub-group | ToolName |                  URL                 | NuGet                                    | Date Added | ByWhom |
+|:-------:|:---------:|:--------:|:------------------------------------:|------------------------------------------|:----------:|--------|
+| Testing | BDD       | SpecFlow | https://github.com/techtalk/SpecFlow | https://www.nuget.org/packages/SpecFlow/ | 06/17/2018 | WGH    |
+|         |           |          |                                      |                                          |            |        |
+|         |           |          |                                      |                                          |            |        |
+
+&lt;h2&gt; Attribution for ideas which were once incorporated into the project but have been replaced or superseded
+
+&lt;/h2&gt;&lt;/h2&gt;&lt;/h2&gt;&lt;/h1&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Attribution" /><summary type="html">People, Books, Articles, Blogs, websites that have sparked ideas or code used in this app</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 04</title><link href="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 04" /><published>2021-04-27T09:27:16-06:00</published><updated>2021-04-27T09:27:16-06:00</updated><id>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04</id><content type="html" xml:base="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/">&lt;p&gt;Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHub Pages Blog Site Part 01&lt;/a&gt;, &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-02/&quot;&gt;How I setup this GitHub Pages Blog Site Part 02&lt;/a&gt;, and &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-03/&quot;&gt;How I setup this GitHub Pages Blog Site Part 03&lt;/a&gt; you should probably give them a quick review, to become familiar with how the site has been built up to this point.&lt;/p&gt;
+
+&lt;p&gt;The next steps will be to implement the features specified in &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/4&quot;&gt;Milestone 0.04.0&lt;/a&gt;. I’ve already created Milestones for Release V0.05, &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/5&quot;&gt;Milestone 0.05.0&lt;/a&gt; as well and updated the Milestone &lt;em&gt;Release Far Future&lt;/em&gt; to reflect whats planned for later. Release V0.05 calls for creation of a  Github project for tracking future features,So at that point hopefully, there will be a single point for tracking and reporting on planned and requested features.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-a-new-branch-sprintforrelease004000&quot;&gt;Add a new branch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForRelease0.04.000&lt;/code&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git branch create SprintForRelease0.04.000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;add-jekyll-compose&quot;&gt;Add jekyll-compose&lt;/h2&gt;
+
+&lt;p&gt;jekyll-compose adds commands that help streamline the creation and publishing of posts. Installation instructions and details can be found in &lt;a href=&quot;https://github.com/jekyll/jekyll-compose&quot;&gt;jekyll-compose&lt;/a&gt;. What follows are th steps I took and choices I made for this site.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Edit the Gemfile in the root of the repo.&lt;/li&gt;
+  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &apos;jekyll-compose&apos;, group: [:jekyll_plugins]&lt;/code&gt; just above the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugins:&lt;/code&gt; key.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Refer to detailed instructions in &lt;a href=&quot;https://github.com/jekyll/jekyll-compose&quot;&gt;jekyll-compose&lt;/a&gt; for using the new commands. This post was drafted and published using the commands added by this tool, and it made the process much much easier. I created the draft of this post using the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll draft &quot;how-i-setup-this-github-pages-blog-site-part-04&quot;&lt;/code&gt;, which placed a file containing just Front Matter in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;h2 id=&quot;update-the-commit-template&quot;&gt;Update the commit template&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GitTemplates/git.commit.template.txt&lt;/code&gt; and change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;03&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;04&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;first-commit-on-the-sprint-branch&quot;&gt;First commit on the sprint branch&lt;/h2&gt;
+
+&lt;p&gt;Commit the changes and use VSC to synchronize changes with the remote, then inspect the Github repository to ensure the branch and first commit exist on the repo. I like using Git Lens along with Git Graph. ToDo: insert jpg You can see the site development history clearly.&lt;/p&gt;
+
+&lt;p&gt;To show what a feature development branch looks like with more than one commit, I’ll make a small one now.&lt;/p&gt;
+
+&lt;p&gt;Afterwards, this is what it looks like ToDo: insert jpg.&lt;/p&gt;
+
+&lt;p&gt;And a third: ToDo: insert jpg&lt;/p&gt;
+
+&lt;h2 id=&quot;add-jekyll-minifier&quot;&gt;Add jekyll-minifier&lt;/h2&gt;
+
+&lt;p&gt;Minification is the process of rewriting the stream of data sent from the server to the browser to make the stream as small as possible.Minification of your site is something that all good digital properties should do. It’s just manners. But this has consequences if a developer is trying to read the data stream and debug problems.&lt;/p&gt;
+
+&lt;p&gt;As with any optimization, it is important to measure the baseline, and then the improvement. ToDo: A short tutorial on Fiddler 4. ToDo: Find online site that can quantify the number of bytes. Or see if Fiddler 4 has that capability.&lt;/p&gt;
+
+&lt;p&gt;This minifier allows fine control over minification of HTML, JavaScript, CSS, and Json, as well as many more minification options.&lt;/p&gt;
+
+&lt;p&gt;Detailed instructions are here at &lt;a href=&quot;https://github.com/digitalsparky/jekyll-minifier&quot;&gt;jekyll-minifier&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-minifier&lt;/code&gt; Make a note of the version installed, mine was 0.1.10&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; at the root of the repo, and add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll-minifier&quot;, &quot;~&amp;gt; 0.1.10&quot;&lt;/code&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;group :jekyll_plugins do&lt;/code&gt; section.&lt;/li&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-minifier&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugins&lt;/code&gt;: key&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-minifier&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Further down the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; add lines that control the minifier’s settings. Add the entire list now, and later we will work through each setting and decide if this site will need it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;na&quot;&gt;jekyll-minifier&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;preserve_php&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_spaces_inside_tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_multi_spaces&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_intertag_spaces&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_quotes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;compress_css&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;compress_javascript&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;compress_json&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;               &lt;span class=&quot;c1&quot;&gt;# Default: true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;simple_doctype&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_script_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_style_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_link_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_form_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_input_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_javascript_protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_http_protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;remove_https_protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;preserve_line_breaks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;simple_boolean_attributes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;compress_js_templates&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;# Default: false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;preserve_patterns&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# Default: (empty)&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;uglifier_args&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;# Default: (empty)&lt;/span&gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;em&gt;es6 support is experimental.&lt;/em&gt;&lt;/strong&gt;  If your site is using es6 scripts, see the &lt;a href=&quot;https://github.com/digitalsparky/jekyll-minifier&quot;&gt;jekyll-minifier&lt;/a&gt; documentation for possible issues.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt; and ensure the site looks like it should. The re-run the tests that measure the size of the data stream.&lt;/p&gt;
+
+&lt;h2 id=&quot;setup-archive-pages&quot;&gt;Setup archive pages&lt;/h2&gt;
+
+&lt;p&gt;The MM theme has two kinds of archive support built in, either a Liquid approach or a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-archives&lt;/code&gt; approach. I chose to use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-archives&lt;/code&gt; plugin.&lt;/p&gt;
+
+&lt;h3 id=&quot;add-the-jekyll-archives-gem&quot;&gt;Add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-archives&lt;/code&gt; gem&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install jekyll-archives&lt;/code&gt;. Mine came back as version 2.2.1.&lt;/li&gt;
+  &lt;li&gt;Edit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; in the root of  the repo. Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll-archives&quot;, &quot;~&amp;gt; 2.2.1&quot;&lt;/code&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;group :jekyll_plugins do&lt;/code&gt; group.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle update&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll build&lt;/code&gt; and ensure the site builds correctly.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;modify-_configyml-for-jekyll-archives&quot;&gt;Modify &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-archives&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;, and find the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-archives&lt;/code&gt; section. Uncomment the settings that appear in MM’s default. Mine looks like this:&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;jekyll-archives&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;
+   &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;layouts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;archive-taxonomy&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;archive-taxonomy&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;permalinks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/:name/&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/:name/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;create-override-for-_pagescategory-archivemd&quot;&gt;Create override for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages/category-archive.md&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;There needs to be an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; in the generated sites &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/categories/&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add a new subdirectory and file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages/category-archive.md&lt;/code&gt; at the root of the repo.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the following Front Matter to the file. Nothing else is needed.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;s&quot;&gt;---&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Posts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Category&quot;&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; and ensure the site builds correctly&lt;/li&gt;
+  &lt;li&gt;Navigate to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:4000/categories/&lt;/code&gt; and validate there is a page listing all current posts organized by category.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;create-override-for-_pagestags-archivemd&quot;&gt;Create override for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages/tags-archive.md&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;There needs to be an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; in the generated sites &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/tags/&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add a new file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages/tags-archive.md&lt;/code&gt; at the root of the repo.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the following Front Matter to the file. Nothing else is needed.&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;s&quot;&gt;---&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Posts&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;by&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Tags&quot;&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Tags&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; and ensure the site builds correctly&lt;/li&gt;
+  &lt;li&gt;Navigate to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:4000/tags/&lt;/code&gt; and validate there is a page listing all current posts organized by tag.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;modify-the-look-of-the-tags-archive-page&quot;&gt;Modify the look of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tags-archive&lt;/code&gt; page&lt;/h3&gt;
+
+&lt;p&gt;I found an archive page layout for tags that I like better than the MM default. To implement this alternative,&lt;/p&gt;
+
+&lt;p&gt;ToDo: implement https://justin.kelly.org.au/jekyll-tags-page/ and stylesheet changes https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/&lt;/p&gt;
+
+&lt;h2 id=&quot;setup-navigation-links&quot;&gt;Setup navigation links&lt;/h2&gt;
+
+&lt;p&gt;The MM theme has masthead navigation capability built-in. Details on using it are at MM’s &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/navigation/&quot;&gt;Navigation&lt;/a&gt; . Here are the steps I took&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a subdirectory and file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt; and open it for editing. I started with the following contents:&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;na&quot;&gt;ToDo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Add text from real file&lt;/span&gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --drafts&lt;/code&gt; and ensure masthead navigation is present. Play around with making the browser wider and narrower, and note how the horizontal masthead links collapse into a navigation hamburger.&lt;/p&gt;
+
+&lt;h2 id=&quot;setup-custom-sidebar-navigation&quot;&gt;Setup custom sidebar navigation&lt;/h2&gt;
+
+&lt;p&gt;The MM theme has the masthead navigation capability built-in. Details on using it are at &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-content&quot;&gt;Custom sidebar navigation menuPermalink&lt;/a&gt; . Here are the steps I took:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt; . I added with the following contents:&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;na&quot;&gt;docs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;Repositories Overview&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Overview&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Guide&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/overview-guide/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Structure&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/structure/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Testing&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/Testing/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ReleaseProcess&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/ReleaseProcess/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Upgrading&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/upgrading/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EndOfLife&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/EndOfLife/&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;SCM Conventions&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;SCM&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Code,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Doc,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;DB&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/SCM-Conventions/overview/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Code&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;SCM&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/Code-VersionControlProcess/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Docs&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;SCM&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/Documentation-VersionControlProcess/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;DB&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;SCM&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/DataBase-VersionControlProcess/&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Peer&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Repository&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;SCM&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/docs/Peer-repository-AutoDoc-VersionControlProcess/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Jekyll" /><category term="GitHubPages" /><summary type="html">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part 02, and How I setup this GitHub Pages Blog Site Part 03 you should probably give them a quick review, to become familiar with how the site has been built up to this point.</summary></entry><entry><title type="html">Eulogy for molly the dog</title><link href="https://billhertzing.github.io/personal/Eulogy-for-Molly-the-Dog/" rel="alternate" type="text/html" title="Eulogy for molly the dog" /><published>2021-04-24T00:00:00-06:00</published><updated>2021-04-24T00:00:00-06:00</updated><id>https://billhertzing.github.io/personal/Eulogy%20for%20Molly%20the%20Dog</id><content type="html" xml:base="https://billhertzing.github.io/personal/Eulogy-for-Molly-the-Dog/">&lt;p&gt;I didn’t think that the very first post I’d make under this personal section would be in memory of Molly. She went from healthy to deathly in just three weeks, between the birthday of this site and before the release of V0.03. So here I am writing the first &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;personal&lt;/code&gt; post, a tribute to a very good dog.&lt;/p&gt;
 
 &lt;p&gt;We got Molly as a rescue in August of 2009. JoAnn and Alex picked her out; I was sandbagged the day after returning from a gig. After I reluctantly agreed to getting a dog, they had her home by the next day. The vet estimated her at 9 months old when we got her. Her papers had her name as Dolly, but JoAnn wanted a pet with &lt;em&gt;moxie&lt;/em&gt;, so Dolly became Roxy; but she was such a sweet and self-effacing thing, that by the next week, we all agreed that she didn’t have enough &lt;em&gt;moxie&lt;/em&gt; to be a &lt;em&gt;Roxy&lt;/em&gt;, so Molly she became and stayed for the next 13 years.&lt;/p&gt;
 
@@ -1351,6 +1495,7 @@ The solution file contains a section called .build with has entries for tools wh
     &lt;figcaption&gt;Molly
 &lt;/figcaption&gt;
   
+<<<<<<< HEAD
 <<<<<<< HEAD
 &lt;/figure&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="personal" /><category term="Molly" /><category term="Personal" /><summary type="html">I didn’t think that the very first post I’d make under this personal section would be in memory of Molly. She went from healthy to deathly in just three weeks, between the birthday of this site and before the release of V0.03. So here I am writing the first personal post, a tribute to a very good dog.</summary></entry><entry><title type="html">Welcome To The Personal Section Of My Site</title><link href="https://billhertzing.github.io/personal/Welcome-to-the-Personal-section-of-my-site/" rel="alternate" type="text/html" title="Welcome To The Personal Section Of My Site" /><published>2021-04-17T12:00:50-06:00</published><updated>2021-04-17T12:00:50-06:00</updated><id>https://billhertzing.github.io/personal/Welcome-to-the-Personal-section-of-my-site</id><content type="html" xml:base="https://billhertzing.github.io/personal/Welcome-to-the-Personal-section-of-my-site/">&lt;p&gt;I’ve long hoped to have a website that I can use to share information with my friends and family, without having to create content for each individual social media site. This is it!&lt;/p&gt;
 
@@ -2444,3 +2589,6 @@ ToDo: When a new site gets published, is that a good time to note any post revis
 =======
 &lt;/figure&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="personal" /><category term="Molly" /><category term="Personal" /><summary type="html">I didn’t think that the very first post I’d make under this personal section would be in memory of Molly. She went from healthy to deathly in just three weeks, between the birthday of this site and before the release of V0.03. So here I am writing the first personal post, a tribute to a very good dog.</summary></entry></feed>
 >>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
+=======
+&lt;/figure&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="personal" /><category term="Personal" /><category term="Molly" /><summary type="html">I didn’t think that the very first post I’d make under this personal section would be in memory of Molly. She went from healthy to deathly in just three weeks, between the birthday of this site and before the release of V0.03. So here I am writing the first personal post, a tribute to a very good dog.</summary></entry></feed>
+>>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)

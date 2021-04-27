@@ -46,7 +46,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-04-25T22:38:36-06:00">
+  <meta property="article:published_time" content="2021-04-27T09:27:16-06:00">
 
 
 
@@ -149,7 +149,21 @@
           Bill's Blog
           <span class="site-subtitle">Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!</span>
         </a>
-        <ul class="visible-links"></ul>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/page-archive/">Pages</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/">Collections</a>
+            </li><li class="masthead__menu-item">
+              <a href="/ChangeLog/">ChangeLog</a>
+            </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -291,7 +305,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="How I Setup This Github Pages Blog Site Part 04">
     <meta itemprop="description" content="Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part 02, and How I setup this GitHub Pages Blog Site Part 03 you should probably give them a quick review, to become familiar with how the site has been built up to this point.">
-    <meta itemprop="datePublished" content="2021-04-25T22:38:36-06:00">
+    <meta itemprop="datePublished" content="2021-04-27T09:27:16-06:00">
     
 
     <div class="page__inner-wrap">
@@ -313,7 +327,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          6 minute read
         
       </span>
     
@@ -328,7 +342,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#add-a-new-branch-sprintforrelease004000">add a new branch SprintForRelease0.04.000</a></li><li><a href="#add-jekyll-compose">Add jekyll-compose</a></li><li><a href="#update-the-commit-template">Update the commit template</a></li><li><a href="#first-commit-on-the-sprint-branch">First commit on the sprint branch</a></li><li><a href="#add-jekyll-minifier">Add jekyll-minifier</a></li></ul>
+              <ul class="toc__menu"><li><a href="#add-a-new-branch-sprintforrelease004000">Add a new branch SprintForRelease0.04.000</a></li><li><a href="#add-jekyll-compose">Add jekyll-compose</a></li><li><a href="#update-the-commit-template">Update the commit template</a></li><li><a href="#first-commit-on-the-sprint-branch">First commit on the sprint branch</a></li><li><a href="#add-jekyll-minifier">Add jekyll-minifier</a></li><li><a href="#setup-archive-pages">Setup archive pages</a><ul><li><a href="#add-the-jekyll-archives-gem">Add the jekyll-archives gem</a></li><li><a href="#modify-_configyml-for-jekyll-archives">Modify _config.yml for jekyll-archives</a></li><li><a href="#create-override-for-_pagescategory-archivemd">Create override for _pages/category-archive.md</a></li><li><a href="#create-override-for-_pagestags-archivemd">Create override for _pages/tags-archive.md</a></li><li><a href="#modify-the-look-of-the-tags-archive-page">Modify the look of the tags-archive page</a></li></ul></li><li><a href="#setup-navigation-links">Setup navigation links</a></li><li><a href="#setup-custom-sidebar-navigation">Setup custom sidebar navigation</a></li></ul>
 
             </nav>
           </aside>
@@ -337,7 +351,7 @@
 
 <p>The next steps will be to implement the features specified in <a href="https://github.com/BillHertzing/BillHertzing.github.io/milestone/4">Milestone 0.04.0</a>. I’ve already created Milestones for Release V0.05, <a href="https://github.com/BillHertzing/BillHertzing.github.io/milestone/5">Milestone 0.05.0</a> as well and updated the Milestone <em>Release Far Future</em> to reflect whats planned for later. Release V0.05 calls for creation of a  Github project for tracking future features,So at that point hopefully, there will be a single point for tracking and reporting on planned and requested features.</p>
 
-<h2 id="add-a-new-branch-sprintforrelease004000">add a new branch <code class="language-plaintext highlighter-rouge">SprintForRelease0.04.000</code></h2>
+<h2 id="add-a-new-branch-sprintforrelease004000">Add a new branch <code class="language-plaintext highlighter-rouge">SprintForRelease0.04.000</code></h2>
 
 <ul>
   <li>Run <code class="language-plaintext highlighter-rouge">git branch create SprintForRelease0.04.000</code></li>
@@ -359,7 +373,6 @@
 
 <ul>
   <li>Edit <code class="language-plaintext highlighter-rouge">GitTemplates/git.commit.template.txt</code> and change <code class="language-plaintext highlighter-rouge">03</code> to <code class="language-plaintext highlighter-rouge">04</code></li>
-  <li>save the file</li>
 </ul>
 
 <h2 id="first-commit-on-the-sprint-branch">First commit on the sprint branch</h2>
@@ -386,7 +399,7 @@
   <li>Run <code class="language-plaintext highlighter-rouge">gem install jekyll-minifier</code> Make a note of the version installed, mine was 0.1.10</li>
   <li>Run <code class="language-plaintext highlighter-rouge">bundle update</code></li>
   <li>Edit <code class="language-plaintext highlighter-rouge">Gemfile</code> at the root of the repo, and add <code class="language-plaintext highlighter-rouge">gem "jekyll-minifier", "~&gt; 0.1.10"</code> into the <code class="language-plaintext highlighter-rouge">group :jekyll_plugins do</code> section.</li>
-  <li>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> and add</li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> and add <code class="language-plaintext highlighter-rouge">jekyll-minifier</code> to the <code class="language-plaintext highlighter-rouge">plugins</code>: key</li>
 </ol>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">plugins</span><span class="pi">:</span>
@@ -397,31 +410,31 @@
   <li>Further down the <code class="language-plaintext highlighter-rouge">_config.yml</code> add lines that control the minifier’s settings. Add the entire list now, and later we will work through each setting and decide if this site will need it.</li>
 </ol>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jekyll-minifier</span><span class="pi">:</span>
-  <span class="na">preserve_php</span><span class="pi">:</span> <span class="no">true</span>                <span class="c1"># Default: false</span>
-  <span class="na">remove_spaces_inside_tags</span><span class="pi">:</span> <span class="no">true</span>   <span class="c1"># Default: true</span>
-  <span class="na">remove_multi_spaces</span><span class="pi">:</span> <span class="no">true</span>         <span class="c1"># Default: true</span>
-  <span class="na">remove_comments</span><span class="pi">:</span> <span class="no">true</span>             <span class="c1"># Default: true</span>
-  <span class="na">remove_intertag_spaces</span><span class="pi">:</span> <span class="no">true</span>      <span class="c1"># Default: false</span>
-  <span class="na">remove_quotes</span><span class="pi">:</span> <span class="no">false</span>              <span class="c1"># Default: false</span>
-  <span class="na">compress_css</span><span class="pi">:</span> <span class="no">true</span>                <span class="c1"># Default: true</span>
-  <span class="na">compress_javascript</span><span class="pi">:</span> <span class="no">true</span>         <span class="c1"># Default: true</span>
-  <span class="na">compress_json</span><span class="pi">:</span> <span class="no">true</span>               <span class="c1"># Default: true</span>
-  <span class="na">simple_doctype</span><span class="pi">:</span> <span class="no">false</span>             <span class="c1"># Default: false</span>
-  <span class="na">remove_script_attributes</span><span class="pi">:</span> <span class="no">false</span>   <span class="c1"># Default: false</span>
-  <span class="na">remove_style_attributes</span><span class="pi">:</span> <span class="no">false</span>    <span class="c1"># Default: false</span>
-  <span class="na">remove_link_attributes</span><span class="pi">:</span> <span class="no">false</span>     <span class="c1"># Default: false</span>
-  <span class="na">remove_form_attributes</span><span class="pi">:</span> <span class="no">false</span>     <span class="c1"># Default: false</span>
-  <span class="na">remove_input_attributes</span><span class="pi">:</span> <span class="no">false</span>    <span class="c1"># Default: false</span>
-  <span class="na">remove_javascript_protocol</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># Default: false</span>
-  <span class="na">remove_http_protocol</span><span class="pi">:</span> <span class="no">false</span>       <span class="c1"># Default: false</span>
-  <span class="na">remove_https_protocol</span><span class="pi">:</span> <span class="no">false</span>      <span class="c1"># Default: false</span>
-  <span class="na">preserve_line_breaks</span><span class="pi">:</span> <span class="no">false</span>       <span class="c1"># Default: false</span>
-  <span class="na">simple_boolean_attributes</span><span class="pi">:</span> <span class="no">false</span>  <span class="c1"># Default: false</span>
-  <span class="na">compress_js_templates</span><span class="pi">:</span> <span class="no">false</span>      <span class="c1"># Default: false</span>
-  <span class="na">preserve_patterns</span><span class="pi">:</span>                <span class="c1"># Default: (empty)</span>
-  <span class="na">uglifier_args</span><span class="pi">:</span>                    <span class="c1"># Default: (empty)</span>
-
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">jekyll-minifier</span><span class="pi">:</span>
+    <span class="na">preserve_php</span><span class="pi">:</span> <span class="no">true</span>                <span class="c1"># Default: false</span>
+    <span class="na">remove_spaces_inside_tags</span><span class="pi">:</span> <span class="no">true</span>   <span class="c1"># Default: true</span>
+    <span class="na">remove_multi_spaces</span><span class="pi">:</span> <span class="no">true</span>         <span class="c1"># Default: true</span>
+    <span class="na">remove_comments</span><span class="pi">:</span> <span class="no">true</span>             <span class="c1"># Default: true</span>
+    <span class="na">remove_intertag_spaces</span><span class="pi">:</span> <span class="no">true</span>      <span class="c1"># Default: false</span>
+    <span class="na">remove_quotes</span><span class="pi">:</span> <span class="no">false</span>              <span class="c1"># Default: false</span>
+    <span class="na">compress_css</span><span class="pi">:</span> <span class="no">true</span>                <span class="c1"># Default: true</span>
+    <span class="na">compress_javascript</span><span class="pi">:</span> <span class="no">true</span>         <span class="c1"># Default: true</span>
+    <span class="na">compress_json</span><span class="pi">:</span> <span class="no">true</span>               <span class="c1"># Default: true</span>
+    <span class="na">simple_doctype</span><span class="pi">:</span> <span class="no">false</span>             <span class="c1"># Default: false</span>
+    <span class="na">remove_script_attributes</span><span class="pi">:</span> <span class="no">false</span>   <span class="c1"># Default: false</span>
+    <span class="na">remove_style_attributes</span><span class="pi">:</span> <span class="no">false</span>    <span class="c1"># Default: false</span>
+    <span class="na">remove_link_attributes</span><span class="pi">:</span> <span class="no">false</span>     <span class="c1"># Default: false</span>
+    <span class="na">remove_form_attributes</span><span class="pi">:</span> <span class="no">false</span>     <span class="c1"># Default: false</span>
+    <span class="na">remove_input_attributes</span><span class="pi">:</span> <span class="no">false</span>    <span class="c1"># Default: false</span>
+    <span class="na">remove_javascript_protocol</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># Default: false</span>
+    <span class="na">remove_http_protocol</span><span class="pi">:</span> <span class="no">false</span>       <span class="c1"># Default: false</span>
+    <span class="na">remove_https_protocol</span><span class="pi">:</span> <span class="no">false</span>      <span class="c1"># Default: false</span>
+    <span class="na">preserve_line_breaks</span><span class="pi">:</span> <span class="no">false</span>       <span class="c1"># Default: false</span>
+    <span class="na">simple_boolean_attributes</span><span class="pi">:</span> <span class="no">false</span>  <span class="c1"># Default: false</span>
+    <span class="na">compress_js_templates</span><span class="pi">:</span> <span class="no">false</span>      <span class="c1"># Default: false</span>
+    <span class="na">preserve_patterns</span><span class="pi">:</span>                <span class="c1"># Default: (empty)</span>
+    <span class="na">uglifier_args</span><span class="pi">:</span>                    <span class="c1"># Default: (empty)</span>
+    
 </code></pre></div></div>
 
 <blockquote>
@@ -430,48 +443,152 @@
 
 <p>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code> and ensure the site looks like it should. The re-run the tests that measure the size of the data stream.</p>
 
+<h2 id="setup-archive-pages">Setup archive pages</h2>
+
+<p>The MM theme has two kinds of archive support built in, either a Liquid approach or a <code class="language-plaintext highlighter-rouge">jekyll-archives</code> approach. I chose to use the <code class="language-plaintext highlighter-rouge">jekyll-archives</code> plugin.</p>
+
+<h3 id="add-the-jekyll-archives-gem">Add the <code class="language-plaintext highlighter-rouge">jekyll-archives</code> gem</h3>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">gem install jekyll-archives</code>. Mine came back as version 2.2.1.</li>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">Gemfile</code> in the root of  the repo. Add <code class="language-plaintext highlighter-rouge">gem "jekyll-archives", "~&gt; 2.2.1"</code> into the <code class="language-plaintext highlighter-rouge">group :jekyll_plugins do</code> group.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle update</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> and ensure the site builds correctly.</li>
+</ol>
+
+<h3 id="modify-_configyml-for-jekyll-archives">Modify <code class="language-plaintext highlighter-rouge">_config.yml</code> for <code class="language-plaintext highlighter-rouge">jekyll-archives</code></h3>
+
+<ol>
+  <li>
+    <p>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code>, and find the <code class="language-plaintext highlighter-rouge">jekyll-archives</code> section. Uncomment the settings that appear in MM’s default. Mine looks like this:</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jekyll-archives</span><span class="pi">:</span>
+ <span class="na">enabled</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="s">categories</span>
+   <span class="pi">-</span> <span class="s">tags</span>
+ <span class="na">layouts</span><span class="pi">:</span>
+   <span class="na">category</span><span class="pi">:</span> <span class="s">archive-taxonomy</span>
+   <span class="na">tag</span><span class="pi">:</span> <span class="s">archive-taxonomy</span>
+ <span class="na">permalinks</span><span class="pi">:</span>
+   <span class="na">category</span><span class="pi">:</span> <span class="s">/categories/:name/</span>
+   <span class="na">tag</span><span class="pi">:</span> <span class="s">/tags/:name/</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="create-override-for-_pagescategory-archivemd">Create override for <code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code></h3>
+
+<p>There needs to be an <code class="language-plaintext highlighter-rouge">index.html</code> in the generated sites <code class="language-plaintext highlighter-rouge">/categories/</code> directory.</p>
+
+<ol>
+  <li>Add a new subdirectory and file <code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code> at the root of the repo.</li>
+  <li>
+    <p>Add the following Front Matter to the file. Nothing else is needed.</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">---</span>
+ <span class="s">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Posts</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Category"</span>
+ <span class="na">layout</span><span class="pi">:</span> <span class="s">categories</span>
+ <span class="na">permalink</span><span class="pi">:</span> <span class="s">/categories/</span>
+ <span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+ <span class="s">---</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and ensure the site builds correctly</li>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">http://localhost:4000/categories/</code> and validate there is a page listing all current posts organized by category.</li>
+</ol>
+
+<h3 id="create-override-for-_pagestags-archivemd">Create override for <code class="language-plaintext highlighter-rouge">_pages/tags-archive.md</code></h3>
+
+<p>There needs to be an <code class="language-plaintext highlighter-rouge">index.html</code> in the generated sites <code class="language-plaintext highlighter-rouge">/tags/</code> directory.</p>
+
+<ol>
+  <li>Add a new file <code class="language-plaintext highlighter-rouge">_pages/tags-archive.md</code> at the root of the repo.</li>
+  <li>
+    <p>Add the following Front Matter to the file. Nothing else is needed.</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">---</span>
+ <span class="s">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Posts</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Tags"</span>
+ <span class="na">layout</span><span class="pi">:</span> <span class="s">Tags</span>
+ <span class="na">permalink</span><span class="pi">:</span> <span class="s">/tags/</span>
+ <span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+ <span class="s">---</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and ensure the site builds correctly</li>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">http://localhost:4000/tags/</code> and validate there is a page listing all current posts organized by tag.</li>
+</ol>
+
+<h3 id="modify-the-look-of-the-tags-archive-page">Modify the look of the <code class="language-plaintext highlighter-rouge">tags-archive</code> page</h3>
+
+<p>I found an archive page layout for tags that I like better than the MM default. To implement this alternative,</p>
+
+<p>ToDo: implement https://justin.kelly.org.au/jekyll-tags-page/ and stylesheet changes https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/</p>
+
+<h2 id="setup-navigation-links">Setup navigation links</h2>
+
+<p>The MM theme has masthead navigation capability built-in. Details on using it are at MM’s <a href="https://mmistakes.github.io/minimal-mistakes/docs/navigation/">Navigation</a> . Here are the steps I took</p>
+
+<ol>
+  <li>
+    <p>Create a subdirectory and file <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> and open it for editing. I started with the following contents:</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">ToDo</span><span class="pi">:</span> <span class="s">Add text from real file</span>
+    
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code> and ensure masthead navigation is present. Play around with making the browser wider and narrower, and note how the horizontal masthead links collapse into a navigation hamburger.</p>
+
+<h2 id="setup-custom-sidebar-navigation">Setup custom sidebar navigation</h2>
+
+<p>The MM theme has the masthead navigation capability built-in. Details on using it are at <a href="https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-content">Custom sidebar navigation menuPermalink</a> . Here are the steps I took:</p>
+
+<ol>
+  <li>
+    <p>Edit <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> . I added with the following contents:</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">docs</span><span class="pi">:</span>
+ <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span>  <span class="s">Repositories Overview</span>
+   <span class="na">children</span><span class="pi">:</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Overview</span><span class="nv"> </span><span class="s">Guide"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/overview-guide/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Structure"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/structure/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Testing"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/Testing/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ReleaseProcess"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/ReleaseProcess/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Upgrading"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/upgrading/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">EndOfLife"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/EndOfLife/</span>
+ <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span>  <span class="s">SCM Conventions</span>
+   <span class="na">children</span><span class="pi">:</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SCM</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Code,</span><span class="nv"> </span><span class="s">Doc,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">DB"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/SCM-Conventions/overview/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Code</span><span class="nv"> </span><span class="s">SCM"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/Code-VersionControlProcess/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Docs</span><span class="nv"> </span><span class="s">SCM"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/Documentation-VersionControlProcess/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">DB</span><span class="nv"> </span><span class="s">SCM"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/DataBase-VersionControlProcess/</span>
+     <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Peer</span><span class="nv"> </span><span class="s">Repository</span><span class="nv"> </span><span class="s">SCM"</span>
+       <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/Peer-repository-AutoDoc-VersionControlProcess/</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
         
       </section>
 
       <footer class="page__meta">
         
         
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#githubpages" class="page__taxonomy-item" rel="tag">GitHubPages</a><span class="sep">, </span>
-    
-      <a href="/tags/#jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#technical" class="page__taxonomy-item" rel="tag">technical</a>
-    
-    </span>
-  </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-25T22:38:36-06:00">April 25, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-27T09:27:16-06:00">April 27, 2021</time></p>
 
 
       </footer>
@@ -490,11 +607,12 @@
       
   <nav class="pagination">
     
-      <a href="/technical/Repository-Interrelationships/" class="pagination--pager" title="Repository Interrelationships
+      <a href="/technical/how-i-setup-this-github-pages-blog-site-part-03/" class="pagination--pager" title="How I Setup This Github Pages Blog Site Part 03
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/technical/Attributions-For-Internet-Resources/" class="pagination--pager" title="Attributions For Internet Resources
+">Next</a>
     
   </nav>
 
@@ -517,46 +635,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/technical/Repository-Interrelationships/" rel="permalink">Repository Interrelationships
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">– add dot diagram here? use a png to start.
-</p>
-  </article>
-</div>
-
         
           
 
@@ -592,10 +670,48 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Notes for PowerShell SLC meetup
- 1) List of cool PowerShell projects folks wold like to work on
- 1) signup for one, or more, projects
- 1) Pair or team progra...</p>
+    <p class="archive__item-excerpt" itemprop="description">A Powershell script to read a Nest history report and dump it into an Excel pivot table.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/Repository-Interrelationships/" rel="permalink">Repository Interrelationships
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">An explanation of how my technical repositories relate to one another.
+</p>
   </article>
 </div>
 
@@ -654,7 +770,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/technical/Introduction-to-AceCommander/" rel="permalink">Introduction To Acecommander
+        <a href="/technical/Client-side-Blazor-Demos/" rel="permalink">Client Side Blazor Demos
 </a>
       
     </h2>
@@ -672,15 +788,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          27 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">The MySQL a is \called AceCommander, it holds userauth user tables
-</p>
+    <p class="archive__item-excerpt" itemprop="description">Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spen...</p>
   </article>
 </div>
 
