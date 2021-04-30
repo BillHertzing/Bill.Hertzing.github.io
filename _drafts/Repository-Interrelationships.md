@@ -1,7 +1,7 @@
 ---
 Title: Repository Interrelationships
 tags: [AceCommander, ATAP.Utilities, Blazor, StronglyTypedIds, BillHertzing Blog]
-description: A broad overview of the repositories in my GitHub account, and how they relate toone another
+description: A broad overview of the repositories in my GitHub account, and how they relate to one another
 category: technical 
 ---
 
@@ -34,9 +34,9 @@ Wherever possible, algorithms and data structures used in Ace are re-factored in
 
 Utility libraries are designed so that data structures are packaged in one unit, objects in another, and static functions in a third unit. This allows the data structures to be shared between the GUI code and the microservice code, using serialization mechanisms found in the data structures package.
 
-The process needed to translate the code found in these repositories into versioned distribution pacakges, and integrting these ditribution packages into the exisitign world-wide software distribution system, is not trivial. Three of the ATAP.Utility packages are devoted to the Build Tooling code needed to make this happen. In the course of developing thsse BuildTooling pacakages, a number of issues surfaced, and their olutions implemented. You will find in the documentation library a document devoted to explaining how the BuilTooling parts interact with the building (MSBuild.exe invoked via Visual Studio, and invoked via dotnet.exe), testing/verification (UnitTest, IntegrationTest, End-To-End (E2E) test, Appveyor) and distribution (NuGet and Chocolaty) tool suites.
+The process needed to translate the code found in these repositories into versioned distribution pacakges, and integrting these ditribution packages into the existing world-wide software distribution system, is not trivial. Three of the ATAP.Utility packages are devoted to the Build Tooling code needed to make this happen. In the course of developing thsse BuildTooling pacakages, a number of issues surfaced, and their solutions implemented. You will find in the documentation library a document devoted to explaining how the BuildTooling parts interact with the building (MSBuild.exe invoked via Visual Studio, and invoked via dotnet.exe), testing/verification (UnitTest, IntegrationTest, End-To-End (E2E) test, Appveyor) and distribution (NuGet and Chocolaty) tool suites.
 
-# ATAP.WebSites.ATAPConsulting
+## ATAP.WebSites.ATAPConsulting
 Documentation for the corporate website
 
 ## Overview

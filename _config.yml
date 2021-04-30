@@ -13,14 +13,14 @@
 theme: minimal-mistakes-jekyll
 # remote_theme           : "mmistakes/minimal-mistakes"
 # https://html5up.net/minimaxing possibly?
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "aqua" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
 title                    : Bill's Blog
 title_separator          : "-"
-subtitle                 : Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!
-name                     : Bill hertzing
+subtitle                 : Technical articles, political issues, family pictures. Dive in!
+name                     : Bill Hertzing
 description              : Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!
 url                      : "https://BillHertzing.github.io" 
 baseurl                  : "" # the subpath of your site, e.g. /blog. ToDo: Also Blazor?
@@ -221,6 +221,8 @@ plugins:
   - jekyll-timeago
   - jekyll_version_plugin
   # - jekyll-minifier
+  - jekyll-archives
+  - flexible_include
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -265,34 +267,6 @@ compress_html:
   ignore:
     envs: development
 
-# Custom Sidebar Navigation
-docs:
-  - title:  Repositories Overview
-    children:
-      - title: "Overview Guide"
-        url: /docs/overview-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Testing"
-        url: /docs/Testing/
-      - title: "ReleaseProcess"
-        url: /docs/ReleaseProcess/
-      - title: "Upgrading"
-        url: /docs/upgrading/
-      - title: "EndOfLife"
-        url: /docs/EndOfLife/
-  - title:  SCM Conventions
-    children:
-      - title: "SCM for Code, Doc, and DB"
-        url: /docs/SCM-Conventions/overview/
-      - title: "Code SCM"
-        url: /docs/Code-VersionControlProcess/
-      - title: "Docs SCM"
-        url: /docs/Documentation-VersionControlProcess/
-      - title: "DB SCM"
-        url: /docs/DataBase-VersionControlProcess/
-      - title: "Peer Repository SCM"
-        url: /docs/Peer-repository-AutoDoc-VersionControlProcess/
 
 
 # Defaults
@@ -310,6 +284,19 @@ defaults:
       related: true
       toc: true
       toc_sticky: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      author_profile: true
+      sidebar:
+        nav: docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: docs
 
 # settings for the jekyll-minifier package
 # jekyll-minifier:

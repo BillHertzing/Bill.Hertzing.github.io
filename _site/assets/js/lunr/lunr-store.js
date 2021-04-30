@@ -40,6 +40,7 @@ var store = [{
         "tags": ["Jekyll","GitHubPages"],
         "url": "/technical/how-i-setup-this-github-pages-blog-site-part-03/",
         "teaser": null
+<<<<<<< HEAD
       },{
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -115,4 +116,6 @@ var store = [{
         "url": "/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/",
 >>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
         "teaser": null
+=======
+>>>>>>> ff21095 (WIP Added navbar and custom sidebar nav)
       }]

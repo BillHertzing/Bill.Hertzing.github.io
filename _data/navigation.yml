@@ -1,6 +1,6 @@
 main:
   - title: "About"
-    url: /about/
+    url: /About/
   - title: "Posts"
     url: /year-archive/
   - title: "Categories"
@@ -13,3 +13,36 @@ main:
     url: /collection-archive/
   - title: "ChangeLog"
     url: /ChangeLog/
+  - title: "Contributing"
+    url: /Contributing/
+  - title: "Code of Conduct"
+    url: /Code-of-Conduct/
+
+# Custom Sidebar Navigation
+docs:
+  - title:  Repositories Overview
+    children:
+      - title: "Overview Guide"
+        url: /docs/overview-guide/
+      - title: "Structure"
+        url: /docs/structure/
+      - title: "Testing"
+        url: /docs/Testing/
+      - title: "ReleaseProcess"
+        url: /docs/ReleaseProcess/
+      - title: "Upgrading"
+        url: /docs/upgrading/
+      - title: "EndOfLife"
+        url: /docs/EndOfLife/
+  - title:  SCM Conventions
+    children:
+      - title: "SCM for Code, Doc, and DB"
+        url: /docs/SCM-Conventions/overview/
+      - title: "Code SCM"
+        url: /docs/Code-VersionControlProcess/
+      - title: "Docs SCM"
+        url: /docs/Documentation-VersionControlProcess/
+      - title: "DB SCM"
+        url: /docs/DataBase-VersionControlProcess/
+      - title: "Peer Repository SCM"
+        url: /docs/Peer-repository-AutoDoc-VersionControlProcess/

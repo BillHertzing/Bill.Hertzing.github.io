@@ -91,6 +91,11 @@ Detailed instructions are here at [jekyll-minifier](https://github.com/digitalsp
 
 Run `bundle exec jekyll serve --drafts` and ensure the site looks like it should. The re-run the tests that measure the size of the data stream.
 
+## Setup masthead navigation
+
+The MM theme has built-in support for masthead navigation. These are the links that appear across the top of every page, and which collapse down into the navigation hamburger on narrow screens. There is a direct relationship between the files in the `_pages` subdirectory and the navigation links in the `_data/navigation.yml`
+
+
 ## Setup archive pages
 
 The MM theme has two kinds of archive support built in, either a Liquid approach or a `jekyll-archives` approach. I chose to use the `jekyll-archives` plugin.
@@ -138,6 +143,25 @@ There needs to be an `index.html` in the generated sites `/categories/` director
 1. Run `bundle exec jekyll serve` and ensure the site builds correctly
 1. Navigate to `http://localhost:4000/categories/` and validate there is a page listing all current posts organized by category.
 
+### Create override for `_pages/year-archive.md`
+
+There needs to be an `index.html` in the generated `_sites` `/year-archive/` subdirectory.
+
+1. Add a new file `_pages/year-archive.md` at the root of the repo.
+1. Add the following Front Matter to the file. Nothing else is needed.
+
+   ```yml
+    ---
+    title: "Posts by Date"
+    layout: archive
+    permalink: /years-archive/
+    author_profile: true
+    ---
+    ```
+
+1. Run `bundle exec jekyll serve` and ensure the site builds correctly
+1. Navigate to `http://localhost:4000/tags/` and validate there is a page listing all current posts organized by Date.
+
 ### Create override for `_pages/tags-archive.md`
 
 There needs to be an `index.html` in the generated sites `/tags/` directory.
@@ -178,7 +202,7 @@ Run `bundle exec jekyll serve --drafts` and ensure masthead navigation is presen
 
 ## Setup custom sidebar navigation
 
-The MM theme has the masthead navigation capability built-in. Details on using it are at [Custom sidebar navigation menuPermalink](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-content) . Here are the steps I took:
+The MM theme has the custom sidebar navigation capability built-in. Details on using it are at [Custom sidebar navigation menu](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-content) . Here are the steps I took:
 
 1. Edit `_data/navigation.yml` . I added with the following contents:
 
