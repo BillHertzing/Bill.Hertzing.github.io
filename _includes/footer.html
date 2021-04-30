@@ -25,8 +25,6 @@
 
 {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> 
 &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
-Site Release {% capture long_tag_name %}{% project_version  %}{% endcapture %}{{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}
-
-<a href=/ChangeLog/index.html>ChangeLog.</a>
+Site Release <a href=/ChangeLog/index.html>{% capture long_tag_name %}{% project_version  %}{% endcapture %}{{ long_tag_name | remove: 'releases/' | split: '-' | first | prepend: "V" }}</a>
 
 </div>
