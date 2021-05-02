@@ -29,38 +29,17 @@
 <lastmod>2021-04-24T00:00:00-06:00</lastmod>
 </url>
 <url>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 <loc>https://billhertzing.github.io/political/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course/</loc>
 <lastmod>2021-05-01T23:17:00-06:00</lastmod>
-=======
-<loc>https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/</loc>
-<lastmod>2021-04-25T12:02:23-06:00</lastmod>
-=======
-<loc>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/</loc>
-<lastmod>2021-04-27T09:27:16-06:00</lastmod>
->>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
-=======
+</url>
+<url>
 <loc>https://billhertzing.github.io/About/</loc>
->>>>>>> ff21095 (WIP Added navbar and custom sidebar nav)
 </url>
 <url>
 <loc>https://billhertzing.github.io/ChangeLog/</loc>
 </url>
 <url>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<loc>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/</loc>
-<lastmod>2021-04-25T22:38:36-06:00</lastmod>
->>>>>>> e89d6c1 (WIP Added `jekyll-minifier`)
-=======
-<loc>https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/</loc>
-<lastmod>2021-04-27T09:44:54-06:00</lastmod>
->>>>>>> 452a2ab (WIP Add Archives and Masthead navigation)
-=======
 <loc>https://billhertzing.github.io/Code-of-Conduct/</loc>
->>>>>>> ff21095 (WIP Added navbar and custom sidebar nav)
 </url>
 <url>
 <loc>https://billhertzing.github.io/Contributing/</loc>
@@ -97,6 +76,12 @@
 </url>
 <url>
 <loc>https://billhertzing.github.io/tags/molly/</loc>
+</url>
+<url>
+<loc>https://billhertzing.github.io/tags/hoa/</loc>
+</url>
+<url>
+<loc>https://billhertzing.github.io/tags/community-preservation-association/</loc>
 </url>
 <url>
 <loc>https://billhertzing.github.io/categories/technical/</loc>
