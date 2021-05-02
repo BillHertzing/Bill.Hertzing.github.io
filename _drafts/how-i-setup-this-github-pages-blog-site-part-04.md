@@ -95,7 +95,6 @@ Run `bundle exec jekyll serve --drafts` and ensure the site looks like it should
 
 The MM theme has built-in support for masthead navigation. These are the links that appear across the top of every page, and which collapse down into the navigation hamburger on narrow screens. There is a direct relationship between the files in the `_pages` subdirectory and the navigation links in the `_data/navigation.yml`
 
-
 ## Setup archive pages
 
 The MM theme has two kinds of archive support built in, either a Liquid approach or a `jekyll-archives` approach. I chose to use the `jekyll-archives` plugin.
@@ -235,3 +234,22 @@ The MM theme has the custom sidebar navigation capability built-in. Details on u
         - title: "Peer Repository SCM"
           url: /docs/Peer-repository-AutoDoc-VersionControlProcess/
     ```
+
+## Add rule for Git Merge
+
+If a BigFix or new Post goes out on `main` while you are working on a Feature branch, you will need to rebase the feature branch onto the new head of `main`. There are likely to be a lot of files in `_site` with merge conflicts! since `_site` is all generated files, we can safely ignore any merge conflicts in the files under `site`. We can create a merge rulle to accomplish this by adding a custom merge driver, as follows:
+
+1. Create the file `.gitattributes` in the root of the repo.
+1. Add the line `/_site/**/*.* merge=keep-local-changes` and save the file.
+1. Create (or edit) the file `~/.gitconfig`, which is your windows HOME directory, and contains the global git configuration settings.
+1. Add the following block of text [Geordie answer to this SO question](https://stackoverflow.com/questions/12218977/git-add-merge-rule-to-config-for-specific-file):
+
+   ```text
+   [merge "keep-local-changes"]
+      name = A custom merge driver which always keeps the local changes
+      driver = true
+   ```
+
+1. You will need to close VSC and re-open it for the changes to the global `~/.gitconfig` to take effect.
+
+## Rebase onto the Head of `main`
