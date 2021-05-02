@@ -40,4 +40,10 @@ var store = [{
         "tags": ["Jekyll","GitHubPages"],
         "url": "/technical/how-i-setup-this-github-pages-blog-site-part-03/",
         "teaser": null
+      },{
+        "title": "Word Template for letter to CPA HOA regarding sale of golf course",
+        "excerpt":"A reformatting of Jerry D’s response into a Microsoft Word letter . Overview When I decided to create a political section of my blog, I had grandiose visions of writing essays on the big political issues of the day. But In Real Life, the first political issue to come up...","categories": ["political"],
+        "tags": ["HOA","Community Preservation Association"],
+        "url": "/political/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course/",
+        "teaser": null
       }]
