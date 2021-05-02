@@ -1,10 +1,7 @@
 ---
 title: Word Template for letter to CPA HOA regarding sale of golf course
-tags:
-- HOA
-- Community Preservation Association
-description: write up regarding the offer by Mustang Development to sell the golf
-  course to Community Preservation Association Master HOA
+tags: [HOA, "Community Preservation Association"]
+description: write up regarding the offer by Mustang Development to sell the golf course to Community Preservation Association Master HOA
 category: political
 date: 2021-05-01 23:17 -0600
 ---
