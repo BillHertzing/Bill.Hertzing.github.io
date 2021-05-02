@@ -5,7 +5,7 @@ description: Using Voice Dictation in the development process.
 category: technical
 ---
 
-Voice dictation is the subject of my second blog post 
+Voice dictation is the subject of my second blog post.
 
 Specifically, can I switch between dictation mode and programming mode
 
@@ -13,7 +13,7 @@ As I am dictating this into a new voice dictation software package, I have learn
 
 I did an Internet search on the subject of voice commands to/for Visual Studio code. Aside from the usual dross from the big companies, the articles that seemed remotely interesting, all seen to involve one or more third-party packages.
 
-All of the articles suggested that the initial steps are to set up microphone, workspace, and to install a voice recognition app. 
+All of the articles suggested that the initial steps are to set up microphone, workspace, and to install a voice recognition app.
 
 I am familiar with voice recognition on Google, and I have tried Microsoft's Windows built in product.
 
@@ -31,23 +31,17 @@ My programming language preferences are C# and PowerShell. Realizing that I woul
 
 So it's back to the drawing board! I'll try to write sooner next time.
 
-Combining Voice dictation and code editing is the subject of my third blog post 
+Combining Voice dictation and code editing is the subject of my third blog post.
 
 (Ed. First paragraph is typed) I was going to try and dictate as I coded, but upon opening my environment, I realized it was time for a housecleaning. I spent a few hours prior to dictating closing out my MAPs subscription cleaning out old SDK versions, removing two of my three Visual studio installs, and creating the first two workspaces for Visual Studio Code in the ATAP.Utilities repository.
 
 So the remainder of this post will be the raw dictation transcription, as I try to get the Powershell code I wrote last week into the original Console program that read a lot of disks, and records info about every file. The next step is to store the data in a graph DB. Yesterday I got the SQL Server 2017(?) service running locally, with the graph extensions, and I also created a node and edge table . I have powershell script that can insert the directory nodes from upstream into the nodes table of the DB
 
-Now to try dictating stream of conscionous to Visual Studio Code
+Now to try dictating stream of consciousness to Visual Studio Code
 
 First thing I'm going to try to do is to correct the build tools path.
 The solution file contains a section called .build with has entries for tools whose pans include .build from the solution directory.
 
-Hello while I am still trying to figure out why the path to the finished build tools is short by one directory, by manage to move four of the build tools directories under the source parent directory, and was able to properly reroot them in the solution directory under the build folder under src
-
-
+Hello while I am still trying to figure out why the path to the finished build tools is short by one directory, by manage to move four of the build tools directories under the source parent directory, and was able to properly re-root them in the solution directory under the build folder under src
 
 The second thing I'm going to try to do is to figure out the loft configurations so that it specifies the correct directory.
-
-
-
-

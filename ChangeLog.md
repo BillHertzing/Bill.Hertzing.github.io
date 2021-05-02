@@ -4,6 +4,15 @@ permalink: /ChangeLog/
 description: Information about me personally and about this blog site
 ---
 
+## 2021-05-02 Release V0.03.001
+
+- Created draft post `2021-05-01-Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course` .
+- Created two Word documents as referenced in the post body.
+- Put the Word documents into DropBox, created shared links to the documents, referenced them in the post body.
+- Moved post from `_drafts` to `political`, added date prefix to post's filename.
+
+See Issue #14
+
 ## 2021-04-25 Release V0.03.000
 
 Published the post `personal/2021-04-25-Eulogy for molly` post
