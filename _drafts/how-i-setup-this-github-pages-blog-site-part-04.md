@@ -237,7 +237,7 @@ The MM theme has the custom sidebar navigation capability built-in. Details on u
 
 ## Add rule for Git Merge
 
-If a BigFix or new Post goes out on `main` while you are working on a Feature branch, you will need to rebase the feature branch onto the new head of `main`. There are likely to be a lot of files in `_site` with merge conflicts! since `_site` is all generated files, we can safely ignore any merge conflicts in the files under `site`. We can create a merge rulle to accomplish this by adding a custom merge driver, as follows:
+If a BugFix or new Post goes out on `main` while you are working on a Feature branch, you will need to rebase the feature branch onto the new head of `main`. There are likely to be a lot of files in `_site` with merge conflicts! since `_site` is all generated files, we can safely ignore any merge conflicts in the files under `site`. We can create a merge  to accomplish this by adding a custom merge driver, as follows:
 
 1. Create the file `.gitattributes` in the root of the repo.
 1. Add the line `/_site/**/*.* merge=keep-local-changes` and save the file.

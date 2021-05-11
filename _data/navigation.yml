@@ -9,8 +9,8 @@ main:
     url: /tags/
   - title: "Pages"
     url: /page-archive/
-  - title: "Collections"
-    url: /collection-archive/
+  - title: "Subscribe"
+    url: /subscribe-to-bills-blog/
   - title: "ChangeLog"
     url: /ChangeLog/
   - title: "Contributing"

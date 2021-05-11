@@ -37,7 +37,8 @@ Utility libraries are designed so that data structures are packaged in one unit,
 The process needed to translate the code found in these repositories into versioned distribution pacakges, and integrting these ditribution packages into the existing world-wide software distribution system, is not trivial. Three of the ATAP.Utility packages are devoted to the Build Tooling code needed to make this happen. In the course of developing thsse BuildTooling pacakages, a number of issues surfaced, and their solutions implemented. You will find in the documentation library a document devoted to explaining how the BuildTooling parts interact with the building (MSBuild.exe invoked via Visual Studio, and invoked via dotnet.exe), testing/verification (UnitTest, IntegrationTest, End-To-End (E2E) test, Appveyor) and distribution (NuGet and Chocolaty) tool suites.
 
 ## ATAP.WebSites.ATAPConsulting
-Documentation for the corporate website
+
+Documentation for the old corporate website that never really got off the ground.
 
 ## Overview
 
