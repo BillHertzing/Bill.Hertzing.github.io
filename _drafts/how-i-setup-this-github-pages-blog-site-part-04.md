@@ -252,4 +252,73 @@ If a BugFix or new Post goes out on `main` while you are working on a Feature br
 
 1. You will need to close VSC and re-open it for the changes to the global `~/.gitconfig` to take effect.
 
-## Rebase onto the Head of `main`
+## Rebase Feature branch onto the head of `main` after a site patch/post point release
+
+ToDo: Replace with reference to the proper section in the Release Process document.
+
+## Modify `-includes/gallery`
+
+The `gallery` component opens an image link reusing the same tab as the parent document. Modern practice is to open an image link in a new tab. modify the `gallery` so that the anchor href now includes `target = "_blank" rel="noopener noreferrer"` . This will tell browsers to open the image in a new tab.
+
+## Add the page `_pages/subscribe-to-bills-blog.md`
+
+The page provides instructions on using [IFTTT](https://ifttt.com/) to subscribe to the site's RSS feed. Add the page `subscribe-to-bills-blog.md` to the root of the repo. The Front Matter should look like this:
+
+  ```yml
+    layout: single
+    permalink: /subscribe-to-bills-blog/
+    description: How to subscribe to posts from Bill's Blog site
+    tags: [subscribe, "RSS Feed"]
+    Category: technical
+    ---   
+  ```
+
+Add content to the page explaining the steps necessary to setup an IFTTT trigger and target action that produces an e-mail message whenever the site's RSS feed indicates a change has been made to the site.
+
+### Update masthead navigation
+
+- Edit `_data/navigation.yml`
+- Add the following to the `main` section:
+
+  ```yml
+   - title: "Subscribe"
+      url: /subscribe-to-bills-blog/
+  ```
+
+## Add `ads.txt` file from Disqus
+
+ADS stands for Authorized Digital Sellers. You can read more about ads.txt and the rationale for creating it, at [Ads.txt FAQ](https://help.disqus.com/en/articles/1765332-ads-txt-faq)  Disqus and other companies have cooperated to identify sellers with validated reputations. Disqus expects this file to be present in the root of the site. 
+
+1. Create the file `ads.txt` in the root of the repo.
+1. Copy the contents of https://disqusads.com/ads.txt into the file `ads.txt`
+1. Save the file
+
+This file needs to be maintained monthly. Setup a reminder to regularly compare the latest version of the file with the one local to your site, and update your local copy accordingly.
+
+[ToDo: write a script to automate this, and reference the script here.]
+[ToDo: write a post how to automate this, and schedule it to run monthly and notify the site admin's list.]
+
+## Add draft post `bills-blog-pre-release-checklist.md`
+
+ToDo:
+
+## Add draft post `bills-blog-release-process.md`
+
+ToDo:
+
+## Add any `personal` posts to be published
+
+If you have created any `personal` or `political` posts while working on this feature release, and would like to publish those posts along with this site release, follow the steps in the [Bills Blog Pre-Release Checklist](https://technical/<date>-bills-blog-pre-release-checklist) post and apply the post validation tests to any posts to be released
+
+## Validate this post (..part04)
+
+Follow the steps in the [pre-release checklist]() and apply the post validation tests to this post.
+
+## prepare to release V0.04.000 of the site
+
+Follow the steps in the [pre-release checklist]() and apply the site validation tests to the feature branch.
+
+## Release V0.04.000 of the site along with any mew published posts
+
+Follow the steps in the [Bills Blog Release Process]() post.
+

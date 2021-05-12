@@ -95,16 +95,16 @@ var store = [{
         "url": "/technical/Repository-Interrelationships/",
         "teaser": null
       },{
-        "title": "How I Setup This Github Pages Blog Site Part 04",
-        "excerpt":"Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part...","categories": ["technical"],
-        "tags": ["Jekyll","GitHubPages"],
-        "url": "/technical/how-i-setup-this-github-pages-blog-site-part-04/",
-        "teaser": null
-      },{
         "title": "2021 05 07 Hiking Emigration Canyon Miners Trail",
         "excerpt":"Pictures and description of hiking Emigration Canyon Miners Trail near SLC, UT AllTrails link AllTrails Recording of the hike Pictures alltrails 3d AllTrailsInfo Artsy water Emigration Canyon view Glacier Lilies amongst scrub oak Intrepid hikers KM on the trail Mountains across Emigration Canyon Spring runoff Videos Your browser does not...","categories": ["personal"],
         "tags": ["Personal","AllTrails","Hiking"],
         "url": "/personal/hiking-emigration-canyon-miners-trail/",
+        "teaser": null
+      },{
+        "title": "Bills Blog Pre-Release Checklist",
+        "excerpt":"Things about the release candidate to validate before starting the Release process Conventions &lt;Feat/Bug/Post-Branch&gt; is the name of the branch that is being evaluated for release. The branch being evaluated for release will be referred to as the Release Candidate in this document. Criteria and Evaluation Checkout the &lt;Feat/Bug/Post-Branch&gt; with...","categories": ["technical"],
+        "tags": ["Pre-Release Checklist","Process"],
+        "url": "/technical/bills-blog-pre-release-checklist/",
         "teaser": null
       },{
         "title": "Bill's Blog Release Process",
@@ -113,9 +113,9 @@ var store = [{
         "url": "/technical/bills-blog-release-process/",
         "teaser": null
       },{
-        "title": "Bills Blog Pre-Release Checklist",
-        "excerpt":"Things about the release candidate to validate before starting the Release process Conventions &lt;Feat/Bug/Post-Branch&gt; is the name of the branch that is being evaluated for release. The branch being evaluated for release will be referred to as the Release Candidate in this document. Criteria and Evaluation Checkout the &lt;Feat/Bug/Post-Branch&gt; with...","categories": ["technical"],
-        "tags": ["Pre-Release Checklist","Process"],
-        "url": "/technical/bills-blog-pre-release-checklist/",
+        "title": "How I Setup This Github Pages Blog Site Part 04",
+        "excerpt":"Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part...","categories": ["technical"],
+        "tags": ["Jekyll","GitHubPages"],
+        "url": "/technical/how-i-setup-this-github-pages-blog-site-part-04/",
         "teaser": null
       }]

@@ -46,7 +46,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-05-11T11:34:48-06:00">
+  <meta property="article:published_time" content="2021-05-11T20:03:30-06:00">
 
 
 
@@ -309,7 +309,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Bill’s Blog Release Process">
     <meta itemprop="description" content="Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site.">
-    <meta itemprop="datePublished" content="2021-05-11T11:34:48-06:00">
+    <meta itemprop="datePublished" content="2021-05-11T20:03:30-06:00">
     
 
     <div class="page__inner-wrap">
@@ -360,7 +360,7 @@
 <ul>
   <li>Feature branches - these branches are where new features to the site are developed and tested. They may include Bugfix work when the bug is minor and can fixing it can be rolled into new feature effort. A Feature Release can also incorporate new Post work when a Release milestone calls for a new post, e.g. the posts in the ongoing series “How I setup this Github Pages blog site” are part of each version’s feature effort, and one such post is released with each feature Release. When a Feature branch is merged into <code class="language-plaintext highlighter-rouge">main</code>, the Major or Minor numbers of the Semantic Version will be incremented.</li>
   <li>Bugfix branches - these branches are created to fix bugs that have been recorded in the repository’s Issues list. These are typically short lived branches with very limited changes, aimed at addresses specific deficiencies in the site. They are typically developed in parallel with Feature branches. When a Bugfix branch is merged into <code class="language-plaintext highlighter-rouge">main</code>, the Patch number (third part of the Semantic Version) will be incremented.</li>
-  <li>Post branches - a new branch created for the purpose of releasing a new published post, or significant editorial reworking of an exisitng published post. These branches are typically very short-lived, and are used to move a draft post to a published post. When a Post branch is merged into <code class="language-plaintext highlighter-rouge">main</code>, the patch number of teh site’s Version is incremented.</li>
+  <li>Post branches - a new branch created for the purpose of releasing a new published post, or significant editorial reworking of an existing published post. These branches are typically very short-lived, and are used to move a draft post to a published post. When a Post branch is merged into <code class="language-plaintext highlighter-rouge">main</code>, the patch number of the site’s Version is incremented.</li>
 </ul>
 
 <p>The criteria and steps to create new branches is discussed in <a href="">TBD</a>. This document assumes that there are “more than one” active branches that have been created to track development work, and that all development work is being tracked in a branch. This document is focused on the steps needed to release one active development branch into <code class="language-plaintext highlighter-rouge">main</code>, and update the production site with the new stuff.</p>
@@ -434,8 +434,6 @@
   <li>Validate the production site is up, with the new features, new published posts, and correct Release Version number.</li>
 </ol>
 
-<p>Description of the steps to release an update to the blog site.</p>
-
 <p>Written for “Visual Studio Code” with both GitLens and GitGraph plugins</p>
 
 <p>The VCS SCM tool should not be illuminated with a number.</p>
@@ -462,7 +460,7 @@
 
 <p>$env:JEKYLL_ENV = ‘production’; bundle exec jekyll serve</p>
 
-<p>git tag -f releases/0.02.001  should result <code class="language-plaintext highlighter-rouge">Updated tag 'releases/0.02.001' (was c7f1fab)</code> and the commit number will always be diffferent from this example.</p>
+<p>git tag -f releases/0.02.001  should result <code class="language-plaintext highlighter-rouge">Updated tag 'releases/0.02.001' (was c7f1fab)</code> and the commit number will always be different from this example.</p>
 
 <p>commit the _site changes on main</p>
 
@@ -480,12 +478,12 @@
   <li>Commit the staged and unstaged changes.</li>
   <li>Follow the <a href="TBD - anchor in another document?, `..Part 03`">Site Minor Release checklist</a>
     <ul>
-      <li>Correction to pull. Dont use git pull rebase -i main just use git rebase -i –onto main. If the post branch’s base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on.</li>
+      <li>Correction to pull. Don’t use git pull rebase -i main just use git rebase -i –onto main. If the post branch’s base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on.</li>
     </ul>
   </li>
   <li>As often as necessary, commit changes, using <code class="language-plaintext highlighter-rouge">Chore commit Production build</code> .
   ***Note: if publishing runs over midnight, “nnndays ago” used in multiple places, gets updated, and multiple files may get changed.</li>
-  <li>Squash the post’s branch’s commits, see <a href="ToDo: link">Final soft reset and commit on the <code class="language-plaintext highlighter-rouge">Post&lt;insertname&gt;</code> branch</a> .</li>
+  <li>Squash the post’s branch’s commits, see <a href="ToDo: link">Final soft reset and commit on the <code class="language-plaintext highlighter-rouge">Post&lt;insert name&gt;</code> branch</a> .</li>
   <li>Copy the commit message to the top of the <code class="language-plaintext highlighter-rouge">ChangeLog.md</code> .</li>
   <li>Rebuild and validate the <code class="language-plaintext highlighter-rouge">_site's</code> <code class="language-plaintext highlighter-rouge">ChangeLog.md</code> the looks correct. Repeat as necessary.</li>
   <li>final commit using <code class="language-plaintext highlighter-rouge">Chore commit Production build</code></li>
@@ -523,7 +521,7 @@
     <p>Run <code class="language-plaintext highlighter-rouge">git tag -fa releases/&lt;NextReleaseVersion&gt;</code> -m “<message appropriate="" for="" release="">". It will open an editor window in VSC, simply close it as we should not need to make any changes to the tag message.</message></p>
   </li>
   <li>View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on <code class="language-plaintext highlighter-rouge">main</code>).</li>
-  <li>If you are correcting a mistake in a prior loop, and have already pushed the tag to the remote, it has to be removed from the remot. In this case, run <code class="language-plaintext highlighter-rouge">git push origin :refs/tags/releases/&lt;NextReleaseVersion&gt;</code> to push an empty tag to the remote</li>
+  <li>If you are correcting a mistake in a prior loop, and have already pushed the tag to the remote, it has to be removed from the remote. In this case, run <code class="language-plaintext highlighter-rouge">git push origin :refs/tags/releases/&lt;NextReleaseVersion&gt;</code> to push an empty tag to the remote</li>
   <li>Run <code class="language-plaintext highlighter-rouge">git push --atomic origin main refs/tags/releases/&lt;NextReleaseVersion&gt;</code> to push both the final commit on <code class="language-plaintext highlighter-rouge">main</code> <strong>AND</strong> the associated release tag to GitHub.</li>
   <li>Validate that the <code class="language-plaintext highlighter-rouge">Deploy</code> Github Action was invoked and ran successfully.  ToDo: reference the instructions back in <code class="language-plaintext highlighter-rouge">... part 01</code></li>
   <li>Validate the production site is up, with the new features, new published posts, and correct Release Version number.</li>
@@ -557,14 +555,13 @@
 
 <h2 id="create-new-branch-for-work-on-new-post">Create new branch for work on new post</h2>
 
-<p>Run git chekcout -b <NameOfBranchForPost> (or use VSC)</NameOfBranchForPost></p>
+<p>Run git checkout -b <NameOfBranchForPost> (or use VSC)</NameOfBranchForPost></p>
 
 <h2 id="create-the-new-draft-post">Create the new draft post</h2>
 
 <p>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll draft "Name Of Your Draft</code></p>
 
 <p>Edit the draft until you are ready to publish it.</p>
-
 
         
       </section>
@@ -575,7 +572,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-11T11:34:48-06:00">May 11, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-11T20:03:30-06:00">May 11, 2021</time></p>
 
 
       </footer>
@@ -594,11 +591,11 @@
       
   <nav class="pagination">
     
-      <a href="/personal/hiking-emigration-canyon-miners-trail/" class="pagination--pager" title="2021 05 07 Hiking Emigration Canyon Miners Trail
+      <a href="/technical/bills-blog-pre-release-checklist/" class="pagination--pager" title="Bills Blog Pre-Release Checklist
 ">Previous</a>
     
     
-      <a href="/technical/bills-blog-pre-release-checklist/" class="pagination--pager" title="Bills Blog Pre-Release Checklist
+      <a href="/technical/how-i-setup-this-github-pages-blog-site-part-04/" class="pagination--pager" title="How I Setup This Github Pages Blog Site Part 04
 ">Next</a>
     
   </nav>
@@ -622,6 +619,45 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="permalink">How I Setup This Github Pages Blog Site Part 04
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series...</p>
+  </article>
+</div>
+
         
           
 
@@ -700,45 +736,6 @@ Conventions
 
     <p class="archive__item-excerpt" itemprop="description">Pictures and description of hiking Emigration Canyon Miners Trail near SLC, UT
 </p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="permalink">How I Setup This Github Pages Blog Site Part 04
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          7 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series...</p>
   </article>
 </div>
 

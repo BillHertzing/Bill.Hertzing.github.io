@@ -1,445 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-05-11T11:39:48-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We&apos;ve got it all!</subtitle><author><name>William (Bill) Hertzing</name></author><entry><title type="html">Bills Blog Pre-Release Checklist</title><link href="https://billhertzing.github.io/technical/bills-blog-pre-release-checklist/" rel="alternate" type="text/html" title="Bills Blog Pre-Release Checklist" /><published>2021-05-11T11:37:18-06:00</published><updated>2021-05-11T11:37:18-06:00</updated><id>https://billhertzing.github.io/technical/bills-blog-pre-release-checklist</id><content type="html" xml:base="https://billhertzing.github.io/technical/bills-blog-pre-release-checklist/">&lt;p&gt;Things about the release candidate to validate before starting the &lt;a href=&quot;bills-blog-release-process.md&quot;&gt;Release process&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;conventions&quot;&gt;Conventions&lt;/h2&gt;
-
-&lt;p&gt;&amp;lt;Feat/Bug/Post-Branch&amp;gt; is the name of the branch that is being evaluated for release. The branch being evaluated for release will be referred to as the Release Candidate in this document.&lt;/p&gt;
-
-&lt;h2 id=&quot;criteria-and-evaluation&quot;&gt;Criteria and Evaluation&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Checkout the &amp;lt;Feat/Bug/Post-Branch&amp;gt; with Visual Studio Code (VSC).&lt;/li&gt;
-  &lt;li&gt;Review any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;warnings&lt;/code&gt; that appear in VSC’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;problems&lt;/code&gt;. pane. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; using a WIP  commit message. Push these commits to the remote.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;check-text-spelling-grammar-and-case-consistency-on-proper-names&quot;&gt;Check text spelling, grammar, and case-consistency on proper names&lt;/h2&gt;
-
-&lt;p&gt;Using VSC:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Use a spell checker plugin and ensure it reports no misspellings&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Using Grammarly:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;[ToDo: write instructions on using the unofficial Grammarly VSC plugin on a draft post]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ensure that proper names that refer to software or hardware concepts and company names, are consistent across the site.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;[ToDo: write a script that tests the site for proper noun casing consistency]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;check-post-and-page-layout-consistency&quot;&gt;Check post and page layout consistency&lt;/h2&gt;
-
-&lt;p&gt;ToDo:&lt;/p&gt;
-
-&lt;h2 id=&quot;site-checks&quot;&gt;&lt;a name=&quot;Site Checks&quot;&gt;&lt;/a&gt;Site Checks&lt;/h2&gt;
-
-&lt;p&gt;The following subsections provide details about specific items to validate.&lt;/p&gt;
-
-&lt;h3 id=&quot;check-images&quot;&gt;Check Images&lt;/h3&gt;
-
-&lt;p&gt;For posts that include images, ensure the links in the post properly reference images hosted in 3rd party clouds&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Images are created in multiple responsive sizes&lt;/li&gt;
-  &lt;li&gt;Image thumbnails are created&lt;/li&gt;
-  &lt;li&gt;Images are checked for any PPI in the metadata,and scrubbed&lt;/li&gt;
-  &lt;li&gt;Images comply with accessibility guidelines - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Alt&lt;/code&gt; text and navigation aides&lt;/li&gt;
-  &lt;li&gt;Get final links to images (not videos)
-  For Dropbox hosted images:
-    - Get a Dropbox developer access token from https://www.dropbox.com/developers/apps. [ToDo: link to attributions on how to create a Dropbox account, developer credentials, and an app to allow API access to dropbox]
-    - Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:DropBoxAccessToken = &quot;&amp;lt;DropBoxAccessToken&amp;gt;&quot;
-    - [ToDo: link to document describing how to access the ATAP Powershell BuildTooling modules]
-    - Run &lt;/code&gt;$env:psmodulepath = “./;” + $env:psmodulepath&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;
-    - Run the Powershell script &lt;/code&gt;Get-DropboxSharedLinks.ps1’ -verbose -path “Dropbox-path-to-folder-having-links”`
-    - Validate the references to images in the post use the link information returned 
-    - [ToDo: A script to automate link checking the document and the links from Dropbox]
-    &lt;ul&gt;
-      &lt;li&gt;For Google Photos hosted images:
-        &lt;ul&gt;
-          &lt;li&gt;[ToDo: write instructions and scripts for Google Photo hosted images]&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;For Microsoft Drive hosted images:
-        &lt;ul&gt;
-          &lt;li&gt;[ToDo: write instructions and scripts for Microsoft Drive hosted images]&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;[ToDo: write a script that tests each image the site and all its posts reference]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;check-internal-links&quot;&gt;Check internal links&lt;/h3&gt;
-
-&lt;p&gt;Ensure that all links in the post that refer to anchor points within the same post, or to anchor points in other points, work correctly. All Headings in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; documents should include an explicit anchor point. Links to headers in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; documents should refer to the anchor point associated with that header. See also the many answers to this StackOverflow question &lt;a href=&quot;https://stackoverflow.com/questions/5319754/cross-reference-named-anchor-in-markdown&quot;&gt;Cross-reference (named anchor) in markdown&lt;/a&gt; for more insight into why explicit anchors are desirable..&lt;/p&gt;
-
-&lt;h3 id=&quot;check-styling&quot;&gt;Check Styling&lt;/h3&gt;
-
-&lt;p&gt;ToDo checklist including responsive tests&lt;/p&gt;
-
-&lt;h3 id=&quot;check-scripts&quot;&gt;Check Scripts&lt;/h3&gt;
-
-&lt;p&gt;If the site contains any JavaScript functions, these need to be checked.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[ToDo: write a testing document that describes how to test each JS script / function incorporated into the site]&lt;/li&gt;
-  &lt;li&gt;[ToDo: write a script that tests each JS script / function incorporated into the site]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;check-security&quot;&gt;Check Security&lt;/h3&gt;
-
-&lt;p&gt;It is very important to ensure that nothing in the site allows bad actors to violate its security. This is especially true of any site features that store persistent data&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[ToDo: write a security document that describes how to test the site’s security for data-at-rest, and data-in-transit]&lt;/li&gt;
-  &lt;li&gt;[ToDo: write a security document that describes how to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;secrets&lt;/code&gt; while developing the site]&lt;/li&gt;
-  &lt;li&gt;[ToDo: write a script that tests the site for Security]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;check-accessibility&quot;&gt;Check Accessibility&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[ToDo: write a development and testing document(s) that describes how to design and test the site for Accessibility]&lt;/li&gt;
-  &lt;li&gt;[ToDo: write a script that tests the site for Accessibility]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;check-globalization-and-localization&quot;&gt;Check Globalization and Localization&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[ToDo: write a development and testing document(s) that describes how to design and test the site for Globalization and Localization]&lt;/li&gt;
-  &lt;li&gt;[ToDo: write a script that tests the site for Globalization and Localization]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;check-the-release-candidate-works-on-the-internet&quot;&gt;Check the Release Candidate works on the Internet&lt;/h2&gt;
-
-&lt;p&gt;The Release Candidate has to be tested “as if” it was publicly accessible from the Internet. This focuses on the availability of content that is served from locations other than the main site, e.g. images, JS libraries, and CSS libraries.&lt;/p&gt;
-
-&lt;h3 id=&quot;setup-ngrok&quot;&gt;Setup &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ngrok&lt;/code&gt;`&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;See &lt;a href=&quot;https://dashboard.ngrok.com/get-started/setup&quot;&gt;Getting Started with ngrok&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;publish-to-internet-via-ngrok&quot;&gt;Publish to Internet via ngrok&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; to ensure that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; has been built with no drafts and with Disqus comments enabled.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ngrok&lt;/code&gt; from a Powershell prompt.&lt;/li&gt;
-  &lt;li&gt;Copy the ngrok link information that is displayed&lt;/li&gt;
-  &lt;li&gt;Using multiple different computers and devices with multiple different screen sizes, evaluate the public site (ngrok link) against the criteria in &lt;a href=&quot;#Site Checks&quot;&gt;Site Checks&lt;/a&gt; .&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Stop the local Jekyll server and close the ngrok channel&lt;/p&gt;
-
-&lt;h2 id=&quot;steps-to-publish-a-draft-post&quot;&gt;Steps to publish a draft post&lt;/h2&gt;
-
-&lt;p&gt;if the site release includes one or more posts to be published, follow these steps to move the post from its drafts state to the published state.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[ToDo: write a document that describes how to move a post from draft to production]&lt;/li&gt;
-  &lt;li&gt;[ToDo: write a script that moves a post from draft to production]
-    &lt;ol&gt;
-      &lt;li&gt;Ensure the terminal is at the root of the repo&lt;/li&gt;
-      &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll publish &quot;_drafts/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course.md&quot;&lt;/code&gt;`&lt;/li&gt;
-      &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mv  _posts/2021-05-01-Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course.md political/2021-05-01-Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course.md&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;*ToDo: fix the git issue, figure out how to tell git that the draft is renamed to the post. Git thinks its a delete and an add. Automate this&lt;/li&gt;
-      &lt;li&gt;Ensure the file has been moved and renamed, to the correct category subdirectory and the proper date prefix added.&lt;/li&gt;
-      &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; and validate the new post passes the &lt;a href=&quot;ToDo: Real Soon Now&quot;&gt;New Post Checklist&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Pre-Release Checklist" /><category term="Process" /><summary type="html">Things about the release candidate to validate before starting the Release process Conventions</summary></entry><entry><title type="html">Bill’s Blog Release Process</title><link href="https://billhertzing.github.io/technical/bills-blog-release-process/" rel="alternate" type="text/html" title="Bill’s Blog Release Process" /><published>2021-05-11T11:34:48-06:00</published><updated>2021-05-11T11:34:48-06:00</updated><id>https://billhertzing.github.io/technical/bills-blog-release-process</id><content type="html" xml:base="https://billhertzing.github.io/technical/bills-blog-release-process/">&lt;p&gt;Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, and release a new version of the site.&lt;/p&gt;
-
-&lt;h2 id=&quot;assumptions&quot;&gt;Assumptions&lt;/h2&gt;
-
-&lt;p&gt;This process document assumes that there is no development work directly on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. All changes are done in separate branches. There are currently three kinds of development branches.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Feature branches - these branches are where new features to the site are developed and tested. They may include Bugfix work when the bug is minor and can fixing it can be rolled into new feature effort. A Feature Release can also incorporate new Post work when a Release milestone calls for a new post, e.g. the posts in the ongoing series “How I setup this Github Pages blog site” are part of each version’s feature effort, and one such post is released with each feature Release. When a Feature branch is merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, the Major or Minor numbers of the Semantic Version will be incremented.&lt;/li&gt;
-  &lt;li&gt;Bugfix branches - these branches are created to fix bugs that have been recorded in the repository’s Issues list. These are typically short lived branches with very limited changes, aimed at addresses specific deficiencies in the site. They are typically developed in parallel with Feature branches. When a Bugfix branch is merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, the Patch number (third part of the Semantic Version) will be incremented.&lt;/li&gt;
-  &lt;li&gt;Post branches - a new branch created for the purpose of releasing a new published post, or significant editorial reworking of an exisitng published post. These branches are typically very short-lived, and are used to move a draft post to a published post. When a Post branch is merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, the patch number of teh site’s Version is incremented.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The criteria and steps to create new branches is discussed in &lt;a href=&quot;&quot;&gt;TBD&lt;/a&gt;. This document assumes that there are “more than one” active branches that have been created to track development work, and that all development work is being tracked in a branch. This document is focused on the steps needed to release one active development branch into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, and update the production site with the new stuff.&lt;/p&gt;
-
-&lt;p&gt;The branch being released will be referred to as the Release Candidate in this document.&lt;/p&gt;
-
-&lt;h2 id=&quot;ensure-the-featbugpost-branch--meets-release-criteria-and-is-built-atop-the-latest-main&quot;&gt;Ensure the &amp;lt;Feat/Bug/Post-Branch&amp;gt;  meets release criteria and is built atop the latest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The development work on the branch meets the criteria set out in the &lt;a href=&quot;bills-blog-pre-release-checklist.md&quot;&gt;Bill’s Blog Pre-Release Checklist&lt;/a&gt;. This ensures the new work meets the standards expected for a release.&lt;/li&gt;
-  &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch has no changes to it since the last Release tag was applied. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch builds and serves cleanly, without the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--drafts&lt;/code&gt; option.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Ensure the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch builds cleanly, without the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--drafts&lt;/code&gt; option.&lt;/li&gt;
-  &lt;li&gt;Checkout the &amp;lt;Feat/Bug/Post-Branch&amp;gt; ( the Release Candidate) with Visual Studio Code (VSC).&lt;/li&gt;
-  &lt;li&gt;Publish all draft posts that are part of this release.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; to ensure that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; has been built with no drafts and with Disqus enabled.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull rebase -i main&lt;/code&gt; to pull any prior release changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; into the Release Candidate branch. Following the &lt;a href=&quot;bills-blog-pre-release-checklist.md&quot;&gt;Pre-Release Checklist&lt;/a&gt; should ensure that this step has already been done, but redoing this step here ensures that no recent updates to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; are missed. If there are no recent updates, this step takes very little time / effort.&lt;/li&gt;
-  &lt;li&gt;If there are any recent updates to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, then recheck the Release Candidate branch with &lt;a href=&quot;bills-blog-pre-release-checklist.md&quot;&gt;Bill’s Blog Pre-Release Checklist&lt;/a&gt; to ensure the changes didn’t break anything, and restart this release process.&lt;/li&gt;
-  &lt;li&gt;Always ensure that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; is run after the final Release Candidate code change is made, so that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; is up-to-date.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;final-soft-reset-and-commit-on-the-featbugpost-branch&quot;&gt;Final soft reset and commit on the &amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/h2&gt;
-
-&lt;p&gt;The purpose of the soft reset and commit is to clean up the commit messages and make them ready for the ChangeLog, and to cleanup all the changes and eliminate dross in the change list. If the individual commit messages have been well written, the chore of making a good &amp;lt;Feat/Bug/Post-Branch&amp;gt; release commit message shouldn’t be too hard.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log --pretty=&quot;format:%b&quot; HEAD...$(git merge-base main $(git rev-parse --abbrev-ref HEAD)) &amp;gt; $env:TEMP/git_message_for_squash.md&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code $env:TEMP/git_message_for_squash.md&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Edit the file and create the final commit message for the release.&lt;/li&gt;
-  &lt;li&gt;Copy the final commit message into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt; file&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; and validate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog&lt;/code&gt; looks as expected. Stop the local Jekyll server.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --soft $(git merge-base main $(git rev-parse --abbrev-ref HEAD))&lt;/code&gt; to reset the head of the Release Candidate branch to the head of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt; to add the current state of the Release Candidate branch to the next commit.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt;. Title should be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FEAT Milestone VX.XX.XXX&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BugFix Issue #XX&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Post &quot;&amp;lt;ShortTitle&amp;gt;&quot;&lt;/code&gt; Paste the final commit message as the body of the commit. Close the editor.&lt;/li&gt;
-  &lt;li&gt;Sync the local &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; with the remote.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;At this point the Release Candidate should be complete. If you discover additional issues to be addressed, fix them and then repeat the steps in this section.&lt;/p&gt;
-
-&lt;h3 id=&quot;merge-the-featbugpost-branch-branch-with-the-main-branch&quot;&gt;Merge the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; branch with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch&lt;/h3&gt;
-
-&lt;p&gt;Many organizations require a pull request to perform a merge. That’s a great idea as soon as your site has any collaborators, but its overkill for a solo developer.  I’ll add instructions and templates for a Pull Request process in a later update to this post. For now just merge the two branches.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt; to change to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge &amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; to perform the merge. If the &lt;a href=&quot;bills-blog-pre-release-checklist.md&quot;&gt;Bill’s Blog Pre-Release Checklist&lt;/a&gt; was followed, there should be no merge conflicts.&lt;/li&gt;
-  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore Release Work for &amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; as the commit title&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;add-a-release-tag&quot;&gt;Add a Release tag&lt;/h3&gt;
-
-&lt;p&gt;Now that the merge has been made, add a Release tag to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -a releases/X.XX.XXX -m &quot;Third release of Bill&apos;s Blog&quot;&lt;/code&gt; Modify the command as appropriate for the specific release being made&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag&lt;/code&gt; (which will list all existing tags) and verify the new tag is there.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;final-build-of-production-site&quot;&gt;Final build of production site&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Validate the final production build, including the Release Version in the footer, is correct.&lt;/li&gt;
-  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; (these should only be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; changes). Note the commit ID.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -f releases/X.XX.XXX&lt;/code&gt;  should result &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Updated tag &apos;releases/X.XX.XXX&apos; (was c7f1fab)&lt;/code&gt; and the commit number will always be different from this example. This will move the tag forward to the most recent commit.&lt;/li&gt;
-  &lt;li&gt;View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;).&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push --atomic origin main refs/tags/releases/X.XX.XXX&lt;/code&gt; to push both the final commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; &lt;strong&gt;AND&lt;/strong&gt; the associated release tag to GitHub.&lt;/li&gt;
-  &lt;li&gt;Validate that the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt; Github Action was invoked and ran successfully.  ToDo: reference the instructions back in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... part 01&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Validate the production site is up, with the new features, new published posts, and correct Release Version number.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Description of the steps to release an update to the blog site.&lt;/p&gt;
-
-&lt;p&gt;Written for “Visual Studio Code” with both GitLens and GitGraph plugins&lt;/p&gt;
-
-&lt;p&gt;The VCS SCM tool should not be illuminated with a number.&lt;/p&gt;
-
-&lt;p&gt;Review the commit log. If there are a number of commits in the bugfix branch, squash them together, and edit the comments to be a clean edited description of the changes.&lt;/p&gt;
-
-&lt;h2 id=&quot;create-a-new-branch-for-the-update&quot;&gt;Create a new branch for the update&lt;/h2&gt;
-
-&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b &amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; (or use VSC)&lt;/p&gt;
-
-&lt;p&gt;Review the commit log. If there are a number of commits in the bugfix branch, squash them together, and edit the comments to be a clean edited description of the changes.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;git merge &lt;em&gt;BugFixBranchName&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;sync main with remote&lt;/p&gt;
-
-&lt;p&gt;build locally and validate bug has been fixed.&lt;/p&gt;
-
-&lt;p&gt;git tag -a releases/0.02.001 -m “Bill’s Blog, Fix Issue #9”&lt;/p&gt;
-
-&lt;p&gt;git tag&lt;/p&gt;
-
-&lt;p&gt;$env:JEKYLL_ENV = ‘production’; bundle exec jekyll serve&lt;/p&gt;
-
-&lt;p&gt;git tag -f releases/0.02.001  should result &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Updated tag &apos;releases/0.02.001&apos; (was c7f1fab)&lt;/code&gt; and the commit number will always be diffferent from this example.&lt;/p&gt;
-
-&lt;p&gt;commit the _site changes on main&lt;/p&gt;
-
-&lt;p&gt;Switch to the Feature branch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForRelease0.03.000&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull --rebase&lt;/code&gt; to bring the bugfix patch into the feature development branch.&lt;/p&gt;
-
-&lt;p&gt;sync the feature branch with the remote&lt;/p&gt;
-
-&lt;p&gt;Do the same for any / all other branches being worked.&lt;/p&gt;
-
-&lt;h2 id=&quot;release-post-merge-into-main-and-update-site-version&quot;&gt;Release post, merge into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; and update site version.&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Commit the staged and unstaged changes.&lt;/li&gt;
-  &lt;li&gt;Follow the &lt;a href=&quot;TBD - anchor in another document?, `..Part 03`&quot;&gt;Site Minor Release checklist&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Correction to pull. Dont use git pull rebase -i main just use git rebase -i –onto main. If the post branch’s base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;As often as necessary, commit changes, using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore commit Production build&lt;/code&gt; .
-  ***Note: if publishing runs over midnight, “nnndays ago” used in multiple places, gets updated, and multiple files may get changed.&lt;/li&gt;
-  &lt;li&gt;Squash the post’s branch’s commits, see &lt;a href=&quot;ToDo: link&quot;&gt;Final soft reset and commit on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Post&amp;lt;insertname&amp;gt;&lt;/code&gt; branch&lt;/a&gt; .&lt;/li&gt;
-  &lt;li&gt;Copy the commit message to the top of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt; .&lt;/li&gt;
-  &lt;li&gt;Rebuild and validate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&apos;s&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt; the looks correct. Repeat as necessary.&lt;/li&gt;
-  &lt;li&gt;final commit using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore commit Production build&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Put the final version of the text for this release’s ChangeLog into the copy buffer.&lt;/li&gt;
-  &lt;li&gt;Run git reset –soft $(git merge-base main $(git rev-parse –abbrev-ref HEAD))&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt; to stage the cumulative changes.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt; .&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;merge-the-postxxx-branch-with-the-main-branch&quot;&gt;Merge the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;postXXX&lt;/code&gt; branch with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Ensure the Post branch has been rebased on the latest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;.  Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git rebase -i main&lt;/code&gt; to pull any last-minute changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; branch. If there are no changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, then there should be just one commit in the commit list, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pick&lt;/code&gt; is the operation selected for it. Hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Start Rebase&lt;/code&gt; (from GitLens Interactive Rebase). You should see the message &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Successfully rebased and updated refs/heads/&lt;/code&gt;&amp;lt;Post/Bug/Feat-BranchName&amp;gt;` .&lt;/li&gt;
-  &lt;li&gt;Switch to main branch, either with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt;, or using VSC.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge &amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; to perform the merge. If the pre-release checklist was followed, there should be no merge conflicts.&lt;/li&gt;
-  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore Release Work for &amp;lt;NextReleaseVersion&amp;gt;&lt;/code&gt; as the commit title.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;add-a-release-tag-1&quot;&gt;Add a Release tag&lt;/h3&gt;
-
-&lt;p&gt;Now that the merge has been made, add a Release tag to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -a releases/&amp;lt;NextReleaseVersion&amp;gt; -m &quot;&amp;lt;message appropriate for release&amp;gt;&quot;&lt;/code&gt; (modify the command as appropriate for your site)&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag&lt;/code&gt; which will list all existing tags and verify the tag is there.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;final-build-of-production-site-1&quot;&gt;Final build of production site&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Validate the final production build, including the Release Version in the footer, is correct. Stop the local Jekyll server.&lt;/li&gt;
-  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; (these should only be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; changes). Note the commit ID.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -fa releases/&amp;lt;NextReleaseVersion&amp;gt;&lt;/code&gt; -m “&lt;message appropriate=&quot;&quot; for=&quot;&quot; release=&quot;&quot;&gt;&quot;. It will open an editor window in VSC, simply close it as we should not need to make any changes to the tag message.&lt;/message&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;).&lt;/li&gt;
-  &lt;li&gt;If you are correcting a mistake in a prior loop, and have already pushed the tag to the remote, it has to be removed from the remot. In this case, run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push origin :refs/tags/releases/&amp;lt;NextReleaseVersion&amp;gt;&lt;/code&gt; to push an empty tag to the remote&lt;/li&gt;
-  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push --atomic origin main refs/tags/releases/&amp;lt;NextReleaseVersion&amp;gt;&lt;/code&gt; to push both the final commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; &lt;strong&gt;AND&lt;/strong&gt; the associated release tag to GitHub.&lt;/li&gt;
-  &lt;li&gt;Validate that the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt; Github Action was invoked and ran successfully.  ToDo: reference the instructions back in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... part 01&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Validate the production site is up, with the new features, new published posts, and correct Release Version number.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;remove-the-postbugfeat-branchname-branch&quot;&gt;Remove the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; branch&lt;/h3&gt;
-
-&lt;h4 id=&quot;use-vsc-git&quot;&gt;Use VSC Git&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Switch to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch.&lt;/li&gt;
-  &lt;li&gt;Expand the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Branches&lt;/code&gt; window&lt;/li&gt;
-  &lt;li&gt;right-click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; branch to be removed&lt;/li&gt;
-  &lt;li&gt;Select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Delete...&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Chose to delete both the local and the remote tracking branch.&lt;/li&gt;
-  &lt;li&gt;Confirm…&lt;/li&gt;
-  &lt;li&gt;View the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Git Graph&lt;/code&gt; and validate the &amp;lt;Post/Bug/Feat-BranchName&amp;gt;` branch has been removed both locally and remotely. ToDo: insert jpg&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;use-command-line-git&quot;&gt;Use command line Git&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ToDo: Add list of CLI git commands&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;rebase-any-feature-or-bug-branches-onto-the-latest-main&quot;&gt;Rebase any Feature or Bug branches onto the latest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Switch to the &amp;lt;Post/Bug/Feat-BranchName&amp;gt; to be rebased.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;create-new-branch-for-work-on-new-post&quot;&gt;Create new branch for work on new post&lt;/h2&gt;
-
-&lt;p&gt;Run git chekcout -b &lt;NameOfBranchForPost&gt; (or use VSC)&lt;/NameOfBranchForPost&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;create-the-new-draft-post&quot;&gt;Create the new draft post&lt;/h2&gt;
-
-&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll draft &quot;Name Of Your Draft&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Edit the draft until you are ready to publish it.&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Release Process" /><category term="Process" /><summary type="html">Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site.</summary></entry><entry><title type="html">2021 05 07 Hiking Emigration Canyon Miners Trail</title><link href="https://billhertzing.github.io/personal/hiking-emigration-canyon-miners-trail/" rel="alternate" type="text/html" title="2021 05 07 Hiking Emigration Canyon Miners Trail" /><published>2021-05-07T00:00:00-06:00</published><updated>2021-05-07T00:00:00-06:00</updated><id>https://billhertzing.github.io/personal/hiking-emigration-canyon-miners-trail</id><content type="html" xml:base="https://billhertzing.github.io/personal/hiking-emigration-canyon-miners-trail/">&lt;p&gt;Pictures and description of hiking Emigration Canyon Miners Trail near SLC, UT&lt;/p&gt;
-
-&lt;h2 id=&quot;alltrails-link&quot;&gt;AllTrails link&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.alltrails.com/explore/recording/activity-may-7-10-45-pm-d3d9446&quot;&gt;AllTrails Recording of the hike&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;pictures&quot;&gt;Pictures&lt;/h2&gt;
-
-&lt;figure class=&quot;third &quot;&gt;
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/xhme0p4b9bcd055/alltrails%203d.png?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;alltrails 3d&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/xhme0p4b9bcd055/alltrails%203d.png?raw=1&quot; alt=&quot;alltrails 3d&quot; /&gt;
-        &lt;span&gt;alltrails 3d&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/irttipxfqhpf6sk/AllTrailsInfo.png?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;AllTrailsInfo&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/irttipxfqhpf6sk/AllTrailsInfo.png?raw=1&quot; alt=&quot;AllTrailsInfo&quot; /&gt;
-        &lt;span&gt;AllTrailsInfo&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/4z10h1qcoj54t4b/Artsy%20water.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Artsy water&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/4z10h1qcoj54t4b/Artsy%20water.jpg?raw=1&quot; alt=&quot;Artsy water&quot; /&gt;
-        &lt;span&gt;Artsy water&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/vzho0d3xwcuqg50/Emigration%20Canyon%20view.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Emigration Canyon view&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/vzho0d3xwcuqg50/Emigration%20Canyon%20view.jpg?raw=1&quot; alt=&quot;Emigration Canyon view&quot; /&gt;
-        &lt;span&gt;Emigration Canyon view&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/v6cll5bhpaw4x2m/Glacier%20Lilies%20amongst%20scrub%20oak.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Glacier Lilies amongst scrub oak&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/v6cll5bhpaw4x2m/Glacier%20Lilies%20amongst%20scrub%20oak.jpg?raw=1&quot; alt=&quot;Glacier Lilies amongst scrub oak&quot; /&gt;
-        &lt;span&gt;Glacier Lilies amongst scrub oak&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/qrafhjpiofiw2l2/Intrepid%20hikers.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Intrepid hikers&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/qrafhjpiofiw2l2/Intrepid%20hikers.jpg?raw=1&quot; alt=&quot;Intrepid hikers&quot; /&gt;
-        &lt;span&gt;Intrepid hikers&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/tn6mb1gihsdx2lu/KM%20on%20the%20trail.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;KM on the trail&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/tn6mb1gihsdx2lu/KM%20on%20the%20trail.jpg?raw=1&quot; alt=&quot;KM on the trail&quot; /&gt;
-        &lt;span&gt;KM on the trail&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/uej7stnneg8vgl5/Mountains%20across%20Emigration%20Canyon.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Mountains across Emigration Canyon&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/uej7stnneg8vgl5/Mountains%20across%20Emigration%20Canyon.jpg?raw=1&quot; alt=&quot;Mountains across Emigration Canyon&quot; /&gt;
-        &lt;span&gt;Mountains across Emigration Canyon&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-    
-      &lt;a href=&quot;https://www.dropbox.com/s/xshldyre3ghrye1/Spring%20runoff.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Spring runoff&quot;&gt;
-          &lt;img src=&quot;https://www.dropbox.com/s/xshldyre3ghrye1/Spring%20runoff.jpg?raw=1&quot; alt=&quot;Spring runoff&quot; /&gt;
-        &lt;span&gt;Spring runoff&lt;/span&gt;
-      &lt;/a&gt;
-    
-  
-  
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;videos&quot;&gt;Videos&lt;/h2&gt;
-
-&lt;video width=&quot;1024&quot; height=&quot;768&quot; controls=&quot;controls&quot;&gt;
-   &lt;source src=&quot;https://www.dropbox.com/s/4ll0ao14mp3xz39/Babbling%20brook.mp4?raw=1&quot; type=&quot;video/mp4&quot; /&gt;
-   Your browser does not support embedded videos, however, you can see the video in a new tab [Babbling brrok](https://www.dropbox.com/s/4ll0ao14mp3xz39/Babbling%20brook.mp4?raw=1)
-&lt;/video&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="personal" /><category term="Personal" /><category term="AllTrails" /><category term="Hiking" /><summary type="html">Pictures and description of hiking Emigration Canyon Miners Trail near SLC, UT</summary></entry><entry><title type="html">How I Setup This Github Pages Blog Site Part 04</title><link href="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 04" /><published>2021-05-02T23:25:09-06:00</published><updated>2021-05-02T23:25:09-06:00</updated><id>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04</id><content type="html" xml:base="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/">&lt;p&gt;Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHub Pages Blog Site Part 01&lt;/a&gt;, &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-02/&quot;&gt;How I setup this GitHub Pages Blog Site Part 02&lt;/a&gt;, and &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-03/&quot;&gt;How I setup this GitHub Pages Blog Site Part 03&lt;/a&gt; you should probably give them a quick review, to become familiar with how the site has been built up to this point.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-05-11T20:49:22-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We&apos;ve got it all!</subtitle><author><name>William (Bill) Hertzing</name></author><entry><title type="html">How I Setup This Github Pages Blog Site Part 04</title><link href="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/" rel="alternate" type="text/html" title="How I Setup This Github Pages Blog Site Part 04" /><published>2021-05-11T20:49:22-06:00</published><updated>2021-05-11T20:49:22-06:00</updated><id>https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04</id><content type="html" xml:base="https://billhertzing.github.io/technical/how-i-setup-this-github-pages-blog-site-part-04/">&lt;p&gt;Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-01/&quot;&gt;How I setup this GitHub Pages Blog Site Part 01&lt;/a&gt;, &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-02/&quot;&gt;How I setup this GitHub Pages Blog Site Part 02&lt;/a&gt;, and &lt;a href=&quot;/technical/how-i-setup-this-github-pages-blog-site-part-03/&quot;&gt;How I setup this GitHub Pages Blog Site Part 03&lt;/a&gt; you should probably give them a quick review, to become familiar with how the site has been built up to this point.&lt;/p&gt;
 
 &lt;p&gt;The next steps will be to implement the features specified in &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/4&quot;&gt;Milestone 0.04.0&lt;/a&gt;. I’ve already created Milestones for Release V0.05, &lt;a href=&quot;https://github.com/BillHertzing/BillHertzing.github.io/milestone/5&quot;&gt;Milestone 0.05.0&lt;/a&gt; as well and updated the Milestone &lt;em&gt;Release Far Future&lt;/em&gt; to reflect whats planned for later. Release V0.05 calls for creation of a  Github project for tracking future features,So at that point hopefully, there will be a single point for tracking and reporting on planned and requested features.&lt;/p&gt;
 
@@ -715,7 +274,518 @@
   &lt;li&gt;You will need to close VSC and re-open it for the changes to the global &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.gitconfig&lt;/code&gt; to take effect.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;rebase-onto-the-head-of-main&quot;&gt;Rebase onto the Head of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/h2&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Jekyll" /><category term="GitHubPages" /><summary type="html">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part 02, and How I setup this GitHub Pages Blog Site Part 03 you should probably give them a quick review, to become familiar with how the site has been built up to this point.</summary></entry><entry><title type="html">Repository Interrelationships</title><link href="https://billhertzing.github.io/technical/Repository-Interrelationships/" rel="alternate" type="text/html" title="Repository Interrelationships" /><published>2021-05-02T23:17:31-06:00</published><updated>2021-05-02T23:17:31-06:00</updated><id>https://billhertzing.github.io/technical/Repository-Interrelationships</id><content type="html" xml:base="https://billhertzing.github.io/technical/Repository-Interrelationships/">&lt;p&gt;An explanation of how my technical repositories relate to one another.&lt;/p&gt;
+&lt;h2 id=&quot;rebase-feature-branch-onto-the-head-of-main-after-a-site-patchpost-point-release&quot;&gt;Rebase Feature branch onto the head of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; after a site patch/post point release&lt;/h2&gt;
+
+&lt;p&gt;ToDo: Replace with reference to the proper section in the Release Process document.&lt;/p&gt;
+
+&lt;h2 id=&quot;modify--includesgallery&quot;&gt;Modify &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-includes/gallery&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gallery&lt;/code&gt; component opens an image link reusing the same tab as the parent document. Modern practice is to open an image link in a new tab. modify the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gallery&lt;/code&gt; so that the anchor href now includes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target = &quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&lt;/code&gt; . This will tell browsers to open the image in a new tab.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-the-page-_pagessubscribe-to-bills-blogmd&quot;&gt;Add the page &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_pages/subscribe-to-bills-blog.md&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;The page provides instructions on using &lt;a href=&quot;https://ifttt.com/&quot;&gt;IFTTT&lt;/a&gt; to subscribe to the site’s RSS feed. Add the page &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subscribe-to-bills-blog.md&lt;/code&gt; to the root of the repo. The Front Matter should look like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;single&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/subscribe-to-bills-blog/&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;How to subscribe to posts from Bill&apos;s Blog site&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;RSS&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Feed&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;Category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;technical&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;---&lt;/span&gt;   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add content to the page explaining the steps necessary to setup an IFTTT trigger and target action that produces an e-mail message whenever the site’s RSS feed indicates a change has been made to the site.&lt;/p&gt;
+
+&lt;h3 id=&quot;update-masthead-navigation&quot;&gt;Update masthead navigation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Edit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_data/navigation.yml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the following to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; section:&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Subscribe&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/subscribe-to-bills-blog/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;add-adstxt-file-from-disqus&quot;&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ads.txt&lt;/code&gt; file from Disqus&lt;/h2&gt;
+
+&lt;p&gt;ADS stands for Authorized Digital Sellers. You can read more about ads.txt and the rationale for creating it, at &lt;a href=&quot;https://help.disqus.com/en/articles/1765332-ads-txt-faq&quot;&gt;Ads.txt FAQ&lt;/a&gt;  Disqus and other companies have cooperated to identify sellers with validated reputations. Disqus expects this file to be present in the root of the site.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ads.txt&lt;/code&gt; in the root of the repo.&lt;/li&gt;
+  &lt;li&gt;Copy the contents of https://disqusads.com/ads.txt into the file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ads.txt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Save the file&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This file needs to be maintained monthly. Setup a reminder to regularly compare the latest version of the file with the one local to your site, and update your local copy accordingly.&lt;/p&gt;
+
+&lt;p&gt;[ToDo: write a script to automate this, and reference the script here.]
+[ToDo: write a post how to automate this, and schedule it to run monthly and notify the site admin’s list.]&lt;/p&gt;
+
+&lt;h2 id=&quot;add-draft-post-bills-blog-pre-release-checklistmd&quot;&gt;Add draft post &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bills-blog-pre-release-checklist.md&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;ToDo:&lt;/p&gt;
+
+&lt;h2 id=&quot;add-draft-post-bills-blog-release-processmd&quot;&gt;Add draft post &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bills-blog-release-process.md&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;ToDo:&lt;/p&gt;
+
+&lt;h2 id=&quot;add-any-personal-posts-to-be-published&quot;&gt;Add any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;personal&lt;/code&gt; posts to be published&lt;/h2&gt;
+
+&lt;p&gt;If you have created any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;personal&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;political&lt;/code&gt; posts while working on this feature release, and would like to publish those posts along with this site release, follow the steps in the &lt;a href=&quot;https://technical/&amp;lt;date&amp;gt;-bills-blog-pre-release-checklist&quot;&gt;Bills Blog Pre-Release Checklist&lt;/a&gt; post and apply the post validation tests to any posts to be released&lt;/p&gt;
+
+&lt;h2 id=&quot;validate-this-post-part04&quot;&gt;Validate this post (..part04)&lt;/h2&gt;
+
+&lt;p&gt;Follow the steps in the &lt;a href=&quot;&quot;&gt;pre-release checklist&lt;/a&gt; and apply the post validation tests to this post.&lt;/p&gt;
+
+&lt;h2 id=&quot;prepare-to-release-v004000-of-the-site&quot;&gt;prepare to release V0.04.000 of the site&lt;/h2&gt;
+
+&lt;p&gt;Follow the steps in the &lt;a href=&quot;&quot;&gt;pre-release checklist&lt;/a&gt; and apply the site validation tests to the feature branch.&lt;/p&gt;
+
+&lt;h2 id=&quot;release-v004000-of-the-site-along-with-any-mew-published-posts&quot;&gt;Release V0.04.000 of the site along with any mew published posts&lt;/h2&gt;
+
+&lt;p&gt;Follow the steps in the &lt;a href=&quot;&quot;&gt;Bills Blog Release Process&lt;/a&gt; post.&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Jekyll" /><category term="GitHubPages" /><summary type="html">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part 02, and How I setup this GitHub Pages Blog Site Part 03 you should probably give them a quick review, to become familiar with how the site has been built up to this point.</summary></entry><entry><title type="html">Bill’s Blog Release Process</title><link href="https://billhertzing.github.io/technical/bills-blog-release-process/" rel="alternate" type="text/html" title="Bill’s Blog Release Process" /><published>2021-05-11T20:03:30-06:00</published><updated>2021-05-11T20:03:30-06:00</updated><id>https://billhertzing.github.io/technical/bills-blog-release-process</id><content type="html" xml:base="https://billhertzing.github.io/technical/bills-blog-release-process/">&lt;p&gt;Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, and release a new version of the site.&lt;/p&gt;
+
+&lt;h2 id=&quot;assumptions&quot;&gt;Assumptions&lt;/h2&gt;
+
+&lt;p&gt;This process document assumes that there is no development work directly on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. All changes are done in separate branches. There are currently three kinds of development branches.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Feature branches - these branches are where new features to the site are developed and tested. They may include Bugfix work when the bug is minor and can fixing it can be rolled into new feature effort. A Feature Release can also incorporate new Post work when a Release milestone calls for a new post, e.g. the posts in the ongoing series “How I setup this Github Pages blog site” are part of each version’s feature effort, and one such post is released with each feature Release. When a Feature branch is merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, the Major or Minor numbers of the Semantic Version will be incremented.&lt;/li&gt;
+  &lt;li&gt;Bugfix branches - these branches are created to fix bugs that have been recorded in the repository’s Issues list. These are typically short lived branches with very limited changes, aimed at addresses specific deficiencies in the site. They are typically developed in parallel with Feature branches. When a Bugfix branch is merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, the Patch number (third part of the Semantic Version) will be incremented.&lt;/li&gt;
+  &lt;li&gt;Post branches - a new branch created for the purpose of releasing a new published post, or significant editorial reworking of an existing published post. These branches are typically very short-lived, and are used to move a draft post to a published post. When a Post branch is merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, the patch number of the site’s Version is incremented.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The criteria and steps to create new branches is discussed in &lt;a href=&quot;&quot;&gt;TBD&lt;/a&gt;. This document assumes that there are “more than one” active branches that have been created to track development work, and that all development work is being tracked in a branch. This document is focused on the steps needed to release one active development branch into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, and update the production site with the new stuff.&lt;/p&gt;
+
+&lt;p&gt;The branch being released will be referred to as the Release Candidate in this document.&lt;/p&gt;
+
+&lt;h2 id=&quot;ensure-the-featbugpost-branch--meets-release-criteria-and-is-built-atop-the-latest-main&quot;&gt;Ensure the &amp;lt;Feat/Bug/Post-Branch&amp;gt;  meets release criteria and is built atop the latest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The development work on the branch meets the criteria set out in the &lt;a href=&quot;bills-blog-pre-release-checklist.md&quot;&gt;Bill’s Blog Pre-Release Checklist&lt;/a&gt;. This ensures the new work meets the standards expected for a release.&lt;/li&gt;
+  &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch has no changes to it since the last Release tag was applied. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch builds and serves cleanly, without the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--drafts&lt;/code&gt; option.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ensure the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch builds cleanly, without the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--drafts&lt;/code&gt; option.&lt;/li&gt;
+  &lt;li&gt;Checkout the &amp;lt;Feat/Bug/Post-Branch&amp;gt; ( the Release Candidate) with Visual Studio Code (VSC).&lt;/li&gt;
+  &lt;li&gt;Publish all draft posts that are part of this release.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; to ensure that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; has been built with no drafts and with Disqus enabled.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull rebase -i main&lt;/code&gt; to pull any prior release changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; into the Release Candidate branch. Following the &lt;a href=&quot;bills-blog-pre-release-checklist.md&quot;&gt;Pre-Release Checklist&lt;/a&gt; should ensure that this step has already been done, but redoing this step here ensures that no recent updates to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; are missed. If there are no recent updates, this step takes very little time / effort.&lt;/li&gt;
+  &lt;li&gt;If there are any recent updates to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, then recheck the Release Candidate branch with &lt;a href=&quot;bills-blog-pre-release-checklist.md&quot;&gt;Bill’s Blog Pre-Release Checklist&lt;/a&gt; to ensure the changes didn’t break anything, and restart this release process.&lt;/li&gt;
+  &lt;li&gt;Always ensure that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; is run after the final Release Candidate code change is made, so that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; is up-to-date.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;final-soft-reset-and-commit-on-the-featbugpost-branch&quot;&gt;Final soft reset and commit on the &amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/h2&gt;
+
+&lt;p&gt;The purpose of the soft reset and commit is to clean up the commit messages and make them ready for the ChangeLog, and to cleanup all the changes and eliminate dross in the change list. If the individual commit messages have been well written, the chore of making a good &amp;lt;Feat/Bug/Post-Branch&amp;gt; release commit message shouldn’t be too hard.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log --pretty=&quot;format:%b&quot; HEAD...$(git merge-base main $(git rev-parse --abbrev-ref HEAD)) &amp;gt; $env:TEMP/git_message_for_squash.md&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code $env:TEMP/git_message_for_squash.md&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Edit the file and create the final commit message for the release.&lt;/li&gt;
+  &lt;li&gt;Copy the final commit message into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; and validate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog&lt;/code&gt; looks as expected. Stop the local Jekyll server.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --soft $(git merge-base main $(git rev-parse --abbrev-ref HEAD))&lt;/code&gt; to reset the head of the Release Candidate branch to the head of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt; to add the current state of the Release Candidate branch to the next commit.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt;. Title should be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FEAT Milestone VX.XX.XXX&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BugFix Issue #XX&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Post &quot;&amp;lt;ShortTitle&amp;gt;&quot;&lt;/code&gt; Paste the final commit message as the body of the commit. Close the editor.&lt;/li&gt;
+  &lt;li&gt;Sync the local &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; with the remote.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;At this point the Release Candidate should be complete. If you discover additional issues to be addressed, fix them and then repeat the steps in this section.&lt;/p&gt;
+
+&lt;h3 id=&quot;merge-the-featbugpost-branch-branch-with-the-main-branch&quot;&gt;Merge the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; branch with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch&lt;/h3&gt;
+
+&lt;p&gt;Many organizations require a pull request to perform a merge. That’s a great idea as soon as your site has any collaborators, but its overkill for a solo developer.  I’ll add instructions and templates for a Pull Request process in a later update to this post. For now just merge the two branches.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt; to change to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge &amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; to perform the merge. If the &lt;a href=&quot;bills-blog-pre-release-checklist.md&quot;&gt;Bill’s Blog Pre-Release Checklist&lt;/a&gt; was followed, there should be no merge conflicts.&lt;/li&gt;
+  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore Release Work for &amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; as the commit title&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;add-a-release-tag&quot;&gt;Add a Release tag&lt;/h3&gt;
+
+&lt;p&gt;Now that the merge has been made, add a Release tag to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -a releases/X.XX.XXX -m &quot;Third release of Bill&apos;s Blog&quot;&lt;/code&gt; Modify the command as appropriate for the specific release being made&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag&lt;/code&gt; (which will list all existing tags) and verify the new tag is there.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;final-build-of-production-site&quot;&gt;Final build of production site&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Validate the final production build, including the Release Version in the footer, is correct.&lt;/li&gt;
+  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; (these should only be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; changes). Note the commit ID.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -f releases/X.XX.XXX&lt;/code&gt;  should result &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Updated tag &apos;releases/X.XX.XXX&apos; (was c7f1fab)&lt;/code&gt; and the commit number will always be different from this example. This will move the tag forward to the most recent commit.&lt;/li&gt;
+  &lt;li&gt;View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push --atomic origin main refs/tags/releases/X.XX.XXX&lt;/code&gt; to push both the final commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; &lt;strong&gt;AND&lt;/strong&gt; the associated release tag to GitHub.&lt;/li&gt;
+  &lt;li&gt;Validate that the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt; Github Action was invoked and ran successfully.  ToDo: reference the instructions back in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... part 01&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Validate the production site is up, with the new features, new published posts, and correct Release Version number.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Written for “Visual Studio Code” with both GitLens and GitGraph plugins&lt;/p&gt;
+
+&lt;p&gt;The VCS SCM tool should not be illuminated with a number.&lt;/p&gt;
+
+&lt;p&gt;Review the commit log. If there are a number of commits in the bugfix branch, squash them together, and edit the comments to be a clean edited description of the changes.&lt;/p&gt;
+
+&lt;h2 id=&quot;create-a-new-branch-for-the-update&quot;&gt;Create a new branch for the update&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout -b &amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; (or use VSC)&lt;/p&gt;
+
+&lt;p&gt;Review the commit log. If there are a number of commits in the bugfix branch, squash them together, and edit the comments to be a clean edited description of the changes.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;git merge &lt;em&gt;BugFixBranchName&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;sync main with remote&lt;/p&gt;
+
+&lt;p&gt;build locally and validate bug has been fixed.&lt;/p&gt;
+
+&lt;p&gt;git tag -a releases/0.02.001 -m “Bill’s Blog, Fix Issue #9”&lt;/p&gt;
+
+&lt;p&gt;git tag&lt;/p&gt;
+
+&lt;p&gt;$env:JEKYLL_ENV = ‘production’; bundle exec jekyll serve&lt;/p&gt;
+
+&lt;p&gt;git tag -f releases/0.02.001  should result &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Updated tag &apos;releases/0.02.001&apos; (was c7f1fab)&lt;/code&gt; and the commit number will always be different from this example.&lt;/p&gt;
+
+&lt;p&gt;commit the _site changes on main&lt;/p&gt;
+
+&lt;p&gt;Switch to the Feature branch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SprintForRelease0.03.000&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull --rebase&lt;/code&gt; to bring the bugfix patch into the feature development branch.&lt;/p&gt;
+
+&lt;p&gt;sync the feature branch with the remote&lt;/p&gt;
+
+&lt;p&gt;Do the same for any / all other branches being worked.&lt;/p&gt;
+
+&lt;h2 id=&quot;release-post-merge-into-main-and-update-site-version&quot;&gt;Release post, merge into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; and update site version.&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Commit the staged and unstaged changes.&lt;/li&gt;
+  &lt;li&gt;Follow the &lt;a href=&quot;TBD - anchor in another document?, `..Part 03`&quot;&gt;Site Minor Release checklist&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Correction to pull. Don’t use git pull rebase -i main just use git rebase -i –onto main. If the post branch’s base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;As often as necessary, commit changes, using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore commit Production build&lt;/code&gt; .
+  ***Note: if publishing runs over midnight, “nnndays ago” used in multiple places, gets updated, and multiple files may get changed.&lt;/li&gt;
+  &lt;li&gt;Squash the post’s branch’s commits, see &lt;a href=&quot;ToDo: link&quot;&gt;Final soft reset and commit on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Post&amp;lt;insert name&amp;gt;&lt;/code&gt; branch&lt;/a&gt; .&lt;/li&gt;
+  &lt;li&gt;Copy the commit message to the top of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt; .&lt;/li&gt;
+  &lt;li&gt;Rebuild and validate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&apos;s&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ChangeLog.md&lt;/code&gt; the looks correct. Repeat as necessary.&lt;/li&gt;
+  &lt;li&gt;final commit using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore commit Production build&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Put the final version of the text for this release’s ChangeLog into the copy buffer.&lt;/li&gt;
+  &lt;li&gt;Run git reset –soft $(git merge-base main $(git rev-parse –abbrev-ref HEAD))&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add .&lt;/code&gt; to stage the cumulative changes.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt; .&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;merge-the-postxxx-branch-with-the-main-branch&quot;&gt;Merge the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;postXXX&lt;/code&gt; branch with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ensure the Post branch has been rebased on the latest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;.  Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git rebase -i main&lt;/code&gt; to pull any last-minute changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; branch. If there are no changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, then there should be just one commit in the commit list, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pick&lt;/code&gt; is the operation selected for it. Hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Start Rebase&lt;/code&gt; (from GitLens Interactive Rebase). You should see the message &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Successfully rebased and updated refs/heads/&lt;/code&gt;&amp;lt;Post/Bug/Feat-BranchName&amp;gt;` .&lt;/li&gt;
+  &lt;li&gt;Switch to main branch, either with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git checkout main&lt;/code&gt;, or using VSC.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge &amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; to perform the merge. If the pre-release checklist was followed, there should be no merge conflicts.&lt;/li&gt;
+  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;. Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chore Release Work for &amp;lt;NextReleaseVersion&amp;gt;&lt;/code&gt; as the commit title.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;add-a-release-tag-1&quot;&gt;Add a Release tag&lt;/h3&gt;
+
+&lt;p&gt;Now that the merge has been made, add a Release tag to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -a releases/&amp;lt;NextReleaseVersion&amp;gt; -m &quot;&amp;lt;message appropriate for release&amp;gt;&quot;&lt;/code&gt; (modify the command as appropriate for your site)&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag&lt;/code&gt; which will list all existing tags and verify the tag is there.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;final-build-of-production-site-1&quot;&gt;Final build of production site&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Validate the final production build, including the Release Version in the footer, is correct. Stop the local Jekyll server.&lt;/li&gt;
+  &lt;li&gt;Commit all changes on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; (these should only be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; changes). Note the commit ID.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git tag -fa releases/&amp;lt;NextReleaseVersion&amp;gt;&lt;/code&gt; -m “&lt;message appropriate=&quot;&quot; for=&quot;&quot; release=&quot;&quot;&gt;&quot;. It will open an editor window in VSC, simply close it as we should not need to make any changes to the tag message.&lt;/message&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;If you are correcting a mistake in a prior loop, and have already pushed the tag to the remote, it has to be removed from the remote. In this case, run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push origin :refs/tags/releases/&amp;lt;NextReleaseVersion&amp;gt;&lt;/code&gt; to push an empty tag to the remote&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push --atomic origin main refs/tags/releases/&amp;lt;NextReleaseVersion&amp;gt;&lt;/code&gt; to push both the final commit on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; &lt;strong&gt;AND&lt;/strong&gt; the associated release tag to GitHub.&lt;/li&gt;
+  &lt;li&gt;Validate that the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deploy&lt;/code&gt; Github Action was invoked and ran successfully.  ToDo: reference the instructions back in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;... part 01&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Validate the production site is up, with the new features, new published posts, and correct Release Version number.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;remove-the-postbugfeat-branchname-branch&quot;&gt;Remove the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; branch&lt;/h3&gt;
+
+&lt;h4 id=&quot;use-vsc-git&quot;&gt;Use VSC Git&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Switch to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; branch.&lt;/li&gt;
+  &lt;li&gt;Expand the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Branches&lt;/code&gt; window&lt;/li&gt;
+  &lt;li&gt;right-click the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Post/Bug/Feat-BranchName&amp;gt;&lt;/code&gt; branch to be removed&lt;/li&gt;
+  &lt;li&gt;Select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Delete...&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Chose to delete both the local and the remote tracking branch.&lt;/li&gt;
+  &lt;li&gt;Confirm…&lt;/li&gt;
+  &lt;li&gt;View the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Git Graph&lt;/code&gt; and validate the &amp;lt;Post/Bug/Feat-BranchName&amp;gt;` branch has been removed both locally and remotely. ToDo: insert jpg&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;use-command-line-git&quot;&gt;Use command line Git&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ToDo: Add list of CLI git commands&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;rebase-any-feature-or-bug-branches-onto-the-latest-main&quot;&gt;Rebase any Feature or Bug branches onto the latest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Switch to the &amp;lt;Post/Bug/Feat-BranchName&amp;gt; to be rebased.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;create-new-branch-for-work-on-new-post&quot;&gt;Create new branch for work on new post&lt;/h2&gt;
+
+&lt;p&gt;Run git checkout -b &lt;NameOfBranchForPost&gt; (or use VSC)&lt;/NameOfBranchForPost&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;create-the-new-draft-post&quot;&gt;Create the new draft post&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll draft &quot;Name Of Your Draft&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Edit the draft until you are ready to publish it.&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Release Process" /><category term="Process" /><summary type="html">Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site.</summary></entry><entry><title type="html">Bills Blog Pre-Release Checklist</title><link href="https://billhertzing.github.io/technical/bills-blog-pre-release-checklist/" rel="alternate" type="text/html" title="Bills Blog Pre-Release Checklist" /><published>2021-05-11T11:37:18-06:00</published><updated>2021-05-11T11:37:18-06:00</updated><id>https://billhertzing.github.io/technical/bills-blog-pre-release-checklist</id><content type="html" xml:base="https://billhertzing.github.io/technical/bills-blog-pre-release-checklist/">&lt;p&gt;Things about the release candidate to validate before starting the &lt;a href=&quot;bills-blog-release-process.md&quot;&gt;Release process&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;conventions&quot;&gt;Conventions&lt;/h2&gt;
+
+&lt;p&gt;&amp;lt;Feat/Bug/Post-Branch&amp;gt; is the name of the branch that is being evaluated for release. The branch being evaluated for release will be referred to as the Release Candidate in this document.&lt;/p&gt;
+
+&lt;h2 id=&quot;criteria-and-evaluation&quot;&gt;Criteria and Evaluation&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Checkout the &amp;lt;Feat/Bug/Post-Branch&amp;gt; with Visual Studio Code (VSC).&lt;/li&gt;
+  &lt;li&gt;Review any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;warnings&lt;/code&gt; that appear in VSC’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;problems&lt;/code&gt;. pane. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Feat/Bug/Post-Branch&amp;gt;&lt;/code&gt; using a WIP  commit message. Push these commits to the remote.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;check-text-spelling-grammar-and-case-consistency-on-proper-names&quot;&gt;Check text spelling, grammar, and case-consistency on proper names&lt;/h2&gt;
+
+&lt;p&gt;Using VSC:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use a spell checker plugin and ensure it reports no misspellings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using Grammarly:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;[ToDo: write instructions on using the unofficial Grammarly VSC plugin on a draft post]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ensure that proper names that refer to software or hardware concepts and company names, are consistent across the site.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;[ToDo: write a script that tests the site for proper noun casing consistency]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;check-post-and-page-layout-consistency&quot;&gt;Check post and page layout consistency&lt;/h2&gt;
+
+&lt;p&gt;ToDo:&lt;/p&gt;
+
+&lt;h2 id=&quot;site-checks&quot;&gt;&lt;a name=&quot;Site Checks&quot;&gt;&lt;/a&gt;Site Checks&lt;/h2&gt;
+
+&lt;p&gt;The following subsections provide details about specific items to validate.&lt;/p&gt;
+
+&lt;h3 id=&quot;check-images&quot;&gt;Check Images&lt;/h3&gt;
+
+&lt;p&gt;For posts that include images, ensure the links in the post properly reference images hosted in 3rd party clouds&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Images are created in multiple responsive sizes&lt;/li&gt;
+  &lt;li&gt;Image thumbnails are created&lt;/li&gt;
+  &lt;li&gt;Images are checked for any PPI in the metadata,and scrubbed&lt;/li&gt;
+  &lt;li&gt;Images comply with accessibility guidelines - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Alt&lt;/code&gt; text and navigation aides&lt;/li&gt;
+  &lt;li&gt;Get final links to images (not videos)
+  For Dropbox hosted images:
+    - Get a Dropbox developer access token from https://www.dropbox.com/developers/apps. [ToDo: link to attributions on how to create a Dropbox account, developer credentials, and an app to allow API access to dropbox]
+    - Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:DropBoxAccessToken = &quot;&amp;lt;DropBoxAccessToken&amp;gt;&quot;
+    - [ToDo: link to document describing how to access the ATAP Powershell BuildTooling modules]
+    - Run &lt;/code&gt;$env:psmodulepath = “./;” + $env:psmodulepath&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;
+    - Run the Powershell script &lt;/code&gt;Get-DropboxSharedLinks.ps1’ -verbose -path “Dropbox-path-to-folder-having-links”`
+    - Validate the references to images in the post use the link information returned 
+    - [ToDo: A script to automate link checking the document and the links from Dropbox]
+    &lt;ul&gt;
+      &lt;li&gt;For Google Photos hosted images:
+        &lt;ul&gt;
+          &lt;li&gt;[ToDo: write instructions and scripts for Google Photo hosted images]&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;For Microsoft Drive hosted images:
+        &lt;ul&gt;
+          &lt;li&gt;[ToDo: write instructions and scripts for Microsoft Drive hosted images]&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;[ToDo: write a script that tests each image the site and all its posts reference]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;check-internal-links&quot;&gt;Check internal links&lt;/h3&gt;
+
+&lt;p&gt;Ensure that all links in the post that refer to anchor points within the same post, or to anchor points in other points, work correctly. All Headings in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; documents should include an explicit anchor point. Links to headers in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; documents should refer to the anchor point associated with that header. See also the many answers to this StackOverflow question &lt;a href=&quot;https://stackoverflow.com/questions/5319754/cross-reference-named-anchor-in-markdown&quot;&gt;Cross-reference (named anchor) in markdown&lt;/a&gt; for more insight into why explicit anchors are desirable..&lt;/p&gt;
+
+&lt;h3 id=&quot;check-styling&quot;&gt;Check Styling&lt;/h3&gt;
+
+&lt;p&gt;ToDo checklist including responsive tests&lt;/p&gt;
+
+&lt;h3 id=&quot;check-scripts&quot;&gt;Check Scripts&lt;/h3&gt;
+
+&lt;p&gt;If the site contains any JavaScript functions, these need to be checked.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[ToDo: write a testing document that describes how to test each JS script / function incorporated into the site]&lt;/li&gt;
+  &lt;li&gt;[ToDo: write a script that tests each JS script / function incorporated into the site]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;check-security&quot;&gt;Check Security&lt;/h3&gt;
+
+&lt;p&gt;It is very important to ensure that nothing in the site allows bad actors to violate its security. This is especially true of any site features that store persistent data&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[ToDo: write a security document that describes how to test the site’s security for data-at-rest, and data-in-transit]&lt;/li&gt;
+  &lt;li&gt;[ToDo: write a security document that describes how to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;secrets&lt;/code&gt; while developing the site]&lt;/li&gt;
+  &lt;li&gt;[ToDo: write a script that tests the site for Security]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;check-accessibility&quot;&gt;Check Accessibility&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[ToDo: write a development and testing document(s) that describes how to design and test the site for Accessibility]&lt;/li&gt;
+  &lt;li&gt;[ToDo: write a script that tests the site for Accessibility]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;check-globalization-and-localization&quot;&gt;Check Globalization and Localization&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[ToDo: write a development and testing document(s) that describes how to design and test the site for Globalization and Localization]&lt;/li&gt;
+  &lt;li&gt;[ToDo: write a script that tests the site for Globalization and Localization]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;check-the-release-candidate-works-on-the-internet&quot;&gt;Check the Release Candidate works on the Internet&lt;/h2&gt;
+
+&lt;p&gt;The Release Candidate has to be tested “as if” it was publicly accessible from the Internet. This focuses on the availability of content that is served from locations other than the main site, e.g. images, JS libraries, and CSS libraries.&lt;/p&gt;
+
+&lt;h3 id=&quot;setup-ngrok&quot;&gt;Setup &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ngrok&lt;/code&gt;`&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;See &lt;a href=&quot;https://dashboard.ngrok.com/get-started/setup&quot;&gt;Getting Started with ngrok&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;publish-to-internet-via-ngrok&quot;&gt;Publish to Internet via ngrok&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$env:JEKYLL_ENV = &apos;production&apos;; bundle exec jekyll serve&lt;/code&gt; to ensure that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; has been built with no drafts and with Disqus comments enabled.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ngrok&lt;/code&gt; from a Powershell prompt.&lt;/li&gt;
+  &lt;li&gt;Copy the ngrok link information that is displayed&lt;/li&gt;
+  &lt;li&gt;Using multiple different computers and devices with multiple different screen sizes, evaluate the public site (ngrok link) against the criteria in &lt;a href=&quot;#Site Checks&quot;&gt;Site Checks&lt;/a&gt; .&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Stop the local Jekyll server and close the ngrok channel&lt;/p&gt;
+
+&lt;h2 id=&quot;steps-to-publish-a-draft-post&quot;&gt;Steps to publish a draft post&lt;/h2&gt;
+
+&lt;p&gt;if the site release includes one or more posts to be published, follow these steps to move the post from its drafts state to the published state.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[ToDo: write a document that describes how to move a post from draft to production]&lt;/li&gt;
+  &lt;li&gt;[ToDo: write a script that moves a post from draft to production]
+    &lt;ol&gt;
+      &lt;li&gt;Ensure the terminal is at the root of the repo&lt;/li&gt;
+      &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll publish &quot;_drafts/Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course.md&quot;&lt;/code&gt;`&lt;/li&gt;
+      &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mv  _posts/2021-05-01-Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course.md political/2021-05-01-Word-Template-for-letter-to-CPA-HOA-regarding-sale-of-golf-course.md&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;*ToDo: fix the git issue, figure out how to tell git that the draft is renamed to the post. Git thinks its a delete and an add. Automate this&lt;/li&gt;
+      &lt;li&gt;Ensure the file has been moved and renamed, to the correct category subdirectory and the proper date prefix added.&lt;/li&gt;
+      &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; and validate the new post passes the &lt;a href=&quot;ToDo: Real Soon Now&quot;&gt;New Post Checklist&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Pre-Release Checklist" /><category term="Process" /><summary type="html">Things about the release candidate to validate before starting the Release process Conventions</summary></entry><entry><title type="html">2021 05 07 Hiking Emigration Canyon Miners Trail</title><link href="https://billhertzing.github.io/personal/hiking-emigration-canyon-miners-trail/" rel="alternate" type="text/html" title="2021 05 07 Hiking Emigration Canyon Miners Trail" /><published>2021-05-07T00:00:00-06:00</published><updated>2021-05-07T00:00:00-06:00</updated><id>https://billhertzing.github.io/personal/hiking-emigration-canyon-miners-trail</id><content type="html" xml:base="https://billhertzing.github.io/personal/hiking-emigration-canyon-miners-trail/">&lt;p&gt;Pictures and description of hiking Emigration Canyon Miners Trail near SLC, UT&lt;/p&gt;
+
+&lt;h2 id=&quot;alltrails-link&quot;&gt;AllTrails link&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.alltrails.com/explore/recording/activity-may-7-10-45-pm-d3d9446&quot;&gt;AllTrails Recording of the hike&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;pictures&quot;&gt;Pictures&lt;/h2&gt;
+
+&lt;figure class=&quot;third &quot;&gt;
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/xhme0p4b9bcd055/alltrails%203d.png?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;alltrails 3d&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/xhme0p4b9bcd055/alltrails%203d.png?raw=1&quot; alt=&quot;alltrails 3d&quot; /&gt;
+        &lt;span&gt;alltrails 3d&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/irttipxfqhpf6sk/AllTrailsInfo.png?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;AllTrailsInfo&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/irttipxfqhpf6sk/AllTrailsInfo.png?raw=1&quot; alt=&quot;AllTrailsInfo&quot; /&gt;
+        &lt;span&gt;AllTrailsInfo&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/4z10h1qcoj54t4b/Artsy%20water.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Artsy water&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/4z10h1qcoj54t4b/Artsy%20water.jpg?raw=1&quot; alt=&quot;Artsy water&quot; /&gt;
+        &lt;span&gt;Artsy water&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/vzho0d3xwcuqg50/Emigration%20Canyon%20view.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Emigration Canyon view&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/vzho0d3xwcuqg50/Emigration%20Canyon%20view.jpg?raw=1&quot; alt=&quot;Emigration Canyon view&quot; /&gt;
+        &lt;span&gt;Emigration Canyon view&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/v6cll5bhpaw4x2m/Glacier%20Lilies%20amongst%20scrub%20oak.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Glacier Lilies amongst scrub oak&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/v6cll5bhpaw4x2m/Glacier%20Lilies%20amongst%20scrub%20oak.jpg?raw=1&quot; alt=&quot;Glacier Lilies amongst scrub oak&quot; /&gt;
+        &lt;span&gt;Glacier Lilies amongst scrub oak&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/qrafhjpiofiw2l2/Intrepid%20hikers.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Intrepid hikers&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/qrafhjpiofiw2l2/Intrepid%20hikers.jpg?raw=1&quot; alt=&quot;Intrepid hikers&quot; /&gt;
+        &lt;span&gt;Intrepid hikers&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/tn6mb1gihsdx2lu/KM%20on%20the%20trail.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;KM on the trail&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/tn6mb1gihsdx2lu/KM%20on%20the%20trail.jpg?raw=1&quot; alt=&quot;KM on the trail&quot; /&gt;
+        &lt;span&gt;KM on the trail&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/uej7stnneg8vgl5/Mountains%20across%20Emigration%20Canyon.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Mountains across Emigration Canyon&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/uej7stnneg8vgl5/Mountains%20across%20Emigration%20Canyon.jpg?raw=1&quot; alt=&quot;Mountains across Emigration Canyon&quot; /&gt;
+        &lt;span&gt;Mountains across Emigration Canyon&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;https://www.dropbox.com/s/xshldyre3ghrye1/Spring%20runoff.jpg?raw=1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Spring runoff&quot;&gt;
+          &lt;img src=&quot;https://www.dropbox.com/s/xshldyre3ghrye1/Spring%20runoff.jpg?raw=1&quot; alt=&quot;Spring runoff&quot; /&gt;
+        &lt;span&gt;Spring runoff&lt;/span&gt;
+      &lt;/a&gt;
+    
+  
+  
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;videos&quot;&gt;Videos&lt;/h2&gt;
+
+&lt;video width=&quot;1024&quot; height=&quot;768&quot; controls=&quot;controls&quot;&gt;
+   &lt;source src=&quot;https://www.dropbox.com/s/4ll0ao14mp3xz39/Babbling%20brook.mp4?raw=1&quot; type=&quot;video/mp4&quot; /&gt;
+   Your browser does not support embedded videos, however, you can see the video in a new tab [Babbling brrok](https://www.dropbox.com/s/4ll0ao14mp3xz39/Babbling%20brook.mp4?raw=1)
+&lt;/video&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="personal" /><category term="Personal" /><category term="AllTrails" /><category term="Hiking" /><summary type="html">Pictures and description of hiking Emigration Canyon Miners Trail near SLC, UT</summary></entry><entry><title type="html">Repository Interrelationships</title><link href="https://billhertzing.github.io/technical/Repository-Interrelationships/" rel="alternate" type="text/html" title="Repository Interrelationships" /><published>2021-05-02T23:17:31-06:00</published><updated>2021-05-02T23:17:31-06:00</updated><id>https://billhertzing.github.io/technical/Repository-Interrelationships</id><content type="html" xml:base="https://billhertzing.github.io/technical/Repository-Interrelationships/">&lt;p&gt;An explanation of how my technical repositories relate to one another.&lt;/p&gt;
 
 &lt;p&gt;– add dot diagram here? use a png to start.&lt;/p&gt;
 

@@ -13,7 +13,7 @@ This process document assumes that there is no development work directly on `mai
 
 - Feature branches - these branches are where new features to the site are developed and tested. They may include Bugfix work when the bug is minor and can fixing it can be rolled into new feature effort. A Feature Release can also incorporate new Post work when a Release milestone calls for a new post, e.g. the posts in the ongoing series "How I setup this Github Pages blog site" are part of each version's feature effort, and one such post is released with each feature Release. When a Feature branch is merged into `main`, the Major or Minor numbers of the Semantic Version will be incremented.
 - Bugfix branches - these branches are created to fix bugs that have been recorded in the repository's Issues list. These are typically short lived branches with very limited changes, aimed at addresses specific deficiencies in the site. They are typically developed in parallel with Feature branches. When a Bugfix branch is merged into `main`, the Patch number (third part of the Semantic Version) will be incremented.
-- Post branches - a new branch created for the purpose of releasing a new published post, or significant editorial reworking of an exisitng published post. These branches are typically very short-lived, and are used to move a draft post to a published post. When a Post branch is merged into `main`, the patch number of teh site's Version is incremented.
+- Post branches - a new branch created for the purpose of releasing a new published post, or significant editorial reworking of an existing published post. These branches are typically very short-lived, and are used to move a draft post to a published post. When a Post branch is merged into `main`, the patch number of the site's Version is incremented.
 
 The criteria and steps to create new branches is discussed in [TBD](). This document assumes that there are "more than one" active branches that have been created to track development work, and that all development work is being tracked in a branch. This document is focused on the steps needed to release one active development branch into `main`, and update the production site with the new stuff.
 
@@ -29,7 +29,7 @@ The branch being released will be referred to as the Release Candidate in this d
 1. Publish all draft posts that are part of this release.
 1. Run `$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve` to ensure that `_site` has been built with no drafts and with Disqus enabled.
 1. Run `git pull rebase -i main` to pull any prior release changes to `main` into the Release Candidate branch. Following the [Pre-Release Checklist](bills-blog-pre-release-checklist.md) should ensure that this step has already been done, but redoing this step here ensures that no recent updates to `main` are missed. If there are no recent updates, this step takes very little time / effort.
-1. If there are any recent updates to `main`, then recheck the Release Candidate branch with [Bill's Blog Pre-Release Checklist](bills-blog-pre-release-checklist.md) to ensure the changes didn't break anything, and restart this release process. 
+1. If there are any recent updates to `main`, then recheck the Release Candidate branch with [Bill's Blog Pre-Release Checklist](bills-blog-pre-release-checklist.md) to ensure the changes didn't break anything, and restart this release process.
 1. Always ensure that `$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve` is run after the final Release Candidate code change is made, so that `_site` is up-to-date.
 
 ## Final soft reset and commit on the <Feat/Bug/Post-Branch>
@@ -66,19 +66,13 @@ Now that the merge has been made, add a Release tag to `main`
 ### Final build of production site
 
 1. Run `$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve`
-1. Validate the final production build, including the Release Version in the footer, is correct. 
+1. Validate the final production build, including the Release Version in the footer, is correct.
 1. Commit all changes on `main` (these should only be `_site` changes). Note the commit ID.
 1. Run `git tag -f releases/X.XX.XXX`  should result `Updated tag 'releases/X.XX.XXX' (was c7f1fab)` and the commit number will always be different from this example. This will move the tag forward to the most recent commit.
 1. View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on `main`).
 1. Run `git push --atomic origin main refs/tags/releases/X.XX.XXX` to push both the final commit on `main` **AND** the associated release tag to GitHub.
 1. Validate that the `Deploy` Github Action was invoked and ran successfully.  ToDo: reference the instructions back in `... part 01`
 1. Validate the production site is up, with the new features, new published posts, and correct Release Version number.
-
-
-
-
-
-Description of the steps to release an update to the blog site.
 
 
 
@@ -108,7 +102,7 @@ git tag
 
 $env:JEKYLL_ENV = 'production'; bundle exec jekyll serve
 
-git tag -f releases/0.02.001  should result `Updated tag 'releases/0.02.001' (was c7f1fab)` and the commit number will always be diffferent from this example.
+git tag -f releases/0.02.001  should result `Updated tag 'releases/0.02.001' (was c7f1fab)` and the commit number will always be different from this example.
 
 commit the _site changes on main
 
@@ -125,10 +119,10 @@ Do the same for any / all other branches being worked.
 
 1. Commit the staged and unstaged changes.
 1. Follow the [Site Minor Release checklist](TBD - anchor in another document?, `..Part 03`)
- - Correction to pull. Dont use git pull rebase -i main just use git rebase -i --onto main. If the post branch's base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on. 
+ - Correction to pull. Don't use git pull rebase -i main just use git rebase -i --onto main. If the post branch's base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on. 
 1. As often as necessary, commit changes, using `Chore commit Production build` .
   ***Note: if publishing runs over midnight, "nnndays ago" used in multiple places, gets updated, and multiple files may get changed.
-1. Squash the post's branch's commits, see [Final soft reset and commit on the `Post<insertname>` branch](ToDo: link) .
+1. Squash the post's branch's commits, see [Final soft reset and commit on the `Post<insert name>` branch](ToDo: link) .
 1. Copy the commit message to the top of the `ChangeLog.md` .
 1. Rebuild and validate the `_site's` `ChangeLog.md` the looks correct. Repeat as necessary.
 1. final commit using `Chore commit Production build` 
@@ -159,7 +153,7 @@ Now that the merge has been made, add a Release tag to `main`
 1. Run `git tag -fa releases/<NextReleaseVersion>` -m "<message appropriate for release>". It will open an editor window in VSC, simply close it as we should not need to make any changes to the tag message.
 
 1. View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on `main`).
-1. If you are correcting a mistake in a prior loop, and have already pushed the tag to the remote, it has to be removed from the remot. In this case, run `git push origin :refs/tags/releases/<NextReleaseVersion>` to push an empty tag to the remote
+1. If you are correcting a mistake in a prior loop, and have already pushed the tag to the remote, it has to be removed from the remote. In this case, run `git push origin :refs/tags/releases/<NextReleaseVersion>` to push an empty tag to the remote
 1. Run `git push --atomic origin main refs/tags/releases/<NextReleaseVersion>` to push both the final commit on `main` **AND** the associated release tag to GitHub.
 1. Validate that the `Deploy` Github Action was invoked and ran successfully.  ToDo: reference the instructions back in `... part 01`
 1. Validate the production site is up, with the new features, new published posts, and correct Release Version number.
@@ -188,13 +182,10 @@ Now that the merge has been made, add a Release tag to `main`
 
 ## Create new branch for work on new post
 
-Run git chekcout -b <NameOfBranchForPost> (or use VSC)
+Run git checkout -b <NameOfBranchForPost> (or use VSC)
 
 ## Create the new draft post
 
 Run `bundle exec jekyll draft "Name Of Your Draft`
 
 Edit the draft until you are ready to publish it.
-
-
-
