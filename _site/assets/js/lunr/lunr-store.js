@@ -101,12 +101,6 @@ var store = [{
         "url": "/personal/hiking-emigration-canyon-miners-trail/",
         "teaser": null
       },{
-        "title": "Bills Blog Pre-Release Checklist",
-        "excerpt":"Things about the release candidate to validate before starting the Release process Conventions &lt;Feat/Bug/Post-Branch&gt; is the name of the branch that is being evaluated for release. The branch being evaluated for release will be referred to as the Release Candidate in this document. Criteria and Evaluation Checkout the &lt;Feat/Bug/Post-Branch&gt; with...","categories": ["technical"],
-        "tags": ["Pre-Release Checklist","Process"],
-        "url": "/technical/bills-blog-pre-release-checklist/",
-        "teaser": null
-      },{
         "title": "Bill's Blog Release Process",
         "excerpt":"Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site. Assumptions This process document assumes that there is no development work directly on main. All changes are done in separate branches. There are currently three kinds of development branches. Feature branches...","categories": ["technical"],
         "tags": ["Release Process","Process"],
@@ -117,5 +111,11 @@ var store = [{
         "excerpt":"Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part...","categories": ["technical"],
         "tags": ["Jekyll","GitHubPages"],
         "url": "/technical/how-i-setup-this-github-pages-blog-site-part-04/",
+        "teaser": null
+      },{
+        "title": "Bills Blog Pre-Release Checklist",
+        "excerpt":"Things about the release candidate to validate before starting the Release process Conventions &lt;Feat/Bug/Post-Branch&gt; is the name of the branch that is being evaluated for release. The branch being evaluated for release will be referred to as the Release Candidate in this document. Criteria and Evaluation Checkout the &lt;Feat/Bug/Post-Branch&gt; with...","categories": ["technical"],
+        "tags": ["Pre-Release Checklist","Process"],
+        "url": "/technical/bills-blog-pre-release-checklist/",
         "teaser": null
       }]
