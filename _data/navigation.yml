@@ -7,8 +7,6 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
-  - title: "Pages"
-    url: /page-archive/
   - title: "Subscribe"
     url: /subscribe-to-bills-blog/
   - title: "ChangeLog"

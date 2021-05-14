@@ -1,7 +1,5 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: splash
 permalink: /
 author_profile: true
@@ -9,10 +7,10 @@ sidebar:
   nav: docs
 ---
 
-Welcome
+Welcome to my blog!
 
-About about the site
+Here are the latest posts from my `personal` category
 
-carousel for repositories
+ {% include Carousel.html height="50" unit="%" duration="7" %}
 
-carousel for personal
+Here are the latest posts from my `technical` category

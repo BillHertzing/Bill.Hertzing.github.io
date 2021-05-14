@@ -13,7 +13,15 @@ The next steps will be to implement the features specified in [Milestone 0.04.0]
 
 - Run `git branch create SprintForRelease0.04.000`
 
-## Add jekyll-compose
+## Update the commit template
+
+- Edit `GitTemplates/git.commit.template.txt` and change `03` to `04`
+
+## First commit on the sprint branch
+
+Commit the changes and use VSC to synchronize changes with the remote, then inspect the Github repository to ensure the branch and first commit exist on the repo. I like using teh VSC extensions `Git Lens` along with the extensions `Git Graph`. Together, these provide a clear view of the site's development history. ToDo: insert jpg 
+
+## Add the plugin jekyll-compose
 
 jekyll-compose adds commands that help streamline the creation and publishing of posts. Installation instructions and details can be found in [jekyll-compose](https://github.com/jekyll/jekyll-compose). What follows are th steps I took and choices I made for this site.
 
@@ -22,20 +30,6 @@ jekyll-compose adds commands that help streamline the creation and publishing of
 1. Run `bundle`
 
 Refer to detailed instructions in [jekyll-compose](https://github.com/jekyll/jekyll-compose) for using the new commands. This post was drafted and published using the commands added by this tool, and it made the process much much easier. I created the draft of this post using the command `bundle exec jekyll draft "how-i-setup-this-github-pages-blog-site-part-04"`, which placed a file containing just Front Matter in the `_drafts` directory.
-
-## Update the commit template
-
-- Edit `GitTemplates/git.commit.template.txt` and change `03` to `04`
-
-## First commit on the sprint branch
-
-Commit the changes and use VSC to synchronize changes with the remote, then inspect the Github repository to ensure the branch and first commit exist on the repo. I like using Git Lens along with Git Graph. ToDo: insert jpg You can see the site development history clearly.
-
-To show what a feature development branch looks like with more than one commit, I'll make a small one now.
-
-Afterwards, this is what it looks like ToDo: insert jpg.
-
-And a third: ToDo: insert jpg
 
 ## Add jekyll-minifier
 
@@ -90,6 +84,30 @@ Detailed instructions are here at [jekyll-minifier](https://github.com/digitalsp
 > ***es6 support is experimental.***  If your site is using es6 scripts, see the [jekyll-minifier](https://github.com/digitalsparky/jekyll-minifier) documentation for possible issues.
 
 Run `bundle exec jekyll serve --drafts` and ensure the site looks like it should. The re-run the tests that measure the size of the data stream.
+
+## Add plugin jekyll-relative-links
+
+The posts and pages are going to start referring to each other. This is called cross-linking, or cross-referencing, documents. To better support this, the jekyll-relative-links plugin allows these cross-reference links to be create using liquid tags that will resolve to the draft, and then to the published past or page. (ToDo: revisit)
+
+Detailed instructions are here at [jekyll-relative-links](https://github.com/digitalsparky/jekyll-minifier)
+
+1. Run `gem install jekyll-relative-links` Make a note of the version installed, mine was 0.6.1
+1. Run `bundle update`
+1. Edit `Gemfile` at the root of the repo, and add `gem "jekyll-relative-links", "~> 0.6.1"` into the `group :jekyll_plugins do` section.
+1. Edit `_config.yml` and add `jekyll-relative-links` to the `plugins`: key
+
+  ```yml
+  plugins:
+    - jekyll-relative-links
+  ```
+
+ Further down the `_config.yml` add lines that control the relative-links 's settings.
+
+  ```yml
+  relative_links:
+    enabled:     true
+    collections: false
+  ```
 
 ## Setup masthead navigation
 
@@ -254,11 +272,12 @@ If a BugFix or new Post goes out on `main` while you are working on a Feature br
 
 ## Rebase Feature branch onto the head of `main` after a site patch/post point release
 
+The need to rebase the `Feature` branch onto the HEAD of the `main` branch can occur at any time. Detailed instructions can be found in [Bill's Blog Release Process](../_drafts\bills-blog-release-process.md)
 ToDo: Replace with reference to the proper section in the Release Process document.
 
 ## Modify `-includes/gallery`
 
-The `gallery` component opens an image link reusing the same tab as the parent document. Modern practice is to open an image link in a new tab. modify the `gallery` so that the anchor href now includes `target = "_blank" rel="noopener noreferrer"` . This will tell browsers to open the image in a new tab.
+The `gallery` component opens an image link reusing the same tab as the parent document. Modern practice is to open an image link in a new tab. modify the `gallery` so that the anchor href now includes `target = "_blank" rel="noopener noreferrer nofollow"` . This will tell browsers to open the image in a new tab.
 
 ## Add the page `_pages/subscribe-to-bills-blog.md`
 
@@ -287,7 +306,7 @@ Add content to the page explaining the steps necessary to setup an IFTTT trigger
 
 ## Add `ads.txt` file from Disqus
 
-ADS stands for Authorized Digital Sellers. You can read more about ads.txt and the rationale for creating it, at [Ads.txt FAQ](https://help.disqus.com/en/articles/1765332-ads-txt-faq)  Disqus and other companies have cooperated to identify sellers with validated reputations. Disqus expects this file to be present in the root of the site. 
+ADS stands for Authorized Digital Sellers. You can read more about ads.txt and the rationale for creating it, at [Ads.txt FAQ](https://help.disqus.com/en/articles/1765332-ads-txt-faq)  Disqus and other companies have cooperated to identify sellers with validated reputations. Disqus expects this file to be present in the root of the site.
 
 1. Create the file `ads.txt` in the root of the repo.
 1. Copy the contents of https://disqusads.com/ads.txt into the file `ads.txt`
@@ -297,6 +316,43 @@ This file needs to be maintained monthly. Setup a reminder to regularly compare 
 
 [ToDo: write a script to automate this, and reference the script here.]
 [ToDo: write a post how to automate this, and schedule it to run monthly and notify the site admin's list.]
+
+## Add carousel to home page
+
+### Add a Carousel component
+
+There are many carousel components on the Internet only a search away. The following carousel component came from the Jekyllcodex.org site, and was very highly linked, so we will start with this one. See [Slider/Carousel](https://jekyllcodex.org/without-plugin/slider/) for details. Following their instructions....
+
+1. Add the file `_includes/carousel.html`, and copy the contents from [carousel.html](https://raw.githubusercontent.com/jhvanderschee/jekyllcodex/gh-pages/_includes/carousel.html) into the local copy of this file.
+1. Add the file `_data/carousel.yml`, and fill it with content similar to this:
+
+  ```yml
+  images: 
+  - image: /uploads/slider/image1.jpg
+  - image: /uploads/slider/image2.jpg
+  - image: /uploads/slider/image3.jpg
+  - image: /uploads/slider/image4.jpg
+  ```
+
+My initial file looked like this, because I am hosting my images on dropbox, and have to get a sharing link from dropbox for each image:
+  
+```yml
+images: 
+  - image: https://www.dropbox.com/s/xshldyre3ghrye1/Spring%20runoff.jpg?raw=1
+  - image: https://www.dropbox.com/s/irttipxfqhpf6sk/AllTrailsInfo.png?raw=1
+  - image: https://www.dropbox.com/s/4z10h1qcoj54t4b/Artsy%20water.jpg?raw=1
+```
+
+### Instantiate the carousel on the home page
+
+The component needs to be instantiated where it is to be used. We want it on the site's home page
+
+1. Edit `_pages/Home.md`
+1. Add the following line ` {% include carousel.html height="50" unit="%" duration="7" %} ` in the location where the carousel should appear.
+
+Build the site and validate the carousel appears as expected.
+
+Troubleshooting: The carousel overlaps the left sidebar.
 
 ## Add draft post `bills-blog-pre-release-checklist.md`
 
@@ -308,7 +364,7 @@ ToDo:
 
 ## Add any `personal` posts to be published
 
-If you have created any `personal` or `political` posts while working on this feature release, and would like to publish those posts along with this site release, follow the steps in the [Bills Blog Pre-Release Checklist](https://technical/<date>-bills-blog-pre-release-checklist) post and apply the post validation tests to any posts to be released
+If you have created any `personal` or `political` posts while working on this feature release, and would like to publish those posts along with this site release, follow the steps in the [Bills Blog Pre-Release Checklist](../drafts/bills-blog-pre-release-checklist.md) post and apply the post validation tests to any posts to be released.
 
 ## Validate this post (..part04)
 
@@ -318,7 +374,7 @@ Follow the steps in the [pre-release checklist]() and apply the post validation 
 
 Follow the steps in the [pre-release checklist]() and apply the site validation tests to the feature branch.
 
-## Release V0.04.000 of the site along with any mew published posts
+## Release V0.04.000 of the site along with any new published posts
 
 Follow the steps in the [Bills Blog Release Process]() post.
 
