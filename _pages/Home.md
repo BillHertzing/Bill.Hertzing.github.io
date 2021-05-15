@@ -1,6 +1,5 @@
 ---
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: splash
+layout: single
 permalink: /
 author_profile: true
 sidebar:
@@ -9,8 +8,6 @@ sidebar:
 
 Welcome to my blog!
 
-Here are the latest posts from my `personal` category
+## Here are some pictures from the latest posts from my `personal` category
 
  {% include Carousel.html height="50" unit="%" duration="7" %}
-
-Here are the latest posts from my `technical` category

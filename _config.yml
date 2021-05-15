@@ -23,7 +23,7 @@ subtitle                 : Technical articles, political issues, family pictures
 name                     : Bill Hertzing
 description              : Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!
 url                      : "https://BillHertzing.github.io" 
-baseurl                  : "" # the subpath of your site, e.g. /blog. ToDo: Also Blazor?
+baseurl                  : '' # the subpath of your site, e.g. /blog. ToDo: Also Blazor?
 repository               : BillHertzing/billhertzing.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -207,7 +207,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/ # pretty
+permalink: /:categories/:title/ # /:categories/:title/ # pretty # /:categories/:slug/
 paginate:  # amount of posts to show
 paginate_path: /page:num/
 timezone: America/Denver
@@ -222,6 +222,7 @@ plugins:
   - jekyll_version_plugin
   # - jekyll-minifier
   - jekyll-archives
+  - jekyll-relative-links
   - flexible_include
 
 # mimic GitHub Pages with --safe
@@ -278,6 +279,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      show_date: true
       read_time: true
       comments: true
       share: true
@@ -324,3 +326,7 @@ defaults:
 #   preserve_patterns:                # Default: (empty)
 #   uglifier_args:                    # Default: (empty)
 
+# Configuration settings for the jekyll-relative-links plugin, see https://github.com/benbalter/jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true

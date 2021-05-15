@@ -5,7 +5,24 @@ description: Fourth group of steps in setting up a Jekyll generated blogging sit
 category: technical
 ---
 
-Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series [How I setup this GitHub Pages Blog Site Part 01]({% link technical/_posts/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01.md %}), [How I setup this GitHub Pages Blog Site Part 02]({% link technical/_posts/2021-04-17-how-i-setup-this-github-pages-blog-site-part-02.md %}), and [How I setup this GitHub Pages Blog Site Part 03]({% link technical/_posts/2021-04-24-how-i-setup-this-github-pages-blog-site-part-03.md %}) you should probably give them a quick review, to become familiar with how the site has been built up to this point.
+Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series [How I setup this GitHub Pages Blog Site Part 01]({{"how-i-setup-this-github-pages-blog-site-part-01.md" | relative_url}}), [How I setup this GitHub Pages Blog Site Part 02]({% link technical/_posts/2021-04-17-how-i-setup-this-github-pages-blog-site-part-02.md %}), and [How I setup this GitHub Pages Blog Site Part 03]({% link technical/_posts/2021-04-24-how-i-setup-this-github-pages-blog-site-part-03.md %}) you should probably give them a quick review, to become familiar with how the site has been built up to this point.
+
+[1](how-i-setup-this-github-pages-blog-site-part-01.md)
+[2](../_technical/how-i-setup-this-github-pages-blog-site-part-01.md)
+[3](../technical/how-i-setup-this-github-pages-blog-site-part-01/index.html)
+
+[4](../../_drafts/bills-blog-release-process.md)
+[How I setup this GitHubPages Blog site Part 01]({{ site.url |append: site.baseurl | append: "/_technical/_posts/how-i-setup-this-github-pages-blog-site-part-01/" }})
+
+site url: {{site.url}}
+
+site baseurl: {{site.baseurl}}
+
+combined 1: {{site.url}}{{site.baseurl}}
+
+combined 2: {{ site.url |append: site.baseurl}}
+
+
 
 The next steps will be to implement the features specified in [Milestone 0.04.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/4). I've already created Milestones for Release V0.05, [Milestone 0.05.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/5) as well and updated the Milestone *Release Far Future* to reflect whats planned for later. Release V0.05 calls for creation of a  Github project for tracking future features,So at that point hopefully, there will be a single point for tracking and reporting on planned and requested features.
 
@@ -377,4 +394,3 @@ Follow the steps in the [pre-release checklist]() and apply the site validation 
 ## Release V0.04.000 of the site along with any new published posts
 
 Follow the steps in the [Bills Blog Release Process]() post.
-

@@ -74,8 +74,6 @@ Now that the merge has been made, add a Release tag to `main`
 1. Validate that the `Deploy` Github Action was invoked and ran successfully.  ToDo: reference the instructions back in `... part 01`
 1. Validate the production site is up, with the new features, new published posts, and correct Release Version number.
 
-
-
 Written for "Visual Studio Code" with both GitLens and GitGraph plugins
 
 The VCS SCM tool should not be illuminated with a number.
@@ -106,20 +104,19 @@ git tag -f releases/0.02.001  should result `Updated tag 'releases/0.02.001' (wa
 
 commit the _site changes on main
 
-
 Switch to the Feature branch `SprintForRelease0.03.000`
 
-Run `git pull --rebase` to bring the bugfix patch into the feature development branch. 
+Run `git pull --rebase` to bring the bugfix patch into the feature development branch.
 
 sync the feature branch with the remote
 
 Do the same for any / all other branches being worked.
 
-## Release post, merge into `main` and update site version.
+## Release post, merge into `main` and update site version
 
 1. Commit the staged and unstaged changes.
 1. Follow the [Site Minor Release checklist](TBD - anchor in another document?, `..Part 03`)
- - Correction to pull. Don't use git pull rebase -i main just use git rebase -i --onto main. If the post branch's base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on. 
+  - Correction to pull. Don't use git pull rebase -i main just use git rebase -i --onto main. If the post branch's base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on. 
 1. As often as necessary, commit changes, using `Chore commit Production build` .
   ***Note: if publishing runs over midnight, "nnndays ago" used in multiple places, gets updated, and multiple files may get changed.
 1. Squash the post's branch's commits, see [Final soft reset and commit on the `Post<insert name>` branch](ToDo: link) .
