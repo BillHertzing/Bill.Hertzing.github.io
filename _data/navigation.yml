@@ -20,27 +20,27 @@ main:
 docs:
   - title:  Repositories Overview
     children:
-      - title: "Overview Guide"
+      - title: "*Overview Guide - TBD*"
         url: /docs/overview-guide/
-      - title: "Structure"
+      - title: "Structure-TBD"
         url: /docs/structure/
-      - title: "Testing"
+      - title: "Testing-TBD"
         url: /docs/Testing/
-      - title: "ReleaseProcess"
+      - title: "ReleaseProcess-TBD"
         url: /docs/ReleaseProcess/
-      - title: "Upgrading"
+      - title: "Upgrading-TBD"
         url: /docs/upgrading/
-      - title: "EndOfLife"
+      - title: "EndOfLife-TBD"
         url: /docs/EndOfLife/
   - title:  SCM Conventions
     children:
-      - title: "SCM for Code, Doc, and DB"
+      - title: "SCM for Code, Doc, and DB-TBD"
         url: /docs/SCM-Conventions/overview/
-      - title: "Code SCM"
+      - title: "Code SCM-TBD"
         url: /docs/Code-VersionControlProcess/
-      - title: "Docs SCM"
+      - title: "Docs SCM-TBD"
         url: /docs/Documentation-VersionControlProcess/
-      - title: "DB SCM"
+      - title: "DB SCM-TBD"
         url: /docs/DataBase-VersionControlProcess/
-      - title: "Peer Repository SCM"
+      - title: "Peer Repository SCM-TBD"
         url: /docs/Peer-repository-AutoDoc-VersionControlProcess/

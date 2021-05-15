@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-05-15T01:06:55-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We&apos;ve got it all!</subtitle><author><name>William (Bill) Hertzing</name></author><entry><title type="html">Bill’s Blog Release Process</title><link href="https://billhertzing.github.io/technical/bills-blog-release-process/" rel="alternate" type="text/html" title="Bill’s Blog Release Process" /><published>2021-05-15T01:06:55-06:00</published><updated>2021-05-15T01:06:55-06:00</updated><id>https://billhertzing.github.io/technical/bills-blog-release-process</id><content type="html" xml:base="https://billhertzing.github.io/technical/bills-blog-release-process/">&lt;p&gt;Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, and release a new version of the site.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://billhertzing.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billhertzing.github.io/" rel="alternate" type="text/html" /><updated>2021-05-15T17:22:45-06:00</updated><id>https://billhertzing.github.io/feed.xml</id><title type="html">Bill’s Blog</title><subtitle>Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We&apos;ve got it all!</subtitle><author><name>William (Bill) Hertzing</name></author><entry><title type="html">Attributions For Internet Resources</title><link href="https://billhertzing.github.io/technical/Attributions-For-Internet-Resources/" rel="alternate" type="text/html" title="Attributions For Internet Resources" /><published>2021-05-15T09:00:58-06:00</published><updated>2021-05-15T09:00:58-06:00</updated><id>https://billhertzing.github.io/technical/Attributions-For-Internet-Resources</id><content type="html" xml:base="https://billhertzing.github.io/technical/Attributions-For-Internet-Resources/">&lt;p&gt;People, Books, Articles, Blogs, websites that have sparked ideas or code used in these repositories&lt;/p&gt;
+
+&lt;h2 id=&quot;attribution-for-ideas-to-currently-incorporated-into-the-project&quot;&gt;Attribution for ideas to currently incorporated into the project&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Group&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Sub-group&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;ToolName&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;URL&lt;/th&gt;
+      &lt;th&gt;NuGet&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Date Added&lt;/th&gt;
+      &lt;th&gt;ByWhom&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Testing&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;BDD&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;SpecFlow&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;https://github.com/techtalk/SpecFlow&lt;/td&gt;
+      &lt;td&gt;https://www.nuget.org/packages/SpecFlow/&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;06/17/2018&lt;/td&gt;
+      &lt;td&gt;WGH&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;ideas-to-be-incorporated-into-the-project&quot;&gt;Ideas to be incorporated into the project&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Group&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Sub-group&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;ToolName&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;URL&lt;/th&gt;
+      &lt;th&gt;NuGet&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Date Added&lt;/th&gt;
+      &lt;th&gt;ByWhom&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Testing&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;BDD&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;SpecFlow&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;https://github.com/techtalk/SpecFlow&lt;/td&gt;
+      &lt;td&gt;https://www.nuget.org/packages/SpecFlow/&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;06/17/2018&lt;/td&gt;
+      &lt;td&gt;WGH&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;attribution-for-ideas-which-were-once-incorporated-into-the-project-but-have-been-replaced-or-superseded&quot;&gt;Attribution for ideas which were once incorporated into the project but have been replaced or superseded&lt;/h2&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Attribution" /><summary type="html">People, Books, Articles, Blogs, websites that have sparked ideas or code used in these repositories</summary></entry><entry><title type="html">Bill’s Blog Release Process</title><link href="https://billhertzing.github.io/technical/bills-blog-release-process/" rel="alternate" type="text/html" title="Bill’s Blog Release Process" /><published>2021-05-15T01:06:55-06:00</published><updated>2021-05-15T01:06:55-06:00</updated><id>https://billhertzing.github.io/technical/bills-blog-release-process</id><content type="html" xml:base="https://billhertzing.github.io/technical/bills-blog-release-process/">&lt;p&gt;Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt;, and release a new version of the site.&lt;/p&gt;
 
 &lt;h2 id=&quot;assumptions&quot;&gt;Assumptions&lt;/h2&gt;
 
@@ -1302,26 +1394,7 @@ https://www.dotnetcurry.com/aspnet-core/1414/unit-testing-aspnet-core
 https://www.dotnetcurry.com/aspnet-core/1420/integration-testing-aspnet-core
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.1&amp;amp;tabs=aspnetcore2x
 https://www.dotnetcurry.com/aspnet-core/1433/end-to-end-testing-aspnet-core
-http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-selenium-webdriver&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="AceCommander" /><category term="ATAP.Utilities" /><category term="Blazor" /><category term="StronglyTypedIds" /><category term="BillHertzing Blog" /><summary type="html">An explanation of how my technical repositories relate to one another.</summary></entry><entry><title type="html">Powershell Snippets</title><link href="https://billhertzing.github.io/technical/Powershell-snippets/" rel="alternate" type="text/html" title="Powershell Snippets" /><published>2021-05-02T17:06:21-06:00</published><updated>2021-05-02T17:06:21-06:00</updated><id>https://billhertzing.github.io/technical/Powershell-snippets</id><content type="html" xml:base="https://billhertzing.github.io/technical/Powershell-snippets/">&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Get-ChildItem -File -r&lt;/td&gt;
-      &lt;td&gt;where {$_.fullname -match “cshtml”}&lt;/td&gt;
-      &lt;td&gt;foreach { git mv ($&lt;em&gt;.fullname) ($&lt;/em&gt;.fullname –replace “cshtml”,”razor”) }&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Get-ChildItem -Dir -r&lt;/td&gt;
-      &lt;td&gt;where {$_.fullname -match “obj&lt;/td&gt;
-      &lt;td&gt;bin”}&lt;/td&gt;
-      &lt;td&gt;foreach {$_.fullname}&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Powershell" /><summary type="html">Get-ChildItem -File -r where {$_.fullname -match “cshtml”} foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }</summary></entry><entry><title type="html">Introduction To Acecommander</title><link href="https://billhertzing.github.io/technical/Introduction-to-AceCommander/" rel="alternate" type="text/html" title="Introduction To Acecommander" /><published>2021-05-02T17:06:21-06:00</published><updated>2021-05-02T17:06:21-06:00</updated><id>https://billhertzing.github.io/technical/Introduction-to-AceCommander</id><content type="html" xml:base="https://billhertzing.github.io/technical/Introduction-to-AceCommander/">&lt;p&gt;The MySQL a is \called AceCommander, it holds userauth user tables&lt;/p&gt;
+http://www.eidias.com/blog/2016/2/14/automated-ui-testing-in-aspnet-mvc5-using-selenium-webdriver&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="AceCommander" /><category term="ATAP.Utilities" /><category term="Blazor" /><category term="StronglyTypedIds" /><category term="BillHertzing Blog" /><summary type="html">An explanation of how my technical repositories relate to one another.</summary></entry><entry><title type="html">Introduction To Acecommander</title><link href="https://billhertzing.github.io/technical/Introduction-to-AceCommander/" rel="alternate" type="text/html" title="Introduction To Acecommander" /><published>2021-05-02T17:06:21-06:00</published><updated>2021-05-02T17:06:21-06:00</updated><id>https://billhertzing.github.io/technical/Introduction-to-AceCommander</id><content type="html" xml:base="https://billhertzing.github.io/technical/Introduction-to-AceCommander/">&lt;p&gt;The MySQL a is \called AceCommander, it holds userauth user tables&lt;/p&gt;
 
 &lt;p&gt;Install MySql here:&lt;/p&gt;
 
@@ -1358,7 +1431,26 @@ Add to the prerequisites part of the doc the need to download and install nuget.
 
 &lt;p&gt;today, that is 32-bit V4.9.4, instal to programfiles(86)/nuget&lt;/p&gt;
 
-&lt;p&gt;The follow Telerik instructions on how to add the telerik private feed to visual studio&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="AceCommander" /><summary type="html">The MySQL a is \called AceCommander, it holds userauth user tables</summary></entry><entry><title type="html">Powershell To Convert Nest Report To Excel Pivot Table</title><link href="https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="alternate" type="text/html" title="Powershell To Convert Nest Report To Excel Pivot Table" /><published>2021-05-02T17:06:21-06:00</published><updated>2021-05-02T17:06:21-06:00</updated><id>https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table</id><content type="html" xml:base="https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/">&lt;p&gt;A Powershell script to read a Nest history report and dump it into an Excel pivot table.&lt;/p&gt;
+&lt;p&gt;The follow Telerik instructions on how to add the telerik private feed to visual studio&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="AceCommander" /><summary type="html">The MySQL a is \called AceCommander, it holds userauth user tables</summary></entry><entry><title type="html">Powershell Snippets</title><link href="https://billhertzing.github.io/technical/Powershell-snippets/" rel="alternate" type="text/html" title="Powershell Snippets" /><published>2021-05-02T17:06:21-06:00</published><updated>2021-05-02T17:06:21-06:00</updated><id>https://billhertzing.github.io/technical/Powershell-snippets</id><content type="html" xml:base="https://billhertzing.github.io/technical/Powershell-snippets/">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Get-ChildItem -File -r&lt;/td&gt;
+      &lt;td&gt;where {$_.fullname -match “cshtml”}&lt;/td&gt;
+      &lt;td&gt;foreach { git mv ($&lt;em&gt;.fullname) ($&lt;/em&gt;.fullname –replace “cshtml”,”razor”) }&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Get-ChildItem -Dir -r&lt;/td&gt;
+      &lt;td&gt;where {$_.fullname -match “obj&lt;/td&gt;
+      &lt;td&gt;bin”}&lt;/td&gt;
+      &lt;td&gt;foreach {$_.fullname}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Powershell" /><summary type="html">Get-ChildItem -File -r where {$_.fullname -match “cshtml”} foreach { git mv ($.fullname) ($.fullname –replace “cshtml”,”razor”) }</summary></entry><entry><title type="html">Powershell To Convert Nest Report To Excel Pivot Table</title><link href="https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/" rel="alternate" type="text/html" title="Powershell To Convert Nest Report To Excel Pivot Table" /><published>2021-05-02T17:06:21-06:00</published><updated>2021-05-02T17:06:21-06:00</updated><id>https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table</id><content type="html" xml:base="https://billhertzing.github.io/technical/Powershell-to-convert-Nest-report-to-Excel-Pivot-table/">&lt;p&gt;A Powershell script to read a Nest history report and dump it into an Excel pivot table.&lt;/p&gt;
 
 &lt;p&gt;Notes for PowerShell SLC meetup
  1) List of cool PowerShell projects folks wold like to work on
@@ -2023,43 +2115,4 @@ Blazored.LocalStorage&lt;/li&gt;
 
 &lt;h3 id=&quot;the-build--debug-tooling--7&quot;&gt;The build / debug tooling …&lt;/h3&gt;
 
-&lt;hr /&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Blazor" /><category term="Demos" /><summary type="html">Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.</summary></entry><entry><title type="html">Adventures In Voice Dictation And Commands For A Developer</title><link href="https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/" rel="alternate" type="text/html" title="Adventures In Voice Dictation And Commands For A Developer" /><published>2021-05-02T17:06:21-06:00</published><updated>2021-05-02T17:06:21-06:00</updated><id>https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer</id><content type="html" xml:base="https://billhertzing.github.io/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/">&lt;p&gt;Voice dictation is the subject of my second blog post.&lt;/p&gt;
-
-&lt;p&gt;Specifically, can I switch between dictation mode and programming mode&lt;/p&gt;
-
-&lt;p&gt;As I am dictating this into a new voice dictation software package, I have learned just how hard it is to create content on the fly, in complete sentences.&lt;/p&gt;
-
-&lt;p&gt;I did an Internet search on the subject of voice commands to/for Visual Studio code. Aside from the usual dross from the big companies, the articles that seemed remotely interesting, all seen to involve one or more third-party packages.&lt;/p&gt;
-
-&lt;p&gt;All of the articles suggested that the initial steps are to set up microphone, workspace, and to install a voice recognition app.&lt;/p&gt;
-
-&lt;p&gt;I am familiar with voice recognition on Google, and I have tried Microsoft’s Windows built in product.&lt;/p&gt;
-
-&lt;p&gt;A few years ago I bought a copy of the commercial version of DragonDictate. I never installed it . But I decided to give it a try today.  The DragonDictate has been bought by Nuance. Looking at their website, there are two newer versions of the software. Not sure I want to spend money on this yet, although one of the Internet article did reference using DragonDictate. Unfortunately the article indicated that the professional version does a much better job. Unfortunately, because it costs significantly more money, and as a retiree, I haven’t got any to spare. :-)&lt;/p&gt;
-
-&lt;p&gt;Pretty much right out of the box I am dictating all of this into a DragonDictate text control which easily pastes into the notepad++ text editor I’m using.&lt;/p&gt;
-
-&lt;p&gt;It has taken me about 10 minutes to dictate all of this, learning as I go. The biggest issue is it doesn’t seem to recognize the first couple of words when I start a sentence, so I have to go back to The beginning and enter those words. As happened here, note the capital T prior. I started dictating at “I have to ggo back…”.&lt;/p&gt;
-
-&lt;p&gt;The next step is to see if it will be possible to give commands to the text editor.&lt;/p&gt;
-
-&lt;p&gt;Instead, went down a rabbit hole. Found a forum where people discuss using DragonDictate to control third-party apps. In the forum, I found a few nuggets from people who were, in 2016, using DragonDictate and Visual Studio. What I did see in code examples was that a variation of Basic is being used customized DragonDictate.&lt;/p&gt;
-
-&lt;p&gt;My programming language preferences are C# and PowerShell. Realizing that I would have to write significant Visual Basic code, I have decided that DragonDictate is probably not the voice dictation recognition software that I’m looking to pursue.&lt;/p&gt;
-
-&lt;p&gt;So it’s back to the drawing board! I’ll try to write sooner next time.&lt;/p&gt;
-
-&lt;p&gt;Combining Voice dictation and code editing is the subject of my third blog post.&lt;/p&gt;
-
-&lt;p&gt;(Ed. First paragraph is typed) I was going to try and dictate as I coded, but upon opening my environment, I realized it was time for a housecleaning. I spent a few hours prior to dictating closing out my MAPs subscription cleaning out old SDK versions, removing two of my three Visual studio installs, and creating the first two workspaces for Visual Studio Code in the ATAP.Utilities repository.&lt;/p&gt;
-
-&lt;p&gt;So the remainder of this post will be the raw dictation transcription, as I try to get the Powershell code I wrote last week into the original Console program that read a lot of disks, and records info about every file. The next step is to store the data in a graph DB. Yesterday I got the SQL Server 2017(?) service running locally, with the graph extensions, and I also created a node and edge table . I have powershell script that can insert the directory nodes from upstream into the nodes table of the DB&lt;/p&gt;
-
-&lt;p&gt;Now to try dictating stream of consciousness to Visual Studio Code&lt;/p&gt;
-
-&lt;p&gt;First thing I’m going to try to do is to correct the build tools path.
-The solution file contains a section called .build with has entries for tools whose pans include .build from the solution directory.&lt;/p&gt;
-
-&lt;p&gt;Hello while I am still trying to figure out why the path to the finished build tools is short by one directory, by manage to move four of the build tools directories under the source parent directory, and was able to properly re-root them in the solution directory under the build folder under src&lt;/p&gt;
-
-&lt;p&gt;The second thing I’m going to try to do is to figure out the loft configurations so that it specifies the correct directory.&lt;/p&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Voice Dictation" /><category term="Voice Commands" /><summary type="html">Voice dictation is the subject of my second blog post.</summary></entry></feed>
+&lt;hr /&gt;</content><author><name>William (Bill) Hertzing</name></author><category term="technical" /><category term="Blazor" /><category term="Demos" /><summary type="html">Until last week, my main app (and my Blazor demos), used ServiceStack middleware hosted in .Net 4.7.1 using the Windows HTTPListener in a Console App. I spent the last week moving the web servers in my demos 06 and 07 to ASP.NET Core Kestrel self-hosted WITHOUT IIS integration. Yesterday and the day before, I got demo06 server working with V3.0P4 SS Middleware in Kestrel WITH IIS intergation, and demo07 working with SS in Kestrel WITHOUT IIS integration.</summary></entry></feed>

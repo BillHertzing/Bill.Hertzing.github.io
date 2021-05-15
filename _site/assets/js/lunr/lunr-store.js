@@ -5,6 +5,12 @@ var store = [{
         "url": "/Welcome-To-Bills-Blog/",
         "teaser": null
       },{
+        "title": "Bill's Blog Release Process",
+        "excerpt":"Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site. Assumptions This process document assumes that there is no development work directly on main. All changes are done in separate branches. There are currently three kinds of development branches. Feature branches...","categories": ["technical"],
+        "tags": ["Release Process","Process"],
+        "url": "/technical/bills-blog-release-process-utat-01-s-conflicted-copy-2021-05-15/",
+        "teaser": null
+      },{
         "title": "How I Setup This Github Pages Blog Site Part 01",
         "excerpt":"I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control...","categories": ["technical"],
         "tags": ["Jekyll","GitHubPages"],
@@ -51,12 +57,6 @@ var store = [{
         "excerpt":"Voice dictation is the subject of my second blog post. Specifically, can I switch between dictation mode and programming mode As I am dictating this into a new voice dictation software package, I have learned just how hard it is to create content on the fly, in complete sentences. I...","categories": ["technical"],
         "tags": ["Voice Dictation","Voice Commands"],
         "url": "/technical/Adventures-in-Voice-Dictation-and-Commands-for-a-Developer/",
-        "teaser": null
-      },{
-        "title": "Attributions For Internet Resources",
-        "excerpt":"People, Books, Articles, Blogs, websites that have sparked ideas or code used in this app Attribution for ideas to currently incorporated into the project | Group | Sub-group | ToolName | URL | NuGet | Date Added | ByWhom | |:-------:|:---------:|:--------:|:------------------------------------:|------------------------------------------|:----------:|--------| | Testing | BDD | SpecFlow | https://github.com/techtalk/SpecFlow |...","categories": ["technical"],
-        "tags": ["Attribution"],
-        "url": "/technical/Attributions-For-Internet-Resources/",
         "teaser": null
       },{
         "title": "Case For A Non Anonymous Internet Part 01",
@@ -117,5 +117,11 @@ var store = [{
         "excerpt":"Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site. Assumptions This process document assumes that there is no development work directly on main. All changes are done in separate branches. There are currently three kinds of development branches. Feature branches...","categories": ["technical"],
         "tags": ["Release Process","Process"],
         "url": "/technical/bills-blog-release-process/",
+        "teaser": null
+      },{
+        "title": "Attributions For Internet Resources",
+        "excerpt":"People, Books, Articles, Blogs, websites that have sparked ideas or code used in these repositories Attribution for ideas to currently incorporated into the project Group Sub-group ToolName URL NuGet Date Added ByWhom Testing BDD SpecFlow https://github.com/techtalk/SpecFlow https://www.nuget.org/packages/SpecFlow/ 06/17/2018 WGH                      ...","categories": ["technical"],
+        "tags": ["Attribution"],
+        "url": "/technical/Attributions-For-Internet-Resources/",
         "teaser": null
       }]
