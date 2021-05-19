@@ -7,24 +7,7 @@ category: technical
 
 Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series [How I setup this GitHub Pages Blog Site Part 01]({{"how-i-setup-this-github-pages-blog-site-part-01.md" | relative_url}}), [How I setup this GitHub Pages Blog Site Part 02]({% link technical/_posts/2021-04-17-how-i-setup-this-github-pages-blog-site-part-02.md %}), and [How I setup this GitHub Pages Blog Site Part 03]({% link technical/_posts/2021-04-24-how-i-setup-this-github-pages-blog-site-part-03.md %}) you should probably give them a quick review, to become familiar with how the site has been built up to this point.
 
-[1](how-i-setup-this-github-pages-blog-site-part-01.md)
-[2](../_technical/how-i-setup-this-github-pages-blog-site-part-01.md)
-[3](../technical/how-i-setup-this-github-pages-blog-site-part-01/index.html)
-
-[4](../../_drafts/bills-blog-release-process.md)
-[How I setup this GitHubPages Blog site Part 01]({{ site.url |append: site.baseurl | append: "/_technical/_posts/how-i-setup-this-github-pages-blog-site-part-01/" }})
-
-site url: {{site.url}}
-
-site baseurl: {{site.baseurl}}
-
-combined 1: {{site.url}}{{site.baseurl}}
-
-combined 2: {{ site.url |append: site.baseurl}}
-
-
-
-The next steps will be to implement the features specified in [Milestone 0.04.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/4). I've already created Milestones for Release V0.05, [Milestone 0.05.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/5) as well and updated the Milestone *Release Far Future* to reflect whats planned for later. Release V0.05 calls for creation of a  Github project for tracking future features,So at that point hopefully, there will be a single point for tracking and reporting on planned and requested features.
+The next steps will be to implement the features specified in [Milestone 0.04.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/4). I've already created Milestones for Release V0.05, [Milestone 0.05.0](https://github.com/BillHertzing/BillHertzing.github.io/milestone/5) as well and updated the Milestone *Release Far Future* to reflect whats planned for later. Release V0.05 calls for creation of a  Github project for tracking future features, so at that point hopefully, there will be a single point for tracking and reporting on planned and requested features.
 
 ## Add a new branch `SprintForRelease0.04.000`
 
@@ -36,7 +19,7 @@ The next steps will be to implement the features specified in [Milestone 0.04.0]
 
 ## First commit on the sprint branch
 
-Commit the changes and use VSC to synchronize changes with the remote, then inspect the Github repository to ensure the branch and first commit exist on the repo. I like using teh VSC extensions `Git Lens` along with the extensions `Git Graph`. Together, these provide a clear view of the site's development history. ToDo: insert jpg 
+Commit the changes and use VSC to synchronize changes with the remote, then inspect the Github repository to ensure the branch and first commit exist on the repo. I like using the VSC extensions `Git Lens` along with the extensions `Git Graph`. Together, these provide a clear view of the site's development history. ToDo: insert jpg
 
 ## Add the plugin jekyll-compose
 
@@ -101,6 +84,14 @@ Detailed instructions are here at [jekyll-minifier](https://github.com/digitalsp
 > ***es6 support is experimental.***  If your site is using es6 scripts, see the [jekyll-minifier](https://github.com/digitalsparky/jekyll-minifier) documentation for possible issues.
 
 Run `bundle exec jekyll serve --drafts` and ensure the site looks like it should. The re-run the tests that measure the size of the data stream.
+
+*This is not working in the V0.03.000 Release. Error from uglifier: "...uglifier.rb:291:in `parse_result': Unexpected token: name ($style). To use ES6 syntax, harmony mode must be enabled with Uglifier.new(:harmony => true). (Uglifier::Error)"*
+
+Note that the Release process is flexible enough to allow a release to happen even if a known issue is present, if there is a workaround.
+
+Workaround: disable (put # in front of it) Minifier in `_config.yml` and in `Gemfile`.
+
+ToDo: Create issue after release, fix, remove workaround
 
 ## Add plugin jekyll-relative-links
 
@@ -228,46 +219,66 @@ The MM theme has masthead navigation capability built-in. Details on using it ar
 1. Create a subdirectory and file `_data/navigation.yml` and open it for editing. I started with the following contents:
 
     ```yml
-    ToDo: Add text from real file
-    
+    ToDo: Add automation to read text from real file on file changes in site build
+    main:
+      - title: "About"
+        url: /About/
+      - title: "Posts"
+        url: /year-archive/
+      - title: "Categories"
+        url: /categories/
+      - title: "Tags"
+        url: /tags/
+      - title: "Subscribe"
+        url: /subscribe-to-bills-blog/
+      - title: "ChangeLog"
+        url: /ChangeLog/
+      - title: "Contributing"
+        url: /Contributing/
+      - title: "Code of Conduct"
+        url: /Code-of-Conduct/
     ```
 
-Run `bundle exec jekyll serve --drafts` and ensure masthead navigation is present. Play around with making the browser wider and narrower, and note how the horizontal masthead links collapse into a navigation hamburger.
+Run `bundle exec jekyll serve --drafts` and ensure masthead navigation is present. Play around with making the browser wider and narrower, and note how the horizontal masthead links expand from and collapse into a navigation hamburger.
 
 ## Setup custom sidebar navigation
 
-The MM theme has the custom sidebar navigation capability built-in. Details on using it are at [Custom sidebar navigation menu](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-content) . Here are the steps I took:
+The MM theme has the custom sidebar navigation capability built-in. Details on using it are at [Custom sidebar navigation menu](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-content) .
 
-1. Edit `_data/navigation.yml` . I added with the following contents:
+I plan to use this User static blog site to link together the DocFx generated static sites in every peer repository. The left Nav component is a window into all of the technical documentation for AceCommander and the ATAP Utilities.
+
+Here are the steps I took to put up a placeholder for the left Nav:
+
+1. Edit `_data/navigation.yml` . I started with the following contents, with TBD meaning of course "To Be Done":
 
     ```yml
     docs:
-    - title:  Repositories Overview
-      children:
-        - title: "Overview Guide"
-          url: /docs/overview-guide/
-        - title: "Structure"
-          url: /docs/structure/
-        - title: "Testing"
-          url: /docs/Testing/
-        - title: "ReleaseProcess"
-          url: /docs/ReleaseProcess/
-        - title: "Upgrading"
-          url: /docs/upgrading/
-        - title: "EndOfLife"
-          url: /docs/EndOfLife/
-    - title:  SCM Conventions
-      children:
-        - title: "SCM for Code, Doc, and DB"
-          url: /docs/SCM-Conventions/overview/
-        - title: "Code SCM"
-          url: /docs/Code-VersionControlProcess/
-        - title: "Docs SCM"
-          url: /docs/Documentation-VersionControlProcess/
-        - title: "DB SCM"
-          url: /docs/DataBase-VersionControlProcess/
-        - title: "Peer Repository SCM"
-          url: /docs/Peer-repository-AutoDoc-VersionControlProcess/
+      - title:  Repositories Overview
+        children:
+          - title: "*Overview Guide - TBD*"
+            url: /docs/overview-guide/
+          - title: "Structure-TBD"
+            url: /docs/structure/
+          - title: "Testing-TBD"
+            url: /docs/Testing/
+          - title: "ReleaseProcess-TBD"
+            url: /docs/ReleaseProcess/
+          - title: "Upgrading-TBD"
+            url: /docs/upgrading/
+          - title: "EndOfLife-TBD"
+            url: /docs/EndOfLife/
+      - title:  SCM Conventions
+        children:
+          - title: "SCM for Code, Doc, and DB-TBD"
+            url: /docs/SCM-Conventions/overview/
+          - title: "Code SCM-TBD"
+            url: /docs/Code-VersionControlProcess/
+          - title: "Docs SCM-TBD"
+            url: /docs/Documentation-VersionControlProcess/
+          - title: "DB SCM-TBD"
+            url: /docs/DataBase-VersionControlProcess/
+          - title: "Peer Repository SCM-TBD"
+            url: /docs/Peer-repository-AutoDoc-VersionControlProcess/
     ```
 
 ## Add rule for Git Merge

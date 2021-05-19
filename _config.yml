@@ -22,7 +22,7 @@ title_separator          : "-"
 subtitle                 : Technical articles, political issues, family pictures. Dive in!
 name                     : Bill Hertzing
 description              : Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!
-url                      : "https://BillHertzing.github.io" 
+url                      : https://BillHertzing.github.io
 baseurl                  : '' # the subpath of your site, e.g. /blog. ToDo: Also Blazor?
 repository               : BillHertzing/billhertzing.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -207,7 +207,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/ # /:categories/:title/ # pretty # /:categories/:slug/
+permalink: /:categories/:slug/ # /:categories/:title/ # pretty # /:categories/:slug/
 paginate:  # amount of posts to show
 paginate_path: /page:num/
 timezone: America/Denver
@@ -278,6 +278,7 @@ defaults:
       type: posts
     values:
       layout: single
+      permalink: /:categories/:slug/
       author_profile: true
       show_date: true
       read_time: true

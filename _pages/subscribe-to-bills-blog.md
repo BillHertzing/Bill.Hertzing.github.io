@@ -15,7 +15,7 @@ In the spirit of Open Source Software (OSS), the components to do this are free,
 
 [Turn Gmail Into an RSS Reader With IFTTT](https://gizmodo.com/turn-gmail-into-an-rss-reader-with-ifttt-1582552035) by David Nield published May 28th, 2014.
 
-Details and fascinating possible exploration paths into home automation are in teh article, but here are teh specific details I used. You can only have three applets on the IFTTT free plan. I'm going to show you how to create one of them.
+Details and fascinating possible exploration paths into home automation are in the article, but here are the specific details I used. You can only have three applets on the IFTTT free plan. I'm going to show you how to create one of them.
 
 1. Register at IFTTT.com. Your login will open the doors to some pretty cool home automation you can do.
 1. The applet we will create will look similar to this: ToDo: insert jpg.

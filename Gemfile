@@ -21,7 +21,7 @@ group :jekyll_plugins do
   gem "jekyll-include-cache", "~> 0.2.1"
   gem "jekyll-timeago", "~> 0.14.0"
   gem "jekyll_version_plugin", "~> 2.0.0"
-  gem "jekyll-minifier", "~> 0.1.10"
+  # gem "jekyll-minifier", "~> 0.1.10"
   gem "jekyll-archives", "~> 2.2.1"
   gem "flexible_include", "~> 1.1.0"
   gem "jekyll-relative-links", "~> 0.6.1"

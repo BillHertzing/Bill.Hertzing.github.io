@@ -86,8 +86,6 @@ Now that the merge has been made, add a Release tag to `main` .
 
 Now that the Release Candidate branch has been merged into `main`, all/any active branches should be rebased onto the new Version of the `_site`
 
-
-
 Written for "Visual Studio Code" with both GitLens and GitGraph plugins
 
 The VCS SCM tool should not be illuminated with a number.
@@ -99,8 +97,6 @@ Review the commit log. If there are a number of commits in the bugfix branch, sq
 Run `git checkout -b <Post/Bug/Feat-BranchName>` (or use VSC)
 
 `git checkout main`
-
-
 
 git tag -f releases/0.02.001  should result `Updated tag 'releases/0.02.001' (was c7f1fab)` and the commit number will always be different from this example.
 
@@ -118,13 +114,15 @@ Do the same for any / all other branches being worked.
 
 1. Commit the staged and unstaged changes.
 1. Follow the [Site Minor Release checklist](TBD - anchor in another document?, `..Part 03`)
-  - Correction to pull. Don't use git pull rebase -i main just use git rebase -i --onto main. If the post branch's base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on. 
+
+  - Correction to pull. Don't use git pull rebase -i main just use git rebase -i --onto main. If the post branch's base is still pointing at the same commit as the HEAD of main, there will be a message that there are no commits. Abort the rebase and move on.
+
 1. As often as necessary, commit changes, using `Chore commit Production build` .
   ***Note: if publishing runs over midnight, "nnndays ago" used in multiple places, gets updated, and multiple files may get changed.
 1. Squash the post's branch's commits, see [Final soft reset and commit on the `Post<insert name>` branch](ToDo: link) .
 1. Copy the commit message to the top of the `ChangeLog.md` .
 1. Rebuild and validate the `_site's` `ChangeLog.md` the looks correct. Repeat as necessary.
-1. final commit using `Chore commit Production build` 
+1. final commit using `Chore commit Production build`
 1. Put the final version of the text for this release's ChangeLog into the copy buffer.
 1. Run git reset --soft $(git merge-base main $(git rev-parse --abbrev-ref HEAD))
 1. Run `git add .` to stage the cumulative changes.
@@ -149,7 +147,7 @@ Now that the merge has been made, add a Release tag to `main`
 1. Run `$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve`
 1. Validate the final production build, including the Release Version in the footer, is correct. Stop the local Jekyll server.
 1. Commit all changes on `main` (these should only be `_site` changes). Note the commit ID.
-1. Run `git tag -fa releases/<NextReleaseVersion>` -m "<message appropriate for release>". It will open an editor window in VSC, simply close it as we should not need to make any changes to the tag message.
+1. Run `git tag -fa releases/<NextReleaseVersion>` -m "message appropriate for release". It will open an editor window in VSC, simply close it as we should not need to make any changes to the tag message.
 
 1. View the tag locally ensure it is present and associated with the correct commit ID (should be the very latest commit on `main`).
 1. If you are correcting a mistake in a prior loop, and have already pushed the tag to the remote, it has to be removed from the remote. In this case, run `git push origin :refs/tags/releases/<NextReleaseVersion>` to push an empty tag to the remote
@@ -159,7 +157,7 @@ Now that the merge has been made, add a Release tag to `main`
 
 ### Remove the `<Post/Bug/Feat-BranchName>` branch
 
-#### Use VSC Git 
+#### Use VSC Git
 
 1. Switch to `main` branch.
 1. Expand the `Branches` window
@@ -176,8 +174,6 @@ Now that the merge has been made, add a Release tag to `main`
 ### Rebase any Feature or Bug branches onto the latest `main`
 
 1. Switch to the <Post/Bug/Feat-BranchName> to be rebased.
-
-
 
 ## Create new branch for work on new post
 
