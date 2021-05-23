@@ -1,0 +1,920 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Bills Blog Pre-Release Checklist - Bill’s Blog</title>
+<meta name="description" content="Things about the release candidate to validate before starting the steps in Bill’s Blog Release Process">
+
+
+  <meta name="author" content="William (Bill) Hertzing">
+  
+  <meta property="article:author" content="William (Bill) Hertzing">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Bill's Blog">
+<meta property="og:title" content="Bills Blog Pre-Release Checklist">
+<meta property="og:url" content="https://billhertzing.github.io/technical/2021/2021-05-22-bills-blog-pre-release-checklist">
+
+
+  <meta property="og:description" content="Things about the release candidate to validate before starting the steps in Bill’s Blog Release Process">
+
+
+
+
+
+  <meta name="twitter:site" content="@whertzing56">
+  <meta name="twitter:title" content="Bills Blog Pre-Release Checklist">
+  <meta name="twitter:description" content="Things about the release candidate to validate before starting the steps in Bill’s Blog Release Process">
+  <meta name="twitter:url" content="https://billhertzing.github.io/technical/2021/2021-05-22-bills-blog-pre-release-checklist">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-05-22T00:00:00-06:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://billhertzing.github.io/technical/2021/2021-05-22-bills-blog-pre-release-checklist">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Bill Hertzing",
+      "url": "https://billhertzing.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Bill's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=rMB0AyldWY">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=rMB0AyldWY">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=rMB0AyldWY">
+<link rel="manifest" href="/site.webmanifest?v=rMB0AyldWY">
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMB0AyldWY" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico?v=rMB0AyldWY">
+<meta name="apple-mobile-web-app-title" content="BillHertzing">
+<meta name="application-name" content="BillHertzing">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Bill's Blog
+          <span class="site-subtitle">Technical articles, political issues, family pictures. Dive in!</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/About/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/subscribe-to-bills-blog/">Subscribe</a>
+            </li><li class="masthead__menu-item">
+              <a href="/ChangeLog/">ChangeLog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Contributing/">Contributing</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Code-of-Conduct/">Code of Conduct</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">William (Bill) Hertzing</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Computer enthusiast and professional since ‘74. Lots of languages and OSs over the years. TCP/IP, HTTP, traffic analysis, Provable minimal algorithms, C#, and .Net are my current interests</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere in Utah</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://BillHertzing.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">This Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/whertzing56" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://www.facebook.com/bill.hertzing.3" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/BillHertzing" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/whertzing56" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Bills Blog Pre-Release Checklist">
+    <meta itemprop="description" content="Things about the release candidate to validate before starting the steps in Bill’s Blog Release Process">
+    <meta itemprop="datePublished" content="2021-05-22T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Bills Blog Pre-Release Checklist
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#conventions">Conventions</a></li><li><a href="#criteria-and-evaluation">Criteria and Evaluation</a></li><li><a href="#check-text-spelling-grammar-and-case-consistency-on-proper-names">Check text spelling, grammar, and case-consistency on proper names</a><ul><li><a href="#using-vsc-for-spell-checking">Using VSC for spell-checking</a></li><li><a href="#using-vsc-for-grammar-checking">Using VSC for grammar checking</a></li></ul></li><li><a href="#check-post-and-page-layout-consistency">Check post and page layout consistency</a></li><li><a href="#site-checks">Site Checks</a><ul><li><a href="#check-images-and-videos">Check Images and Videos</a></li><li><a href="#check-internal-links">Check internal links</a></li><li><a href="#check-responsive-styling">Check Responsive Styling</a></li><li><a href="#check-scripts">Check Scripts</a></li><li><a href="#check-security">Check Security</a></li><li><a href="#check-accessibility">Check Accessibility</a></li><li><a href="#check-globalization-and-localization">Check Globalization and Localization</a></li></ul></li><li><a href="#check-that-the-release-candidate-works-on-the-internet">Check that the Release Candidate works on the Internet</a><ul><li><a href="#setup-ngrok">Setup ngrok</a></li><li><a href="#publish-to-internet-via-ngrok">Publish to Internet via ngrok</a></li></ul></li><li><a href="#steps-to-publish-a-draft-post">Steps to publish a draft post</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Things about the release candidate to validate before starting the steps in <a href="/technical/2021/2021-05-22-bills-blog-release-process.html">Bill’s Blog Release Process</a></p>
+
+<h2 id="conventions">Conventions</h2>
+
+<p>&lt;Feat/Bug/Post-Branch&gt; is the name of the branch that is being evaluated for release. The branch being evaluated for release will be referred to as the Release Candidate in this document.</p>
+
+<h2 id="criteria-and-evaluation">Criteria and Evaluation</h2>
+
+<p>This document is a work in progress. In this first edition, many items are simply placeholders, indicated by “ToDo:”. This is especially true for areas that eventually will get automation to confirm the site conforms. For now, the checks should be done manually.</p>
+
+<ol>
+  <li>Checkout the &lt;Feat/Bug/Post-Branch&gt; with Visual Studio Code (VSC).</li>
+  <li>Review any <code class="language-plaintext highlighter-rouge">warnings</code> that appear in VSC’s <code class="language-plaintext highlighter-rouge">problems</code> pane.  These are generated by various VSC linting, spell-checking and static analysis extensions. Clean up the underlying issue, or decide they are OK to live with for this release. Commit any changes made during this step to <code class="language-plaintext highlighter-rouge">&lt;Feat/Bug/Post-Branch&gt;</code> using a WIP commit message.</li>
+</ol>
+
+<h2 id="check-text-spelling-grammar-and-case-consistency-on-proper-names">Check text spelling, grammar, and case-consistency on proper names</h2>
+
+<h3 id="using-vsc-for-spell-checking">Using VSC for spell-checking</h3>
+
+<p>Use a spell checker plugin and ensure it reports no misspellings. I like the VSC extension <a href="https://github.com/streetsidesoftware/vscode-spell-checker">Code Spell Checker</a></p>
+
+<h3 id="using-vsc-for-grammar-checking">Using VSC for grammar checking</h3>
+
+<p>Use a grammar checker to ensure the writing meets basic grammar rules and if possible use it to simplify the writing style.</p>
+
+<ul>
+  <li>[ToDo: write instructions on using the unofficial Grammarly VSC plugin on posts]</li>
+</ul>
+
+<p>Ensure that proper names that refer to software or hardware concepts and company names, are consistent in their case across the site.</p>
+
+<ul>
+  <li>[ToDo: write a script that tests the site for proper noun casing consistency]</li>
+</ul>
+
+<h2 id="check-post-and-page-layout-consistency">Check post and page layout consistency</h2>
+
+<p>Posts should have a style consistent across all post categories, and pages should have a consistent style across the site. Both posts and pages should share common stylistic measures.</p>
+
+<ul>
+  <li>
+    <p>[ToDo: (far future) write scripts that initialize new pages and posts with common styling, and write scripts that can read existing pages and posts and produce reports where styling does not follow the site guidelines]</p>
+  </li>
+  <li>
+    <p>[ToDo: write a style guide for the pages and posts]</p>
+  </li>
+</ul>
+
+<h2 id="site-checks">Site Checks</h2>
+
+<p>Site checks are tests to be performed against the total site. The following subsections provide details about classes of items to validate.</p>
+
+<p>Here are some links to articles that discuss automating these checks, for future site releases</p>
+
+<ul>
+  <li><a href="https://docs.gitlab.com/ee/ci/examples/end_to_end_testing_webdriverio/">End-to-end testing with GitLab CI/CD and WebdriverIO</a></li>
+  <li><a href="https://www.selenium.dev/">selenium</a></li>
+  <li><a href="https://www.automatetheplanet.com/selenium-webdriver-csharp-cheat-sheet/">Most Complete Selenium WebDriver C# Cheat Sheet</a></li>
+  <li><a href="https://www.automatetheplanet.com/getting-started-webdriver/">Getting Started with WebDriver C# in 10 Minutes</a></li>
+  <li><a href="https://github.com/rosolko/WebDriverManager.Net/">WebDriverManager.Net</a></li>
+  <li><a href="https://www.browserstack.com/">BrowserStack: App &amp; Browser Testing Made Easy</a></li>
+  <li><a href="https://dev.to/andyli/nice-tests-to-run-in-ci-before-deploying-any-website-14o2">Nice tests to run in CI before deploying any website</a>
+    <ul>
+      <li><a href="https://github.com/svenkreiss/html5validator">HTML5 Validator</a> - Markup validation</li>
+      <li>Detecting browser console error messages - use Selenium web driver, navigates to each page and calls driver.get_log(“browser”), asserts that there is no log.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="check-images-and-videos">Check Images and Videos</h3>
+
+<p>For posts and pages that include links to images both still and video, ensure the links  properly reference images and videos hosted in the selected 3rd party clouds. Most of the images and videos for this site use Dropbox as the cloud hosting provider.</p>
+
+<p>Ensure or check the following:</p>
+
+<ul>
+  <li>Images and videos are created in multiple responsive sizes</li>
+  <li>Image and video thumbnails are created</li>
+  <li>Images and videos are checked for any PPI in the metadata,and scrubbed</li>
+  <li>Images and videos comply with accessibility guidelines - <code class="language-plaintext highlighter-rouge">Alt</code> text and navigation aides</li>
+  <li>Variable rate videos (some .mov files) have been converted to fixed-rate format. This helps prevent stuttering.</li>
+  <li>Ensure that videos have been created in multiple resolutions for different sized devices</li>
+  <li>
+    <p>Ensure the correctness of the final links to Images and Videos. Repeat for each post and page having any image or video links.</p>
+
+    <ul>
+      <li>For Dropbox hosted images:
+        <ul>
+          <li>Get a Dropbox developer access token from https://www.dropbox.com/developers/apps.
+            <ul>
+              <li>[ToDo: provide links to attributions on how to create a Dropbox account, get developer credentials, and how to create a Dropbox app to allow API access to dropbox]</li>
+            </ul>
+          </li>
+          <li>Run <code class="language-plaintext highlighter-rouge">$env:DropboxAccessToken = "&lt;DropboxAccessToken&gt;"</code>
+            <ul>
+              <li>[ToDo: provide a link to a document describing how to access the ATAP Powershell BuildTooling modules]</li>
+            </ul>
+          </li>
+          <li>Run <code class="language-plaintext highlighter-rouge">$env:PSModulePath = "./;" + $env:PSModulePath</code></li>
+          <li>Run <code class="language-plaintext highlighter-rouge">$results = ./Get-DropboxSharedLinks.ps1' -verbose -path "Dropbox-path-to-folder-having-images-and-videos-for-a-post"</code></li>
+          <li>Validate the references to images and videos in the post uses the latest link information returned by the Powershell script.
+            <ul>
+              <li>[ToDo: Write a script to automate link checking the document and the links from Dropbox]</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>For Google Photos hosted images:
+        <ul>
+          <li>[ToDo: write instructions and scripts for Google Photo hosted images]</li>
+        </ul>
+      </li>
+      <li>For Microsoft Drive hosted images:
+        <ul>
+          <li>[ToDo: write instructions and scripts for Microsoft Drive hosted images]</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>[ToDo: write a script that tests each image link in each page and post in the site. ]</li>
+</ul>
+
+<h3 id="check-internal-links">Check internal links</h3>
+
+<p>Ensure that all links in the page or post that refer to anchor points within the same document, or to anchor points in other pages or posts, work correctly.</p>
+
+<ul>
+  <li>[ToDo: (far future) All Headings in <code class="language-plaintext highlighter-rouge">.md</code> documents should include an explicit anchor point. Links to headers in <code class="language-plaintext highlighter-rouge">.md</code> documents should refer to the anchor point associated with that header. See also the many answers to this StackOverflow question <a href="https://stackoverflow.com/questions/5319754/cross-reference-named-anchor-in-markdown">Cross-reference (named anchor) in markdown</a> for more insight into why explicit anchors are desirable. The reason for using explicit anchor points boils down to the inconsistency between site generators when making anchor points out of Markdown headings. Different static site generators create anchor points using slightly different formats. But if you create an explicit anchor point, and reference that, then the choice of a site generator is moot. But the drawback is that <em>you</em> have to decide how to format anchor points, and decide how to handle name collisions. So until this site gets an automation tool for creating and using explicit anchor points, we will rely on the Jekyll generator’s markdown header’s anchor point format. ]</li>
+</ul>
+
+<p>In the Minimal Mistakes theme, the Markdown processor is specified as Kramdown. Kramdown has a setting <code class="language-plaintext highlighter-rouge">auto_ids: true</code> which creates an <code class="language-plaintext highlighter-rouge">id</code> attribute on the header. Details can be found in the SO question and “starfry’s” answer <a href="https://stackoverflow.com/questions/4629675/jekyll-markdown-internal-links">jekyll markdown internal links</a></p>
+
+<p>| :zap:  <strong><em>the anchor id IS case-sensitive, and Jekyll renders the anchor id in lowercase. Ensure the “link to a heading” is in lower-case.</em></strong>   |
+|————————————————————————————————————————————————-|</p>
+
+<ul>
+  <li><a href="#check-internal-links">Example link to heading in the same document</a></li>
+  <li><a href="/About/index.html#about-this-blog">Example link to heading in a site page</a></li>
+  <li><a href="/personal/2021/2021-04-17-welcome-to-the-personal-section-of-my-site.html#example-picture">Example link to heading in a categorized post</a></li>
+</ul>
+
+<h3 id="check-responsive-styling">Check Responsive Styling</h3>
+
+<p>The site should behave “responsively” across different size devices, e.g., phone screen, tablet, laptop, desktop monitor, and “wide monitor”. This is a traditionally hard test/check to implement with automated testing tools.</p>
+
+<ul>
+  <li>[ToDo write a manual checklist how to test for responsive site layout including responsive tests for text spans]</li>
+  <li>[ToDo (Far Future) write automated scripts to test/check this aspect of the site]</li>
+</ul>
+
+<h3 id="check-scripts">Check Scripts</h3>
+
+<p>If the site contains any JavaScript functions, these need to be checked.</p>
+
+<ul>
+  <li>[ToDo: write a testing document that describes how to test each JS script / function incorporated into the site]</li>
+  <li>[ToDo: write a script that tests each JS script / function incorporated into the site]</li>
+</ul>
+
+<h3 id="check-security">Check Security</h3>
+
+<p>It is very important to ensure that nothing in the site allows bad actors to violate its security. This is especially true of any site features that store persistent data.</p>
+
+<ul>
+  <li>[ToDo: write a security document that describes how to test the site’s security for data-at-rest, and data-in-transit]</li>
+  <li>[ToDo: write a security document that describes how to use <code class="language-plaintext highlighter-rouge">secrets</code> while developing the site]</li>
+  <li>[ToDo: write a script that tests the site for Security]</li>
+</ul>
+
+<h3 id="check-accessibility">Check Accessibility</h3>
+
+<p>Accessability features of the site allow people with vision issues to use aids in navigating the site. Accessability design ensure a good experience for  people who use accessability aids.</p>
+
+<p>Attribution:</p>
+
+<ul>
+  <li><a href="https://medium.com/@f3igao/how-to-automate-web-accessibility-testing-921512bdd4bf">How to Automate Web Accessibility Testing</a></li>
+  <li><a href="https://pa11y.org/">Pa11y</a></li>
+  <li>
+    <p>Pa11y needs a <code class="language-plaintext highlighter-rouge">sitemap.xml</code>, which is generated by <code class="language-plaintext highlighter-rouge">jekyll-sitemap</code> gem.  Another option is <a href="http://botmap.surge.sh/">Sitemap Generator (botMap)</a>.</p>
+  </li>
+  <li>[ToDo: write a development and testing document(s) that describes how to design and test the site for Accessibility]</li>
+  <li>[ToDo: write a script that tests the site for Accessibility]</li>
+  <li>[ToDo: add Internet references for additional information on Accessible design]</li>
+</ul>
+
+<h3 id="check-globalization-and-localization">Check Globalization and Localization</h3>
+
+<p>Globalization and Localization features of the site make it easier to produce translations of the site into other languages and cultures.</p>
+
+<ul>
+  <li>[ToDo: write a development and testing document(s) that describes how to design and test the site for Globalization and Localization]</li>
+  <li>[ToDo: write a script that tests the site for Globalization and Localization]</li>
+  <li>[ToDo: add Internet references for additional information for Globalization and Localization as it applies to static Blog Post sites]</li>
+</ul>
+
+<h2 id="check-that-the-release-candidate-works-on-the-internet">Check that the Release Candidate works on the Internet</h2>
+
+<p>The Release Candidate has to be tested “as if” it was publicly accessible from the Internet. This focuses on the availability of content that is served from locations other than the main site, e.g. images, JS libraries, and CSS libraries.</p>
+
+<h3 id="setup-ngrok">Setup <code class="language-plaintext highlighter-rouge">ngrok</code></h3>
+
+<ul>
+  <li>See <a href="https://dashboard.ngrok.com/get-started/setup">Getting Started with ngrok</a></li>
+</ul>
+
+<h3 id="publish-to-internet-via-ngrok">Publish to Internet via ngrok</h3>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">$env:JEKYLL_ENV = 'production'; bundle exec jekyll serve</code> to ensure that <code class="language-plaintext highlighter-rouge">_site</code> has been built with no drafts and with Disqus comments enabled.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">ngrok</code> from a Powershell prompt.</li>
+  <li>Copy the ngrok link information that is displayed</li>
+  <li>Using multiple different computers and devices with multiple different screen sizes from multiple different geographic locations, evaluate the public site (ngrok link) against the criteria in <a href="#site-checks">Site Checks</a> .</li>
+</ol>
+
+<p>Stop the local Jekyll server and close the ngrok channel</p>
+
+<h2 id="steps-to-publish-a-draft-post">Steps to publish a draft post</h2>
+
+<p>If the site release includes one or more posts to be published, follow these steps to move the post from its drafts state to the published state.</p>
+
+<ul>
+  <li>[ToDo: write a document that describes how to move a post from draft to production]</li>
+  <li>[ToDo: write a script that moves a post from draft to production]</li>
+</ul>
+
+<ol>
+  <li>Ensure the terminal’s <code class="language-plaintext highlighter-rouge">cwd</code> is at the root of the repo.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git mv _drafts/&lt;name-of-post.md&gt; _posts/&lt;category&gt;/yyyy-mm-dd-name-of-post.md</code> . Remember that Jekyll expects posts names to be lowercase and <code class="language-plaintext highlighter-rouge">-</code> separated.</li>
+  <li>Ensure the file has been moved and renamed, to the correct category subdirectory, and the proper date prefix added.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and validate the new post passes the <a href="#site-checks">Site Checks</a></li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=whertzing56&text=Bills+Blog+Pre-Release+Checklist%20https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-05-22-bills-blog-pre-release-checklist" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-05-22-bills-blog-pre-release-checklist" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-05-22-bills-blog-pre-release-checklist" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/personal/2021/2021-05-20-petrified-sand-dunes-loop-trail-st-george-ut" class="pagination--pager" title="Petrified Sand Dunes Loop Trail St George Ut
+">Previous</a>
+    
+    
+      <a href="/technical/2021/2021-05-22-bills-blog-release-process" class="pagination--pager" title="Bill’s Blog Release Process
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/2021/2021-05-22-how-i-setup-this-github-pages-blog-site-part-04" rel="permalink">How I Setup This Github Pages Blog Site Part 04
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          15 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/2021/2021-05-22-bills-blog-release-process" rel="permalink">Bill’s Blog Release Process
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/personal/2021/2021-05-20-petrified-sand-dunes-loop-trail-st-george-ut" rel="permalink">Petrified Sand Dunes Loop Trail St George Ut
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-20T00:00:00-06:00">May 20, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Pictures and links for a day hike along the Petrified Sand Dunes Loop in St. George, UT
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/personal/2021/2021-05-17-scout-cave-trail-st-george-ut" rel="permalink">Scout Cave Trail St George Ut
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-17T00:00:00-06:00">May 17, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Pictures and links for a day hike along the Scout Cave Trail in St. George, UT
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/BillHertzing" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; William Hertzing 2020 - 2021. Licensed under the terms of the 
+<a href=/License/index.html>MIT License.</a>
+<a href=/Code-of-Conduct/index.html>Code of Conduct.</a>
+<a href=/Contributing/index.html>Contributing.</a>
+
+Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> 
+&amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+Site Release <a href=/ChangeLog/index.html>V0.03.001</a>
+
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://billhertzing.github.io/technical/2021/2021-05-22-bills-blog-pre-release-checklist";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/technical/2021/bills-blog-pre-release-checklist"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://BillHertzing.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

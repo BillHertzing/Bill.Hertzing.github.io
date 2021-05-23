@@ -13,17 +13,17 @@
 theme: minimal-mistakes-jekyll
 # remote_theme           : "mmistakes/minimal-mistakes"
 # https://html5up.net/minimaxing possibly?
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "aqua" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
 title                    : Bill's Blog
 title_separator          : "-"
-subtitle                 : Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!
-name                     : Bill hertzing
+subtitle                 : Technical articles, political issues, family pictures. Dive in!
+name                     : Bill Hertzing
 description              : Technical articles for my code repositories. Position papers on political issues. Cute pictures of the family. We've got it all!
-url                      : "https://BillHertzing.github.io" 
-baseurl                  : "" # the subpath of your site, e.g. /blog. ToDo: Also Blazor?
+url                      : https://BillHertzing.github.io
+baseurl                  : '' # the subpath of your site, e.g. /blog. ToDo: Also Blazor?
 repository               : BillHertzing/billhertzing.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -207,7 +207,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/ # pretty
+permalink: /:categories/:slug/ # /:categories/:title/ # pretty # /:categories/:slug/
 paginate:  # amount of posts to show
 paginate_path: /page:num/
 timezone: America/Denver
@@ -220,6 +220,10 @@ plugins:
   - jekyll-include-cache
   - jekyll-timeago
   - jekyll_version_plugin
+  # - jekyll-minifier
+  - jekyll-archives
+  - jekyll-relative-links
+  - flexible_include
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -239,29 +243,31 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+# category_archive:
+#   type: liquid
+#   path: /categories/
+# tag_archive:
+#   type: liquid
+#   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
 # HTML Compression
 # - https://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
     envs: development
+
 
 
 # Defaults
@@ -272,10 +278,56 @@ defaults:
       type: posts
     values:
       layout: single
+      permalink: /:slugified_categories/:year/:name
       author_profile: true
+      show_date: true
       read_time: true
       comments: true
       share: true
       related: true
       toc: true
       toc_sticky: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      author_profile: true
+      sidebar:
+        nav: docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: docs
+
+# settings for the jekyll-minifier package
+# jekyll-minifier:
+#   preserve_php: false                # Default: false
+#   remove_spaces_inside_tags: false   # Default: true
+#   remove_multi_spaces: false         # Default: true
+#   remove_comments: false             # Default: true
+#   remove_intertag_spaces: false      # Default: false
+#   remove_quotes: false              # Default: false
+#   compress_css: false                # Default: true
+#   compress_javascript: false         # Default: true
+#   compress_json: false               # Default: true
+#   simple_doctype: false             # Default: false
+#   remove_script_attributes: false   # Default: false
+#   remove_style_attributes: false    # Default: false
+#   remove_link_attributes: false     # Default: false
+#   remove_form_attributes: false     # Default: false
+#   remove_input_attributes: false    # Default: false
+#   remove_javascript_protocol: false # Default: false
+#   remove_http_protocol: false       # Default: false
+#   remove_https_protocol: false      # Default: false
+#   preserve_line_breaks: false       # Default: false
+#   simple_boolean_attributes: false  # Default: false
+#   compress_js_templates: false      # Default: false
+#   preserve_patterns:                # Default: (empty)
+#   uglifier_args:                    # Default: (empty)
+
+# Configuration settings for the jekyll-relative-links plugin, see https://github.com/benbalter/jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true

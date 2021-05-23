@@ -1,6 +1,6 @@
 ---
 Title: Introduction to AceCommander
-tags: Ace AceCommander
+tags: [AceCommander]
 description: The motivation for and introduction to the AceCommander app
 category: technical
 ---
@@ -11,7 +11,7 @@ The MySQL a is \called AceCommander, it holds userauth user tables
 Install MySql here:
 
 the database files need to be under dropbox, so a my.ini file has to be created, and MySQL has to be told to look for it under a dropbox location.
-The current location is under <drive>:/DropBox/MySQLData
+The current location is under <drive>:/Dropbox/MySQLData
 
 every developer, qa, and test environment, as well as every production system, needs its own AceCommander database
 the my.ini file specifies this as <drive>:/dropbox/MySQL/data

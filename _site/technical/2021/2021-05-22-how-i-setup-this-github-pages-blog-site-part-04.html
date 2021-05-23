@@ -1,0 +1,1166 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>How I Setup This Github Pages Blog Site Part 04 - Bill’s Blog</title>
+<meta name="description" content="Fourth group of steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+
+
+  <meta name="author" content="William (Bill) Hertzing">
+  
+  <meta property="article:author" content="William (Bill) Hertzing">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Bill's Blog">
+<meta property="og:title" content="How I Setup This Github Pages Blog Site Part 04">
+<meta property="og:url" content="https://billhertzing.github.io/technical/2021/2021-05-22-how-i-setup-this-github-pages-blog-site-part-04">
+
+
+  <meta property="og:description" content="Fourth group of steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+
+
+
+
+
+  <meta name="twitter:site" content="@whertzing56">
+  <meta name="twitter:title" content="How I Setup This Github Pages Blog Site Part 04">
+  <meta name="twitter:description" content="Fourth group of steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+  <meta name="twitter:url" content="https://billhertzing.github.io/technical/2021/2021-05-22-how-i-setup-this-github-pages-blog-site-part-04">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-05-22T00:00:00-06:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://billhertzing.github.io/technical/2021/2021-05-22-how-i-setup-this-github-pages-blog-site-part-04">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Bill Hertzing",
+      "url": "https://billhertzing.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Bill's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=rMB0AyldWY">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=rMB0AyldWY">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=rMB0AyldWY">
+<link rel="manifest" href="/site.webmanifest?v=rMB0AyldWY">
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMB0AyldWY" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico?v=rMB0AyldWY">
+<meta name="apple-mobile-web-app-title" content="BillHertzing">
+<meta name="application-name" content="BillHertzing">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Bill's Blog
+          <span class="site-subtitle">Technical articles, political issues, family pictures. Dive in!</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/About/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/subscribe-to-bills-blog/">Subscribe</a>
+            </li><li class="masthead__menu-item">
+              <a href="/ChangeLog/">ChangeLog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Contributing/">Contributing</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Code-of-Conduct/">Code of Conduct</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">William (Bill) Hertzing</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Computer enthusiast and professional since ‘74. Lots of languages and OSs over the years. TCP/IP, HTTP, traffic analysis, Provable minimal algorithms, C#, and .Net are my current interests</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere in Utah</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://BillHertzing.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">This Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/whertzing56" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://www.facebook.com/bill.hertzing.3" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/BillHertzing" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/whertzing56" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How I Setup This Github Pages Blog Site Part 04">
+    <meta itemprop="description" content="Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series How I setup this GitHub Pages Blog Site Part 01, How I setup this GitHub Pages Blog Site Part 02, and How I setup this GitHub Pages Blog Site Part 03 you should probably give them a quick review, to become familiar with how the site has been built up to this point.">
+    <meta itemprop="datePublished" content="2021-05-22T00:00:00-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">How I Setup This Github Pages Blog Site Part 04
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          14 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#add-a-new-branch-sprintforrelease004000">Add a new branch SprintForRelease0.04.000</a></li><li><a href="#update-the-commit-template">Update the commit template</a></li><li><a href="#first-commit-on-the-sprint-branch">First commit on the sprint branch</a></li><li><a href="#add-the-plugin-jekyll-compose">Add the plugin jekyll-compose</a></li><li><a href="#add-jekyll-minifier">Add jekyll-minifier</a></li><li><a href="#add-plugin-jekyll-relative-links">Add plugin jekyll-relative-links</a></li><li><a href="#create-a-development-override-file-for-_configyml">Create a Development override file for _Config.yml</a></li><li><a href="#setup-archive-pages">Setup archive pages</a><ul><li><a href="#add-the-jekyll-archives-gem">Add the jekyll-archives gem</a></li><li><a href="#modify-_configyml-for-jekyll-archives">Modify _config.yml for jekyll-archives</a></li><li><a href="#create-override-for-_pagescategory-archivemd">Create override for _pages/category-archive.md</a></li><li><a href="#create-override-for-_pagesyear-archivemd">Create override for _pages/year-archive.md</a></li><li><a href="#create-override-for-_pagestags-archivemd">Create override for _pages/tags-archive.md</a></li></ul></li><li><a href="#setup-masthead-navigation">Setup masthead navigation</a></li><li><a href="#setup-custom-sidebar-navigation">Setup custom sidebar navigation</a></li><li><a href="#add-rule-for-git-merge">Add rule for Git Merge</a></li><li><a href="#rebase-feature-branch-onto-the-head-of-main-after-a-site-patchpost-point-release">Rebase Feature branch onto the head of main after a site patch/post point release</a></li><li><a href="#modify-_includesgallery">Modify _includes/gallery</a></li><li><a href="#add-the-page-_pagessubscribe-to-bills-blogmd">Add the page _pages/subscribe-to-bills-blog.md</a><ul><li><a href="#update-masthead-navigation">Update masthead navigation</a></li></ul></li><li><a href="#add-adstxt-file-from-disqus">Add ads.txt file from Disqus</a></li><li><a href="#add-carousel-to-home-page">Add carousel to home page</a><ul><li><a href="#add-a-carousel-component">Add a Carousel component</a></li><li><a href="#instantiate-the-carousel-on-the-home-page">Instantiate the carousel on the home page</a></li><li><a href="#troubleshooting-the-carousel-overlaps-the-left-sidebar">Troubleshooting: The carousel overlaps the left sidebar</a></li><li><a href="#create-override-for-_layoutsplashhtml">Create override for _layout/splash.html</a></li></ul></li><li><a href="#add-post-bills-blog-pre-release-checklistmd">Add post bills-blog-pre-release-checklist.md</a></li><li><a href="#add-post-bills-blog-release-processmd">Add post bills-blog-release-process.md</a></li><li><a href="#add-any-personal-posts-to-be-published">Add any personal posts to be published</a></li><li><a href="#validate-this-post-part04">Validate this post (..part04)</a></li><li><a href="#validate-this-site-release">Validate this Site Release</a></li><li><a href="#release-v004000-of-the-site-along-with-any-new-published-posts">Release V0.04.000 of the site along with any new published posts</a></li><li><a href="#wrapping-up">Wrapping up</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series <a href="/technical/2021/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01.html">How I setup this GitHub Pages Blog Site Part 01</a>, <a href="/technical/2021/2021-04-17-how-i-setup-this-github-pages-blog-site-part-02.html">How I setup this GitHub Pages Blog Site Part 02</a>, and <a href="/technical/2021/2021-04-24-how-i-setup-this-github-pages-blog-site-part-03.html">How I setup this GitHub Pages Blog Site Part 03</a> you should probably give them a quick review, to become familiar with how the site has been built up to this point.</p>
+
+<p>The next steps will be to implement the features specified in <a href="https://github.com/BillHertzing/BillHertzing.github.io/milestone/4">Milestone 0.04.0</a>. I’ve already created Milestones for Release V0.05, <a href="https://github.com/BillHertzing/BillHertzing.github.io/milestone/5">Milestone 0.05.0</a> as well and updated the Milestone <em>Release Far Future</em> to reflect what is planned for later. Release V0.05 calls for creation of a  Github project for tracking future features, so at that point hopefully, there will be a single point for tracking and reporting on planned and requested features.</p>
+
+<p>Many of these instructions refer to Visual Studio Code (VSC).</p>
+
+<h2 id="add-a-new-branch-sprintforrelease004000">Add a new branch <code class="language-plaintext highlighter-rouge">SprintForRelease0.04.000</code></h2>
+
+<ul>
+  <li>Run <code class="language-plaintext highlighter-rouge">git branch create SprintForRelease0.04.000</code></li>
+</ul>
+
+<h2 id="update-the-commit-template">Update the commit template</h2>
+
+<ul>
+  <li>Edit <code class="language-plaintext highlighter-rouge">GitTemplates/git.commit.template.txt</code> and change <code class="language-plaintext highlighter-rouge">03</code> to <code class="language-plaintext highlighter-rouge">04</code></li>
+</ul>
+
+<h2 id="first-commit-on-the-sprint-branch">First commit on the sprint branch</h2>
+
+<p>Commit the changes and use VSC to synchronize changes with the remote, then inspect the Github repository to ensure the branch and first commit exist on the repo. I like using the VSC extensions <code class="language-plaintext highlighter-rouge">Git Lens</code> along with the extensions <code class="language-plaintext highlighter-rouge">Git Graph</code>. Together, these provide a clear view of the site’s development history. ToDo: insert jpg</p>
+
+<h2 id="add-the-plugin-jekyll-compose">Add the plugin jekyll-compose</h2>
+
+<p>jekyll-compose adds commands that help streamline the creation and publishing of posts. Installation instructions and details can be found in <a href="https://github.com/jekyll/jekyll-compose">jekyll-compose</a>. What follows are the steps I took and choices I made for this site.</p>
+
+<ol>
+  <li>Edit the Gemfile in the root of the repo.</li>
+  <li>Add <code class="language-plaintext highlighter-rouge">gem 'jekyll-compose', group: [:jekyll_plugins]</code> just above the <code class="language-plaintext highlighter-rouge">plugins:</code> key.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle</code></li>
+</ol>
+
+<p>Refer to detailed instructions in <a href="https://github.com/jekyll/jekyll-compose">jekyll-compose</a> for using the new commands. This post was drafted and published using the commands added by this tool, and it made the process much much easier. I created the draft of this post using the command <code class="language-plaintext highlighter-rouge">bundle exec jekyll draft "how-i-setup-this-github-pages-blog-site-part-04"</code>, which placed a file containing just Front Matter in the <code class="language-plaintext highlighter-rouge">_drafts</code> directory.</p>
+
+<h2 id="add-jekyll-minifier">Add jekyll-minifier</h2>
+
+<p>Minification is the process of rewriting the stream of data sent from the server to the browser to make the stream as small as possible.Minification of your site is something that all good digital properties should do. It’s just manners. But this has consequences if a developer is trying to read the data stream and debug problems.</p>
+
+<p>As with any optimization, it is important to measure the baseline, and then the improvement.</p>
+
+<p>-[ToDo: A short tutorial on using Fiddler 4 to measure the size of a response.]
+-[ToDo: Alternative - Find online site that can quantify the number of bytes. Or see if Fiddler 4 has that capability.0</p>
+
+<p>This minifier allows fine control over minification of HTML, JavaScript, CSS, and Json, as well as many more minification options.</p>
+
+<p>Detailed instructions are here at <a href="https://github.com/digitalsparky/jekyll-minifier">jekyll-minifier</a></p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">gem install jekyll-minifier</code> Make a note of the version installed, mine was 0.1.10</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle update</code></li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">Gemfile</code> at the root of the repo, and add <code class="language-plaintext highlighter-rouge">gem "jekyll-minifier", "~&gt; 0.1.10"</code> into the <code class="language-plaintext highlighter-rouge">group :jekyll_plugins do</code> section.</li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> and add <code class="language-plaintext highlighter-rouge">jekyll-minifier</code> to the <code class="language-plaintext highlighter-rouge">plugins</code>: key</li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">plugins</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">jekyll-minifier</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Further down the <code class="language-plaintext highlighter-rouge">_config.yml</code> add lines that control the minifier’s settings. Add the entire list now, and later we will work through each setting and decide if this site will need it.</li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">jekyll-minifier</span><span class="pi">:</span>
+    <span class="na">preserve_php</span><span class="pi">:</span> <span class="no">true</span>                <span class="c1"># Default: false</span>
+    <span class="na">remove_spaces_inside_tags</span><span class="pi">:</span> <span class="no">true</span>   <span class="c1"># Default: true</span>
+    <span class="na">remove_multi_spaces</span><span class="pi">:</span> <span class="no">true</span>         <span class="c1"># Default: true</span>
+    <span class="na">remove_comments</span><span class="pi">:</span> <span class="no">true</span>             <span class="c1"># Default: true</span>
+    <span class="na">remove_intertag_spaces</span><span class="pi">:</span> <span class="no">true</span>      <span class="c1"># Default: false</span>
+    <span class="na">remove_quotes</span><span class="pi">:</span> <span class="no">false</span>              <span class="c1"># Default: false</span>
+    <span class="na">compress_css</span><span class="pi">:</span> <span class="no">true</span>                <span class="c1"># Default: true</span>
+    <span class="na">compress_javascript</span><span class="pi">:</span> <span class="no">true</span>         <span class="c1"># Default: true</span>
+    <span class="na">compress_json</span><span class="pi">:</span> <span class="no">true</span>               <span class="c1"># Default: true</span>
+    <span class="na">simple_doctype</span><span class="pi">:</span> <span class="no">false</span>             <span class="c1"># Default: false</span>
+    <span class="na">remove_script_attributes</span><span class="pi">:</span> <span class="no">false</span>   <span class="c1"># Default: false</span>
+    <span class="na">remove_style_attributes</span><span class="pi">:</span> <span class="no">false</span>    <span class="c1"># Default: false</span>
+    <span class="na">remove_link_attributes</span><span class="pi">:</span> <span class="no">false</span>     <span class="c1"># Default: false</span>
+    <span class="na">remove_form_attributes</span><span class="pi">:</span> <span class="no">false</span>     <span class="c1"># Default: false</span>
+    <span class="na">remove_input_attributes</span><span class="pi">:</span> <span class="no">false</span>    <span class="c1"># Default: false</span>
+    <span class="na">remove_javascript_protocol</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># Default: false</span>
+    <span class="na">remove_http_protocol</span><span class="pi">:</span> <span class="no">false</span>       <span class="c1"># Default: false</span>
+    <span class="na">remove_https_protocol</span><span class="pi">:</span> <span class="no">false</span>      <span class="c1"># Default: false</span>
+    <span class="na">preserve_line_breaks</span><span class="pi">:</span> <span class="no">false</span>       <span class="c1"># Default: false</span>
+    <span class="na">simple_boolean_attributes</span><span class="pi">:</span> <span class="no">false</span>  <span class="c1"># Default: false</span>
+    <span class="na">compress_js_templates</span><span class="pi">:</span> <span class="no">false</span>      <span class="c1"># Default: false</span>
+    <span class="na">preserve_patterns</span><span class="pi">:</span>                <span class="c1"># Default: (empty)</span>
+    <span class="na">uglifier_args</span><span class="pi">:</span>                    <span class="c1"># Default: (empty)</span>
+    
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong><em>es6 support is experimental.</em></strong>  If your site is using es6 scripts, see the <a href="https://github.com/digitalsparky/jekyll-minifier">jekyll-minifier</a> documentation for possible issues.</p>
+</blockquote>
+
+<p>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code> and ensure the site looks like it should. The re-run the tests that measure the size of the data stream.</p>
+
+<p><strong>This is not working in the V0.04.000 Release. Error from uglifier: “…uglifier.rb:291:in `parse_result’: Unexpected token: name ($style). To use ES6 syntax, harmony mode must be enabled with Uglifier.new(:harmony =&gt; true). (Uglifier::Error)”</strong></p>
+
+<p>Note that the Release process is flexible enough to allow a release to happen even if a known issue is present, if there is a workaround.</p>
+
+<p>Workaround: disable (put # in front of it) Minifier in <code class="language-plaintext highlighter-rouge">_config.yml</code> and in <code class="language-plaintext highlighter-rouge">Gemfile</code>.</p>
+
+<ul>
+  <li>[ToDo: Create issue after release, fix, remove workaround]</li>
+</ul>
+
+<h2 id="add-plugin-jekyll-relative-links">Add plugin jekyll-relative-links</h2>
+
+<p>The posts and pages are going to start referring to each other. This is called cross-linking, or cross-referencing, documents. To better support this, the jekyll-relative-links plugin allows these cross-reference links to be create using liquid tags that will resolve to the draft, and then to the published past or page.</p>
+
+<p>Detailed instructions are here at <a href="https://github.com/digitalsparky/jekyll-minifier">jekyll-relative-links</a></p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">gem install jekyll-relative-links</code> Make a note of the version installed, mine was 0.6.1</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle update</code></li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">Gemfile</code> at the root of the repo, and add <code class="language-plaintext highlighter-rouge">gem "jekyll-relative-links", "~&gt; 0.6.1"</code> into the <code class="language-plaintext highlighter-rouge">group :jekyll_plugins do</code> section.</li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> and add <code class="language-plaintext highlighter-rouge">jekyll-relative-links</code> to the <code class="language-plaintext highlighter-rouge">plugins</code>: key</li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">plugins</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">jekyll-relative-links</span>
+</code></pre></div></div>
+
+<p>Further down the <code class="language-plaintext highlighter-rouge">_config.yml</code> add lines that control the relative-links plugin’s settings.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">relative_links</span><span class="pi">:</span>
+    <span class="na">enabled</span><span class="pi">:</span>     <span class="no">true</span>
+    <span class="na">collections</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div></div>
+
+<h2 id="create-a-development-override-file-for-_configyml">Create a Development override file for _Config.yml</h2>
+
+<p>Relative URL creates links that include the site name. The <code class="language-plaintext highlighter-rouge">_config.yml</code> file specifies the site’s URL as <code class="language-plaintext highlighter-rouge">Billhertzing.github.io</code>. But during development, the site is locally hosted and served. The links used during development should use a site URL of <code class="language-plaintext highlighter-rouge">localhost</code>. It is possible to override the URL specified in ‘_config.yml’ by creating a second .yml file, populating it with just the keys and values that should be different during development,and invoking the Jekyll build and serve process with an additional argument.</p>
+
+<ol>
+  <li>Create the file <code class="language-plaintext highlighter-rouge">_config.Development.yml</code> at the root of the repo.</li>
+  <li>Add the following two lines:</li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">url</span><span class="pi">:</span> <span class="s">https://localhost/</span> 
+  <span class="na">baseurl</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+</code></pre></div></div>
+
+<p>During development, the command to build and serve the site should be:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   bundle exec jekyll serve --config _config.yml, _config.Development.yml
+</code></pre></div></div>
+
+<h2 id="setup-archive-pages">Setup archive pages</h2>
+
+<p>The MM theme has two kinds of archive support built in, either a Liquid approach or a <code class="language-plaintext highlighter-rouge">jekyll-archives</code> approach. I chose to use the <code class="language-plaintext highlighter-rouge">jekyll-archives</code> plugin.</p>
+
+<h3 id="add-the-jekyll-archives-gem">Add the <code class="language-plaintext highlighter-rouge">jekyll-archives</code> gem</h3>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">gem install jekyll-archives</code>. Mine came back as version 2.2.1.</li>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">Gemfile</code> in the root of  the repo. Add <code class="language-plaintext highlighter-rouge">gem "jekyll-archives", "~&gt; 2.2.1"</code> into the <code class="language-plaintext highlighter-rouge">group :jekyll_plugins do</code> group.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle update</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> and ensure the site builds correctly.</li>
+</ol>
+
+<h3 id="modify-_configyml-for-jekyll-archives">Modify <code class="language-plaintext highlighter-rouge">_config.yml</code> for <code class="language-plaintext highlighter-rouge">jekyll-archives</code></h3>
+
+<ol>
+  <li>
+    <p>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code>, and find the <code class="language-plaintext highlighter-rouge">jekyll-archives</code> section. Uncomment the settings that appear in MM’s default. Mine looks like this:</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jekyll-archives</span><span class="pi">:</span>
+ <span class="na">enabled</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="s">categories</span>
+   <span class="pi">-</span> <span class="s">tags</span>
+ <span class="na">layouts</span><span class="pi">:</span>
+   <span class="na">category</span><span class="pi">:</span> <span class="s">archive-taxonomy</span>
+   <span class="na">tag</span><span class="pi">:</span> <span class="s">archive-taxonomy</span>
+ <span class="na">permalinks</span><span class="pi">:</span>
+   <span class="na">category</span><span class="pi">:</span> <span class="s">/categories/:name/</span>
+   <span class="na">tag</span><span class="pi">:</span> <span class="s">/tags/:name/</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="create-override-for-_pagescategory-archivemd">Create override for <code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code></h3>
+
+<p>There needs to be an <code class="language-plaintext highlighter-rouge">index.html</code> in the generated site’s <code class="language-plaintext highlighter-rouge">/categories/</code> directory.</p>
+
+<ol>
+  <li>Add a new subdirectory and file <code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code> at the root of the repo.</li>
+  <li>
+    <p>Add the following Front Matter to the file. Nothing else is needed.</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">---</span>
+ <span class="s">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Posts</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Category"</span>
+ <span class="na">layout</span><span class="pi">:</span> <span class="s">categories</span>
+ <span class="na">permalink</span><span class="pi">:</span> <span class="s">/categories/</span>
+ <span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+ <span class="s">---</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and ensure the site builds correctly</li>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">http://localhost:4000/categories/</code> and validate there is a page listing all current posts organized by category.</li>
+</ol>
+
+<h3 id="create-override-for-_pagesyear-archivemd">Create override for <code class="language-plaintext highlighter-rouge">_pages/year-archive.md</code></h3>
+
+<p>There needs to be an <code class="language-plaintext highlighter-rouge">index.html</code> in the generated site’s <code class="language-plaintext highlighter-rouge">/year-archive/</code> subdirectory.</p>
+
+<ol>
+  <li>Add a new file <code class="language-plaintext highlighter-rouge">_pages/year-archive.md</code> at the root of the repo.</li>
+  <li>
+    <p>Add the following Front Matter to the file. Nothing else is needed.</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">---</span>
+ <span class="s">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Posts</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Date"</span>
+ <span class="na">layout</span><span class="pi">:</span> <span class="s">archive</span>
+ <span class="na">permalink</span><span class="pi">:</span> <span class="s">/year-archive/</span>
+ <span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+ <span class="s">---</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and ensure the site builds correctly</li>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">http://localhost:4000/year-archive/</code> and validate there is a page listing all published posts organized by Date.</li>
+</ol>
+
+<h3 id="create-override-for-_pagestags-archivemd">Create override for <code class="language-plaintext highlighter-rouge">_pages/tags-archive.md</code></h3>
+
+<p>There needs to be an <code class="language-plaintext highlighter-rouge">index.html</code> in the generated sites <code class="language-plaintext highlighter-rouge">/tags/</code> directory.</p>
+
+<ol>
+  <li>Add a new file <code class="language-plaintext highlighter-rouge">_pages/tags-archive.md</code> at the root of the repo.</li>
+  <li>
+    <p>Add the following Front Matter to the file. Nothing else is needed.</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">---</span>
+ <span class="s">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Posts</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Tags"</span>
+ <span class="na">layout</span><span class="pi">:</span> <span class="s">Tags</span>
+ <span class="na">permalink</span><span class="pi">:</span> <span class="s">/tags/</span>
+ <span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+ <span class="s">---</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and ensure the site builds correctly</li>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">http://localhost:4000/tags/</code> and validate there is a page listing all current posts organized by tag.</li>
+</ol>
+
+<h2 id="setup-masthead-navigation">Setup masthead navigation</h2>
+
+<p>The MM theme has built-in support for masthead navigation. These are the links that appear across the top of every page, and which collapse down into the navigation hamburger on narrow screens. There is a direct relationship between the files in the <code class="language-plaintext highlighter-rouge">_pages</code> subdirectory and the navigation links in the <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code></p>
+
+<p>Details on using masthead navigation are at MM’s <a href="https://mmistakes.github.io/minimal-mistakes/docs/navigation/">Navigation</a> . Here are the steps I took</p>
+
+<ol>
+  <li>
+    <p>Create a subdirectory and file <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> and open it for editing. I started with the following contents:</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">ToDo</span><span class="pi">:</span> <span class="s">Add automation to read text from real file on file changes in site build</span>
+ <span class="na">main</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">About"</span>
+     <span class="na">url</span><span class="pi">:</span> <span class="s">/About/</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Posts"</span>
+     <span class="na">url</span><span class="pi">:</span> <span class="s">/year-archive/</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Categories"</span>
+     <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Tags"</span>
+     <span class="na">url</span><span class="pi">:</span> <span class="s">/tags/</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Subscribe"</span>
+     <span class="na">url</span><span class="pi">:</span> <span class="s">/subscribe-to-bills-blog/</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ChangeLog"</span>
+     <span class="na">url</span><span class="pi">:</span> <span class="s">/ChangeLog/</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Contributing"</span>
+     <span class="na">url</span><span class="pi">:</span> <span class="s">/Contributing/</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Code</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Conduct"</span>
+     <span class="na">url</span><span class="pi">:</span> <span class="s">/Code-of-Conduct/</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --drafts</code> and ensure masthead navigation is present. Play around with making the browser wider and narrower, and note how the horizontal masthead links expand from and collapse into a navigation hamburger.</p>
+
+<h2 id="setup-custom-sidebar-navigation">Setup custom sidebar navigation</h2>
+
+<p>The MM theme has the custom sidebar navigation capability built-in. Details on using it are at <a href="https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-content">Custom sidebar navigation menu</a> .</p>
+
+<p>I plan to use this User static blog site to link together the DocFx generated static sites in every peer repository. The left Nav component is a window into all of the technical documentation for AceCommander and the ATAP Utilities.</p>
+
+<p>Here are the steps I took to put up a placeholder for the left Nav:</p>
+
+<ol>
+  <li>
+    <p>Edit <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> . I started with the following contents, with TBD meaning of course “To Be Done”:</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">docs</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span>  <span class="s">Repositories Overview</span>
+     <span class="na">children</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*Overview</span><span class="nv"> </span><span class="s">Guide</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">TBD*"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/overview-guide/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Structure-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/structure/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Testing-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/Testing/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ReleaseProcess-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/ReleaseProcess/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Upgrading-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/upgrading/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">EndOfLife-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/EndOfLife/</span>
+   <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span>  <span class="s">SCM Conventions</span>
+     <span class="na">children</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SCM</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Code,</span><span class="nv"> </span><span class="s">Doc,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">DB-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/SCM-Conventions/overview/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Code</span><span class="nv"> </span><span class="s">SCM-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/Code-VersionControlProcess/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Docs</span><span class="nv"> </span><span class="s">SCM-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/Documentation-VersionControlProcess/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">DB</span><span class="nv"> </span><span class="s">SCM-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/DataBase-VersionControlProcess/</span>
+       <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Peer</span><span class="nv"> </span><span class="s">Repository</span><span class="nv"> </span><span class="s">SCM-TBD"</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/Peer-repository-AutoDoc-VersionControlProcess/</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="add-rule-for-git-merge">Add rule for Git Merge</h2>
+
+<p>If a BugFix or new Post goes out on <code class="language-plaintext highlighter-rouge">main</code> while you are working on a Feature branch, you will need to rebase the feature branch onto the new head of <code class="language-plaintext highlighter-rouge">main</code>. There are likely to be a lot of files in <code class="language-plaintext highlighter-rouge">_site</code> with merge conflicts! since <code class="language-plaintext highlighter-rouge">_site</code> is all generated files, we can safely ignore any merge conflicts in the files under <code class="language-plaintext highlighter-rouge">site</code>. We can create a merge  to accomplish this by adding a custom merge driver, as follows:</p>
+
+<ol>
+  <li>Create the file <code class="language-plaintext highlighter-rouge">.gitattributes</code> in the root of the repo.</li>
+  <li>Add the line <code class="language-plaintext highlighter-rouge">/_site/**/*.* merge=keep-local-changes</code> and save the file.</li>
+  <li>Create (or edit) the file <code class="language-plaintext highlighter-rouge">~/.gitconfig</code>, which is your windows HOME directory, and contains the global git configuration settings.</li>
+  <li>
+    <p>Add the following block of text <a href="https://stackoverflow.com/questions/12218977/git-add-merge-rule-to-config-for-specific-file">Geordie answer to this SO question</a>:</p>
+
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[merge "keep-local-changes"]
+   name = A custom merge driver which always keeps the local changes
+   driver = true
+</code></pre></div>    </div>
+  </li>
+  <li>You will need to close VSC and re-open it for the changes to the global <code class="language-plaintext highlighter-rouge">~/.gitconfig</code> to take effect.</li>
+</ol>
+
+<h2 id="rebase-feature-branch-onto-the-head-of-main-after-a-site-patchpost-point-release">Rebase Feature branch onto the head of <code class="language-plaintext highlighter-rouge">main</code> after a site patch/post point release</h2>
+
+<p>The need to rebase the <code class="language-plaintext highlighter-rouge">Feature</code> branch onto the HEAD of the <code class="language-plaintext highlighter-rouge">main</code> branch can occur at any time. Detailed instructions can be found in <a href="/technical/2021/2021-05-22-bills-blog-release-process.html#rebase-all-active-branches-onto-the-new-head-of-main">Bill’s Blog Release Process</a></p>
+
+<h2 id="modify-_includesgallery">Modify <code class="language-plaintext highlighter-rouge">_includes/gallery</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">gallery</code> component opens an image link reusing the same tab as the parent document. Modern practice is to open an image link in a new tab. modify the <code class="language-plaintext highlighter-rouge">gallery</code> so that the anchor href now includes <code class="language-plaintext highlighter-rouge">target = "_blank" rel="noopener noreferrer nofollow"</code> . This will tell browsers to open the image in a new tab.</p>
+
+<h2 id="add-the-page-_pagessubscribe-to-bills-blogmd">Add the page <code class="language-plaintext highlighter-rouge">_pages/subscribe-to-bills-blog.md</code></h2>
+
+<p>The page provides instructions on using <a href="https://ifttt.com/">IFTTT</a> to subscribe to the site’s RSS feed. Add the page <code class="language-plaintext highlighter-rouge">subscribe-to-bills-blog.md</code> to the root of the repo. The Front Matter should look like this:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">layout</span><span class="pi">:</span> <span class="s">single</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/subscribe-to-bills-blog/</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">How to subscribe to posts from Bill's Blog site</span>
+    <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">subscribe</span><span class="pi">,</span> <span class="s2">"</span><span class="s">RSS</span><span class="nv"> </span><span class="s">Feed"</span><span class="pi">]</span>
+    <span class="na">Category</span><span class="pi">:</span> <span class="s">technical</span>
+    <span class="s">---</span>   
+</code></pre></div></div>
+
+<p>Add content to the page explaining the steps necessary to setup an IFTTT trigger and target action that produces an e-mail message whenever the site’s RSS feed indicates a change has been made to the site.</p>
+
+<h3 id="update-masthead-navigation">Update masthead navigation</h3>
+
+<ul>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code></li>
+  <li>
+    <p>Add the following to the <code class="language-plaintext highlighter-rouge">main</code> section:</p>
+
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Subscribe"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/subscribe-to-bills-blog/</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="add-adstxt-file-from-disqus">Add <code class="language-plaintext highlighter-rouge">ads.txt</code> file from Disqus</h2>
+
+<p>ADS stands for Authorized Digital Sellers. You can read more about ads.txt and the rationale for creating it, at <a href="https://help.disqus.com/en/articles/1765332-ads-txt-faq">Ads.txt FAQ</a>  Disqus and other companies have cooperated to identify sellers with validated reputations. Disqus expects this file to be present in the root of the site.</p>
+
+<ol>
+  <li>Create the file <code class="language-plaintext highlighter-rouge">ads.txt</code> in the root of the repo.</li>
+  <li>Copy the contents of <a href="https://disqusads.com/ads.txt">ADS.txt</a> into the file <code class="language-plaintext highlighter-rouge">ads.txt</code></li>
+  <li>Save the file</li>
+</ol>
+
+<p>This file needs to be maintained monthly. Setup a reminder to regularly compare the latest version of the file with the one local to your site, and update your local copy accordingly.</p>
+
+<ul>
+  <li>[ToDo: write a script to automate this, and reference the script here.]</li>
+  <li>[ToDo: write a post how to automate this, and schedule it to run monthly and notify the site admin’s list.]</li>
+</ul>
+
+<h2 id="add-carousel-to-home-page">Add carousel to home page</h2>
+
+<h3 id="add-a-carousel-component">Add a Carousel component</h3>
+
+<p>There are many carousel components on the Internet only a search away. The following carousel component came from the Jekyllcodex.org site, and was very highly linked, so we will start with this one. See <a href="https://jekyllcodex.org/without-plugin/slider/">Slider/Carousel</a> for details. Following their instructions….</p>
+
+<ol>
+  <li>Add the file <code class="language-plaintext highlighter-rouge">_includes/carousel.html</code>, and copy the contents from <a href="https://raw.githubusercontent.com/jhvanderschee/jekyllcodex/gh-pages/_includes/carousel.html">carousel.html</a> into the local copy of this file.</li>
+  <li>Add the file <code class="language-plaintext highlighter-rouge">_data/carousel.yml</code>, and fill it with content similar to this:</li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">images</span><span class="pi">:</span> 
+  <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">/uploads/slider/image1.jpg</span>
+  <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">/uploads/slider/image2.jpg</span>
+  <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">/uploads/slider/image3.jpg</span>
+  <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">/uploads/slider/image4.jpg</span>
+</code></pre></div></div>
+
+<p>My initial file looked like this, because I am hosting my images on Dropbox, and have to get a sharing link from Dropbox for each image:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">images</span><span class="pi">:</span> 
+  <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">https://www.dropbox.com/s/xshldyre3ghrye1/Spring%20runoff.jpg?raw=1</span>
+  <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">https://www.dropbox.com/s/irttipxfqhpf6sk/AllTrailsInfo.png?raw=1</span>
+  <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">https://www.dropbox.com/s/4z10h1qcoj54t4b/Artsy%20water.jpg?raw=1</span>
+</code></pre></div></div>
+
+<h3 id="instantiate-the-carousel-on-the-home-page">Instantiate the carousel on the home page</h3>
+
+<p>The component needs to be instantiated where it is to be used. We want it on the site’s home page</p>
+
+<ol>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_pages/Home.md</code></li>
+  <li>
+    <p>Add the following line in the location where the carousel should appear.</p>
+
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {% include carousel.html height="50" unit="%" duration="7" %}
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Build the site and validate the carousel appears as expected.</p>
+
+<h3 id="troubleshooting-the-carousel-overlaps-the-left-sidebar">Troubleshooting: The carousel overlaps the left sidebar</h3>
+
+<p>Investigation shows that the <code class="language-plaintext highlighter-rouge">_layout/splash.html</code> file from the MM theme has far less Liquid template code than the <code class="language-plaintext highlighter-rouge">_layout/single.html</code> file. The <code class="language-plaintext highlighter-rouge">_layout/splash.html</code> file will need to be overridden and modified to keep the carousel within the left and right borders of the content.</p>
+
+<h3 id="create-override-for-_layoutsplashhtml">Create override for <code class="language-plaintext highlighter-rouge">_layout/splash.html</code></h3>
+
+<p>Copy the file <code class="language-plaintext highlighter-rouge">_layout/splash.html</code> from the location where the MM theme was installed (<a href="/technical/2021/2021-04-24-how-i-setup-this-github-pages-blog-site-part-03.html#finding-the-files-that-make-up-the-theme">Finding the files that make up the theme</a>) into the <code class="language-plaintext highlighter-rouge">_layouts</code> subdirectory below the repo root.</p>
+
+<p>The content changes border on substantial. In summary, we want to add a &lt;div class=”page__inner-wrap”&gt; to the splash layout, and place the <code class="language-plaintext highlighter-rouge">content</code> tag within this div. The best way to see this is to look at the file in my GitHub repo, <a href="https://github.com/BillHertzing/BillHertzing.github.io/blob/SprintForRelease0.04.000/_layouts/splash.html">here</a></p>
+
+<p>Once these changes are made to the splash layout, the carousel will remain constrained to the inner div of the page.</p>
+
+<h2 id="add-post-bills-blog-pre-release-checklistmd">Add post <code class="language-plaintext highlighter-rouge">bills-blog-pre-release-checklist.md</code></h2>
+
+<p>See <a href="/technical/2021/2021-05-22-bills-blog-pre-release-checklist.html">Bill’s Blog Pre-Release Checklist</a></p>
+
+<h2 id="add-post-bills-blog-release-processmd">Add post <code class="language-plaintext highlighter-rouge">bills-blog-release-process.md</code></h2>
+
+<p>See <a href="/technical/2021/2021-05-22-bills-blog-release-process.html">Bills Blog Release Process</a></p>
+
+<h2 id="add-any-personal-posts-to-be-published">Add any <code class="language-plaintext highlighter-rouge">personal</code> posts to be published</h2>
+
+<p>If you have created any <code class="language-plaintext highlighter-rouge">personal</code> or <code class="language-plaintext highlighter-rouge">political</code> posts while working on this feature release, and would like to publish those posts along with this site release, follow the steps in the <a href="/technical/2021/2021-05-22-bills-blog-pre-release-checklist.html">Bills Blog Pre-Release Checklist</a> post and apply the post validation tests to any posts to be released.</p>
+
+<h2 id="validate-this-post-part04">Validate this post (..part04)</h2>
+
+<p>Follow the steps in the <a href="/technical/2021/2021-05-22-bills-blog-pre-release-checklist.html">Bill’s Blog Pre-Release Checklist</a> and apply the post validation tests to this post.</p>
+
+<h2 id="validate-this-site-release">Validate this Site Release</h2>
+
+<p>Follow the steps in the <a href="/technical/2021/2021-05-22-bills-blog-pre-release-checklist.html">Bill’s Blog Pre-Release Checklist</a> and apply the site validation tests to this feature branch.</p>
+
+<h2 id="release-v004000-of-the-site-along-with-any-new-published-posts">Release V0.04.000 of the site along with any new published posts</h2>
+
+<p>Follow the steps in the <a href="/technical/2021/2021-05-22-bills-blog-release-process.html">Bills Blog Release Process</a> post.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>This concludes the fourth post in this series. This release included a lot of new features, pages, and posts. I’m sure that there will be revisions to all of these for typos, grammar, and general improvements. Future site revisions will support multiple editions of a post, with revision date and ChangeLog for the post. You will (eventually) be able to subscribe to the site’s feed and get notifications when a revision is made.</p>
+
+<p>There was also significant work done on a Powershell script outside of this repository which creates the Dropbox sharing links, and formats the links for the galleries and the HTML &lt;video&gt; tag. When I get the documentation for the <code class="language-plaintext highlighter-rouge">ATAP.Utilities</code> repository pulled together and published, then I’ll include cross-reference to that script and instructions on using it.</p>
+
+<p>Thanks for staying to the end! 😊</p>
+
+<p>Bill Hertzing, May 22, 2021</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=whertzing56&text=How+I+Setup+This+Github+Pages+Blog+Site+Part+04%20https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-05-22-how-i-setup-this-github-pages-blog-site-part-04" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-05-22-how-i-setup-this-github-pages-blog-site-part-04" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-05-22-how-i-setup-this-github-pages-blog-site-part-04" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/technical/2021/2021-05-22-bills-blog-release-process" class="pagination--pager" title="Bill’s Blog Release Process
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/2021/2021-05-22-bills-blog-release-process" rel="permalink">Bill’s Blog Release Process
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/2021/2021-05-22-bills-blog-pre-release-checklist" rel="permalink">Bills Blog Pre-Release Checklist
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Things about the release candidate to validate before starting the steps in Bill’s Blog Release Process
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/personal/2021/2021-05-20-petrified-sand-dunes-loop-trail-st-george-ut" rel="permalink">Petrified Sand Dunes Loop Trail St George Ut
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-20T00:00:00-06:00">May 20, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Pictures and links for a day hike along the Petrified Sand Dunes Loop in St. George, UT
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/personal/2021/2021-05-17-scout-cave-trail-st-george-ut" rel="permalink">Scout Cave Trail St George Ut
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-17T00:00:00-06:00">May 17, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Pictures and links for a day hike along the Scout Cave Trail in St. George, UT
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/BillHertzing" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; William Hertzing 2020 - 2021. Licensed under the terms of the 
+<a href=/License/index.html>MIT License.</a>
+<a href=/Code-of-Conduct/index.html>Code of Conduct.</a>
+<a href=/Contributing/index.html>Contributing.</a>
+
+Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> 
+&amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+Site Release <a href=/ChangeLog/index.html>V0.03.001</a>
+
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://billhertzing.github.io/technical/2021/2021-05-22-how-i-setup-this-github-pages-blog-site-part-04";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/technical/2021/how-i-setup-this-github-pages-blog-site-part-04"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://BillHertzing.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

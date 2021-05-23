@@ -1,0 +1,31 @@
+disqus.com, 298, DIRECT
+google.com, pub-6650322601660058, DIRECT, f08c47fec0942fa0
+google.com, pub-6650322601660058, RESELLER, f08c47fec0942fa0
+adyoulike.com, 65821909b0ce70f6e87747d8f22c3cf0, DIRECT
+appnexus.com, 9733, RESELLER
+spotxchange.com, 230037, RESELLER, 7842df1d2fe2db34
+spotx.tv, 230037, RESELLER, 7842df1d2fe2db34
+appnexus.com, 2797, DIRECT
+yahoo.com, 56704, DIRECT
+consumable.com, 2001140, DIRECT
+onetag.com, 5cd7fb62fac7ec9, DIRECT
+openx.com, 537133236, RESELLER, 6a698e2ec38604c6
+openx.com, 540717801, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 158685, RESELLER, 5d62403b186f2ace
+revcontent.com, 141058, DIRECT
+appnexus.com, 7666, RESELLER, f5ab79cb980f11d1
+my6sense.com, 9732, RESELLER
+engagebdr.com, 10304, RESELLER
+synacor.com, 82291, RESELLER, e108f11b2cdf7d5b
+indexexchange.com, 192143, RESELLER
+rubiconproject.com, 13380, DIRECT, 0bfd66d529a55807
+rubiconproject.com, 13380, RESELLER, 0bfd66d529a55807
+sovrn.com, 279534, DIRECT, fafdf38b16bf6b2b
+lijit.com, 279534, DIRECT, fafdf38b16bf6b2b
+taboola.com,1003147,DIRECT,c228e6794e811952
+spotx.tv,71451,RESELLER
+advertising.com, 8603, RESELLER
+contextweb.com, 560382, RESELLER
+openx.com, 539154393, RESELLER
+rubiconproject.com, 16698, RESELLER, 0bfd66d529a55807
+teads.tv, 20240, DIRECT, 15a9c44f6d26cbe1
