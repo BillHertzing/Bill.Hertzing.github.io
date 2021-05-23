@@ -1,0 +1,1135 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>How I Setup This Github Pages Blog Site Part 01 - Bill’s Blog</title>
+<meta name="description" content="First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+
+
+  <meta name="author" content="William (Bill) Hertzing">
+  
+  <meta property="article:author" content="William (Bill) Hertzing">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Bill's Blog">
+<meta property="og:title" content="How I Setup This Github Pages Blog Site Part 01">
+<meta property="og:url" content="https://billhertzing.github.io/technical/2021/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01">
+
+
+  <meta property="og:description" content="First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+
+
+
+
+
+  <meta name="twitter:site" content="@whertzing56">
+  <meta name="twitter:title" content="How I Setup This Github Pages Blog Site Part 01">
+  <meta name="twitter:description" content="First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.">
+  <meta name="twitter:url" content="https://billhertzing.github.io/technical/2021/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-04-06T12:31:43-06:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://billhertzing.github.io/technical/2021/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Bill Hertzing",
+      "url": "https://billhertzing.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Bill's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=rMB0AyldWY">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=rMB0AyldWY">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=rMB0AyldWY">
+<link rel="manifest" href="/site.webmanifest?v=rMB0AyldWY">
+<link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMB0AyldWY" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon.ico?v=rMB0AyldWY">
+<meta name="apple-mobile-web-app-title" content="BillHertzing">
+<meta name="application-name" content="BillHertzing">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Bill's Blog
+          <span class="site-subtitle">Technical articles, political issues, family pictures. Dive in!</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/About/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/subscribe-to-bills-blog/">Subscribe</a>
+            </li><li class="masthead__menu-item">
+              <a href="/ChangeLog/">ChangeLog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Contributing/">Contributing</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Code-of-Conduct/">Code of Conduct</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">William (Bill) Hertzing</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Computer enthusiast and professional since ‘74. Lots of languages and OSs over the years. TCP/IP, HTTP, traffic analysis, Provable minimal algorithms, C#, and .Net are my current interests</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere in Utah</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://BillHertzing.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">This Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/whertzing56" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://www.facebook.com/bill.hertzing.3" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/BillHertzing" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/whertzing56" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How I Setup This Github Pages Blog Site Part 01">
+    <meta itemprop="description" content="I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.">
+    <meta itemprop="datePublished" content="2021-04-06T12:31:43-06:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">How I Setup This Github Pages Blog Site Part 01
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-06T12:31:43-06:00">April 6, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          21 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#install-ruby-and-jekyll-on-your-windows-pc">Install Ruby and Jekyll on your Windows PC</a></li><li><a href="#create-a-new-git-repository">Create a new git repository</a></li><li><a href="#create-minimal-jekyll-compliant-site-source-code">Create minimal Jekyll-compliant site source code</a></li><li><a href="#download-the-minima-theme">Download the minima theme</a></li><li><a href="#verify-the-local-site-will-build-and-serve-locally-on-your-windows-pc">Verify the local site will build and serve locally on your Windows PC</a><ul><li><a href="#fixing-issues">Fixing issues</a></li></ul></li><li><a href="#replace-the-original-welcome-to-jekyllmarkdown-page">Replace the original welcome-to-jekyll.markdown page</a><ul><li><a href="#why-description-in-the-front-matter-is-important">Why description: in the Front Matter is important</a></li></ul></li><li><a href="#push-the-source-code-to-github">Push the source code to GitHub</a><ul><li><a href="#create-a-new-repository-on-github">Create a new repository on GitHub</a></li><li><a href="#push-the-local-repository-to-the-remote-repository">Push the local repository to the remote repository</a></li></ul></li><li><a href="#setup-visual-studio-code-vsc">Setup Visual Studio Code (VSC)</a></li><li><a href="#modify-the-aboutmd-page">Modify the About.md page</a></li><li><a href="#confirm-that-vsc-can-push-changes-to-github">Confirm that VSC can push changes to GitHub</a></li><li><a href="#add-a-categorized-post">Add a categorized post</a></li><li><a href="#enable-github-pages-on-the-github-repository">Enable GitHub pages on the GitHub repository</a></li><li><a href="#add-a-workflow-file-deploy-site-to-github-pagesyml">Add a workflow file deploy-site-to-github-pages.yml</a></li><li><a href="#create-an-environment-for-the-deployment-action">Create an Environment for the deployment action</a></li><li><a href="#remove-_site-from-the-gitignore-file">Remove _site from the .gitignore file</a></li><li><a href="#review-the-workflow-run">Review the workflow run</a></li><li><a href="#troubleshooting-the-workflow-run">Troubleshooting the workflow run</a></li><li><a href="#invoke-deploy-site-to-github-pages-manually">Invoke deploy-site-to-github-pages manually</a></li><li><a href="#add-the-mit-license-file">Add the MIT LICENSE file</a></li><li><a href="#modify-the-footer-template">Modify the footer template</a></li><li><a href="#making-the-first-release-of-the-site">Making the first release of the site</a></li><li><a href="#wrapping-up">Wrapping up</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>I have been trying for a few years to setup a web site I can use for blogging. But since there are a lot of neat features I’d like to include, every prior attempt has foundered on getting it all to hang together, along with the problems of version control for everything. And of course cost is always a consideration. Now, I’m giving it another try, this time using the GitHub Pages to host my site, and building it with Jekyll, the static site generator. Here are the steps I’ve taken to implement the features I’d like to have.</p>
+
+<p>If you would like to see a list of the articles online that have helped me create this site, please see the  <a href="#Attributions">Attributions</a> section below. (ToDo: coming in release V0.02.0 and explained in Part 02 of this post)</p>
+
+<p>You will see the phrase ToDo: insert jpg a lot in this edition of the post.  Getting a screenshot into a responsive blog post takes a lot of steps. Along about V 0.04.0, I plan to write and blog about a Powershell script to automate parts of the process.</p>
+
+<p>There are two images in this edition, to show it works and provide the example href details.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ol>
+  <li>A Windows 10 PC (Laptop or desktop)</li>
+  <li>a GitHub account. make a note of your username, and throughout this document, replace <em>GitHubUserName</em> and also BillHertzing with YOUR GitHub username</li>
+  <li>Powershell installed and updated on Windows 10</li>
+  <li>Git for Windows (or alternative Git client) installed on Windows 10</li>
+  <li>Visual Studio Code (VSC) (or similar editor) installed on Windows 10</li>
+  <li>VSC GitHub integration, at <a href="https://code.visualstudio.com/docs/editor/github">Working with GitHub in VS Code</a></li>
+</ol>
+
+<h2 id="install-ruby-and-jekyll-on-your-windows-pc">Install Ruby and Jekyll on your Windows PC</h2>
+
+<p><em>Note</em> if you need to clean up a botched prior attempt (me!), and you would like to remove all gems you may have installed, run this command in a Powershell terminal window <code class="language-plaintext highlighter-rouge">gem uninstall -aIx</code>)</p>
+
+<p>ToDo: Investigate using <a href="https://chocolatey.org/">chocolatey</a> to install both Ruby and MSYS2, as this will greatly simply keeping the toolchain up-to-date.</p>
+
+<ol>
+  <li>Install <a href="https://rubyinstaller.org/">RubyInstaller for Windows</a>. Select a recent Ruby+DevKit version (I picked <code class="language-plaintext highlighter-rouge">RubyInstaller 3.0.0-1 released</code>) and use the default options in the installation wizard. On the last step, you’ll want to keep the option “Run ‘ridk install’ to setup MSYS2 and development toolchain.” checked. ToDo: insert jpg</li>
+  <li>Close the Powershell prompt window, and open a new one (this one will have the updated environment PATH information)</li>
+  <li>At the Powershell prompt, Run <code class="language-plaintext highlighter-rouge">gem install jekyll bundle</code>. This installed Jekyll V4.2.0 (on 2021-04-05), and a total of 28 gems. ToDo: embed screenshot</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">jekyll -v</code> and confirm Jekyll returns its current version number. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="Jekyll version 4.2.0" style="vertical-align:bottom" /></li>
+</ol>
+
+<p><em>This is one example of an image hosted on Dropbox in this initial edition of this post.</em>
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.</p>
+
+<h2 id="create-a-new-git-repository">Create a new git repository</h2>
+
+<ol>
+  <li>Open a Powershell terminal, navigate to the location (directory) you want to be the parent of your repository. My parent directory is <code class="language-plaintext highlighter-rouge">C:\Dropbox\whertzing\GitHub\</code>.</li>
+  <li>Create a subdirectory <code class="language-plaintext highlighter-rouge">*GitHubUserName*.github.io</code>, and <code class="language-plaintext highlighter-rouge">cd</code> into it.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git init</code>. <img src="https://www.dropbox.com/s/mvcm5kio1b3ocim/001%20Validate%20Jekyll%20Version.png?raw=1" alt="git init results" style="vertical-align:bottom" />.</li>
+</ol>
+
+<p><em>This is one example of an image hosted on Dropbox in this initial edition of this post.</em>
+ToDo: Add responsive sizes attribute to the image tag and create multiple sizes of the image.</p>
+
+<h2 id="create-minimal-jekyll-compliant-site-source-code">Create minimal Jekyll-compliant site source code</h2>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">jekyll new PATH</code> (Use the FULL Path to the repository on your windows PC i.e. <code class="language-plaintext highlighter-rouge">C:\Dropbox\whertzing\GitHub\BillHertzing.github.io</code>) which will create the bare bones of the new Jekyll-compliant site source code. ToDo: add jpg</li>
+  <li>(optional) I prefer to use <code class="language-plaintext highlighter-rouge">.md</code> instead of <code class="language-plaintext highlighter-rouge">.markdown</code> for the suffix of Markdown files, so I now run the two commands <code class="language-plaintext highlighter-rouge">mv about.markdown about.md</code> and <code class="language-plaintext highlighter-rouge">mv index.markdown index.md</code></li>
+</ol>
+
+<p>So at this point, I’ll diverge from the many other posts about setting up Jekyll for GitHub Pages. I may want to eventually develop a Jekyll plugin and I know I’ll want to eventually publish my own Jekyll theme, so might as well start with an approach that will support that. Because I want to use the latest Ruby and MSYS2 components, non-approved Jekyll plugins and a non-approved Jekyll theme, I will keep the site source code under the  <code class="language-plaintext highlighter-rouge">main</code> branch of my repository, build/debug the site locally on my Windows PC, commit <code class="language-plaintext highlighter-rouge">_site</code> along with the source when I do commits, and use the GitHub Action to deploy <code class="language-plaintext highlighter-rouge">.\_site</code> to the <code class="language-plaintext highlighter-rouge">gh_pages</code> branch on GitHub only when a release happens.</p>
+
+<ol>
+  <li>edit the <code class="language-plaintext highlighter-rouge">_config.yml</code> file, and remove a lot of the boiler plate. At this point, mine looks like this:</li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Jekyll initial configuration file for BillHertzing.github.io V0.01.0</span>
+
+<span class="na">title</span><span class="pi">:</span> <span class="s">Bill's Blog</span>
+<span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;-</span> <span class="c1"># this means to ignore newlines until the next key, which is "baseurl:"</span>
+  <span class="s">Technical articles for my code repositories. Position papers on political issues. Cute pictures of the kids. I've got it all!</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># the subpath of your site, e.g. /blog</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://BillHertzing.github.io"</span> <span class="c1"># This is a User GitHub Pages site, not a Project GitHub Pages  site</span>
+<span class="na">twitter_username</span><span class="pi">:</span> <span class="s">BillHertzing</span>
+<span class="na">github_username</span><span class="pi">:</span>  <span class="s">BillHertzing</span>
+
+<span class="c1"># Build settings</span>
+<span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">pretty</span>
+<span class="na">theme</span><span class="pi">:</span> <span class="s">minima</span>
+</code></pre></div></div>
+
+<h2 id="download-the-minima-theme">Download the minima theme</h2>
+
+<p>Any Jekyll theme you want to use must first be downloaded to your Windows PC so run <code class="language-plaintext highlighter-rouge">gem install jekyll-theme-minima</code>. Today (2021-04-06) it loaded jekyll-theme-minima-0.1.1.gem and 18 other gems (dependencies) as well.</p>
+
+<h2 id="verify-the-local-site-will-build-and-serve-locally-on-your-windows-pc">Verify the local site will build and serve locally on your Windows PC</h2>
+
+<p>It is a good idea to be able to see what your site will look like, before committing the changes to GitHub. By default, <code class="language-plaintext highlighter-rouge">jekyll build</code> will read the site’s source from the current directory, then process it and publish it to a subdirectory <code class="language-plaintext highlighter-rouge">_site</code>. The command <code class="language-plaintext highlighter-rouge">jekyll serve</code> will start a local web server and serve <code class="language-plaintext highlighter-rouge">_site</code> to <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>. <code class="language-plaintext highlighter-rouge">jekyll serve</code> will also build the site if any source file has been changed.</p>
+
+<ol>
+  <li>Open a Powershell terminal and navigate to your repository.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">jekyll serve</code>. ToDo: insert jpg</li>
+</ol>
+
+<h3 id="fixing-issues">Fixing issues</h3>
+
+<p>Did you really think that everything would ‘just work’?  Hahaha! When I first try this today, I get an error message “Could not find gem tzinfo-data”. Typically, new versions of one tool might break a dependency used somewhere else. In this particular case, the latest version of Ruby (3.0.0 today) no longer includes that gem by default. So, I needed to run <code class="language-plaintext highlighter-rouge">gem install tzinfo-data</code>. Then when I tried <code class="language-plaintext highlighter-rouge">jekyll serve</code>, I got an error message ““Could not find gem wdm”. So I ran <code class="language-plaintext highlighter-rouge">gem install wdm</code>. And then again for <code class="language-plaintext highlighter-rouge">webrick</code>, which required <code class="language-plaintext highlighter-rouge">bundle add webrick</code>. Then I learned to change the command to <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>.  Depending on how much things have changed between the time I write this and the time you try to follow it, there may be other dependency changes, so just keep on trying to build and fixing the issues, until <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> completes and starts serving up pages.  I also ran into problems with the Bundler version, getting the error <code class="language-plaintext highlighter-rouge">cannot load such file -- C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/bundler-2.2.3/libexec/bundle (LoadError)</code>. After updating the Bundler with <code class="language-plaintext highlighter-rouge">gem install bundler</code> I needed to edit the <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> and change the <code class="language-plaintext highlighter-rouge">bundled with</code> line at the bottom to match the version just installed/updated.</p>
+
+<p>Finally, when you’ve wrung out the bugs, Jekyll will serve the site locally. Use the browser of your choice and navigate to http://localhost:4000. With the <code class="language-plaintext highlighter-rouge">minima</code> theme it should look like this:
+ToDo: Insert .jpg</p>
+
+<h2 id="replace-the-original-welcome-to-jekyllmarkdown-page">Replace the original <code class="language-plaintext highlighter-rouge">welcome-to-jekyll.markdown</code> page</h2>
+
+<ol>
+  <li>In the <code class="language-plaintext highlighter-rouge">_posts</code> subdirectory, add a new file with the format <code class="language-plaintext highlighter-rouge">*YYYY-MM-dd-welcome-to-*whatever*</code>. use your current year-month-day numerals, and change <em>whatever</em> to whatever you want to call your first welcome post.  I used <code class="language-plaintext highlighter-rouge">2021-04-06-Welcome-To-Bills-Blog.md</code></li>
+  <li>look at the original file in the _posts directory, which was created by the initial <code class="language-plaintext highlighter-rouge">jekyll new PATH</code> command earlier, and copy the Front Matter to your new post, update the Front Matter to change the title, update the date to match that of your filename, add a <code class="language-plaintext highlighter-rouge">description:</code> tag and optionally remove the categories.</li>
+  <li>In the new post, enter your initial draft of whatever you want to see on your first post, and save the file.</li>
+  <li>Delete the original file in the _posts directory.</li>
+</ol>
+
+<h3 id="why-description-in-the-front-matter-is-important">Why <code class="language-plaintext highlighter-rouge">description:</code> in the Front Matter is important</h3>
+
+<p>Putting a <code class="language-plaintext highlighter-rouge">description:</code> in the Front Matter of your pages and posts is important. The <code class="language-plaintext highlighter-rouge">minima</code> theme (and most others) will generate a <code class="language-plaintext highlighter-rouge">&lt;meta</code> tag in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> element of your published page or post. The contents of the tag will be the first paragraph of your page or post, unless you use a <code class="language-plaintext highlighter-rouge">description:</code> key in the Front Matter. I prefer to separate my pages’ and posts’ SEO description from its first paragraph, so I always use a <code class="language-plaintext highlighter-rouge">description:</code> key in the Front Matter.</p>
+
+<h2 id="push-the-source-code-to-github">Push the source code to GitHub</h2>
+
+<p>Now that we have things working locally, lets get our site stored up on GitHub. GitHub offers detailed instruction on how to do this here <a href="https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line">Adding an existing project to GitHub using the command line</a>. What follows here are the summarized steps I took.</p>
+
+<ol>
+  <li>Open a Powershell terminal and navigate to your repository.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git add .</code>  This will add all the local files to your local repository and stage them for a commit</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git commit -m "First commit"</code>  This Commits the tracked changes and prepares them to be pushed to a remote repository.</li>
+</ol>
+
+<h3 id="create-a-new-repository-on-github">Create a new repository on GitHub</h3>
+
+<p>Detailed instructions here <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository">Create a new repository on GitHub</a> To avoid errors, do not initialize the new repository with README, license, or gitignore files. You can add these files after your project has been pushed to GitHub.</p>
+
+<ol>
+  <li>Login to your GitHub account  ToDo: Add .jpg</li>
+  <li>Click the New Repository button.</li>
+  <li>Enter a name and description, select Public, and don’t check anything under the <code class="language-plaintext highlighter-rouge">initialize this repository with:</code> section. ToDo: Add .jpg</li>
+  <li>Click the big <code class="language-plaintext highlighter-rouge">Create repository</code> button at the bottom.</li>
+  <li>ToDo: insert jpg of the result, and highlight the link to copy</li>
+  <li>Copy the HTTPS link showing at the top of the page.</li>
+</ol>
+
+<h3 id="push-the-local-repository-to-the-remote-repository">Push the local repository to the remote repository</h3>
+
+<ol>
+  <li>Open a Powershell terminal and navigate to your repository. Or just reuse an already open Powershell terminal.</li>
+  <li>Details are available at <a href="https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories">Managing remote repositories</a>.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git remote add origin  &lt;REMOTE_URL&gt;</code>  Of course, replace <REMOTE_URL> with the URL you just copied from GitHub. Mine looked like this: `git remote add origin https://github.com/BillHertzing/Bill.Hertzing.github.io.git`</REMOTE_URL></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git remote -v</code> to confirm that the origin is indeed set to the URL for the remote repository you just created on GitHub.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git branch -M main</code> and then <code class="language-plaintext highlighter-rouge">git push -u origin main</code>  This will push the changes in your local repository up to the remote repository.</li>
+  <li>Verify the source code for your site is now in GitHub. ToDo: add jpg</li>
+</ol>
+
+<h2 id="setup-visual-studio-code-vsc">Setup Visual Studio Code (VSC)</h2>
+
+<ol>
+  <li>Open the Visual Studio Code application.</li>
+  <li>Select <code class="language-plaintext highlighter-rouge">Open folder</code> and navigate to the new repository you just created. To Do: insert jpg</li>
+</ol>
+
+<h2 id="modify-the-aboutmd-page">Modify the About.md page</h2>
+
+<p>Open the <code class="language-plaintext highlighter-rouge">about.md</code> file for editing, select everything and delete it. Then add the following text, modifying it as appropriate for yourself.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: page
+title: About
+permalink: /about/
+description: Information about me personally and about this blog site
+---
+
+## About Me
+
+I started messing with electronics in High School in the early 70's, and went on to a BScEE degree and a long career in the computer field. I'm currently retired, and working on OSS projects.
+
+## About this blog
+
+I started this blog to document the OSS repositories I'm building.
+</code></pre></div></div>
+
+<h2 id="confirm-that-vsc-can-push-changes-to-github">Confirm that VSC can push changes to GitHub</h2>
+
+<ol>
+  <li>Save the file. Note that the Source Control button on the link now has a badge with the number (1) and the <code class="language-plaintext highlighter-rouge">about.md</code> file indicates <code class="language-plaintext highlighter-rouge">M</code> for Modified. ToDo: insert jpg</li>
+  <li>Click the VSC Source Control button inside the left sidebar.</li>
+  <li>In the message box, enter <code class="language-plaintext highlighter-rouge">update about.md</code>, then click the <code class="language-plaintext highlighter-rouge">check</code> above the message box (alt text is <code class="language-plaintext highlighter-rouge">Commit</code>)</li>
+  <li>Note that the bottom status bar now shows there is one local commit that has not been pushed to the remote. ToDo: insert jpg</li>
+  <li>Click on that area of the status bar, and the change should be pushed to GitHub</li>
+  <li>On GitHub, open the <code class="language-plaintext highlighter-rouge">about.md</code> file, and confirm that the change you just made has been pushed to the GitHub remote repository.</li>
+</ol>
+
+<h2 id="add-a-categorized-post">Add a categorized post</h2>
+
+<p>This site is focused on blogging, and it uses Jekyll Categories to organize them. The post you are reading now is the first post in the Category <code class="language-plaintext highlighter-rouge">technical</code>. Lets make sure our initial version of the site properly supports Categorized posts.  One way to categorize posts is to use subdirectories at the repository’s root. Posts should be  put into various subdirectories following the convention <code class="language-plaintext highlighter-rouge">*categoryname*/_posts</code>. I’m going to start with this approach, rather than using a category tag in the post’s Front Matter, which is an alternative method of categorization.</p>
+
+<p>I know I will be putting links in one post that refer to another posts. To do so will require a link that correctly resolves to the published path of a post.  Jekyll accomplishes this with <code class="language-plaintext highlighter-rouge">post_url</code>. <code class="language-plaintext highlighter-rouge">post_url</code> takes a path to the post’s source <code class="language-plaintext highlighter-rouge">.md</code> file, and returns the “slug”. If a post’s source lives in e.g. <code class="language-plaintext highlighter-rouge">/technical/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01.md</code>, then <code class="language-plaintext highlighter-rouge">post_url</code> returns the published path <code class="language-plaintext highlighter-rouge">/technical/2021/04/06/how-i-setup-this-github-pages-blog-site-part-01/</code>. <em>Note</em> there is a trailing slash in this path! <code class="language-plaintext highlighter-rouge">post_url</code> returns the elements of the path in all lowercase letters. To make the source of <code class="language-plaintext highlighter-rouge">post_url</code> match the destination “slug” when using Categories, <strong>it is important to use all lower-case in the subdirectory name and the post filename</strong>.</p>
+
+<ol>
+  <li>At the root of the repository, create a new subdirectory <code class="language-plaintext highlighter-rouge">technical</code> (or whatever you want your first Category to be).</li>
+  <li>Create the subdirectory <code class="language-plaintext highlighter-rouge">_posts</code> under the new subdirectory you just created.</li>
+  <li>Create an initial post file here. Give it a name following the <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-*titlestring*.md</code> convention.</li>
+  <li>Open the file for editing, put in the Front Matter, put in some initial text, save. My front matter at this point looks like this:</li>
+</ol>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">Title</span><span class="pi">:</span> <span class="s">How I setup this GitHub Pages Blog Part </span><span class="m">01</span>
+<span class="na">date</span><span class="pi">:</span>   <span class="s">2021-04-06 12:31:43 -0600</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="s">Jekyll "GitHubPages"</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">First steps in setting up a Jekyll generated blogging site hosted on GitHub Pages which uses any plugin, theme, Jekyll version or Ruby version.</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h2 id="enable-github-pages-on-the-github-repository">Enable GitHub pages on the GitHub repository</h2>
+
+<ol>
+  <li>Navigate to the <code class="language-plaintext highlighter-rouge">Code</code> view of the repository</li>
+  <li>Create the branch <code class="language-plaintext highlighter-rouge">gh-pages</code>.</li>
+  <li>Open Setting on the GitHub repository. ToDo: insert jpg</li>
+  <li>Scroll down to the GitHub Pages section.</li>
+  <li>Type <code class="language-plaintext highlighter-rouge">gh-pages</code> for the branch name. ToDo: insert jpg</li>
+</ol>
+
+<h2 id="add-a-workflow-file-deploy-site-to-github-pagesyml">Add a workflow file <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages.yml</code></h2>
+
+<p>This workflow and the actions it contains are the key to an easy blogging workflow. A great piece of OSS for GitHub Actions, combined with a workflow trigger that detects a release tag, make it all work.</p>
+
+<p>See the details of the Action here: <a href="https://github.com/marketplace/actions/deploy-to-github-pages">Deploy to GitHub Pages</a> by James Ives and other contributors, also <a href="https://github.com/JamesIves/github-pages-deploy-action">github-pages-deploy-action</a>.
+See the details of the trigger here: <a href="https://www.codingwithcalvin.net/git-tag-based-released-process-using-github-actions/">Git Tag Based Released Process Using GitHub Actions</a> by Calvin A. Allen.</p>
+
+<ol>
+  <li>Create the directory and subdirectory <code class="language-plaintext highlighter-rouge">.github\workflows</code> in the repository.</li>
+  <li>Create the file <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages.yml</code> in the <code class="language-plaintext highlighter-rouge">.github\workflows</code> subdirectory</li>
+</ol>
+
+<p>ToDo: figure out how, at site generation time (<code class="language-plaintext highlighter-rouge">jekyll build</code>) to read the contents of the actual file and update the text below with the actual contents, and run those contents through a regexp replacement to escape the %{ and {{ so the publish process doesn’t do any logic.
+ToDo: decide on a strategy for updating a historical post if the file changes. Perhaps a revision tag for posts?
+ToDo: Figure out how notify subscribers to the RSS feed if a existing post gets a new revision.
+ToDo: Figure out how to e-mail an administrator if a code change triggers the need to create a post revision
+ToDo: When a new site gets published, is that a good time to note any post revisions into the ChangeLog?</p>
+
+<p>Put the following yml code into the file, and then save it.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">deploy generated site to GitHub Pages on gh-branch</span> 
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="c1"># Triggers the workflow on push requests to the main branch if the commit includes a tag that matches the Semantic Version release tag</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="c1"># tags: [ releases/\d+\.\d+\.\d+ ] # yep, the first element of the tags array is a regular expression. Modify the RegExp if you use a different format for your release tags</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
+  <span class="c1"># This line allows you to run this workflow manually from the Actions tab</span>
+  <span class="na">workflow_dispatch</span><span class="pi">:</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="c1"># This workflow contains a single job called "deploy-site-to-github-pages"</span>
+  <span class="na">deploy-site-to-github-pages</span><span class="pi">:</span>
+     <span class="c1"># The type of runner that the job will run on</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>  <span class="c1"># ToDo: investigate if a specific ubuntu is better</span>
+
+     <span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="c1"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+
+    <span class="c1"># Both of these fine OSS actions will do the deployment job. </span>
+    <span class="c1"># I keep both in here, but one commented out, in case I find in the future that only one or the other has a feature I might need</span>
+
+    <span class="c1"># - name: Deploy 🚀</span>
+    <span class="c1">#   uses: JamesIves/github-pages-deploy-action@4.1.1</span>
+    <span class="c1">#   with:</span>
+    <span class="c1">#     branch: gh-pages # The branch the action should deploy to.</span>
+    <span class="c1">#     folder: ./_site # The folder the action should deploy.</span>
+      
+    <span class="c1"># Deploys a source to a destination.</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v3</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">github_token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+        <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">./_site</span> <span class="c1"># the action will deploy the &lt;repository root&gt;/_site contents to the (default) gh-pages branch, root directory</span>
+</code></pre></div></div>
+
+<p>Save the new file and commit the changes.</p>
+
+<h2 id="create-an-environment-for-the-deployment-action">Create an Environment for the deployment action</h2>
+
+<ol>
+  <li>On GitHub, in the repository, under <code class="language-plaintext highlighter-rouge">Settings</code>, open the <code class="language-plaintext highlighter-rouge">Environment</code> tab, and click <code class="language-plaintext highlighter-rouge">Create Environment</code>. ToDo: insert jpg</li>
+  <li>Name the Environment <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages</code>, and click <code class="language-plaintext highlighter-rouge">Configure Environment</code>. ToDo: insert jpg</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">x</code> on the following page to acknowledge the environment was created, and go back to the <code class="language-plaintext highlighter-rouge">Settings-&gt;Environment</code> page. ToDo: insert jpg</li>
+  <li>Click on the name of the environment just created.</li>
+  <li>At the bottom of the page, click the <code class="language-plaintext highlighter-rouge">Add Secret</code> button. ToDo: insert jpg</li>
+  <li>Add a Secret with the name <code class="language-plaintext highlighter-rouge">ACTIONS_STEP_DEBUG</code> and value <code class="language-plaintext highlighter-rouge">true</code>. You can remove this Secret after the action has been debugged. There is an additional Secret <code class="language-plaintext highlighter-rouge">ACTIONS_RUNNER_DEBUG</code> which if set to <code class="language-plaintext highlighter-rouge">true</code> will provide more details in the logs. I like to set this, as well. ToDo: insert jpg</li>
+</ol>
+
+<p>The final Environment should look like this: ToDo: insert jpg</p>
+
+<h2 id="remove-_site-from-the-gitignore-file">Remove <code class="language-plaintext highlighter-rouge">_site</code> from the <code class="language-plaintext highlighter-rouge">.gitignore</code> file</h2>
+
+<ol>
+  <li>Edit the .gitignore file in the root of the repository, and remove the <code class="language-plaintext highlighter-rouge">_site</code> line. Save.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> to validate the site builds and displays as expected locally on your Windows PC.</li>
+  <li>Note in the VSC sidebar that the VSC Source Control menu-item icon has a number, and the Source Control Changes editor window now shows multiple new files under <code class="language-plaintext highlighter-rouge">_sites</code> to be committed.</li>
+  <li>Commit all the changes. I used the message “Start tracking <code class="language-plaintext highlighter-rouge">_site</code>”  <em>NOTE</em> I made the changes to the original post, as specified above at (ToDo: insert link to previous place ) at this point in the development, so the jpg file also shows me removing the original post file and adding my own first post file in <code class="language-plaintext highlighter-rouge">_posts</code> ToDo: insert jpg</li>
+  <li>Sync with the remote GitHub repository.</li>
+  <li>Validate the <code class="language-plaintext highlighter-rouge">_site</code> and its files are now present on the GitHub repository. ToDo: insert jpg</li>
+</ol>
+
+<h2 id="review-the-workflow-run">Review the workflow run</h2>
+
+<ol>
+  <li>Navigate to the <code class="language-plaintext highlighter-rouge">Actions</code> tab in your GitHub repository. ToDo: insert jpg</li>
+  <li>Drill down into the latest workflow run. ToDo: insert jpg</li>
+  <li>Drill down into the job log. ToDo: insert jpg</li>
+  <li>Expand the <code class="language-plaintext highlighter-rouge">Deploy</code> step. ToDo: insert jpg</li>
+</ol>
+
+<h2 id="troubleshooting-the-workflow-run">Troubleshooting the workflow run</h2>
+
+<p>I had problems with the first of the two deployment actions I tried. I left an issue for the author, then searched a bit more and came up with the second deployment action, which worked for me. I kept moving forward. The next day I got a timely response from the author, and re-tried their deployment Action. It worked, so the problem must have been a user error on my part. So I decided to leave both actions in the file, in case either becomes abandoned or out-of-date. Kudos and thanks to the authors of both of these OSS GitHub Actions!</p>
+
+<h2 id="invoke-deploy-site-to-github-pages-manually">Invoke <code class="language-plaintext highlighter-rouge">deploy-site-to-github-pages</code> manually</h2>
+
+<ol>
+  <li>In the repository on GitHub, drill down on <code class="language-plaintext highlighter-rouge">Actions</code>, look down the left column of the page, find the workflow <code class="language-plaintext highlighter-rouge">deploy generated site to GitHub Pages on gh-branch</code>, and click on it. In the center, there will be a sequence of entries for each workflow run, but above that should be a section with the text <code class="language-plaintext highlighter-rouge">This workflow has a workflow_dispatch event trigger.</code>, and a button <code class="language-plaintext highlighter-rouge">Run workflow</code>. Press that and the workflow will run, and leave a new log at the top of the workflow log entries. ToDo: insert jpg</li>
+</ol>
+
+<h2 id="add-the-mit-license-file">Add the MIT LICENSE file</h2>
+
+<p>This site uses the MIT licenses. Of course, feel free to chose a different license if such is more appropriate for your site. You can find the text of many popular licenses at the Open Source Initiative page <a href="https://opensource.org/licenses">Licenses &amp; Standards</a></p>
+
+<ol>
+  <li>Under the root of the repository, add a new file <code class="language-plaintext highlighter-rouge">LICENSE.md</code>.</li>
+  <li>
+    <p>Add front matter, for example</p>
+
+    <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p"> ---</span>
+ layout: page
+ title: LICENSE
+ permalink: /LICENSE/
+ description: Text of the MIT License for this site
+ exclude: true
+<span class="p"> ---
+</span></code></pre></div>    </div>
+  </li>
+  <li>Copy the appropriate text from one of the OSI-approved licenses into the file and save it.</li>
+</ol>
+
+<h2 id="modify-the-footer-template">Modify the footer template</h2>
+
+<p>It is a good idea to put a link to the license somewhere on each page, and the page footer is an unobtrusive place for this. I also like to put the copyright notice there. I followed the detailed instructions here <a href="https://cyberloginit.com/2018/05/05/github-pages-jekyll-minima-customize-footer.html#:~:text=To%20customize%20the%20footer%2C%20you,Then%20customize%20footer.">GitHub Pages Jekyll Minima Customize Footer</a> by “Cyber Log in IT”.</p>
+
+<ol>
+  <li>Add a directory <code class="language-plaintext highlighter-rouge">_includes</code> to the root of the repository.</li>
+  <li>Copy the <code class="language-plaintext highlighter-rouge">footer.html</code> from the <a href="https://github.com/jekyll/minima">Minima GitHub repository</a> into the <code class="language-plaintext highlighter-rouge">_includes</code> subdirectory.</li>
+  <li>Customize <code class="language-plaintext highlighter-rouge">footer.html</code> to your own needs.</li>
+</ol>
+
+<p>The footer.html file from the minima theme looks like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"site-footer h-card"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;data</span> <span class="na">class=</span><span class="s">"u-url"</span> <span class="na">href=</span><span class="s">"{{ "</span><span class="err">/"</span> <span class="err">|</span> <span class="na">relative_url</span> <span class="err">}}"</span><span class="nt">&gt;&lt;/data&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col-wrapper"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"feed-subscribe"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ 'feed.xml' | relative_url }}"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"svg-icon orange"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;&lt;span&gt;</span>Subscribe<span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      {%- if site.author %}
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"contact-list"</span><span class="nt">&gt;</span>
+          {% if site.author.name -%}
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"p-name"</span><span class="nt">&gt;</span>{{ site.author.name | escape }}<span class="nt">&lt;/li&gt;</span>
+          {% endif -%}
+          {% if site.author.email -%}
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">"u-email"</span> <span class="na">href=</span><span class="s">"mailto:{{ site.author.email }}"</span><span class="nt">&gt;&lt;/a&gt;&lt;/li&gt;</span>
+          {%- endif %}
+        <span class="nt">&lt;/ul&gt;</span>
+      {%- endif %}
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>{{ site.description | escape }}<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"social-links"</span><span class="nt">&gt;</span>
+      {%- include social.html -%}
+    <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/footer&gt;</span>
+</code></pre></div></div>
+
+<p>I modified mine to remove the author email block and add the copyright and License link. For now, I’ll use my own name for the copyright, maybe in the future the work will be taken on by a foundation (I wish!).</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"site-footer h-card"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;data</span> <span class="na">class=</span><span class="s">"u-url"</span> <span class="na">href=</span><span class="s">"{{ "</span><span class="err">/"</span> <span class="err">|</span> <span class="na">relative_url</span> <span class="err">}}"</span><span class="nt">&gt;&lt;/data&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col-wrapper"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"feed-subscribe"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ 'feed.xml' | relative_url }}"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"svg-icon orange"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;&lt;span&gt;</span>Subscribe<span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>{{ site.description | escape }}<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span><span class="ni">&amp;copy;</span> William Hertzing 2020 - 2021 The contents of this website are under the terms of the MIT <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">/LICENSE</span><span class="nt">&gt;</span>License.<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"social-links"</span><span class="nt">&gt;</span>
+      {%- include social.html -%}
+    <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/footer&gt;</span>
+</code></pre></div></div>
+
+<p>OK, so visually its not a very appealing footer. But then, neither is the Minima theme overall. In fact, I plan to replace the minima theme with another around version 0.03.0 of this site. It’s in the Milestones 🤣.</p>
+
+<h2 id="making-the-first-release-of-the-site">Making the first release of the site</h2>
+
+<p>I’m happy now with the initial look and feel to my blogging site. I’ll make a final commit of my outstanding work, then I’ll make another commit and add a Release tag. For now, the release tags will follow the format <code class="language-plaintext highlighter-rouge">releases/\d+\.\d+\.\d+</code>. I prefer to use a full Git Annotated Tag. Details on Git Tagging can be found in <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging.">Git Basics - Tagging</a></p>
+
+<p>Once you have committed all the changes you want for Release 0.01.0,</p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">git tag -a releases/0.01.000 -m "Initial release of Bill's Blog"</code> (modify the command as appropriate for your site)</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git tag</code> which will list all existing tags and verify the tag is there.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">git push --tags</code> to push the release tag to GitHub</li>
+</ol>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>This concludes the first edition of this post. In all my career, I’ve never encountered a significant document that didn’t require revisions, and I expect this will, as well. During the course of developing this site, I plan to incorporate a revision tracking system, so (eventually), you should be able to see all the revisions I’ve done to the post, and a change log. However, my idea is that I’ll only publish post revisions when I do a site release. I may increment the third part of the site version when I publish a revision to a post. I think that is in keeping with the spirit of Semantic Versioning, since ‘fixing’ a published post would be somewhat equivalent to fixing a bug in a released software package.</p>
+
+<p>There are some Milestones defined in this repository’s Issues tab, which detail what I hope to accomplish in the next four revisions. Feel free to look them over if you want to know what’s coming in the next three parts to this series.</p>
+
+<p>Comments for posts should be enabled soon, until then, please use the Issues on this repository to communicate with me, if you find errors or have questions.</p>
+
+<p>Thanks for staying to the end :-).</p>
+
+<p>Bill Hertzing, April 8, 2021</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-06T12:31:43-06:00">April 6, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=whertzing56&text=How+I+Setup+This+Github+Pages+Blog+Site+Part+01%20https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-04-06-how-i-setup-this-github-pages-blog-site-part-01" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-04-06-how-i-setup-this-github-pages-blog-site-part-01" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbillhertzing.github.io%2Ftechnical%2F2021%2F2021-04-06-how-i-setup-this-github-pages-blog-site-part-01" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2021/2021-04-06-welcome-to-bills-blog" class="pagination--pager" title="Welcome to Bill’s Blog!
+">Previous</a>
+    
+    
+      <a href="/personal/2021/2021-04-17-welcome-to-the-personal-section-of-my-site" class="pagination--pager" title="Welcome To The Personal Section Of My Site
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/2021/2021-05-22-how-i-setup-this-github-pages-blog-site-part-04" rel="permalink">How I Setup This Github Pages Blog Site Part 04
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          15 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to the fourth part of this series detailing how I setup this blog site hosted on GitHub Pages. If you have not yet seen the first posts in the series...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/2021/2021-05-22-bills-blog-release-process" rel="permalink">Bill’s Blog Release Process
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Detailed steps to finalize a Feature/Bugfix/Post branch, merge it with main, and release a new version of the site.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/technical/2021/2021-05-22-bills-blog-pre-release-checklist" rel="permalink">Bills Blog Pre-Release Checklist
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-22T00:00:00-06:00">May 22, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Things about the release candidate to validate before starting the steps in Bill’s Blog Release Process
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/personal/2021/2021-05-20-petrified-sand-dunes-loop-trail-st-george-ut" rel="permalink">Petrified Sand Dunes Loop Trail St George Ut
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-05-20T00:00:00-06:00">May 20, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Pictures and links for a day hike along the Petrified Sand Dunes Loop in St. George, UT
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/BillHertzing" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; William Hertzing 2020 - 2021. Licensed under the terms of the 
+<a href=/License/index.html>MIT License.</a>
+<a href=/Code-of-Conduct/index.html>Code of Conduct.</a>
+<a href=/Contributing/index.html>Contributing.</a>
+
+Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> 
+&amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+Site Release <a href=/ChangeLog/index.html>V0.04.000</a>
+
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://billhertzing.github.io/technical/2021/2021-04-06-how-i-setup-this-github-pages-blog-site-part-01";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/technical/2021/how-i-setup-this-github-pages-blog-site-part-01"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://BillHertzing.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
