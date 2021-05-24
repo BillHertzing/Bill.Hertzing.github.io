@@ -5,6 +5,14 @@ description: Information about me personally and about this blog site
 layout: single
 ---
 
+## 2021-05-23 Release V0.04.001
+
+- Rotated video
+- Recreated Dropbox Links
+- Updated post
+
+See Issue #16 for description of bug.
+
 ## 2021-05-22 Release V0.04.000
 
 - Created branch `SprintForRelease0.04.000`

@@ -85,7 +85,6 @@ Todays hike was my birthday hike! 4.3 miles about 4 hours. Weather was warm and 
 
 ***Videos are muted by default.  Double-click a video to open it in full screen mode***
 
-
   <div class="container">
     <video width="100%" preload="metadata" muted controls="controls">
       <source src="https://www.dropbox.com/s/dwuns6rbxqurfpg/001%20Landscape.mp4?raw=1" type="video/mp4" />
@@ -98,11 +97,11 @@ Todays hike was my birthday hike! 4.3 miles about 4 hours. Weather was warm and 
 
   <div class="container">
     <video width="100%" preload="metadata" muted controls="controls">
-      <source src="https://www.dropbox.com/s/2sjhsnenwb7qi8l/002%20Landscape%20JoAnn_Trim.mp4?raw=1" type="video/mp4" />
-      Your browser does not support embedded videos, however, you can see the video in a new tab [Landscape JoAnn_Trim](https://www.dropbox.com/s/2sjhsnenwb7qi8l/002%20Landscape%20JoAnn_Trim.mp4?raw=1)
+      <source src="https://www.dropbox.com/s/11cbmkov6gros5r/002%20Landscape%20JoAnn.mp4?raw=1" type="video/mp4" />
+      Your browser does not support embedded videos, however, you can see the video in a new tab [Landscape JoAnn](https://www.dropbox.com/s/11cbmkov6gros5r/002%20Landscape%20JoAnn.mp4?raw=1)
     </video>
     <div class="overlayText">
-      <p id="topText">Landscape JoAnn_Trim</p>
+      <p id="topText">Landscape JoAnn</p>
     </div>
   </div>
 
